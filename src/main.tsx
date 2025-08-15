@@ -1,0 +1,21 @@
+import { StrictMode } from 'react';
+import { createRoot } from 'react-dom/client';
+import { BrowserRouter } from 'react-router-dom';
+import App from './App.tsx';
+import './index.css';
+import { HelmetProvider } from 'react-helmet-async';
+import './i18n.ts'
+
+const theme = 'dark'; // or get from config / state
+
+document.documentElement.classList.add(theme);
+
+createRoot(document.getElementById('root')!).render(
+  <StrictMode>
+    <HelmetProvider>
+      <BrowserRouter>
+        <App />
+      </BrowserRouter>
+    </HelmetProvider>
+  </StrictMode>
+);
