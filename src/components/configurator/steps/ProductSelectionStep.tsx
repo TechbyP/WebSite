@@ -94,7 +94,8 @@ export const ProductSelectionStep = ({ products }: ProductSelectionStepProps) =>
             >
               <div className="relative h-full w-24 flex-shrink-0">
                 <img
-                  src={product.image || defaultHeroImage}
+                  sizes="(max-width: 768px) 50vw, 25vw"
+srcSet={product.image || defaultHeroImage}
                   alt={product.name || t('productSelection.unnamedProduct')}
                   className="w-full h-full object-cover"
                   loading="lazy"
@@ -150,7 +151,8 @@ export const ProductSelectionStep = ({ products }: ProductSelectionStepProps) =>
               <div className="relative overflow-hidden">
                 {product.image ? (
                   <img
-                    src={product.image || defaultHeroImage}
+                    sizes="(max-width: 768px) 50vw, 25vw"
+srcSet={product.image || defaultHeroImage}
                     alt={product.name || t('productSelection.unnamedProduct')}
                     className="w-full h-48 object-cover group-hover:scale-110 transition-transform duration-300"
                     loading="lazy"
@@ -158,7 +160,8 @@ export const ProductSelectionStep = ({ products }: ProductSelectionStepProps) =>
                 ) : (
                   <div className="w-full h-full bg-gray-100 flex items-center justify-center">
                     <img
-                      src={product.image || defaultHeroImage}
+                      sizes="(max-width: 768px) 50vw, 25vw"
+srcSet={product.image || defaultHeroImage}
                       alt={product.name || t('productSelection.unnamedProduct')}
                       onError={(e) => handleImageError(e, defaultHeroImage)}
                       className="w-full h-48 object-cover group-hover:scale-110 transition-transform duration-300"

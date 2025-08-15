@@ -37,7 +37,8 @@ export const MountingMethodStep = () => {
         >
           <div className="relative h-full w-24 flex-shrink-0">
             <img
-              src={trailerImg}
+              sizes="(max-width: 768px) 50vw, 25vw"
+srcSet={trailerImg}
               alt={t('mountingMethod.trailer.alt')}
               className="w-full h-full object-cover"
               loading="lazy"
@@ -69,7 +70,8 @@ export const MountingMethodStep = () => {
         >
           <div className="relative h-full w-24 flex-shrink-0">
             <img
-              src={vehicleImg}
+              sizes="(max-width: 768px) 50vw, 25vw"
+srcSet={vehicleImg}
               alt={t('mountingMethod.vehicle.alt')}
               className="w-full h-full object-cover"
               loading="lazy"
@@ -106,7 +108,8 @@ export const MountingMethodStep = () => {
         >
           <div className="relative overflow-hidden h-80">
             <img
-              src={trailerImg}
+              sizes="(max-width: 768px) 50vw, 25vw"
+srcSet={trailerImg}
               alt={t('mountingMethod.trailer.alt')}
               className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-300"
               loading="lazy"
@@ -140,7 +143,8 @@ export const MountingMethodStep = () => {
         >
           <div className="relative overflow-hidden h-80">
             <img
-              src={vehicleImg}
+              sizes="(max-width: 768px) 50vw, 25vw"
+srcSet={vehicleImg}
               alt={t('mountingMethod.vehicle.alt')}
               className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-300"
               loading="lazy"

@@ -49,14 +49,14 @@ const ProductShowcase = () => {
   });
 
   const [ready, setReady] = useState(false);
-  
-    useEffect(() => {
-      initializeProducts(t);
-      setReady(false); // reset before init
-      setTimeout(() => {
-        setReady(true); // trigger re-render *after* initialization
-      }, 0);
-    }, [t]);
+
+  useEffect(() => {
+    initializeProducts(t);
+    setReady(false); // reset before init
+    setTimeout(() => {
+      setReady(true); // trigger re-render *after* initialization
+    }, 0);
+  }, [t]);
 
 
 
@@ -295,7 +295,8 @@ const ProductShowcase = () => {
       )}
       <VideoSection
         videoId='ZXNVBRUQ6cU'
-        posterSrc={posterImage}
+        posterSizes="(max-width: 768px) 50vw, 25vw"
+        posterSrcSet={posterImage}
         title={t('productShowcase.videoTitle')}
       />
     </section>
@@ -385,8 +386,10 @@ const ProductCard = React.forwardRef<HTMLDivElement, ProductCardProps>(
             {/* Image on left */}
             <div className="w-1/3 relative">
               <img
-                src={heroImage}
+                sizes="(max-width: 768px) 20vw,300x"
+                srcSet={heroImage}
                 alt={product.name}
+
                 className="w-full h-full object-cover object-[85%]"
                 loading="lazy"
               />
@@ -514,8 +517,10 @@ const ProductCard = React.forwardRef<HTMLDivElement, ProductCardProps>(
       >
         <div className="relative overflow-hidden">
           <img
-            src={heroImage}
+            sizes="(max-width: 768px) 50vw, 20vw"
+            srcSet={heroImage}
             alt={product.name}
+
             className="w-full h-48 object-cover group-hover:scale-110 transition-transform duration-300"
             loading="lazy"
           />

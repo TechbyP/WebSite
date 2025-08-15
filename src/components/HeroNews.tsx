@@ -1,7 +1,7 @@
 import React, { useState, useEffect, useCallback, useRef } from 'react';
 import { motion, useAnimation, AnimatePresence } from 'framer-motion';
 import { ChevronLeft, ChevronRight, ArrowRight, Play } from 'lucide-react';
-import Hero from '../assets/pictures/hero2.jpg';
+import Hero from '../assets/pictures/hero2.jpg?w=150;300;&format=webp;jpg&as=srcset';
 import { db } from '../firebase';
 import { collection, getDocs } from 'firebase/firestore';
 import { useTranslation } from 'react-i18next';
@@ -43,24 +43,24 @@ const CombinedHero = () => {
         const localizedField = `${field}_${currentLanguage}` as keyof NewsItem;
         return item[localizedField] || item[field as keyof NewsItem] || '';
     };
-const formatTitle = (title: string) => {
-    if (!title) return '';
+    const formatTitle = (title: string) => {
+        if (!title) return '';
 
-    const words = title.split(' ');
-    if (words.length <= 2) return title;
+        const words = title.split(' ');
+        if (words.length <= 2) return title;
 
-    const lastTwoWords = words.splice(-2).join(' ');
-    const remainingWords = words.join(' ');
+        const lastTwoWords = words.splice(-2).join(' ');
+        const remainingWords = words.join(' ');
 
-    return (
-        <>
-            {remainingWords} <br />
-            <span className="text-3xl sm:text-5xl md:text-6xl lg:text-8xl uppercase text-brandgreen leading-tight">
-                {lastTwoWords}
-            </span>
-        </>
-    );
-};
+        return (
+            <>
+                {remainingWords} <br />
+                <span className="text-3xl sm:text-5xl md:text-6xl lg:text-8xl uppercase text-brandgreen leading-tight">
+                    {lastTwoWords}
+                </span>
+            </>
+        );
+    };
 
     useEffect(() => {
         const fetchHeroItems = async () => {
@@ -381,7 +381,8 @@ const formatTitle = (title: string) => {
                     >
                         <div id='Hero' className="absolute inset-0 bg-black/40 overflow-hidden">
                             <img
-                                src={currentItem.image}
+                                sizes="(max-width: 768px) 50vw, 25vw"
+                                srcSet={currentItem.image}
                                 alt=""
                                 className="w-full h-full object-cover select-none"
                                 style={{ objectPosition: 'center center' }}
@@ -452,6 +453,17 @@ const formatTitle = (title: string) => {
                                                 <Play className="mr-2 h-4 w-4 sm:h-5 sm:w-5" />
                                                 {t('hero.home.ctaDemo')}
                                             </HomeScreenButton>
+                                            <button
+                                                onClick={(e) => {
+                                                    e.preventDefault();
+                                                    scrollToSection('products');
+                                                }}
+                                                className="hidden md:block absolute bottom-28 left-1/2 transform -translate-x-1/2 animate-bounce cursor-pointer"
+                                            >
+                                                <div className="w-6 h-10 border-2 border-white/30 rounded-full flex justify-center">
+                                                    <div className="w-1 h-3 bg-white/50 rounded-full mt-2"></div>
+                                                </div>
+                                            </button>
                                         </motion.div>
                                     </>
                                 ) : (
@@ -509,15 +521,46 @@ const formatTitle = (title: string) => {
                                                     cta: getLocalizedContent(currentItem, 'cta'),
                                                     link: getLocalizedContent(currentItem, 'link')
                                                 }}
+
                                             />
+
                                         )}
+                                        <button
+                                            onClick={(e) => {
+                                                e.preventDefault();
+                                                scrollToSection('products');
+                                            }}
+                                            className="hidden md:block absolute bottom-28 left-1/2 transform -translate-x-1/2 animate-bounce cursor-pointer"
+                                        >
+                                            <div className="w-6 h-10 border-2 border-white/30 rounded-full flex justify-center">
+                                                <div className="w-1 h-3 bg-white/50 rounded-full mt-2"></div>
+                                            </div>
+                                        </button>
+
                                     </>
+
                                 )}
                             </div>
                         </div>
                     </motion.div>
                 )}
             </AnimatePresence>
+            <div className="absolute bottom-8 left-1/2 transform -translate-x-1/2 z-30 flex items-center justify-center space-x-2">
+                {newsItems.map((_, index) => (
+                    <button
+                        key={index}
+                        onClick={() => {
+                            if (index !== currentIndex && !isTransitioning) {
+                                setCurrentIndex(index);
+                                setIsTransitioning(true);
+                            }
+                        }}
+                        className={`w-3 h-3 rounded-full transition-all duration-300 ${index === currentIndex ? 'bg-brandgreen w-6' : 'bg-white/50 hover:bg-white/70 w-3'}`}
+                        aria-label={`Go to slide ${index + 1}`}
+                        disabled={isTransitioning}
+                    />
+                ))}
+            </div>
         </section>
     );
 };

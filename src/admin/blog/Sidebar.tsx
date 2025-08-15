@@ -136,58 +136,59 @@ const Sidebar = ({
         </div>
 
         {/* Article list with improved cards */}
-       {/* Article list with simplified cards */}
-<div className="space-y-3 max-h-[600px] overflow-y-auto pr-2 custom-scrollbar">
-  {isLoading ? (
-    <div className="text-center py-8">
-      <div className="animate-spin rounded-full h-8 w-8 border-b-2 border-blue-600 mx-auto"></div>
-    </div>
-  ) : articles.length === 0 ? (
-    <div className="text-center py-8 text-gray-500">
-      {searchTerm || categoryFilter !== 'all'
-        ? t('blogEdit.noMatchingArticles')
-        : t('blogEdit.noArticlesAvailable')}
-    </div>
-  ) : (
-    articles.map((article) => (
-      <article
-        key={article.id}
-        onClick={() => !isLoading && onSelectArticle(article)}
-        className={`group flex items-center gap-4 p-4 rounded-xl cursor-pointer transition-all border ${
-          selectedArticleId === article.id
-            ? 'border-brandblue bg-brandblue/5 shadow-sm'
-            : 'border-transparent hover:border-gray-200 hover:bg-gray-50'
-        }`}
-      >
-        {/* Image Thumbnail */}
-        <div className="flex-shrink-0 w-14 h-14 rounded-lg overflow-hidden bg-gray-100 border border-gray-200">
-          {article.image ? (
-            <img
-              src={article.image}
-              alt={article.displayTitle}
-              className="w-full h-full object-cover"
-            />
-          ) : (
-            <div className="flex items-center justify-center h-full text-gray-400 text-xs">
-              {t('blogEdit.noImage')}
+        {/* Article list with simplified cards */}
+        <div className="space-y-3 max-h-[600px] overflow-y-auto pr-2 custom-scrollbar">
+          {isLoading ? (
+            <div className="text-center py-8">
+              <div className="animate-spin rounded-full h-8 w-8 border-b-2 border-blue-600 mx-auto"></div>
             </div>
+          ) : articles.length === 0 ? (
+            <div className="text-center py-8 text-gray-500">
+              {searchTerm || categoryFilter !== 'all'
+                ? t('blogEdit.noMatchingArticles')
+                : t('blogEdit.noArticlesAvailable')}
+            </div>
+          ) : (
+            articles.map((article) => (
+              <article
+                key={article.id}
+                onClick={() => !isLoading && onSelectArticle(article)}
+                className={`group flex items-center gap-4 p-4 rounded-xl cursor-pointer transition-all border ${selectedArticleId === article.id
+                    ? 'border-brandblue bg-brandblue/5 shadow-sm'
+                    : 'border-transparent hover:border-gray-200 hover:bg-gray-50'
+                  }`}
+              >
+                {/* Image Thumbnail */}
+                <div className="flex-shrink-0 w-14 h-14 rounded-lg overflow-hidden bg-gray-100 border border-gray-200">
+                  {article.image ? (
+                    <img
+                      sizes="(max-width: 768px) 50vw, 25vw"
+srcSet={article.image}
+                   
+                      alt={article.displayTitle}
+                      className="w-full h-full object-cover"
+                    />
+                  ) : (
+                    <div className="flex items-center justify-center h-full text-gray-400 text-xs">
+                      {t('blogEdit.noImage')}
+                    </div>
+                  )}
+                </div>
+
+                {/* Text content */}
+                <div className="flex-1 min-w-0">
+                  <h3 className="font-semibold text-gray-900 group-hover:text-brandblue line-clamp-2">
+                    {article.displayTitle}
+                  </h3>
+                  <div className="flex items-center gap-1 mt-1 text-sm text-gray-500">
+                    <FiCalendar size={12} />
+                    {new Date(article.date).toLocaleDateString()}
+                  </div>
+                </div>
+              </article>
+            ))
           )}
         </div>
-
-        {/* Text content */}
-        <div className="flex-1 min-w-0">
-          <h3 className="font-semibold text-gray-900 group-hover:text-brandblue line-clamp-2">
-            {article.displayTitle}
-          </h3>
-          <div className="flex items-center gap-1 mt-1 text-sm text-gray-500">
-            <FiCalendar size={12} />
-            {new Date(article.date).toLocaleDateString()}
-          </div>
-        </div>
-      </article>
-    ))
-  )}
-</div>
       </div>
     </div>
   );

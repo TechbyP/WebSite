@@ -309,7 +309,8 @@ const HeroPageEditor = () => {
                                 {selectedItem.image && (
                                     <div className="mb-8">
                                         <img
-                                            src={selectedItem.image}
+                                            sizes="(max-width: 768px) 50vw, 25vw"
+srcSet={selectedItem.image}
                                             alt="Slide preview"
                                             className="w-full h-96 object-cover rounded-xl shadow-md"
                                         />

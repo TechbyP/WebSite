@@ -290,7 +290,8 @@ const ArticleDetail = () => {
           <div className="flex items-center justify-between mb-8">
             <div className="flex items-center space-x-4">
               <img
-                src={article.author.avatar}
+                sizes="(max-width: 768px) 50vw, 25vw"
+srcSet={article.author.avatar}
                 alt={article.author.name}
                 className="w-12 h-12 rounded-full object-cover"
               />
@@ -304,7 +305,8 @@ const ArticleDetail = () => {
 
           <div className="relative rounded-xl overflow-hidden mb-8 h-96">
             <img
-              src={article.image}
+              sizes="(max-width: 768px) 50vw, 25vw"
+srcSet={article.image}
               alt={currentTitle}
               className="w-full h-full object-cover"
               loading="eager"
@@ -356,7 +358,8 @@ const ArticleDetail = () => {
                   >
                     <div className="relative h-40">
                       <img
-                        src={optimizeImageUrl(related.image)}
+                        sizes="(max-width: 768px) 50vw, 25vw"
+srcSet={optimizeImageUrl(related.image)}
                         alt={relatedTitle}
                         className="w-full h-full object-cover"
                         loading="lazy"

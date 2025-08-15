@@ -99,8 +99,8 @@ const Announcement = () => {
     return null;
   }
 
-  const currentContent = visibleAnnouncement.content[i18n.language as 'en' | 'de'] || 
-                        visibleAnnouncement.content.en;
+  const currentContent = visibleAnnouncement.content[i18n.language as 'en' | 'de'] ||
+    visibleAnnouncement.content.en;
 
   return (
     <AnimatePresence>
@@ -191,7 +191,8 @@ const Announcement = () => {
               {visibleAnnouncement.imageUrl && (
                 <div className="hidden md:block w-44 relative overflow-hidden">
                   <img
-                    src={visibleAnnouncement.imageUrl}
+                    sizes="(max-width: 768px) 50vw, 25vw"
+                    srcSet={visibleAnnouncement.imageUrl}
                     alt="Announcement visual"
                     className="w-full h-full object-cover"
                     loading="lazy"

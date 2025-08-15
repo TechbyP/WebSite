@@ -198,7 +198,8 @@ export const HeaderProvider: React.FC<{ children: React.ReactNode }> = ({ childr
                 className="cursor-pointer flex-shrink-0 min-w-[120px] md:min-w-[160px]"
               >
                 <img
-                  src={techbypLogo}
+                  sizes="(max-width: 768px) 50vw, 150px"
+                  srcSet={techbypLogo}
                   alt={t('header.logoAlt')}
                   className="h-8 md:h-14 object-contain transition duration-300 ease-in-out hover:scale-105"
                   draggable={false}
@@ -238,7 +239,7 @@ export const HeaderProvider: React.FC<{ children: React.ReactNode }> = ({ childr
                   {t('header.navigation.contact')}
                 </button>
 
-            
+
               </nav>
 
               <div className={`hidden ${viewportSize === 'lg' ? 'md:flex' : 'lg:flex'} items-center ml-4`}>
@@ -252,7 +253,7 @@ export const HeaderProvider: React.FC<{ children: React.ReactNode }> = ({ childr
                     {t('header.navigation.downloads')}
                   </span>
                 </button>
-                    {/* Enhanced Language Switcher - Desktop */}
+                {/* Enhanced Language Switcher - Desktop */}
                 <div className="relative ml-2">
                   <button
                     onClick={() => setLanguageDropdownOpen(!languageDropdownOpen)}
@@ -374,7 +375,7 @@ export const HeaderProvider: React.FC<{ children: React.ReactNode }> = ({ childr
 
                   {/* Enhanced Language Switcher - Mobile */}
                   <div className="w-full">
-                   
+
                     <select
                       id="language-select"
                       value={currentLanguage}

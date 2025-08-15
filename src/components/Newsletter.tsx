@@ -93,7 +93,8 @@ const TechByPClubModal = () => {
               {/* Left image */}
               <div className="hidden md:block md:w-1/2">
                 <img
-                  src={newsletter}
+                  sizes="(max-width: 768px) 50vw, 25vw"
+srcSet={newsletter}
                   alt={t('modal.imageAlt')}
                   className="h-full w-full object-cover"
                 />

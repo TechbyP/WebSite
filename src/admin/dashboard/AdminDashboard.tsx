@@ -730,7 +730,8 @@ const AdminDashboard = () => {
                 <aside className={`fixed inset-y-0 left-0 z-40 w-64 bg-white   light:bg-gray-800 shadow-xl transform ${isMobileMenuOpen ? 'translate-x-0' : '-translate-x-full'} lg:translate-x-0 transition-transform duration-300 ease-in-out border-r border-gray-200   light:border-gray-700`}>
                     <div className="flex flex-col h-full p-6">
                         <img
-                            src={Logo}
+                            srcSet={Logo}
+                            sizes="(max-width: 768px) 50vw, 25vw"
                             alt="Admin Portal"
                             className="w-96 h-16 mb-10 object-contain cursor-pointer transform transition-transform duration-300 hover:scale-110"
                             onClick={() => navigate("/")}
@@ -811,7 +812,7 @@ const AdminDashboard = () => {
                             <div className="p-4 bg-gray-50   light:bg-gray-700 rounded-xl mb-4 border border-gray-200   light:border-gray-600">
                                 <div className="flex items-center space-x-3">
                                     <div className="w-10 h-10 rounded-full bg-gradient-to-br from-brandblue/10 to-brandgreen/10   light:from-brandblue/20   light:to-brandgreen/20 flex items-center justify-center text-brandblue   light:text-brandblue-light font-semibold">
-                                        <img src={logo_small} alt="Small logo" className="w-6 h-6" />
+                                        <img srcSet={logo_small} alt="Small logo" className="w-6 h-6" />
                                     </div>
                                     <div>
                                         <p className="font-bold text-gray-900   light:text-gray-100 truncate max-w-[160px]">{displayName}</p>

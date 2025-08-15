@@ -166,7 +166,8 @@ export const PowerPacksStep = () => {
             >
               <div className="relative h-full w-24 flex-shrink-0">
                 <img
-                  src={product.image}
+                  sizes="(max-width: 768px) 50vw, 25vw"
+srcSet={product.image}
                   alt={t(`products.${product.id}.name`, product.name)}
                   className="w-full h-full object-cover"
                   loading="lazy"
@@ -217,7 +218,8 @@ export const PowerPacksStep = () => {
             >
               <div className="relative overflow-hidden h-48">
                 <img
-                  src={product.image}
+                  sizes="(max-width: 768px) 50vw, 25vw"
+srcSet={product.image}
                   alt={t(`products.${product.id}.name`, product.name)}
                   className="w-full h-full object-right object-cover group-hover:scale-110 transition-transform duration-300"
                   loading="lazy"

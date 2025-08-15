@@ -2,14 +2,18 @@ import React, { useEffect, useRef, useState } from "react";
 
 interface VideoSectionProps {
   videoId: string;
-  posterSrc: string;
+  posterSrc: string;       // fallback single URL
+  posterSrcSet?: string;   // optional srcSet
+  posterSizes?: string;    // optional sizes
   title?: string;
-  aspectRatio?: number; // width / height, e.g., 16/9
+  aspectRatio?: number;
 }
 
 const VideoSection: React.FC<VideoSectionProps> = ({
   videoId,
+  posterSizes,
   posterSrc,
+  posterSrcSet,
   title,
   aspectRatio = 16 / 9,
 }) => {
@@ -105,14 +109,24 @@ const VideoSection: React.FC<VideoSectionProps> = ({
           className={`absolute inset-0 z-20 transition-opacity duration-500 ${isOverlayVisible ? "opacity-100 pointer-events-auto" : "opacity-0 pointer-events-none"
             }`}
         >
-          <img
-            src={posterSrc}
-            alt={title || "Video poster"}
-            className="absolute inset-0 w-full h-full object-cover"
-            loading="lazy"
-            style={{ filter: "brightness(0.5)" }}
-          />
+          {/* Responsive Poster */}
+          <picture>
+            {posterSrcSet && posterSizes && (
+              <source type="image/webp" srcSet={posterSrcSet} sizes={posterSizes} />
+            )}
+            <img
+              src={posterSrc} // fallback single image
+              alt={title || "Video poster"}
+              className="absolute inset-0 w-full h-full object-cover"
+              loading="lazy"
+              style={{ filter: "brightness(0.5)" }}
+            />
+          </picture>
+
+          {/* Optional semi-transparent overlay */}
           <div className="absolute inset-0 bg-black/10" />
+
+          {/* Play button and title */}
           <button
             type="button"
             onClick={handlePlayClick}

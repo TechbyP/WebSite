@@ -588,7 +588,9 @@ const AnnouncementEditor = () => {
                       {currentAnnouncement.imageUrl && !imagePreview ? t('editor.currentImage') : t('editor.imagePreview')}
                     </div>
                     <img
-                      src={imagePreview || currentAnnouncement.imageUrl}
+                      sizes="(max-width: 768px) 50vw, 25vw"
+srcSet={imagePreview || currentAnnouncement.imageUrl}
+                       
                       alt="Preview"
                       className="w-full max-h-64 object-contain rounded-xl border-2 border-gray-200"
                     />

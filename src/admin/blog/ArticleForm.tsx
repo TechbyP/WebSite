@@ -285,7 +285,9 @@ const ArticleForm = ({
             {imageUrl && (
               <div className="mt-2">
                 <img
-                  src={imageUrl}
+                  sizes="(max-width: 768px) 50vw, 25vw"
+srcSet={imageUrl}
+                
                   alt="Article preview"
                   className="max-h-40 rounded-md"
                 />
@@ -343,7 +345,9 @@ const ArticleForm = ({
             {avatarUrl && (
               <div className="mb-2">
                 <img
-                  src={avatarUrl}
+                  sizes="(max-width: 768px) 50vw, 25vw"
+srcSet={avatarUrl}
+                  
                   alt="Author avatar preview"
                   className="w-16 h-16 rounded-full object-cover border-2 border-gray-300"
                 />

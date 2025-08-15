@@ -123,7 +123,9 @@ const ProductDetail = () => {
       <section className="relative h-screen flex items-center justify-center overflow-hidden">
         <div className="absolute inset-0 z-0">
           <img
-            src={heroImage}
+
+            srcSet={heroImage}
+             sizes="(max-width: 768px) 100vw, 50vw" // full width on mobile, half on desktop
             className="w-full h-full object-cover"
             loading="eager"
             decoding="async"
@@ -258,13 +260,15 @@ const ProductDetail = () => {
                       <VideoSection
                         videoId={heroVideo}
                         posterSrc={gallery[0]}
+                        posterSrcSet={gallery[0]}
+                        posterSizes="(max-width: 768px) 50vw, 50vw"
                         title={product.name}
-                        height={384}
                       />
                     ) : (
                       <>
                         <img
-                          src={gallery[currentImageIndex]}
+                         sizes="(max-width: 768px) 50vw, 50vw"
+                          srcSet={gallery[currentImageIndex]}
                           alt={`${product.name} - Image ${currentImageIndex + 1}`}
                           style={{ width: '100%', height: '384px', objectFit: 'cover', borderRadius: '0.5rem' }}
                           onClick={() => setShowImageToast(true)}
@@ -282,7 +286,8 @@ const ProductDetail = () => {
                               onClick={e => e.stopPropagation()}
                             >
                               <img
-                                src={gallery[currentImageIndex]}
+                                  sizes="(max-width: 768px) 50vw, 50vw"
+                                srcSet={gallery[currentImageIndex]}
                                 alt={`${product.name} - Full Image`}
                                 onError={(e) => handleImageError(e, defaultGalleryImage)}
                                 className="w-full h-auto max-h-[80vh] object-contain rounded-2xl"
@@ -314,62 +319,46 @@ const ProductDetail = () => {
                   </div>
                 </div>
 
-                <>
-                  <div className="flex items-center justify-between mb-4">
+                {/* Thumbnails */}
+                <div className="flex items-center justify-between mb-4">
+                  <button
+                    onClick={prevImage}
+                    className="p-2 bg-white rounded-full shadow-md hover:shadow-lg transition-shadow"
+                    aria-label={t('commons.previous')}
+                  >
+                    <ChevronLeft className="h-5 w-5 text-gray-600" />
+                  </button>
+                  <span className="text-sm text-gray-500">
+                    {t('commons.imageCounter', { current: currentImageIndex + 1, total: gallery.length })}
+                  </span>
+                  <button
+                    onClick={nextImage}
+                    className="p-2 bg-white rounded-full shadow-md hover:shadow-lg transition-shadow"
+                    aria-label={t('commons.next')}
+                  >
+                    <ChevronRight className="h-5 w-5 text-gray-600" />
+                  </button>
+                </div>
+
+                <div className="grid grid-cols-4 gap-2">
+                  {gallery.map((imgSrc, index) => (
                     <button
-                      onClick={prevImage}
-                      className="p-2 bg-white rounded-full shadow-md hover:shadow-lg transition-shadow"
-                      aria-label={t('commons.previous')}
+                      key={index}
+                      onClick={() => setCurrentImageIndex(index)}
+                      className={`aspect-square rounded-lg overflow-hidden ${index === currentImageIndex ? 'ring-2 ring-blue-600' : ''}`}
                     >
-                      <ChevronLeft className="h-5 w-5 text-gray-600" />
+                      <img
+                         sizes="(max-width: 768px) 20vw, 150px"
+                        srcSet={imgSrc}
+                        alt={t('commons.thumbnail', { number: index + 1 })}
+                        onError={(e) => handleImageError(e, defaultHeroImage)}
+                        className="w-full h-full object-cover hover:opacity-80 transition-opacity"
+                      />
                     </button>
-                    <span className="text-sm text-gray-500">
-                      {t('commons.imageCounter', { current: currentImageIndex + 1, total: gallery.length })}
-                    </span>
-                    <button
-                      onClick={nextImage}
-                      className="p-2 bg-white rounded-full shadow-md hover:shadow-lg transition-shadow"
-                      aria-label={t('commons.next')}
-                    >
-                      <ChevronRight className="h-5 w-5 text-gray-600" />
-                    </button>
-                  </div>
-
-                  <div className="grid grid-cols-4 gap-2">
-                    {gallery.map((gallery, index) => (
-                      <button
-                        key={index}
-                        onClick={() => setCurrentImageIndex(index)}
-                        className={`aspect-square rounded-lg overflow-hidden ${index === currentImageIndex ? 'ring-2 ring-blue-600' : ''}`}
-                      >
-                        <img
-                          src={gallery}
-                          alt={t('commons.thumbnail', { number: index + 1 })}
-                          onError={(e) => handleImageError(e, defaultHeroImage)}
-                          className="w-full h-full object-cover hover:opacity-80 transition-opacity"
-                        />
-                      </button>
-                    ))}
-                  </div>
-                </>
-
-                <div className="mt-8 mb-8">
-                  <h3 className="text-xl font-semibold text-black mb-4">{t('product.specsSmarts')}</h3>
-                  <div className="bg-gray-50 rounded-lg p-6">
-                    <div className="grid grid-cols-1 md:grid-cols-1 gap-4">
-                      {Object.entries(product.technicalSpecs).map(([key, value]) => (
-                        <div key={key} className="flex justify-between py-2 border-b border-gray-200 last:border-b-0">
-                          <span className="font-black uppercase text-brandblue">
-                            {currentLanguage === 'de' ? (keyTranslations[key] || key) : key}:
-                          </span>
-                          <span className="text-brandblue">{value}</span>
-                        </div>
-                      ))}
-                    </div>
-
-                  </div>
+                  ))}
                 </div>
               </div>
+
             </div>
 
             <div className="lg:hidden mt-12">
@@ -386,8 +375,10 @@ const ProductDetail = () => {
                     >
                       <div className="flex-shrink-0 w-16 h-16 rounded-lg overflow-hidden">
                         <img
-                          src={relatedHeroImage}
+                           sizes="(max-width: 768px) 20vw, 150px"
+                          srcSet={relatedHeroImage}
                           alt={relatedProduct.name}
+
                           className="w-full h-full object-cover"
                           onError={(e) => handleImageError(e, defaultHeroImage)}
                         />
@@ -423,8 +414,10 @@ const ProductDetail = () => {
                     >
                       <div className="flex-shrink-0 w-16 h-16 rounded-lg overflow-hidden">
                         <img
-                          src={relatedHeroImage}
+                           sizes="(max-width: 768px) 20vw, 150px"
+                          srcSet={relatedHeroImage}
                           alt={relatedProduct.name}
+
                           className="w-full h-full object-cover"
                           onError={(e) => handleImageError(e, defaultHeroImage)}
                         />

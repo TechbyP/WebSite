@@ -49,7 +49,9 @@ const ArticleView = ({ article, onEdit, onDelete, isLoading, language }: Article
       {article.image && (
         <div className="mb-8">
           <img
-            src={article.image}
+            sizes="(max-width: 768px) 50vw, 25vw"
+srcSet={article.image}
+           
             alt={currentContent.title}
             className="w-full h-96 object-cover rounded-xl shadow-md"
           />
@@ -70,7 +72,9 @@ const ArticleView = ({ article, onEdit, onDelete, isLoading, language }: Article
         <div className="flex items-center">
           {article.author.avatar && (
             <img
-              src={article.author.avatar}
+              sizes="(max-width: 768px) 50vw, 25vw"
+srcSet={article.author.avatar}
+            
               alt={article.author.name}
               className="w-16 h-16 rounded-full mr-4 border-4 border-brandblue"
             />

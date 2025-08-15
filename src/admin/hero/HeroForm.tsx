@@ -325,7 +325,8 @@ const HeroForm = ({ item, onSave, onCancel, isLoading, onImageUpload }: HeroForm
                 {imagePreview && (
                     <div className="mt-4">
                         <img
-                            src={imagePreview}
+                            sizes="(max-width: 768px) 50vw, 25vw"
+srcSet={imagePreview}
                             alt="Preview"
                             className="w-full h-64 object-cover rounded-xl shadow-md"
                         />

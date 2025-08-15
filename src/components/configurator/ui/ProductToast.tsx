@@ -32,7 +32,8 @@ const ProductToastContent = ({ product, t }: { product: Product; t: any }) => {
       {/* Image Section */}
       <div className="hidden md:block md:w-1/2">
         <img
-          src={getProductMediaFallbacks(product).heroImage}
+          sizes="(max-width: 768px) 50vw, 25vw"
+srcSet={getProductMediaFallbacks(product).heroImage}
           alt={product.name}
           onError={(e) => handleImageError(e, defaultHeroImage)}
           className="h-full w-full object-cover"

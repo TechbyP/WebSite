@@ -299,7 +299,8 @@ export const ChatWidget = React.memo(({ open, setOpen }: Props) => {
               layout
             >
               <motion.img
-                src={logo}
+                sizes="(max-width: 768px) 50vw, 25vw"
+srcSet={logo}
                 alt="Chat"
                 className="w-8 h-8"
                 animate={{
@@ -340,7 +341,8 @@ export const ChatWidget = React.memo(({ open, setOpen }: Props) => {
               animate={{ opacity: 1 }}
               transition={{ delay: 0.2 }}
             >
-              <img src={logo} alt="Chat" className="w-6 h-6" />
+              <img sizes="(max-width: 768px) 50vw, 25vw"
+srcSet={logo} alt="Chat" className="w-6 h-6" />
             </motion.span>
           </motion.div>
         )}
