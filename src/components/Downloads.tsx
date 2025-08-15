@@ -169,10 +169,10 @@ const FileDownloadPage = () => {
             <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
                 <div className="text-center mb-8">
                     <h2 className="text-3xl md:text-4xl font-black leading-tight text-black uppercase">
-                        {t('title')}
+                        {t('downloads.title')}
                     </h2>
                     <p className="text-xl md:text-base text-brandblue font-black">
-                        {t('subtitle')}
+                        {t('downloads.subtitle')}
                     </p>
                 </div>
 
@@ -216,7 +216,7 @@ const FileDownloadPage = () => {
                             <input
                                 type="text"
                                 className="block w-full pl-10 pr-3 py-2 border border-gray-300 rounded-md bg-white placeholder-gray-500 focus:outline-none focus:ring-2 focus:ring-brandgreen sm:text-sm"
-                                placeholder={t('search.placeholder')}
+                                placeholder={t('downloads.search.placeholder')}
                                 value={searchTerm}
                                 onChange={(e) => setSearchTerm(e.target.value)}
                             />
@@ -307,9 +307,9 @@ const FileDownloadPage = () => {
                         <div className="mx-auto flex items-center justify-center h-12 w-12 rounded-full bg-gray-100">
                             <File className="h-6 w-6 text-gray-400" />
                         </div>
-                        <h3 className="mt-2 text-lg font-medium text-gray-900">{t('empty.title')}</h3>
+                        <h3 className="mt-2 text-lg font-medium text-gray-900">{t('downloads.empty.title')}</h3>
                         <p className="mt-1 text-sm text-gray-500">
-                            {searchTerm ? t('empty.search') : t('empty.category')}
+                            {searchTerm ? t('downloads.empty.search') : t('downloads.empty.category')}
                         </p>
                     </div>
                 )}
