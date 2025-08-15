@@ -5,10 +5,10 @@
   "type": "module",
   "scripts": {
     "dev": "vite",
-    "lint": "eslint .",
     "build": "vite build",
     "prebuild": "node ./scripts/generate-sitemap.js",
-    "preview": "vite preview"
+    "preview": "vite preview",
+    "lint": "eslint \"src/**/*.{ts,tsx,js,jsx}\" --fix"
   },
   "dependencies": {
     "@emailjs/browser": "^4.4.1",
@@ -62,10 +62,13 @@
     "@types/react": "^18.3.5",
     "@types/react-dom": "^18.3.0",
     "@types/react-google-recaptcha": "^2.1.9",
+    "@typescript-eslint/eslint-plugin": "^8.39.1",
+    "@typescript-eslint/parser": "^8.39.1",
     "@vitejs/plugin-react": "^4.3.1",
-    "eslint": "^9.9.1",
+    "eslint": "^9.33.0",
     "eslint-plugin-react-hooks": "^5.1.0-rc.0",
     "eslint-plugin-react-refresh": "^0.4.11",
+    "eslint-plugin-unused-imports": "^4.1.4",
     "globals": "^15.9.0",
     "sitemap": "^8.0.0",
     "tailwindcss": "^3.4.1",

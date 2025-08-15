@@ -40,7 +40,7 @@ const SEOHealthCheck = () => {
       try {
         const foundIssues: SEOIssue[] = [];
         let totalPoints = 0;
-        let maxPoints = 6;
+        const maxPoints = 6;
 
         const currentURL = window.location.href;
 

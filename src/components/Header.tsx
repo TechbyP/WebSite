@@ -66,7 +66,7 @@ export const HeaderProvider: React.FC<{ children: React.ReactNode }> = ({ childr
     if (!ref.current) return;
 
     const observer = new ResizeObserver((entries) => {
-      for (let entry of entries) {
+      for (const entry of entries) {
         setHeight(entry.contentRect.height);
       }
     });
