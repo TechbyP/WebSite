@@ -1,7 +1,7 @@
 import React, { useState, useEffect, useCallback, useRef } from 'react';
 import { motion, useAnimation, AnimatePresence } from 'framer-motion';
 import { ChevronLeft, ChevronRight, ArrowRight, Play } from 'lucide-react';
-import Hero from '../assets/pictures/hero2.jpg?w=150;300;&format=webp;jpg&as=srcset';
+import Hero from '../assets/pictures/hero2.jpg';
 import { db } from '../firebase';
 import { collection, getDocs } from 'firebase/firestore';
 import { useTranslation } from 'react-i18next';
@@ -381,13 +381,14 @@ const CombinedHero = () => {
                     >
                         <div id='Hero' className="absolute inset-0 bg-black/40 overflow-hidden">
                             <img
-                                sizes="(max-width: 768px) 50vw, 25vw"
+                                sizes="(max-width: 768px) 100vw, 1280px"
                                 srcSet={currentItem.image}
-                                alt=""
+                                alt="TReliable,for Life."
+                                fetchpriority="high"
                                 className="w-full h-full object-cover select-none"
                                 style={{ objectPosition: 'center center' }}
                                 draggable="false"
-                                loading={currentIndex === 0 ? 'eager' : 'lazy'}
+                                loading= "eager" 
                             />
                             <div className="absolute inset-0 bg-gradient-to-r from-gray-900/80 via-gray-900/60 to-gray-900/40"></div>
                         </div>
@@ -453,17 +454,6 @@ const CombinedHero = () => {
                                                 <Play className="mr-2 h-4 w-4 sm:h-5 sm:w-5" />
                                                 {t('hero.home.ctaDemo')}
                                             </HomeScreenButton>
-                                            <button
-                                                onClick={(e) => {
-                                                    e.preventDefault();
-                                                    scrollToSection('products');
-                                                }}
-                                                className="hidden md:block absolute bottom-28 left-1/2 transform -translate-x-1/2 animate-bounce cursor-pointer"
-                                            >
-                                                <div className="w-6 h-10 border-2 border-white/30 rounded-full flex justify-center">
-                                                    <div className="w-1 h-3 bg-white/50 rounded-full mt-2"></div>
-                                                </div>
-                                            </button>
                                         </motion.div>
                                     </>
                                 ) : (
@@ -521,24 +511,9 @@ const CombinedHero = () => {
                                                     cta: getLocalizedContent(currentItem, 'cta'),
                                                     link: getLocalizedContent(currentItem, 'link')
                                                 }}
-
                                             />
-
                                         )}
-                                        <button
-                                            onClick={(e) => {
-                                                e.preventDefault();
-                                                scrollToSection('products');
-                                            }}
-                                            className="hidden md:block absolute bottom-28 left-1/2 transform -translate-x-1/2 animate-bounce cursor-pointer"
-                                        >
-                                            <div className="w-6 h-10 border-2 border-white/30 rounded-full flex justify-center">
-                                                <div className="w-1 h-3 bg-white/50 rounded-full mt-2"></div>
-                                            </div>
-                                        </button>
-
                                     </>
-
                                 )}
                             </div>
                         </div>

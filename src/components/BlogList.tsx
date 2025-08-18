@@ -2,11 +2,11 @@ import React, { useState, useEffect } from 'react';
 import { useNavigate } from 'react-router-dom';
 import { Search, ArrowRight, Clock, Bookmark } from 'lucide-react';
 import { motion, useAnimation, AnimatePresence, useInView } from 'framer-motion';
-import blog from '../assets/pictures/blog.jpg?w=150;300;&format=webp;jpg&as=srcset';
+import blog from '../assets/pictures/blog.jpg';
 import { Helmet } from 'react-helmet-async';
 import { db } from '../firebase';
 import { collection, getDocs, query, orderBy } from 'firebase/firestore';
-import { useTranslation, useI18next } from 'react-i18next';
+import { useTranslation} from 'react-i18next';
 
 interface Author {
   name: string;
@@ -177,8 +177,8 @@ const BlogList = () => {
         <div className="flex flex-row">
           <div className="w-1/3 relative">
             <img
-              sizes="(max-width: 768px) 100vw, 50vw"
-              srcSet={article.image}
+              sizes="(max-width: 768px) 50vw, 25vw"
+srcSet={article.image}
               alt={localized.title}
               className="w-full h-full object-cover"
               loading="lazy"
@@ -319,8 +319,8 @@ const BlogList = () => {
                 key={category}
                 onClick={() => setActiveCategory(category)}
                 className={`px-4 py-2 rounded-md text-sm font-black transition-colors ${activeCategory === category
-                  ? 'bg-brandgreen text-white'
-                  : 'border border-gray-200 hover:border-gray-300 text-gray-600 hover:text-brandgreen'
+                    ? 'bg-brandgreen text-white'
+                    : 'border border-gray-200 hover:border-gray-300 text-gray-600 hover:text-brandgreen'
                   }`}
                 whileHover={{ scale: 1.05 }}
                 whileTap={{ scale: 0.95 }}
@@ -346,7 +346,7 @@ const BlogList = () => {
                       <div className="relative h-64 lg:h-full">
                         <img
                           sizes="(max-width: 768px) 50vw, 25vw"
-                          srcSet={article.image}
+srcSet={article.image}
                           alt={localized.title}
                           className="w-full h-full object-cover"
                           loading="lazy"
@@ -409,7 +409,7 @@ const BlogList = () => {
                         <div className="relative h-48">
                           <img
                             sizes="(max-width: 768px) 50vw, 25vw"
-                            srcSet={article.image}
+srcSet={article.image}
                             alt={localized.title}
                             className="w-full h-full object-cover"
                             loading="lazy"
@@ -465,8 +465,8 @@ const BlogList = () => {
                     >
                       <div className="relative h-48 overflow-hidden">
                         <img
-                          sizes="(max-width: 768px) 50vw, 150px"
-                          srcSet={article.image}
+                          sizes="(max-width: 768px) 50vw, 25vw"
+srcSet={article.image}
                           alt={localized.title}
                           className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
                           loading="lazy"

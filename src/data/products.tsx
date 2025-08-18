@@ -4,99 +4,99 @@ import { useTranslation } from 'react-i18next';
 import { Product } from './types/products';
 
 
-import MP1_Hero from '../assets/MP-1.90/hero.jpg?w=150;300;&format=webp;jpg&as=srcset';
-import MP1_2 from '../assets/MP-1.90/2.jpg?w=150;300;&format=webp;jpg&as=srcset';
-import MP1_3 from '../assets/MP-1.90/3.jpg?w=150;300;&format=webp;jpg&as=srcset';
-import MP1_4 from '../assets/MP-1.90/4.jpg?w=150;300;&format=webp;jpg&as=srcset';
+import MP1_Hero from '../assets/MP-1.90/hero.jpg?w=150;480;768;1280&format=webp;jpg&as=srcset';
+import MP1_2 from '../assets/MP-1.90/2.jpg?w=150;480;768;1280&format=webp;jpg&as=srcset';
+import MP1_3 from '../assets/MP-1.90/3.jpg?w=150;480;768;1280&format=webp;jpg&as=srcset';
+import MP1_4 from '../assets/MP-1.90/4.jpg?w=150;480;768;1280&format=webp;jpg&as=srcset';
 
-import MP2_Hero from '../assets/MP-2.60/hero.jpg?w=150;300;&format=webp;jpg&as=srcset';
-import MP2_1 from '../assets/MP-2.60/1.jpg?w=150;300;&format=webp;jpg&as=srcset';
-import MP2_2 from '../assets/MP-2.60/2.jpg?w=150;300;&format=webp;jpg&as=srcset';
-import MP2_3 from '../assets/MP-2.60/3.jpg?w=150;300;&format=webp;jpg&as=srcset';
-import MP2_4 from '../assets/MP-2.60/4.jpg?w=150;300;&format=webp;jpg&as=srcset';
+import MP2_Hero from '../assets/MP-2.60/hero.jpg?w=150;480;768;1280&format=webp;jpg&as=srcset';
+import MP2_1 from '../assets/MP-2.60/1.jpg?w=150;480;768;1280&format=webp;jpg&as=srcset';
+import MP2_2 from '../assets/MP-2.60/2.jpg?w=150;480;768;1280&format=webp;jpg&as=srcset';
+import MP2_3 from '../assets/MP-2.60/3.jpg?w=150;480;768;1280&format=webp;jpg&as=srcset';
+import MP2_4 from '../assets/MP-2.60/4.jpg?w=150;480;768;1280&format=webp;jpg&as=srcset';
 
-import MP3_Hero from '../assets/MP-3.90/hero.jpg?w=150;300;&format=webp;jpg&as=srcset';
-import MP3_1 from '../assets/MP-3.90/1.jpg?w=150;300;&format=webp;jpg&as=srcset';
-import MP3_2 from '../assets/MP-3.90/2.jpg?w=150;300;&format=webp;jpg&as=srcset';
-import MP3_3 from '../assets/MP-3.90/3.jpg?w=150;300;&format=webp;jpg&as=srcset';
-import MP3_4 from '../assets/MP-3.90/4.jpg?w=150;300;&format=webp;jpg&as=srcset';
+import MP3_Hero from '../assets/MP-3.90/hero.jpg?w=150;480;768;1280&format=webp;jpg&as=srcset';
+import MP3_1 from '../assets/MP-3.90/1.jpg?w=150;480;768;1280&format=webp;jpg&as=srcset';
+import MP3_2 from '../assets/MP-3.90/2.jpg?w=150;480;768;1280&format=webp;jpg&as=srcset';
+import MP3_3 from '../assets/MP-3.90/3.jpg?w=150;480;768;1280&format=webp;jpg&as=srcset';
+import MP3_4 from '../assets/MP-3.90/4.jpg?w=150;480;768;1280&format=webp;jpg&as=srcset';
 
-import MP4_Hero from '../assets/MP-4.100/hero.jpg?w=150;300;&format=webp;jpg&as=srcset';
-import MP4_2 from '../assets/MP-4.100/2.jpg?w=150;300;&format=webp;jpg&as=srcset';
-import MP4_3 from '../assets/MP-4.100/3.jpg?w=150;300;&format=webp;jpg&as=srcset';
-import MP4_4 from '../assets/MP-4.100/4.jpg?w=150;300;&format=webp;jpg&as=srcset';
+import MP4_Hero from '../assets/MP-4.100/hero.jpg?w=150;480;768;1280&format=webp;jpg&as=srcset';
+import MP4_2 from '../assets/MP-4.100/2.jpg?w=150;480;768;1280&format=webp;jpg&as=srcset';
+import MP4_3 from '../assets/MP-4.100/3.jpg?w=150;480;768;1280&format=webp;jpg&as=srcset';
+import MP4_4 from '../assets/MP-4.100/4.jpg?w=150;480;768;1280&format=webp;jpg&as=srcset';
 
-import DE_Hero from '../assets/DE-1.30/hero.jpg?w=150;300;&format=webp;jpg&as=srcset';
-import DE_1 from '../assets/DE-1.30/1.jpg?w=150;300;&format=webp;jpg&as=srcset';
-import DE_2 from '../assets/DE-1.30/2.jpg?w=150;300;&format=webp;jpg&as=srcset';
-import DE_3 from '../assets/DE-1.30/3.jpg?w=150;300;&format=webp;jpg&as=srcset';
+import DE_Hero from '../assets/DE-1.30/hero.jpg?w=150;480;768;1280&format=webp;jpg&as=srcset';
+import DE_1 from '../assets/DE-1.30/1.jpg?w=150;480;768;1280&format=webp;jpg&as=srcset';
+import DE_2 from '../assets/DE-1.30/2.jpg?w=150;480;768;1280&format=webp;jpg&as=srcset';
+import DE_3 from '../assets/DE-1.30/3.jpg?w=150;480;768;1280&format=webp;jpg&as=srcset';
 
-import DH_Hero from '../assets/DH-1.30/Hero.jpg?w=150;300;&format=webp;jpg&as=srcset';
-import DH_1 from '../assets/DH-1.30/1.jpg?w=150;300;&format=webp;jpg&as=srcset';
-import DH_2 from '../assets/DH-1.30/2.jpg?w=150;300;&format=webp;jpg&as=srcset';
-import DH_3 from '../assets/DH-1.30/3.jpg?w=150;300;&format=webp;jpg&as=srcset';
+import DH_Hero from '../assets/DH-1.30/Hero.jpg?w=150;480;768;1280&format=webp;jpg&as=srcset';
+import DH_1 from '../assets/DH-1.30/1.jpg?w=150;480;768;1280&format=webp;jpg&as=srcset';
+import DH_2 from '../assets/DH-1.30/2.jpg?w=150;480;768;1280&format=webp;jpg&as=srcset';
+import DH_3 from '../assets/DH-1.30/3.jpg?w=150;480;768;1280&format=webp;jpg&as=srcset';
 
-import BOPROB_Hero from '../assets/BOPROB_III/Hero.jpg?w=150;300;&format=webp;jpg&as=srcset';
-import BOPROB_2 from '../assets/BOPROB_III/2.jpg?w=150;300;&format=webp;jpg&as=srcset';
-import BOPROB_3 from '../assets/BOPROB_III/3.jpg?w=150;300;&format=webp;jpg&as=srcset';
-import BOPROB_4 from '../assets/BOPROB_III/4.jpg?w=150;300;&format=webp;jpg&as=srcset';
+import BOPROB_Hero from '../assets/BOPROB_III/Hero.jpg?w=150;480;768;1280&format=webp;jpg&as=srcset';
+import BOPROB_2 from '../assets/BOPROB_III/2.jpg?w=150;480;768;1280&format=webp;jpg&as=srcset';
+import BOPROB_3 from '../assets/BOPROB_III/3.jpg?w=150;480;768;1280&format=webp;jpg&as=srcset';
+import BOPROB_4 from '../assets/BOPROB_III/4.jpg?w=150;480;768;1280&format=webp;jpg&as=srcset';
 
-import LayDown_Hero from '../assets/Frames/Laydown/Hero.jpg?w=150;300;&format=webp;jpg&as=srcset';
-import LayDown_1 from '../assets/Frames/Laydown/1.jpg?w=150;300;&format=webp;jpg&as=srcset';
-import LayDown_2 from '../assets/Frames/Laydown/2.jpg?w=150;300;&format=webp;jpg&as=srcset';
-import LayDown_3 from '../assets/Frames/Laydown/3.jpg?w=150;300;&format=webp;jpg&as=srcset';
+import LayDown_Hero from '../assets/Frames/Laydown/Hero.jpg?w=150;480;768;1280&format=webp;jpg&as=srcset';
+import LayDown_1 from '../assets/Frames/Laydown/1.jpg?w=150;480;768;1280&format=webp;jpg&as=srcset';
+import LayDown_2 from '../assets/Frames/Laydown/2.jpg?w=150;480;768;1280&format=webp;jpg&as=srcset';
+import LayDown_3 from '../assets/Frames/Laydown/3.jpg?w=150;480;768;1280&format=webp;jpg&as=srcset';
 
-import TPH_Hero from '../assets/Frames/Three-point/Hero.jpg?w=150;300;&format=webp;jpg&as=srcset';
-import TPH_1 from '../assets/Frames/Three-point/1.jpg?w=150;300;&format=webp;jpg&as=srcset';
-import TPH_2 from '../assets/Frames/Three-point/2.jpg?w=150;300;&format=webp;jpg&as=srcset';
-import TPH_3 from '../assets/Frames/Three-point/3.jpg?w=150;300;&format=webp;jpg&as=srcset';
-import TPH_4 from '../assets/Frames/Three-point/4.jpg?w=150;300;&format=webp;jpg&as=srcset';
+import TPH_Hero from '../assets/Frames/Three-point/Hero.jpg?w=150;480;768;1280&format=webp;jpg&as=srcset';
+import TPH_1 from '../assets/Frames/Three-point/1.jpg?w=150;480;768;1280&format=webp;jpg&as=srcset';
+import TPH_2 from '../assets/Frames/Three-point/2.jpg?w=150;480;768;1280&format=webp;jpg&as=srcset';
+import TPH_3 from '../assets/Frames/Three-point/3.jpg?w=150;480;768;1280&format=webp;jpg&as=srcset';
+import TPH_4 from '../assets/Frames/Three-point/4.jpg?w=150;480;768;1280&format=webp;jpg&as=srcset';
 
-import FC_Hero from '../assets/Frames/Full-Conversion/Hero.jpg?w=150;300;&format=webp;jpg&as=srcset';
-import FC_1 from '../assets/Frames/Full-Conversion/1.jpg?w=150;300;&format=webp;jpg&as=srcset';
-import FC_2 from '../assets/Frames/Full-Conversion/2.jpg?w=150;300;&format=webp;jpg&as=srcset';
-import FC_3 from '../assets/Frames/Full-Conversion/3.jpg?w=150;300;&format=webp;jpg&as=srcset';
+import FC_Hero from '../assets/Frames/Full-Conversion/Hero.jpg?w=150;480;768;1280&format=webp;jpg&as=srcset';
+import FC_1 from '../assets/Frames/Full-Conversion/1.jpg?w=150;480;768;1280&format=webp;jpg&as=srcset';
+import FC_2 from '../assets/Frames/Full-Conversion/2.jpg?w=150;480;768;1280&format=webp;jpg&as=srcset';
+import FC_3 from '../assets/Frames/Full-Conversion/3.jpg?w=150;480;768;1280&format=webp;jpg&as=srcset';
 
-import Trailer_Hero from '../assets/Trailers/Hero.jpg?w=150;300;&format=webp;jpg&as=srcset';
-import Trailer_1 from '../assets/Trailers/1.jpg?w=150;300;&format=webp;jpg&as=srcset';
-import Trailer_2 from '../assets/Trailers/2.jpg?w=150;300;&format=webp;jpg&as=srcset';
-import Trailer_3 from '../assets/Trailers/3.jpg?w=150;300;&format=webp;jpg&as=srcset';
+import Trailer_Hero from '../assets/Trailers/Hero.jpg?w=150;480;768;1280&format=webp;jpg&as=srcset';
+import Trailer_1 from '../assets/Trailers/1.jpg?w=150;480;768;1280&format=webp;jpg&as=srcset';
+import Trailer_2 from '../assets/Trailers/2.jpg?w=150;480;768;1280&format=webp;jpg&as=srcset';
+import Trailer_3 from '../assets/Trailers/3.jpg?w=150;480;768;1280&format=webp;jpg&as=srcset';
 
-import PP_Hero from '../assets/Powerpacks/Hero.jpg?w=150;300;&format=webp;jpg&as=srcset';
-import PP_1 from '../assets/Powerpacks/1.jpg?w=150;300;&format=webp;jpg&as=srcset';
-import PP_2 from '../assets/Powerpacks/2.jpg?w=150;300;&format=webp;jpg&as=srcset';
-import PP_3 from '../assets/Powerpacks/3.jpg?w=150;300;&format=webp;jpg&as=srcset';
-import PP_4 from '../assets/Powerpacks/4.jpg?w=150;300;&format=webp;jpg&as=srcset';
-import PP_5 from '../assets/Powerpacks/5.jpg?w=150;300;&format=webp;jpg&as=srcset';
-import PP_6 from '../assets/Powerpacks/6.jpg?w=150;300;&format=webp;jpg&as=srcset';
-import PP_7 from '../assets/Powerpacks/7.jpg?w=150;300;&format=webp;jpg&as=srcset';
+import PP_Hero from '../assets/Powerpacks/Hero.jpg?w=150;480;768;1280&format=webp;jpg&as=srcset';
+import PP_1 from '../assets/Powerpacks/1.jpg?w=150;480;768;1280&format=webp;jpg&as=srcset';
+import PP_2 from '../assets/Powerpacks/2.jpg?w=150;480;768;1280&format=webp;jpg&as=srcset';
+import PP_3 from '../assets/Powerpacks/3.jpg?w=150;480;768;1280&format=webp;jpg&as=srcset';
+import PP_4 from '../assets/Powerpacks/4.jpg?w=150;480;768;1280&format=webp;jpg&as=srcset';
+import PP_5 from '../assets/Powerpacks/5.jpg?w=150;480;768;1280&format=webp;jpg&as=srcset';
+import PP_6 from '../assets/Powerpacks/6.jpg?w=150;480;768;1280&format=webp;jpg&as=srcset';
+import PP_7 from '../assets/Powerpacks/7.jpg?w=150;480;768;1280&format=webp;jpg&as=srcset';
 
-import SpareParts_Hero from '../assets/SpareParts/Hero.jpg?w=150;300;&format=webp;jpg&as=srcset';
-import SpareParts_2 from '../assets/SpareParts/2.jpg?w=150;300;&format=webp;jpg&as=srcset';
-import SpareParts_3 from '../assets/SpareParts/3.jpg?w=150;300;&format=webp;jpg&as=srcset';
-import SpareParts_4 from '../assets/SpareParts/4.jpg?w=150;300;&format=webp;jpg&as=srcset';
+import SpareParts_Hero from '../assets/SpareParts/Hero.jpg?w=150;480;768;1280&format=webp;jpg&as=srcset';
+import SpareParts_2 from '../assets/SpareParts/2.jpg?w=150;480;768;1280&format=webp;jpg&as=srcset';
+import SpareParts_3 from '../assets/SpareParts/3.jpg?w=150;480;768;1280&format=webp;jpg&as=srcset';
+import SpareParts_4 from '../assets/SpareParts/4.jpg?w=150;480;768;1280&format=webp;jpg&as=srcset';
 
-import CB_Hero from '../assets/CoolBox/Hero.jpg?w=150;300;&format=webp;jpg&as=srcset';
-import CB_1 from '../assets/CoolBox/1.jpg?w=150;300;&format=webp;jpg&as=srcset';
-import CB_2 from '../assets/CoolBox/2.jpg?w=150;300;&format=webp;jpg&as=srcset';
-import CB_3 from '../assets/CoolBox/3.jpg?w=150;300;&format=webp;jpg&as=srcset';
+import CB_Hero from '../assets/CoolBox/Hero.jpg?w=150;480;768;1280&format=webp;jpg&as=srcset';
+import CB_1 from '../assets/CoolBox/1.jpg?w=150;480;768;1280&format=webp;jpg&as=srcset';
+import CB_2 from '../assets/CoolBox/2.jpg?w=150;480;768;1280&format=webp;jpg&as=srcset';
+import CB_3 from '../assets/CoolBox/3.jpg?w=150;480;768;1280&format=webp;jpg&as=srcset';
 
-import LED_Hero from '../assets/LEDLights/Hero.jpg?w=150;300;&format=webp;jpg&as=srcset';
-import LED_1 from '../assets/LEDLights/1.jpg?w=150;300;&format=webp;jpg&as=srcset';
-import LED_2 from '../assets/LEDLights/2.jpg?w=150;300;&format=webp;jpg&as=srcset';
-import LED_3 from '../assets/LEDLights/3.jpg?w=150;300;&format=webp;jpg&as=srcset';
+import LED_Hero from '../assets/LEDLights/Hero.jpg?w=150;480;768;1280&format=webp;jpg&as=srcset';
+import LED_1 from '../assets/LEDLights/1.jpg?w=150;480;768;1280&format=webp;jpg&as=srcset';
+import LED_2 from '../assets/LEDLights/2.jpg?w=150;480;768;1280&format=webp;jpg&as=srcset';
+import LED_3 from '../assets/LEDLights/3.jpg?w=150;480;768;1280&format=webp;jpg&as=srcset';
 
-import EC_Hero from '../assets/Ext_Camera/Hero.jpg?w=150;300;&format=webp;jpg&as=srcset';
-import EC_1 from '../assets/Ext_Camera/1.jpg?w=150;300;&format=webp;jpg&as=srcset';
-import EC_2 from '../assets/Ext_Camera/2.jpg?w=150;300;&format=webp;jpg&as=srcset';
-import EC_3 from '../assets/Ext_Camera/3.jpg?w=150;300;&format=webp;jpg&as=srcset';
+import EC_Hero from '../assets/Ext_Camera/Hero.jpg?w=150;480;768;1280&format=webp;jpg&as=srcset';
+import EC_1 from '../assets/Ext_Camera/1.jpg?w=150;480;768;1280&format=webp;jpg&as=srcset';
+import EC_2 from '../assets/Ext_Camera/2.jpg?w=150;480;768;1280&format=webp;jpg&as=srcset';
+import EC_3 from '../assets/Ext_Camera/3.jpg?w=150;480;768;1280&format=webp;jpg&as=srcset';
 
-import MD_Hero from '../assets/ManualDrills/Hero.jpg?w=150;300;&format=webp;jpg&as=srcset';
-import MD_1 from '../assets/ManualDrills/1.jpg?w=150;300;&format=webp;jpg&as=srcset';
-import MD_2 from '../assets/ManualDrills/2.jpg?w=150;300;&format=webp;jpg&as=srcset';
-import MD_3 from '../assets/ManualDrills/3.jpg?w=150;300;&format=webp;jpg&as=srcset';
+import MD_Hero from '../assets/ManualDrills/Hero.jpg?w=150;480;768;1280&format=webp;jpg&as=srcset';
+import MD_1 from '../assets/ManualDrills/1.jpg?w=150;480;768;1280&format=webp;jpg&as=srcset';
+import MD_2 from '../assets/ManualDrills/2.jpg?w=150;480;768;1280&format=webp;jpg&as=srcset';
+import MD_3 from '../assets/ManualDrills/3.jpg?w=150;480;768;1280&format=webp;jpg&as=srcset';
 
-import H_Hero from '../assets/Hammers/Hero.png?w=150;300;&format=webp;jpg&as=srcset';
+import H_Hero from '../assets/Hammers/Hero.png?w=150;480;768;1280&format=webp;jpg&as=srcset';
 
 // import MP1_Hero from '../assets/MP-1.90/hero.jpg';
 // import MP1_2 from '../assets/MP-1.90/2.jpg';

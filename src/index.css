@@ -9,6 +9,7 @@ html,
 body {
   width: 100%;
   font-family: 'Gin', sans-serif;
+  font-display: swap;
 }
 
 @keyframes pulse-scale {
@@ -194,7 +195,7 @@ body {
 }
 
 /* For HTML content from RichTextEditor */
-.first-paragraph-with-dropcap > p:first-of-type:first-letter {
+.first-paragraph-with-dropcap>p:first-of-type:first-letter {
   font-size: 4.5rem;
   float: left;
   line-height: 0.8;

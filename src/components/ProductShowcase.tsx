@@ -386,7 +386,7 @@ const ProductCard = React.forwardRef<HTMLDivElement, ProductCardProps>(
             {/* Image on left */}
             <div className="w-1/3 relative">
               <img
-                sizes="(max-width: 768px) 20vw,300x"
+                sizes="(max-width: 768px) 20vw, 150px"
                 srcSet={heroImage}
                 alt={product.name}
 
@@ -517,10 +517,10 @@ const ProductCard = React.forwardRef<HTMLDivElement, ProductCardProps>(
       >
         <div className="relative overflow-hidden">
           <img
-            sizes="(max-width: 768px) 50vw, 20vw"
+
             srcSet={heroImage}
             alt={product.name}
-
+            sizes="(max-width: 768px) 50vw, 480px"
             className="w-full h-48 object-cover group-hover:scale-110 transition-transform duration-300"
             loading="lazy"
           />

@@ -62,7 +62,7 @@ const FileDownloadPage = () => {
     useEffect(() => {
         fetch('/file-metadata.json')
             .then(res => {
-                if (!res.ok) throw new Error(t('error.fetchFailed'));
+                if (!res.ok) throw new Error(t('downloads.error.fetchFailed'));
                 return res.json();
             })
             .then(data => {
@@ -151,16 +151,16 @@ const FileDownloadPage = () => {
         setSelectedFile(file);
     };
 
-    if (loading) return <div className="text-center py-12">{t('loading')}</div>;
-    if (error) return <div className="text-center py-12 text-red-500">{t('error.title')}: {error}</div>;
+    if (loading) return <div className="text-center py-12">{t('downloads.loading')}</div>;
+    if (error) return <div className="text-center py-12 text-red-500">{t('downloads.error.title')}: {error}</div>;
 
     return (
         <section className="py-12 bg-gray-50 min-h-screen">
             <Helmet>
-                <title>{t('meta.title')}</title>
-                <meta name="description" content={t('meta.description')} />
-                <meta property="og:title" content={t('meta.title')} />
-                <meta property="og:description" content={t('meta.description')} />
+                <title>{t('downloads.meta.title')}</title>
+                <meta name="description" content={t('downloads.meta.description')} />
+                <meta property="og:title" content={t('downloads.meta.title')} />
+                <meta property="og:description" content={t('downloads.meta.description')} />
                 <meta property="og:type" content="website" />
                 <meta property="og:url" content="https://www.techbyp.com/downloads" />
                 <meta property="og:image" content={SiteImage} />
@@ -169,10 +169,10 @@ const FileDownloadPage = () => {
             <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
                 <div className="text-center mb-8">
                     <h2 className="text-3xl md:text-4xl font-black leading-tight text-black uppercase">
-                        {t('title')}
+                        {t('downloads.title')}
                     </h2>
                     <p className="text-xl md:text-base text-brandblue font-black">
-                        {t('subtitle')}
+                        {t('downloads.subtitle')}
                     </p>
                 </div>
 
@@ -216,7 +216,7 @@ const FileDownloadPage = () => {
                             <input
                                 type="text"
                                 className="block w-full pl-10 pr-3 py-2 border border-gray-300 rounded-md bg-white placeholder-gray-500 focus:outline-none focus:ring-2 focus:ring-brandgreen sm:text-sm"
-                                placeholder={t('search.placeholder')}
+                                placeholder={t('downloads.search.placeholder')}
                                 value={searchTerm}
                                 onChange={(e) => setSearchTerm(e.target.value)}
                             />
@@ -293,7 +293,7 @@ const FileDownloadPage = () => {
                                         className="inline-flex items-center px-3 py-2 rounded-md text-sm font-medium text-white bg-brandblue hover:bg-brandgreen"
                                     >
                                         <Download className="-ml-0.5 mr-2 h-4 w-4" />
-                                        {t('download')}
+                                        {t('downloads.download')}
                                     </button>
                                 </div>
                             </div>
@@ -307,9 +307,9 @@ const FileDownloadPage = () => {
                         <div className="mx-auto flex items-center justify-center h-12 w-12 rounded-full bg-gray-100">
                             <File className="h-6 w-6 text-gray-400" />
                         </div>
-                        <h3 className="mt-2 text-lg font-medium text-gray-900">{t('empty.title')}</h3>
+                        <h3 className="mt-2 text-lg font-medium text-gray-900">{t('downloads.empty.title')}</h3>
                         <p className="mt-1 text-sm text-gray-500">
-                            {searchTerm ? t('empty.search') : t('empty.category')}
+                            {searchTerm ? t('downloads.empty.search') : t('downloads.empty.category')}
                         </p>
                     </div>
                 )}
@@ -359,14 +359,14 @@ const FileDownloadPage = () => {
                                                 download={selectedFile.name}
                                                 className="inline-flex items-center px-3 py-1 border border-gray-300 shadow-sm text-sm font-medium rounded-md text-gray-700 bg-white hover:bg-gray-50 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-brandgreen"
                                             >
-                                                {t('download')}
+                                                {t('downloads.download')}
                                             </a>
                                             <button
                                                 type="button"
                                                 className="p-1 text-gray-400 hover:text-gray-500 focus:outline-none"
                                                 onClick={() => setSelectedFile(null)}
                                             >
-                                                <span className="sr-only">{t('close')}</span>
+                                                <span className="sr-only">{t('downloads.close')}</span>
                                                 <XMarkIcon className="h-6 w-6" />
                                             </button>
                                         </div>
@@ -401,7 +401,7 @@ srcSet={selectedFile.previewUrl}
                                                 >
                                                     <source sizes="(max-width: 768px) 50vw, 25vw"
 srcSet={selectedFile.previewUrl} type={`video/${selectedFile.type}`} />
-                                                    {t('videoNotSupported')}
+                                                    {t('downloads.videoNotSupported')}
                                                 </video>
                                             </div>
                                         )}

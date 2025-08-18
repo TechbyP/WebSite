@@ -99,8 +99,8 @@ const Announcement = () => {
     return null;
   }
 
-  const currentContent = visibleAnnouncement.content[i18n.language as 'en' | 'de'] ||
-    visibleAnnouncement.content.en;
+  const currentContent = visibleAnnouncement.content[i18n.language as 'en' | 'de'] || 
+                        visibleAnnouncement.content.en;
 
   return (
     <AnimatePresence>
@@ -110,7 +110,7 @@ const Announcement = () => {
           animate={{ opacity: 1, y: 0 }}
           exit={{ opacity: 0, y: 20 }}
           transition={{ type: 'spring', damping: 25, stiffness: 300 }}
-          className="fixed bottom-4 right-4 z-50 w-full max-w-md"
+          className="fixed bottom-20  z-50 w-full max-w-md "
         >
           <div className="relative bg-gradient-to-r from-gray-900/95 via-gray-900/90 to-gray-900/85 rounded-xl overflow-hidden shadow-2xl border border-white/10 backdrop-blur-sm">
             <button
@@ -192,7 +192,7 @@ const Announcement = () => {
                 <div className="hidden md:block w-44 relative overflow-hidden">
                   <img
                     sizes="(max-width: 768px) 50vw, 25vw"
-                    srcSet={visibleAnnouncement.imageUrl}
+srcSet={visibleAnnouncement.imageUrl}
                     alt="Announcement visual"
                     className="w-full h-full object-cover"
                     loading="lazy"
