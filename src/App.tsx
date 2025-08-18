@@ -60,18 +60,18 @@ const loadGoogleAnalytics = () => {
 };
 
 // Log pageviews to Firebase
-const trackPageView = async (path: string) => {
-  try {
-    await addDoc(collection(db, 'analytics'), {
-      event: 'page_view',
-      timestamp: new Date(),
-      path,
-      userAgent: navigator.userAgent,
-    });
-  } catch (error) {
-    console.error('Failed to log page view:', error);
-  }
-};
+// const trackPageView = async (path: string) => {
+//   try {
+//     await addDoc(collection(db, 'analytics'), {
+//       event: 'page_view',
+//       timestamp: new Date(),
+//       path,
+//       userAgent: navigator.userAgent,
+//     });
+//   } catch (error) {
+//     console.error('Failed to log page view:', error);
+//   }
+// };
 
 function App() {
   const [chatOpen, setChatOpen] = useState(false);
@@ -94,13 +94,12 @@ function App() {
   }, []);
 
   // Track SPA pageviews (Firebase + GA)
-  useEffect(() => {
-    trackPageView(location.pathname);
+useEffect(() => {
+  if ((window as any).gtag && Cookies.get(COOKIE_CONSENT_NAME) === 'accepted') {
+    (window as any).gtag('event', 'page_view', { page_path: location.pathname });
+  }
+}, [location.pathname]);
 
-    if ((window as any).gtag && Cookies.get(COOKIE_CONSENT_NAME) === 'accepted') {
-      (window as any).gtag('event', 'page_view', { page_path: location.pathname });
-    }
-  }, [location.pathname]);
 
   // Scroll behavior for homepage
   useEffect(() => {

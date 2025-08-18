@@ -62,11 +62,11 @@ export const ProgressBar = ({ steps, currentStepIndex }: ProgressBarProps) => {
           ? `${t('progress.gear')} ${configuration.mountingMethod.charAt(0).toUpperCase()}${configuration.mountingMethod.slice(1)}`
           : t('progress.notSelected');
       case 'vehicle-mounting':
-        return configuration.vehicleMountingType
-          ? `${t('progress.car')} ${configuration.vehicleMountingType.split('-').map(word =>
-            word.charAt(0).toUpperCase() + word.slice(1)
-          ).join(' ')}`
-          : t('progress.notSelected');
+        if (configuration.vehicleMountingType) {
+          const mountingProduct = configuration.products?.find(p => p.id === configuration.vehicleMountingType);
+          return `${t('progress.car')} ${mountingProduct?.name || configuration.vehicleMountingType}`;
+        }
+        return t('progress.notSelected');
       case 'powerpacks':
         return configuration.powerpackType
           ? t('progress.powerPackSelected')

@@ -110,7 +110,7 @@ const Announcement = () => {
           animate={{ opacity: 1, y: 0 }}
           exit={{ opacity: 0, y: 20 }}
           transition={{ type: 'spring', damping: 25, stiffness: 300 }}
-          className="fixed bottom-20  z-50 w-full max-w-md "
+          className="fixed bottom-20 sm:right-4 z-50 w-full max-w-md "
         >
           <div className="relative bg-gradient-to-r from-gray-900/95 via-gray-900/90 to-gray-900/85 rounded-xl overflow-hidden shadow-2xl border border-white/10 backdrop-blur-sm">
             <button

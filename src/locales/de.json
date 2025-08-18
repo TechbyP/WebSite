@@ -1,59 +1,51 @@
-
-
-
-
-
-{ 
-  "termsOfService":{
- "back": "Zurück",
-  "title": "Nutzungsbedingungen",
-  "intro": {
-    "text1": "Diese Nutzungsbedingungen gelten für alle Angebote von",
-    "company": "Bodenprobetechnik Peters GmbH",
-    "address": "Am Fliegerhorst 11, 49610 Quakenbrück, Deutschland („wir“, „uns“, „unser“)"
-  },
-  "sections": {
-    "1": {
-      "title": "1. Akzeptanz der Bedingungen",
-      "text": "Durch den Zugriff auf oder die Nutzung der TechByP-Website und -Dienste erklären Sie sich mit diesen Nutzungsbedingungen einverstanden. Wenn Sie nicht einverstanden sind, nutzen Sie bitte unsere Dienste nicht."
+{
+  "termsOfService": {
+    "back": "Zurück",
+    "title": "Nutzungsbedingungen",
+    "intro": {
+      "text1": "Diese Nutzungsbedingungen gelten für alle Angebote von",
+      "company": "Bodenprobetechnik Peters GmbH",
+      "address": "Am Fliegerhorst 11, 49610 Quakenbrück, Deutschland („wir“, „uns“, „unser“)"
     },
-    "2": {
-      "title": "2. Nutzung der Dienste",
-      "text": "Sie dürfen unsere Website und Dienste nur für rechtmäßige Zwecke und in Übereinstimmung mit diesen Bedingungen nutzen. Sie erklären sich damit einverstanden, Folgendes nicht zu tun:",
-      "list": [
-        "Die Dienste in irgendeiner Weise zu nutzen, die gegen geltendes Recht verstößt",
-        "Zu versuchen, unbefugten Zugriff auf unsere Systeme zu erhalten",
-        "Die ordnungsgemäße Funktion unserer Dienste zu stören",
-        "Automatisierte Mittel zu verwenden, um auf unsere Dienste ohne Erlaubnis zuzugreifen"
-      ]
-    },
-    "3": {
-      "title": "3. Geistiges Eigentum",
-      "text": "Alle Inhalte auf unserer Website, einschließlich Text, Grafiken, Logos und Bilder, sind Eigentum von TechByP und durch Gesetze zum geistigen Eigentum geschützt. Sie dürfen unsere Inhalte nicht ohne unsere ausdrückliche schriftliche Genehmigung verwenden."
-    },
-    "4": {
-      "title": "4. Produktinformationen",
-      "text": "Wir bemühen uns, genaue Produktinformationen bereitzustellen, übernehmen jedoch keine Gewähr dafür, dass Produktbeschreibungen oder andere Inhalte vollständig, zuverlässig oder fehlerfrei sind. Spezifikationen können ohne vorherige Ankündigung geändert werden."
-    },
-    "5": {
-      "title": "5. Haftungsbeschränkung",
-      "text": "TechByP haftet nicht für indirekte, beiläufige, spezielle oder Folgeschäden, die sich aus der Nutzung oder Unfähigkeit zur Nutzung unserer Dienste ergeben, selbst wenn wir auf die Möglichkeit solcher Schäden hingewiesen wurden."
-    },
-    "6": {
-      "title": "6. Anwendbares Recht",
-      "text": "Diese Bedingungen unterliegen dem Recht der Bundesrepublik Deutschland und sind in Übereinstimmung mit diesem auszulegen, unabhängig von seinen kollisionsrechtlichen Bestimmungen."
-    },
-    "7": {
-      "title": "7. Änderungen der Bedingungen",
-      "text": "Wir behalten uns das Recht vor, diese Bedingungen jederzeit zu ändern. Ihre fortgesetzte Nutzung unserer Dienste nach solchen Änderungen gilt als Annahme der neuen Bedingungen.",
-      "effectiveDate": "Gültig ab: 31. Juli 2025"
+    "sections": {
+      "1": {
+        "title": "1. Akzeptanz der Bedingungen",
+        "text": "Durch den Zugriff auf oder die Nutzung der TechByP-Website und -Dienste erklären Sie sich mit diesen Nutzungsbedingungen einverstanden. Wenn Sie nicht einverstanden sind, nutzen Sie bitte unsere Dienste nicht."
+      },
+      "2": {
+        "title": "2. Nutzung der Dienste",
+        "text": "Sie dürfen unsere Website und Dienste nur für rechtmäßige Zwecke und in Übereinstimmung mit diesen Bedingungen nutzen. Sie erklären sich damit einverstanden, Folgendes nicht zu tun:",
+        "list": [
+          "Die Dienste in irgendeiner Weise zu nutzen, die gegen geltendes Recht verstößt",
+          "Zu versuchen, unbefugten Zugriff auf unsere Systeme zu erhalten",
+          "Die ordnungsgemäße Funktion unserer Dienste zu stören",
+          "Automatisierte Mittel zu verwenden, um auf unsere Dienste ohne Erlaubnis zuzugreifen"
+        ]
+      },
+      "3": {
+        "title": "3. Geistiges Eigentum",
+        "text": "Alle Inhalte auf unserer Website, einschließlich Text, Grafiken, Logos und Bilder, sind Eigentum von TechByP und durch Gesetze zum geistigen Eigentum geschützt. Sie dürfen unsere Inhalte nicht ohne unsere ausdrückliche schriftliche Genehmigung verwenden."
+      },
+      "4": {
+        "title": "4. Produktinformationen",
+        "text": "Wir bemühen uns, genaue Produktinformationen bereitzustellen, übernehmen jedoch keine Gewähr dafür, dass Produktbeschreibungen oder andere Inhalte vollständig, zuverlässig oder fehlerfrei sind. Spezifikationen können ohne vorherige Ankündigung geändert werden."
+      },
+      "5": {
+        "title": "5. Haftungsbeschränkung",
+        "text": "TechByP haftet nicht für indirekte, beiläufige, spezielle oder Folgeschäden, die sich aus der Nutzung oder Unfähigkeit zur Nutzung unserer Dienste ergeben, selbst wenn wir auf die Möglichkeit solcher Schäden hingewiesen wurden."
+      },
+      "6": {
+        "title": "6. Anwendbares Recht",
+        "text": "Diese Bedingungen unterliegen dem Recht der Bundesrepublik Deutschland und sind in Übereinstimmung mit diesem auszulegen, unabhängig von seinen kollisionsrechtlichen Bestimmungen."
+      },
+      "7": {
+        "title": "7. Änderungen der Bedingungen",
+        "text": "Wir behalten uns das Recht vor, diese Bedingungen jederzeit zu ändern. Ihre fortgesetzte Nutzung unserer Dienste nach solchen Änderungen gilt als Annahme der neuen Bedingungen.",
+        "effectiveDate": "Gültig ab: 31. Juli 2025"
+      }
     }
-  }},
-
-
-
-
-"back": "Zurück",
+  },
+  "back": "Zurück",
   "imprint": "Impressum",
   "legalDisclosure": {
     "title": "Rechtliche Angaben",
@@ -118,16 +110,13 @@
       "country": "Deutschland"
     }
   },
-
-
-    "cookie": {
+  "cookie": {
     "message": "Keine Kekse hier, nur digitale Cookies. Sie helfen uns, Ihre Fahrt durch unsere Website zu verbessern. Machen Sie weiter, und Sie geben ihnen ein Nicken.",
     "learnMore": "Mehr erfahren",
     "accept": "Ja, mach dein Ding.",
     "reject": "Cookies ablehnen"
   },
-
- "privacy": {
+  "privacy": {
     "back": "Zurück",
     "title": "Datenschutzerklärung",
     "introduction": {
@@ -187,11 +176,8 @@
       "text": "Wir können unsere Datenschutzerklärung von Zeit zu Zeit aktualisieren. Wir informieren Sie über Änderungen durch Veröffentlichung der neuen Richtlinie auf dieser Seite."
     }
   },
-
-
-
- "blogEdit": {
-  "selectArticle": "Wählen Sie einen Artikel aus",
+  "blogEdit": {
+    "selectArticle": "Wählen Sie einen Artikel aus",
     "wantToCreateArticle": "Erstellen Sie Ihren ersten Artikel, um zu beginnen",
     "selectFromArticle": "Wählen Sie einen Artikel aus der Seitenleiste oder erstellen Sie einen neuen",
     "title": "Titel",
@@ -229,7 +215,7 @@
     "publishedOn": "Veröffentlicht am",
     "addParagraph": "Absatz hinzufügen",
     "removeParagraph": "Absatz entfernen",
-     "markdownSupported": "",
+    "markdownSupported": "",
     "categories": {
       "technology": "Technologie",
       "events": "Veranstaltungen",
@@ -240,10 +226,7 @@
       "machine": "Maschine"
     }
   },
-
-
-
- "commentsFunction": {
+  "commentsFunction": {
     "placeholderName": "Dein Name (oder wie du genannt werden willst)",
     "placeholderCompany": "Firma (optional, wir stalken dich nicht)",
     "placeholderText": "Sag uns, was du wirklich denkst (keine Spoiler)",
@@ -256,8 +239,6 @@
     "like": "Diesen Kommentar mögen",
     "unlike": "Diesen Kommentar nicht mehr mögen"
   },
-
-
   "loadingArticle": "Artikel wird geladen...",
   "errorLoadingArticle": "Fehler beim Laden des Artikels",
   "backToBlog": "Zurück zum Blog",
@@ -275,8 +256,7 @@
   "views": "Ansichten",
   "category": "{{category}}",
   "readTime": "{{time}} Lesezeit",
-
- "heroEditor": {
+  "heroEditor": {
     "fetchError": "Fehler beim Laden der Hero-Elemente",
     "createSuccess": "Element erfolgreich erstellt!",
     "updateSuccess": "Element erfolgreich aktualisiert!",
@@ -319,9 +299,7 @@
     "saveSlide": "Folie speichern",
     "readMore": "Mehr lesen"
   },
-
-
- "editor": {
+  "editor": {
     "announcements": "Ankündigungen",
     "newAnnouncement": "Neue Ankündigung",
     "active": "Aktiv",
@@ -378,10 +356,7 @@
   "announcement": {
     "close": "Ankündigung schließen"
   },
-
-
-
- "modal": {
+  "modal": {
     "invalidEmail": "Das ist keine gültige E-Mail-Adresse. Versuch’s nochmal.",
     "success": "Perfekt! Du bist jetzt offiziell Teil des TechByP-Clubs. Willkommen an Bord.",
     "error": "Ups, da ging wohl was schief. Versuch’s nochmal?",
@@ -404,9 +379,6 @@
     "button": "Beitreten",
     "note": "Wir schicken dir gelegentlich E-Mails. Wahrscheinlich nicht um 3 Uhr morgens, aber wer weiß?"
   },
-
-
-
   "header": {
     "logoAlt": "TechByP Logo",
     "logoLabel": "Zur Startseite",
@@ -598,7 +570,6 @@
     }
   ],
   "certifications": [
-   
     {
       "abbr": "CE",
       "text": "CE-Zertifiziert",
@@ -898,7 +869,7 @@
       "description": "Ein stabiler Rahmen zur Ablage Ihrer Ausrüstung."
     },
     "three-point-hitch": {
-      "name": "Dreipunktaufhängung",
+      "name": "Dreipunkt-Bock",
       "nickname": "Aufhängung",
       "price": "1.450 €",
       "description": "Standard-Dreipunktaufhängung für einfache Montage."
@@ -1092,7 +1063,7 @@
     "placeholderEmail": "Das Ding mit dem @ drin.",
     "placeholderMessage": "Verwenden Sie Worte. Es ist alles sehr aufregend.",
     "close": "Schließen",
-    "submit": "Bumm. Fertig.",
+    "submit": "Zack! Fertig.",
     "success": "Nachricht erfolgreich gesendet!",
     "fail": "Nachricht konnte nicht gesendet werden. Bitte versuchen Sie es erneut.",
     "botDetected": "Bot erkannt.",
@@ -1136,9 +1107,93 @@
     },
     "videoNotSupported": "Ihr Browser unterstützt kein HTML5-Video."
   },
-
-
-
+  "adminDashboard": {
+    "greeting": "Willkommen zurück!",
+    "user": {
+      "role": {
+        "admin": "Administrator",
+        "editor": "Redakteur",
+        "viewer": "Betrachter"
+      }
+    },
+    "tabs": {
+      "dashboard": "Dashboard",
+      "blog": "Blogbeiträge",
+      "hero": "Hero-Bereich",
+      "announcements": "Ankündigungen"
+    },
+    "stats": {
+      "articles": "Artikel",
+      "announcements": "Ankündigungen",
+      "comments": "Aktuelle Kommentare",
+      "members": "Club-Mitglieder",
+      "activity": "Letzte Aktivitäten"
+    },
+    "comments": {
+      "count": "Kommentare",
+      "noComments": "Noch keine Kommentare",
+      "noContent": "[Kein Inhalt]",
+      "name": "Name",
+      "company": "Firma",
+      "save": "Speichern",
+      "cancel": "Abbrechen",
+      "edit": "Bearbeiten",
+      "delete": "Löschen",
+      "edited": "Bearbeitet",
+      "updateSuccess": "Kommentar erfolgreich aktualisiert",
+      "updateError": "Fehler beim Aktualisieren des Kommentars",
+      "deleteSuccess": "Kommentar erfolgreich gelöscht",
+      "deleteError": "Fehler beim Löschen des Kommentars"
+    },
+    "members": {
+      "noMembers": "Noch keine Mitglieder",
+      "unknownMember": "Unbekanntes Mitglied",
+      "joined": "Beigetreten",
+      "delete": "Mitglied löschen"
+    },
+    "activity": {
+      "noActivity": "Keine aktuellen Aktivitäten",
+      "refresh": "Aktualisieren",
+      "fetchError": "Fehler beim Laden der Aktivitäten",
+      "events": {
+        "comment_added": "hat einen Kommentar hinzugefügt",
+        "comment_edited": "hat einen Kommentar bearbeitet",
+        "comment_deleted": "hat einen Kommentar gelöscht",
+        "content_created": "hat Inhalte erstellt",
+        "content_updated": "hat Inhalte aktualisiert"
+      },
+      "metadata": {
+        "user": "Benutzer",
+        "company": "Firma",
+        "rating": "Bewertung",
+        "currentMessage": "Aktuelle Nachricht",
+        "previousMessage": "Vorherige Nachricht",
+        "type": "Typ",
+        "title": "Titel",
+        "changes": "Änderungen"
+      }
+    },
+    "common": {
+      "lastUpdated": "Zuletzt aktualisiert",
+      "thisWeek": "diese Woche",
+      "today": "heute",
+      "justNow": "gerade eben",
+      "minutesAgo": "vor {count} Minute(n)",
+      "hoursAgo": "vor {count} Stunde(n)",
+      "daysAgo": "vor {count} Tag(en)",
+      "openMenu": "Menü öffnen",
+      "closeMenu": "Menü schließen",
+      "toggleLanguage": "Sprache wechseln",
+      "logout": "Abmelden"
+    },
+    "confirmation": {
+      "deleteComment": {
+        "title": "Kommentar löschen",
+        "message": "Sind Sie sicher, dass Sie diesen Kommentar löschen möchten? Diese Aktion kann nicht rückgängig gemacht werden."
+      }
+    },
+    "permissionsError": "Fehler bei der Überprüfung der Berechtigungen"
+  },
   "mp1": {
     "nickname": "Full-Core Retriever",
     "specs": [
@@ -1200,7 +1255,7 @@
   "mp2": {
     "nickname": "Mid Range MultiPRO",
     "specs": [
-      "Tiefe: bis 60 cm",
+      "Tiefe: 0-60 cm",
       "Vollautomatisch",
       "Optimiert für Nmin-Profiling",
       "18 Sek./Kern Probennahmezyklus"
@@ -1262,7 +1317,7 @@
   "mp3": {
     "nickname": "TripleLayer Pro",
     "specs": [
-      "Tiefe: bis zu 95 cm",
+      "Tiefe: 0-95 cm",
       "Vollautomatisch",
       "3-Schichten-Trennung",
       "20 Sek./Kern Probenzyklus"
@@ -1328,7 +1383,7 @@
   "mp4": {
     "nickname": "UltraDepth MAX",
     "specs": [
-      "Tiefe: bis zu 100 cm",
+      "Tiefe: 0-100 cm",
       "Vollautomatisch",
       "4-Schichten-Trennung",
       "22 Sek./Kern Probenzyklus"
@@ -1393,7 +1448,7 @@
   "dh": {
     "nickname": "Hydraulik Scout",
     "specs": [
-      "Tiefe: bis zu 30 cm",
+      "Tiefe: 0-30 cm",
       "Vollautomatisch",
       "Federungsunabhängige Tiefenkontrolle",
       "5 Sek./Kern Probenzyklus"
@@ -1455,7 +1510,7 @@
   "de": {
     "nickname": "Elektrischer Pfadfinder",
     "specs": [
-      "Tiefe: bis zu 30 cm",
+      "Tiefe: 0-30 cm",
       "Voll elektrisch betriebenes Bohrsystem",
       "Unabhängige Tiefensteuerung ohne Aufhängungsstress",
       "5 Sekunden pro Kernprobe"
@@ -1586,6 +1641,7 @@
   },
   "laydown": {
     "nickname": "Montagekit",
+    "name": "Lay-Down",
     "specs": [
       "Standard 50 mm Anhängerkupplung mit 13-poligem 12-V-Stecker erforderlich",
       "Gewicht: ca. 70 kg (DH/DE), ca. 80 kg (MP-Halterung)",
@@ -1640,56 +1696,57 @@
     ]
   },
   "tph": {
-    "nickname": "Anbau-King",
+    "name": "Dreipunkt-Bock",
+    "nickname": "Montagekit",
     "specs": [
-      "Passt an Cat‑2 oder Cat‑3 Dreipunkt-Frontzapfwellen-Systeme",
-      "Robuster A‑Rahmen aus Stahl – hier wackelt nichts",
-      "Schwarze Epoxid-Beschichtung gegen Rost und Tränen",
-      "Kompatibel mit allen MP-, DH- und DE-Bodenprobemaschinen"
+      "Passt zu Traktoren mit Kat-2 oder Kat-3 Dreipunkt-Kraftheber",
+      "Schwere A-Rahmen-Stahlkonstruktion",
+      "Schwarze Epoxid-Korrosionsschutzbeschichtung",
+      "Kompatibel mit allen MP-, DH- und DE-Bodenprobenehmern"
     ],
-    "description": "Verwandelt deinen Traktor in ein Bodenproben-Monster – Zapfwellenpower trifft auf Hydrauliksampler. Robust, verlässlich, ohne Firlefanz.",
-    "herodescription": "<strong>Dreipunkt-Anbaurahmen für Traktoren</strong>: Der Schwergewichtschampion für Cat‑2/3, der deinen Hydrauliksampler direkt an die Zapfwelle koppelt – inklusive Pumpenplattform, die sitzt.",
-    "detailedDescription": "<p className='mt-4'>Stell dir das <strong>stahlharte Rückgrat</strong> vor, das deinem Traktor noch gefehlt hat. Aus <strong>dickem A‑Rahmen-Stahl</strong> gefertigt und mit <strong>schwarzer Epoxid-Haut</strong> gepanzert, schraubst du das Teil fix an deine Hubarme. Regen, Matsch und gelegentliche Traktorlaunen sind willkommen. Alles dabei: <strong>Hubstangen und Montageschrauben</strong> – keine Bastelstunde mit Draht und Klebeband.</p><p className='mt-4'>Passend für <strong>kompakte Traktoren mit 50–60\" Hubarm-Abstand</strong>, bringt dieser Rahmen die Hydraulik direkt vom Zapfwellenantrieb auf deine Probenehmer. Ein Upgrade, das deinen Traktor für die <strong>Feldolympiade</strong> fit macht.</p>",
+    "description": "Verwandelt Ihren Traktor in eine Bodenprobennahmebestie, indem er die Zapfwelle für den hydraulischen Probenehmer nutzt. Robust, zuverlässig, ohne Schnickschnack.",
+    "herodescription": "<strong>Dreipunktaufhängung für Traktoren</strong>: Der Schwergewichts-Champion für Kat-2/3 Traktoren, entwickelt um Ihren hydraulischen Bodenprobenehmer direkt an das Krafthebersystem anzuschließen – inklusive Hydraulikpumpen-Plattform.",
+    "detailedDescription": "<p className='mt-4'>Stellen Sie sich das <strong>stählerne Rückgrat</strong> vor, das Ihr Traktor nie kannte. Aus <strong>dickem A-Rahmen-Stahl</strong> gefertigt und in <strong>schwarzer Epoxid-Beschichtung</strong> gehüllt, wird diese Halterung sicher an den Hubarmen befestigt. Gebaut um das Farmleben zu überstehen – Regen, Schlamm und gelegentliche Traktor-Wutanfälle inklusive. Das Kit enthält <strong>Hubstangen und alle Befestigungsschrauben</strong>, also kein Improvisieren mit rostigen Nägeln oder Klebeband.</p><p className='mt-4'>Geeignet für <strong>Kompakttraktoren mit Hubarmabständen von etwa 50 bis 60 Zoll</strong>, unterstützt dieser Rahmen die Hydraulikpumpe, die direkt von der Zapfwelle angetrieben wird – für effizienten Hydraulikfluss und reibungslose Bodenprobennahme. Das Upgrade, das Ihren Traktor bereit macht für die <strong>Feldolympiade</strong>.</p>",
     "price": "Ab €2.790",
     "features": [
-      "Geschweißter A‑Rahmenstahl – für echte Arbeit gebaut",
-      "PTO-Pumpenaufnahme – Zip-Ties sind keine Lösung",
-      "Schwarze Epoxid-Beschichtung – smarter als Lack",
-      "Mit Schrauben und Hubstangen – kein Werkzeugkauf-Marathon",
-      "Passt an Cat‑2/3 Hubarme (50–60\")",
-      "Kompatibel mit MP-, DH- und DE-Samplern"
+      "Geschweißter A-Rahmen-Stahl – stabil genug für echte Arbeit",
+      "Zapfwellenpumpenhalterung – weil Kabelbinder keine Ingenieurskunst sind",
+      "Schwarze Epoxid-Beschichtung – wie Farbe, nur schlauer",
+      "Enthält Schrauben und Hubstangen – kein Herumsuchen nötig",
+      "Passt zu Kat-2/3 Hubarmen (50–60\")",
+      "Funktioniert mit MP-, DH- und DE-Probenehmern"
     ],
     "applications": [
-      "Hydraulisches Bodenprobenziehen – richtig gemacht",
-      "Zapfwellenbetriebene Feldarbeit ohne Fluchen",
-      "Traktor-Umbauten, die wirklich Sinn machen"
+      "Hydraulische Bodenprobennahme – richtig gemacht",
+      "Feldarbeit mit Zapfwellenantrieb und minimalem Fluchen",
+      "Traktor-Nachrüstungen, die Sinn ergeben"
     ],
     "howToUse": [
-      "An Hubarme schrauben – mit Gefühl anziehen",
-      "Pumpenplatte montieren – Quergewinde vermeiden",
-      "Zapfwelle und Schläuche sauber verlegen",
-      "Sampler anschrauben, testen, anerkennend nicken"
+      "An Hubarme anschließen – festziehen, als ob Sie es ernst meinen",
+      "Pumpengrundplatte montieren – kein Kreuzgewinde",
+      "Zapfwelle anschließen und Schläuche ordentlich verlegen",
+      "Probenehmer einbauen, testen, zufrieden nicken"
     ],
     "technicalSpecs": {
-      "Typ": "Cat‑2/3 Traktor Dreipunkt-Anbaurahmen",
-      "Material": "Geschweißter A‑Rahmenstahl mit Epoxid-Beschichtung",
-      "PTO-Kompatibilität": "Standard-Zapfwelle treibt Hydraulikpumpe an",
-      "Lieferumfang": "Hubstangen, Montageschrauben und Zubehör",
-      "Rahmenmaß": "Für 50–60\" Hubarmabstand kompakter Traktoren",
-      "Korrosionsschutz": "Robuste schwarze Epoxid-Schicht",
-      "Gewicht": "Ca. 120 kg",
-      "Zertifizierung": "Robuste Profi-Qualität für den Einsatz auf dem Feld",
-      "Kompatibilität": "Passt zu allen MP-, DH- und DE-Bodenprobemaschinen"
+      "Typ": "Kat-2/3 Traktor-Dreipunktaufhängung",
+      "Konstruktion": "Geschweißter schwerer A-Rahmen-Stahl mit Epoxid-Beschichtung",
+      "Zapfwellen-Kompatibilität": "Standard-Traktor-Zapfwelle treibt Hydraulikpumpe an",
+      "Inhalt": "Hubstangen, Befestigungsschrauben und Montagematerial",
+      "Rahmengröße": "Passt zu Hubarmabständen von 50–60\" bei Kompakttraktoren",
+      "Korrosionsschutz": "Langlebige schwarze Epoxid-Beschichtung",
+      "Gewicht": "Ca. 120 kg",
+      "Zertifizierung": "Gewerblich robust für den landwirtschaftlichen Einsatz",
+      "Kompatibilität": "Funktioniert mit allen MP-, DH- und DE-Bodenprobenehmern"
     },
     "testimonials": [
       {
-        "quote": "Passte perfekt, kein Gefrickel. Mit unserem MP-2.60 getestet – stabil, alles sitzt, kein Klappern. Kauft man gern nochmal.",
+        "quote": "Passte perfekt, keine Überraschungen. Mit unserem MP-2.60 verwendet – stabiler Rahmen, alles passte, kein Klappern. Würde wieder kaufen.",
         "author": "J. Bauer",
         "company": "Bauer Agrar GmbH",
         "rating": 5
       },
       {
-        "quote": "Montiert in unter einer Stunde. Die Zapfwellenpumpe läuft wie geschmiert, Sampler sitzt fest. Funktioniert einfach.",
+        "quote": "In unter einer Stunde am Traktor montiert. Zapfwellenpumpe läuft ruhig, Probenehmer sitzt sauber. Funktioniert einfach.",
         "author": "L. Schneider",
         "company": "Schneider Feldtechnik",
         "rating": 5
@@ -1697,53 +1754,54 @@
     ]
   },
   "fc": {
-    "nickname": "Umrüst-Profi",
+    "name": "komplett-umbau",
+    "nickname": "Umbausatz",
     "specs": [
-      "Passt an Pickups und UTVs",
-      "Individuell pulverbeschichteter Stahlrahmen mit Aluminium-Werkzeugpanelen",
-      "OEM-Teile entfernt und sicher verstaut; TÜV-geprüft",
-      "Unterstützt alle MP-, DH- und DE-Bodenprobemaschinen"
+      "Kompatibel mit Pickups und UTVs",
+      "Maßgefertigter pulverbeschichteter Stahlrahmen mit Aluminium-Werkzeugpanelen",
+      "Originalteile entfernt und gelagert; Rahmen TÜV-zertifiziert",
+      "Unterstützt alle MP-, DH- und DE-Bodenprobenehmer"
     ],
-    "description": "Verwandelt deinen Nutzfahrzeug- oder Pickup-Bett in eine bodenprobenziehende Maschine. Bett raus, Rahmen drauf, Werkzeug rein – fertig.",
-    "herodescription": "<strong>Full Conversion Kit</strong> tauscht die serienmäßige Ladefläche gegen einen Stahlrahmen mit Aluminiumverkleidungen – speziell für Bodenproben mit <strong>MP-, DH- und DE-Maschinen</strong>. TÜV-zertifiziert, straßenzugelassen und clever durchdacht.",
-    "detailedDescription": "<p className='mt-4'><strong>Dein UTV oder Pickup will mehr? Hier kommt die Lösung.</strong> Wir entfernen die Serien-Ladefläche und setzen einen robusten Stahlrahmen mit Aluminiumverkleidungen drauf, der mehr Professionalität ausstrahlt als ein Hilux auf Schotter.</p><p className='mt-4'><strong>Alles für dich: feste Montagepunkte, Werkzeugboxen, Licht und Kühlboxen.</strong> TÜV-zertifiziert, gebaut für harte Einsätze und irgendwie hübsch anzusehen.</p>",
+    "description": "Verwandelt Ihr Nutzfahrzeug oder Pickup in eine ernsthafte Bodenprobennahmebestie. Ladefläche ab, Rahmen drauf, Werkzeuge verstaut.",
+    "herodescription": "<strong>Vollumbausatz</strong> ersetzt die standardmäßige Ladefläche oder UTV-Plattform durch einen maßgefertigten Stahlrahmen mit Aluminium-Abdeckungen – speziell für die Bodenprobennahme mit <strong>MP-, DH- und DE-Geräten</strong> entwickelt. TÜV-geprüft, straßenzugelassen und ziemlich clever.",
+    "detailedDescription": "<p className='mt-4'><strong>Wenn Ihr UTV oder Pickup von Größe träumt, ist dies sein Moment.</strong> Wir entfernen sorgfältig die Original-Ladefläche und ersetzen sie durch einen Stahl-Umbaurahmen, verkleidet mit Aluminium-Paneelen, die 'professioneller Betreiber' lauter schreien als ein voll aufgedrehter Hilux auf Schotter.</p><p className='mt-4'><strong>Er bietet ordentliche Halterungen für alle unsere Geräte, integrierte Aufbewahrung für Kühler, Werkzeuge, Beleuchtung – im Grunde alles außer dem Pausenbrot.</strong> TÜV-zertifiziert, gebaut für ernsthafte Kampagnen und seltsam befriedigend anzusehen.</p>",
     "price": "Ab €4.590",
     "features": [
-      "Universal für Pickups und UTVs (Hilux, Gator, Kubota usw.)",
-      "Pulverbeschichteter Stahlrahmen mit Aluminiumverkleidungen",
-      "Werkzeuglager, Licht, Kühlboxen – alles an Bord",
-      "TÜV-geprüft, EU-legal",
-      "Kompatibel mit MP-, DH- und DE-Samplern"
+      "Universelle Passform für Pickups und UTVs (Hilux, Gator, Kubota usw.)",
+      "Aluminiumverkleideter Stahlrahmen: langlebig und korrosionsbeständig",
+      "Unterstützt Werkzeuglagerung, Beleuchtung, Kühler und Probenehmersysteme",
+      "TÜV-zertifiziert und in der EU straßenzugelassen",
+      "Voll kompatibel mit allen MP-, DE- und DH-Geräten"
     ],
     "applications": [
-      "Feste Feldgeräte-Umrüstungen",
-      "Flottenausstattung für großflächige Probenahmen",
-      "Upgrades für Landwirtschaft und Umweltforschung"
+      "Dauerhafte Feldumbauten",
+      "Flottenaufbau für großangelegte Bodenprobennahme",
+      "Upgrades für landwirtschaftliche und umwelttechnische Forschungsfahrzeuge"
     ],
     "howToUse": [
-      "Sampling-Maschine wählen – MP, DH oder DE. Vernünftige Wahl.",
-      "Fahrzeug mit Anhängerkupplung oder Anhängeraufnahme sicherstellen.",
-      "Fahrzeug zu uns bringen – oder wir suchen dir eins.",
-      "Wir bauen Rahmen, montieren Sampler, regeln TÜV, und los geht’s."
+      "Wählen Sie Ihr Probennahmegerät – MP-, DH- oder DE-Serie. Vernünftige Wahl, allesamt.",
+      "Stellen Sie sicher, dass Ihr Fahrzeug eine Anhängerkupplung oder Anhängeröse hat. Falls nicht, kann eine besorgt werden. Wir sind keine Barbaren.",
+      "Bringen Sie uns das Fahrzeug – oder lassen Sie uns ein passendes Modell besorgen.",
+      "Wir montieren den Stahlrahmen, schrauben den Probenehmer fest, erledigen die Papierarbeit und schicken Sie los, um mit dem Boden zu kämpfen."
     ],
     "technicalSpecs": {
-      "Kompatible Fahrzeuge": "Pickups (Hilux, Ranger etc.) und UTVs (Gator, RTV, Ranger etc.)",
-      "Material": "Stahlrahmen pulverbeschichtet, Aluminium-Boxen",
-      "Fahrzeugvoraussetzungen": "Standard-Anhängerkupplung oder Anhängeraufnahme",
-      "Zertifizierung": "TÜV-geprüft, versteht sich",
-      "OEM-Teile": "Entfernt, sicher gelagert – typisch deutsch",
-      "Sampler-Kompatibilität": "MP-, DH- und DE-Serien",
-      "Rahmengewicht": "Ca. 110 kg"
+      "Kompatible Fahrzeuge": "Pickups (Hilux, Ranger usw.) und UTVs (Gator, RTV, Ranger usw.)",
+      "Konstruktion": "Stahlrahmen, pulverbeschichtet. Aluminium-Boxen.",
+      "Fahrzeugeignung": "Standard-Anhängerkupplung oder Anhängeröse. Selbstverständlich.",
+      "Zertifizierung": "TÜV-geprüft. Natürlich.",
+      "Originalteile": "Entfernt. Gelagert. Beschriftet. Sehr deutsch.",
+      "Probenehmer-Kompatibilität": "MP-, DH-, DE-Serie.",
+      "Rahmengwicht": "Ca. 110 kg."
     },
     "testimonials": [
       {
-        "quote": "Hilux abgegeben, eine Woche später fertig zur Probennahme abgeholt. Saubere Arbeit, alles passt. Kein Stress.",
+        "quote": "Hilux abgegeben, eine Woche später probenahmebereit abgeholt. Saubere Verarbeitung, alles passte perfekt. Kein Ärger.",
         "author": "T. Klein",
         "company": "GeoFarm Solutions",
         "rating": 5
       },
       {
-        "quote": "Robuster Rahmen, clevere Anordnung. Wir fahren zwei DH auf umgerüsteten Rangern – viel entspannter als Trailer auf engen Feldern.",
+        "quote": "Solider Rahmen, durchdachte Anordnung. Wir betreiben zwei DH-Einheiten an umgebauten Rangers – viel einfacher als Anhänger auf engen Feldern.",
         "author": "M. Becker",
         "company": "AgroTest GmbH",
         "rating": 5
@@ -1751,55 +1809,56 @@
     ]
   },
   "trailer": {
-    "nickname": "Feld-Transporter",
+    "name": "Spezial-anhänger",
+    "nickname": "Feldtransporter",
     "specs": [
-      "Feuerverzinkt – Rost hat keine Chance",
-      "Gebremst oder ungebremst: wähl deinen Fahrstil",
-      "Festgelegte Spurweite 1,35 m",
-      "Passgenau für MP-, DH- und DE-Samplersysteme"
+      "Feuerverzinkt – Rost hat keine Chance.",
+      "Gebremste und ungebremste Varianten: Wählen Sie Ihr Maß an Kontrolle",
+      "Spurweite fest auf 1,35 m eingestellt",
+      "Perfekt für MP-, DH- und DE-Probenehmer konzipiert"
     ],
-    "description": "Zieht MP-, DH- und DE-Systeme mühelos über alles, was keine Wand ist.",
-    "herodescription": "<strong>Spezialanhänger – Feld-Transporter</strong> sind <strong>robuste, feuerverzinkte Anhänger</strong> mit <strong>gebremsten und ungebremsten Varianten</strong>, gebaut für den Transport deiner Bodenprobensets – <strong>MP, DH oder DE</strong> – mit <strong>deutscher Präzision</strong>. Dazu clevere Fächer für Werkzeug, Licht und Kühlboxen – für stressfreies Arbeiten im Feld.",
-    "detailedDescription": "<p className='mt-4'>Mit fester <strong>1,35 m Spurweite</strong> und <strong>Abstellrädern</strong> lenkt der Feld-Transporter wie ein durchdachter Einkaufswagen – nur stabiler und ohne schwache Stellen.</p><p className='mt-4'>Wähle <strong>gebremste Modelle</strong> für schwerere Lasten oder steile Hänge – bis zu <strong>3.500 kg Gesamtgewicht</strong> – so ziehst du Proben bequem und sicher, ohne ständig an Bremsbeläge zu denken.</p>",
+    "description": "Diese Anhänger transportieren MP-, DH/DE-Systeme mühelos über alles, was nicht gerade eine Wand ist.",
+    "herodescription": "<strong>Spezialanhänger – Feldtransporter</strong> sind <strong>robuste, feuerverzinkte Anhänger</strong> mit <strong>gebremsten und ungebremsten Optionen</strong>, entwickelt um Ihr Bodenprobennahme-Equipment – sei es <strong>MP, DH oder DE</strong> – mit <strong>deutscher Präzision</strong> über Felder und Höfe zu bewegen.<br/>Sie bieten <strong>durchdachte Aufbewahrung für Werkzeuge, Lampen und Kühler</strong> – damit Sie den ganzen Tag arbeiten können ohne das übliche Chaos.",
+    "detailedDescription": "<p className='mt-4'>Mit einer festen <strong>Spurweite von 1,35 m</strong> und <strong>Lenkrollen</strong> manövriert der Feldtransporter wie ein vernünftiger Einkaufswagen – nur mit mehr Stahl und weniger Schwachstellen.</p><p className='mt-4'>Wählen Sie <strong>gebremste Modelle</strong> für schwerere Lasten oder steilere Hänge – bis zu <strong>3.500 kg Gesamtgewicht</strong> – damit Sie Bodenprobenehmer transportieren können ohne ständig an neue Bremsbeläge denken zu müssen.</p>",
     "price": "Ab €3.600",
     "features": [
-      "Feuerverzinktes Fahrgestell und Aufbau – lange Lebensdauer garantiert",
-      "Gebremste und ungebremste Varianten – wähl deinen Stil",
-      "Einachsige Bauweise mit Trommelbremsen (bei gebremsten Modellen)",
-      "Stoßdämpfer für 100 km/h Zulassung – ruhige Fahrt, kein Gepolter",
-      "1,35 m Spurweite mit Abstellrädern inklusive",
-      "LT285/75 R16 Alufelgen oder MT215/75 R15 Stahlreifen – sicher über Feldwege",
-      "Stützrad für einfaches Rangieren per Hand",
-      "Passt perfekt zu MP-, DH- und DE-Samplern – keine IKEA-Anleitung nötig",
-      "Integrierte Werkzeug-, Licht- und Kühlboxenlagerung – clever gedacht"
+      "Feuerverzinkter Aufbau und Chassis – lange Lebensdauer, weniger Beschwerden",
+      "Gebremste und ungebremste Optionen – wählen Sie Ihren Fahrstil",
+      "Einzelachse mit mechanischen Trommelbremsen für stabiles Ziehen",
+      "Stoßdämpfer für 100 km/h Straßenzulassung – ruhige Fahrt, kein Klappern",
+      "Spurweite 1,35 m mit Lenkrollen inklusive",
+      "LT285/75 R16 Aluminiumfelgen oder MT215/75 R15 Stahl – fahren Sie über Felder, statt umzukippen",
+      "Stützrad inklusive für einfaches Manövrieren von Hand",
+      "Gebaut um MP-, DH- und DE-Probenehmer zu transportieren – keine IKEA-Anleitung nötig",
+      "Integrierte Werkzeug-, Lampen- und Kühleraufbewahrung – arbeiten Sie schlauer, nicht härter"
     ],
     "applications": [
-      "Transport von MP-, DH- und DE-Sampler-Sets im Feld",
-      "Verladen von Kisten, Kühlboxen und mehr auf dem Bauernhof",
-      "Leichte Einsätze auf Land und bei Dienstleistern"
+      "Feldtransport von MP-, DH- und DE-Probenehmer-Kits",
+      "Transport von Kisten, Kühlboxen und mehr über Höfe",
+      "Leichteinsätze in ländlichen und Baustellenumgebungen"
     ],
     "howToUse": [
-      "Gebremst oder ungebremst auswählen, je nach Zugfahrzeug und Last",
-      "An Standard-Kupplung (50 mm Kugel) anhängen – kein Hexenwerk",
-      "Sampler und Ausrüstung verladen, Gurte festzurren",
-      "Mit maßvoller Geschwindigkeit fahren – keine Driftparty"
+      "Wählen Sie gebremst oder ungebremst je nach Zugfahrzeug und Last.",
+      "Angekuppelt mit Standard-50 mm Kugelkopf – keine exotische Technik nötig.",
+      "Beladen Sie Ihren Probenehmer und Equipment, sichern Sie alle Gurte und Zurrungen.",
+      "Ziehen Sie ihn mit angemessener Geschwindigkeit – kein Driften oder ungewolltes Abenteuer."
     ],
     "technicalSpecs": {
       "Spurweite": "1,35 m",
-      "Ladeoptionen": "550 kg (gebremst/ungebremst), heavy-duty Upgrade auf 1.500 kg Gesamtgewicht",
-      "Felgen/Reifen": "LT285/75 R16 Alufelgen oder MT215/75 R15 Stahlreifen",
-      "Bremsen": "Mechanische Trommelbremsen (bei gebremsten Versionen), Einachser",
+      "Ladeoptionen": "550 kg (gebremst/ungebremst), Schwerlast-Upgrade auf 1.500 kg Gesamtgewicht",
+      "Felgen/Reifengröße": "LT285/75 R16 auf Alufelgen oder MT215/75 R15",
+      "Bremsen": "Mechanische Trommelbremsen (gebremste Version), Einzelachskonfiguration",
       "Stoßdämpfer": "Zugelassen für 100 km/h",
       "Stützrad": "Inklusive",
-      "Fahrgestell": "Feuerverzinkter Stahl, S235",
+      "Chassis": "Feuerverzinkter Stahl, S235 bewertet",
       "Aufbauhöhe": "1,2 m",
       "Anhängergewicht": "Ca. 300 kg",
-      "Beleuchtung": "LED 12 V, straßenzugelassene Beleuchtung",
+      "Beleuchtung": "LED 12 V, straßenzugelassene Leuchtenleiste",
       "Garantie": "12 Monate Herstellergarantie"
     },
     "testimonials": [
       {
-        "quote": "Robust, verlässlich und mit genug Power, damit Feldarbeit sich weniger nach Schuften anfühlt.",
+        "quote": "Ein robuster, zuverlässiger Anhänger mit genug Kraft, um Feldarbeit weniger anstrengend zu machen.",
         "author": "Tomás Herrera",
         "company": "Precision Agriculture Co.",
         "rating": 4
@@ -1807,46 +1866,47 @@
     ]
   },
   "powerpack": {
+    "name": "Power Pack",
     "nickname": "Unabhängige Antriebseinheiten",
     "specs": [
-      "Hydraulisch oder elektrisch angetrieben, passend zu Ihrem Leistungsbedarf",
-      "Tragbares, robustes Stahlgehäuse für harte Feldarbeit",
-      "LCD-Batteriestatus bei elektrischen Modellen – Ladestand auf einen Blick",
+      "Hydraulisch oder elektrisch betrieben für Ihren Energiebedarf",
+      "Tragbar, robustes Stahlgehäuse für rauen Feldeinsatz",
+      "LCD-Batteriestatus bei elektrischen Modellen – Ladezustand auf einen Blick",
       "Rücklauf- und Saugfiltration für sauberen Hydraulikbetrieb inklusive"
     ],
-    "description": "Für alle, die MP- oder DH-Geräte ohne Bordstromversorgung betreiben, liefern diese Packs hydraulische oder elektrische Energie, wo immer Sie arbeiten.",
-    "herodescription": "<strong>Power Packs</strong> sind wie die verlässlichen Butler der Bodenprobennahme – sie bieten <strong>zuverlässige, tragbare Energie</strong>, damit Ihre Maschinen keine Zicken machen. Ob Sie den <strong>klassischen hydraulischen Schub</strong> mögen oder den <strong>flüsterleisen elektrischen Charme</strong> bevorzugen, diese Packs sind für Sie da.<br/>Verpackt in einem <strong>robusten Stahlgehäuse</strong>, das härter ist als ein durchschnittlicher Traktor, mit nützlichen Extras wie <strong>LCD-Batteriestatus</strong> und <strong>Filtersystemen</strong>, sind sie der verlässliche Begleiter, den Sie auf dem Feld nie kannten, aber nie missen möchten.",
-    "detailedDescription": "<p className='mt-4'>Das hydraulische Modell, perfekt abgestimmt auf <strong>MP- und DH-Serien</strong>, verfügt über einen <strong>13-PS-Benzinmotor</strong> und einen <strong>22-Liter-Öltank</strong>, der <strong>135 bar Druck</strong> bei <strong>20 L/min</strong> liefert – ordentlich Power für alle, die sich als echte Mechanik-Champions fühlen wollen.</p><p className='mt-4'>Der elektrische Verwandte, speziell für die <strong>DE-Serie</strong> entwickelt, besitzt eine <strong>24 V / 100 Ah Batterie</strong>, ein <strong>Edelstahlgehäuse</strong> und ein <strong>LCD-Display</strong> zur Überwachung des eigenen Ladezustands. Ideal für alle, die eine leisere, sauberere und einfach höflichere Art der Bodenprobennahme bevorzugen.</p><p className='mt-4'>Beide Modelle sind <strong>tragbar</strong>, <strong>robust gebaut</strong> und verfügen über <strong>Rücklauf-/Saugfiltration</strong>, um Ihre wertvolle Hydraulik vor Verschmutzungen zu schützen – niemand mag vorzeitigen Verschleiß, oder?</p>",
-    "price": "Ab 3.450 €",
+    "description": "Für alle, die MP- oder DH-Einheiten ohne Bordstrom betreiben – diese Einheiten liefern zuverlässige hydraulische oder elektrische Energie, wohin Ihre Arbeit Sie auch führt.",
+    "herodescription": "<strong>Power-Pack</strong> sind wie die zuverlässigen Butler der Bodenprobennahme – sie bieten <strong>verlässliche, tragbare Energie</strong>, damit Ihre Geräte keinen Wutanfall bekommen. Ob Sie den <strong>klassischen hydraulischen Antrieb</strong> bevorzugen oder den <strong>flüsterleisen elektrischen Charme</strong>, diese Einheiten haben Sie im Rücken.<br/>Eingepackt in ein <strong>robustes Stahlgehäuse</strong>, härter als Ihr durchschnittlicher Traktor, mit praktischen Extras wie <strong>LCD-Batteriestatus</strong> und <strong>Filtersystemen</strong> – der treue Begleiter, von dem Sie nicht wussten, dass Sie ihn im Feld brauchen.",
+    "detailedDescription": "<p className='mt-4'>Das hydraulische Modell, perfekt abgestimmt auf <strong>MP-</strong> und <strong>DH-Serie</strong>, bietet einen <strong>13 PS Benzinmotor</strong> und einen <strong>22 L Öltank</strong>, der <strong>135 bar Druck</strong> bei <strong>20 L/min</strong> liefert – das ist echte Kraft für wenn Sie sich wie ein mechanischer Overlord fühlen wollen.</p><p className='mt-4'>Der elektrische Verwandte, speziell für die <strong>DE-Serie</strong> entwickelt, hat eine <strong>24 V / 100 Ah Batterie</strong>, ein <strong>rostfreies Stahlgehäuse</strong> und ein <strong>LCD-Display</strong> um den Energiezustand im Auge zu behalten. Ideal für alle, die einen leiseren, saubereren und höflicheren Ansatz bei der Bodenprobennahme bevorzugen.</p><p className='mt-4'>Beide Modelle sind <strong>tragbar</strong>, <strong>robust gebaut</strong> und haben <strong>Rücklauf-/Saugfiltration</strong> um Ihre wertvolle Hydraulik vor Dreck zu schützen – weil niemand vorzeitigen Verschleiß mag, oder?</p>",
+    "price": "Ab €3.450",
     "features": [
-      "Hydraulisch oder elektrisch angetrieben, passend zu Ihrem Workflow",
+      "Hydraulisch oder elektrisch betrieben für Ihren Arbeitsablauf",
       "Robustes Stahlgehäuse mit Korrosionsschutz",
       "LCD-Batteriestatus bei elektrischen Modellen",
-      "Rücklauf- und Saugfiltration für lange Lebensdauer der Hydraulik",
-      "Tragbar und einfach zu montieren oder zu transportieren"
+      "Rücklauf- und Saugfiltration für langlebige Hydraulik",
+      "Tragbar und einfach zu montieren oder transportieren"
     ],
     "applications": [
-      "Stromversorgung für MP- und DH-Bodenprobenehmer",
-      "Feldeinsätze mit unabhängiger hydraulischer oder elektrischer Energie",
-      "Entlegene Probennahmestellen ohne Fahrzeugstromversorgung"
+      "Energiequelle für MP- und DH-Bodenprobenehmer",
+      "Feldeinsätze mit unabhängigem hydraulischem oder elektrischem Antrieb",
+      "Abgelegene Probennahmestandorte ohne Fahrzeugstromversorgung"
     ],
     "howToUse": [
-      "Wählen Sie hydraulisch oder elektrisch, je nachdem wie viel Power Ihr Probenehmer braucht (und wie luxuriös Sie es mögen).",
-      "Bauen Sie es sicher an Fahrzeug oder Anhänger an – bitte kein Improvisieren mit Klebeband.",
-      "Behalten Sie den Ladezustand über LCD (elektrisch) oder Benzin-/Öl-Anzeigen (hydraulisch) im Blick – Überraschungen sind nur auf Geburtstagsfeiern willkommen.",
-      "Öl nachfüllen und Filter regelmäßig wechseln – behandeln Sie es gut, und Ihr Probenehmer läuft wie geschmiert."
+      "Wählen Sie hydraulisch oder elektrisch je nach Bedarf Ihres Probenehmers (und wie fancy Sie sich fühlen).",
+      "Befestigen Sie es sicher an Ihrem Fahrzeug oder Anhänger – bitte kein Improvisieren mit Klebeband.",
+      "Behalten Sie den Energiezustand via LCD (elektrisch) oder Kraftstoff-/Ölanzeigen (hydraulisch) im Auge – weil Überraschungen für Geburtstagspartys sind, nicht für Feldarbeit.",
+      "Füllen Sie regelmäßig Öl nach und wechseln Sie Filter – behandeln Sie es gut und es hält Ihren Probenehmer am Summen."
     ],
     "technicalSpecs": {
-      "Hydraulisches Modell": "13 PS Benzinmotor, 22 L Öltank, 135 bar Druck, 20 L/min Fördermenge, 12 V Elektrik",
-      "Elektrisches Modell": "24 V / 100 Ah Batterie, LCD-Statusanzeige, Edelstahlgehäuse",
+      "Hydraulisches Modell": "13 PS Benzinmotor, 22 L Öltank, 135 bar Druck, 20 L/min Durchfluss, 12 V elektrisches System",
+      "Elektrisches Modell": "24 V / 100 Ah Batterie, LCD Statusanzeige, rostfreies Gehäuse",
       "Gewicht": "Ca. 65 kg (hydraulisch), 48 kg (elektrisch)",
-      "Abmessungen": "50 x 40 x 45 cm (H x B x T)",
+      "Abmessungen": "50 x 40 x 45 cm (HxBxT)",
       "Material": "Stahlgehäuse mit Korrosionsschutz",
       "Garantie": "12 Monate Garantie auf elektrische Komponenten"
     },
     "testimonials": [
       {
-        "quote": "Eine robuste, verlässliche Maschine mit genug Power, um Feldarbeit weniger hart erscheinen zu lassen.",
+        "quote": "Eine robuste, zuverlässige Maschine mit genug Kraft, um Feldarbeit weniger anstrengend zu machen.",
         "author": "Tomás Herrera",
         "company": "Precision Agriculture Co.",
         "rating": 4
@@ -1854,45 +1914,46 @@
     ]
   },
   "spareparts": {
+    "name": "Empfohlene Ersatzteile",
     "nickname": "Die Lebensretter",
     "specs": [
       "Werksgeprüfte Ersatzteile für alle Modelle",
-      "Kritische Komponenten für hochbelastete und wichtige Baugruppen",
-      "Einzeln verpackt, beschriftet und einsatzbereit für den Feldservice",
-      "Unterstützt von TechbyP’s Zuverlässigkeitsstandards"
+      "Kritische Komponenten für stark beanspruchte und systemrelevante Baugruppen",
+      "Einzelverpackt, beschriftet und feldeinsatzbereit",
+      "Unterstützt durch TechbyP's Zuverlässigkeitsstandards"
     ],
-    "description": "Denn nichts ruiniert einen guten Tag im Feld so sehr wie eine defekte Armatur oder eine undichte Dichtung. Diese offiziellen, empfohlenen Ersatzteile sind speziell für Ihre MP-, DH-, DE- oder BOPROB-III-Maschine ausgewählt und helfen, Probleme zu verhindern, bevor sie entstehen.",
-    "herodescription": "Denken Sie daran wie an ein Erste-Hilfe-Set für Ihren Bodenprobenehmer. Egal ob im Moor Bayerns oder in der Steppe Bulgariens – mit den richtigen <strong>OEM-Ersatzteilen</strong> in Reichweite wird aus einem möglichen Desaster ein souverän gemeisterter Zwischenfall.<br/>Jedes Set enthält die üblichen Verdächtigen – <strong>O-Ringe, Hydraulikverschraubungen, Filter, Riemen</strong> und die Teile, die im Stillen am meisten arbeiten. Keine Improvisationen mit Draht oder Ersatzteilen vom Traktor des Nachbarn.",
-    "detailedDescription": "<p className='mt-4'>Diese sind die <strong>empfohlenen Ersatzteilkits</strong> für die <strong>MP-Serie</strong>, <strong>DH-Serie</strong>, <strong>DE-Serie</strong> und <strong>BOPROB III</strong>. Und nein, sie sind nicht optional. Das sind die Teile, die Ingenieure verwenden. Die Service-Techniker. Und die, die Sie im Werkzeugkasten haben sollten, wenn Ihnen Ausfallzeiten wichtig sind.</p><p className='mt-4'>In jedem Kit finden Sie die üblichen Verdächtigen – <strong>Dichtungen, Filter, Hydraulikverschraubungen, Schütze und Druckleitungen</strong> – die Teile, die die Flüssigkeiten an Ort und Stelle halten und den Strom in die richtige Richtung lenken. Es ist wie ein Ersatzunterwäsche-Set auf einem Langstreckenflug: Man hofft, es nicht zu brauchen, ist aber unendlich froh, wenn es da ist.</p><p className='mt-4'>Die Teile sind <strong>einzeln verpackt und beschriftet</strong>, damit Sie nicht halbtags rätseln müssen, ob die Dichtung zur Rücklaufleitung oder zum Ölfilter gehört. Und natürlich sind alle <strong>werkszertifiziert</strong> und passen ohne Nacharbeit.</p>",
-    "price": "Ab 450 €",
+    "description": "Weil nichts einen guten Tag im Feld so ruiniert wie ein undichtes Fitting oder ein gerissener Riemen. Dies sind die offiziellen, empfohlenen Ersatzteile – handverlesen für Ihre MP-, DH-, DE- oder BOPROB III-Maschine und bereit, Sie aus der Patsche zu helfen, bevor es losgeht.",
+    "herodescription": "Betrachten Sie diese als den Erste-Hilfe-Kasten für Ihren Bodenprobenehmer. Ob Sie in einem bayerischen Moor oder einer bulgarischen Staubschüssel unterwegs sind – die richtigen <strong>Original-Ersatzteile</strong> zur Hand zu haben verwandelt ein potenzielles Desaster in ein lässig gemeistertes Ärgernis.<br/>Jedes Kit enthält die üblichen Verdächtigen – <strong>O-Ringe, Hydraulikkupplungen, Filter, Riemen</strong> und die Teile, die still und leise die meiste Arbeit leisten. Kein Improvisieren mit Draht oder geborgten Teilen vom Kumpel sein Mähdrescher.",
+    "detailedDescription": "<p className='mt-4'>Dies sind die <strong>empfohlenen Ersatzteil-Kits</strong> für die <strong>MP-Serie</strong>, <strong>DH-Serie</strong>, <strong>DE-Serie</strong> und <strong>BOPROB III</strong> Probenehmer. Und nein, sie sind nicht optional. Sie sind, was die Ingenieure verwenden. Was die Servicetechniker verwenden. Was Sie im Werkzeugkasten haben sollten, wenn Sie es auch nur halbwegs ernst meinen mit der Betriebsbereitschaft.</p><p className='mt-4'>In jedem Kit finden Sie die üblichen Verdächtigen – <strong>Dichtungen, Filter, Hydraulikanschlüsse, Relais und Druckleitungen</strong> – die Teile, die die Flüssigkeit dort halten, wo sie sein soll, und den Strom in die richtige Richtung fließen lassen. Es ist wie eine Ersatzunterhose auf einem Langstreckenflug: Sie hoffen, sie nicht zu brauchen, aber Sie sind verdammt froh, wenn Sie sie haben.</p><p className='mt-4'>Teile sind <strong>einzeln verpackt und beschriftet</strong>, damit Sie nicht einen halben Tag damit verbringen, herauszufinden, ob diese Unterlegscheibe an die Rücklaufleitung oder den Ölfilter passt. Und natürlich sind sie alle <strong>werksgeprüft</strong> und dafür gemacht, einfach einzubauen zu sein – ohne Bastelei.</p>",
+    "price": "Ab €450",
     "features": [
-      "Empfohlene Ersatzteile für MP-, DH-, DE- und BOPROB-III-Bodenprobenehmer",
-      "Enthält kritische Verschleißteile und Notfall-Reparatursets",
+      "Empfohlene Ersatzteile für MP-, DH-, DE- und BOPROB III-Bodenprobenehmer",
+      "Enthält kritische Verschleißteile und Notfallreparaturkomponenten",
       "Werksgeprüft für nahtlose Kompatibilität",
-      "Deutlich beschriftet und verpackt für den Feldeinsatz",
-      "Hilft, Ausfallzeiten während wichtiger Probennahmen zu reduzieren"
+      "Klar beschriftet und für den Feldeinsatz verpackt",
+      "Hilft Ausfallzeiten während kritischer Probennahmekampagnen zu reduzieren"
     ],
     "applications": [
-      "Feldreparaturen und präventive Wartung von BPT Bodenprobenehmern",
-      "Wartungsbereite Haltung hochbelasteter Bauteile",
-      "Vermeidung von Projektverzögerungen wegen fehlender Teile"
+      "Feldreparaturen und vorbeugende Wartung an BPT-Bodenprobenehmern",
+      "Hochbeanspruchte Komponenten in einsatzbereitem Zustand halten",
+      "Projektverzögerungen durch fehlende Teile vermeiden"
     ],
     "howToUse": [
-      "Halten Sie pro Maschine ein Kit bereit – denn niemand mag es, Teile vom nicht genutzten Gerät zu klauen.",
-      "Ersetzen Sie Verschleißteile nach Wartungsintervallen oder bei sichtbarem Verschleiß.",
-      "Verwenden Sie nur die beschrifteten Teile an den vorgesehenen Stellen (Raten ist teuer, nicht heroisch).",
-      "Füllen Sie Ihr Kit nach Gebrauch wieder auf, damit Sie nie zweimal ohne Ersatz dastehen."
+      "Halten Sie ein Kit pro Maschine vorrätig – weil niemand gerne Teile von der nicht genutzten Einheit ausbaut.",
+      "Ersetzen Sie stark beanspruchte Komponenten gemäß Wartungsintervallen oder sichtbarem Verschleiß.",
+      "Verwenden Sie nur die beschrifteten Teile für ihre vorgesehenen Stellen (Raten ist nicht heldenhaft, sondern teuer).",
+      "Füllen Sie Ihr Kit nach Gebrauch wieder auf, damit Sie nie zweimal ohne dastehen."
     ],
     "technicalSpecs": {
       "Kompatibilität": "MP-1.90, MP-2.60, MP-3.90, MP-4.100, MP-1.120, DH-Serie, DE-1.30, BOPROB III",
-      "Enthaltene Teile": "Hydraulikverschraubungen, Filter, O-Ringe, Schütze, Riemen, Relais, Druckleitungen (je nach Kit unterschiedlich)",
-      "Verpackung": "Einzeln verpackt und beschriftet",
+      "Enthaltene Teile": "Hydraulikkupplungen, Filter, O-Ringe, Magnetventile, Riemen, Relais, Druckleitungen (variiert je nach Kit)",
+      "Verpackung": "Einzel verpackt und beschriftet",
       "Haltbarkeit": "5 Jahre bei trockener Lagerung",
-      "Nachbestellung": "Einzelteile auf Anfrage erhältlich"
+      "Nachbestelloptionen": "Einzelteile auf Anfrage erhältlich"
     },
     "testimonials": [
       {
-        "quote": "Früher habe ich wild improvisiert – bis ich zwei Stunden im Schlamm verbrachte, um ein Ventil mit Kaugummi zu flicken. Nie wieder.",
+        "quote": "Ich habe früher mit irgendwelchen Teilen improvisiert – bis ich zwei Stunden im Schlamm verbracht habe, um ein Ventil mit Kaugummi zu reparieren. Nie wieder.",
         "author": "Elena Mihăilescu",
         "company": "AgroTest România",
         "rating": 5
@@ -1900,242 +1961,338 @@
     ]
   },
   "coolbox": {
+    "name": "Kühlbox 95L",
     "nickname": "Der Kühler",
     "specs": [
-      "Kompressor mit Zwei-Zonen-Kühlung/-Gefrierung bis -20 °C",
+      "Dual-Zonen Kompressorkühlung/-gefrierung bis -20°C",
       "Unabhängige Fächer mit LED-Beleuchtung",
-      "Digitalanzeige, USB-Ladestation und App-Steuerung",
-      "Betrieb mit 12/24 V DC oder 230 V AC"
+      "Digitales Display, USB-Ladung und App-Steuerung",
+      "Arbeitet mit 12/24 V DC oder 230 V AC"
     ],
-    "description": "Denn manchmal verdienen Ihre Proben – oder Ihr Bier – mehr als lauwarme Qual. Mit diesem 95-Liter-Monster bringen Sie eine portable arktische Tundra zur Baustelle. Vielleicht Overkill. Aber definitiv genial.",
-    "herodescription": "Sie kennen das Gefühl – Sie sind halb auf dem Berg, alles läuft nach Plan, und dann öffnet jemand die Kühlbox und findet... <strong>Suppe</strong>. Nicht mit <strong>Dem Kühler</strong>, der aus selbstgefälligen Grinsgesichtern buchstäblich eisige Erleichterung macht.<br/>Er <strong>kühlt</strong>. Er <strong>gefriert</strong>. Er <strong>leuchtet</strong>. Und ja, er hat eine <strong>App</strong> – weil Ihr Handy nicht schon arrogant genug ist. Deutsche Ingenieure nennen das <em>Kühlbox</em>. <strong>Wir nennen es: 'Wir bringen den Kühlschrank mit, weil wir können.'</strong>",
-    "detailedDescription": "<p className='mt-4'>Die <strong>Coolbox 95L</strong> ist, ehrlich gesagt, <strong>fähiger als die meisten Hotel-Minibars</strong>. Zwei Fächer, jeweils als Kühlschrank oder Gefrierfach konfigurierbar, damit Sie Ihre Probenausrüstung auf der einen und Ihr Mittagessen auf der anderen Seite lagern können – und trotzdem Platz für <strong>zufriedenes Grinsen</strong> bleibt.</p><p className='mt-4'>Angetrieben von einem <strong>hocheffizienten LG-Kompressor</strong> (der mehr kann als die Klimaanlage Ihres Autos), kühlt sie bis auf <strong>-20 °C</strong>, selbst wenn es heiß genug ist, um ein Ei auf dem Dachträger zu braten. Bedienbar über das Bedienfeld oder die <strong>Alpicool-App</strong>, falls Sie der Typ sind, der seinen Kühlschrank aus der Hängematte steuert.</p><p className='mt-4'>Für längere Autonomie können Sie die <strong>optionale Batterie</strong> (nicht enthalten) anschließen, die 4 bis 24 Stunden Standalone-Kühlung ermöglicht. Oder Sie stecken sie ins Fahrzeug und <strong>machen sich nie wieder Sorgen</strong>. Sie ist robust gebaut – <strong>aber wir raten davon ab, sie absichtlich zu vermöbeln.</strong></p>",
-    "price": "1000 €",
+    "description": "Weil Ihre Proben – oder Ihr Bier – manchmal mehr verdienen als lauwarmes Elend. Mit diesem 95L-Monster bringen Sie eine portable arktische Tundra zur Baustelle. Vielleicht übertrieben. Aber definitiv brillant.",
+    "herodescription": "Sie kennen das Gefühl – Sie sind halb den Berg hoch, alles läuft nach Plan, und dann öffnet jemand den Kühler und findet... <strong>Suppe</strong>. Nicht mehr. <strong>Der Kühler verwandelt selbstgefälliges Grinsen in eisige Erleichterung</strong>, buchstäblich.<br/>Er <strong>kühlt</strong>. Er <strong>friert ein</strong>. Er <strong>leuchtet</strong>. Und ja, er hat eine <strong>App</strong> – weil Ihr Telefon noch nicht genug kann. Deutsche Ingenieure nennen dies vielleicht eine <em>Kühlbox</em>. <strong>Wir nennen es 'den Kühlschrank mitbringen, weil wir es können.'</strong>",
+    "detailedDescription": "<p className='mt-4'>Die <strong>Kühlbox 95L</strong> ist ehrlich gesagt <strong>leistungsfähiger als die meisten Hotel-Minibars</strong>. Zwei Fächer, jeweils als Kühl- oder Gefrierfach konfigurierbar, bedeuten, dass Sie Ihre Proben auf der einen und Ihr Mittagessen auf der anderen Seite lagern können – und trotzdem Platz für <strong>selbstgefällige Zufriedenheit</strong> haben.</p><p className='mt-4'>Angetrieben von einem <strong>hocheffizienten LG-Kompressor</strong> (was mehr ist, als die Klimaanlage Ihres Autos von sich behaupten kann), kühlt sie bis auf <strong>-20°C</strong> – selbst wenn es heiß genug ist, um ein Ei auf dem Dachgepäckträger zu braten. Bedienung über das Bedienfeld oder die <strong>Alpicool-App</strong>, falls Sie der Typ sind, der seinen Kühlschrank aus der Hängematte steuert.</p><p className='mt-4'>Für längere Autonomie kombinieren Sie sie mit der <strong>optionalen Batterie</strong> (nicht im Lieferumfang) für <strong>4 bis 24 Stunden</strong> unabhängige Kühlung. Oder schließen Sie sie ans Fahrzeug an und <strong>machen Sie sich nie wieder Sorgen</strong>. Gebaut um was auszuhalten – <strong>auch wenn wir davon abraten, das auszuprobieren.</strong></p>",
+    "price": "€1.000",
     "features": [
-      "Zwei Fächer, die unabhängig kühlen oder gefrieren können",
-      "Digitalanzeige mit Touch-Steuerung und mobiler App",
+      "Dual-Fach kann unabhängig kühlen oder einfrieren",
+      "Digitales Display mit Touchsteuerung und mobiler App",
       "Integrierte LED-Beleuchtung und USB-Ladeanschluss",
-      "Deckel öffnen von beiden Seiten für maximale Flexibilität",
+      "Klappen öffnen von beiden Seiten für maximales Hantieren",
       "Läuft mit 12/24 V DC oder 110–240 V AC"
     ],
     "applications": [
       "Transport temperaturkritischer Proben in heißen Klimazonen",
-      "Mehrtagestouren ohne Verzicht auf kalte Getränke",
-      "Kühlung von Gelpacks und Proben bei laborkonformen Temperaturen",
-      "Notfall-Bierkühlung an abgelegenen Baustellen"
+      "Mehrtägige Expeditionen ohne kalte Getränke zu opfern",
+      "Kühlakkus und Proben innerhalb labor-konformer Temperaturen halten",
+      "Notfall-Bierkühlung an abgelegenen Einsatzorten"
     ],
     "howToUse": [
-      "Vor dem Beladen an Fahrzeug- oder Netzstrom anschließen",
-      "Temperaturziele über Bedienfeld oder App einstellen",
-      "Fächer als Kühlschrank-Gefrierfach, Kühlschrank-Kühlschrank oder Gefrier-Gefrierfach nutzen",
-      "Proben aufrecht lagern und nicht überladen (ja, wir wissen, Sie tun es trotzdem)",
-      "Regelmäßig reinigen, außer Sie erforschen mikrobielles Wachstum"
+      "Vor dem Beladen ans Fahrzeug oder Netzteil anschließen",
+      "Zieltemperaturen über Bedienfeld oder App einstellen",
+      "Fächer als Kühl-Gefrier-, Kühl-Kühl- oder Gefrier-Gefrier-Kombi nutzen",
+      "Proben aufrecht laden und Überfüllung vermeiden (ja, wir wissen, dass Sie es trotzdem tun werden)",
+      "Regelmäßig reinigen, es sei denn, Sie führen eine mikrobiologische Wachstumsstudie durch"
     ],
     "technicalSpecs": {
-      "Kapazität": "95 L",
-      "Temperaturbereich": "-20 °C bis +10 °C",
+      "Fassungsvermögen": "95 L",
+      "Temperaturbereich": "-20°C bis +10°C",
       "Stromversorgung": "12/24 V DC oder 110–240 V AC",
       "Stromverbrauch": "6 A (12 V) / 3 A (24 V) ≈ 0,3 kWh/24h",
       "Außenmaße": "826 × 528 × 465 mm (+25 mm Griffabstand)",
-      "Innenaufteilung": "2 LED-beleuchtete Fächer mit separaten Deckeln",
+      "Innenkonfiguration": "2 LED-beleuchtete Fächer mit separaten Klappen",
       "Gewicht": "24 kg (Leergewicht)"
     },
     "testimonials": []
   },
   "led": {
+    "name": "LED-Arbeitsleuchte 1700",
     "nickname": "Die Mitternachtssonne",
     "specs": [
-      "Schwenkbar montierte LED-Arbeitsleuchte für Nahfeldbeleuchtung",
-      "Blendende 1700 Lumen aus 4 LEDs",
-      "Robustes Aluminiumgehäuse, IP6K9K zertifiziert",
-      "Kompatibel mit 12–24 V Gleichstromsystemen"
+      "Schwenkbare LED-Arbeitsleuchte für Nahfeldbeleuchtung",
+      "Blendende 1700 Lumen Ausgangsleistung von 4 LEDs",
+      "Langlebiges Aluminiumgehäuse, IP6K9K bewertet",
+      "Kompatibel mit 12–24 V DC Systemen"
     ],
-    "description": "Dunkelheit ist keine Ausrede. Mit 1700 Lumen in einem kompakten, gepanzerten Gehäuse ist diese LED-Arbeitsleuchte das Ergebnis, wenn man eine Stirnlampe mit einer kleinen Sonne kreuzt. Egal ob mitten in der Probe oder beim Fluchen – du siehst alles glasklar.",
-    "herodescription": "<strong>Im Dunkeln probieren? Sonne vergessen?</strong> Kein Problem. Die Mitternachtssonne liefert <strong>ernsthaft starke Beleuchtung</strong> – ohne Hitze, Lärm oder Dieselrechnung.<br/>Montieren, richten, einschalten – und dich fragen, wie du je ohne sie leben konntest. Keine romantische Stimmung, sondern <strong>Arbeitslicht, das funktioniert</strong>.",
-    "detailedDescription": "<p class='mt-4'><strong>LED Arbeitsleuchte 1700</strong> ist ein <strong>praxisbewährtes, kompromissloses Leuchtmittel</strong>, das Dunkelheit wie eine Kettensäge durchschnitten lässt. Mit brutalen <strong>1700 Lumen</strong> liefert sie fokussiertes Nahfeldlicht für Probenehmer, Maschinen oder überall dort, wo 'Ich glaube, ich sehe was' nicht reicht.</p><p class='mt-4'>Gehüllt in <strong>schwarz eloxiertes Aluminium</strong> und zertifiziert nach <strong>IP6K7 und IP6K9K</strong>, trotzt sie Wasserstrahlen, Staub und vermutlich den meisten deiner Fehler. Ein <strong>schwenkbarer Halter</strong> ermöglicht präzises Ausrichten, während die <strong>strukturierte Linse</strong> den Lichtkegel breit und nutzbar hält.</p><p class='mt-4'>Kompatibel mit <strong>12–24 V Gleichstrom</strong>, zieht sie 24 W und kommt mit offenen Kabelenden zur einfachen Integration. Fachgerechte Montage empfohlen – <strong>weil geschmolzene Kabel im echten Leben nicht lustig sind</strong>.</p>",
-    "price": "67 €",
+    "description": "Dunkelheit ist keine Ausrede. Mit 1700 Lumen in einer kompakten, gepanzerten Einheit ist diese LED-Arbeitsleuchte das Ergebnis einer Kreuzung aus Stirnlampe und kleiner Sonne. Ob mitten in der Probennahme oder im Fluch – Sie werden alles klar sehen.",
+    "herodescription": "<strong>Probennahme im Dunkeln? Die Sonne vergessen?</strong> Kein Problem. Die Mitternachtssonne liefert <strong>ernsthaft starkes Licht</strong> ohne Hitze, Lärm oder Dieselrechnung.<br/>Montieren, ausrichten, einschalten – dann fragen Sie sich, wie Sie je ohne leben konnten. Es ist keine romantische Beleuchtung. Es ist <strong>mach-den-Job-Beleuchtung</strong>.",
+    "detailedDescription": "<p className='mt-4'>Die <strong>LED-Arbeitsleuchte 1700</strong> ist eine <strong>felderprobte, no-nonsense Leuchte</strong>, entwickelt um Dunkelheit zu durchschneiden wie eine Kettensäge Butter. Mit brutalen <strong>1700 Lumen</strong> liefert sie fokussierte Nahfeldbeleuchtung für Probennahme-Rigs, Maschinen oder jede Situation, in der 'Ich glaube ich sehe was' nicht gut genug ist.</p><p className='mt-4'>Mit einem <strong>schwarz eloxierten Aluminiumgehäuse</strong> und den Standards <strong>IP6K7 und IP6K9K</strong> widersteht diese Einheit Wasserstrahlen, Staubstürmen und wahrscheinlich den meisten Ihrer Fehler. Ein <strong>schwenkbarer Halter</strong> ermöglicht präzises Ausrichten, während die <strong>gemusterte Linse</strong> den Strahl breit und nutzbar hält.</p><p className='mt-4'>Kompatibel mit <strong>12–24 V DC</strong> Systemen, zieht die Leuchte 24 W und kommt mit offenen Kabelenden für einfache Integration. Montage durch qualifiziertes Personal erforderlich – <strong>weil schmelzende Kabel im echten Leben weniger lustig sind</strong>.</p>",
+    "price": "€67",
     "features": [
-      "1700 Lumen aus 4 Hochleistungs-LEDs",
-      "Schwenkbarer Halter für präzises Zielen",
-      "Schutzart IP6K9K und IP6K7",
-      "Strukturierte Linse für Nahfeldverteilung",
+      "1700 Lumen Ausgangsleistung von 4 Hochleistungs-LEDs",
+      "Schwenkbarer Halter für präzises Ausrichten",
+      "IP6K9K und IP6K7 Schutz gegen Eindringen",
+      "Gemusterte Linse für breite Nahfeldausleuchtung",
       "Kompaktes und robustes Aluminiumgehäuse"
     ],
     "applications": [
-      "Nächtliches Bohren und Bodenprobenahme",
-      "Maschinenbeleuchtung auf Bohranlagen und Anhängern",
-      "Arbeitszonen in Tunneln, Wäldern oder mitten im Nirgendwo",
-      "Beleuchtung bei Notfallreparaturen"
+      "Nächtliche Bohrungen und Bodenprobennahme",
+      "Maschinenbeleuchtung an Rigs und Anhängern",
+      "Arbeitsbereiche in Tunneln, Wäldern oder 'mitten im Nirgendwo'",
+      "Notfallreparaturbeleuchtung"
     ],
     "howToUse": [
-      "Sicher mit dem beiliegenden Schwenkhalter montieren",
-      "An 12- oder 24-V-Gleichstrom anschließen (fachgerechte Montage!)",
-      "Licht auf den Arbeitsbereich ausrichten",
-      "Nicht direkt hineinschauen – Netzhautbedauern garantiert"
+      "Sicher mit mitgeliefertem Schwenkhalter montieren",
+      "An 12 oder 24 V DC anschließen (Montage durch qualifiziertes Personal)",
+      "Lichtkegel auf Arbeitsbereich ausrichten",
+      "Vermeiden Sie direktes Hineinstarren, es sei denn, Sie mögen Netzhautschäden"
     ],
     "technicalSpecs": {
-      "Voltage": "12/24 V Gleichstrom",
-      "PowerConsumption": "24 W",
-      "LuminousFlux": "1700 lm",
-      "ColorTemperature": "5700 K",
-      "NumberOfLEDs": "4",
-      "LightDistribution": "Nahfeldbeleuchtung",
-      "Mounting": "Schwenkbarer Montagehalter",
-      "PlugType": "Offene Kabelenden",
-      "CableLength": "800 mm",
-      "IngressProtection": "IP6K7 / IP6K9K",
-      "Housing": "Aluminium, schwarz eloxiert",
-      "Dimensions": "75 mm (H) × 98 mm (B) × 41 mm (T)",
-      "Diameter": "75 mm",
-      "Certification": "ECE R10 konform"
+      "Spannung": "12/24 V DC",
+      "Leistungsaufnahme": "24 W",
+      "Lichtstrom": "1700 lm",
+      "Farbtemperatur": "5700 K",
+      "AnzahlLEDs": "4",
+      "Lichtverteilung": "Nahfeldbeleuchtung",
+      "Montage": "Schwenkbarer Halter",
+      "Steckertyp": "Offene Kabelenden",
+      "Kabellänge": "800 mm",
+      "Schutzart": "IP6K7 / IP6K9K",
+      "Gehäuse": "Aluminium, schwarze Oberfläche",
+      "Abmessungen": "75 mm (H) × 98 mm (B) × 41 mm (T)",
+      "Durchmesser": "75 mm",
+      "Zertifizierung": "ECE R10 konform"
     },
     "testimonials": []
   },
   "camera": {
+    "name": "Externe Kamera",
     "nickname": "Der Wachturm",
     "specs": [
-      "5MP 4G-Kamera für Bodenprobenehmer",
-      "Direkt am Maschinenrahmen montierbar",
-      "Live-Video-Feed auf Handy oder Tablet via App",
-      "75° Sichtfeld mit IR-Nachtsicht bis 15 m"
+      "5MP 4G Kamera für Bodenprobennahme-Rigs",
+      "Direkt an Ihren Maschinenrahmen montierbar",
+      "Live-Videofeed auf Ihr Handy oder Tablet via App",
+      "75° Blickwinkel mit IR-Nachtsicht bis 15 m"
     ],
-    "description": "Warum raten, was hinter der Maschine passiert, wenn du es live sehen kannst? Der Wachturm wird an deiner Maschine montiert und streamt direkt in deine Fahrerkabine. Keine Kabel. Keine toten Winkel. Keine Überraschungen.",
-    "herodescription": "<strong>Schon mal versucht, mit 3 Tonnen Probenehmer blind rückwärtszufahren?</strong> Nicht ideal. Der Wachturm gibt dir <strong>Augen am Bohrer</strong> – bequem vom Fahrersitz aus. Überwache jeden Zug, jeden Schlag, jedes Wackeln.<br/>4G-Verbindung. Handy-Stream. <strong>Weil jetzt technisch möglich ist, an zwei Orten gleichzeitig zu sein.</strong>",
-    "detailedDescription": "<p class='mt-4'><strong>Der Wachturm</strong> ist eine <strong>feldtaugliche 5MP-Kamera</strong>, die direkt an deiner Bodenprobenehmer-Maschine montiert wird. Sie streamt Live-Video via 4G auf Tablet oder Handy, sodass du siehst, was hinten an der Maschine passiert, ohne aufzustehen (oder übers matschige Feld zu schreien).</p><p class='mt-4'>Mit <strong>75° Sichtwinkel</strong> deckt sie den Probenehmer vollständig ab, während die <strong>Infrarot-Nachtsicht</strong> bis in die Dämmerung für klare Sicht sorgt. Ob Ausrichtung prüfen, Kernentnahme bestätigen oder einfach nur deine Bohrkünste bewundern – alles live und in Farbe.</p><p class='mt-4'>Die App ist kostenlos, die Installation dauert Minuten, und WLAN vor Ort brauchst du nicht. Mit optionaler Micro-SD-Karte (bis 128 GB) kannst du sogar <strong>Aufnahmen für Dokumentation oder Schulung speichern</strong>. Plug & Play – aber Achtung: <strong>SIM-Karte richtig einlegen, sonst ärgerst du dich den ganzen Nachmittag.</strong></p><p class='mt-4'>Regenfest, schlammresistent und unglaublich zuverlässig – genau das, was du an einer vibrierenden Maschine im Nirgendwo brauchst.</p>",
-    "price": "225 €",
+    "description": "Warum raten, was hinter dem Rig passiert, wenn Sie es in Echtzeit beobachten können? Der Wachturm montiert an Ihrer Maschine und streamt Live-Bilder direkt in Ihr Fahrerhaus. Keine Kabel. Keine toten Winkel. Keine Überraschungen.",
+    "herodescription": "<strong>Schon mal versucht, Ihr Rig blind rückwärts mit einem 3-Tonnen-Probenehmer hinten zu bewegen?</strong> Nicht ideal. Der Wachturm gibt Ihnen <strong>Augen am Bohrgerät</strong> – vom Komfort Ihres Fahrersitzes aus. Beobachten Sie jede Bewegung, jeden Schlag, jedes Wackeln.<br/>Verbinden Sie sich via 4G. Sehen Sie von Ihrem Handy aus. <strong>Weil an zwei Orten gleichzeitig zu sein jetzt technisch möglich ist.</strong>",
+    "detailedDescription": "<p className='mt-4'><strong>Der Wachturm</strong> ist eine <strong>feldfeste 5MP Kamera</strong>, entwickelt zur direkten Montage an Ihrem Bodenprobennahme-Gerät. Einmal installiert, streamt sie Live-Video auf Ihr Tablet oder Handy über 4G – sodass Sie sehen können, was hinten am Rig passiert, ohne Ihren Sitz zu verlassen (oder über ein schlammiges Feld zu brüllen).</p><p className='mt-4'>Ihr <strong>75° Blickwinkel</strong> gibt volle Sicht auf den Probenehmerkopf, während <strong>Infrarot-Nachtsicht</strong> dieses Vertrauen bis in die Dämmerung erweitert. Ob Sie die Ausrichtung prüfen, den Kernabwurf bestätigen oder einfach nur Ihre Bohrkünste bewundern – alles in Echtzeit sichtbar.</p><p className='mt-4'>Die App ist kostenlos, der Setup dauert Minuten und es wird kein lokales Wi-Fi benötigt. Mit optionaler microSD-Karte (bis 128 GB) können Sie sogar <strong>Operationen zur Dokumentation oder Schulung aufzeichnen</strong>. Installation ist Plug-and-Play, mit einer wichtigen Einschränkung: <strong>Setzen Sie die SIM-Karte richtig ein oder verbringen Sie den Nachmittag mit der Diagnose Ihrer eigenen Ungeduld</strong>.</p><p className='mt-4'>Regen- und schlammfest und hartnäckig zuverlässig – genau das, was Sie von etwas wollen, das an einer vibrierenden Maschine mitten im Nirgendwo montiert ist.</p>",
+    "price": "€225",
     "features": [
-      "Live-Video-Streaming über 4G-Netz",
-      "75° Festwinkel-Linse mit Nachtsicht",
-      "Direktmontage an TechByp-Maschinen",
-      "App-Steuerung mit Bildanpassungen (WDR, BLC etc.)",
-      "Optionales Onboard-Recording via Micro-SD"
+      "Live-Videostreaming über 4G-Netzwerk",
+      "75° Festbrennweiten-Objektiv mit Nachtsicht",
+      "Direkte Montage an TechByp-Probennahmegeräten",
+      "App-Steuerung mit Bildanpassung (WDR, BLC usw.)",
+      "Optionale Aufzeichnung via microSD"
     ],
     "applications": [
-      "Überwachung der Bodenprobenahme aus dem Fahrzeug",
-      "Live-Ausrichtungschecks beim Bohren",
-      "Schulung und Video-Dokumentation für Bediener",
-      "Vermeidung von Blindbohrungen und Überraschungen"
+      "Überwachung von Bodenprobennahme-Operationen aus dem Fahrzeuginneren",
+      "Live-Ausrichtungsprüfungen während des Bohrprozesses",
+      "Operatorenschulung und Video-Dokumentation",
+      "Vermeidung von Blindbohrungen und unerwarteten Überraschungen"
     ],
     "howToUse": [
-      "Sicher am Gerät mit Halter montieren",
-      "SIM- und optional SD-Karte einlegen",
-      "An 12V Stromversorgung der Maschine anschließen",
-      "App starten und Live-Feed streamen",
-      "Gelegentlich reinigen – aber nur bei abgezogenem Stecker!"
+      "Sicher am Gerät mit Halterung befestigen",
+      "SIM-Karte und optionale SD-Karte einsetzen",
+      "An 12V-Stromversorgung des Rigs anschließen",
+      "App starten um Live-Feed der Kamera zu streamen",
+      "Gelegentlich reinigen – aber nur bei ausgeschaltetem Gerät!"
     ],
     "technicalSpecs": {
-      "Resolution": "5 MP",
-      "Transmission": "4G LTE",
-      "IRIllumination": "Ja, bis 15 m",
-      "ViewingAngle": "75°",
-      "PanTilt": "Nein (Festlinse)",
+      "Auflösung": "5 MP",
+      "Übertragung": "4G LTE",
+      "IR-Beleuchtung": "Ja, bis 15 m",
+      "Blickwinkel": "75°",
+      "Schwenk/Neige": "Nein (festes Objektiv)",
       "Audio": "Ja",
-      "ControlViaApp": "Ja (iOS/Android)",
-      "SDCardSlot": "Ja, bis 128 GB",
-      "PowerSupply": "12V Gleichstrom",
-      "HousingType": "Mini-Kamera, robustes Gehäuse",
-      "Mounting": "Schraub-/Schwenkhalter (inklusive)",
-      "Dimensions": "80 mm (B) × 45 mm (H) × 80 mm (T)",
-      "IngressProtection": "Wetterfest für Außenmontage"
+      "App-Steuerung": "Ja (iOS/Android)",
+      "SD-Kartensteckplatz": "Ja, bis 128 GB",
+      "Stromversorgung": "12V DC",
+      "Gehäusetyp": "Mini-Kamera, robustes Gehäuse",
+      "Montage": "Schraub-/Schwenkhalterung (inklusive)",
+      "Abmessungen": "80 mm (B) × 45 mm (H) × 80 mm (T)",
+      "Schutzart": "Wetterfest für Außenmontage"
     },
     "testimonials": []
   },
   "probes": {
+    "name": "Sonden, Peilstäbe und Zubehör",
     "nickname": "Der N-min Purist",
     "specs": [
-      "Werkzeugstahl (HRC 52)",
-      "Kegelprofil (40→38 mm / 35→33 mm / 30→28 mm)",
-      "Lasergravierte Tiefenmarkierungen alle 10 cm",
-      "Kompatibel mit N-min Probenahmeprotokollen (VDLUFA, ISO 14255)"
+      "Werkzeugstahlkonstruktion (HRC 52)",
+      "Konisches Taperprofil (40→38 mm / 35→33 mm / 30→28 mm)",
+      "Laserätzte Tiefenmarkierungen alle 10 cm",
+      "Kompatibel mit N-min Probennahmeprotokollen (VDLUFA, ISO 14255)"
     ],
-    "description": "Der Goldstandard für manuelle N-min-Probenahme – präzisionsgefertigte, konische Bohrstangen für harte Böden und Labor-Genauigkeit.",
-    "herodescription": "Nicht irgendeine Stange – sondern <strong>rasiermesserscharfe Werkzeugstahl-Skalpelle</strong> für den Bodenfanatiker, der Präzision verlangt. Das konische Design heißt weniger Aufwand, weniger Reibung, und die <strong>lasergravierten 10-cm-Marken</strong>? Perfekt, um genau zu wissen, wie tief du gebohrt hast – denn Bodenschichten mögen keine Störung, und du solltest es auch nicht.",
-    "detailedDescription": "<p class='mt-4'>Für alle, die Boden ernst nehmen (und sich selbst etwas weniger): drei konische Größen – <strong>40→38 mm</strong> für 0-30 cm, <strong>35→33 mm</strong> für 30-60 cm und <strong>30→28 mm</strong> für 60-90 cm – schneiden durch hartnäckigen Ton und Kies wie Butter durch ein heißes Messer, dank vorgespaltener Kanten, die dir die harte Arbeit abnehmen.</p><p class='mt-4'>Jede Stange hat <strong>lasergravierte 10-cm-Marken</strong>, die nicht schneller verblassen als deine Motivation an einem Montagmorgen. Kombinierbar mit Griffhebeln (Art. 1030/1031) zum einfachen Herausziehen und einem Meißel (Art. 1051) zum sauberen Abstreifen der Proben – denn Probenahme sollte sich anfühlen wie ein sanfter Schubs, nicht wie Armdrücken.</p>",
+    "description": "Der Goldstandard für manuelle N-min Probennahme – präzisionsgefertigte, konische Bohrgestänge für harte Böden und Laborgenauigkeit.",
+    "herodescription": "Nicht irgendwelche Stangen – dies sind <strong>rasierklingenscharfe, werkzeugstählerne Skalpelle</strong> für den Bodenliebhaber, der Präzision verlangt. Ihr konisches Design bedeutet weniger Ärger, weniger Reibung und diese <strong>laserätierten 10 cm Markierungen</strong>? Perfekt um genau zu wissen, wie tief Sie gestochert haben – weil Bodenschichten nicht gestört werden wollen und Sie auch nicht.",
+    "detailedDescription": "<p className='mt-4'>Entworfen für diejenigen, die Boden ernst nehmen (und sich selbst ein bisschen weniger): drei schlanke konische Größen – <strong>40→38 mm</strong> für 0-30 cm, <strong>35→33 mm</strong> für 30-60 cm und <strong>30→28 mm</strong> für 60-90 cm – schneiden sich durch hartnäckigen Lehm und Kies wie ein heißes Messer durch Butter, dank vorgebrochener Kanten, die bereit sind, die harte Arbeit für Sie zu erledigen.</p><p className='mt-4'>Jede Stange hat <strong>laserätzte 10 cm Markierungen</strong>, die nicht schneller verblassen als Ihre Begeisterung an einem Montagmorgen. Kombinieren Sie sie mit Umschaltgriffen (Art. 1030/1031) für einfaches Heben und einem Meißel (Art. 1051) um Proben sauber zu entnehmen – weil Probennahme sich wie ein sanfter Stups anfühlen sollte, nicht wie ein Armdrücken.</p>",
     "price": "Preis auf Anfrage",
     "features": [
-      "Drei konische Durchmesser minimieren Reibung und erleichtern Probenahme",
+      "Drei konische Durchmesser minimieren Reibung und maximieren Probennahme-Leichtigkeit",
       "HRC 52 gehärteter Werkzeugstahl für Haltbarkeit und Stärke",
-      "Lasergravierte Tiefenmarkierungen alle 10 cm für präzises Sampling",
-      "Vorgesplitterte Schneidkanten für sauberen, gleichmäßigen Durchdringung",
-      "Kompatibel mit Griffhebeln und Meißeln für effiziente Probennahme"
+      "Laserätzte Tiefenmarkierungen alle 10 cm für präzise Probennahme",
+      "Vorgebrochene Schneidkanten für gleichmäßiges, sauberes Eindringen",
+      "Kompatibel mit Umschaltgriffen und Meißeln für effiziente Probenentnahme"
     ],
     "applications": [
-      "N-min Nitrat-Profilierung",
+      "N-min Nitratprofilierung",
       "Akademische und kommerzielle Bodenforschung",
-      "Manuelle Probenahme in harten, steinigen oder tonreichen Böden"
+      "Manuelle Probennahme in harten, steinigen oder lehmigen Böden"
     ],
     "howToUse": [
-      "Bohrstangendurchmesser nach gewünschter Probentiefe wählen",
-      "Stange mit Abwärtsdruck drehen; die Konizität übernimmt die Arbeit",
-      "Mit Griffhebeln (Art. 1030/1031) Stange sanft herausziehen",
-      "Bodenreste mit Meißel (Art. 1051) entfernen, um Kerben zwischen Proben zu erhalten"
+      "Wählen Sie Stangendurchmesser basierend auf gewünschter Probentiefe",
+      "Drehen Sie die Stange während des Eindrückens; das Taper übernimmt die schwere Arbeit",
+      "Verwenden Sie Umschaltgriffe (Art. 1030 oder 1031) zum glatten Herausziehen der Stange",
+      "Reinigen Sie Bodenrückstände mit dem Meißel (Art. 1051) um die Rillenintegrität zwischen Proben zu erhalten"
     ],
     "technicalSpecs": {
       "Material": "Werkzeugstahl (HRC 52)",
       "Taper": "40→38 mm / 35→33 mm / 30→28 mm",
-      "Markings": "Lasergraviert alle 10 cm",
-      "Compatibility": "N-min Protokolle (VDLUFA, ISO 14255)",
-      "Weight": "Ca. 2,1 kg pro Meter (40 mm Durchmesser)"
+      "Markierungen": "Laserätzt alle 10 cm",
+      "Kompatibilität": "N-min Protokolle (VDLUFA, ISO 14255)",
+      "Gewicht": "Ca. 2,1 kg pro Meter (40 mm Durchmesser Stange)"
     },
     "table": [
       {
         "emNo": "1001",
-        "articleName": "Bohrstange, Nutzlänge 1000 mm, Gesamtlänge 1150 mm, Nut 18 mm, konisch, rund"
+        "articleName": "Bohrstange, nutzbare Länge 1000 mm, Gesamtlänge 1150 mm, Nut 18 mm, konisch, rund"
       },
       {
         "emNo": "1001.2",
-        "articleName": "Bohrstange, Nutzlänge 1000 mm, Gesamtlänge 1150 mm, Nut 18 mm, konisch, rund mit 10-cm-Markierungen und vorgesprengten Schneidkanten"
+        "articleName": "Bohrstange, nutzbare Länge 1000 mm, Gesamtlänge 1150 mm, Nut 18 mm, konisch, rund mit Markierungen in 10 cm Abschnitten und gebrochenen Schneidkanten"
       },
       {
         "emNo": "1003",
-        "articleName": "Bohrstange, Nutzlänge 1200 mm, Gesamtlänge 1350 mm, Nut 18 mm, konisch, rund"
+        "articleName": "Bohrstange, nutzbare Länge 1200 mm, Gesamtlänge 1350 mm, Nut 18 mm, konisch, rund"
       },
       {
-        "emNo": "1004",
-        "articleName": "Bohrstange, Nutzlänge 1000 mm, Gesamtlänge 1150 mm, Nut 18 mm, konisch, rund mit Lasergravur alle 10 cm"
+        "emNo": "1005",
+        "articleName": "Bohrstange, nutzbare Länge 1500 mm, Gesamtlänge 1650 mm, Nut 18 mm, konisch, rund"
+      },
+      {
+        "emNo": "1030",
+        "articleName": "Umschaltgriff zum Heben und Entleeren der Bohrstange, Länge 300 mm"
+      },
+      {
+        "emNo": "1031",
+        "articleName": "Umschaltgriff zum Heben und Entleeren der Bohrstange, Länge 600 mm"
+      },
+      {
+        "emNo": "1040",
+        "articleName": "1 Satz Probennahmesonden (N-min Bohrersatz) für drei Tiefen. Jeder Bohrer besteht aus der eigentlichen Sonde, einer Verlängerung und dem Schlagkopf mit Querbohrung.\n(0-30 cm Ø 40-38 mm, 30-60 cm Ø 35-33 mm, 60-90 cm Ø 30-28 mm). Alle Teile Werkzeugstahl, entwickelt für harte Böden."
+      },
+      {
+        "emNo": "1041",
+        "articleName": "Sonde, nutzbare Länge 0-30 cm, Außendurchmesser 40-38 mm, konisch"
+      },
+      {
+        "emNo": "1042",
+        "articleName": "Verlängerung für die 0-30 cm Sonde"
+      },
+      {
+        "emNo": "1043",
+        "articleName": "Sonde, nutzbare Länge 30-60 cm, Außendurchmesser 35-33 mm, konisch"
+      },
+      {
+        "emNo": "1044",
+        "articleName": "Verlängerung für die 30-60 cm Sonde"
+      },
+      {
+        "emNo": "1045",
+        "articleName": "Sonde, nutzbare Länge 60-90 cm, Außendurchmesser 30-28 mm, konisch"
+      },
+      {
+        "emNo": "1046",
+        "articleName": "Verlängerung für die 60-90 cm Sonde"
+      },
+      {
+        "emNo": "1049",
+        "articleName": "Schlagkopf mit Querbohrung"
+      },
+      {
+        "emNo": "1050",
+        "articleName": "Messstab mit aufgeschrumpftem Schlagkopf zur Entnahme von Bodenproben bis 2 m Tiefe, Ø 15 mm, 8x8 Nut. Verwendet mit NL 1000 Schlagbohrstange (Art. Nr. 1001)."
+      },
+      {
+        "emNo": "1051",
+        "articleName": "Meißel zum Abstreifen und Entfernen der Bodenprobe, 18 mm, rund"
+      },
+      {
+        "emNo": "1052",
+        "articleName": "Meißel zum Abstreifen und Entfernen der Bodenprobe, 15 mm, rund"
+      },
+      {
+        "emNo": "1053",
+        "articleName": "Meißel zum Abstreifen und Entfernen der Bodenprobe, 14 mm, quadratisch"
+      },
+      {
+        "emNo": "1054",
+        "articleName": "Meißel zum Abstreifen und Entfernen der Bodenprobe, 8 mm, quadratisch"
+      },
+      {
+        "emNo": "1055",
+        "articleName": "Meißel zum Abstreifen und Entfernen der Bodenprobe, 12 mm, quadratisch"
+      },
+      {
+        "emNo": "1060",
+        "articleName": "Schlag-Hebe-Kombination für Schlagbohrstangen und 2 m lange Peilstäbe (Vierkantschlägel, Zugöse und Zugring). Schlagfläche 135 x 135 mm, 200 mm lang, Gewicht ca. 4300 g."
+      },
+      {
+        "emNo": "1061",
+        "articleName": "Vierkantschlägel komplett"
+      },
+      {
+        "emNo": "1064",
+        "articleName": "Zugring"
+      },
+      {
+        "emNo": "1065",
+        "articleName": "Zughaken"
+      },
+      {
+        "emNo": "1085",
+        "articleName": "Edelstahl-Bodensonde zur Lokalisierung von Bodenverdichtungen und -schichten. Nutzbare Länge 1000 mm mit Markierungen in 100 mm Abständen, 8 mm Durchmesser."
       }
     ],
-    "testimonials": []
+    "testimonials": [
+      {
+        "quote": "Wir nutzen diese Stangen seit 15 Jahren – immer noch das zuverlässigste Werkzeug für N-min Arbeit. Das Taper macht den Unterschied bei Lehm.",
+        "author": "Dr. Lena Bauer",
+        "company": "AgroLab Germany",
+        "rating": 5
+      }
+    ]
   },
   "drillrods": {
+    "name": "Bohrstangen Ø22 mm für normale Bodenprofile",
     "nickname": "Der Tiefenöffner",
     "specs": [
-      "Bohrnut Ø 22 mm, Gesamtlänge 1100 mm, Nutzlänge 1000 mm",
+      "Bohrnut Ø 22 mm, Gesamtlänge 1100 mm, nutzbare Länge 1000 mm",
       "12 mm Nut zur Aufnahme von Bodenproben",
-      "Verlängerungen 1000 mm lang mit 5/8\" Innengewinde beidseitig",
-      "Inklusive Spezialschlüssel zum Festziehen"
+      "Verlängerungen 1000 mm lang mit 5/8” Innengewinde auf beiden Seiten",
+      "Spezielle Schraubenschlüssel zum Festziehen inklusive"
     ],
-    "description": "Robuste Bohrstangen (Ø 22 mm), entwickelt, um normale Bodenprofile bis zu 10 m Tiefe mit modularen, austauschbaren Teilen für flexible Längenanpassung zu öffnen.",
-    "herodescription": "Lernen Sie die <strong>modularen Bohrstangen</strong> mit einer schicken <strong>22 mm Bohrnut</strong> kennen, gebaut, um Bodenprofile bis zu satten <strong>10 Metern Tiefe</strong> zu meistern. Dank der Verbindungsschrauben passt du die Länge schneller an, als du 'Klaro!' sagen kannst, und die Schlagköpfe erledigen alles – vom lockeren Klopfen bis zum kräftigen Maschinenschlag.",
-    "detailedDescription": "<p className='mt-4'>Jeder Abschnitt ist ein solides <strong>1000 mm Meisterwerk</strong>, mit einer <strong>12 mm Nut</strong>, die deine Bodenproben festhält, während du sie aus der Tiefe ziehst. Verlängerungen lassen sich kinderleicht mit <strong>5/8\" Innengewinde</strong> anschrauben – manchmal ist mehr einfach mehr.</p><p className='mt-4'>Festziehen geht mit den speziellen <strong>SW 18 Schlüsseln</strong> ohne Rutschen oder Drama. Für den großen Auftritt wählst du dein Werkzeug: einen <strong>Wagenheber mit Spannkette</strong> oder einen <strong>Einarm-Abzieher mit Kugelklemme</strong>, beide sorgen dafür, dass die Arbeit sicher und ohne Stress erledigt wird.</p>",
+    "description": "Robuste Bohrstangen (Ø 22 mm) zum Öffnen normaler Bodenprofile bis 10 m Tiefe mit modularen, austauschbaren Teilen für flexible Längenanpassung.",
+    "herodescription": "Treffen Sie die <strong>modularen Bohrstangen</strong> mit einer ordentlichen <strong>22 mm Bohrnut</strong>, gebaut um Bodenprofile bis zu ernsthaften <strong>10 Metern Tiefe</strong> zu bewältigen. Dank Verbindungsbolzen können Sie die Länge schneller anpassen als Sie 'Bob's your uncle' sagen können, und die Schlagköpfe handhaben alles – vom leichten Klopfer bis zum vollen Maschinenschlag.",
+    "detailedDescription": "<p className='mt-4'>Jeder Abschnitt ist solide <strong>1000 mm Ingenieurspräzision</strong>, mit einer <strong>12 mm Nut</strong> um Ihre Bodenproben sicher zu halten während Sie sie aus der Tiefe ziehen. Verlängerungen schrauben sich einfach mit <strong>5/8” Innengewinden</strong> auf – weil manchmal mehr einfach mehr ist.</p><p className='mt-4'>Festziehen mit speziellen <strong>SW 18 Schlüsseln</strong> – kein Rutschen, kein Drama. Für den großen Finale wählen Sie Ihre Waffe: ein <strong>Wagenheber mit Spannkette</strong> oder ein <strong>Einarm-Zieher mit Kugelklemme</strong>, beide designed um den Job sicher und ohne Schweißausbruch zu erledigen.</p>",
     "price": "Preis auf Anfrage",
     "features": [
-      "Ø 22 mm Bohrnut mit 12 mm Bodenprobennut",
-      "Modulares Design mit verschraubten, austauschbaren Teilen",
-      "1000 mm Nutzlänge pro Bohrstangensegment",
+      "Ø 22 mm Bohrnut mit 12 mm Bodenproben-Nut",
+      "Modulares Design mit austauschbaren, verschraubten Teilen",
+      "1000 mm nutzbare Länge pro Stangenabschnitt",
       "Spezielle Schlagköpfe für Handhammer oder Maschineneinsatz",
-      "Spezialschlüssel für sicheres Festziehen",
-      "Hebevorrichtungen für einfache Stangengewinnung"
+      "Spezielle Schraubenschlüssel für sicheres Festziehen",
+      "Hebezeuge für einfache Stangenentnahme"
     ],
     "applications": [
-      "Öffnung normaler Bodenprofile bis 10 Meter Tiefe",
-      "Manuelle Bodenprobenentnahme in nicht felsigem Boden",
-      "Flexible Längenanpassung für variierende Probentiefe"
+      "Öffnen normaler Bodenprofile bis 10 Meter Tiefe",
+      "Manuelle Bodenprobennahme in nicht-felsigen Böden",
+      "Flexible Stangenlängenanpassung für variable Probentiefen"
     ],
     "howToUse": [
-      "Bohrstangen und Verlängerungen mit Verbindungsschrauben auf gewünschte Länge montieren",
+      "Stangen und Verlängerungen mit Verbindungsbolzen auf benötigte Länge zusammenbauen",
       "Passenden Schlagkopf mit Handhammer oder Maschine verwenden",
-      "Bohrstangensegmente mit Spezialschlüsseln (SW 18) festziehen",
-      "Stangen mit Wagenheber und Spannkette oder Einarm-Abzieher mit Kugelklemme ausziehen"
+      "Stangenabschnitte mit Spezialschlüsseln (SW 18) festziehen",
+      "Stangen mit Wagenheber und Spannkette oder Einarm-Zieher mit Kugelklemme entnehmen"
     ],
     "technicalSpecs": {
       "Durchmesser": "22 mm",
-      "Nuttiefe": "12 mm",
-      "Stangenlänge": "Gesamt 1100 mm, Nutzlänge 1000 mm",
-      "Verlängerungslänge": "1000 mm mit 5/8\" Innengewinde",
-      "Gewindegröße": "5/8\" Innen- und Außengewinde",
-      "Empfohlene Werkzeuge": "Spezialschlüssel SW 18",
-      "Hebevorrichtungen": "Wagenheber mit Hebebügel und Spannkette, Einarm-Abzieher mit integrierter Kugelklemme"
+      "Nutbreite": "12 mm",
+      "Stangenlänge": "Gesamt 1100 mm, nutzbar 1000 mm",
+      "Verlängerungslänge": "1000 mm mit 5/8” Innengewinde",
+      "Gewindegröße": "5/8\" Innengewinde und Außengewinde",
+      "Empfohlene Werkzeuge": "Spezielle Schraubenschlüssel SW 18",
+      "Hebezeuge": "Wagenheber mit Hebestange und Spannkette, Einarm-Zieher mit integrierter Kugelklemme"
     },
     "table": [
       {
@@ -2148,27 +2305,27 @@
       },
       {
         "emNo": "1102",
-        "articleName": "Verbindungsschraube, 5/8\" Außengewinde, SW 18"
+        "articleName": "Verbindungsbolzen, 5/8\" Außengewinde SW 18"
       },
       {
         "emNo": "1103",
-        "articleName": "Spezialschlüssel SW 18"
+        "articleName": "Spezieller Schraubenschlüssel SW 18"
       },
       {
         "emNo": "1049",
-        "articleName": "Schlagkopf für Handsonde"
+        "articleName": "Schlagkopf für Handprobennahme"
       },
       {
         "emNo": "1110",
-        "articleName": "Wagenheber mit Hebebügel (kurz)"
+        "articleName": "Wagenheber mit Hebestange (kurz)"
       },
       {
         "emNo": "1111",
-        "articleName": "Hebebügel (lang)"
+        "articleName": "Hebestange (lang)"
       },
       {
         "emNo": "1112",
-        "articleName": "Klemmfrosch"
+        "articleName": "Spannfrosch"
       },
       {
         "emNo": "1113",
@@ -2176,11 +2333,11 @@
       },
       {
         "emNo": "1120",
-        "articleName": "Einarm-Abzieher mit integrierter Kugelklemme"
+        "articleName": "Einarm-Zieher mit integrierter Kugelklemme"
       },
       {
         "emNo": "1125",
-        "articleName": "Einarm-Abzieher für Sonden und Stangen Ø 32-65 mm, Heberohr Ø 44 mm x 1500 mm, Tragkraft ca. 4 t"
+        "articleName": "Einarm-Zieher für Sonden und Stangen Ø 32-65 mm, Heberohr Ø 44 mm x 1500 mm, Hubkraft ca. 4 t"
       },
       {
         "emNo": "1126",
@@ -2188,143 +2345,144 @@
       },
       {
         "emNo": "645250",
-        "articleName": "Holz-Rahmen für Feldbuch, Größe DIN A4, Gewicht 0,6 kg"
+        "articleName": "Feldbuchhalter aus Holz, Größe DIN A4, Gewicht 0,6 kg"
       },
       {
         "emNo": "645242",
-        "articleName": "Feldbuch-Rahmen aus Kunststoff, Größe DIN A4, Gewicht 0,4 kg"
+        "articleName": "Feldbuchhalter aus Kunststoff, Größe DIN A4, Gewicht 0,4 kg"
       },
       {
         "emNo": "645245",
-        "articleName": "Holz-Rahmen für Feldbuch, Größe DIN A3, Gewicht 0,9 kg"
+        "articleName": "Feldbuchhalter aus Holz, Größe DIN A3, Gewicht 0,9 kg"
       },
       {
         "emNo": "645260",
-        "articleName": "Feldbuch-Rahmen aus Kunststoff, Größe DIN A3, Gewicht 0,7 kg"
+        "articleName": "Feldbuchhalter aus Kunststoff, Größe DIN A3, Gewicht 0,7 kg"
       }
     ],
     "testimonials": []
   },
   "hammers": {
-    "nickname": "Der passende Hammer für jeden Job",
+    "name": "Hammer-auswahl & Zubehör",
+    "nickname": "Der richtige Hammer für jeden Job",
     "specs": [
-      "Verschiedene Hämmer mit Aufschlagflächen von 80 mm Ø bis 150 mm quadratisch",
-      "Weichkopfhämmer und Nylonhämmer mit schmiedeeisernem Gehäuse",
-      "Griffe aus Holz oder Hickory in verschiedenen Längen",
+      "Verschiedene Hämmer mit Schlagflächen von 80 mm Ø bis 150 mm quadratisch",
+      "Weichkopf- und Nylonhämmer mit Temperguss-Gehäuse",
+      "Stiele aus Holz oder Hickory in verschiedenen Längen",
       "Austauschbare Hammerköpfe und Einsätze"
     ],
-    "description": "Jeder Hammer ein Held für sich. Such dir den aus, der zu deinem Bodenprobenabenteuer passt – und vergiss nicht die treuen Begleiter: unser Zubehör.",
-    "herodescription": "Vom <strong>soliden, bodenständigen Vierkanthammer</strong> bis zum <strong>sanften Nylonweichkopf</strong> haben wir die Werkzeuge, um deine Bodenproben <strong>weniger Kraftakt, mehr Präzision</strong> zu machen. Wähle weise – <strong>Präzision, Power und Komfort</strong> warten auf dich.",
-    "detailedDescription": "<p className='mt-4'>Willst du mit einem kräftigen <strong>4,3 kg Vierkanthammer</strong> und einer <strong>135x135 mm Aufschlagfläche</strong> deinen inneren Thor wecken? Oder lieber einen <strong>Federleichten Nylonweichkopf</strong>, der den Boden sanft umgarnt? Wie auch immer – <strong>dein Wunsch ist unser Befehl</strong>.</p><p className='mt-4'>Bock auf DIY? <strong>Wechsle Köpfe wie ein Koch Messer</strong>, wähle aus <strong>Holz- oder Hickorygriffen in allen Längen</strong> und setze die Krönung mit <strong>Einsätzen so robust oder zart wie du magst</strong>. Fast wie ein Maßanzug – nur für deinen Hammer.</p>",
+    "description": "Jeder Hammer ist auf seine Weise ein Held. Wählen Sie den, der zu Ihrer Bodenprobennahme-Geschichte passt und vergessen Sie nicht die treuen Begleiter – unser Zubehör.",
+    "herodescription": "Vom <strong>soliden, no-nonsense Vierkanthammer</strong> bis zur <strong>sanften Berührung eines Nylon-Weichkopfes</strong> – wir haben die Werkzeuge, um Ihre Bodenprobennahme <strong>weniger Kraftakt, mehr Finesse</strong> zu machen. Wählen Sie weise – <strong>Präzision, Kraft und Komfort</strong> warten.",
+    "detailedDescription": "<p className='mt-4'>Müssen Sie Ihren inneren Thor mit einem wuchtigen <strong>4,3 kg Vierkanthammer</strong> mit <strong>135x135 mm Schlagfläche</strong> kanalisieren? Oder bevorzugen Sie einen <strong>federleichten Nylon-Weichkopfhammer</strong> um den Boden mit Feingefühl zu bearbeiten? Wie auch immer, <strong>Ihr Wunsch ist unser Befehl</strong>.</p><p className='mt-4'>Lust auf etwas DIY-Flair? <strong>Tauschen Sie Köpfe wie ein Koch seine Messer</strong>, wählen Sie aus <strong>Holz- oder Hickory-Stielen in allen Längen</strong> und krönen Sie das Ganze mit <strong>Einsätzen so hart oder sanft wie Sie möchten</strong>. Wie ein Maßanzug – nur für Ihren Hammer.</p>",
     "price": "Preis auf Anfrage",
     "features": [
-      "Vierkanthammer mit 135x135 mm Aufschlagfläche, 4,3 kg",
-      "Runder Kunststoffhammer mit 150 mm Ø Aufschlagfläche",
-      "Weichkopfhämmer mit schmiedeeisernem Gehäuse",
-      "Nylonweichkopf-Varianten",
+      "Vierkanthammer mit 135x135 mm Schlagfläche, 4,3 kg",
+      "Runder Kunststoffhammer mit 150 mm Ø Schlagfläche",
+      "Weichkopfhämmer mit Temperguss-Gehäuse",
+      "Nylon-Weichkopfhammer-Varianten",
       "Austauschbare Hammerköpfe und Einsätze",
-      "Griffe aus Holz und Hickory in verschiedenen Längen"
+      "Holz- und Hickory-Stiele in verschiedenen Längen"
     ],
     "applications": [
-      "Manuelle Bodenprobenentnahme mit präziser Schlagkraft",
+      "Manuelle Bodenprobennahme mit präziser Schlagkraft",
       "Schutz empfindlicher Bodenstrukturen mit Weichkopfhämmern",
-      "Vielseitige Hammertypen für unterschiedliche Probenausrüstung"
+      "Vielseitige Hammerauswahl für verschiedene Probennahme-Geräte"
     ],
     "howToUse": [
-      "Hammertyp passend zu Bodenhärte und Probenentnahmemethode wählen",
-      "Geeignete Griff Länge für Hebelwirkung und Komfort nutzen",
-      "Hammerköpfe oder Einsätze bei Bedarf für optimale Leistung wechseln",
-      "Holzgriffe pflegen und Schrauben regelmäßig nachziehen"
+      "Wählen Sie Hammertyp entsprechend Bodenhärte und Probennahmemethode",
+      "Verwenden Sie passende Stiellänge für Hebelwirkung und Komfort",
+      "Tauschen Sie Hammerköpfe oder Einsätze bei Bedarf für optimale Leistung",
+      "Pflegen Sie Holzstiele und ziehen Sie Schrauben regelmäßig nach"
     ],
     "technicalSpecs": {
-      "Vierkanthammer": "Aufschlagfläche 135x135 mm, Kopf Länge 200 mm, Gewicht 4,3 kg",
-      "Runder Kunststoffhammer": "Aufschlagfläche 150 mm Ø, Kopf Länge 200 mm, Gewicht 4,3 kg",
-      "Weichkopfhammer": "Aufschlagfläche 80-125 mm Ø, Holzgriff, Gewicht 2,9 - 6,7 kg",
-      "Nylonweichkopfhammer": "Aufschlagfläche 80 mm Ø, Holzgriff, Gewicht 3,0 - 3,2 kg",
-      "Griffe": "Holz und Hickory, Längen 395 mm bis 900 mm",
-      "Einsätze": "Superplastisch und Nylon, verschiedene Durchmesser",
-      "Schrauben": "Inbusschraube mit Mutter für Weichkopfhammer 80 und 100 mm Ø"
+      "Vierkanthammer": "Schlagfläche 135x135 mm, Kopfhöhe 200 mm, Gewicht 4,3 kg",
+      "Runder Kunststoffhammer": "Schlagfläche 150 mm Ø, Kopfhöhe 200 mm, Gewicht 4,3 kg",
+      "Weichkopfhammer": "Schlagfläche 80-125 mm Ø, Holzstiel, Gewicht 2,9 - 6,7 kg",
+      "Nylon-Weichkopfhammer": "Schlagfläche 80 mm Ø, Holzstiel, Gewicht 3,0 - 3,2 kg",
+      "Stiele": "Holz und Hickory, Längen 395 mm bis 900 mm",
+      "Einsätze": "Superplastik und Nylon, verschiedene Durchmesser",
+      "Schrauben": "Inbusschraube mit Mutter für Weichkopfhammer Größen 80 und 100 mm Ø"
     },
     "table": [
       {
         "emNo": "1061",
-        "articleName": "Vierkanthammer, Aufschlagfläche 135x135 mm, Kopf Länge: 200 mm, Gewicht 4,3 kg"
+        "articleName": "Vierkanthammer, Schlagfläche 135x135 mm, Kopfhöhe: 200 mm, Gewicht 4,3 kg"
       },
       {
         "emNo": "1062",
-        "articleName": "Hammerkopf für Vierkanthammer (Art.-Nr. 1061)"
+        "articleName": "Hammerkopf für Vierkanthammer (Art. Nr. 1061)"
       },
       {
         "emNo": "1063",
-        "articleName": "Griff für Vierkanthammer mit Schraube"
+        "articleName": "Stiel für den Vierkanthammer mit Schraube"
       },
       {
         "emNo": "1070",
-        "articleName": "Runder Kunststoffhammer, Aufschlagfläche 150 mm Ø, Kopf Länge: 200 mm, Gewicht 4,3 kg"
+        "articleName": "Runder Kunststoffhammer, Schlagfläche 150 mm Ø, Kopfhöhe: 200 mm, Gewicht 4,3 kg"
       },
       {
         "emNo": "1071",
-        "articleName": "Hammerkopf für runden Kunststoffhammer (Art.-Nr. 1070)"
+        "articleName": "Hammerkopf für runden Kunststoffhammer (Art. Nr. 1070)"
       },
       {
         "emNo": "1072",
-        "articleName": "Hammergriff für runden Kunststoffhammer (Art.-Nr. 1070)"
+        "articleName": "Hammerstiel für runden Kunststoffhammer (Art. Nr. 1070)"
       },
       {
         "emNo": "3007.080",
-        "articleName": "Weichkopfhammer aus Superplast mit schmiedeeisernem Gehäuse und Holzgriff, Aufschlagfläche 80 mm Ø, Länge 490 mm, Gewicht ca. 2.930 g"
+        "articleName": "Weichkopfhammer aus Superplastik mit Temperguss-Gehäuse und Holzstiel, Schlagfläche 80 mm Ø, Länge 490 mm, Gewicht ca. 2.930 g"
       },
       {
         "emNo": "3007.081",
-        "articleName": "Weichkopfhammer aus Superplast mit schmiedeeisernem Gehäuse und Holzgriff, Aufschlagfläche 80 mm Ø, Länge 800 mm, Gewicht ca. 3.240 g"
+        "articleName": "Weichkopfhammer aus Superplastik mit Temperguss-Gehäuse und Holzstiel, Schlagfläche 80 mm Ø, Länge 800 mm, Gewicht ca. 3.240 g"
       },
       {
         "emNo": "3007.100",
-        "articleName": "Weichkopfhammer aus Superplast mit schmiedeeisernem Gehäuse und Holzgriff, Aufschlagfläche 100 mm Ø, Länge 1000 mm, Gewicht ca. 5.300 g"
+        "articleName": "Weichkopfhammer aus Superplastik mit Temperguss-Gehäuse und Holzstiel, Schlagfläche 100 mm Ø, Länge 1000 mm, Gewicht ca. 5.300 g"
       },
       {
         "emNo": "3007.125",
-        "articleName": "Weichkopfhammer aus Superplast mit schmiedeeisernem Gehäuse und Holzgriff, Aufschlagfläche 125 mm Ø, Länge 1040 mm, Gewicht ca. 6.700 g"
+        "articleName": "Weichkopfhammer aus Superplastik mit Temperguss-Gehäuse und Holzstiel, Schlagfläche 125 mm Ø, Länge 1040 mm, Gewicht ca. 6.700 g"
       },
       {
         "emNo": "3008.080",
-        "articleName": "Nylonweichkopfhammer mit schmiedeeisernem Gehäuse und Holzgriff, Aufschlagfläche 80 mm Ø, Länge 490 mm, Gewicht ca. 3.090 g"
+        "articleName": "Nylon-Weichkopfhammer mit Temperguss-Gehäuse und Holzstiel, Schlagfläche 80 mm Ø, Länge 490 mm, Gewicht ca. 3.090 g"
       },
       {
         "emNo": "3008.081",
-        "articleName": "Nylonweichkopfhammer mit schmiedeeisernem Gehäuse und Holzgriff, Aufschlagfläche 80 mm Ø, Länge 700 mm, Gewicht ca. 3.240 g"
+        "articleName": "Nylon-Weichkopfhammer mit Temperguss-Gehäuse und Holzstiel, Schlagfläche 80 mm Ø, Länge 700 mm, Gewicht ca. 3.240 g"
       },
       {
         "emNo": "3207.080",
-        "articleName": "Einsatz für Weichkopfhammer, Superplast 80 mm Ø"
+        "articleName": "Einsatz für den Weichkopfhammer, Superplastik 80 mm Ø"
       },
       {
         "emNo": "3207.100",
-        "articleName": "Einsatz für Weichkopfhammer, Superplast 100 mm Ø"
+        "articleName": "Einsatz für den Weichkopfhammer, Superplastik 100 mm Ø"
       },
       {
         "emNo": "3207.125",
-        "articleName": "Einsatz für Weichkopfhammer, Superplast 125 mm Ø"
+        "articleName": "Einsatz für den Weichkopfhammer, Superplastik 125 mm Ø"
       },
       {
         "emNo": "3208.080",
-        "articleName": "Einsatz für Weichkopfhammer, Nylon 80 mm Ø"
+        "articleName": "Einsatz für den Weichkopfhammer, Nylon 80 mm Ø"
       },
       {
         "emNo": "3244.080",
-        "articleName": "Hickorygriff für Hammer 80 mm Ø, Griff Länge 395 mm"
+        "articleName": "Hickory-Stiel für Hammer 80 mm Ø, Stiellänge 395 mm"
       },
       {
         "emNo": "3244.081",
-        "articleName": "Hickorygriff für Hammer 80 mm Ø, Griff Länge 700 mm"
+        "articleName": "Hickory-Stiel für Hammer 80 mm Ø, Stiellänge 700 mm"
       },
       {
         "emNo": "3244.100",
-        "articleName": "Hickorygriff für Hammer 100 mm Ø, Griff Länge 900 mm"
+        "articleName": "Hickory-Stiel für Hammer 100 mm Ø, Stiellänge 900 mm"
       },
       {
         "emNo": "3244.125",
-        "articleName": "Hickorygriff für Hammer 125 mm Ø, Griff Länge 900 mm"
+        "articleName": "Hickory-Stiel für Hammer 125 mm Ø, Stiellänge 900 mm"
       },
       {
         "emNo": "3299.080",

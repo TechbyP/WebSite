@@ -127,7 +127,7 @@ export const CustomerInfoStep = () => {
       }
     } else if (configuration.vehicleMountingType) {
       const mountType = products.find(p =>
-        p.name.toLowerCase().replace(/\s+/g, '-') === configuration.vehicleMountingType &&
+        p.id === configuration.vehicleMountingType && // Compare by ID instead of name
         p.category === 'accessory'
       );
       if (mountType && mountType.priceValue) {
@@ -143,7 +143,8 @@ export const CustomerInfoStep = () => {
     setCustomerInfo({ [name]: value });
   };
 
-  const formatProductName = (name: string) => {
+  const formatProductName = (name: string | undefined) => {
+    if (!name) return t('unknownProduct');
     return name
       .split('-')
       .map(word => word.charAt(0).toUpperCase() + word.slice(1))
@@ -166,15 +167,13 @@ export const CustomerInfoStep = () => {
         type: 'mounting'
       });
     } else if (configuration.vehicleMountingType) {
-      const mountProduct = products.find(p =>
-        p.name.toLowerCase().replace(/\s+/g, '-') === configuration.vehicleMountingType
-      );
+      const mountProduct = products.find(p => p.id === configuration.vehicleMountingType);
       selectedProducts.push({
-        name: mountProduct ? mountProduct.name : formatProductName(configuration.vehicleMountingType),
-        type: 'mounting'
+        name: mountProduct?.name || t('productNames.vehicleMount'),
+        type: 'mounting',
+        price: mountProduct?.price
       });
     }
-
     if (configuration.powerpackType) {
       const powerpack = products.find(p =>
         p.id.toString() === configuration.powerpackType &&
@@ -196,7 +195,7 @@ export const CustomerInfoStep = () => {
       }
 
       selectedProducts.push({
-        name: extraProduct ? extraProduct.name : formatProductName(extraId),
+        name: extraProduct ? extraProduct.name : formatProductName(extraId?.toString()),
         type: 'extra'
       });
     });
@@ -336,8 +335,7 @@ export const CustomerInfoStep = () => {
                   {item.type === 'mounting' && (
                     configuration.mountingMethod === 'trailer'
                       ? products.find(p => p.category === 'accessory' && p.type === 'Trailer')?.price || '–'
-                      : products.find(p =>
-                          p.name.toLowerCase().replace(/\s+/g, '-') === configuration.vehicleMountingType)?.price || '–'
+                      : products.find(p => p.id === configuration.vehicleMountingType)?.price || '–' // Changed to compare by ID
                   )}
                   {item.type === 'powerpack' && products.find(p =>
                     p.id.toString() === configuration.powerpackType &&
@@ -398,11 +396,10 @@ export const CustomerInfoStep = () => {
           <button
             type="submit"
             disabled={isSubmitting || !recaptchaToken}
-            className={`inline-flex items-center justify-center gap-2 px-6 py-3 text-white rounded-xl font-semibold transition-all ${
-              isSubmitting || !recaptchaToken
-                ? 'bg-gray-400 cursor-not-allowed'
-                : 'bg-brandgreen hover:bg-green-700'
-            }`}
+            className={`inline-flex items-center justify-center gap-2 px-6 py-3 text-white rounded-xl font-semibold transition-all ${isSubmitting || !recaptchaToken
+              ? 'bg-gray-400 cursor-not-allowed'
+              : 'bg-brandgreen hover:bg-green-700'
+              }`}
           >
             {isSubmitting ? t('buttonsConfigurator.processing') : t('buttonsConfigurator.completeOrder')}
           </button>

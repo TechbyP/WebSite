@@ -9,28 +9,11 @@ export const VehicleMountingStep = () => {
   const { t } = useTranslation();
   const { configuration, setVehicleMountingType, goToStep } = useConfigurator();
 
-  const order = ['Lay-down Frame', 'Three-Point Hitch', 'Full Conversion'];
-
-  const normalizeName = (name: string) =>
-    name.toLowerCase()
-      .replace(/‑/g, '-')
-      .replace(/\s+/g, ' ')
-      .trim();
-
-  const normalizedOrder = order.map(normalizeName);
+  const order = [2000, 2001, 2003]; 
 
   const mountingProducts = products
-    .filter(product =>
-      product.category === 'accessory' &&
-      normalizedOrder.includes(normalizeName(product.name))
-    )
-    .sort(
-      (a, b) =>
-        normalizedOrder.indexOf(normalizeName(a.name)) - normalizedOrder.indexOf(normalizeName(b.name))
-    );
-
-  const formatKey = (name: string) =>
-    normalizeName(name).replace(/\s+/g, '-');
+    .filter(product => product.category === 'accessory' && order.includes(product.id))
+    .sort((a, b) => order.indexOf(a.id) - order.indexOf(b.id));
 
   return (
     <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -48,8 +31,7 @@ export const VehicleMountingStep = () => {
       {/* Mobile version */}
       <div className="md:hidden space-y-3">
         {mountingProducts.map((product) => {
-          const key = formatKey(product.name);
-          const selected = configuration.vehicleMountingType === key;
+          const selected = configuration.vehicleMountingType === product.id;
 
           return (
             <motion.div
@@ -65,13 +47,13 @@ export const VehicleMountingStep = () => {
                   ? 'ring-2 ring-brandgreen'
                   : 'border border-gray-200 hover:border-gray-300'
                 }`}
-              onClick={() => setVehicleMountingType(key)}
+              onClick={() => setVehicleMountingType(product.id)}
             >
               <div className="relative overflow-hidden h-full w-24 flex-shrink-0">
                 <img
                   sizes="(max-width: 768px) 50vw, 25vw"
-srcSet={product.image || defaultHeroImage}
-                  alt={t(`products.${key}.name`, product.name)}
+                  srcSet={product.image || defaultHeroImage}
+                  alt={product.name}
                   className="w-full h-full object-right object-cover"
                   loading="lazy"
                   onError={(e) => handleImageError(e, defaultHeroImage)}
@@ -94,13 +76,13 @@ srcSet={product.image || defaultHeroImage}
                   </span>
                 </div>
                 <h3 className="text-sm font-black text-gray-900 uppercase truncate">
-                  {t(`products.${key}.name`, product.name)}
+                  {product.name}
                 </h3>
                 <h2 className="text-xs font-bold text-gray-900 uppercase truncate">
-                  {t(`products.${key}.nickname`, product.nickname || 'Product')}
+                  {product.nickname || 'Product'}
                 </h2>
                 <div className="text-xs font-bold text-brandgreen mt-1">
-                  {t(`products.${key}.price`, product.price || 'Price not available')}
+                  {product.price || 'Price not available'}
                 </div>
               </div>
             </motion.div>
@@ -111,8 +93,7 @@ srcSet={product.image || defaultHeroImage}
       {/* Desktop version */}
       <div className="hidden md:grid max-w-[1280px] mx-auto grid-cols-1 md:grid-cols-3 gap-6 px-4 sm:px-6 lg:px-8">
         {mountingProducts.map((product) => {
-          const key = formatKey(product.name);
-          const selected = configuration.vehicleMountingType === key;
+          const selected = configuration.vehicleMountingType === product.id;
 
           return (
             <motion.div
@@ -127,13 +108,13 @@ srcSet={product.image || defaultHeroImage}
                   : 'border-gray-200 hover:border-gray-300'}
                 flex flex-col h-full
               `}
-              onClick={() => setVehicleMountingType(key)}
+              onClick={() => setVehicleMountingType(product.id)}
             >
               <div className="relative overflow-hidden h-48">
                 <img
                   sizes="(max-width: 768px) 50vw, 25vw"
-srcSet={product.image}
-                  alt={t(`products.${key}.name`, product.name)}
+                  srcSet={product.image}
+                  alt={product.name}
                   className="w-full h-full object-right object-cover group-hover:scale-110 transition-transform duration-300"
                   loading="lazy"
                 />
@@ -141,13 +122,13 @@ srcSet={product.image}
               <div className="flex flex-col flex-grow px-6 pt-6 pb-4">
                 <div>
                   <h3 className="text-2xl font-black text-gray-900 uppercase">
-                    {t(`products.${key}.name`, product.name)}
+                    {product.name}
                   </h3>
                 </div>
 
                 <div className="flex-grow flex flex-col justify-center mt-4">
                   <p className="text-gray-600 text-sm mb-4">
-                    {t(`products.${key}.description`, product.description || 'No description available')}
+                    {product.description || 'No description available'}
                   </p>
                   <div className="space-y-2">
                     {(product.specs ?? []).slice(0, 2).map((spec: string, index: number) => (
@@ -161,7 +142,7 @@ srcSet={product.image}
 
                 <div className="pt-4">
                   <div className="text-lg font-bold text-brandgreen">
-                    {t(`products.${key}.price`, product.price || 'Price not available')}
+                    {product.price || 'Price not available'}
                   </div>
                 </div>
               </div>

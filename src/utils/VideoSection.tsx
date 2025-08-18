@@ -19,16 +19,18 @@ const VideoSection: React.FC<VideoSectionProps> = ({
 }) => {
   const containerRef = useRef<HTMLDivElement>(null);
   const playerRef = useRef<any>(null);
+
   const [containerHeight, setContainerHeight] = useState("80vh");
   const [showIframe, setShowIframe] = useState(false);
   const [isOverlayVisible, setIsOverlayVisible] = useState(true);
+  const [playQueued, setPlayQueued] = useState(false);
 
-  // Responsive height
+  // Responsive height (always aspect ratio, max 80vh on big screens)
   useEffect(() => {
     const calculateHeight = () => {
       if (containerRef.current) {
         const width = containerRef.current.offsetWidth;
-        const height = window.innerWidth < 768 ? width / aspectRatio : window.innerHeight * 0.8;
+        const height = Math.min(width / aspectRatio, window.innerHeight * 0.8);
         setContainerHeight(`${height}px`);
       }
     };
@@ -66,8 +68,12 @@ const VideoSection: React.FC<VideoSectionProps> = ({
             rel: 0,
           },
           events: {
-            onReady: () => {
-              /* nothing special needed here */
+            onReady: (event: any) => {
+              if (playQueued) {
+                event.target.playVideo();
+                setIsOverlayVisible(false);
+                setPlayQueued(false);
+              }
             },
             onStateChange: (event: any) => {
               if (event.data === 1) setIsOverlayVisible(false); // playing
@@ -77,15 +83,19 @@ const VideoSection: React.FC<VideoSectionProps> = ({
         });
       }
     }
-  }, [showIframe, videoId]);
+  }, [showIframe, videoId, playQueued]);
 
   // Play video when overlay clicked
   const handlePlayClick = () => {
     if (!showIframe) {
-      setShowIframe(true); // first click: show iframe
-    }
-    if (playerRef.current?.playVideo) {
-      playerRef.current.playVideo(); // subsequent clicks
+      setShowIframe(true);    // mount iframe
+      setPlayQueued(true);    // remember user wants play
+    } else {
+      try {
+        playerRef.current?.playVideo();
+      } catch (err) {
+        console.debug("Play attempt error:", err);
+      }
     }
   };
 
@@ -106,8 +116,9 @@ const VideoSection: React.FC<VideoSectionProps> = ({
 
         {/* Overlay: always in DOM, fade in/out */}
         <div
-          className={`absolute inset-0 z-20 transition-opacity duration-500 ${isOverlayVisible ? "opacity-100 pointer-events-auto" : "opacity-0 pointer-events-none"
-            }`}
+          className={`absolute inset-0 z-20 transition-opacity duration-500 ${
+            isOverlayVisible ? "opacity-100 pointer-events-auto" : "opacity-0 pointer-events-none"
+          }`}
         >
           {/* Responsive Poster */}
           <picture>
@@ -115,7 +126,7 @@ const VideoSection: React.FC<VideoSectionProps> = ({
               <source type="image/webp" srcSet={posterSrcSet} sizes={posterSizes} />
             )}
             <img
-              src={posterSrc} // fallback single image
+              src={posterSrc}
               alt={title || "Video poster"}
               className="absolute inset-0 w-full h-full object-cover"
               loading="lazy"
@@ -141,9 +152,13 @@ const VideoSection: React.FC<VideoSectionProps> = ({
               <circle cx="32" cy="32" r="32" fill="orange" opacity="0.5" />
               <polygon points="23,20 47,32 23,44" fill="white" />
             </svg>
-            <span className="mt-9 text-white text-4xl sm:text-5xl font-black select-none uppercase text-center">
-              {title}
-            </span>
+          <span className="
+  mt-9 text-white 
+  text-2xl sm:text-3xl md:text-4xl lg:text-5xl xl:text-6xl 
+  font-black select-none uppercase text-center"
+>
+  {title}
+</span>
           </button>
         </div>
       </div>

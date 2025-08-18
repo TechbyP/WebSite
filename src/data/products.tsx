@@ -430,7 +430,7 @@ const createProducts = (t: any): Product[] => {
     {
       id: 2000,
       date: 2025,
-      name: "Lay‑down Frame",
+      name: t('laydown.name'),
       nickname: t('laydown.nickname'),
       category: "accessory",
       bestseller: false,
@@ -457,7 +457,8 @@ const createProducts = (t: any): Product[] => {
     {
       id: 2001,
       date: 2025,
-      name: "Three‑Point Hitch",
+      name: t('tph.name'),
+
       nickname: t('tph.nickname'),
       category: "accessory",
       bestseller: false,
@@ -484,7 +485,7 @@ const createProducts = (t: any): Product[] => {
     {
       id: 2003,
       date: 2025,
-      name: "Full Conversion",
+      name: t('fc.name'),
       nickname: t('fc.nickname'),
       category: "accessory",
       bestseller: true,
@@ -511,7 +512,8 @@ const createProducts = (t: any): Product[] => {
     {
       id: 2004,
       date: 2025,
-      name: "Special Trailers",
+      name: t('trailer.name'),
+
       nickname: t('trailer.nickname'),
       category: "accessory",
       type: "Trailer",
@@ -539,7 +541,8 @@ const createProducts = (t: any): Product[] => {
     {
       id: 3000,
       date: 2025,
-      name: "Power Pack",
+      name: t('powerpack.name'),
+
       nickname: t('powerpack.nickname'),
       category: "accessory",
       type: "Powerpack",
@@ -567,7 +570,7 @@ const createProducts = (t: any): Product[] => {
     {
       id: 3001,
       date: 2025,
-      name: "Recommended Spare Parts",
+      name: t('spareparts.name'),
       nickname: t('spareparts.nickname'),
       category: "accessory",
       categoryName: "Extras",
@@ -596,7 +599,8 @@ const createProducts = (t: any): Product[] => {
     {
       id: 3002,
       date: 2025,
-      name: "Coolbox 95L",
+      name: t('coolbox.name'),
+
       nickname: t('coolbox.nickname'),
       category: "accessory",
       categoryName: "Extras",
@@ -625,7 +629,8 @@ const createProducts = (t: any): Product[] => {
     {
       id: 3003,
       date: 2025,
-      name: "LED Work Light 1700",
+      name: t('led.name'),
+
       nickname: t('led.nickname'),
       category: "accessory",
       categoryName: "Extras",
@@ -654,7 +659,8 @@ const createProducts = (t: any): Product[] => {
     {
       id: 3004,
       date: 2025,
-      name: "External Camera",
+      name: t('camera.name'),
+
       nickname: t('camera.nickname'),
       category: "accessory",
       categoryName: "Extras",
@@ -683,7 +689,7 @@ const createProducts = (t: any): Product[] => {
     {
       id: 4000,
       date: 2025,
-      name: "Probes, Dipsticks and Accessories",
+      name: t('probes.name'),
       nickname: t('probes.nickname'),
       category: "manual",
       categoryName: "Manual Samplers",
@@ -713,7 +719,8 @@ const createProducts = (t: any): Product[] => {
     {
       id: 4001,
       date: 2025,
-      name: "Drill Rods Ø22 mm for Normal Soil Profiles",
+      name: t('drillrods.name'),
+
       nickname: t('drillrods.nickname'),
       category: "manual",
       categoryName: "Manual Samplers",
@@ -743,7 +750,8 @@ const createProducts = (t: any): Product[] => {
     {
       id: 4003,
       date: 2025,
-      name: "Hammer Selection & Accessories",
+      name: t('hammers.name'),
+
       nickname: t('hammers.nickname'),
       category: "manual",
       categoryName: "Manual Tools",

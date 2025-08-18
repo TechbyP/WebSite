@@ -2,7 +2,6 @@
 import { useState, useEffect, useCallback } from 'react';
 import { useNavigate, Outlet } from 'react-router-dom';
 import { useAuth } from './hooks/AuthContext';
-import { useAnalytics } from './hooks/useAnalytics';
 import { db } from '../../firebase';
 import { doc, getDoc, collection, query, where, getDocs, orderBy, limit, deleteDoc, updateDoc, addDoc } from 'firebase/firestore';
 import { logActivity } from '../../utils/activityLogger';
@@ -15,15 +14,9 @@ import {
     FiEdit,
     FiBell,
     FiUsers,
-    FiSettings,
-    FiPieChart,
     FiFileText,
     FiImage,
     FiLogOut,
-    FiShield,
-    FiDatabase,
-    FiTrendingUp,
-    FiSearch,
     FiTrash2,
     FiSave,
     FiX,
@@ -33,10 +26,6 @@ import {
 } from 'react-icons/fi';
 import BlogPostEditor from '../blog/BlogPostEditor';
 import HeroPageEditor from '../hero/HeroPageEditor';
-import PerformanceMonitor from './PerformanceMonitor';
-import SecurityAuditLog from './SecurityAuditLog';
-import SEOHealthCheck from './SEOHealthCheck';
-import AnalyticsDashboard from './AnalyticsDashboard';
 import AnnouncementEditor from '../announcement/AnnouncementEditor';
 import Logo from '../../assets/pictures/techbyp.png';
 import logo_small from '../../assets/pictures/Logo-Symbol.png';
@@ -47,10 +36,8 @@ import { Skeleton } from './ui/Skeleton';
 
 // Type definitions
 type SiteStats = {
-    visitors: number;
     articles: number;
     announcements: number;
-    performanceScore: number;
 };
 
 type Comment = {
@@ -64,14 +51,6 @@ type Comment = {
     editedAt?: Date;
 };
 
-type ClubMember = {
-    id: string;
-    email: string;
-    name: string;
-    source: string;
-    joinedDate: any;
-};
-
 type Activity = {
     id: string;
     event: string;
@@ -83,15 +62,12 @@ type Activity = {
 
 const AdminDashboard = () => {
     const { user, logout } = useAuth();
-    const { trackEvent, getAnalyticsData } = useAnalytics();
     const { t, i18n } = useTranslation();
     const navigate = useNavigate();
     const [activeTab, setActiveTab] = useState('dashboard');
     const [siteStats, setSiteStats] = useState<SiteStats>({
-        visitors: 0,
         articles: 0,
-        announcements: 0,
-        performanceScore: 0
+        announcements: 0
     });
     const [isLoading, setIsLoading] = useState(true);
     const [userRole, setUserRole] = useState('editor');
@@ -110,10 +86,7 @@ const AdminDashboard = () => {
         onConfirm: () => { },
         onCancel: () => { }
     });
-    const { theme, toggleTheme, isMounted } = useTheme();
-
-
-
+    
     const getDisplayName = useCallback((email: string): string => {
         const nameMap: Record<string, string> = {
             "d.alex@techbyp.com": "David",
@@ -121,11 +94,10 @@ const AdminDashboard = () => {
             "m.peters@techbyp.com": "Mattze"
         };
 
-        return nameMap[email.toLowerCase()] || "User";
-    }, []);
+        return nameMap[email.toLowerCase()] || t('adminDashboard.user.role.editor');
+    }, [t]);
 
-
-    const displayName: string = user ? getDisplayName(user.email ?? "") : "Guest";
+    const displayName: string = user ? getDisplayName(user.email ?? "") : t('adminDashboard.user.role.editor');
 
     const fetchLatestCommentsAndMembers = useCallback(async () => {
         try {
@@ -172,199 +144,6 @@ const AdminDashboard = () => {
         }
     }, []);
 
-    const fetchRecentActivity = useCallback(async () => {
-        try {
-            const oneWeekAgo = new Date();
-            oneWeekAgo.setDate(oneWeekAgo.getDate() - 7);
-
-            const q = query(
-                collection(db, 'analytics'),
-                where('timestamp', '>=', oneWeekAgo),
-                where('event', 'in', [
-                    'member_joined',
-                    'comment_added',
-                    'content_created',
-                    'content_updated',
-                    'comment_edited',
-                    'comment_deleted',
-                    'member_deleted'
-                ]),
-                orderBy('timestamp', 'desc'),
-                limit(20)
-            );
-            const snapshot = await getDocs(q);
-            setRecentActivity(snapshot.docs.map(doc => ({ id: doc.id, ...doc.data() })));
-        } catch (error) {
-            console.error('Error fetching activity:', error);
-            toast.error('Failed to load recent activity');
-        }
-    }, []);
-
-    const fetchSiteStats = useCallback(async () => {
-        setIsLoading(true);
-        try {
-            const [visitorSnapshot, articlesSnapshot, announcementsSnapshot, performanceSnapshot] = await Promise.all([
-                getDocs(query(
-                    collection(db, 'analytics'),
-                    where('event', '==', 'page_view'),
-                    where('timestamp', '>=', new Date(Date.now() - 30 * 24 * 60 * 60 * 1000))
-                )),
-                getDocs(collection(db, 'articles')),
-                getDocs(collection(db, 'announcements')),
-                getDocs(query(
-                    collection(db, 'analytics'),
-                    where('event', '==', 'performance_metrics'),
-                    orderBy('timestamp', 'desc'),
-                    limit(10)
-                ))
-            ]);
-
-            let avgPerformance = 0;
-            if (!performanceSnapshot.empty) {
-                const validEntries = performanceSnapshot.docs
-                    .filter(doc => doc.data().metadata)
-                    .map(doc => {
-                        const m = doc.data().metadata;
-                        return {
-                            lcp: Number(m.lcp) || 0,
-                            fcp: Number(m.fcp) || 0,
-                            cls: Number(m.cls) || 0,
-                            inp: Number(m.inp) || 0,
-                            tbt: Number(m.tbt) || 0
-                        };
-                    });
-
-                if (validEntries.length > 0) {
-                    avgPerformance = Math.round(
-                        validEntries.reduce((sum, entry) => {
-                            return sum + (
-                                (entry.lcp < 2500 ? 20 : 0) +
-                                (entry.fcp < 1800 ? 20 : 0) +
-                                (entry.cls < 0.1 ? 20 : 0) +
-                                (entry.inp < 200 ? 20 : 0) +
-                                (entry.tbt < 300 ? 20 : 0)
-                            );
-                        }, 0) / validEntries.length
-                    );
-                }
-            }
-
-            setSiteStats({
-                visitors: visitorSnapshot.size,
-                articles: articlesSnapshot.size,
-                announcements: announcementsSnapshot.size,
-                performanceScore: avgPerformance
-            });
-        } catch (error) {
-            console.error('Error fetching site stats:', error);
-            toast.error('Failed to load site statistics');
-        } finally {
-            setIsLoading(false);
-        }
-    }, []);
-
-    const handleEditComment = (comment: Comment) => {
-        setEditingCommentId(comment.id);
-        setEditedCommentText(comment.text);
-        setEditedCommentName(comment.userName);
-        setEditedCommentCompany(comment.company);
-    };
-
-    const handleSaveComment = async (commentId: string) => {
-        try {
-            await updateDoc(doc(db, 'comments', commentId), {
-                text: editedCommentText,
-                name: editedCommentName,
-                company: editedCommentCompany,
-                edited: true,
-                editedAt: new Date()
-            });
-
-            await addDoc(collection(db, 'analytics'), {
-                event: 'comment_edited',
-                userId: user?.uid,
-                userEmail: user?.email,
-                timestamp: new Date(),
-                metadata: {
-                    commentId: commentId,
-                    previousText: latestComments.find(c => c.id === commentId)?.text,
-                    newText: editedCommentText
-                }
-            });
-
-            toast.success('Comment updated successfully');
-            setEditingCommentId(null);
-            await Promise.all([fetchLatestCommentsAndMembers(), fetchRecentActivity()]);
-        } catch (error) {
-            console.error('Error updating comment:', error);
-            toast.error('Failed to update comment');
-        }
-    };
-
-    const handleDeleteComment = async (commentId: string) => {
-        setConfirmDialog({
-            isOpen: true,
-            title: 'Delete Comment',
-            message: 'Are you sure you want to delete this comment? This action cannot be undone.',
-            onConfirm: async () => {
-                try {
-                    const commentDoc = await getDoc(doc(db, 'comments', commentId));
-                    if (!commentDoc.exists()) {
-                        toast.error('Comment not found');
-                        return;
-                    }
-
-                    const commentData = commentDoc.data();
-                    const commentDetails = {
-                        userName: commentData.name || 'Anonymous',
-                        company: commentData.company || 'No company',
-                        text: commentData.text || 'No text',
-                        rating: commentData.rating || 0,
-                        timestamp: commentData.timestamp || new Date()
-                    };
-
-                    await deleteDoc(doc(db, 'comments', commentId));
-
-                    const metadata = {
-                        user: displayName,
-                        commentId: commentId,
-                        userName: commentDetails.userName,
-                        company: commentDetails.company,
-                        text: commentDetails.text,
-                        rating: commentDetails.rating,
-                        timestamp: commentDetails.timestamp
-                    };
-
-                    await Promise.all([
-                        addDoc(collection(db, 'analytics'), {
-                            event: 'comment_deleted',
-                            userId: user?.uid,
-                            userEmail: user?.email,
-                            timestamp: new Date(),
-                            metadata: metadata
-                        }),
-                        logActivity({
-                            event: 'comment_deleted',
-                            userEmail: user?.email || 'system',
-                            userId: user?.uid || 'system',
-                            metadata: {
-                                ...metadata,
-                                deletedBy: user?.email || 'system'
-                            }
-                        })
-                    ]);
-
-                    toast.success('Comment deleted successfully');
-                    await Promise.all([fetchLatestCommentsAndMembers(), fetchRecentActivity()]);
-                } catch (error) {
-                    console.error('Error deleting comment:', error);
-                    toast.error('Failed to delete comment');
-                }
-            },
-            onCancel: () => { }
-        });
-    };
-
     const handleDeleteMember = async (memberId: string) => {
         setConfirmDialog({
             isOpen: true,
@@ -403,6 +182,110 @@ const AdminDashboard = () => {
             onCancel: () => { }
         });
     };
+
+    const fetchRecentActivity = useCallback(async () => {
+        try {
+            const oneWeekAgo = new Date();
+            oneWeekAgo.setDate(oneWeekAgo.getDate() - 7);
+
+            const q = query(
+                collection(db, 'analytics'),
+                where('timestamp', '>=', oneWeekAgo),
+                where('event', 'in', [
+                    'comment_added',
+                    'content_created',
+                    'content_updated',
+                    'comment_edited',
+                    'comment_deleted'
+                ]),
+                orderBy('timestamp', 'desc'),
+                limit(20)
+            );
+            const snapshot = await getDocs(q);
+            setRecentActivity(snapshot.docs.map(doc => ({ id: doc.id, ...doc.data() })));
+        } catch (error) {
+            console.error('Error fetching activity:', error);
+            toast.error(t('adminDashboard.activity.fetchError'));
+        }
+    }, [t]);
+
+    const fetchSiteStats = useCallback(async () => {
+        setIsLoading(true);
+        try {
+            const [articlesSnapshot, announcementsSnapshot] = await Promise.all([
+                getDocs(collection(db, 'articles')),
+                getDocs(collection(db, 'announcements'))
+            ]);
+
+            setSiteStats({
+                articles: articlesSnapshot.size,
+                announcements: announcementsSnapshot.size
+            });
+        } catch (error) {
+            console.error('Error fetching site stats:', error);
+            toast.error(t('adminDashboard.stats.fetchError'));
+        } finally {
+            setIsLoading(false);
+        }
+    }, [t]);
+
+    const handleEditComment = (comment: Comment) => {
+        setEditingCommentId(comment.id);
+        setEditedCommentText(comment.text);
+        setEditedCommentName(comment.userName);
+        setEditedCommentCompany(comment.company);
+    };
+
+    const handleSaveComment = async (commentId: string) => {
+        try {
+            await updateDoc(doc(db, 'comments', commentId), {
+                text: editedCommentText,
+                name: editedCommentName,
+                company: editedCommentCompany,
+                edited: true,
+                editedAt: new Date()
+            });
+
+            await addDoc(collection(db, 'analytics'), {
+                event: 'comment_edited',
+                userId: user?.uid,
+                userEmail: user?.email,
+                timestamp: new Date(),
+                metadata: {
+                    commentId: commentId,
+                    previousText: latestComments.find(c => c.id === commentId)?.text,
+                    newText: editedCommentText
+                }
+            });
+
+            toast.success(t('adminDashboard.comments.updateSuccess'));
+            setEditingCommentId(null);
+            await Promise.all([fetchLatestCommentsAndMembers(), fetchRecentActivity()]);
+        } catch (error) {
+            console.error('Error updating comment:', error);
+            toast.error(t('adminDashboard.comments.updateError'));
+        }
+    };
+
+    const handleDeleteComment = async (commentId: string) => {
+        setConfirmDialog({
+            isOpen: true,
+            title: t('adminDashboard.confirmation.deleteComment.title'),
+            message: t('adminDashboard.confirmation.deleteComment.message'),
+            onConfirm: async () => {
+                try {
+                    await deleteDoc(doc(db, 'comments', commentId));
+                    toast.success(t('adminDashboard.comments.deleteSuccess'));
+                    await Promise.all([fetchLatestCommentsAndMembers(), fetchRecentActivity()]);
+                } catch (error) {
+                    console.error('Error deleting comment:', error);
+                    toast.error(t('adminDashboard.comments.deleteError'));
+                }
+            },
+            onCancel: () => { }
+        });
+    };
+
     const checkPermissions = useCallback(async () => {
         if (!user) return;
 
@@ -413,20 +296,18 @@ const AdminDashboard = () => {
             }
         } catch (error) {
             console.error('Error checking permissions:', error);
-            toast.error('Failed to verify permissions');
+            toast.error(t('adminDashboard.permissionsError'));
         }
-    }, [user]);
+    }, [user, t]);
 
     useEffect(() => {
         checkPermissions();
         fetchSiteStats();
         fetchRecentActivity();
         fetchLatestCommentsAndMembers();
-        trackEvent('admin_dashboard_visited');
-    }, [checkPermissions, fetchSiteStats, fetchRecentActivity, fetchLatestCommentsAndMembers, trackEvent]);
+    }, [checkPermissions, fetchSiteStats, fetchRecentActivity, fetchLatestCommentsAndMembers]);
 
     const handleLogout = () => {
-        trackEvent('admin_logged_out');
         logout();
         navigate('/login');
     };
@@ -437,58 +318,44 @@ const AdminDashboard = () => {
                 return <BlogPostEditor />;
             case 'hero':
                 return <HeroPageEditor />;
-            case 'performance':
-                return <PerformanceMonitor />;
             case 'announcements':
                 return <AnnouncementEditor />;
-            case 'security':
-                return <SecurityAuditLog />;
-            case 'analytics':
-                return <AnalyticsDashboard />;
-            case 'seo':
-                return <SEOHealthCheck />;
             case 'dashboard':
             default:
                 return (
-                    <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
-                        <DashboardCard
-                            title="Total Visitors"
-                            value={siteStats.visitors.toLocaleString()}
-                            change={`${siteStats.visitors > 0 ? '+' : ''}${Math.round((siteStats.visitors / 30) * 100)}% this month`}
-                            icon={<FiUsers className="w-6 h-6" />}
-                            loading={isLoading}
-                        />
-                        <DashboardCard
-                            title="Published Articles"
-                            value={siteStats.articles}
-                            change={`${siteStats.articles > 0 ? '+' : ''}${Math.round((siteStats.articles / 7) * 100)}% this week`}
-                            icon={<FiFileText className="w-6 h-6" />}
-                            loading={isLoading}
-                        />
-                        <DashboardCard
-                            title="Active Announcements"
-                            value={siteStats.announcements}
-                            change={`${siteStats.announcements > 0 ? '+' : ''}${Math.round((siteStats.announcements / 1) * 100)}% today`}
-                            icon={<FiBell className="w-6 h-6" />}
-                            loading={isLoading}
-                        />
-                        <DashboardCard
-                            title="Performance Score"
-                            value={`${siteStats.performanceScore}/100`}
-                            change={siteStats.performanceScore > 80 ? 'Excellent' : siteStats.performanceScore > 60 ? 'Good' : 'Needs work'}
-                            icon={<FiPieChart className="w-6 h-6" />}
-                            loading={isLoading}
-                        />
+                    <div className="grid grid-cols-1 lg:grid-cols-3 gap-6">
+                        {/* Stats Cards */}
+                        <div className="lg:col-span-3 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+                            <DashboardCard
+                                title={t('adminDashboard.stats.articles')}
+                                value={siteStats.articles}
+                                change={`${siteStats.articles > 0 ? '+' : ''}${Math.round((siteStats.articles / 7) * 100)}% ${t('adminDashboard.common.thisWeek')}`}
+                                icon={<FiFileText className="w-6 h-6" />}
+                                loading={isLoading}
+                            />
+                            <DashboardCard
+                                title={t('adminDashboard.stats.announcements')}
+                                value={siteStats.announcements}
+                                change={`${siteStats.announcements > 0 ? '+' : ''}${Math.round((siteStats.announcements / 1) * 100)}% ${t('adminDashboard.common.today')}`}
+                                icon={<FiBell className="w-6 h-6" />}
+                                loading={isLoading}
+                            />
+                        </div>
 
-                        <div className="md:col-span-2 bg-white   light:bg-gray-800 rounded-xl shadow-lg p-6 border border-gray-200   light:border-gray-700">
+                        {/* Comments Section */}
+                        <div className="lg:col-span-2 bg-white rounded-xl shadow-lg p-6 border border-gray-200">
                             <div className="flex justify-between items-center mb-4">
-                                <h3 className="text-lg font-semibold text-gray-800   light:text-gray-200">Latest Comments</h3>
-                                <span className="text-xs bg-blue-100   light:bg-blue-900 text-blue-800   light:text-blue-200 px-2 py-1 rounded-full">
-                                    {latestComments.length} comments
+                                <h3 className="text-lg font-black uppercase text-gray-800">
+                                    {t('adminDashboard.stats.comments')}
+                                </h3>
+                                <span className="text-xs bg-brandgreen/10 text-brandgreen px-2 py-1 rounded-full">
+                                    {latestComments.length} {t('adminDashboard.comments.count')}
                                 </span>
                             </div>
                             {latestComments.length === 0 ? (
-                                <p className="text-gray-500   light:text-gray-400 text-center py-4">No recent comments found.</p>
+                                <p className="text-gray-500 text-center py-4">
+                                    {t('adminDashboard.comments.noComments')}
+                                </p>
                             ) : (
                                 <ul className="space-y-3 max-h-96 overflow-auto pr-2">
                                     {latestComments.map(comment => (
@@ -496,21 +363,24 @@ const AdminDashboard = () => {
                                             key={comment.id}
                                             initial={{ opacity: 0, y: 10 }}
                                             animate={{ opacity: 1, y: 0 }}
-                                            className="bg-white/70   light:bg-gray-700/70 hover:bg-white/90   light:hover:bg-gray-700/90 transition-all duration-200 rounded-lg p-4 shadow-sm border border-gray-100   light:border-gray-600"
+                                            className="bg-white/70 hover:bg-white/90 transition-all duration-200 rounded-lg p-4 shadow-sm border border-gray-100"
                                         >
                                             <div className="flex justify-between items-start gap-3">
                                                 <div className="flex-1 min-w-0">
                                                     <div className="flex items-center gap-2 mb-1">
-                                                        <div className="w-8 h-8 rounded-full bg-gradient-to-br from-blue-100 to-purple-100   light:from-blue-900   light:to-purple-900 flex items-center justify-center text-blue-600   light:text-blue-300 font-medium text-sm">
+                                                        <div className="w-8 h-8 rounded-full bg-brandgreen flex items-center justify-center text-white font-medium text-sm">
                                                             {comment.userName?.charAt(0)?.toUpperCase() || 'A'}
                                                         </div>
                                                         <div>
-                                                            <p className="text-sm font-medium   light:text-gray-200">{comment.userName}</p>
-                                                            <p className="text-xs text-gray-500   light:text-gray-400">{comment.company}</p>
+                                                            <p className="text-sm font-medium text-gray-800">{comment.userName}</p>
+                                                            <p className="text-xs text-gray-600">{comment.company}</p>
                                                         </div>
                                                         <div className="ml-auto flex items-center">
                                                             {[...Array(5)].map((_, i) => (
-                                                                <span key={i} className={`text-lg ${i < comment.rating ? 'text-yellow-400' : 'text-gray-300   light:text-gray-600'}`}>
+                                                                <span
+                                                                    key={i}
+                                                                    className={`text-lg ${i < comment.rating ? 'text-yellow-400' : 'text-gray-300'}`}
+                                                                >
                                                                     ★
                                                                 </span>
                                                             ))}
@@ -521,57 +391,65 @@ const AdminDashboard = () => {
                                                         <div className="mt-2 space-y-2">
                                                             <div className="grid grid-cols-2 gap-2">
                                                                 <div>
-                                                                    <label className="block text-xs text-gray-500   light:text-gray-400 mb-1">Name</label>
+                                                                    <label className="block text-xs text-gray-500 mb-1">
+                                                                        {t('adminDashboard.comments.name')}
+                                                                    </label>
                                                                     <input
                                                                         type="text"
                                                                         value={editedCommentName}
                                                                         onChange={(e) => setEditedCommentName(e.target.value)}
-                                                                        className="w-full p-2 border border-gray-200   light:border-gray-600 rounded-lg text-sm focus:ring-2 focus:ring-blue-500 focus:border-transparent   light:bg-gray-800   light:text-gray-200"
+                                                                        className="w-full p-2 border border-gray-200 rounded-lg text-sm focus:ring-2 focus:ring-brandgreen focus:border-transparent"
                                                                     />
                                                                 </div>
                                                                 <div>
-                                                                    <label className="block text-xs text-gray-500   light:text-gray-400 mb-1">Company</label>
+                                                                    <label className="block text-xs text-gray-500 mb-1">
+                                                                        {t('adminDashboard.comments.company')}
+                                                                    </label>
                                                                     <input
                                                                         type="text"
                                                                         value={editedCommentCompany}
                                                                         onChange={(e) => setEditedCommentCompany(e.target.value)}
-                                                                        className="w-full p-2 border border-gray-200   light:border-gray-600 rounded-lg text-sm focus:ring-2 focus:ring-blue-500 focus:border-transparent   light:bg-gray-800   light:text-gray-200"
+                                                                        className="w-full p-2 border border-gray-200 rounded-lg text-sm focus:ring-2 focus:ring-brandgreen focus:border-transparent"
                                                                     />
                                                                 </div>
                                                             </div>
                                                             <textarea
                                                                 value={editedCommentText}
                                                                 onChange={(e) => setEditedCommentText(e.target.value)}
-                                                                className="w-full p-2 border border-gray-200   light:border-gray-600 rounded-lg text-sm focus:ring-2 focus:ring-blue-500 focus:border-transparent   light:bg-gray-800   light:text-gray-200"
+                                                                className="w-full p-2 border border-gray-200 rounded-lg text-sm focus:ring-2 focus:ring-brandgreen focus:border-transparent"
                                                                 rows={3}
                                                                 autoFocus
                                                             />
                                                             <div className="flex gap-2">
                                                                 <button
                                                                     onClick={() => handleSaveComment(comment.id)}
-                                                                    className="flex items-center gap-1 px-3 py-1.5 bg-blue-600 hover:bg-blue-700 text-white text-sm rounded-lg transition-colors"
+                                                                    className="flex items-center gap-1 px-3 py-1.5 bg-brandgreen hover:bg-green-700 text-white text-sm rounded-lg transition-colors"
                                                                 >
                                                                     <FiSave className="w-3 h-3" />
-                                                                    Save
+                                                                    {t('adminDashboard.comments.save')}
                                                                 </button>
                                                                 <button
                                                                     onClick={() => setEditingCommentId(null)}
-                                                                    className="flex items-center gap-1 px-3 py-1.5 bg-gray-200 hover:bg-gray-300 text-gray-700   light:bg-gray-600   light:hover:bg-gray-700   light:text-gray-200 text-sm rounded-lg transition-colors"
+                                                                    className="flex items-center gap-1 px-3 py-1.5 bg-gray-200 hover:bg-gray-300 text-gray-700 text-sm rounded-lg transition-colors"
                                                                 >
                                                                     <FiX className="w-3 h-3" />
-                                                                    Cancel
+                                                                    {t('adminDashboard.comments.cancel')}
                                                                 </button>
                                                             </div>
                                                         </div>
                                                     ) : (
                                                         <>
-                                                            <p className="text-sm text-gray-700   light:text-gray-300 mt-1 whitespace-pre-line">{comment.text || 'No content'}</p>
+                                                            <p className="text-sm text-gray-700 mt-1 whitespace-pre-line">
+                                                                {comment.text || t('adminDashboard.comments.noContent')}
+                                                            </p>
                                                             <div className="flex items-center gap-2 mt-2">
-                                                                <span className="text-xs text-gray-400   light:text-gray-500">
+                                                                <span className="text-xs text-gray-500">
                                                                     {comment.timestamp?.toDate().toLocaleString()}
                                                                 </span>
                                                                 {comment.edited && (
-                                                                    <span className="text-xs text-gray-400   light:text-gray-500">• Edited</span>
+                                                                    <span className="text-xs text-gray-500">
+                                                                        • {t('adminDashboard.comments.edited')}
+                                                                    </span>
                                                                 )}
                                                             </div>
                                                         </>
@@ -581,15 +459,15 @@ const AdminDashboard = () => {
                                                     <div className="flex gap-1">
                                                         <button
                                                             onClick={() => handleEditComment(comment)}
-                                                            className="p-1.5 text-gray-500 hover:text-blue-600 hover:bg-blue-50   light:hover:bg-blue-900/30 rounded-full transition-colors"
-                                                            aria-label="Edit comment"
+                                                            className="p-1.5 text-gray-500 hover:text-brandgreen hover:bg-brandgreen/10 rounded-full transition-colors"
+                                                            aria-label={t('adminDashboard.comments.edit')}
                                                         >
                                                             <FiEdit className="w-4 h-4" />
                                                         </button>
                                                         <button
                                                             onClick={() => handleDeleteComment(comment.id)}
-                                                            className="p-1.5 text-gray-500 hover:text-red-600 hover:bg-red-50   light:hover:bg-red-900/30 rounded-full transition-colors"
-                                                            aria-label="Delete comment"
+                                                            className="p-1.5 text-gray-500 hover:text-red-600 hover:bg-red-100 rounded-full transition-colors"
+                                                            aria-label={t('adminDashboard.comments.delete')}
                                                         >
                                                             <FiTrash2 className="w-4 h-4" />
                                                         </button>
@@ -602,10 +480,15 @@ const AdminDashboard = () => {
                             )}
                         </div>
 
-                        <div className="md:col-span-2 bg-white   light:bg-gray-800 rounded-xl shadow-lg p-6 border border-gray-200   light:border-gray-700">
-                            <h3 className="text-lg font-semibold text-gray-800   light:text-gray-200 mb-4">Latest Club Members</h3>
+                        {/* Club Members Section */}
+                        <div className="lg:col-span-1 bg-white rounded-xl shadow-lg p-6 border border-gray-200">
+                            <h3 className="text-lg font-black uppercase text-gray-800 mb-4">
+                                {t('adminDashboard.stats.members')}
+                            </h3>
                             {latestClubMembers.length === 0 ? (
-                                <p className="text-gray-500   light:text-gray-400 text-center py-4">No new members found.</p>
+                                <p className="text-gray-500 text-center py-4">
+                                    {t('adminDashboard.members.noMembers')}
+                                </p>
                             ) : (
                                 <ul className="space-y-3 max-h-96 overflow-auto">
                                     {latestClubMembers.map(member => (
@@ -613,26 +496,23 @@ const AdminDashboard = () => {
                                             key={member.id}
                                             initial={{ opacity: 0, y: 10 }}
                                             animate={{ opacity: 1, y: 0 }}
-                                            className="bg-white/70   light:bg-gray-700/70 hover:bg-white/90   light:hover:bg-gray-700/90 transition-all duration-200 rounded-lg p-4 shadow-sm border border-gray-100   light:border-gray-600"
+                                            className="bg-white/70 hover:bg-white/90 transition-all duration-200 rounded-lg p-4 shadow-sm border border-gray-100"
                                         >
                                             <div className="flex items-center justify-between gap-3">
                                                 <div className="flex items-center gap-3 flex-1">
-                                                    <div className="w-10 h-10 rounded-full bg-gradient-to-br from-green-100 to-teal-100   light:from-green-900   light:to-teal-900 flex items-center justify-center text-teal-600   light:text-teal-300 font-medium">
+                                                    <div className="w-10 h-10 rounded-full bg-brandgreen flex items-center justify-center text-white font-medium">
                                                         {member.name?.charAt(0)?.toUpperCase() || 'M'}
                                                     </div>
                                                     <div className="min-w-0 flex-1">
-                                                        <p className="text-sm font-medium   light:text-gray-200 break-all">
-                                                            {member.name || 'Unknown Member'}
+                                                        <p className="text-sm font-medium text-gray-800 break-all">
+                                                            {member.name || t('adminDashboard.members.unknownMember')}
                                                         </p>
-                                                        <p className="text-xs text-gray-600   light:text-gray-400 break-all">
-                                                            {member.email}
-                                                        </p>
-
+                                                        <p className="text-xs text-gray-600 break-all">{member.email}</p>
                                                         <div className="flex justify-between items-center">
-                                                            <p className="text-xs text-gray-500   light:text-gray-400">
-                                                                Joined: {member.joinedDate?.toDate().toLocaleDateString()}
+                                                            <p className="text-xs text-gray-500">
+                                                                {t('adminDashboard.members.joined')}: {member.joinedDate?.toDate().toLocaleDateString()}
                                                             </p>
-                                                            <span className="text-xs bg-gray-100   light:bg-gray-700 text-gray-600   light:text-gray-300 px-2 py-1 rounded-full">
+                                                            <span className="text-xs bg-gray-100 text-gray-600 px-2 py-1 rounded-full">
                                                                 {member.source}
                                                             </span>
                                                         </div>
@@ -640,8 +520,8 @@ const AdminDashboard = () => {
                                                 </div>
                                                 <button
                                                     onClick={() => handleDeleteMember(member.id)}
-                                                    className="p-1.5 text-gray-500 hover:text-red-600 hover:bg-red-50   light:hover:bg-red-900/30 rounded-full transition-colors"
-                                                    aria-label="Delete member"
+                                                    className="p-1.5 text-gray-500 hover:text-red-600 hover:bg-red-100 rounded-full transition-colors"
+                                                    aria-label={t('adminDashboard.members.delete')}
                                                 >
                                                     <FiTrash2 className="w-4 h-4" />
                                                 </button>
@@ -652,30 +532,21 @@ const AdminDashboard = () => {
                             )}
                         </div>
 
-                        <div className="md:col-span-2 bg-white   light:bg-gray-800 rounded-xl shadow-lg p-6 border border-gray-200   light:border-gray-700">
-                            <SEOHealthCheck compact />
-                        </div>
-
-                        <div className="md:col-span-2 bg-white   light:bg-gray-800 rounded-xl shadow-lg p-6 border border-gray-200   light:border-gray-700">
+                        {/* Activity Feed - full width under comments + members */}
+                        <div className="lg:col-span-3 bg-white rounded-xl shadow-lg p-6 border border-gray-200">
                             <div className="flex justify-between items-center mb-4">
-                                <h3 className="text-lg font-semibold text-gray-800   light:text-gray-200">Recent Activity</h3>
+                                <h3 className="text-lg font-black uppercase text-gray-800">
+                                    {t('adminDashboard.stats.activity')}
+                                </h3>
                                 <button
                                     onClick={fetchRecentActivity}
-                                    className="text-sm text-blue-600 hover:text-blue-800   light:text-blue-400   light:hover:text-blue-300 flex items-center gap-1"
+                                    className="text-sm text-brandgreen hover:text-green-700 flex items-center gap-1"
                                 >
-                                    Refresh
+                                    {t('adminDashboard.activity.refresh')}
                                     <FiExternalLink className="w-3 h-3" />
                                 </button>
                             </div>
-                            <ActivityFeed activities={recentActivity} />
-                        </div>
-
-                        <div className="md:col-span-2 bg-white   light:bg-gray-800 rounded-xl shadow-lg p-6 border border-gray-200   light:border-gray-700">
-                            <PerformanceMonitor compact />
-                        </div>
-
-                        <div className="md:col-span-2 bg-white   light:bg-gray-800 rounded-xl shadow-lg p-6 border border-gray-200   light:border-gray-700">
-                            <AnalyticsDashboard compact />
+                            <ActivityFeed activities={recentActivity} t={t} />
                         </div>
                     </div>
                 );
@@ -683,7 +554,7 @@ const AdminDashboard = () => {
     };
 
     return (
-        <div className="min-h-screen bg-gray-50   light:bg-gray-900">
+        <div className="min-h-screen bg-gray-50">
             <ToastContainer
                 position="top-right"
                 autoClose={5000}
@@ -694,7 +565,7 @@ const AdminDashboard = () => {
                 pauseOnFocusLoss
                 draggable
                 pauseOnHover
-                theme={theme === 'dark' ? 'dark' : 'light'}
+                theme="colored"
             />
 
             <ConfirmationDialog
@@ -712,10 +583,10 @@ const AdminDashboard = () => {
             <div className="lg:hidden fixed top-4 right-4 z-50">
                 <button
                     onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
-                    className="p-2 rounded-lg bg-white   light:bg-gray-800 shadow-md border border-gray-200   light:border-gray-700 hover:bg-gray-100   light:hover:bg-gray-700 transition-all"
-                    aria-label={isMobileMenuOpen ? 'Close menu' : 'Open menu'}
+                    className="p-2 rounded-lg bg-white shadow-md border border-gray-200 hover:bg-gray-100 transition-all"
+                    aria-label={isMobileMenuOpen ? t('adminDashboard.common.closeMenu') : t('adminDashboard.common.openMenu')}
                 >
-                    <svg className="w-6 h-6 text-gray-700   light:text-gray-300" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <svg className="w-6 h-6 text-gray-700" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                         {isMobileMenuOpen ? (
                             <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M6 18L18 6M6 6l12 12" />
                         ) : (
@@ -727,7 +598,7 @@ const AdminDashboard = () => {
 
             <div className="flex">
                 {/* Sidebar */}
-                <aside className={`fixed inset-y-0 left-0 z-40 w-64 bg-white   light:bg-gray-800 shadow-xl transform ${isMobileMenuOpen ? 'translate-x-0' : '-translate-x-full'} lg:translate-x-0 transition-transform duration-300 ease-in-out border-r border-gray-200   light:border-gray-700`}>
+                <aside className={`fixed inset-y-0 left-0 z-40 w-64 bg-white shadow-xl transform ${isMobileMenuOpen ? 'translate-x-0' : '-translate-x-full'} lg:translate-x-0 transition-transform duration-300 ease-in-out border-r border-gray-200`}>
                     <div className="flex flex-col h-full p-6">
                         <img
                             srcSet={Logo}
@@ -741,90 +612,50 @@ const AdminDashboard = () => {
                             <ul className="space-y-2">
                                 <NavItem
                                     icon={<FiHome className="w-5 h-5" />}
-                                    label="Dashboard"
+                                    label={t('adminDashboard.tabs.dashboard')}
                                     active={activeTab === 'dashboard'}
                                     onClick={() => setActiveTab('dashboard')}
                                 />
                                 <NavItem
                                     icon={<FiEdit className="w-5 h-5" />}
-                                    label="Blog Editor"
+                                    label={t('adminDashboard.tabs.blog')}
                                     active={activeTab === 'blog'}
                                     onClick={() => setActiveTab('blog')}
                                 />
                                 <NavItem
                                     icon={<FiImage className="w-5 h-5" />}
-                                    label="Hero Editor"
+                                    label={t('adminDashboard.tabs.hero')}
                                     active={activeTab === 'hero'}
                                     onClick={() => setActiveTab('hero')}
                                 />
                                 <NavItem
                                     icon={<FiBell className="w-5 h-5" />}
-                                    label="Announcements"
+                                    label={t('adminDashboard.tabs.announcements')}
                                     active={activeTab === 'announcements'}
                                     onClick={() => setActiveTab('announcements')}
                                 />
-
-                                {userRole === 'admin' && (
-                                    <>
-                                        <div className="border-t border-gray-200   light:border-gray-700 my-4"></div>
-                                        <NavItem
-                                            icon={<FiTrendingUp className="w-5 h-5" />}
-                                            label="Analytics"
-                                            active={activeTab === 'analytics'}
-                                            onClick={() => setActiveTab('analytics')}
-                                        />
-                                        <NavItem
-                                            icon={<FiSearch className="w-5 h-5" />}
-                                            label="SEO Tools"
-                                            active={activeTab === 'seo'}
-                                            onClick={() => setActiveTab('seo')}
-                                        />
-                                        <NavItem
-                                            icon={<FiPieChart className="w-5 h-5" />}
-                                            label="Performance"
-                                            active={activeTab === 'performance'}
-                                            onClick={() => setActiveTab('performance')}
-                                        />
-                                        <NavItem
-                                            icon={<FiUsers className="w-5 h-5" />}
-                                            label="User Management"
-                                            active={activeTab === 'users'}
-                                            onClick={() => setActiveTab('users')}
-                                        />
-                                        <NavItem
-                                            icon={<FiShield className="w-5 h-5" />}
-                                            label="Security"
-                                            active={activeTab === 'security'}
-                                            onClick={() => setActiveTab('security')}
-                                        />
-                                        <NavItem
-                                            icon={<FiDatabase className="w-5 h-5" />}
-                                            label="Backups"
-                                            active={activeTab === 'backups'}
-                                            onClick={() => setActiveTab('backups')}
-                                        />
-                                    </>
-                                )}
                             </ul>
                         </nav>
 
                         <div className="mt-auto">
-                            <div className="p-4 bg-gray-50   light:bg-gray-700 rounded-xl mb-4 border border-gray-200   light:border-gray-600">
+                            <div className="p-4 bg-gray-50 rounded-xl mb-4 border border-gray-200">
                                 <div className="flex items-center space-x-3">
-                                    <div className="w-10 h-10 rounded-full bg-gradient-to-br from-brandblue/10 to-brandgreen/10   light:from-brandblue/20   light:to-brandgreen/20 flex items-center justify-center text-brandblue   light:text-brandblue-light font-semibold">
+                                    <div className="w-10 h-10 rounded-full bg-white flex items-center justify-center text-white font-black uppercase">
                                         <img srcSet={logo_small} alt="Small logo" className="w-6 h-6" />
                                     </div>
                                     <div>
-                                        <p className="font-bold text-gray-900   light:text-gray-100 truncate max-w-[160px]">{displayName}</p>
-                                        <p className="text-xs text-gray-500   light:text-gray-400 uppercase">{userRole}</p>
+                                        <p className="font-bold text-gray-900 truncate max-w-[160px]">{displayName}</p>
+                                        <p className="text-xs text-gray-500 uppercase">
+                                            {t(`adminDashboard.user.role.${userRole}`)}
+                                        </p>
                                     </div>
                                 </div>
                             </div>
                             <div className="flex items-center gap-4">
                                 <button
                                     onClick={() => i18n.changeLanguage(i18n.language === 'en' ? 'de' : 'en')}
-                                    className="flex-1 flex items-center space-x-2 p-3 text-left rounded-lg hover:bg-gray-100 dark:hover:bg-gray-700 text-gray-700 dark:text-gray-300 transition-colors font-medium"
-                                    title={t('toggleLanguage')}
+                                    className="flex-1 flex items-center space-x-2 p-3 text-left rounded-lg hover:bg-gray-100 text-gray-700 transition-colors font-medium"
+                                    title={t('adminDashboard.common.toggleLanguage')}
                                 >
                                     <FiGlobe className="w-5 h-5" />
                                     <span>{i18n.language === 'en' ? 'EN' : 'DE'}</span>
@@ -832,10 +663,10 @@ const AdminDashboard = () => {
 
                                 <button
                                     onClick={handleLogout}
-                                    className="flex-1 flex items-center space-x-2 p-3 text-left rounded-lg hover:bg-gray-100 dark:hover:bg-gray-700 text-gray-700 dark:text-gray-300 transition-colors font-medium"
+                                    className="flex-1 flex items-center space-x-2 p-3 text-left rounded-lg hover:bg-gray-100 text-gray-700 transition-colors font-medium"
                                 >
                                     <FiLogOut className="w-5 h-5" />
-                                    <span>{t('logout')}</span>
+                                    <span>{t('adminDashboard.common.logout')}</span>
                                 </button>
                             </div>
                         </div>
@@ -846,32 +677,26 @@ const AdminDashboard = () => {
                 <main className="flex-1 lg:ml-64 min-h-screen p-4 md:p-8">
                     <div className="max-w-7xl mx-auto">
                         <div className="flex flex-col md:flex-row justify-between items-start md:items-center mb-6 md:mb-8 gap-4">
-                            <h1 className="text-2xl md:text-3xl font-black uppercase text-gray-900   light:text-gray-100">
-                                {activeTab === 'dashboard' && `Hello ${displayName}`}
-                                {activeTab === 'blog' && 'Blog Post Management'}
-                                {activeTab === 'hero' && 'Hero Section Editor'}
-                                {activeTab === 'announcements' && 'Announcements Editor'}
-                                {activeTab === 'analytics' && 'Analytics Dashboard'}
-                                {activeTab === 'seo' && 'SEO Health Check'}
-                                {activeTab === 'performance' && 'Performance Monitor'}
-                                {activeTab === 'users' && 'User Management'}
-                                {activeTab === 'security' && 'Security Dashboard'}
-                                {activeTab === 'backups' && 'Backup Management'}
+                            <h1 className="text-2xl md:text-3xl font-black uppercase text-gray-900">
+                                {activeTab === 'dashboard' && t('adminDashboard.greeting', { name: displayName })}
+                                {activeTab === 'blog' && t('adminDashboard.tabs.blog')}
+                                {activeTab === 'hero' && t('adminDashboard.tabs.hero')}
+                                {activeTab === 'announcements' && t('adminDashboard.tabs.announcements')}
                             </h1>
 
                             <div className="flex items-center space-x-4">
-                                <span className="text-sm text-gray-600   light:text-gray-400">
-                                    Last updated: {new Date().toLocaleString()}
+                                <span className="text-sm text-gray-600">
+                                    {t('adminDashboard.common.lastUpdated')}: {new Date().toLocaleString()}
                                 </span>
-                                <div className="h-8 w-8 rounded-full bg-green-100   light:bg-green-900 flex items-center justify-center">
+                                <div className="h-8 w-8 rounded-full bg-green-100 flex items-center justify-center">
                                     <div className="h-2 w-2 rounded-full bg-brandgreen animate-pulse"></div>
                                 </div>
                             </div>
                         </div>
 
                         {isLoading ? (
-                            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
-                                {[...Array(8)].map((_, i) => (
+                            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+                                {[...Array(3)].map((_, i) => (
                                     <Skeleton key={i} className="h-36 rounded-xl" />
                                 ))}
                             </div>
@@ -896,12 +721,12 @@ const NavItem = ({ icon, label, active, onClick }: {
         <button
             onClick={onClick}
             className={`w-full flex items-center space-x-3 p-4 rounded-xl transition-all duration-200 ${active
-                ? 'bg-brandblue/10   light:bg-brandblue/20 text-brandblue   light:text-brandblue-light font-bold border-l-4 border-brandblue'
-                : 'text-gray-700   light:text-gray-300 hover:bg-gray-100   light:hover:bg-gray-700 font-medium'
+                ? 'bg-brandgreen/10 text-brandgreen font-bold border-l-4 border-brandgreen'
+                : 'text-gray-700 hover:bg-gray-100 font-medium'
                 }`}
             aria-current={active ? 'page' : undefined}
         >
-            <span className={`${active ? 'text-brandblue   light:text-brandblue-light' : 'text-gray-600   light:text-gray-400'}`}>
+            <span className={`${active ? 'text-brandgreen' : 'text-gray-600'}`}>
                 {icon}
             </span>
             <span>{label}</span>
@@ -916,77 +741,69 @@ const DashboardCard = ({ title, value, change, icon, loading }: {
     icon: React.ReactNode,
     loading?: boolean
 }) => (
-    <div className="bg-white   light:bg-gray-800 rounded-xl shadow-lg p-6 border border-gray-200   light:border-gray-700 hover:shadow-md transition-shadow">
+    <div className="bg-white rounded-xl shadow-lg p-6 border border-gray-200 hover:shadow-md transition-shadow">
         <div className="flex justify-between items-start">
             <div>
-                <p className="text-sm font-medium text-gray-500   light:text-gray-400 uppercase tracking-wider">{title}</p>
+                <p className="text-sm font-medium text-gray-500 uppercase tracking-wider">{title}</p>
                 {loading ? (
                     <Skeleton className="h-9 w-24 mt-2" />
                 ) : (
-                    <h3 className="text-3xl font-black mt-2 text-gray-900   light:text-gray-100">{value}</h3>
+                    <h3 className="text-3xl font-black mt-2 text-gray-900">{value}</h3>
                 )}
                 {loading ? (
                     <Skeleton className="h-6 w-20 mt-3" />
                 ) : (
-                    <p className={`text-xs mt-3 px-3 py-1 rounded-full inline-flex items-center ${change.startsWith('+') || typeof change === 'number' || change === 'Excellent' || change === 'Good'
-                        ? 'bg-green-100   light:bg-green-900 text-green-800   light:text-green-200'
-                        : 'bg-red-100   light:bg-red-900 text-red-800   light:text-red-200'
+                    <p className={`text-xs mt-3 px-3 py-1 rounded-full inline-flex items-center ${change.startsWith('+') || typeof change === 'number'
+                        ? 'bg-green-100 text-green-800'
+                        : 'bg-red-100 text-red-800'
                         }`}>
                         {change}
                     </p>
                 )}
             </div>
-            <div className="p-3 rounded-lg bg-brandblue/10   light:bg-brandblue/20 text-brandblue   light:text-brandblue-light">
+            <div className="p-3 rounded-lg bg-brandgreen/10 text-brandgreen">
                 {icon}
             </div>
         </div>
     </div>
 );
 
-const ActivityFeed = ({ activities }: { activities: Activity[] }) => {
+const ActivityFeed = ({ activities, t }: {
+    activities: Activity[],
+    t: (key: string, options?: any) => string
+}) => {
     const [expandedActivity, setExpandedActivity] = useState<string | null>(null);
 
     const formatEvent = (event: string) => {
-        const eventMap: Record<string, string> = {
-            'member_joined': 'joined the TechByP Club',
-            'comment_added': 'added a new comment',
-            'content_created': 'created new content',
-            'content_updated': 'updated content',
-            'comment_edited': 'edited a comment',
-            'comment_deleted': 'deleted a comment',
-            'member_deleted': 'deleted a club member'
-        };
-        return eventMap[event] || event.replace(/_/g, ' ');
+        return t(`adminDashboard.activity.events.${event}`, { defaultValue: event.replace(/_/g, ' ') });
     };
 
     const getEventIcon = (event: string) => {
         const iconMap: Record<string, React.ReactNode> = {
-            'member_joined': <FiUsers className="w-4 h-4 text-green-500" />,
             'comment_added': <FiFileText className="w-4 h-4 text-blue-500" />,
             'comment_edited': <FiEdit className="w-4 h-4 text-yellow-500" />,
             'comment_deleted': <FiTrash2 className="w-4 h-4 text-red-500" />,
-            'member_deleted': <FiUsers className="w-4 h-4 text-red-500" />,
             'content_created': <FiFileText className="w-4 h-4 text-purple-500" />,
-            'content_updated': <FiEdit className="w-4 h-4 text-indigo-500" />
+            'content_updated': <FiEdit className="w-4 h-4 text-brandgreen" />
         };
         return iconMap[event] || <FiEdit className="w-4 h-4 text-gray-500" />;
     };
 
     const formatTime = (timestamp: any) => {
-        if (!timestamp) return 'Just now';
+        if (!timestamp) return t('adminDashboard.common.justNow');
         const date = timestamp.toDate();
         const now = new Date();
         const diff = now.getTime() - date.getTime();
 
         const minutes = Math.floor(diff / 60000);
-        if (minutes < 1) return 'Just now';
-        if (minutes < 60) return `${minutes} min ago`;
+        if (minutes < 1) return t('adminDashboard.common.justNow');
+        if (minutes < 60) return t('adminDashboard.common.minutesAgo', { count: minutes });
 
         const hours = Math.floor(minutes / 60);
-        if (hours < 24) return `${hours} hr ago`;
+        if (hours < 24) return t('adminDashboard.common.hoursAgo', { count: hours });
 
         const days = Math.floor(hours / 24);
-        if (days < 7) return `${days} day${days > 1 ? 's' : ''} ago`;
+        if (days < 7) return t('adminDashboard.common.daysAgo', { count: days, s: days > 1 ? 's' : '' });
 
         return date.toLocaleDateString();
     };
@@ -997,23 +814,15 @@ const ActivityFeed = ({ activities }: { activities: Activity[] }) => {
         const renderField = (label: string, value: any) => (
             value && (
                 <div className="flex">
-                    <span className="text-gray-500   light:text-gray-400 min-w-[80px]">{label}:</span>
-                    <span className="font-medium   light:text-gray-300">{value}</span>
+                    <span className="text-gray-500 min-w-[80px]">
+                        {t(`adminDashboard.activity.metadata.${label.toLowerCase()}`)}:
+                    </span>
+                    <span className="font-medium text-gray-800">{value}</span>
                 </div>
             )
         );
 
         switch (event) {
-            case 'member_joined':
-            case 'member_deleted':
-                return (
-                    <div className="mt-2 text-sm space-y-1">
-                        {renderField('Email', metadata.email)}
-                        {renderField('Source', metadata.source)}
-                        {/* {metadata.memberId && renderField('Member ID', metadata.memberId)} */}
-                    </div>
-                );
-
             case 'comment_added':
             case 'comment_deleted':
             case 'comment_edited':
@@ -1025,22 +834,21 @@ const ActivityFeed = ({ activities }: { activities: Activity[] }) => {
 
                         {(metadata.text || metadata.newText) && (
                             <div className="mt-1">
-                                <p className="text-gray-500   light:text-gray-400">Current Message:</p>
-                                <p className="text-gray-700   light:text-gray-300 italic">"{metadata.text || metadata.newText}"</p>
+                                <p className="text-gray-500">
+                                    {t('adminDashboard.activity.metadata.currentMessage')}:
+                                </p>
+                                <p className="text-gray-700 italic">"{metadata.text || metadata.newText}"</p>
                             </div>
                         )}
-
-
 
                         {event === 'comment_edited' && metadata.previousText && (
                             <div className="mt-1">
-                                <p className="text-gray-500   light:text-gray-400">Previous Message:</p>
-                                <p className="text-gray-700   light:text-gray-300 italic line-through">"{metadata.previousText}"</p>
+                                <p className="text-gray-500">
+                                    {t('adminDashboard.activity.metadata.previousMessage')}:
+                                </p>
+                                <p className="text-gray-700 italic line-through">"{metadata.previousText}"</p>
                             </div>
                         )}
-
-
-                        {event === 'comment_deleted' && renderField('Deleted by', metadata.deletedBy || metadata.userEmail)}
                     </div>
                 );
 
@@ -1052,8 +860,10 @@ const ActivityFeed = ({ activities }: { activities: Activity[] }) => {
                         {renderField('Title', metadata.title)}
                         {metadata.changes && (
                             <div className="mt-1">
-                                <p className="text-gray-500   light:text-gray-400">Changes:</p>
-                                <p className="text-xs bg-gray-100   light:bg-gray-700 p-2 rounded">
+                                <p className="text-gray-500">
+                                    {t('adminDashboard.activity.metadata.changes')}:
+                                </p>
+                                <p className="text-xs bg-gray-100 p-2 rounded">
                                     {metadata.changes}
                                 </p>
                             </div>
@@ -1064,7 +874,7 @@ const ActivityFeed = ({ activities }: { activities: Activity[] }) => {
             default:
                 return (
                     <div className="mt-2">
-                        <pre className="text-xs bg-gray-100   light:bg-gray-700 p-2 rounded overflow-x-auto">
+                        <pre className="text-xs bg-gray-100 p-2 rounded overflow-x-auto">
                             {JSON.stringify(metadata, null, 2)}
                         </pre>
                     </div>
@@ -1074,30 +884,30 @@ const ActivityFeed = ({ activities }: { activities: Activity[] }) => {
 
     if (!activities || activities.length === 0) {
         return (
-            <div className="text-center py-8 text-gray-500   light:text-gray-400">
-                No recent activity found
+            <div className="text-center py-8 text-gray-500">
+                {t('adminDashboard.activity.noActivity')}
             </div>
         );
     }
 
     return (
-        <div className="divide-y divide-gray-200   light:divide-gray-700 max-h-[500px] overflow-y-auto">
+        <div className="divide-y divide-gray-200 max-h-[500px] overflow-y-auto">
             {activities.slice(0, 50).map((activity) => (
                 <div key={activity.id} className="py-4 first:pt-0 last:pb-0">
                     <div
-                        className="flex items-start cursor-pointer hover:bg-gray-50   light:hover:bg-gray-800/50 p-2 rounded-lg transition-colors"
+                        className="flex items-start cursor-pointer hover:bg-gray-50 p-2 rounded-lg transition-colors"
                         onClick={() => setExpandedActivity(expandedActivity === activity.id ? null : activity.id)}
                         aria-expanded={expandedActivity === activity.id}
                     >
-                        <div className="w-8 h-8 rounded-full bg-gray-100   light:bg-gray-700 flex items-center justify-center mt-1 flex-shrink-0">
+                        <div className="w-8 h-8 rounded-full bg-gray-100 flex items-center justify-center mt-1 flex-shrink-0">
                             {getEventIcon(activity.event)}
                         </div>
                         <div className="ml-3 min-w-0 flex-1">
                             <div className="flex items-center justify-between">
-                                <p className="text-sm font-medium text-gray-900   light:text-gray-100">
+                                <p className="text-sm font-medium text-gray-900">
                                     {activity.userEmail || 'System'} {formatEvent(activity.event)}
                                 </p>
-                                <span className="text-xs text-gray-500   light:text-gray-400 whitespace-nowrap ml-2">
+                                <span className="text-xs text-gray-500 whitespace-nowrap ml-2">
                                     {formatTime(activity.timestamp)}
                                 </span>
                             </div>
@@ -1109,7 +919,7 @@ const ActivityFeed = ({ activities }: { activities: Activity[] }) => {
                                         animate={{ opacity: 1, height: 'auto' }}
                                         exit={{ opacity: 0, height: 0 }}
                                         transition={{ duration: 0.2 }}
-                                        className="mt-2 bg-gray-50   light:bg-gray-700/30 p-3 rounded-lg overflow-hidden"
+                                        className="mt-2 bg-gray-50 p-3 rounded-lg overflow-hidden"
                                     >
                                         {renderMetadata(activity.metadata, activity.event)}
                                     </motion.div>

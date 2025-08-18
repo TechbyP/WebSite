@@ -1135,8 +1135,105 @@
     },
     "videoNotSupported": "Your browser doesn't support HTML5 video."
   },
+
+
+  "adminDashboard": {
+    "greeting": "Welcome back!",
+    "user": {
+      "role": {
+        "admin": "Admin",
+        "editor": "Editor",
+        "viewer": "Viewer"
+      }
+    },
+    "tabs": {
+      "dashboard": "Dashboard",
+      "blog": "Blog Posts",
+      "hero": "Hero Section",
+      "announcements": "Announcements"
+    },
+    "stats": {
+      "articles": "Articles",
+      "announcements": "Announcements",
+      "comments": "Recent Comments",
+      "members": "Club Members",
+      "activity": "Recent Activity"
+    },
+    "comments": {
+      "count": "comments",
+      "noComments": "No comments yet",
+      "noContent": "[No content]",
+      "name": "Name",
+      "company": "Company",
+      "save": "Save",
+      "cancel": "Cancel",
+      "edit": "Edit",
+      "delete": "Delete",
+      "edited": "Edited",
+      "updateSuccess": "Comment updated successfully",
+      "updateError": "Failed to update comment",
+      "deleteSuccess": "Comment deleted successfully",
+      "deleteError": "Failed to delete comment"
+    },
+    "members": {
+      "noMembers": "No members yet",
+      "unknownMember": "Unknown Member",
+      "joined": "Joined",
+      "delete": "Delete member"
+    },
+    "activity": {
+      "noActivity": "No recent activity",
+      "refresh": "Refresh",
+      "fetchError": "Failed to load activity",
+      "events": {
+        "comment_added": "added a comment",
+        "comment_edited": "edited a comment",
+        "comment_deleted": "deleted a comment",
+        "content_created": "created content",
+        "content_updated": "updated content"
+      },
+      "metadata": {
+        "user": "User",
+        "company": "Company",
+        "rating": "Rating",
+        "currentMessage": "Current message",
+        "previousMessage": "Previous message",
+        "type": "Type",
+        "title": "Title",
+        "changes": "Changes"
+      }
+    },
+    "common": {
+      "lastUpdated": "Last updated",
+      "thisWeek": "this week",
+      "today": "today",
+      "justNow": "just now",
+      "minutesAgo": "{count} minute(s) ago",
+      "hoursAgo": "{count} hour(s) ago",
+      "daysAgo": "{count} day(s) ago",
+      "openMenu": "Open menu",
+      "closeMenu": "Close menu",
+      "toggleLanguage": "Toggle language",
+      "logout": "Logout"
+    },
+    "confirmation": {
+      "deleteComment": {
+        "title": "Delete Comment",
+        "message": "Are you sure you want to delete this comment? This action cannot be undone."
+      }
+    },
+    "permissionsError": "Error checking permissions"
+  },
+
+
+
+
+
+
+
   "mp1": {
     "nickname": "Full-Core Retriever",
+    
     "specs": [
       "Depth: 0–90 cm (stepless)",
       "Semi-automatic",
@@ -1196,7 +1293,7 @@
   "mp2": {
     "nickname": "Mid Range MultiPRO",
     "specs": [
-      "Depth: up to 60 cm",
+      "Depth: 0-60 cm",
       "Fully Automatic",
       "Optimised for N-min profiling",
       "18 sec/core sampling cycle"
@@ -1258,7 +1355,7 @@
   "mp3": {
     "nickname": "TripleLayer Pro",
     "specs": [
-      "Depth: up to 95 cm",
+      "Depth: 0-95 cm",
       "Fully Automatic",
       "3-Layer Separation",
       "20 sec/core sampling cycle"
@@ -1324,7 +1421,7 @@
   "mp4": {
     "nickname": "UltraDepth MAX",
     "specs": [
-      "Depth: up to 100 cm",
+      "Depth: 0-100 cm",
       "Fully Automatic",
       "4-Layer Separation",
       "22 sec/core sampling cycle"
@@ -1389,7 +1486,7 @@
   "dh": {
     "nickname": "Hydraulic Scout",
     "specs": [
-      "Depth: up to 30 cm",
+      "Depth: 0-30 cm",
       "Fully Automatic",
       "Suspension-independent depth control",
       "5 sec/core sampling cycle"
@@ -1453,7 +1550,7 @@
   "de": {
     "nickname": "Electric Scout",
     "specs": [
-      "Depth: up to 30 cm",
+      "Depth: 0-30 cm",
       "Fully electric drilling system",
       "Suspension-independent depth control",
       "5 sec/core sampling cycle"
@@ -1584,6 +1681,7 @@
   },
   "laydown": {
     "nickname": "Mount Kit",
+    "name": "Lay-down Frame",
     "specs": [
       "Standard 50 mm tow hitch with a 13‑pin 12 V socket required.",
       "Weight: ≈70 kg (DH/DE); ≈80 kg (MP bracket)",
@@ -1629,7 +1727,9 @@
     },
     "testimonials": []
   },
+
   "tph": {
+    "name": "Three‑Point Hitch",
     "nickname": "Mount Kit",
     "specs": [
       "Fits Cat‑2 or Cat‑3 tractor 3‑point PTO systems",
@@ -1687,6 +1787,7 @@
     ]
   },
   "fc": {
+    "name": "Full Conversion",
     "nickname": "Conversion Kit",
     "specs": [
       "Compatible with pickups and UTVs",
@@ -1741,6 +1842,7 @@
     ]
   },
   "trailer": {
+    "name": "Special Trailers",
     "nickname": "Field Haulers",
     "specs": [
       "Hot-dip galvanised—rust doesn't stand a chance.",
@@ -1797,6 +1899,7 @@
     ]
   },
   "powerpack": {
+    "name": "Power Pack",
     "nickname": "Independent Drive Units",
     "specs": [
       "Hydraulic or electric powered to fit your power needs",
@@ -1844,6 +1947,7 @@
     ]
   },
   "spareparts": {
+    "name": "Recommended Spare Parts",
     "nickname": "The Lifesavers",
     "specs": [
       "Factory-approved spares for all models",
@@ -1890,6 +1994,7 @@
     ]
   },
   "coolbox": {
+    "name": "Coolbox 95L",
     "nickname": "The Chiller",
     "specs": [
       "Dual-zone compressor cooling/freezing to -20°C",
@@ -1933,6 +2038,7 @@
     "testimonials": []
   },
   "led": {
+    "name": "LED Work Light 1700",
     "nickname": "The Midnight Sun",
     "specs": [
       "Pivot-mounted LED work light for near-field illumination",
@@ -1982,6 +2088,7 @@
     "testimonials": []
   },
   "camera": {
+    "name": "External Camera",
     "nickname": "The Watchtower",
     "specs": [
       "5MP 4G camera for soil sampling rigs",
@@ -2031,6 +2138,7 @@
     "testimonials": []
   },
   "probes": {
+    "name": "Probes, Dipsticks and Accessories",
     "nickname": "The N-min Purist",
     "specs": [
       "Tool steel construction (HRC 52)",
@@ -2179,6 +2287,7 @@
     ]
   },
   "drillrods": {
+    "name": "Drill Rods Ø22 mm for Normal Soil Profiles",
     "nickname": "The Deep Opener",
     "specs": [
       "Drilling groove Ø 22 mm, total length 1100 mm, usable length 1000 mm",
@@ -2287,6 +2396,7 @@
     "testimonials": []
   },
   "hammers": {
+    "name": "Hammer Selection & Accessories",
     "nickname": "The Right Hammer for Every Job",
     "specs": [
       "Variety of hammers with impact surfaces from 80 mm Ø to 150 mm square",
@@ -2418,4 +2528,5 @@
     ],
     "testimonials": []
   }
+
 }
