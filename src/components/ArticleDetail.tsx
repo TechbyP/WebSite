@@ -27,14 +27,7 @@ const ArticleDetail = () => {
   const [isLoading, setIsLoading] = useState(true);
   const [error, setError] = useState<string | null>(null);
 
-  // Simplified content accessor - similar to ArticleView
-  const currentContent = article?.content?.[currentLanguage] || article?.content?.en || {
-    title: '',
-    content: [],
-    excerpt: ''
-  };
-
-  // Simplified title accessor
+  const currentContent = article?.content?.[currentLanguage] || article?.content?.en || { title: '', content: [], excerpt: '' };
   const currentTitle = currentContent.title || article?.title?.[currentLanguage] || article?.title?.en || '';
 
   const optimizeImageUrl = (url: string) =>
@@ -66,21 +59,10 @@ const ArticleDetail = () => {
           .slice(0, 3)
           .map(doc => {
             const data = doc.data() as Article;
-            return {
-              id: doc.id,
-              title: data.title,
-              content: data.content, // Include content for language switching
-              image: data.image,
-              readTime: data.readTime
-            };
+            return { id: doc.id, title: data.title, content: data.content, image: data.image, readTime: data.readTime };
           });
 
-        setArticle({
-          ...articleData,
-          id: articleSnap.id,
-          relatedArticles,
-          image: optimizeImageUrl(articleData.image),
-        });
+        setArticle({ ...articleData, id: articleSnap.id, relatedArticles, image: optimizeImageUrl(articleData.image) });
       } catch (err) {
         console.error('Error fetching article:', err);
         setError(err instanceof Error ? err.message : t('failedToLoad'));
@@ -107,7 +89,7 @@ const ArticleDetail = () => {
 
   const handleShare = (platform: string) => {
     const currentUrl = window.location.href;
-    const title = getTitleForLanguage(article?.title, currentLanguage) || t('checkThisArticle');
+    const title = currentTitle || t('checkThisArticle');
     let shareUrl = '';
 
     switch (platform) {
@@ -128,93 +110,106 @@ const ArticleDetail = () => {
 
   const handlePrint = () => window.print();
 
-  const renderedContent = useMemo(() => {
-    if (!currentContent?.content) return null;
+const renderedContent = useMemo(() => {
+  if (!currentContent?.content) return null;
 
-    // Check if content is HTML (from RichTextEditor)
-    if (typeof currentContent.content === 'string' && currentContent.content.startsWith('<')) {
-      return (
-        <div className="prose max-w-none text-lg text-gray-700">
-          <div
-            className="first-paragraph-with-dropcap"
-            dangerouslySetInnerHTML={{
-              __html: sanitizeHtml(currentContent.content, {
-                allowedTags: sanitizeHtml.defaults.allowedTags.concat(['img']),
-                allowedAttributes: {
-                  ...sanitizeHtml.defaults.allowedAttributes,
-                  img: ['src', 'alt', 'title', 'width', 'height', 'class']
-                }
-              })
-            }}
-          />
-        </div>
-      );
-    }
-
-    // Handle array content (markdown or plain text)
-    const contentArray = Array.isArray(currentContent.content) 
-      ? currentContent.content 
-      : [currentContent.content];
-
+  // Check if content is HTML (from RichTextEditor)
+  if (typeof currentContent.content === 'string' && currentContent.content.startsWith('<')) {
     return (
-      <div className="prose max-w-none text-lg text-gray-700">
-        {contentArray.map((paragraph, index) => (
-          <div key={index} className={index === 0 ? "first-paragraph-with-dropcap" : ""}>
-            <ReactMarkdown
-              remarkPlugins={[remarkGfm]}
-              components={{
-                strong: ({ node, ...props }) => <strong className="font-bold" {...props} />,
-                p: ({ node, ...props }) => <p className="mb-4" {...props} />,
-                a: ({ node, ...props }) => <a className="text-blue-600 hover:underline" {...props} />,
-              }}
-            >
-              {paragraph}
-            </ReactMarkdown>
-          </div>
-        ))}
+      <div className="prose max-w-none text-gray-900 dark:text-gray-100 dark:prose-invert">
+        <div
+          className="first-paragraph-with-dropcap"
+          dangerouslySetInnerHTML={{
+            __html: sanitizeHtml(currentContent.content, {
+              allowedTags: sanitizeHtml.defaults.allowedTags.concat(['img']),
+              allowedAttributes: {
+                ...sanitizeHtml.defaults.allowedAttributes,
+                img: ['src', 'alt', 'title', 'width', 'height', 'class']
+              }
+            })
+          }}
+        />
       </div>
     );
-  }, [currentContent.content]);
-  if (isLoading)
-    return (
-      <div className="min-h-screen flex items-center justify-center bg-gray-50">
-        <div className="text-center">
-          <div className="animate-spin rounded-full h-12 w-12 border-b-2 border-blue-600 mx-auto mb-4"></div>
-          <p className="text-gray-600">{t('loadingArticle')}</p>
-        </div>
-      </div>
-    );
+  }
 
-  if (error)
-    return (
-      <div className="min-h-screen flex items-center justify-center bg-gray-50">
-        <div className="bg-white p-6 rounded shadow text-center max-w-md">
-          <h2 className="text-xl font-bold text-red-600 mb-2">{t('errorLoadingArticle')}</h2>
-          <p className="mb-4">{error}</p>
-          <button onClick={() => navigate('/blog')} className="bg-blue-600 text-white px-4 py-2 rounded hover:bg-blue-700">
-            {t('backToBlog')}
-          </button>
-        </div>
-      </div>
-    );
-
-  if (!article)
-    return (
-      <div className="min-h-screen flex items-center justify-center bg-gray-50">
-        <div className="text-center">
-          <h2 className="text-xl font-bold mb-2">{t('articleNotFound')}</h2>
-          <button onClick={() => navigate('/blog')} className="bg-blue-600 text-white px-4 py-2 rounded hover:bg-blue-700">
-            {t('backToBlog')}
-          </button>
-        </div>
-      </div>
-    );
-
-
-
+  // Handle array content (markdown or plain text)
+  const contentArray = Array.isArray(currentContent.content)
+    ? currentContent.content
+    : [currentContent.content];
 
   return (
-    <div className="min-h-screen bg-gray-50">
+    <div className="prose max-w-none text-gray-900 dark:text-gray-100 dark:prose-invert">
+      {contentArray.map((paragraph, index) => (
+        <div key={index} className={index === 0 ? "first-paragraph-with-dropcap" : ""}>
+          <ReactMarkdown
+            remarkPlugins={[remarkGfm]}
+            components={{
+              strong: ({ node, ...props }) => <strong className="font-bold" {...props} />,
+              p: ({ node, ...props }) => <p className="mb-4" {...props} />,
+              a: ({ node, ...props }) => <a className="text-blue-600 dark:text-blue-400 hover:underline" {...props} />,
+              h1: ({ node, ...props }) => <h1 className="text-3xl font-bold mt-8 mb-4 dark:text-gray-100" {...props} />,
+              h2: ({ node, ...props }) => <h2 className="text-2xl font-bold mt-6 mb-3 dark:text-gray-100" {...props} />,
+              h3: ({ node, ...props }) => <h3 className="text-xl font-bold mt-4 mb-2 dark:text-gray-100" {...props} />,
+              blockquote: ({ node, ...props }) => <blockquote className="border-l-4 border-gray-300 dark:border-gray-600 pl-4 italic text-gray-600 dark:text-gray-400 my-4" {...props} />,
+              code: ({ node, inline, className, children, ...props }) =>
+                inline ? (
+                  <code className="bg-gray-100 dark:bg-gray-700 px-1 py-0.5 rounded text-sm font-mono" {...props}>
+                    {children}
+                  </code>
+                ) : (
+                  <pre className="bg-gray-100 dark:bg-gray-800 rounded p-4 overflow-x-auto my-4 text-sm font-mono" {...props}>
+                    <code>{children}</code>
+                  </pre>
+                ),
+              table: ({ node, ...props }) => <table className="table-auto border-collapse border border-gray-300 dark:border-gray-600 w-full my-4" {...props} />,
+              th: ({ node, ...props }) => <th className="border border-gray-300 dark:border-gray-600 px-2 py-1 bg-gray-200 dark:bg-gray-700 text-left" {...props} />,
+              td: ({ node, ...props }) => <td className="border border-gray-300 dark:border-gray-600 px-2 py-1" {...props} />,
+            }}
+          >
+            {paragraph}
+          </ReactMarkdown>
+        </div>
+      ))}
+    </div>
+  );
+}, [currentContent.content]);
+
+
+  if (isLoading) return (
+    <div className="min-h-screen flex items-center justify-center bg-gray-50 dark:bg-gray-900">
+      <div className="text-center">
+        <div className="animate-spin rounded-full h-12 w-12 border-b-2 border-blue-600 dark:border-blue-400 mx-auto mb-4"></div>
+        <p className="text-gray-600 dark:text-gray-300">{t('loadingArticle')}</p>
+      </div>
+    </div>
+  );
+
+  if (error) return (
+    <div className="min-h-screen flex items-center justify-center bg-gray-50 dark:bg-gray-900">
+      <div className="bg-white dark:bg-gray-800 p-6 rounded shadow text-center max-w-md">
+        <h2 className="text-xl font-bold text-red-600 dark:text-red-400 mb-2">{t('errorLoadingArticle')}</h2>
+        <p className="mb-4 text-gray-700 dark:text-gray-200">{error}</p>
+        <button onClick={() => navigate('/blog')} className="bg-blue-600 hover:bg-blue-700 text-white px-4 py-2 rounded">
+          {t('backToBlog')}
+        </button>
+      </div>
+    </div>
+  );
+
+  if (!article) return (
+    <div className="min-h-screen flex items-center justify-center bg-gray-50 dark:bg-gray-900">
+      <div className="text-center">
+        <h2 className="text-xl font-bold text-gray-900 dark:text-gray-100 mb-2">{t('articleNotFound')}</h2>
+        <button onClick={() => navigate('/blog')} className="bg-blue-600 hover:bg-blue-700 text-white px-4 py-2 rounded">
+          {t('backToBlog')}
+        </button>
+      </div>
+    </div>
+  );
+
+  return (
+    <div className="min-h-screen bg-gray-50 dark:bg-gray-900">
       <Helmet>
         <title>{`${currentTitle} | TECHBYP Blog`}</title>
         <meta name="description" content={currentContent.excerpt || generateExcerpt(currentContent.content)} />
@@ -224,13 +219,12 @@ const ArticleDetail = () => {
         <meta property="og:type" content="article" />
         <link rel="canonical" href={window.location.href} />
       </Helmet>
-      {/* Sticky Header */}
+
       <header
-        className={`sticky top-0 z-10 bg-white/80 backdrop-blur-md border-b border-gray-200 transition-all duration-300 ${isScrolled ? 'py-2' : 'py-4'
-          }`}
+        className={`sticky top-0 z-10 bg-white/80 dark:bg-gray-800/80 backdrop-blur-md border-b border-gray-200 dark:border-gray-700 transition-all duration-300 ${isScrolled ? 'py-2' : 'py-4'}`}
       >
         <div className="max-w-7xl mx-auto px-4 flex justify-between items-center">
-          <button onClick={() => navigate(-1)} className="flex items-center text-gray-700 hover:text-gray-900 transition-colors">
+          <button onClick={() => navigate(-1)} className="flex items-center text-gray-700 dark:text-gray-200 hover:text-gray-900 dark:hover:text-white transition-colors">
             <ArrowLeft className="h-5 w-5 mr-2" />
             {t('backToArticles')}
           </button>
@@ -238,24 +232,23 @@ const ArticleDetail = () => {
             <div className="relative">
               <button
                 onClick={() => setShowShareOptions(!showShareOptions)}
-                className="p-2 rounded-full text-gray-500 hover:text-gray-700 transition-colors"
+                className="p-2 rounded-full text-gray-500 dark:text-gray-300 hover:text-gray-700 dark:hover:text-gray-100 transition-colors"
                 aria-label={t('share')}
               >
                 <Share2 className="h-5 w-5" />
               </button>
-
               {showShareOptions && (
                 <motion.div
                   initial={{ opacity: 0, y: 10 }}
                   animate={{ opacity: 1, y: 0 }}
                   exit={{ opacity: 0, y: 10 }}
-                  className="absolute right-0 mt-2 w-48 bg-white rounded-lg shadow-xl border border-gray-200 z-20"
+                  className="absolute right-0 mt-2 w-48 bg-white dark:bg-gray-800 rounded-lg shadow-xl border border-gray-200 dark:border-gray-700 z-20"
                 >
                   {['twitter', 'linkedin', 'email'].map(platform => (
                     <button
                       key={platform}
                       onClick={() => handleShare(platform)}
-                      className="w-full px-4 py-2 text-left hover:bg-gray-100 transition-colors capitalize"
+                      className="w-full px-4 py-2 text-left hover:bg-gray-100 dark:hover:bg-gray-700 transition-colors capitalize text-gray-700 dark:text-gray-200"
                     >
                       {t(platform)}
                     </button>
@@ -263,124 +256,124 @@ const ArticleDetail = () => {
                 </motion.div>
               )}
             </div>
-
-            <button onClick={handlePrint} className="p-2 rounded-full text-gray-500 hover:text-gray-700 transition-colors" aria-label={t('print')}>
+            <button onClick={handlePrint} className="p-2 rounded-full text-gray-500 dark:text-gray-300 hover:text-gray-700 dark:hover:text-gray-100 transition-colors" aria-label={t('print')}>
               <Printer className="h-5 w-5" />
             </button>
           </div>
         </div>
       </header>
 
-     {/* Article Content */}
-      <main className="max-w-4xl mx-auto px-4 py-8">
-        <div className="mb-12">
-          <div className="flex items-center space-x-3 mb-6">
-            <span className="text-sm font-medium text-blue-600 bg-blue-100 px-3 py-1 rounded-full uppercase">
-              {t('category', { category: article.category })}
-            </span>
-            <span className="text-sm text-gray-500 flex items-center">
-              <Clock className="h-4 w-4 mr-1" />
-              {t('readTime', { time: article.readTime })}
-            </span>
-          </div>
+     <main className="max-w-4xl mx-auto px-4 py-8 text-gray-900 dark:text-gray-100">
+  <div className="mb-12">
+    <div className="flex items-center space-x-3 mb-6">
+      <span className="text-sm font-medium text-blue-600 bg-blue-100 dark:bg-blue-900 dark:text-blue-300 px-3 py-1 rounded-full uppercase">
+        {t('category', { category: article.category })}
+      </span>
+      <span className="text-sm text-gray-500 dark:text-gray-400 flex items-center">
+        <Clock className="h-4 w-4 mr-1" />
+        {t('readTime', { time: article.readTime })}
+      </span>
+    </div>
 
-          <h1 className="text-4xl md:text-5xl font-bold uppercase mb-6">
-            {currentTitle}
-          </h1>
-          <div className="flex items-center justify-between mb-8">
-            <div className="flex items-center space-x-4">
-              <img
-                sizes="(max-width: 768px) 50vw, 25vw"
-srcSet={article.author.avatar}
-                alt={article.author.name}
-                className="w-12 h-12 rounded-full object-cover"
-              />
-              <div>
-                <p className="font-black">{article.author.name}</p>
-                <p className="text-sm text-gray-600">{article.author.role}</p>
+    <h1 className="text-4xl md:text-5xl font-bold uppercase mb-6">
+      {currentTitle}
+    </h1>
+
+    <div className="flex items-center justify-between mb-8">
+      <div className="flex items-center space-x-4">
+        <img
+          sizes="(max-width: 768px) 50vw, 25vw"
+          srcSet={article.author.avatar}
+          alt={article.author.name}
+          className="w-12 h-12 rounded-full object-cover"
+        />
+        <div>
+          <p className="font-black">{article.author.name}</p>
+          <p className="text-sm text-gray-600 dark:text-gray-400">{article.author.role}</p>
+        </div>
+      </div>
+      <p className="text-sm text-gray-500 dark:text-gray-400">{article.date}</p>
+    </div>
+
+    <div className="relative rounded-xl overflow-hidden mb-8 h-96">
+      <img
+        sizes="(max-width: 768px) 50vw, 25vw"
+        srcSet={article.image}
+        alt={currentTitle}
+        className="w-full h-full object-cover"
+        loading="eager"
+      />
+      <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-black/30 to-transparent dark:from-black/80 dark:via-black/50 dark:to-transparent"></div>
+    </div>
+  </div>
+
+  {renderedContent}
+
+  <div className="flex justify-between items-center border-t border-b border-gray-200 dark:border-gray-700 py-4 mb-8">
+    <button
+      onClick={() => setShowComments(!showComments)}
+      className="flex items-center space-x-2 text-gray-600 dark:text-gray-400 hover:text-gray-900 dark:hover:text-white transition-colors"
+    >
+      <MessageSquare className="h-6 w-6" />
+      <span>{t('comments', { count: commentsCount })}</span>
+    </button>
+    <div className="flex items-center space-x-2 text-gray-600 dark:text-gray-400">
+      <Eye className="h-5 w-5" />
+      <span>{views.toLocaleString()} {t('views')}</span>
+    </div>
+  </div>
+
+  {showComments && (
+    <div className="mb-16">
+      <Comments
+        productId={article.id}
+        onCommentsUpdate={(count) => setCommentsCount(count)}
+        commentType="blog"
+      />
+    </div>
+  )}
+
+  {article.relatedArticles?.length > 0 && (
+    <div className="mb-16">
+      <h3 className="text-2xl font-bold mb-6">{t('moreLikeThis')}</h3>
+      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+        {article.relatedArticles.map((related) => {
+          const relatedContent = related.content?.[currentLanguage] || related.content?.en || {};
+          const relatedTitle = relatedContent.title || related.title?.[currentLanguage] || related.title?.en || '';
+
+          return (
+            <motion.article
+              key={related.id}
+              whileHover={{ y: -5 }}
+              onClick={() => navigate(`/blog/${related.id}`)}
+              className="cursor-pointer bg-white dark:bg-gray-800 rounded-xl shadow-md hover:shadow-lg overflow-hidden transition-shadow"
+            >
+              <div className="relative h-40">
+                <img
+                  sizes="(max-width: 768px) 50vw, 25vw"
+                  srcSet={optimizeImageUrl(related.image)}
+                  alt={relatedTitle}
+                  className="w-full h-full object-cover"
+                  loading="lazy"
+                />
               </div>
-            </div>
-            <p className="text-sm text-gray-500">{article.date}</p>
-          </div>
+              <div className="p-4">
+                <h4 className="font-bold mb-2 line-clamp-2 text-gray-900 dark:text-gray-100">
+                  {relatedTitle}
+                </h4>
+                <p className="text-sm text-gray-500 dark:text-gray-400 flex items-center">
+                  <Clock className="h-3 w-3 mr-1" />
+                  {t('readTime', { time: related.readTime })}
+                </p>
+              </div>
+            </motion.article>
+          );
+        })}
+      </div>
+    </div>
+  )}
+</main>
 
-          <div className="relative rounded-xl overflow-hidden mb-8 h-96">
-            <img
-              sizes="(max-width: 768px) 50vw, 25vw"
-srcSet={article.image}
-              alt={currentTitle}
-              className="w-full h-full object-cover"
-              loading="eager"
-            />
-            <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-black/30 to-transparent"></div>
-          </div>
-        </div>
-
-        {renderedContent}
-
-        <div className="flex justify-between items-center border-t border-b py-4 mb-8">
-          <button
-            onClick={() => setShowComments(!showComments)}
-            className="flex items-center space-x-2 text-gray-600 hover:text-gray-900 transition-colors"
-          >
-            <MessageSquare className="h-6 w-6" />
-            <span>{t('comments', { count: commentsCount })}</span>
-          </button>
-          <div className="flex items-center space-x-2 text-gray-600">
-            <Eye className="h-5 w-5" />
-            <span>{views.toLocaleString()} {t('views')}</span>
-          </div>
-        </div>
-
-        {showComments && (
-          <div className="mb-16">
-            <Comments
-              productId={article.id}
-              onCommentsUpdate={(count) => setCommentsCount(count)}
-              commentType="blog"
-            />
-          </div>
-        )}
-
-       {article.relatedArticles?.length > 0 && (
-          <div className="mb-16">
-            <h3 className="text-2xl font-bold mb-6">{t('moreLikeThis')}</h3>
-            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-              {article.relatedArticles.map((related) => {
-                const relatedContent = related.content?.[currentLanguage] || related.content?.en || {};
-                const relatedTitle = relatedContent.title || related.title?.[currentLanguage] || related.title?.en || '';
-                
-                return (
-                  <motion.article
-                    key={related.id}
-                    whileHover={{ y: -5 }}
-                    onClick={() => navigate(`/blog/${related.id}`)}
-                    className="cursor-pointer bg-white rounded-xl shadow-md hover:shadow-lg overflow-hidden transition-shadow"
-                  >
-                    <div className="relative h-40">
-                      <img
-                        sizes="(max-width: 768px) 50vw, 25vw"
-srcSet={optimizeImageUrl(related.image)}
-                        alt={relatedTitle}
-                        className="w-full h-full object-cover"
-                        loading="lazy"
-                      />
-                    </div>
-                    <div className="p-4">
-                      <h4 className="font-bold mb-2 line-clamp-2">
-                        {relatedTitle}
-                      </h4>
-                      <p className="text-sm text-gray-500 flex items-center">
-                        <Clock className="h-3 w-3 mr-1" />
-                        {t('readTime', { time: related.readTime })}
-                      </p>
-                    </div>
-                  </motion.article>
-                );
-              })}
-            </div>
-          </div>
-        )}
-      </main>
     </div>
   );
 };

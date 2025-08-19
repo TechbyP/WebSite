@@ -52,7 +52,7 @@ const Footer = () => {
             <div className="flex items-center mb-4 cursor-pointer" onClick={() => goToId('Hero')}>
               <span className="ml-2 text-4xl font-black uppercase flex items-center">
                 <img sizes="(max-width: 768px) 50vw, 25vw"
-srcSet={logo} alt={t('foot.alt.logo')} className="h-[1.25em] w-auto mr-2" />
+                  srcSet={logo} alt={t('foot.alt.logo')} className="h-[1.25em] w-auto mr-2" />
                 TechByP
               </span>
             </div>
@@ -221,6 +221,13 @@ srcSet={logo} alt={t('foot.alt.logo')} className="h-[1.25em] w-auto mr-2" />
                   {t('foot.company.terms')}
                 </button>
               </li>
+
+              <li>   <button
+                onClick={() => navigate('/imprint')}
+                className="text-sm text-left sm:text-right text-gray-400 hover:text-white transition-colors w-full"
+              >
+                {t('foot.company.imprint')}
+              </button></li>
             </ul>
 
             <div className="flex items-center justify-end mt-6 space-x-4">

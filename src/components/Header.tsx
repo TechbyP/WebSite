@@ -1,8 +1,15 @@
 import React, { createContext, useContext, useState, useRef, useEffect } from 'react';
 import techbypLogo from '../assets/pictures/techbyp.png';
-import { Menu, X, ChevronDown, Download, Globe } from 'lucide-react';
+import { Menu, X, ChevronDown, Download, Globe, Sun, Moon } from 'lucide-react';
 import { useNavigate, useLocation } from 'react-router-dom';
 import { useTranslation, i18n } from 'react-i18next';
+import { useTheme } from '../utils/context/theme-context';
+import techbypLogoDark from '../assets/pictures/techbypLogoDark.png'
+
+
+
+
+
 
 interface HeaderContextProps {
   isVisible: boolean;
@@ -19,6 +26,7 @@ interface Category {
 
 export const HeaderProvider: React.FC<{ children: React.ReactNode }> = ({ children }) => {
   const { t, i18n } = useTranslation();
+  const { theme, toggleTheme } = useTheme();
 
   const [isVisible, setIsVisible] = useState(true);
   const [height, setHeight] = useState(0);
@@ -31,6 +39,11 @@ export const HeaderProvider: React.FC<{ children: React.ReactNode }> = ({ childr
   const { pathname } = useLocation();
 
   const [viewportSize, setViewportSize] = useState<'sm' | 'md' | 'lg'>('lg');
+
+  // Apply theme class to body element
+  useEffect(() => {
+    document.body.className = theme;
+  }, [theme]);
 
   const changeLanguage = (lng: string) => {
     i18n.changeLanguage(lng);
@@ -179,11 +192,12 @@ export const HeaderProvider: React.FC<{ children: React.ReactNode }> = ({ childr
   ];
 
   return (
+
     <HeaderContext.Provider value={{ isVisible, height }}>
       <header
         ref={ref}
-        className={`sticky top-0 z-50 bg-white/95 backdrop-blur-sm transition-transform duration-300 ease-in-out shadow-md
-          ${isVisible ? 'translate-y-0' : '-translate-y-full'}`}
+        className={`sticky top-0 z-50 bg-white/95 dark:bg-gray-900/95 backdrop-blur-sm transition-all duration-300 ease-in-out shadow-md
+            ${isVisible ? 'translate-y-0' : '-translate-y-full'}`}
         role="banner"
       >
         <div className="w-full px-4 sm:px-6 lg:px-8">
@@ -199,12 +213,13 @@ export const HeaderProvider: React.FC<{ children: React.ReactNode }> = ({ childr
               >
                 <img
                   sizes="(max-width: 768px) 50vw, 25vw"
-srcSet={techbypLogo}
+                  src={theme === 'light' ? techbypLogo : techbypLogoDark}
                   alt={t('header.logoAlt')}
                   className="h-8 md:h-14 object-contain transition duration-300 ease-in-out hover:scale-105"
                   draggable={false}
                   loading="eager"
                 />
+
               </div>
 
               <nav
@@ -219,7 +234,7 @@ srcSet={techbypLogo}
                       e.preventDefault();
                       goToId(id);
                     }}
-                    className="text-gray-700 hover:text-brandgreen px-2 py-2 text-sm md:text-base font-black focus:outline-brandgreen focus:outline-2 focus:outline-offset-2 rounded transition-colors duration-200"
+                    className="text-gray-700 dark:text-gray-300 hover:text-brandgreen dark:hover:text-brandgreen px-2 py-2 text-sm md:text-base font-black focus:outline-brandgreen focus:outline-2 focus:outline-offset-2 rounded transition-colors duration-200"
                   >
                     {t(`header.navigation.${id}`)}
                   </a>
@@ -227,40 +242,52 @@ srcSet={techbypLogo}
 
                 <button
                   onClick={() => navigate('/blog')}
-                  className="text-gray-700 hover:text-brandgreen px-2 py-2 text-sm md:text-base font-black focus:outline-brandgreen focus:outline-2 focus:outline-offset-2 rounded transition-colors duration-200"
+                  className="text-gray-700 dark:text-gray-300 hover:text-brandgreen dark:hover:text-brandgreen px-2 py-2 text-sm md:text-base font-black focus:outline-brandgreen focus:outline-2 focus:outline-offset-2 rounded transition-colors duration-200"
                 >
                   {t('header.navigation.insights')}
                 </button>
 
                 <button
                   onClick={() => navigate('/contact')}
-                  className="text-gray-700 hover:text-brandgreen px-2 py-2 text-sm md:text-base font-black focus:outline-brandgreen focus:outline-2 focus:outline-offset-2 rounded transition-colors duration-200"
+                  className="text-gray-700 dark:text-gray-300 hover:text-brandgreen dark:hover:text-brandgreen px-2 py-2 text-sm md:text-base font-black focus:outline-brandgreen focus:outline-2 focus:outline-offset-2 rounded transition-colors duration-200"
                 >
                   {t('header.navigation.contact')}
                 </button>
-
-            
               </nav>
 
-              <div className={`hidden ${viewportSize === 'lg' ? 'md:flex' : 'lg:flex'} items-center ml-4`}>
+              <div className={`hidden ${viewportSize === 'lg' ? 'md:flex' : 'lg:flex'} items-center ml-4 space-x-2`}>
                 <button
                   onClick={() => navigate('/downloads')}
-                  className="flex items-center text-gray-700 hover:text-brandgreen px-2 py-2 text-sm md:text-base font-medium focus:outline-brandgreen focus:outline-2 focus:outline-offset-2 rounded transition-colors duration-200"
-                  aria-label={t('header.navigation.downloads')}
+                  className="flex items-center text-gray-700 dark:text-gray-300 hover:text-brandgreen dark:hover:text-brandgreen px-2 py-2 text-sm md:text-base font-medium focus:outline-brandgreen focus:outline-2 focus:outline-offset-2 rounded transition-colors duration-200"
+                  // aria-label={t('header.navigation.downloads')}
                 >
                   <Download className="h-4 w-4 md:h-5 md:w-5 mr-1" aria-hidden="true" />
-                  <span className={`${viewportSize === 'md' ? 'hidden md:inline' : ''}`}>
+                  {/* <span className={`${viewportSize === 'md' ? 'hidden md:inline' : ''}`}>
                     {t('header.navigation.downloads')}
-                  </span>
+                  </span> */}
                 </button>
-                    {/* Enhanced Language Switcher - Desktop */}
-                <div className="relative ml-2">
+
+                {/* Theme Toggle Button */}
+                <button
+                  onClick={toggleTheme}
+                  aria-label={theme === 'light' ? t('headerTheme.switchToDark') : t('headerTheme.switchToLight')}
+                  className="text-gray-700 dark:text-gray-300 hover:text-brandgreen dark:hover:text-brandgreen p-2 rounded focus:outline-brandgreen focus:outline-2 focus:outline-offset-2 transition-colors duration-200"
+                >
+                  {theme === 'light' ? (
+                    <Moon className="h-5 w-5" aria-hidden="true" />
+                  ) : (
+                    <Sun className="h-5 w-5" aria-hidden="true" />
+                  )}
+                </button>
+
+                {/* Enhanced Language Switcher - Desktop */}
+                <div className="relative">
                   <button
                     onClick={() => setLanguageDropdownOpen(!languageDropdownOpen)}
                     aria-label={t('header.languageSwitcher.ariaLabel')}
                     aria-expanded={languageDropdownOpen}
                     aria-haspopup="true"
-                    className="flex items-center gap-1 text-gray-700 hover:text-brandgreen px-3 py-2 text-sm md:text-base font-medium focus:outline-brandgreen focus:outline-2 focus:outline-offset-2 rounded transition-colors duration-200"
+                    className="flex items-center gap-1 text-gray-700 dark:text-gray-300 hover:text-brandgreen dark:hover:text-brandgreen px-3 py-2 text-sm md:text-base font-medium focus:outline-brandgreen focus:outline-2 focus:outline-offset-2 rounded transition-colors duration-200"
                   >
                     <Globe className="h-4 w-4" aria-hidden="true" />
                     <span className="hidden sm:inline">
@@ -274,7 +301,7 @@ srcSet={techbypLogo}
 
                   {languageDropdownOpen && (
                     <div
-                      className="absolute right-0 mt-2 w-auto origin-top-right rounded-md bg-white shadow-lg ring-1 ring-black ring-opacity-5 focus:outline-none z-50 animate-fade-in"
+                      className="absolute right-0 mt-2 w-auto origin-top-right rounded-md bg-white dark:bg-gray-800 shadow-lg ring-1 ring-black dark:ring-gray-600 ring-opacity-5 focus:outline-none z-50 animate-fade-in"
                       role="menu"
                       aria-orientation="vertical"
                       aria-labelledby="language-menu-button"
@@ -285,7 +312,7 @@ srcSet={techbypLogo}
                             key={lang.code}
                             onClick={() => changeLanguage(lang.code)}
                             aria-label={lang.ariaLabel}
-                            className={`flex items-center w-full px-4 py-2 text-sm text-gray-700 hover:bg-brandgreen hover:text-gray-900 ${currentLanguage === lang.code ? 'bg-gray-50 font-medium' : ''
+                            className={`flex items-center w-full px-4 py-2 text-sm text-gray-700 dark:text-gray-300 hover:bg-brandgreen hover:text-gray-900 dark:hover:text-gray-100 ${currentLanguage === lang.code ? 'bg-gray-50 dark:bg-gray-700 font-medium' : ''
                               }`}
                             role="menuitem"
                           >
@@ -305,7 +332,7 @@ srcSet={techbypLogo}
               <div className={`${viewportSize === 'lg' ? 'md:hidden' : 'lg:hidden'} flex items-center`}>
                 <button
                   onClick={() => setMenuOpen(!menuOpen)}
-                  className="text-gray-700 hover:text-brandgreen min-w-[44px] min-h-[44px] p-2 pl-48 rounded focus:outline-brandgreen focus:outline-2 focus:outline-offset-2"
+                  className="text-gray-700 dark:text-gray-300 hover:text-brandgreen dark:hover:text-brandgreen min-w-[44px] min-h-[44px] p-2 pl-48 rounded focus:outline-brandgreen focus:outline-2 focus:outline-offset-2"
                   aria-label={menuOpen ? t('header.mobileMenu.close') : t('header.mobileMenu.open')}
                   aria-expanded={menuOpen}
                   aria-controls="mobile-menu"
@@ -323,7 +350,7 @@ srcSet={techbypLogo}
             {menuOpen && (
               <nav
                 id="mobile-menu"
-                className={`${viewportSize === 'lg' ? 'md:hidden' : 'lg:hidden'} bg-white border-t border-gray-200 shadow-lg`}
+                className={`${viewportSize === 'lg' ? 'md:hidden' : 'lg:hidden'} bg-white dark:bg-gray-800 border-t border-gray-200 dark:border-gray-700 shadow-lg`}
                 aria-label="Mobile navigation"
                 aria-modal="true"
               >
@@ -336,7 +363,7 @@ srcSet={techbypLogo}
                         e.preventDefault();
                         goToId(id);
                       }}
-                      className="block px-4 py-3 text-lg font-black text-gray-700 hover:bg-brandgreen hover:text-white rounded-lg focus:outline-brandgreen focus:outline-2 focus:outline-offset-2 transition-colors"
+                      className="block px-4 py-3 text-lg font-black text-gray-700 dark:text-gray-300 hover:bg-brandgreen hover:text-white rounded-lg focus:outline-brandgreen focus:outline-2 focus:outline-offset-2 transition-colors"
                     >
                       {t(`header.navigation.${id}`)}
                     </a>
@@ -347,7 +374,7 @@ srcSet={techbypLogo}
                       navigate('/blog');
                       setMenuOpen(false);
                     }}
-                    className="block w-full text-left px-4 py-3 text-lg font-black text-gray-700 hover:bg-brandgreen hover:text-white rounded-lg focus:outline-brandgreen focus:outline-2 focus:outline-offset-2 transition-colors"
+                    className="block w-full text-left px-4 py-3 text-lg font-black text-gray-700 dark:text-gray-300 hover:bg-brandgreen hover:text-white rounded-lg focus:outline-brandgreen focus:outline-2 focus:outline-offset-2 transition-colors"
                   >
                     {t('header.navigation.insights')}
                   </button>
@@ -357,7 +384,7 @@ srcSet={techbypLogo}
                       navigate('/contact');
                       setMenuOpen(false);
                     }}
-                    className="block w-full text-left px-4 py-3 text-lg font-black text-gray-700 hover:bg-brandgreen hover:text-white rounded-lg focus:outline-brandgreen focus:outline-2 focus:outline-offset-2 transition-colors"
+                    className="block w-full text-left px-4 py-3 text-lg font-black text-gray-700 dark:text-gray-300 hover:bg-brandgreen hover:text-white rounded-lg focus:outline-brandgreen focus:outline-2 focus:outline-offset-2 transition-colors"
                   >
                     {t('header.navigation.contact')}
                   </button>
@@ -367,15 +394,30 @@ srcSet={techbypLogo}
                       navigate('/downloads');
                       setMenuOpen(false);
                     }}
-                    className="flex items-center w-full px-4 py-3 text-lg font-black text-gray-700 hover:bg-brandgreen hover:text-white rounded-lg focus:outline-brandgreen focus:outline-2 focus:outline-offset-2 transition-colors"
+                    className="flex items-center w-full px-4 py-3 text-lg font-black text-gray-700 dark:text-gray-300 hover:bg-brandgreen hover:text-white rounded-lg focus:outline-brandgreen focus:outline-2 focus:outline-offset-2 transition-colors"
                   >
                     <Download className="h-5 w-5 mr-3" aria-hidden="true" />
                     {t('header.navigation.downloads')}
                   </button>
 
+                  {/* Theme Toggle - Mobile */}
+                  <button
+                    onClick={() => {
+                      toggleTheme();
+                      setMenuOpen(false);
+                    }}
+                    className="flex items-center w-full px-4 py-3 text-lg font-black text-gray-700 dark:text-gray-300 hover:bg-brandgreen hover:text-white rounded-lg focus:outline-brandgreen focus:outline-2 focus:outline-offset-2 transition-colors"
+                  >
+                    {theme === 'light' ? (
+                      <Moon className="h-5 w-5 mr-3" aria-hidden="true" />
+                    ) : (
+                      <Sun className="h-5 w-5 mr-3" aria-hidden="true" />
+                    )}
+                    {theme === 'light' ? t('headerTheme.switchToDark') : t('headerTheme.switchToLight')}
+                  </button>
+
                   {/* Enhanced Language Switcher - Mobile */}
                   <div className="w-full">
-                   
                     <select
                       id="language-select"
                       value={currentLanguage}
@@ -383,7 +425,7 @@ srcSet={techbypLogo}
                         changeLanguage(e.target.value);
                         setMenuOpen(false);
                       }}
-                      className="w-full px-4 py-3 text-lg font-black text-gray-700 bg-white border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-brandgreen transition-colors"
+                      className="w-full px-4 py-3 text-lg font-black text-gray-700 dark:text-gray-300 bg-white dark:bg-gray-800 border border-gray-300 dark:border-gray-600 rounded-lg focus:outline-none focus:ring-2 focus:ring-brandgreen transition-colors"
                     >
                       {languageOptions.map((lang) => (
                         <option key={lang.code} value={lang.code}>
@@ -392,7 +434,6 @@ srcSet={techbypLogo}
                       ))}
                     </select>
                   </div>
-
                 </div>
               </nav>
             )}
@@ -401,5 +442,6 @@ srcSet={techbypLogo}
       </header>
       {children}
     </HeaderContext.Provider>
+
   );
 };

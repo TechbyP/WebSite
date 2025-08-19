@@ -3,10 +3,12 @@ import { motion } from 'framer-motion';
 import { Wheat, Building, Microscope, Hammer } from 'lucide-react';
 import { useNavigate } from 'react-router-dom';
 import { useTranslation } from 'react-i18next';
+import { useTheme } from '../utils/context/theme-context';
 
 const Applications = () => {
   const navigate = useNavigate();
   const { t } = useTranslation();
+  const { theme } = useTheme();
 
   const applications = [
     {
@@ -48,14 +50,28 @@ const Applications = () => {
     show: { opacity: 1, y: 0, transition: { duration: 0.6, ease: 'easeOut' } },
   };
 
+  // Helper function to get theme classes
+  const getThemeClass = (lightClass, darkClass) => {
+    return theme === 'dark' ? darkClass : lightClass;
+  };
+
   return (
-    <section className="py-20 bg-white">
+    <section className={`py-20 ${getThemeClass('bg-white', 'bg-gray-900')}`}>
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="text-center mb-16">
-          <h2 id="applications" className="text-3xl md:text-5xl font-black text-black uppercase mb-4">
+          <h2 
+            id="applications" 
+            className={`text-3xl md:text-5xl font-black uppercase mb-4 ${
+              getThemeClass('text-black', 'text-white')
+            }`}
+          >
             {t('application.heading')}
           </h2>
-          <p className="text-xl text-gray-600 max-w-3xl mx-auto">{t('application.subheading')}</p>
+          <p className={`text-xl max-w-3xl mx-auto ${
+            getThemeClass('text-gray-600', 'text-gray-300')
+          }`}>
+            {t('application.subheading')}
+          </p>
         </div>
 
         <motion.div
@@ -69,19 +85,44 @@ const Applications = () => {
             <motion.div
               key={index}
               variants={item}
-              className="group p-8 bg-gray-50 rounded-xl hover:bg-blue-50 transition-colors duration-300"
+              className={`group p-8 rounded-xl transition-colors duration-300 ${
+                getThemeClass(
+                  'bg-gray-50 hover:bg-blue-50',
+                  'bg-gray-800 hover:bg-gray-700'
+                )
+              }`}
             >
               <div className="flex items-start space-x-4">
-                <div className="flex-shrink-0 p-3 bg-brandblue text-white rounded-lg group-hover:bg-blue-900 transition-colors">
+                <div className={`flex-shrink-0 p-3 rounded-lg transition-colors ${
+                  getThemeClass(
+                    'bg-brandblue text-white group-hover:bg-blue-900',
+                    'bg-blue-700 text-white group-hover:bg-blue-600'
+                  )
+                }`}>
                   {app.icon}
                 </div>
                 <div className="flex-1">
-                  <h3 className="text-xl font-semibold text-gray-900 mb-2">{app.title}</h3>
-                  <p className="text-gray-600 mb-4">{app.description}</p>
+                  <h3 className={`text-xl font-semibold mb-2 ${
+                    getThemeClass('text-gray-900', 'text-white')
+                  }`}>
+                    {app.title}
+                  </h3>
+                  <p className={`mb-4 ${
+                    getThemeClass('text-gray-600', 'text-gray-300')
+                  }`}>
+                    {app.description}
+                  </p>
                   <ul className="space-y-2">
                     {app.features.map((feature, featureIndex) => (
-                      <li key={featureIndex} className="flex items-center text-sm text-gray-600">
-                        <div className="w-1.5 h-1.5 bg-brandblue rounded-full mr-2"></div>
+                      <li 
+                        key={featureIndex} 
+                        className={`flex items-center text-sm ${
+                          getThemeClass('text-gray-600', 'text-gray-300')
+                        }`}
+                      >
+                        <div className={`w-1.5 h-1.5 rounded-full mr-2 ${
+                          getThemeClass('bg-brandblue', 'bg-blue-500')
+                        }`}></div>
                         {feature}
                       </li>
                     ))}
@@ -99,11 +140,21 @@ const Applications = () => {
           transition={{ duration: 0.8 }}
           viewport={{ once: true }}
         >
-          <div className="inline-flex items-center px-6 py-3 border border-gray-200 rounded-lg">
-            <span className="text-gray-600 mr-2">{t('application.customSolutionPrompt')}</span>
+          <div className={`inline-flex items-center px-6 py-3 border rounded-lg ${
+            getThemeClass(
+              'border-gray-200 text-gray-600',
+              'border-gray-700 text-gray-300'
+            )
+          }`}>
+            <span className="mr-2">{t('application.customSolutionPrompt')}</span>
             <button
               onClick={() => navigate('/contact')}
-              className="text-blue-600 hover:text-blue-700 font-medium"
+              className={`font-medium ${
+                getThemeClass(
+                  'text-blue-600 hover:text-blue-700',
+                  'text-blue-400 hover:text-blue-300'
+                )
+              }`}
             >
               {t('application.contactButton')}
             </button>

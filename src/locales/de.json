@@ -1,4 +1,13 @@
 {
+
+  
+"headerTheme": {
+  "switchToDark": "Dunkler Modus",
+  "switchToLight": "Heller Modus"
+},
+
+
+
   "termsOfService": {
     "back": "Zurück",
     "title": "Nutzungsbedingungen",
@@ -686,7 +695,8 @@
       "news": "News & Updates",
       "contact": "Kontakt",
       "privacyPolicy": "Datenschutz",
-      "terms": "Nutzungsbedingungen"
+      "terms": "Nutzungsbedingungen",
+      "imprint":"Impressum"
     },
     "social": {
       "facebook": "Facebook",

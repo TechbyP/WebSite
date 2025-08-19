@@ -2,23 +2,34 @@ import React from 'react';
 import { ArrowLeft } from 'lucide-react';
 import { useNavigate } from 'react-router-dom';
 import { useTranslation } from 'react-i18next';
+import { useTheme } from '../../utils/context/theme-context'; // import your hook
 
 const Imprint = () => {
   const navigate = useNavigate();
   const { t } = useTranslation();
+  const { theme } = useTheme(); // get current theme
 
   return (
-    <div className="max-w-4xl mx-auto px-4 py-8">
+    <div
+      className={`max-w-4xl mx-auto px-4 py-8 min-h-screen transition-colors duration-500
+        ${theme === 'dark' ? 'bg-gray-900 text-gray-100' : 'bg-gray-50 text-gray-900'}
+      `}
+    >
       <button 
         onClick={() => navigate(-1)}
-        className="flex items-center mb-6 text-brandgreen hover:text-brandgreen-dark"
+        className={`flex items-center mb-6 ${
+          theme === 'dark'
+            ? 'text-brandgreen hover:text-brandgreen/80'
+            : 'text-brandgreen hover:text-brandgreen-dark'
+        }`}
       >
         <ArrowLeft className="mr-2" /> {t('back')}
       </button>
       
       <h1 className="text-3xl font-bold mb-6">{t('imprint')}</h1>
       
-      <div className="prose prose-lg">
+      <div className={`prose prose-lg ${theme === 'dark' ? 'prose-invert' : ''}`}>
+        {/* Sections */}
         <section className="mb-8">
           <h2 className="text-2xl font-semibold mb-4">{t('legalDisclosure.title')}</h2>
           <p className="mb-4">{t('legalDisclosure.text')}</p>
@@ -36,19 +47,32 @@ const Imprint = () => {
             <li><strong>{t('contact.phoneLabel')}</strong> {t('contact.phone')}</li>
             <li>
               <strong>{t('contact.emailLabel')}</strong> 
-              <a href={`mailto:${t('contact.email')}`} className="text-brandgreen hover:underline">
+              <a
+                href={`mailto:${t('contact.email')}`}
+                className={`hover:underline ${
+                  theme === 'dark' ? 'text-brandgreen' : 'text-brandgreen'
+                }`}
+              >
                 {t('contact.email')}
               </a>
             </li>
             <li>
               <strong>{t('contact.websiteLabel')}</strong> 
-              <a href={t('contact.website')} target="_blank" rel="noopener noreferrer" className="text-brandgreen hover:underline">
+              <a
+                href={t('contact.website')}
+                target="_blank"
+                rel="noopener noreferrer"
+                className={`hover:underline ${
+                  theme === 'dark' ? 'text-brandgreen' : 'text-brandgreen'
+                }`}
+              >
                 {t('contact.website')}
               </a>
             </li>
           </ul>
         </section>
 
+        {/* Repeat for all other sections */}
         <section className="mb-8">
           <h2 className="text-2xl font-semibold mb-4">{t('representedBy.title')}</h2>
           <p>{t('representedBy.name')}</p>

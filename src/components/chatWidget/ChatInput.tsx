@@ -19,14 +19,14 @@ export const ChatInput = React.memo(({
 }: Props) => {
   return (
     <div
-      className="p-3 bg-white border-t border-gray-200 flex gap-2"
+      className="p-3 bg-white dark:bg-gray-900 border-t border-gray-200 dark:border-gray-700 flex gap-2"
       style={{
         paddingBottom: isMobile ? 'max(1rem, env(safe-area-inset-bottom, 1rem))' : '1rem'
       }}
     >
       <input
         ref={inputRef}
-        className="flex-1 border border-gray-300 rounded-lg px-3 py-2 focus:outline-none focus:ring-2 focus:ring-brandblue focus:border-transparent transition"
+        className="flex-1 border border-gray-300 dark:border-gray-600 rounded-lg px-3 py-2 bg-white dark:bg-gray-800 text-gray-900 dark:text-gray-100 placeholder-gray-400 dark:placeholder-gray-500 focus:outline-none focus:ring-2 focus:ring-brandblue focus:border-transparent transition"
         type="text"
         value={input}
         onChange={(e) => setInput(e.target.value)}

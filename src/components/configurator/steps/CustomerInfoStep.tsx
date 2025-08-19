@@ -127,7 +127,7 @@ export const CustomerInfoStep = () => {
       }
     } else if (configuration.vehicleMountingType) {
       const mountType = products.find(p =>
-        p.id === configuration.vehicleMountingType && // Compare by ID instead of name
+        p.id === configuration.vehicleMountingType &&
         p.category === 'accessory'
       );
       if (mountType && mountType.priceValue) {
@@ -155,17 +155,11 @@ export const CustomerInfoStep = () => {
     const selectedProducts = [];
 
     if (configuration.product) {
-      selectedProducts.push({
-        name: configuration.product.name,
-        type: 'machine'
-      });
+      selectedProducts.push({ name: configuration.product.name, type: 'machine' });
     }
 
     if (configuration.mountingMethod === 'trailer') {
-      selectedProducts.push({
-        name: t('productNames.trailerMount'),
-        type: 'mounting'
-      });
+      selectedProducts.push({ name: t('productNames.trailerMount'), type: 'mounting' });
     } else if (configuration.vehicleMountingType) {
       const mountProduct = products.find(p => p.id === configuration.vehicleMountingType);
       selectedProducts.push({
@@ -174,16 +168,14 @@ export const CustomerInfoStep = () => {
         price: mountProduct?.price
       });
     }
+
     if (configuration.powerpackType) {
       const powerpack = products.find(p =>
         p.id.toString() === configuration.powerpackType &&
         p.category === 'accessory' &&
         p.type === 'Powerpack'
       );
-      selectedProducts.push({
-        name: powerpack ? powerpack.name : t('productNames.powerPack'),
-        type: 'powerpack'
-      });
+      selectedProducts.push({ name: powerpack ? powerpack.name : t('productNames.powerPack'), type: 'powerpack' });
     }
 
     configuration.extras.forEach(extraId => {
@@ -193,7 +185,6 @@ export const CustomerInfoStep = () => {
           p.name.toLowerCase().replace(/\s+/g, '-') === extraId
         );
       }
-
       selectedProducts.push({
         name: extraProduct ? extraProduct.name : formatProductName(extraId?.toString()),
         type: 'extra'
@@ -210,15 +201,15 @@ export const CustomerInfoStep = () => {
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.5 }}
-          className="bg-white p-8 rounded-2xl shadow-lg border border-gray-100 text-center"
+          className="bg-white dark:bg-gray-900 p-8 rounded-2xl shadow-lg border border-gray-100 dark:border-gray-700 text-center"
         >
-          <div className="w-20 h-20 bg-green-50 rounded-full flex items-center justify-center mx-auto mb-6">
-            <svg className="h-10 w-10 text-brandgreen" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+          <div className="w-20 h-20 bg-green-50 dark:bg-green-900 rounded-full flex items-center justify-center mx-auto mb-6">
+            <svg className="h-10 w-10 text-brandgreen dark:text-brandgreen" fill="none" viewBox="0 0 24 24" stroke="currentColor">
               <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" />
             </svg>
           </div>
-          <h3 className="text-2xl font-bold text-gray-900 mb-3">{t('submission.successTitle')}</h3>
-          <p className="text-gray-600 mb-6">{t('submission.successMessage')}</p>
+          <h3 className="text-2xl font-bold text-gray-900 dark:text-gray-100 mb-3">{t('submission.successTitle')}</h3>
+          <p className="text-gray-600 dark:text-gray-300 mb-6">{t('submission.successMessage')}</p>
           <button
             onClick={resetConfigurator}
             className="w-full bg-brandgreen hover:bg-green-700 text-white px-6 py-3 rounded-xl font-medium transition-colors duration-200 mb-3"
@@ -227,7 +218,7 @@ export const CustomerInfoStep = () => {
           </button>
           <button
             onClick={() => navigate('/')}
-            className="w-full bg-gray-100 hover:bg-gray-200 text-gray-800 px-6 py-3 rounded-xl font-medium transition-colors duration-200"
+            className="w-full bg-gray-100 dark:bg-gray-800 hover:bg-gray-200 dark:hover:bg-gray-700 text-gray-800 dark:text-gray-100 px-6 py-3 rounded-xl font-medium transition-colors duration-200"
           >
             {t('submission.backToHome')}
           </button>
@@ -240,12 +231,8 @@ export const CustomerInfoStep = () => {
     <div className="max-w-md mx-auto px-4 sm:px-6">
       <FadeInWhenVisible>
         <div className="text-center mb-8">
-          <h2 className="text-2xl font-bold text-gray-900">
-            {t('customerInfo.title')}
-          </h2>
-          <p className="text-gray-500 mt-2">
-            {t('customerInfo.description')}
-          </p>
+          <h2 className="text-2xl font-bold text-gray-900 dark:text-gray-100">{t('customerInfo.title')}</h2>
+          <p className="text-gray-500 dark:text-gray-400 mt-2">{t('customerInfo.description')}</p>
         </div>
       </FadeInWhenVisible>
 
@@ -254,7 +241,7 @@ export const CustomerInfoStep = () => {
         initial={{ opacity: 0 }}
         animate={{ opacity: 1 }}
         transition={{ delay: 0.1 }}
-        className="bg-white p-6 rounded-2xl shadow-sm border border-gray-100"
+        className="bg-white dark:bg-gray-900 p-6 rounded-2xl shadow-sm border border-gray-100 dark:border-gray-700"
       >
         <input
           type="text"
@@ -268,7 +255,7 @@ export const CustomerInfoStep = () => {
 
         <div className="space-y-5">
           <div>
-            <label htmlFor="name" className="block text-sm font-medium text-gray-700 mb-1">
+            <label htmlFor="name" className="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-1">
               {t('form.fullName')}
             </label>
             <input
@@ -278,13 +265,13 @@ export const CustomerInfoStep = () => {
               value={configuration.customerInfo.name}
               onChange={handleInputChange}
               required
-              className="w-full px-4 py-3 border border-gray-200 rounded-xl focus:ring-2 focus:ring-brandgreen focus:border-transparent transition-all"
+              className="w-full px-4 py-3 border border-gray-200 dark:border-gray-700 rounded-xl focus:ring-2 focus:ring-brandgreen focus:border-transparent bg-white dark:bg-gray-800 text-gray-900 dark:text-gray-100 transition-all"
               placeholder={t('form.fullNamePlaceholder')}
             />
           </div>
 
           <div>
-            <label htmlFor="email" className="block text-sm font-medium text-gray-700 mb-1">
+            <label htmlFor="email" className="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-1">
               {t('form.email')}
             </label>
             <input
@@ -294,13 +281,13 @@ export const CustomerInfoStep = () => {
               value={configuration.customerInfo.email}
               onChange={handleInputChange}
               required
-              className="w-full px-4 py-3 border border-gray-200 rounded-xl focus:ring-2 focus:ring-brandgreen focus:border-transparent transition-all"
+              className="w-full px-4 py-3 border border-gray-200 dark:border-gray-700 rounded-xl focus:ring-2 focus:ring-brandgreen focus:border-transparent bg-white dark:bg-gray-800 text-gray-900 dark:text-gray-100 transition-all"
               placeholder={t('form.emailPlaceholder')}
             />
           </div>
 
           <div>
-            <label htmlFor="notes" className="block text-sm font-medium text-gray-700 mb-1">
+            <label htmlFor="notes" className="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-1">
               {t('form.additionalNotes')}
             </label>
             <textarea
@@ -309,7 +296,7 @@ export const CustomerInfoStep = () => {
               value={configuration.customerInfo.notes}
               onChange={handleInputChange}
               rows={3}
-              className="w-full px-4 py-3 border border-gray-200 rounded-xl focus:ring-2 focus:ring-brandgreen focus:border-transparent transition-all"
+              className="w-full px-4 py-3 border border-gray-200 dark:border-gray-700 rounded-xl focus:ring-2 focus:ring-brandgreen focus:border-transparent bg-white dark:bg-gray-800 text-gray-900 dark:text-gray-100 transition-all"
               placeholder={t('form.additionalNotesPlaceholder')}
             />
           </div>
@@ -325,8 +312,8 @@ export const CustomerInfoStep = () => {
         </div>
 
         <div className="mt-8">
-          <h3 className="text-lg font-semibold text-gray-900 mb-4">{t('summary.title')}</h3>
-          <ul className="divide-y divide-gray-200 text-sm text-gray-700">
+          <h3 className="text-lg font-semibold text-gray-900 dark:text-gray-100 mb-4">{t('summary.title')}</h3>
+          <ul className="divide-y divide-gray-200 dark:divide-gray-700 text-sm text-gray-700 dark:text-gray-300">
             {getSelectedProducts().map((item, index) => (
               <li key={index} className="flex justify-between py-2">
                 <span>{item.name}</span>
@@ -335,7 +322,7 @@ export const CustomerInfoStep = () => {
                   {item.type === 'mounting' && (
                     configuration.mountingMethod === 'trailer'
                       ? products.find(p => p.category === 'accessory' && p.type === 'Trailer')?.price || '–'
-                      : products.find(p => p.id === configuration.vehicleMountingType)?.price || '–' // Changed to compare by ID
+                      : products.find(p => p.id === configuration.vehicleMountingType)?.price || '–'
                   )}
                   {item.type === 'powerpack' && products.find(p =>
                     p.id.toString() === configuration.powerpackType &&
@@ -347,11 +334,11 @@ export const CustomerInfoStep = () => {
               </li>
             ))}
           </ul>
-          <div className="flex justify-between mt-3 text-base font-bold text-brandgreen">
+          <div className="flex justify-between mt-3 text-base font-bold text-brandgreen dark:text-brandgreen">
             <span>{t('summary.total')}</span>
             <span>{calculateTotalPrice()}</span>
           </div>
-          <p className="text-[11px] text-gray-400 mt-4 leading-snug">
+          <p className="text-[11px] text-gray-400 dark:text-gray-500 mt-4 leading-snug">
             <strong>{t('summary.pricingNoticeTitle')}</strong><br />
             {t('summary.pricingNoticeText')}
           </p>
@@ -362,7 +349,7 @@ export const CustomerInfoStep = () => {
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.3 }}
-            className="mt-4 rounded-md bg-red-50 p-4 text-red-700 flex items-center space-x-2"
+            className="mt-4 rounded-md bg-red-50 dark:bg-red-900 p-4 text-red-700 dark:text-red-400 flex items-center space-x-2"
           >
             <svg
               className="h-5 w-5 flex-shrink-0"
@@ -380,7 +367,7 @@ export const CustomerInfoStep = () => {
           <button
             type="button"
             onClick={() => goToStep('extras')}
-            className="flex items-center gap-2 text-gray-400 hover:text-brandgreen transition-colors"
+            className="flex items-center gap-2 text-gray-400 dark:text-gray-500 hover:text-brandgreen dark:hover:text-green-400 transition-colors"
           >
             <svg
               className="w-4 h-4"

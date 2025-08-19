@@ -18,11 +18,13 @@ import { useTranslation } from 'react-i18next';
 import parseHtmlText from '../utils/parseText'
 import { initializeProducts } from '../data/products';
 import i18n from '../i18n';
+import { useTheme } from '../utils/context/theme-context';
 
 const ProductDetail = () => {
   const { t } = useTranslation();
   const { id } = useParams();
   const navigate = useNavigate();
+  const { theme } = useTheme();
   const product = getProductById(parseInt(id || '1'));
 
   const [ready, setReady] = useState(false);
@@ -37,7 +39,7 @@ const ProductDetail = () => {
 
 
   if (!product) {
-    return <div>{t('product.notFound')}</div>;
+    return <div className="dark:text-white">{t('product.notFound')}</div>;
   }
   const keyTranslations = {
     "Sampling Depth": "Probentiefe",
@@ -90,7 +92,7 @@ const ProductDetail = () => {
   }, [id]);
 
   if (!ready) {
-    return <div>{t('product.notFound')}</div>;
+    return <div className="dark:text-white">{t('product.notFound')}</div>;
   }
 
   const relatedProducts = getProductsByCategory(product.category).filter(p => p.id !== product.id);
@@ -104,7 +106,7 @@ const ProductDetail = () => {
   };
 
   return (
-    <div className="min-h-screen bg-white">
+    <div className="min-h-screen bg-white dark:bg-gray-900 transition-colors duration-200">
       <Helmet>
         <title>{t('product.meta.title', { brand: 'TECHBYP', product: product.name, category: getCategoryLabel(product.category) })}</title>
         <meta
@@ -132,7 +134,7 @@ const ProductDetail = () => {
             alt={product.name}
             sizes="(max-width: 768px) 50vw, 100vw"
           />
-          <div className="absolute inset-0 bg-gradient-to-r from-gray-900/80 via-gray-900/60 to-gray-900/40"></div>
+          <div className="absolute inset-0 bg-gradient-to-r from-gray-900/80 via-gray-900/60 to-gray-900/40 dark:from-gray-900/90 dark:via-gray-900/80 dark:to-gray-900/70"></div>
         </div>
 
         <div className="relative z-10 text-left text-white max-w-4xl mx-auto px-4">
@@ -173,34 +175,33 @@ const ProductDetail = () => {
         <div className="grid grid-cols-1 lg:grid-cols-4 gap-12">
           <div id="detail" className="lg:col-span-2 lg:order-2">
             <div className="mb-12">
-              <h2 className="text-5xl font-black uppercase text-gray-900 mb-6">{t('product.whatMakesItGreat')}</h2>
-              <div className="text-gray-600 text-lg leading-relaxed mb-8">
+              <h2 className="text-5xl font-black uppercase text-gray-900 dark:text-white mb-6">{t('product.whatMakesItGreat')}</h2>
+              <div className="text-gray-600 dark:text-gray-300 text-lg leading-relaxed mb-8">
                 {parseHtmlText(t(product.detailedDescription))}
               </div>
 
               {product.table && product.table.length > 0 && (
                 <div className="mb-8">
-                  <h3 className="text-xl font-semibold text-gray-900 mb-4">{t('product.goodsCurrentlyGracing')}</h3>
+                  <h3 className="text-xl font-semibold text-gray-900 dark:text-white mb-4">{t('product.goodsCurrentlyGracing')}</h3>
                   <div className="overflow-x-auto">
-                    <table className="min-w-full divide-y divide-gray-200">
-                      <thead className="bg-gray-50">
+                    <table className="min-w-full divide-y divide-gray-200 dark:divide-gray-700">
+                      <thead className="bg-gray-50 dark:bg-gray-800">
                         <tr>
-                          <th scope="col" className="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">
+                          <th scope="col" className="px-6 py-3 text-left text-xs font-medium text-gray-500 dark:text-gray-300 uppercase tracking-wider">
                             {t('product.articleNo')}
                           </th>
-                          <th scope="col" className="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">
+                          <th scope="col" className="px-6 py-3 text-left text-xs font-medium text-gray-500 dark:text-gray-300 uppercase tracking-wider">
                             {t('product.description')}
                           </th>
-
                         </tr>
                       </thead>
-                      <tbody className="bg-white divide-y divide-gray-200">
+                      <tbody className="bg-white dark:bg-gray-800 divide-y divide-gray-200 dark:divide-gray-700">
                         {product.table.map((row, index) => (
                           <tr key={index}>
-                            <td className="px-6 py-4 whitespace-nowrap text-sm font-medium text-gray-900">
+                            <td className="px-6 py-4 whitespace-nowrap text-sm font-medium text-gray-900 dark:text-white">
                               {row.emNo}
                             </td>
-                            <td className="px-6 py-4 text-sm text-gray-500">
+                            <td className="px-6 py-4 text-sm text-gray-500 dark:text-gray-300">
                               {row.articleName}
                             </td>
                           </tr>
@@ -212,24 +213,24 @@ const ProductDetail = () => {
               )}
 
               <div className="mb-8">
-                <h3 className="text-xl font-semibold text-gray-900 mb-4">{t('product.highlights')}</h3>
+                <h3 className="text-xl font-semibold text-gray-900 dark:text-white mb-4">{t('product.highlights')}</h3>
                 <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
                   {product.features.map((feature, index) => (
                     <div key={index} className="flex items-start space-x-3">
                       <div className="w-2 h-2 bg-brandblue rounded-full mt-2 flex-shrink-0"></div>
-                      <span className="text-gray-700">{feature}</span>
+                      <span className="text-gray-700 dark:text-gray-300">{feature}</span>
                     </div>
                   ))}
                 </div>
               </div>
 
               <div className="mb-8">
-                <h3 className="text-xl font-semibold text-gray-900 mb-4">{t('product.itShinesHere')}</h3>
+                <h3 className="text-xl font-semibold text-gray-900 dark:text-white mb-4">{t('product.itShinesHere')}</h3>
                 <div className="flex flex-wrap gap-2">
                   {product.applications.map((application, index) => (
                     <span
                       key={index}
-                      className="px-3 py-1 bg-orange-200 text-gray-700 text-sm font-black rounded-full"
+                      className="px-3 py-1 bg-orange-200 dark:bg-orange-300 text-gray-700 dark:text-gray-800 text-sm font-black rounded-full"
                     >
                       {application}
                     </span>
@@ -239,12 +240,12 @@ const ProductDetail = () => {
 
               {product.howToUse?.length > 0 && (
                 <div className="mb-8">
-                  <h3 className="text-xl font-semibold text-gray-900 mb-4">{t('product.satisfyingBit')}</h3>
+                  <h3 className="text-xl font-semibold text-gray-900 dark:text-white mb-4">{t('product.satisfyingBit')}</h3>
                   <div className="grid grid-cols-1 gap-4">
                     {product.howToUse.map((howToUse, index) => (
                       <div key={index} className="flex items-start space-x-2">
                         <span className="text-brandblue font-semibold">{index + 1}.</span>
-                        <span className="text-gray-700">{howToUse}</span>
+                        <span className="text-gray-700 dark:text-gray-300">{howToUse}</span>
                       </div>
                     ))}
                   </div>
@@ -252,7 +253,7 @@ const ProductDetail = () => {
               )}
 
               <div className="mb-12">
-                <h2 className="text-2xl font-black uppercase text-gray-900 mb-6">{t('product.upClosePersonal')}</h2>
+                <h2 className="text-2xl font-black uppercase text-gray-900 dark:text-white mb-6">{t('product.upClosePersonal')}</h2>
                 <div className="relative mb-6">
                   <div className="mb-4">
                     {currentImageIndex === 0 && heroVideo ? (
@@ -279,7 +280,7 @@ const ProductDetail = () => {
                             onClick={() => setShowImageToast(false)}
                           >
                             <div
-                              className="relative bg-white rounded-2xl overflow-hidden shadow-2xl"
+                              className="relative bg-white dark:bg-gray-800 rounded-2xl overflow-hidden shadow-2xl"
                               style={{ maxWidth: 800, maxHeight: '90vh' }}
                               onClick={e => e.stopPropagation()}
                             >
@@ -296,17 +297,17 @@ const ProductDetail = () => {
                               />
                               <button
                                 onClick={() => setCurrentImageIndex((currentImageIndex - 1 + gallery.length) % gallery.length)}
-                                className="absolute left-2 top-1/2 -translate-y-1/2 bg-white/0 hover:bg-white/50 rounded-full p-2"
+                                className="absolute left-2 top-1/2 -translate-y-1/2 bg-white/0 hover:bg-white/50 dark:hover:bg-gray-700/50 rounded-full p-2"
                                 aria-label={t('commons.previous')}
                               >
-                                <ChevronLeft className="h-6 w-6 text-gray-700" />
+                                <ChevronLeft className="h-6 w-6 text-gray-700 dark:text-gray-300" />
                               </button>
                               <button
                                 onClick={() => setCurrentImageIndex((currentImageIndex + 1) % gallery.length)}
-                                className="absolute right-2 top-1/2 -translate-y-1/2 bg-white/0 hover:bg-white/50 rounded-full p-2"
+                                className="absolute right-2 top-1/2 -translate-y-1/2 bg-white/0 hover:bg-white/50 dark:hover:bg-gray-700/50 rounded-full p-2"
                                 aria-label={t('commons.next')}
                               >
-                                <ChevronRight className="h-6 w-6 text-gray-700" />
+                                <ChevronRight className="h-6 w-6 text-gray-700 dark:text-gray-300" />
                               </button>
                             </div>
                           </div>
@@ -320,20 +321,20 @@ const ProductDetail = () => {
                   <div className="flex items-center justify-between mb-4">
                     <button
                       onClick={prevImage}
-                      className="p-2 bg-white rounded-full shadow-md hover:shadow-lg transition-shadow"
+                      className="p-2 bg-white dark:bg-gray-800 rounded-full shadow-md hover:shadow-lg transition-shadow"
                       aria-label={t('commons.previous')}
                     >
-                      <ChevronLeft className="h-5 w-5 text-gray-600" />
+                      <ChevronLeft className="h-5 w-5 text-gray-600 dark:text-gray-300" />
                     </button>
-                    <span className="text-sm text-gray-500">
+                    <span className="text-sm text-gray-500 dark:text-gray-400">
                       {t('commons.imageCounter', { current: currentImageIndex + 1, total: gallery.length })}
                     </span>
                     <button
                       onClick={nextImage}
-                      className="p-2 bg-white rounded-full shadow-md hover:shadow-lg transition-shadow"
+                      className="p-2 bg-white dark:bg-gray-800 rounded-full shadow-md hover:shadow-lg transition-shadow"
                       aria-label={t('commons.next')}
                     >
-                      <ChevronRight className="h-5 w-5 text-gray-600" />
+                      <ChevronRight className="h-5 w-5 text-gray-600 dark:text-gray-300" />
                     </button>
                   </div>
 
@@ -342,7 +343,7 @@ const ProductDetail = () => {
                       <button
                         key={index}
                         onClick={() => setCurrentImageIndex(index)}
-                        className={`aspect-square rounded-lg overflow-hidden ${index === currentImageIndex ? 'ring-2 ring-blue-600' : ''}`}
+                        className={`aspect-square rounded-lg overflow-hidden ${index === currentImageIndex ? 'ring-2 ring-blue-600 dark:ring-blue-400' : ''}`}
                       >
                         <img
                           srcSet={gallery}
@@ -356,26 +357,25 @@ const ProductDetail = () => {
                 </>
 
                 <div className="mt-8 mb-8">
-                  <h3 className="text-xl font-semibold text-black mb-4">{t('product.specsSmarts')}</h3>
-                  <div className="bg-gray-50 rounded-lg p-6">
+                  <h3 className="text-xl font-semibold text-black dark:text-white mb-4">{t('product.specsSmarts')}</h3>
+                  <div className="bg-gray-50 dark:bg-gray-800 rounded-lg p-6">
                     <div className="grid grid-cols-1 md:grid-cols-1 gap-4">
                       {Object.entries(product.technicalSpecs).map(([key, value]) => (
-                        <div key={key} className="flex justify-between py-2 border-b border-gray-200 last:border-b-0">
-                          <span className="font-black uppercase text-brandblue">
+                        <div key={key} className="flex justify-between py-2 border-b border-gray-200 dark:border-gray-700 last:border-b-0">
+                          <span className="font-black uppercase text-brandblue dark:text-blue-400">
                             {currentLanguage === 'de' ? (keyTranslations[key] || key) : key}:
                           </span>
-                          <span className="text-brandblue">{value}</span>
+                          <span className="text-brandblue dark:text-blue-400">{value}</span>
                         </div>
                       ))}
                     </div>
-
                   </div>
                 </div>
               </div>
             </div>
 
             <div className="lg:hidden mt-12">
-              <h3 className="text-lg font-semibold text-gray-900 mb-6">{t('product.otherCategory', { category: product.category })}</h3>
+              <h3 className="text-lg font-semibold text-gray-900 dark:text-white mb-6">{t('product.otherCategory', { category: product.category })}</h3>
               <div className="space-y-4">
                 {relatedProducts.slice(0, 10).map((relatedProduct) => {
                   const { heroImage: relatedHeroImage } = getProductMediaFallbacks(relatedProduct);
@@ -384,7 +384,7 @@ const ProductDetail = () => {
                     <button
                       key={relatedProduct.id}
                       onClick={() => navigate(`/product/${relatedProduct.id}`)}
-                      className="w-full flex items-center space-x-3 p-3 bg-gray-50 hover:bg-blue-50 rounded-lg transition-colors text-left"
+                      className="w-full flex items-center space-x-3 p-3 bg-gray-50 dark:bg-gray-800 hover:bg-blue-50 dark:hover:bg-gray-700 rounded-lg transition-colors text-left"
                     >
                       <div className="flex-shrink-0 w-16 h-16 rounded-lg overflow-hidden">
                         <img
@@ -395,8 +395,8 @@ const ProductDetail = () => {
                         />
                       </div>
                       <div className="flex-1 min-w-0">
-                        <p className="text-sm font-black uppercase text-gray-900 truncate">{relatedProduct.name}</p>
-                        <p className="text-xs text-gray-500">{relatedProduct.price}</p>
+                        <p className="text-sm font-black uppercase text-gray-900 dark:text-white truncate">{relatedProduct.name}</p>
+                        <p className="text-xs text-gray-500 dark:text-gray-400">{relatedProduct.price}</p>
                       </div>
                     </button>
                   );
@@ -405,14 +405,14 @@ const ProductDetail = () => {
             </div>
 
             <div className="mb-12">
-              <h2 className="text-2xl font-black uppercase text-gray-900 mb-6">{t('product.provenInField')}</h2>
+              <h2 className="text-2xl font-black uppercase text-gray-900 dark:text-white mb-6">{t('product.provenInField')}</h2>
               <Comments productId={product.id} />
             </div>
           </div>
 
           <div className="hidden lg:block lg:col-span-1 lg:order-1">
             <div className="sticky top-24">
-              <h3 className="text-lg font-semibold text-gray-900 mb-6">{t('product.otherCategory', { category: product.category })}</h3>
+              <h3 className="text-lg font-semibold text-gray-900 dark:text-white mb-6">{t('product.otherCategory', { category: product.category })}</h3>
               <div className="space-y-4">
                 {relatedProducts.slice(0, 10).map((relatedProduct) => {
                   const { heroImage: relatedHeroImage } = getProductMediaFallbacks(relatedProduct);
@@ -421,7 +421,7 @@ const ProductDetail = () => {
                     <button
                       key={relatedProduct.id}
                       onClick={() => navigate(`/product/${relatedProduct.id}`)}
-                      className="w-full flex items-center space-x-3 p-3 bg-gray-50 hover:bg-blue-50 rounded-lg transition-colors text-left"
+                      className="w-full flex items-center space-x-3 p-3 bg-gray-50 dark:bg-gray-800 hover:bg-blue-50 dark:hover:bg-gray-700 rounded-lg transition-colors text-left"
                     >
                       <div className="flex-shrink-0 w-16 h-16 rounded-lg overflow-hidden">
                         <img
@@ -432,8 +432,8 @@ const ProductDetail = () => {
                         />
                       </div>
                       <div className="flex-1 min-w-0">
-                        <p className="text-sm font-black uppercase text-gray-900 truncate">{relatedProduct.name}</p>
-                        <p className="text-xs text-gray-500">{relatedProduct.price}</p>
+                        <p className="text-sm font-black uppercase text-gray-900 dark:text-white truncate">{relatedProduct.name}</p>
+                        <p className="text-xs text-gray-500 dark:text-gray-400">{relatedProduct.price}</p>
                       </div>
                     </button>
                   );
@@ -444,10 +444,10 @@ const ProductDetail = () => {
 
           <div className="lg:col-span-1 lg:order-3">
             <div className="sticky top-24">
-              <div className="bg-white border border-gray-200 rounded-xl p-6 shadow-lg">
+              <div className="bg-white dark:bg-gray-800 border border-gray-200 dark:border-gray-700 rounded-xl p-6 shadow-lg">
                 <div className="text-center mb-6">
-                  <div className="text-2xl font-semibold uppercase text-gray-700 mb-2">{product.price}</div>
-                  <p className="text-sm text-gray-600">{t('product.engineeredForPros')}</p>
+                  <div className="text-2xl font-semibold uppercase text-gray-700 dark:text-gray-300 mb-2">{product.price}</div>
+                  <p className="text-sm text-gray-600 dark:text-gray-400">{t('product.engineeredForPros')}</p>
                 </div>
 
                 <div className="space-y-4">
@@ -461,57 +461,58 @@ const ProductDetail = () => {
                     <ShoppingCart className="mr-2 h-5 w-5 group-hover:scale-110 transition-transform" />
                     {t('product.orderNow')}
                   </button>
-
-                  <button
-                    onClick={() => showProductToast(product)}
-                    className="w-full bg-white border border-brandgreen text-brandgreen hover:bg-brandgreen hover:text-white px-6 py-4 rounded-lg font-semibold text-lg transition-colors flex items-center justify-center group"
-                  >
-                    <svg
-                      xmlns="http://www.w3.org/2000/svg"
-                      className="mr-2 h-5 w-5 group-hover:scale-110 transition-transform"
-                      fill="none"
-                      viewBox="0 0 24 24"
-                      stroke="currentColor"
+                  {product.id >= 1000 && product.id < 2000 && (
+                    <button
+                      onClick={() => showProductToast(product)}
+                      className="w-full bg-white dark:bg-gray-800 border border-brandgreen text-brandgreen hover:bg-brandgreen hover:text-white px-6 py-4 rounded-lg font-semibold text-lg transition-colors flex items-center justify-center group"
                     >
-                      <path
-                        strokeLinecap="round"
-                        strokeLinejoin="round"
-                        strokeWidth={2}
-                        d="M9 5H7a2 2 0 00-2 2v12a2 2 0 002 2h10a2 2 0 002-2V7a2 2 0 00-2-2h-2M9 5a2 2 0 002 2h2a2 2 0 002-2M9 5a2 2 0 012-2h2a2 2 0 012 2"
-                      />
-                    </svg>
-                    {t('product.quickConfigure')}
-                  </button>
+                      <svg
+                        xmlns="http://www.w3.org/2000/svg"
+                        className="mr-2 h-5 w-5 group-hover:scale-110 transition-transform"
+                        fill="none"
+                        viewBox="0 0 24 24"
+                        stroke="currentColor"
+                      >
+                        <path
+                          strokeLinecap="round"
+                          strokeLinejoin="round"
+                          strokeWidth={2}
+                          d="M9 5H7a2 2 0 00-2 2v12a2 2 0 002 2h10a2 2 0 002-2V7a2 2 0 00-2-2h-2M9 5a2 2 0 002 2h2a2 2 0 002-2M9 5a2 2 0 012-2h2a2 2 0 012 2"
+                        />
+                      </svg>
+                      {t('product.quickConfigure')}
+                    </button>
+                  )}
                 </div>
 
                 <div className="space-y-3 mt-3 mb-6">
-                  <div className="flex items-center space-x-2 text-sm text-gray-600">
+                  <div className="flex items-center space-x-2 text-sm text-gray-600 dark:text-gray-400">
                     <Award className="h-8 w-8 text-green-600" />
                     <span>{t('product.builtTough')}</span>
                   </div>
-                  <div className="flex items-center space-x-2 text-sm text-gray-600">
+                  <div className="flex items-center space-x-2 text-sm text-gray-600 dark:text-gray-400">
                     <FileText className="h-8 w-8 text-blue-600" />
                     <span>{t('product.worryFree')}</span>
                   </div>
-                  <div className="flex items-center space-x-2 text-sm text-gray-600">
+                  <div className="flex items-center space-x-2 text-sm text-gray-600 dark:text-gray-400">
                     <Users className="h-8 w-8 text-purple-600" />
                     <span>{t('product.helpFromHumans')}</span>
                   </div>
                 </div>
 
-                <div className="border-t border-gray-200 pt-4">
-                  <h4 className="font-semibold text-gray-900 mb-3">{t('product.needHelp')}</h4>
+                <div className="border-t border-gray-200 dark:border-gray-700 pt-4">
+                  <h4 className="font-semibold text-gray-900 dark:text-white mb-3">{t('product.needHelp')}</h4>
                   <div className="space-y-2">
                     <button onClick={() => navigate('/contact')}
-                      className="w-full text-left text-sm text-blue-600 hover:text-blue-700 transition-colors">
+                      className="w-full text-left text-sm text-blue-600 dark:text-blue-400 hover:text-blue-700 dark:hover:text-blue-500 transition-colors">
                       {t('product.requestConsultation')}
                     </button>
                     <button
                       onClick={() => navigate('/downloads?category=brochures')}
-                      className="w-full text-left text-sm text-blue-600 hover:text-blue-700 transition-colors">
+                      className="w-full text-left text-sm text-blue-600 dark:text-blue-400 hover:text-blue-700 dark:hover:text-blue-500 transition-colors">
                       {t('product.downloadBrochure')}
                     </button>
-                    <button onClick={() => navigate('/contact')} className="w-full text-left text-sm text-blue-600 hover:text-blue-700 transition-colors">
+                    <button onClick={() => navigate('/contact')} className="w-full text-left text-sm text-blue-600 dark:text-blue-400 hover:text-blue-700 dark:hover:text-blue-500 transition-colors">
                       {t('product.contactSales')}
                     </button>
                   </div>
@@ -536,7 +537,7 @@ const ProductDetail = () => {
 
         <button
           onClick={() => showProductToast(product)}
-          className="mobile-order-button border border-brandgreen text-brandgreen font-medium bg-white"
+          className="mobile-order-button border border-brandgreen text-brandgreen font-medium bg-white dark:bg-gray-800"
         >
           <svg
             xmlns="http://www.w3.org/2000/svg"
@@ -565,11 +566,11 @@ const ProductDetail = () => {
           }}
         >
           <div
-            className="relative bg-white rounded-2xl p-6 shadow-xl max-w-lg w-full mx-4"
+            className="relative bg-white dark:bg-gray-800 rounded-2xl p-6 shadow-xl max-w-lg w-full mx-4"
             onClick={(e) => e.stopPropagation()}
           >
             <button
-              className="absolute top-3 right-3 p-2 rounded-full hover:bg-gray-100 transition-colors duration-200"
+              className="absolute top-3 right-3 p-2 rounded-full hover:bg-gray-100 dark:hover:bg-gray-700 transition-colors duration-200"
               onClick={() => {
                 setShowOrderModal(false);
                 setSelectedProductId(null);
@@ -578,7 +579,7 @@ const ProductDetail = () => {
             >
               <svg
                 xmlns="http://www.w3.org/2000/svg"
-                className="h-6 w-6 text-gray-500 hover:text-gray-700"
+                className="h-6 w-6 text-gray-500 hover:text-gray-700 dark:hover:text-gray-300"
                 fill="none"
                 viewBox="0 0 24 24"
                 stroke="currentColor"

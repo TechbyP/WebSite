@@ -3,6 +3,7 @@ import { motion, AnimatePresence } from 'framer-motion';
 import ReCAPTCHA from 'react-google-recaptcha';
 import emailjs from '@emailjs/browser';
 import { useTranslation } from 'react-i18next';
+import { useTheme } from '../utils/context/theme-context';
 
 interface OrderNowProps {
   onClose: () => void;
@@ -12,6 +13,8 @@ interface OrderNowProps {
 
 const OrderNow = ({ onClose, productId, productName }: OrderNowProps) => {
   const { t, i18n } = useTranslation();
+  const { theme } = useTheme();
+
   const [form, setForm] = useState({
     name: '',
     email: '',
@@ -43,9 +46,7 @@ const OrderNow = ({ onClose, productId, productName }: OrderNowProps) => {
     };
   }, [onClose]);
 
-  const handleChange = (
-    e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>
-  ) => {
+  const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
     setForm({ ...form, [e.target.name]: e.target.value });
   };
 
@@ -104,22 +105,22 @@ const OrderNow = ({ onClose, productId, productName }: OrderNowProps) => {
         initial={{ opacity: 0 }}
         animate={{ opacity: 1 }}
         exit={{ opacity: 0 }}
-        className="fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center p-4 z-50"
+        className="fixed inset-0 bg-black bg-opacity-50 dark:bg-opacity-70 flex items-center justify-center p-4 z-50"
       >
         <div
           ref={modalRef}
-          className="relative bg-white rounded-xl max-w-md w-full mx-auto p-6 overflow-y-auto max-h-[90vh]"
+          className="relative bg-white dark:bg-gray-800 rounded-xl max-w-md w-full mx-auto p-6 overflow-y-auto max-h-[90vh] shadow-lg"
         >
           {/* Close button */}
           <button
             onClick={onClose}
-            className="absolute top-3 right-3 p-2 rounded-full hover:bg-gray-100 transition-colors duration-200 focus:outline-none focus:ring-2 focus:ring-gray-400"
+            className="absolute top-3 right-3 p-2 rounded-full hover:bg-gray-100 dark:hover:bg-gray-700 transition-colors duration-200 focus:outline-none focus:ring-2 focus:ring-gray-400"
             aria-label={t('orderNow.close')}
           >
             ✕
           </button>
 
-          <h2 className="mt-5 text-2xl sm:text-3xl font-black text-center text-gray-900 mb-6 uppercase tracking-wide">
+          <h2 className="mt-5 text-2xl sm:text-3xl font-black text-center text-gray-900 dark:text-gray-100 mb-6 uppercase tracking-wide">
             {t('orderNow.title')}
           </h2>
           <form onSubmit={handleSubmit} className="space-y-5">
@@ -131,7 +132,7 @@ const OrderNow = ({ onClose, productId, productName }: OrderNowProps) => {
               required
               minLength={2}
               maxLength={100}
-              className="w-full px-4 py-3 border border-gray-300 rounded-xl focus:ring-2 focus:ring-brandblue focus:outline-none transition-all"
+              className="w-full px-4 py-3 border border-gray-300 dark:border-gray-600 rounded-xl bg-white dark:bg-gray-700 text-gray-900 dark:text-gray-100 focus:ring-2 focus:ring-brandblue focus:outline-none transition-all"
             />
             <input
               name="email"
@@ -141,7 +142,7 @@ const OrderNow = ({ onClose, productId, productName }: OrderNowProps) => {
               placeholder={t('orderNow.placeholderEmail')}
               required
               pattern="[^@\s]+@[^@\s]+\.[^@\s]+"
-              className="w-full px-4 py-3 border border-gray-300 rounded-xl focus:ring-2 focus:ring-brandblue focus:outline-none transition-all"
+              className="w-full px-4 py-3 border border-gray-300 dark:border-gray-600 rounded-xl bg-white dark:bg-gray-700 text-gray-900 dark:text-gray-100 focus:ring-2 focus:ring-brandblue focus:outline-none transition-all"
             />
             <textarea
               name="message"
@@ -152,7 +153,7 @@ const OrderNow = ({ onClose, productId, productName }: OrderNowProps) => {
               minLength={10}
               maxLength={1000}
               rows={12}
-              className="w-full px-4 py-3 border border-gray-300 rounded-xl focus:ring-2 focus:ring-brandblue focus:outline-none transition-all"
+              className="w-full px-4 py-3 border border-gray-300 dark:border-gray-600 rounded-xl bg-white dark:bg-gray-700 text-gray-900 dark:text-gray-100 focus:ring-2 focus:ring-brandblue focus:outline-none transition-all"
             />
 
             {/* Honeypot */}
@@ -168,7 +169,7 @@ const OrderNow = ({ onClose, productId, productName }: OrderNowProps) => {
 
             <ReCAPTCHA
               sitekey="6Lc5aXcrAAAAALKHAsMMR1LUqokRWpEkgX0RVd8n"
-              onChange={token => setRecaptchaToken(token)}
+              onChange={(token) => setRecaptchaToken(token)}
               onExpired={() => setRecaptchaToken(null)}
               ref={recaptchaRef}
             />
@@ -176,7 +177,7 @@ const OrderNow = ({ onClose, productId, productName }: OrderNowProps) => {
             <button
               type="submit"
               disabled={!recaptchaToken}
-              className="w-full bg-brandblue hover:bg-brandgreen text-white px-4 py-3 rounded-xl font-bold transition-all disabled:opacity-50 disabled:cursor-not-allowed"
+              className="w-full bg-brandblue dark:bg-green-600 hover:bg-brandgreen dark:hover:bg-green-700 text-white px-4 py-3 rounded-xl font-bold transition-all disabled:opacity-50 disabled:cursor-not-allowed"
             >
               {t('orderNow.submit')}
             </button>
@@ -185,8 +186,8 @@ const OrderNow = ({ onClose, productId, productName }: OrderNowProps) => {
               <p
                 className={`text-center text-sm mt-2 ${
                   status.includes(t('orderNow.success'))
-                    ? 'text-green-600'
-                    : 'text-red-600'
+                    ? 'text-green-600 dark:text-green-400'
+                    : 'text-red-600 dark:text-red-400'
                 }`}
               >
                 {status}

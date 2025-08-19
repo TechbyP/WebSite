@@ -19,10 +19,10 @@ export const VehicleMountingStep = () => {
     <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
       <FadeInWhenVisible>
         <div className="text-center mb-6 md:mb-12">
-          <h2 className="text-2xl md:text-4xl font-black leading-tight text-black mt-4 md:mt-6 uppercase">
+          <h2 className="text-2xl md:text-4xl font-black leading-tight text-black dark:text-white mt-4 md:mt-6 uppercase">
             {t('vehicleMounting.title')}
           </h2>
-          <p className="text-center text-brandblue max-w-4xl mx-auto mb-2 text-sm md:text-base font-black">
+          <p className="text-center text-brandblue dark:text-brandgreen max-w-4xl mx-auto mb-2 text-sm md:text-base font-black">
             {t('vehicleMounting.description', { productName: configuration.product?.name })}
           </p>
         </div>
@@ -40,12 +40,12 @@ export const VehicleMountingStep = () => {
               layout
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
-              className={`cursor-pointer bg-white rounded-lg shadow-md overflow-hidden 
+              className={`cursor-pointer bg-white dark:bg-gray-800 rounded-lg shadow-md overflow-hidden 
                 hover:shadow-lg transition-all duration-300
                 flex items-center h-24
                 ${selected
                   ? 'ring-2 ring-brandgreen'
-                  : 'border border-gray-200 hover:border-gray-300'
+                  : 'border border-gray-200 dark:border-gray-700 hover:border-gray-300 dark:hover:border-gray-600'
                 }`}
               onClick={() => setVehicleMountingType(product.id)}
             >
@@ -71,14 +71,14 @@ export const VehicleMountingStep = () => {
 
               <div className="flex flex-col px-4 py-2 overflow-hidden">
                 <div className="flex items-center space-x-1">
-                  <span className="text-[10px] font-medium text-brandblue">
+                  <span className="text-[10px] font-medium text-brandblue dark:text-brandgreen">
                     {t('vehicleMounting.mountingLabel')}
                   </span>
                 </div>
-                <h3 className="text-sm font-black text-gray-900 uppercase truncate">
+                <h3 className="text-sm font-black text-gray-900 dark:text-gray-100 uppercase truncate">
                   {product.name}
                 </h3>
-                <h2 className="text-xs font-bold text-gray-900 uppercase truncate">
+                <h2 className="text-xs font-bold text-gray-900 dark:text-gray-200 uppercase truncate">
                   {product.nickname || 'Product'}
                 </h2>
                 <div className="text-xs font-bold text-brandgreen mt-1">
@@ -100,12 +100,12 @@ export const VehicleMountingStep = () => {
               key={product.id}
               whileHover={{ scale: 1.03 }}
               whileTap={{ scale: 0.98 }}
-              className={`cursor-pointer bg-white rounded-xl shadow-lg overflow-hidden
+              className={`cursor-pointer bg-white dark:bg-gray-800 rounded-xl shadow-lg overflow-hidden
                 hover:shadow-xl transition-all duration-300 group hover:-translate-y-1
                 border-2
                 ${selected
-                  ? 'ring-2 ring-brandgreen border-transparent bg-green-50'
-                  : 'border-gray-200 hover:border-gray-300'}
+                  ? 'ring-2 ring-brandgreen border-transparent bg-green-50 dark:bg-green-900'
+                  : 'border-gray-200 dark:border-gray-700 hover:border-gray-300 dark:hover:border-gray-600'}
                 flex flex-col h-full
               `}
               onClick={() => setVehicleMountingType(product.id)}
@@ -121,19 +121,19 @@ export const VehicleMountingStep = () => {
               </div>
               <div className="flex flex-col flex-grow px-6 pt-6 pb-4">
                 <div>
-                  <h3 className="text-2xl font-black text-gray-900 uppercase">
+                  <h3 className="text-2xl font-black text-gray-900 dark:text-gray-100 uppercase">
                     {product.name}
                   </h3>
                 </div>
 
                 <div className="flex-grow flex flex-col justify-center mt-4">
-                  <p className="text-gray-600 text-sm mb-4">
+                  <p className="text-gray-600 dark:text-gray-300 text-sm mb-4">
                     {product.description || 'No description available'}
                   </p>
                   <div className="space-y-2">
                     {(product.specs ?? []).slice(0, 2).map((spec: string, index: number) => (
-                      <div key={index} className="flex items-center text-sm text-gray-600">
-                        <div className="w-[6px] h-[6px] bg-brandblue rounded-full mr-2 flex-shrink-0"></div>
+                      <div key={index} className="flex items-center text-sm text-gray-600 dark:text-gray-300">
+                        <div className="w-[6px] h-[6px] bg-brandblue dark:bg-brandgreen rounded-full mr-2 flex-shrink-0"></div>
                         {spec}
                       </div>
                     ))}
@@ -154,7 +154,7 @@ export const VehicleMountingStep = () => {
       <div className="mt-6 md:mt-12 flex justify-between">
         <button
           onClick={() => goToStep('mounting-method')}
-          className="px-4 py-2 md:px-6 md:py-3 border border-gray-300 rounded-lg text-sm md:text-base text-gray-700 hover:bg-gray-50 transition-colors font-semibold"
+          className="px-4 py-2 md:px-6 md:py-3 border border-gray-300 dark:border-gray-700 rounded-lg text-sm md:text-base text-gray-700 dark:text-gray-200 hover:bg-gray-50 dark:hover:bg-gray-700 transition-colors font-semibold"
         >
           ← {t('buttons.back')}
         </button>

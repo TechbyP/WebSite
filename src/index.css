@@ -191,7 +191,7 @@ body {
   margin-right: 0.5rem;
   margin-top: 0.2rem;
   font-weight: bold;
-  color: #333;
+ 
 }
 
 /* For HTML content from RichTextEditor */
@@ -202,9 +202,29 @@ body {
   margin-right: 0.5rem;
   margin-top: 0.2rem;
   font-weight: bold;
-  color: #333;
+
 }
 
 .prose .first-paragraph-with-dropcap p:first-of-type {
   clear: both;
+}
+
+
+
+/* Ensure the dark mode applies to the whole document */
+.dark {
+  color-scheme: dark;
+}
+
+/* Smooth transitions for theme changes */
+body {
+  transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+/* Apply base styles for dark mode */
+@layer base {
+  body {
+    @apply bg-white text-gray-900 dark:bg-gray-900 dark:text-gray-100;
+    transition: background-color 0.3s ease, color 0.3s ease;
+  }
 }

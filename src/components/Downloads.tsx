@@ -11,24 +11,12 @@ import { Helmet } from 'react-helmet-async';
 import SiteImage from '../assets/pictures/techbyp.png';
 import { useTranslation } from 'react-i18next';
 
-// Category definitions - will be translated via i18n
+// Category definitions
 const CATEGORIES = {
-    manuals: {
-        icon: <BookOpen className="h-5 w-5" />,
-        color: 'bg-blue-100 text-blue-800'
-    },
-    brochures: {
-        icon: <FileText className="h-5 w-5" />,
-        color: 'bg-green-100 text-green-800'
-    },
-    techspecs: {
-        icon: <FileSpreadsheet className="h-5 w-5" />,
-        color: 'bg-purple-100 text-purple-800'
-    },
-    other: {
-        icon: <FileArchive className="h-5 w-5" />,
-        color: 'bg-gray-100 text-gray-800'
-    }
+    manuals: { icon: <BookOpen className="h-5 w-5" />, color: 'bg-blue-100 text-blue-800 dark:bg-blue-900 dark:text-blue-300' },
+    brochures: { icon: <FileText className="h-5 w-5" />, color: 'bg-green-100 text-green-800 dark:bg-green-900 dark:text-green-300' },
+    techspecs: { icon: <FileSpreadsheet className="h-5 w-5" />, color: 'bg-purple-100 text-purple-800 dark:bg-purple-900 dark:text-purple-300' },
+    other: { icon: <FileArchive className="h-5 w-5" />, color: 'bg-gray-100 text-gray-800 dark:bg-gray-700 dark:text-gray-300' }
 };
 
 // File type icons
@@ -87,12 +75,8 @@ const FileDownloadPage = () => {
 
     const sortedFiles = useMemo(() => {
         let filtered = [...files];
-        if (selectedCategory !== 'all') {
-            filtered = filtered.filter(f => f.category?.toLowerCase() === selectedCategory);
-        }
-        if (searchTerm) {
-            filtered = filtered.filter(f => f.name.toLowerCase().includes(searchTerm.toLowerCase()));
-        }
+        if (selectedCategory !== 'all') filtered = filtered.filter(f => f.category?.toLowerCase() === selectedCategory);
+        if (searchTerm) filtered = filtered.filter(f => f.name.toLowerCase().includes(searchTerm.toLowerCase()));
         filtered.sort((a, b) => {
             if (a[sortConfig.key] < b[sortConfig.key]) return sortConfig.direction === 'asc' ? -1 : 1;
             if (a[sortConfig.key] > b[sortConfig.key]) return sortConfig.direction === 'asc' ? 1 : -1;
@@ -101,61 +85,38 @@ const FileDownloadPage = () => {
         return filtered;
     }, [files, searchTerm, sortConfig, selectedCategory]);
 
-    const requestSort = (key) => {
-        setSortConfig(prev => ({
-            key,
-            direction: prev.key === key && prev.direction === 'asc' ? 'desc' : 'asc'
-        }));
-    };
+    const requestSort = (key) => setSortConfig(prev => ({ key, direction: prev.key === key && prev.direction === 'asc' ? 'desc' : 'asc' }));
 
     const getFileIcon = (type) => FILE_ICONS[type.toLowerCase()] || FILE_ICONS.default;
-
-    const formatDate = (str) => new Date(str).toLocaleDateString(undefined, {
-        year: 'numeric', month: 'short', day: 'numeric'
-    });
+    const formatDate = (str) => new Date(str).toLocaleDateString(undefined, { year: 'numeric', month: 'short', day: 'numeric' });
 
     const mapBackendCategory = (cat) => {
         if (!cat) return 'other';
-
         const lowerCat = cat.toLowerCase();
-
         switch (true) {
             case lowerCat.includes('manual'): return 'manuals';
-            case lowerCat.includes('brochure'):
-            case lowerCat.includes('flyer'):
-            case lowerCat.includes('catalog'):
-                return 'brochures';
-            case lowerCat.includes('spec'):
-            case lowerCat.includes('specification'):
-                return 'techspecs';
+            case lowerCat.includes('brochure') || lowerCat.includes('flyer') || lowerCat.includes('catalog'): return 'brochures';
+            case lowerCat.includes('spec') || lowerCat.includes('specification'): return 'techspecs';
             default: return 'other';
         }
     };
 
     const handlePreviewClick = (file) => {
         if (!file.previewUrl) return;
-
-        const imageTypes = ['jpg', 'jpeg', 'png', 'gif'];
-        const videoTypes = ['mp4', 'mov', 'avi'];
-
-        if (file.type === 'pdf') {
-            setPreviewType('pdf');
-        } else if (videoTypes.includes(file.type)) {
-            setPreviewType('video');
-        } else if (imageTypes.includes(file.type)) {
-            setPreviewType('image');
-        } else {
-            return;
-        }
-
+        const imageTypes = ['jpg','jpeg','png','gif'];
+        const videoTypes = ['mp4','mov','avi'];
+        if (file.type === 'pdf') setPreviewType('pdf');
+        else if (videoTypes.includes(file.type)) setPreviewType('video');
+        else if (imageTypes.includes(file.type)) setPreviewType('image');
+        else return;
         setSelectedFile(file);
     };
 
-    if (loading) return <div className="text-center py-12">{t('downloads.loading')}</div>;
-    if (error) return <div className="text-center py-12 text-red-500">{t('downloads.error.title')}: {error}</div>;
+    if (loading) return <div className="text-center py-12 dark:text-gray-200">{t('downloads.loading')}</div>;
+    if (error) return <div className="text-center py-12 text-red-500 dark:text-red-400">{t('downloads.error.title')}: {error}</div>;
 
     return (
-        <section className="py-12 bg-gray-50 min-h-screen">
+        <section className="py-12 bg-gray-50 dark:bg-gray-900 min-h-screen">
             <Helmet>
                 <title>{t('downloads.meta.title')}</title>
                 <meta name="description" content={t('downloads.meta.description')} />
@@ -168,10 +129,10 @@ const FileDownloadPage = () => {
 
             <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
                 <div className="text-center mb-8">
-                    <h2 className="text-3xl md:text-4xl font-black leading-tight text-black uppercase">
+                    <h2 className="text-3xl md:text-4xl font-black leading-tight text-black dark:text-gray-100 uppercase">
                         {t('downloads.title')}
                     </h2>
-                    <p className="text-xl md:text-base text-brandblue font-black">
+                    <p className="text-xl md:text-base text-brandblue dark:text-brandgreen font-black">
                         {t('downloads.subtitle')}
                     </p>
                 </div>
@@ -182,8 +143,8 @@ const FileDownloadPage = () => {
                         onClick={() => setSelectedCategory('all')}
                         className={`px-4 py-2 rounded-md text-sm font-black transition-colors ${selectedCategory === 'all'
                             ? 'bg-brandgreen text-white'
-                            : 'border border-gray-200 hover:border-gray-300 text-gray-600 hover:text-brandgreen'
-                            }`}
+                            : 'border border-gray-200 dark:border-gray-600 text-gray-600 dark:text-gray-300 hover:border-gray-300 dark:hover:border-gray-500 hover:text-brandgreen'
+                        }`}
                     >
                         {t('downloads.categories.all')}
                     </button>
@@ -193,8 +154,8 @@ const FileDownloadPage = () => {
                             onClick={() => setSelectedCategory(key)}
                             className={`px-4 py-2 rounded-md text-sm font-black transition-colors flex items-center ${selectedCategory === key
                                 ? 'bg-brandgreen text-white'
-                                : 'border border-gray-200 hover:border-gray-300 text-gray-600 hover:text-brandgreen'
-                                }`}
+                                : 'border border-gray-200 dark:border-gray-600 text-gray-600 dark:text-gray-300 hover:border-gray-300 dark:hover:border-gray-500 hover:text-brandgreen'
+                            }`}
                         >
                             <span className="mr-2">{CATEGORIES[key].icon}</span>
                             {t(`downloads.categories.${key}`)}
@@ -202,43 +163,37 @@ const FileDownloadPage = () => {
                     ))}
                 </div>
 
-                {/* Search + Sort Controls */}
-                <div
-                    className="bg-white/95 rounded-lg shadow-sm border border-gray-200 mb-6"
-                    style={{ top: isVisible ? `${height}px` : '0px' }}
-                >
+                {/* Search + Sort */}
+                <div className="bg-white/95 dark:bg-gray-800 rounded-lg shadow-sm border border-gray-200 dark:border-gray-700 mb-6" style={{ top: isVisible ? `${height}px` : '0px' }}>
                     <div className="p-4 flex flex-col gap-4 sm:flex-row sm:items-center sm:justify-between">
                         {/* Search */}
                         <div className="relative w-full sm:w-96">
                             <div className="absolute inset-y-0 left-0 pl-3 flex items-center pointer-events-none">
-                                <Search className="h-5 w-5 text-gray-400" />
+                                <Search className="h-5 w-5 text-gray-400 dark:text-gray-300" />
                             </div>
                             <input
                                 type="text"
-                                className="block w-full pl-10 pr-3 py-2 border border-gray-300 rounded-md bg-white placeholder-gray-500 focus:outline-none focus:ring-2 focus:ring-brandgreen sm:text-sm"
+                                className="block w-full pl-10 pr-3 py-2 border border-gray-300 dark:border-gray-600 rounded-md bg-white dark:bg-gray-700 text-gray-900 dark:text-gray-100 placeholder-gray-500 dark:placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-brandgreen sm:text-sm"
                                 placeholder={t('downloads.search.placeholder')}
                                 value={searchTerm}
                                 onChange={(e) => setSearchTerm(e.target.value)}
                             />
                         </div>
 
-                        {/* Sort */}
+                        {/* Sort buttons */}
                         <div className="flex flex-wrap items-center space-x-2">
-                            <span className="text-sm font-medium text-gray-600">{t('downloads.sort.label')}:</span>
-                            {['name', 'date', 'size'].map((key) => (
+                            <span className="text-sm font-medium text-gray-600 dark:text-gray-300">{t('downloads.sort.label')}:</span>
+                            {['name','date','size'].map((key) => (
                                 <button
                                     key={key}
                                     onClick={() => requestSort(key)}
-                                    className={`px-3 py-1 rounded-md text-sm font-medium flex items-center ${sortConfig.key === key
+                                    className={`px-3 py-1 rounded-md text-sm font-medium flex items-center ${sortConfig.key===key
                                         ? 'bg-brandgreen text-white'
-                                        : 'bg-gray-100 text-gray-700 hover:bg-gray-200'
-                                        }`}
+                                        : 'bg-gray-100 dark:bg-gray-700 text-gray-700 dark:text-gray-300 hover:bg-gray-200 dark:hover:bg-gray-600'
+                                    }`}
                                 >
                                     {t(`downloads.sort.${key}`)}
-                                    {sortConfig.key === key &&
-                                        (sortConfig.direction === 'asc'
-                                            ? <ArrowUp className="ml-1 h-4 w-4" />
-                                            : <ArrowDown className="ml-1 h-4 w-4" />)}
+                                    {sortConfig.key === key && (sortConfig.direction==='asc' ? <ArrowUp className="ml-1 h-4 w-4" /> : <ArrowDown className="ml-1 h-4 w-4" />)}
                                 </button>
                             ))}
                         </div>
@@ -247,25 +202,18 @@ const FileDownloadPage = () => {
 
                 {/* Files grid */}
                 <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-                    {sortedFiles.map((file) => (
-                        <motion.div
-                            key={file.id}
-                            initial={{ opacity: 0, y: 20 }}
-                            animate={{ opacity: 1, y: 0 }}
-                            transition={{ duration: 0.3 }}
-                            className="bg-white rounded-xl shadow-md hover:shadow-lg overflow-hidden"
+                    {sortedFiles.map(file => (
+                        <motion.div key={file.id} initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.3 }}
+                            className="bg-white dark:bg-gray-800 rounded-xl shadow-md hover:shadow-lg overflow-hidden"
                         >
-                            <div
-                                className={`p-5 cursor-pointer ${file.previewUrl ? 'hover:bg-gray-50' : ''}`}
-                                onClick={() => file.previewUrl && handlePreviewClick(file)}
-                            >
+                            <div className={`p-5 cursor-pointer ${file.previewUrl ? 'hover:bg-gray-50 dark:hover:bg-gray-700' : ''}`} onClick={() => file.previewUrl && handlePreviewClick(file)}>
                                 <div className="flex items-start">
-                                    <div className="flex-shrink-0 bg-blue-100 p-3 rounded-lg">
+                                    <div className="flex-shrink-0 bg-blue-100 dark:bg-blue-900 p-3 rounded-lg">
                                         {getFileIcon(file.type)}
                                     </div>
                                     <div className="ml-4 flex-1">
-                                        <h3 className="text-lg font-bold text-gray-900 truncate">{file.name}</h3>
-                                        <div className="mt-1 flex items-center text-sm text-gray-500">
+                                        <h3 className="text-lg font-bold text-gray-900 dark:text-gray-100 truncate">{file.name}</h3>
+                                        <div className="mt-1 flex items-center text-sm text-gray-500 dark:text-gray-400">
                                             <span>{file.size}</span>
                                             <span className="mx-2">•</span>
                                             <span>{formatDate(file.date)}</span>
@@ -279,18 +227,17 @@ const FileDownloadPage = () => {
                                     </div>
                                 </div>
                             </div>
-                            <div className="border-t border-gray-200 bg-gray-50 px-5 py-3">
+                            <div className="border-t border-gray-200 dark:border-gray-700 bg-gray-50 dark:bg-gray-900 px-5 py-3">
                                 <div className="flex justify-end">
-                                    <button
-                                        onClick={() => {
-                                            const link = document.createElement('a');
-                                            link.href = file.url || `/files/${file.name}`;
-                                            link.download = file.name;
-                                            document.body.appendChild(link);
-                                            link.click();
-                                            document.body.removeChild(link);
-                                        }}
-                                        className="inline-flex items-center px-3 py-2 rounded-md text-sm font-medium text-white bg-brandblue hover:bg-brandgreen"
+                                    <button onClick={() => {
+                                        const link = document.createElement('a');
+                                        link.href = file.url || `/files/${file.name}`;
+                                        link.download = file.name;
+                                        document.body.appendChild(link);
+                                        link.click();
+                                        document.body.removeChild(link);
+                                    }}
+                                    className="inline-flex items-center px-3 py-2 rounded-md text-sm font-medium text-white bg-brandblue hover:bg-brandgreen"
                                     >
                                         <Download className="-ml-0.5 mr-2 h-4 w-4" />
                                         {t('downloads.download')}
@@ -302,35 +249,29 @@ const FileDownloadPage = () => {
                 </div>
 
                 {/* No files found */}
-                {sortedFiles.length === 0 && (
+                {sortedFiles.length===0 && (
                     <div className="text-center py-12">
-                        <div className="mx-auto flex items-center justify-center h-12 w-12 rounded-full bg-gray-100">
-                            <File className="h-6 w-6 text-gray-400" />
+                        <div className="mx-auto flex items-center justify-center h-12 w-12 rounded-full bg-gray-100 dark:bg-gray-700">
+                            <File className="h-6 w-6 text-gray-400 dark:text-gray-300" />
                         </div>
-                        <h3 className="mt-2 text-lg font-medium text-gray-900">{t('downloads.empty.title')}</h3>
-                        <p className="mt-1 text-sm text-gray-500">
-                            {searchTerm ? t('downloads.empty.search') : t('downloads.empty.category')}
-                        </p>
+                        <h3 className="mt-2 text-lg font-medium text-gray-900 dark:text-gray-100">{t('downloads.empty.title')}</h3>
+                        <p className="mt-1 text-sm text-gray-500 dark:text-gray-400">{searchTerm ? t('downloads.empty.search') : t('downloads.empty.category')}</p>
                     </div>
                 )}
             </div>
 
             {/* File Preview Modal */}
-            {/* File Preview Modal */}
             <AnimatePresence>
                 {selectedFile && (
                     <>
-                        {/* Backdrop */}
                         <motion.div
                             initial={{ opacity: 0 }}
                             animate={{ opacity: 1 }}
                             exit={{ opacity: 0 }}
-                            className="fixed inset-0 z-40 bg-gray-500 bg-opacity-75 transition-opacity"
+                            className="fixed inset-0 z-40 bg-gray-500 bg-opacity-75 dark:bg-gray-900 dark:bg-opacity-80 transition-opacity"
                             onClick={() => setSelectedFile(null)}
                             key="backdrop"
                         />
-
-                        {/* Modal */}
                         <motion.div
                             initial={{ opacity: 0, y: 20 }}
                             animate={{ opacity: 1, y: 0 }}
@@ -338,15 +279,12 @@ const FileDownloadPage = () => {
                             className="fixed inset-0 z-50 flex items-center justify-center p-0 sm:p-4"
                             key="modal"
                         >
-                            <div
-                                className="bg-white rounded-lg shadow-xl w-full h-full sm:w-full sm:max-w-4xl sm:h-auto sm:max-h-[90vh] overflow-auto"
-                                onClick={(e) => e.stopPropagation()}
-                            >
+                            <div className="bg-white dark:bg-gray-800 rounded-lg shadow-xl w-full h-full sm:w-full sm:max-w-4xl sm:h-auto sm:max-h-[90vh] overflow-auto" onClick={(e) => e.stopPropagation()}>
                                 <div className="flex flex-col h-full sm:h-auto p-4 sm:p-6">
                                     {/* Header */}
                                     <div className="flex justify-between items-start">
                                         <div>
-                                            <h3 className="text-lg font-medium text-gray-900">{selectedFile.name}</h3>
+                                            <h3 className="text-lg font-medium text-gray-900 dark:text-gray-100">{selectedFile.name}</h3>
                                             <div className="mt-1">
                                                 <span className={`inline-flex items-center px-2.5 py-0.5 rounded-full text-xs font-medium ${CATEGORIES[selectedFile.category].color}`}>
                                                     {CATEGORIES[selectedFile.category].icon}
@@ -356,18 +294,12 @@ const FileDownloadPage = () => {
                                         </div>
 
                                         <div className="flex space-x-2">
-                                            <a
-                                                href={selectedFile.downloadUrl || selectedFile.previewUrl}
-                                                download={selectedFile.name}
-                                                className="inline-flex items-center px-3 py-1 border border-gray-300 shadow-sm text-sm font-medium rounded-md text-gray-700 bg-white hover:bg-gray-50 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-brandgreen"
+                                            <a href={selectedFile.downloadUrl || selectedFile.previewUrl} download={selectedFile.name}
+                                                className="inline-flex items-center px-3 py-1 border border-gray-300 dark:border-gray-600 shadow-sm text-sm font-medium rounded-md text-gray-700 dark:text-gray-200 bg-white dark:bg-gray-700 hover:bg-gray-50 dark:hover:bg-gray-600 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-brandgreen"
                                             >
                                                 {t('downloads.download')}
                                             </a>
-                                            <button
-                                                type="button"
-                                                className="p-1 text-gray-400 hover:text-gray-500 focus:outline-none"
-                                                onClick={() => setSelectedFile(null)}
-                                            >
+                                            <button type="button" className="p-1 text-gray-400 dark:text-gray-300 hover:text-gray-500 dark:hover:text-gray-100 focus:outline-none" onClick={() => setSelectedFile(null)}>
                                                 <span className="sr-only">{t('downloads.close')}</span>
                                                 <XMarkIcon className="h-6 w-6" />
                                             </button>
@@ -376,29 +308,12 @@ const FileDownloadPage = () => {
 
                                     {/* Preview */}
                                     <div className="flex-1 mt-4 flex items-center justify-center w-full">
-                                        {previewType === 'pdf' && (
-                                            <iframe
-                                                src={selectedFile.previewUrl}
-                                                className="w-full h-full sm:h-[70vh] border border-gray-200 rounded-lg"
-                                                title={selectedFile.name}
-                                            />
-                                        )}
-                                        {previewType === 'image' && (
-                                            <img
-                                                src={selectedFile.previewUrl}
-                                                alt={selectedFile.name}
-                                                className="w-full h-full sm:max-h-[70vh] object-contain border border-gray-200 rounded-lg"
-                                            />
-                                        )}
-                                        {previewType === 'video' && (
-                                            <video
-                                                controls
-                                                className="w-full h-full sm:max-h-[70vh] border border-gray-200 rounded-lg"
-                                            >
-                                                <source src={selectedFile.previewUrl} type={`video/${selectedFile.type}`} />
-                                                {t('downloads.videoNotSupported')}
-                                            </video>
-                                        )}
+                                        {previewType==='pdf' && <iframe src={selectedFile.previewUrl} className="w-full h-full sm:h-[70vh] border border-gray-200 dark:border-gray-600 rounded-lg" title={selectedFile.name} />}
+                                        {previewType==='image' && <img src={selectedFile.previewUrl} alt={selectedFile.name} className="w-full h-full sm:max-h-[70vh] object-contain border border-gray-200 dark:border-gray-600 rounded-lg" />}
+                                        {previewType==='video' && <video controls className="w-full h-full sm:max-h-[70vh] border border-gray-200 dark:border-gray-600 rounded-lg">
+                                            <source src={selectedFile.previewUrl} type={`video/${selectedFile.type}`} />
+                                            {t('downloads.videoNotSupported')}
+                                        </video>}
                                     </div>
                                 </div>
                             </div>
@@ -406,7 +321,6 @@ const FileDownloadPage = () => {
                     </>
                 )}
             </AnimatePresence>
-
         </section>
     );
 };

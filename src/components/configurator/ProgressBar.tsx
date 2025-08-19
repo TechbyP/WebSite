@@ -22,13 +22,11 @@ export const ProgressBar = ({ steps, currentStepIndex }: ProgressBarProps) => {
   const isSixteenExpress = configuration.product?.productKey === 'sixteen_express';
 
   const handleStepClick = (stepId: string) => {
-    // Always allow going back to product selection
     if (stepId === 'product-selection') {
       goToStep('product-selection' as ConfiguratorStep);
       return;
     }
 
-    // For Sixteen Express, only allow specific steps
     if (isSixteenExpress) {
       const allowedSteps: ConfiguratorStep[] = ['extras', 'customer-info', 'summary'];
       if (allowedSteps.includes(stepId as ConfiguratorStep)) {
@@ -37,7 +35,6 @@ export const ProgressBar = ({ steps, currentStepIndex }: ProgressBarProps) => {
       return;
     }
 
-    // Normal product flow - allow any previous step
     const clickedIndex = steps.findIndex(step => step.id === stepId);
     if (clickedIndex <= currentStepIndex) {
       goToStep(stepId as ConfiguratorStep);
@@ -86,11 +83,12 @@ export const ProgressBar = ({ steps, currentStepIndex }: ProgressBarProps) => {
     }
   };
 
+  // ----- Mobile Layout -----
   if (isMobile) {
     return (
       <div className="px-4 mb-6">
         <div className="flex items-center justify-between relative">
-          <div className="absolute top-1/2 left-0 right-0 h-1.5 bg-gray-100 -translate-y-1/2 rounded-full">
+          <div className="absolute top-1/2 left-0 right-0 h-1.5 bg-gray-100 dark:bg-gray-700 -translate-y-1/2 rounded-full">
             <motion.div
               className="h-full bg-gradient-to-r from-brandgreen to-green-300 rounded-full"
               initial={{ width: 0 }}
@@ -106,16 +104,16 @@ export const ProgressBar = ({ steps, currentStepIndex }: ProgressBarProps) => {
               key={step.id}
               className="relative z-10 flex flex-col items-center"
               onClick={() => handleStepClick(step.id)}
-              disabled={
-                index > currentStepIndex ||
-                (isSixteenExpress && step.id !== 'product-selection')
-              }
+              disabled={index > currentStepIndex || (isSixteenExpress && step.id !== 'product-selection')}
               aria-label={step.label}
             >
               <motion.div
-                className={`h-10 w-10 rounded-full flex items-center justify-center shadow-sm ${index < currentStepIndex ? 'bg-brandgreen text-white' :
-                  index === currentStepIndex ? 'bg-white border-2 border-brandgreen text-brandgreen shadow-md' :
-                    'bg-white border border-gray-200 text-gray-400'
+                className={`h-10 w-10 rounded-full flex items-center justify-center shadow-sm transition-colors
+                  ${index < currentStepIndex
+                    ? 'bg-brandgreen text-white'
+                    : index === currentStepIndex
+                      ? 'bg-white dark:bg-gray-800 border-2 border-brandgreen text-brandgreen shadow-md'
+                      : 'bg-white dark:bg-gray-800 border border-gray-200 dark:border-gray-600 text-gray-400 dark:text-gray-500'
                   }`}
                 whileTap={{ scale: 0.95 }}
               >
@@ -144,9 +142,9 @@ export const ProgressBar = ({ steps, currentStepIndex }: ProgressBarProps) => {
             key={currentStepIndex}
             initial={{ opacity: 0, y: 10 }}
             animate={{ opacity: 1, y: 0 }}
-            className="mt-4 p-3 bg-gray-50 rounded-lg text-sm"
+            className="mt-4 p-3 bg-gray-50 dark:bg-gray-900 rounded-lg text-sm"
           >
-            <div className="font-medium text-gray-700">
+            <div className="font-medium text-gray-700 dark:text-gray-200">
               {steps[currentStepIndex].label}:
             </div>
             <div className="text-brandgreen font-semibold">
@@ -158,10 +156,11 @@ export const ProgressBar = ({ steps, currentStepIndex }: ProgressBarProps) => {
     );
   }
 
+  // ----- Desktop Layout -----
   return (
     <div className="px-4 sm:px-6 lg:px-8 mb-8">
       <div className="relative">
-        <div className="absolute top-1/2 h-2 w-full bg-gray-100 -translate-y-1/2 rounded-full"></div>
+        <div className="absolute top-1/2 h-2 w-full bg-gray-100 dark:bg-gray-700 -translate-y-1/2 rounded-full"></div>
 
         <motion.div
           className="absolute top-1/2 h-2 bg-gradient-to-r from-brandgreen to-green-300 -translate-y-1/2 rounded-full"
@@ -182,18 +181,19 @@ export const ProgressBar = ({ steps, currentStepIndex }: ProgressBarProps) => {
                 key={step.id}
                 className="flex flex-col items-center w-full group"
                 onClick={() => handleStepClick(step.id)}
-                disabled={
-                  index > currentStepIndex ||
-                  (isSixteenExpress && step.id !== 'product-selection')
-                }
+                disabled={index > currentStepIndex || (isSixteenExpress && step.id !== 'product-selection')}
                 aria-label={step.label}
               >
                 <div className="flex flex-col items-center w-full relative">
                   <motion.div
-                    className={`h-12 w-12 rounded-full flex items-center justify-center shadow-sm ${isSkippedStep ? 'bg-green-100 text-brandgreen border-2 border-brandgreen' :
-                      index < currentStepIndex ? 'bg-brandgreen text-white' :
-                        index === currentStepIndex ? 'bg-white border-3 border-brandgreen text-brandgreen shadow-md' :
-                          'bg-white border border-gray-200 text-gray-400'
+                    className={`h-12 w-12 rounded-full flex items-center justify-center shadow-sm transition-colors
+                      ${isSkippedStep
+                        ? 'bg-green-100 dark:bg-green-900 text-brandgreen border-2 border-brandgreen'
+                        : index < currentStepIndex
+                          ? 'bg-brandgreen text-white'
+                          : index === currentStepIndex
+                            ? 'bg-white dark:bg-gray-800 border-3 border-brandgreen text-brandgreen shadow-md'
+                            : 'bg-white dark:bg-gray-800 border border-gray-200 dark:border-gray-600 text-gray-400 dark:text-gray-500'
                       }`}
                     whileHover={{ scale: index <= currentStepIndex ? 1.05 : 1 }}
                     whileTap={{ scale: index <= currentStepIndex ? 0.95 : 1 }}
@@ -207,12 +207,15 @@ export const ProgressBar = ({ steps, currentStepIndex }: ProgressBarProps) => {
                   </motion.div>
 
                   <motion.span
-                    className={`mt-3 text-sm font-medium ${isSkippedStep ? 'text-brandgreen' :
-                      index < currentStepIndex ? 'text-brandgreen' :
-                        index === currentStepIndex ? 'text-brandgreen font-semibold' :
-                          'text-gray-500'
+                    className={`mt-3 text-sm font-medium transition-colors
+                      ${isSkippedStep
+                        ? 'text-brandgreen'
+                        : index < currentStepIndex
+                          ? 'text-brandgreen'
+                          : index === currentStepIndex
+                            ? 'text-brandgreen font-semibold'
+                            : 'text-gray-500 dark:text-gray-400'
                       }`}
-                    whileHover={{ scale: index <= currentStepIndex ? 1.05 : 1 }}
                   >
                     {step.label}
                   </motion.span>
@@ -221,13 +224,8 @@ export const ProgressBar = ({ steps, currentStepIndex }: ProgressBarProps) => {
                 {(index <= currentStepIndex || isSkippedStep) && (
                   <motion.div
                     initial={{ opacity: 0, y: -5 }}
-                    animate={{
-                      opacity: 1,
-                      y: 0,
-                      transition: { delay: index * 0.1 }
-                    }}
-                    className="mt-2 px-2 py-1 bg-gray-50 rounded-full text-xs font-medium text-gray-700 whitespace-nowrap overflow-hidden text-ellipsis max-w-[90%]"
-                    whileHover={{ backgroundColor: index <= currentStepIndex ? '#f0f0f0' : 'inherit' }}
+                    animate={{ opacity: 1, y: 0, transition: { delay: index * 0.1 } }}
+                    className="mt-2 px-2 py-1 bg-gray-50 dark:bg-gray-900 rounded-full text-xs font-medium text-gray-700 dark:text-gray-200 whitespace-nowrap overflow-hidden text-ellipsis max-w-[90%]"
                   >
                     {getStepSummary(step.id)}
                   </motion.div>

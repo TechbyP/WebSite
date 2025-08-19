@@ -31,6 +31,7 @@ import AnnouncementEditor from './admin/announcement/AnnouncementEditor';
 import { collection, addDoc } from 'firebase/firestore';
 import { db } from './firebase';
 import { initializeProducts, products } from './data/products';
+import { ThemeProvider } from '../src/utils/context/theme-context';
 
 const COOKIE_CONSENT_NAME = 'cookie_consent';
 
@@ -94,11 +95,11 @@ function App() {
   }, []);
 
   // Track SPA pageviews (Firebase + GA)
-useEffect(() => {
-  if ((window as any).gtag && Cookies.get(COOKIE_CONSENT_NAME) === 'accepted') {
-    (window as any).gtag('event', 'page_view', { page_path: location.pathname });
-  }
-}, [location.pathname]);
+  useEffect(() => {
+    if ((window as any).gtag && Cookies.get(COOKIE_CONSENT_NAME) === 'accepted') {
+      (window as any).gtag('event', 'page_view', { page_path: location.pathname });
+    }
+  }, [location.pathname]);
 
 
   // Scroll behavior for homepage
@@ -131,16 +132,18 @@ useEffect(() => {
         <Routes>
           <Route
             element={
-              <HeaderProvider>
-                <div className="min-h-screen bg-white flex">
-                  <main className="flex-grow transition-all duration-500 ease-in-out no-horizontal-overflow w-full max-w-[100vw]">
-                    <Outlet />
-                    <Footer />
-                  </main>
-                  <CookieBanner />
-                  <ChatWidget open={chatOpen} setOpen={setChatOpen} />
-                </div>
-              </HeaderProvider>
+              <ThemeProvider>
+                <HeaderProvider>
+                  <div className="min-h-screen bg-white dark:bg-gray-900 flex transition-colors duration-500">
+                    <main className="flex-grow transition-all duration-500 ease-in-out no-horizontal-overflow w-full max-w-[100vw]">
+                      <Outlet />
+                      <Footer />
+                    </main>
+                    <CookieBanner />
+                    <ChatWidget open={chatOpen} setOpen={setChatOpen} />
+                  </div>
+                </HeaderProvider>
+              </ThemeProvider>
             }
           >
             <Route path="/" element={<HomePage />} />

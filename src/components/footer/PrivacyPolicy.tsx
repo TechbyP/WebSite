@@ -2,23 +2,33 @@ import React from 'react';
 import { ArrowLeft } from 'lucide-react';
 import { useNavigate } from 'react-router-dom';
 import { useTranslation } from 'react-i18next';
+import { useTheme } from '../../utils/context/theme-context'; // import your hook
 
 const PrivacyPolicy = () => {
   const navigate = useNavigate();
   const { t } = useTranslation();
+  const { theme } = useTheme();
 
   return (
-    <div className="max-w-4xl mx-auto px-4 py-8">
+    <div
+      className={`max-w-4xl mx-auto px-4 py-8 min-h-screen transition-colors duration-500
+        ${theme === 'dark' ? 'bg-gray-900 text-gray-100' : 'bg-gray-50 text-gray-900'}
+      `}
+    >
       <button 
         onClick={() => navigate(-1)}
-        className="flex items-center mb-6 text-brandgreen hover:text-brandgreen-dark"
+        className={`flex items-center mb-6 ${
+          theme === 'dark'
+            ? 'text-brandgreen hover:text-brandgreen/80'
+            : 'text-brandgreen hover:text-brandgreen-dark'
+        }`}
       >
         <ArrowLeft className="mr-2" /> {t('privacy.back')}
       </button>
       
       <h1 className="text-3xl font-bold mb-6">{t('privacy.title')}</h1>
       
-      <div className="prose prose-lg">
+      <div className={`prose prose-lg ${theme === 'dark' ? 'prose-invert' : ''}`}>
         <section className="mb-8">
           <h2 className="text-2xl font-semibold mb-4">{t('privacy.introduction.title')}</h2>
           <p className="mb-4">{t('privacy.introduction.text')}</p>

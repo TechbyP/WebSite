@@ -4,9 +4,11 @@ import ReCAPTCHA from 'react-google-recaptcha';
 import emailjs from '@emailjs/browser';
 import { Helmet } from 'react-helmet-async';
 import { useTranslation } from 'react-i18next';
+import { useTheme } from '../utils/context/theme-context'; // Import the theme hook
 
 const ContactPage = () => {
     const { t, i18n } = useTranslation();
+    const { theme } = useTheme(); // Get the current theme
     const [form, setForm] = useState({
         name: '',
         company: '',
@@ -159,12 +161,21 @@ const ContactPage = () => {
         hover: cardVariants.hover
     };
 
+    // Dark mode classes
+    const bgClass = theme === 'dark' ? 'bg-gray-900' : 'bg-gray-50';
+    const textClass = theme === 'dark' ? 'text-gray-100' : 'text-gray-900';
+    const textSecondaryClass = theme === 'dark' ? 'text-gray-300' : 'text-gray-600';
+    const cardBgClass = theme === 'dark' ? 'bg-gray-800' : 'bg-white';
+    const borderClass = theme === 'dark' ? 'border-gray-700' : 'border-gray-300';
+    const inputBgClass = theme === 'dark' ? 'bg-gray-700 text-white' : 'bg-white';
+    const shadowClass = theme === 'dark' ? 'shadow-lg' : 'shadow-sm';
+
     return (
         <motion.div
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
             transition={{ duration: 0.5 }}
-            className="min-h-screen bg-gray-50 py-12 px-4 sm:px-6 lg:px-8"
+            className={`min-h-screen ${bgClass} py-12 px-4 sm:px-6 lg:px-8`}
         >
             <div className="max-w-7xl mx-auto">
                 <Helmet>
@@ -192,13 +203,13 @@ const ContactPage = () => {
                     <div className="lg:col-span-2">
                         <motion.h1
                             variants={itemVariants}
-                            className="text-4xl font-extrabold text-gray-900 mb-6 uppercase"
+                            className={`text-4xl font-extrabold ${textClass} mb-6 uppercase`}
                         >
                             {t('title')}
                         </motion.h1>
                         <motion.p
                             variants={itemVariants}
-                            className="text-lg text-gray-600 mb-8"
+                            className={`text-lg ${textSecondaryClass} mb-8`}
                         >
                             {t('description')}
                         </motion.p>
@@ -207,20 +218,20 @@ const ContactPage = () => {
                             <motion.div
                                 variants={combinedVariants}
                                 whileHover="hover"
-                                className="bg-white p-6 rounded-xl shadow-sm"
+                                className={`${cardBgClass} p-6 rounded-xl ${shadowClass}`}
                             >
-                                <h3 className="text-xl font-bold text-gray-800 mb-4">{t('address.title')}</h3>
-                                <address className="not-italic text-gray-600 space-y-2">
+                                <h3 className={`text-xl font-bold ${textClass} mb-4`}>{t('address.title')}</h3>
+                                <address className={`not-italic ${textSecondaryClass} space-y-2`}>
                                     <p>{t('address.company')}</p>
                                     <p>{t('address.street')}</p>
                                     <p>{t('address.city')}</p>
                                     <p className="mt-4">
-                                        <a href="tel:+495431936440" className="text-blue-600 hover:text-green-600 transition-colors">
+                                        <a href="tel:+495431936440" className="text-blue-400 hover:text-green-400 transition-colors">
                                             {t('address.phone')}
                                         </a>
                                     </p>
                                     <p>
-                                        <a href="mailto:info@bodenprobetechnik.de" className="text-blue-600 hover:text-green-600 transition-colors">
+                                        <a href="mailto:info@bodenprobetechnik.de" className="text-blue-400 hover:text-green-400 transition-colors">
                                             {t('address.email')}
                                         </a>
                                     </p>
@@ -230,10 +241,10 @@ const ContactPage = () => {
                             <motion.div
                                 variants={combinedVariants}
                                 whileHover="hover"
-                                className="bg-white p-6 rounded-xl shadow-sm"
+                                className={`${cardBgClass} p-6 rounded-xl ${shadowClass}`}
                             >
-                                <h3 className="text-xl font-bold text-gray-800 mb-4">{t('hours.title')}</h3>
-                                <div className="text-gray-600 space-y-2">
+                                <h3 className={`text-xl font-bold ${textClass} mb-4`}>{t('hours.title')}</h3>
+                                <div className={`${textSecondaryClass} space-y-2`}>
                                     <p className="flex justify-between">
                                         <span>{t('hours.weekdays')}:</span>
                                         <span>{t('hours.weekdaysTime')}</span>
@@ -251,64 +262,56 @@ const ContactPage = () => {
                             <motion.div
                                 variants={combinedVariants}
                                 whileHover="hover"
-                                className="bg-white p-6 rounded-xl shadow-sm"
+                                className={`${cardBgClass} p-6 rounded-xl ${shadowClass}`}
                             >
                                 <div className="flex items-center mb-4">
                                     <motion.div
                                         whileHover={{ rotate: 10 }}
-                                        className="p-3 rounded-full bg-blue-100 text-blue-600"
+                                        className="p-3 rounded-full bg-blue-900 text-blue-400"
                                     >
                                         <svg xmlns="http://www.w3.org/2000/svg" className="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                                             <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z" />
                                         </svg>
                                     </motion.div>
-                                    <h3 className="ml-3 text-xl font-bold text-gray-800">{t('phone.title')}</h3>
+                                    <h3 className={`ml-3 text-xl font-bold ${textClass}`}>{t('phone.title')}</h3>
                                 </div>
-                                <p className="text-gray-600">
+                                <p className={textSecondaryClass}>
                                     {t('phone.description')}
                                 </p>
                                 <div className="mt-4 space-y-1">
-                                    <p className="text-gray-800 font-medium">
-                                        <a href="tel:+495431936440" className="hover:text-green-600 transition-colors">
+                                    <p className={`${textClass} font-medium`}>
+                                        <a href="tel:+495431936440" className="hover:text-green-400 transition-colors">
                                             {t('phone.number')}
                                         </a>
                                     </p>
-                                    {/* <p className="text-sm text-gray-500">{t('phone.supportExt')}</p>
-                                    <p className="text-sm text-gray-500">{t('phone.salesExt')}</p> */}
                                 </div>
                             </motion.div>
 
                             <motion.div
                                 variants={combinedVariants}
                                 whileHover="hover"
-                                className="bg-white p-6 rounded-xl shadow-sm"
+                                className={`${cardBgClass} p-6 rounded-xl ${shadowClass}`}
                             >
                                 <div className="flex items-center mb-4">
                                     <motion.div
                                         whileHover={{ rotate: 10 }}
-                                        className="p-3 rounded-full bg-blue-100 text-blue-600"
+                                        className="p-3 rounded-full bg-blue-900 text-blue-400"
                                     >
                                         <svg xmlns="http://www.w3.org/2000/svg" className="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                                             <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" />
                                         </svg>
                                     </motion.div>
-                                    <h3 className="ml-3 text-xl font-bold text-gray-800">{t('email.title')}</h3>
+                                    <h3 className={`ml-3 text-xl font-bold ${textClass}`}>{t('email.title')}</h3>
                                 </div>
-                                <p className="text-gray-600">
+                                <p className={textSecondaryClass}>
                                     {t('email.description')}
                                 </p>
                                 <div className="mt-4 space-y-1">
-                                    <p className="text-gray-800 font-medium">
-                                        <a href="mailto:info@bodenprobetechnik.de" className="hover:text-green-600 transition-colors">
+                                    <p className={`${textClass} font-medium`}>
+                                        <a href="mailto:info@bodenprobetechnik.de" className="hover:text-green-400 transition-colors">
                                             {t('email.main')}
                                         </a>
                                     </p>
-                                    {/* <p className="text-sm text-gray-500">
-                                        {t('email.technical')}: <a href="mailto:support@bodenprobetechnik.de" className="hover:text-green-600 transition-colors">support@bodenprobetechnik.de</a>
-                                    </p>
-                                    <p className="text-sm text-gray-500">
-                                        {t('email.sales')}: <a href="mailto:sales@bodenprobetechnik.de" className="hover:text-green-600 transition-colors">sales@bodenprobetechnik.de</a>
-                                    </p> */}
                                 </div>
                             </motion.div>
                         </div>
@@ -317,9 +320,9 @@ const ContactPage = () => {
                     {/* Contact Form */}
                     <motion.div
                         variants={itemVariants}
-                        className="bg-white p-8 rounded-xl shadow-md"
+                        className={`${cardBgClass} p-8 rounded-xl ${shadowClass}`}
                     >
-                        <h2 className="text-2xl font-bold text-gray-800 mb-6">{t('formular.title')}</h2>
+                        <h2 className={`text-2xl font-bold ${textClass} mb-6`}>{t('formular.title')}</h2>
 
                         <AnimatePresence mode="wait">
                             {isSubmitted ? (
@@ -341,8 +344,8 @@ const ContactPage = () => {
                                             <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" />
                                         </svg>
                                     </motion.div>
-                                    <h3 className="mt-4 text-lg font-medium text-gray-900">{t('formular.successTitle')}</h3>
-                                    <p className="mt-2 text-gray-600">
+                                    <h3 className={`mt-4 text-lg font-medium ${textClass}`}>{t('formular.successTitle')}</h3>
+                                    <p className={`mt-2 ${textSecondaryClass}`}>
                                         {t('formular.successMessage')}
                                     </p>
                                     <motion.button
@@ -365,7 +368,7 @@ const ContactPage = () => {
                                     className="space-y-4"
                                 >
                                     <motion.div variants={itemVariants}>
-                                        <label htmlFor="name" className="block text-sm font-medium text-gray-700 mb-1">
+                                        <label htmlFor="name" className={`block text-sm font-medium ${textClass} mb-1`}>
                                             {t('formular.name')} <span className="text-red-500">*</span>
                                         </label>
                                         <input
@@ -377,12 +380,12 @@ const ContactPage = () => {
                                             required
                                             minLength={2}
                                             maxLength={100}
-                                            className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-600 focus:outline-none transition-all"
+                                            className={`w-full px-4 py-3 ${borderClass} rounded-lg focus:ring-2 focus:ring-blue-600 focus:outline-none transition-all ${inputBgClass}`}
                                         />
                                     </motion.div>
 
                                     <motion.div variants={itemVariants}>
-                                        <label htmlFor="company" className="block text-sm font-medium text-gray-700 mb-1">
+                                        <label htmlFor="company" className={`block text-sm font-medium ${textClass} mb-1`}>
                                             {t('formular.company')}
                                         </label>
                                         <input
@@ -391,12 +394,12 @@ const ContactPage = () => {
                                             value={form.company}
                                             placeholder={t('formular.placeholders.company')}
                                             onChange={handleChange}
-                                            className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-600 focus:outline-none transition-all"
+                                            className={`w-full px-4 py-3 ${borderClass} rounded-lg focus:ring-2 focus:ring-blue-600 focus:outline-none transition-all ${inputBgClass}`}
                                         />
                                     </motion.div>
 
                                     <motion.div variants={itemVariants}>
-                                        <label htmlFor="email" className="block text-sm font-medium text-gray-700 mb-1">
+                                        <label htmlFor="email" className={`block text-sm font-medium ${textClass} mb-1`}>
                                             {t('formular.email')} <span className="text-red-500">*</span>
                                         </label>
                                         <input
@@ -408,12 +411,12 @@ const ContactPage = () => {
                                             onChange={handleChange}
                                             required
                                             pattern="[^@\s]+@[^@\s]+\.[^@\s]+"
-                                            className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-600 focus:outline-none transition-all"
+                                            className={`w-full px-4 py-3 ${borderClass} rounded-lg focus:ring-2 focus:ring-blue-600 focus:outline-none transition-all ${inputBgClass}`}
                                         />
                                     </motion.div>
 
                                     <motion.div variants={itemVariants}>
-                                        <label htmlFor="phone" className="block text-sm font-medium text-gray-700 mb-1">
+                                        <label htmlFor="phone" className={`block text-sm font-medium ${textClass} mb-1`}>
                                             {t('formular.phone')}
                                         </label>
                                         <input
@@ -423,22 +426,21 @@ const ContactPage = () => {
                                             value={form.phone}
                                             placeholder={t('formular.placeholders.phone')}
                                             onChange={handleChange}
-                                            className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-600 focus:outline-none transition-all"
+                                            className={`w-full px-4 py-3 ${borderClass} rounded-lg focus:ring-2 focus:ring-blue-600 focus:outline-none transition-all ${inputBgClass}`}
                                         />
                                     </motion.div>
 
                                     <motion.div variants={itemVariants}>
-                                        <label htmlFor="subject" className="block text-sm font-medium text-gray-700 mb-1">
+                                        <label htmlFor="subject" className={`block text-sm font-medium ${textClass} mb-1`}>
                                             {t('formular.subject')} <span className="text-red-500">*</span>
                                         </label>
                                         <select
                                             id="subject"
                                             name="subject"
                                             value={form.subject}
-
                                             onChange={handleChange}
                                             required
-                                            className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-600 focus:outline-none transition-all"
+                                            className={`w-full px-4 py-3 ${borderClass} rounded-lg focus:ring-2 focus:ring-blue-600 focus:outline-none transition-all ${inputBgClass}`}
                                         >
                                             {subjects.map((subject) => (
                                                 <option key={subject.id} value={subject.id}>{subject.label}</option>
@@ -447,7 +449,7 @@ const ContactPage = () => {
                                     </motion.div>
 
                                     <motion.div variants={itemVariants}>
-                                        <label htmlFor="message" className="block text-sm font-medium text-gray-700 mb-1">
+                                        <label htmlFor="message" className={`block text-sm font-medium ${textClass} mb-1`}>
                                             {t('formular.message')} <span className="text-red-500">*</span>
                                         </label>
                                         <textarea
@@ -460,7 +462,7 @@ const ContactPage = () => {
                                             minLength={10}
                                             maxLength={1000}
                                             rows={5}
-                                            className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-600 focus:outline-none transition-all"
+                                            className={`w-full px-4 py-3 ${borderClass} rounded-lg focus:ring-2 focus:ring-blue-600 focus:outline-none transition-all ${inputBgClass}`}
                                         />
                                     </motion.div>
 
@@ -473,13 +475,13 @@ const ContactPage = () => {
                                                 checked={form.dataConsent}
                                                 onChange={handleChange}
                                                 required
-                                                className="focus:ring-blue-600 h-4 w-4 text-blue-600 border-gray-300 rounded"
+                                                className={`focus:ring-blue-600 h-4 w-4 text-blue-600 ${borderClass} rounded`}
                                             />
                                         </div>
                                         <div className="ml-3 text-sm">
-                                            <label htmlFor="dataConsent" className="font-medium text-gray-700">
+                                            <label htmlFor="dataConsent" className={`font-medium ${textClass}`}>
                                                 {t('formular.consent')}{' '}
-                                                <a href="/privacy" className="text-blue-600 hover:text-green-600 underline transition-colors">
+                                                <a href="/privacy" className="text-blue-400 hover:text-green-400 underline transition-colors">
                                                     {t('formular.privacyPolicy')}
                                                 </a>
                                                 . <span className="text-red-500">*</span>
@@ -532,7 +534,7 @@ const ContactPage = () => {
                                         <motion.p
                                             initial={{ opacity: 0 }}
                                             animate={{ opacity: 1 }}
-                                            className={`text-center text-sm mt-2 ${status === t('formular.success') ? 'text-green-600' : 'text-red-600'}`}
+                                            className={`text-center text-sm mt-2 ${status === t('formular.success') ? 'text-green-500' : 'text-red-500'}`}
                                         >
                                             {status}
                                         </motion.p>
@@ -546,7 +548,7 @@ const ContactPage = () => {
                 {/* Map Section */}
                 <motion.div
                     variants={itemVariants}
-                    className="bg-white rounded-xl shadow-md overflow-hidden"
+                    className={`${cardBgClass} rounded-xl ${shadowClass} overflow-hidden`}
                 >
                     <div className="h-96 w-full relative">
                         <iframe
@@ -562,8 +564,8 @@ const ContactPage = () => {
                         ></iframe>
                     </div>
                     <div className="p-6">
-                        <h3 className="text-xl font-bold text-gray-800 mb-2">{t('map.visit')}</h3>
-                        <p className="text-gray-600 mb-4">
+                        <h3 className={`text-xl font-bold ${textClass} mb-2`}>{t('map.visit')}</h3>
+                        <p className={`${textSecondaryClass} mb-4`}>
                             {t('map.description')}
                         </p>
                         <div className="flex flex-wrap gap-4">
@@ -573,7 +575,7 @@ const ContactPage = () => {
                                 href="https://www.google.com/maps?q=Bodenprobetechnik+Peters+GmbH,+Am+Fliegerhorst+11,+49610+Quakenbrück,+Germany"
                                 target="_blank"
                                 rel="noopener noreferrer"
-                                className="inline-flex items-center px-4 py-2 border border-gray-300 shadow-sm text-sm font-medium rounded-md text-gray-700 bg-white hover:bg-gray-50 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-blue-600"
+                                className={`inline-flex items-center px-4 py-2 border ${borderClass} ${shadowClass} text-sm font-medium rounded-md ${textClass} ${theme === 'dark' ? 'bg-gray-700 hover:bg-gray-600' : 'bg-white hover:bg-gray-50'} focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-blue-600`}
                             >
                                 <svg
                                     xmlns="http://www.w3.org/2000/svg"
@@ -606,32 +608,32 @@ const ContactPage = () => {
                     variants={itemVariants}
                     className="mt-16"
                 >
-                    <h2 className="text-3xl font-extrabold text-gray-900 mb-8">{t('faq.title')}</h2>
+                    <h2 className={`text-3xl font-extrabold ${textClass} mb-8`}>{t('faq.title')}</h2>
                     <div className="space-y-4">
                         <motion.div
                             whileHover={{ y: -3 }}
-                            className="bg-white p-6 rounded-xl shadow-sm"
+                            className={`${cardBgClass} p-6 rounded-xl ${shadowClass}`}
                         >
-                            <h3 className="text-lg font-medium text-gray-900">{t('faq.shipping.question')}</h3>
-                            <p className="mt-2 text-gray-600">
+                            <h3 className={`text-lg font-medium ${textClass}`}>{t('faq.shipping.question')}</h3>
+                            <p className={`mt-2 ${textSecondaryClass}`}>
                                 {t('faq.shipping.answer')}
                             </p>
                         </motion.div>
                         <motion.div
                             whileHover={{ y: -3 }}
-                            className="bg-white p-6 rounded-xl shadow-sm"
+                            className={`${cardBgClass} p-6 rounded-xl ${shadowClass}`}
                         >
-                            <h3 className="text-lg font-medium text-gray-900">{t('faq.training.question')}</h3>
-                            <p className="mt-2 text-gray-600">
+                            <h3 className={`text-lg font-medium ${textClass}`}>{t('faq.training.question')}</h3>
+                            <p className={`mt-2 ${textSecondaryClass}`}>
                                 {t('faq.training.answer')}
                             </p>
                         </motion.div>
                         <motion.div
                             whileHover={{ y: -3 }}
-                            className="bg-white p-6 rounded-xl shadow-sm"
+                            className={`${cardBgClass} p-6 rounded-xl ${shadowClass}`}
                         >
-                            <h3 className="text-lg font-medium text-gray-900">{t('faq.distributor.question')}</h3>
-                            <p className="mt-2 text-gray-600">
+                            <h3 className={`text-lg font-medium ${textClass}`}>{t('faq.distributor.question')}</h3>
+                            <p className={`mt-2 ${textSecondaryClass}`}>
                                 {t('faq.distributor.answer')}
                             </p>
                         </motion.div>

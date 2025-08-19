@@ -1,3 +1,4 @@
+import { useTheme } from '../utils/context/theme-context';
 import { useState, useRef, useEffect } from 'react';
 import { useTranslation } from 'react-i18next';
 import ProductShowcase from '../components/ProductShowcase';
@@ -34,7 +35,7 @@ function ChevronDownIcon() {
     );
 }
 
-function BoldChevronIcon({ open }) {
+function BoldChevronIcon({ open }: { open: boolean }) {
     return (
         <svg
             className={`ml-1 h-4 w-4 transition-transform duration-200 ${open ? 'rotate-180' : 'rotate-0'}`}
@@ -50,12 +51,12 @@ function BoldChevronIcon({ open }) {
     );
 }
 
-export default function CustomSortDropdown({ sortOption, setSortOption, closeMenu }) {
+export default function CustomSortDropdown({ sortOption, setSortOption, closeMenu }: any) {
     const [isOpen, setIsOpen] = useState(false);
-    const dropdownRef = useRef(null);
+    const dropdownRef = useRef<HTMLDivElement>(null);
     const { t } = useTranslation();
+    const { theme } = useTheme();
 
-    // Store only translation keys
     const sortOptions = [
         { value: '', labelKey: 'sortDropdown.defaultLabel' },
         { value: 'price', mainKey: 'sortDropdown.options.price.main', descKey: 'sortDropdown.options.price.description' },
@@ -66,8 +67,8 @@ export default function CustomSortDropdown({ sortOption, setSortOption, closeMen
     ];
 
     useEffect(() => {
-        function handleClickOutside(event) {
-            if (dropdownRef.current && !dropdownRef.current.contains(event.target)) {
+        function handleClickOutside(event: MouseEvent) {
+            if (dropdownRef.current && !dropdownRef.current.contains(event.target as Node)) {
                 setIsOpen(false);
             }
         }
@@ -90,7 +91,7 @@ export default function CustomSortDropdown({ sortOption, setSortOption, closeMen
         );
     };
 
-    function onSelect(value) {
+    function onSelect(value: string) {
         setSortOption(value ? `${value}-asc` : '');
         if (closeMenu) closeMenu();
         else setIsOpen(false);
@@ -109,12 +110,12 @@ export default function CustomSortDropdown({ sortOption, setSortOption, closeMen
     return (
         <div
             ref={dropdownRef}
-            className="relative inline-flex items-center gap-1 bg-white rounded-md"
+            className="relative inline-flex items-center gap-1"
         >
             {/* Dropdown Button */}
             <button
                 onClick={() => setIsOpen(!isOpen)}
-                className="inline-flex items-center justify-between px-3 py-2 bg-white border border-gray-300 rounded-md text-gray-700 font-medium hover:bg-gray-50 focus:outline-none focus:ring-2 focus:ring-brandgreen focus:ring-offset-1 transition-colors"
+                className="inline-flex items-center justify-between px-3 py-2 bg-white dark:bg-gray-800 border border-gray-300 dark:border-gray-600 rounded-md text-gray-700 dark:text-gray-300 font-medium hover:bg-gray-50 dark:hover:bg-gray-700 focus:outline-none focus:ring-2 focus:ring-brandgreen focus:ring-offset-1 transition-colors"
                 aria-haspopup="true"
                 aria-expanded={isOpen}
                 type="button"
@@ -127,10 +128,11 @@ export default function CustomSortDropdown({ sortOption, setSortOption, closeMen
             <button
                 onClick={toggleSortOrder}
                 disabled={!sortOption}
-                className={`p-2 rounded-md transition-colors ${!sortOption
-                    ? 'text-gray-400 bg-gray-100 cursor-not-allowed border border-gray-200'
-                    : 'text-gray-700 border border-gray-300 hover:bg-brandgreen hover:text-white hover:border-brandgreen'
-                    }`}
+                className={`p-2 rounded-md transition-colors ${
+                    !sortOption
+                        ? 'text-gray-400 bg-gray-100 dark:bg-gray-700 cursor-not-allowed border border-gray-200 dark:border-gray-600'
+                        : 'text-gray-700 dark:text-gray-300 border border-gray-300 dark:border-gray-600 hover:bg-brandgreen dark:hover:bg-brandgreen hover:text-white'
+                }`}
                 type="button"
                 aria-label={t('sortDropdown.ariaLabels.toggleSort')}
             >
@@ -141,10 +143,11 @@ export default function CustomSortDropdown({ sortOption, setSortOption, closeMen
             <button
                 onClick={clearSort}
                 disabled={!sortOption}
-                className={`p-2 rounded-md transition-colors ${!sortOption
-                    ? 'text-gray-400 bg-gray-100 cursor-not-allowed border border-gray-200'
-                    : 'text-gray-700 border border-gray-300 hover:bg-brandorange hover:text-white hover:border-brandorange'
-                    }`}
+                className={`p-2 rounded-md transition-colors ${
+                    !sortOption
+                        ? 'text-gray-400 bg-gray-100 dark:bg-gray-700 cursor-not-allowed border border-gray-200 dark:border-gray-600'
+                        : 'text-gray-700 dark:text-gray-300 border border-gray-300 dark:border-gray-600 hover:bg-brandorange dark:hover:bg-brandorange hover:text-white'
+                }`}
                 type="button"
                 aria-label={t('sortDropdown.ariaLabels.clearSort')}
             >
@@ -165,7 +168,7 @@ export default function CustomSortDropdown({ sortOption, setSortOption, closeMen
             {/* Dropdown List */}
             {isOpen && (
                 <ul
-                    className="absolute z-50 w-56 bg-white shadow-lg rounded-md py-1 text-base ring-1 ring-black ring-opacity-5 focus:outline-none left-0 bottom-full mb-1 md:top-full md:mt-1 md:bottom-auto"
+                    className="absolute z-50 w-56 bg-white dark:bg-gray-800 shadow-lg rounded-md py-1 text-base ring-1 ring-black ring-opacity-5 dark:ring-gray-700 focus:outline-none left-0 bottom-full mb-1 md:top-full md:mt-1 md:bottom-auto"
                     role="menu"
                     aria-orientation="vertical"
                     aria-labelledby="menu-button"
@@ -174,8 +177,11 @@ export default function CustomSortDropdown({ sortOption, setSortOption, closeMen
                         <li
                             key={option.value}
                             onClick={() => onSelect(option.value)}
-                            className={`cursor-pointer select-none relative py-2 px-4 hover:bg-gray-100 ${selectedValue === option.value ? 'font-semibold bg-gray-100' : 'text-gray-700'
-                                }`}
+                            className={`cursor-pointer select-none relative py-2 px-4 hover:bg-gray-100 dark:hover:bg-gray-700 ${
+                                selectedValue === option.value
+                                    ? 'font-semibold bg-gray-100 dark:bg-gray-700'
+                                    : 'text-gray-700 dark:text-gray-300'
+                            }`}
                             role="menuitem"
                             tabIndex={-1}
                         >
@@ -185,8 +191,7 @@ export default function CustomSortDropdown({ sortOption, setSortOption, closeMen
                                         ? t(option.labelKey)
                                         : <>
                                             <strong>{t(option.mainKey)}</strong> ({t(option.descKey)})
-                                          </>
-                                    }
+                                          </>}
                                 </span>
                             </div>
                         </li>

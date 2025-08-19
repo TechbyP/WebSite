@@ -1,5 +1,12 @@
 {
 
+
+ "headerTheme": {
+    "switchToDark": "Dark mode",
+    "switchToLight": "Light mode"
+ 
+},
+
 "termsOfService":{
 
   "back": "Back",
@@ -695,7 +702,8 @@
       "news": "News & Updates",
       "contact": "Contact",
       "privacyPolicy": "Privacy Policy",
-      "terms": "Terms of Service"
+      "terms": "Terms of Service",
+      "imprint":"Imprint"
     },
     "social": {
       "facebook": "Facebook",

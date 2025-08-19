@@ -2,6 +2,7 @@
 export default {
   content: ['./index.html', './src/**/*.{js,ts,jsx,tsx}'],
   safelist: ['touch-pan-y', 'touch-none'], // Optional
+  darkMode: 'class', // Enable dark mode via class
   theme: {
     extend: {
       fontFamily: {

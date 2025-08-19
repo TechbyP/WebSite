@@ -11,7 +11,7 @@ const Trust = () => {
   const certifications = t('certifications', { returnObjects: true });
 
   return (
-    <section className="py-16 sm:py-20 bg-gray-50 overflow-hidden">
+    <section className="py-16 sm:py-20 bg-gray-50 dark:bg-gray-900 overflow-hidden transition-colors duration-300">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         {/* Partners Header */}
         <motion.div
@@ -21,10 +21,10 @@ const Trust = () => {
           transition={{ duration: 0.6 }}
           className="text-center mb-12"
         >
-          <h2 className="text-2xl sm:text-3xl font-extrabold text-gray-900 mb-4 uppercase tracking-tight">
+          <h2 className="text-2xl sm:text-3xl font-extrabold text-gray-900 dark:text-white mb-4 uppercase tracking-tight transition-colors duration-300">
             {t('partnersHeader.title')}
           </h2>
-          <p className="max-w-2xl mx-auto text-gray-600 text-base sm:text-lg">
+          <p className="max-w-2xl mx-auto text-gray-600 dark:text-gray-400 text-base sm:text-lg transition-colors duration-300">
             {t('partnersHeader.description')}
           </p>
         </motion.div>
@@ -44,7 +44,7 @@ const Trust = () => {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ duration: 0.4, delay: i * 0.1 }}
-              className="text-center text-xs sm:text-sm font-medium text-gray-700 bg-white py-3 px-2 rounded-md shadow-sm flex items-center justify-center h-16"
+              className="text-center text-xs sm:text-sm font-medium text-gray-700 dark:text-gray-200 bg-white dark:bg-gray-800 py-3 px-2 rounded-md shadow-sm dark:shadow-gray-700/20 flex items-center justify-center h-16 transition-all duration-300 hover:shadow-md hover:dark:shadow-gray-700/30"
             >
               {partner}
             </motion.div>
@@ -59,10 +59,10 @@ const Trust = () => {
           transition={{ duration: 0.6 }}
           className="text-center mb-12"
         >
-          <h2 className="text-2xl sm:text-3xl font-extrabold text-gray-900 mb-4 uppercase tracking-tight">
+          <h2 className="text-2xl sm:text-3xl font-extrabold text-gray-900 dark:text-white mb-4 uppercase tracking-tight transition-colors duration-300">
             {t('testimonialsHeader.title')}
           </h2>
-          <p className="max-w-2xl mx-auto text-gray-600 text-base sm:text-lg">
+          <p className="max-w-2xl mx-auto text-gray-600 dark:text-gray-400 text-base sm:text-lg transition-colors duration-300">
             {t('testimonialsHeader.description')}
           </p>
         </motion.div>
@@ -76,9 +76,9 @@ const Trust = () => {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ duration: 0.6, delay: i * 0.2 }}
-              className="bg-white rounded-xl p-6 sm:p-8 shadow-md flex flex-col"
+              className="bg-white dark:bg-gray-800 rounded-xl p-6 sm:p-8 shadow-md dark:shadow-gray-700/20 flex flex-col transition-all duration-300 hover:shadow-lg hover:dark:shadow-gray-700/30"
             >
-              <Quote className="text-blue-600 mb-4 h-6 w-6 sm:h-8 sm:w-8" />
+              <Quote className="text-blue-600 dark:text-blue-400 mb-4 h-6 w-6 sm:h-8 sm:w-8 transition-colors duration-300" />
               <div className="flex items-center mb-4">
                 {[...Array(tst.rating)].map((_, i) => (
                   <Star
@@ -87,12 +87,12 @@ const Trust = () => {
                   />
                 ))}
               </div>
-              <p className="text-gray-700 mb-6 italic text-sm sm:text-base flex-grow">
+              <p className="text-gray-700 dark:text-gray-300 mb-6 italic text-sm sm:text-base flex-grow transition-colors duration-300">
                 "{tst.quote}"
               </p>
               <div>
-                <div className="font-semibold text-gray-900">{tst.author}</div>
-                <div className="text-sm text-gray-600">{tst.position}</div>
+                <div className="font-semibold text-gray-900 dark:text-white transition-colors duration-300">{tst.author}</div>
+                <div className="text-sm text-gray-600 dark:text-gray-400 transition-colors duration-300">{tst.position}</div>
               </div>
             </motion.div>
           ))}
@@ -106,19 +106,19 @@ const Trust = () => {
           transition={{ duration: 0.6, delay: 0.3 }}
           className="mt-20 text-center"
         >
-          <div className="bg-white p-8 rounded-xl shadow-md inline-block text-left max-w-4xl w-full">
-            <h3 className="text-xl font-black text-gray-900 mb-6 uppercase text-center">
+          <div className="bg-white dark:bg-gray-800 p-8 rounded-xl shadow-md dark:shadow-gray-700/20 inline-block text-left max-w-4xl w-full transition-all duration-300 hover:shadow-lg hover:dark:shadow-gray-700/30">
+            <h3 className="text-xl font-black text-gray-900 dark:text-white mb-6 uppercase text-center transition-colors duration-300">
               {t('certifications.title')}
             </h3>
             <div className="flex flex-col gap-6">
               {certifications.map((cert, i) => (
                 <div key={i} className="flex items-center gap-4">
                   <div
-                    className={`${cert.bgClass} w-14 h-14 rounded-full flex items-center justify-center shrink-0`}
+                    className={`${cert.bgClass} w-14 h-14 rounded-full flex items-center justify-center shrink-0 transition-colors duration-300`}
                   >
                     <span className="text-white font-bold text-sm">{cert.abbr}</span>
                   </div>
-                  <span className="text-gray-700 font-medium text-base">
+                  <span className="text-gray-700 dark:text-gray-300 font-medium text-base transition-colors duration-300">
                     {cert.text}
                   </span>
                 </div>

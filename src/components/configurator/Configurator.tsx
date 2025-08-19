@@ -46,7 +46,8 @@ export const Configurator = ({ products = [] }: ConfiguratorProps) => {
   const currentStepIndex = visibleSteps.findIndex(step => step.id === currentStep);
 
   return (
-    <div className="bg-gray-50 min-h-screen py-12">
+   <div className="bg-gray-50 dark:bg-gray-900 min-h-screen py-12 transition-colors duration-500">
+
       <div className="max-w-7xl mx-auto">
         <ProgressBar
           steps={visibleSteps}
