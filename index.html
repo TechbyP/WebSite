@@ -1,22 +1,38 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="en">
 
 <head>
   <meta charset="UTF-8" />
-  <link rel="icon" type="image/svg+xml" href="/src/assets/pictures/Logo-Symbol.png" />
-  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
 
   <title>TechByP</title>
-  <!-- Google tag (gtag.js) -->
+
+  <!-- Favicon -->
+  <link rel="icon" type="image/png" href="/src/assets/pictures/Logo-Symbol.png" />
+
+  <!-- PWA / Mobile Optimization -->
+  <link rel="manifest" href="/manifest.json" />
+  <meta name="theme-color" content="#0a74da" />
+  <meta name="mobile-web-app-capable" content="yes" />
+  <meta name="apple-mobile-web-app-capable" content="yes" />
+  <meta name="apple-mobile-web-app-status-bar-style" content="default" />
+  <link rel="apple-touch-icon" href="/src/assets/pictures/Logo-Symbol.png" />
+
+  <!-- Google Analytics & Google Ads -->
   <script async src="https://www.googletagmanager.com/gtag/js?id=G-Z6VPWQWLNW"></script>
+  <script async src="https://www.googletagmanager.com/gtag/js?id=AW-11474400856"></script>
   <script>
     window.dataLayer = window.dataLayer || [];
     function gtag() { dataLayer.push(arguments); }
     gtag('js', new Date());
 
+    // GA4
     gtag('config', 'G-Z6VPWQWLNW');
+    // Google Ads
+    gtag('config', 'AW-11474400856');
   </script>
 
+  <!-- Preconnect / DNS Prefetch for performance -->
   <link rel="preconnect" href="https://www.youtube.com" crossorigin />
   <link rel="preconnect" href="https://www.youtube-nocookie.com" crossorigin />
   <link rel="preconnect" href="https://images.unsplash.com" crossorigin />
@@ -31,11 +47,10 @@
   <link rel="dns-prefetch" href="https://identitytoolkit.googleapis.com" />
   <link rel="dns-prefetch" href="https://firestore.googleapis.com" />
 
-
-
+  <!-- Meta description, keywords, author -->
   <meta name="description"
-    content="TechByP specializes in efficient soil sampling and analysis with state-of-the-art technology. Innovative solutions for agriculture and research." />
-  <meta name="keywords" content="soil sampling, soil analysis, agriculture technology, soil testing, TechByP" />
+    content="TechByP: Poking the ground with clever gadgets for efficient soil sampling and analysis—smart solutions for farming and research." />
+  <meta name="keywords" content="soil sampling, soil analysis, soil testing, agriculture technology, agricultural technology, ag-tech solutions, precision agriculture, efficient soil sampling, research soil analysis, TechByP, MP-2.60, MP-3.90, DE-1.30, DH-1.30, innovative soil testing, smart agriculture tools, state-of-the-art soil analysis" />
   <meta name="author" content="TechByP" />
 </head>
 

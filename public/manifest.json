@@ -1,0 +1,22 @@
+{
+  "name": "TechByP",
+  "short_name": "TechByP",
+  "description": "Efficient soil sampling and analysis solutions for agriculture and research.",
+  "start_url": "/",
+  "display": "standalone",
+  "background_color": "#ffffff",
+  "theme_color": "#3b82f6",
+  "orientation": "portrait",
+  "icons": [
+    {
+      "src": "/src/assets/pictures/Logo-Symbol-192.png",
+      "sizes": "192x192",
+      "type": "image/png"
+    },
+    {
+      "src": "/src/assets/pictures/Logo-Symbol-512.png",
+      "sizes": "512x512",
+      "type": "image/png"
+    }
+  ]
+}

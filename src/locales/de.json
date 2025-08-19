@@ -239,6 +239,7 @@
     "like": "Diesen Kommentar mögen",
     "unlike": "Diesen Kommentar nicht mehr mögen"
   },
+
   "loadingArticle": "Artikel wird geladen...",
   "errorLoadingArticle": "Fehler beim Laden des Artikels",
   "backToBlog": "Zurück zum Blog",
@@ -256,6 +257,7 @@
   "views": "Ansichten",
   "category": "{{category}}",
   "readTime": "{{time}} Lesezeit",
+
   "heroEditor": {
     "fetchError": "Fehler beim Laden der Hero-Elemente",
     "createSuccess": "Element erfolgreich erstellt!",
@@ -297,7 +299,8 @@
     "displayOrder": "Anzeigereihenfolge",
     "saving": "Wird gespeichert...",
     "saveSlide": "Folie speichern",
-    "readMore": "Mehr lesen"
+    "readMore": "Mehr lesen",
+    "link": "Schaltflächen-Link"
   },
   "editor": {
     "announcements": "Ankündigungen",
@@ -1046,7 +1049,7 @@
     "title": "Häufig gestellte Fragen",
     "shipping": {
       "question": "Welche Versandoptionen bieten Sie an?",
-      "answer": "Wir versenden weltweit über DHL, FedEx und andere vertrauenswürdige Speditionen. Standardversand innerhalb Deutschlands dauert 2-3 Werktage. Internationale Lieferzeiten variieren je nach Ziel. Expressversand ist verfügbar."
+      "answer": "Wir versenden weltweit über DHL, DPD und andere vertrauenswürdige Speditionen. Standardversand innerhalb Deutschlands dauert 2-3 Werktage. Internationale Lieferzeiten variieren je nach Ziel. Expressversand ist verfügbar."
     },
     "training": {
       "question": "Bieten Sie Schulungen für Ihre Geräte an?",

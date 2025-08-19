@@ -4,37 +4,37 @@ import { useTranslation } from 'react-i18next';
 import { Product } from './types/products';
 
 
-import MP1_Hero from '../assets/MP-1.90/hero.jpg?w=150;480;768;1280&format=webp;jpg&as=srcset';
-import MP1_2 from '../assets/MP-1.90/2.jpg?w=150;480;768;1280&format=webp;jpg&as=srcset';
-import MP1_3 from '../assets/MP-1.90/3.jpg?w=150;480;768;1280&format=webp;jpg&as=srcset';
-import MP1_4 from '../assets/MP-1.90/4.jpg?w=150;480;768;1280&format=webp;jpg&as=srcset';
+import MP190_Hero from '../assets/MP-1.90/hero.jpg?w=150;480;768;1280&format=webp;jpg&as=srcset';
+import MP190_2 from '../assets/MP-1.90/2.jpg?w=150;480;768;1280&format=webp;jpg&as=srcset';
+import MP190_3 from '../assets/MP-1.90/3.jpg?w=150;480;768;1280&format=webp;jpg&as=srcset';
+import MP190_4 from '../assets/MP-1.90/4.jpg?w=150;480;768;1280&format=webp;jpg&as=srcset';
 
-import MP2_Hero from '../assets/MP-2.60/hero.jpg?w=150;480;768;1280&format=webp;jpg&as=srcset';
-import MP2_1 from '../assets/MP-2.60/1.jpg?w=150;480;768;1280&format=webp;jpg&as=srcset';
-import MP2_2 from '../assets/MP-2.60/2.jpg?w=150;480;768;1280&format=webp;jpg&as=srcset';
-import MP2_3 from '../assets/MP-2.60/3.jpg?w=150;480;768;1280&format=webp;jpg&as=srcset';
-import MP2_4 from '../assets/MP-2.60/4.jpg?w=150;480;768;1280&format=webp;jpg&as=srcset';
+import MP260_Hero from '../assets/MP-2.60/hero.jpg?w=150;480;768;1280&format=webp;jpg&as=srcset';
+import MP260_1 from '../assets/MP-2.60/1.jpg?w=150;480;768;1280&format=webp;jpg&as=srcset';
+import MP260_2 from '../assets/MP-2.60/2.jpg?w=150;480;768;1280&format=webp;jpg&as=srcset';
+import MP260_3 from '../assets/MP-2.60/3.jpg?w=150;480;768;1280&format=webp;jpg&as=srcset';
+import MP260_4 from '../assets/MP-2.60/4.jpg?w=150;480;768;1280&format=webp;jpg&as=srcset';
 
-import MP3_Hero from '../assets/MP-3.90/hero.jpg?w=150;480;768;1280&format=webp;jpg&as=srcset';
-import MP3_1 from '../assets/MP-3.90/1.jpg?w=150;480;768;1280&format=webp;jpg&as=srcset';
-import MP3_2 from '../assets/MP-3.90/2.jpg?w=150;480;768;1280&format=webp;jpg&as=srcset';
-import MP3_3 from '../assets/MP-3.90/3.jpg?w=150;480;768;1280&format=webp;jpg&as=srcset';
-import MP3_4 from '../assets/MP-3.90/4.jpg?w=150;480;768;1280&format=webp;jpg&as=srcset';
+import MP390_Hero from '../assets/MP-3.90/hero.jpg?w=150;480;768;1280&format=webp;jpg&as=srcset';
+import MP390_1 from '../assets/MP-3.90/1.jpg?w=150;480;768;1280&format=webp;jpg&as=srcset';
+import MP390_2 from '../assets/MP-3.90/2.jpg?w=150;480;768;1280&format=webp;jpg&as=srcset';
+import MP390_3 from '../assets/MP-3.90/3.jpg?w=150;480;768;1280&format=webp;jpg&as=srcset';
+import MP390_4 from '../assets/MP-3.90/4.jpg?w=150;480;768;1280&format=webp;jpg&as=srcset';
 
-import MP4_Hero from '../assets/MP-4.100/hero.jpg?w=150;480;768;1280&format=webp;jpg&as=srcset';
-import MP4_2 from '../assets/MP-4.100/2.jpg?w=150;480;768;1280&format=webp;jpg&as=srcset';
-import MP4_3 from '../assets/MP-4.100/3.jpg?w=150;480;768;1280&format=webp;jpg&as=srcset';
-import MP4_4 from '../assets/MP-4.100/4.jpg?w=150;480;768;1280&format=webp;jpg&as=srcset';
+import MP4100_Hero from '../assets/MP-4.100/hero.jpg?w=150;480;768;1280&format=webp;jpg&as=srcset';
+import MP4100_2 from '../assets/MP-4.100/2.jpg?w=150;480;768;1280&format=webp;jpg&as=srcset';
+import MP4100_3 from '../assets/MP-4.100/3.jpg?w=150;480;768;1280&format=webp;jpg&as=srcset';
+import MP4100_4 from '../assets/MP-4.100/4.jpg?w=150;480;768;1280&format=webp;jpg&as=srcset';
 
-import DE_Hero from '../assets/DE-1.30/hero.jpg?w=150;480;768;1280&format=webp;jpg&as=srcset';
-import DE_1 from '../assets/DE-1.30/1.jpg?w=150;480;768;1280&format=webp;jpg&as=srcset';
-import DE_2 from '../assets/DE-1.30/2.jpg?w=150;480;768;1280&format=webp;jpg&as=srcset';
-import DE_3 from '../assets/DE-1.30/3.jpg?w=150;480;768;1280&format=webp;jpg&as=srcset';
+import DE130_Hero from '../assets/DE-1.30/hero.jpg?w=150;480;768;1280&format=webp;jpg&as=srcset';
+import DE130_1 from '../assets/DE-1.30/1.jpg?w=150;480;768;1280&format=webp;jpg&as=srcset';
+import DE130_2 from '../assets/DE-1.30/2.jpg?w=150;480;768;1280&format=webp;jpg&as=srcset';
+import DE130_3 from '../assets/DE-1.30/3.jpg?w=150;480;768;1280&format=webp;jpg&as=srcset';
 
-import DH_Hero from '../assets/DH-1.30/Hero.jpg?w=150;480;768;1280&format=webp;jpg&as=srcset';
-import DH_1 from '../assets/DH-1.30/1.jpg?w=150;480;768;1280&format=webp;jpg&as=srcset';
-import DH_2 from '../assets/DH-1.30/2.jpg?w=150;480;768;1280&format=webp;jpg&as=srcset';
-import DH_3 from '../assets/DH-1.30/3.jpg?w=150;480;768;1280&format=webp;jpg&as=srcset';
+import DH130_Hero from '../assets/DH-1.30/Hero.jpg?w=150;480;768;1280&format=webp;jpg&as=srcset';
+import DH130_1 from '../assets/DH-1.30/1.jpg?w=150;480;768;1280&format=webp;jpg&as=srcset';
+import DH130_2 from '../assets/DH-1.30/2.jpg?w=150;480;768;1280&format=webp;jpg&as=srcset';
+import DH130_3 from '../assets/DH-1.30/3.jpg?w=150;480;768;1280&format=webp;jpg&as=srcset';
 
 import BOPROB_Hero from '../assets/BOPROB_III/Hero.jpg?w=150;480;768;1280&format=webp;jpg&as=srcset';
 import BOPROB_2 from '../assets/BOPROB_III/2.jpg?w=150;480;768;1280&format=webp;jpg&as=srcset';
@@ -46,153 +46,58 @@ import LayDown_1 from '../assets/Frames/Laydown/1.jpg?w=150;480;768;1280&format=
 import LayDown_2 from '../assets/Frames/Laydown/2.jpg?w=150;480;768;1280&format=webp;jpg&as=srcset';
 import LayDown_3 from '../assets/Frames/Laydown/3.jpg?w=150;480;768;1280&format=webp;jpg&as=srcset';
 
-import TPH_Hero from '../assets/Frames/Three-point/Hero.jpg?w=150;480;768;1280&format=webp;jpg&as=srcset';
-import TPH_1 from '../assets/Frames/Three-point/1.jpg?w=150;480;768;1280&format=webp;jpg&as=srcset';
-import TPH_2 from '../assets/Frames/Three-point/2.jpg?w=150;480;768;1280&format=webp;jpg&as=srcset';
-import TPH_3 from '../assets/Frames/Three-point/3.jpg?w=150;480;768;1280&format=webp;jpg&as=srcset';
-import TPH_4 from '../assets/Frames/Three-point/4.jpg?w=150;480;768;1280&format=webp;jpg&as=srcset';
+import ThreePointHitch_Hero from '../assets/Frames/Three-point/Hero.jpg?w=150;480;768;1280&format=webp;jpg&as=srcset';
+import ThreePointHitch_1 from '../assets/Frames/Three-point/1.jpg?w=150;480;768;1280&format=webp;jpg&as=srcset';
+import ThreePointHitch_2 from '../assets/Frames/Three-point/2.jpg?w=150;480;768;1280&format=webp;jpg&as=srcset';
+import ThreePointHitch_3 from '../assets/Frames/Three-point/3.jpg?w=150;480;768;1280&format=webp;jpg&as=srcset';
+import ThreePointHitch_4 from '../assets/Frames/Three-point/4.jpg?w=150;480;768;1280&format=webp;jpg&as=srcset';
 
-import FC_Hero from '../assets/Frames/Full-Conversion/Hero.jpg?w=150;480;768;1280&format=webp;jpg&as=srcset';
-import FC_1 from '../assets/Frames/Full-Conversion/1.jpg?w=150;480;768;1280&format=webp;jpg&as=srcset';
-import FC_2 from '../assets/Frames/Full-Conversion/2.jpg?w=150;480;768;1280&format=webp;jpg&as=srcset';
-import FC_3 from '../assets/Frames/Full-Conversion/3.jpg?w=150;480;768;1280&format=webp;jpg&as=srcset';
+import FullConversion_Hero from '../assets/Frames/Full-Conversion/Hero.jpg?w=150;480;768;1280&format=webp;jpg&as=srcset';
+import FullConversion_1 from '../assets/Frames/Full-Conversion/1.jpg?w=150;480;768;1280&format=webp;jpg&as=srcset';
+import FullConversion_2 from '../assets/Frames/Full-Conversion/2.jpg?w=150;480;768;1280&format=webp;jpg&as=srcset';
+import FullConversion_3 from '../assets/Frames/Full-Conversion/3.jpg?w=150;480;768;1280&format=webp;jpg&as=srcset';
 
 import Trailer_Hero from '../assets/Trailers/Hero.jpg?w=150;480;768;1280&format=webp;jpg&as=srcset';
 import Trailer_1 from '../assets/Trailers/1.jpg?w=150;480;768;1280&format=webp;jpg&as=srcset';
 import Trailer_2 from '../assets/Trailers/2.jpg?w=150;480;768;1280&format=webp;jpg&as=srcset';
 import Trailer_3 from '../assets/Trailers/3.jpg?w=150;480;768;1280&format=webp;jpg&as=srcset';
 
-import PP_Hero from '../assets/Powerpacks/Hero.jpg?w=150;480;768;1280&format=webp;jpg&as=srcset';
-import PP_1 from '../assets/Powerpacks/1.jpg?w=150;480;768;1280&format=webp;jpg&as=srcset';
-import PP_2 from '../assets/Powerpacks/2.jpg?w=150;480;768;1280&format=webp;jpg&as=srcset';
-import PP_3 from '../assets/Powerpacks/3.jpg?w=150;480;768;1280&format=webp;jpg&as=srcset';
-import PP_4 from '../assets/Powerpacks/4.jpg?w=150;480;768;1280&format=webp;jpg&as=srcset';
-import PP_5 from '../assets/Powerpacks/5.jpg?w=150;480;768;1280&format=webp;jpg&as=srcset';
-import PP_6 from '../assets/Powerpacks/6.jpg?w=150;480;768;1280&format=webp;jpg&as=srcset';
-import PP_7 from '../assets/Powerpacks/7.jpg?w=150;480;768;1280&format=webp;jpg&as=srcset';
+import PowerPack_Hero from '../assets/Powerpacks/Hero.jpg?w=150;480;768;1280&format=webp;jpg&as=srcset';
+import PowerPack_1 from '../assets/Powerpacks/1.jpg?w=150;480;768;1280&format=webp;jpg&as=srcset';
+import PowerPack_2 from '../assets/Powerpacks/2.jpg?w=150;480;768;1280&format=webp;jpg&as=srcset';
+import PowerPack_3 from '../assets/Powerpacks/3.jpg?w=150;480;768;1280&format=webp;jpg&as=srcset';
+import PowerPack_4 from '../assets/Powerpacks/4.jpg?w=150;480;768;1280&format=webp;jpg&as=srcset';
+import PowerPack_5 from '../assets/Powerpacks/5.jpg?w=150;480;768;1280&format=webp;jpg&as=srcset';
+import PowerPack_6 from '../assets/Powerpacks/6.jpg?w=150;480;768;1280&format=webp;jpg&as=srcset';
+import PowerPack_7 from '../assets/Powerpacks/7.jpg?w=150;480;768;1280&format=webp;jpg&as=srcset';
 
 import SpareParts_Hero from '../assets/SpareParts/Hero.jpg?w=150;480;768;1280&format=webp;jpg&as=srcset';
 import SpareParts_2 from '../assets/SpareParts/2.jpg?w=150;480;768;1280&format=webp;jpg&as=srcset';
 import SpareParts_3 from '../assets/SpareParts/3.jpg?w=150;480;768;1280&format=webp;jpg&as=srcset';
 import SpareParts_4 from '../assets/SpareParts/4.jpg?w=150;480;768;1280&format=webp;jpg&as=srcset';
 
-import CB_Hero from '../assets/CoolBox/Hero.jpg?w=150;480;768;1280&format=webp;jpg&as=srcset';
-import CB_1 from '../assets/CoolBox/1.jpg?w=150;480;768;1280&format=webp;jpg&as=srcset';
-import CB_2 from '../assets/CoolBox/2.jpg?w=150;480;768;1280&format=webp;jpg&as=srcset';
-import CB_3 from '../assets/CoolBox/3.jpg?w=150;480;768;1280&format=webp;jpg&as=srcset';
+import CoolBox_Hero from '../assets/CoolBox/Hero.jpg?w=150;480;768;1280&format=webp;jpg&as=srcset';
+import CoolBox_1 from '../assets/CoolBox/1.jpg?w=150;480;768;1280&format=webp;jpg&as=srcset';
+import CoolBox_2 from '../assets/CoolBox/2.jpg?w=150;480;768;1280&format=webp;jpg&as=srcset';
+import CoolBox_3 from '../assets/CoolBox/3.jpg?w=150;480;768;1280&format=webp;jpg&as=srcset';
 
 import LED_Hero from '../assets/LEDLights/Hero.jpg?w=150;480;768;1280&format=webp;jpg&as=srcset';
 import LED_1 from '../assets/LEDLights/1.jpg?w=150;480;768;1280&format=webp;jpg&as=srcset';
 import LED_2 from '../assets/LEDLights/2.jpg?w=150;480;768;1280&format=webp;jpg&as=srcset';
 import LED_3 from '../assets/LEDLights/3.jpg?w=150;480;768;1280&format=webp;jpg&as=srcset';
 
-import EC_Hero from '../assets/Ext_Camera/Hero.jpg?w=150;480;768;1280&format=webp;jpg&as=srcset';
-import EC_1 from '../assets/Ext_Camera/1.jpg?w=150;480;768;1280&format=webp;jpg&as=srcset';
-import EC_2 from '../assets/Ext_Camera/2.jpg?w=150;480;768;1280&format=webp;jpg&as=srcset';
-import EC_3 from '../assets/Ext_Camera/3.jpg?w=150;480;768;1280&format=webp;jpg&as=srcset';
+import ExternalCamera_Hero from '../assets/Ext_Camera/Hero.jpg?w=150;480;768;1280&format=webp;jpg&as=srcset';
+import ExternalCamera_1 from '../assets/Ext_Camera/1.jpg?w=150;480;768;1280&format=webp;jpg&as=srcset';
+import ExternalCamera_2 from '../assets/Ext_Camera/2.jpg?w=150;480;768;1280&format=webp;jpg&as=srcset';
+import ExternalCamera_3 from '../assets/Ext_Camera/3.jpg?w=150;480;768;1280&format=webp;jpg&as=srcset';
 
-import MD_Hero from '../assets/ManualDrills/Hero.jpg?w=150;480;768;1280&format=webp;jpg&as=srcset';
-import MD_1 from '../assets/ManualDrills/1.jpg?w=150;480;768;1280&format=webp;jpg&as=srcset';
-import MD_2 from '../assets/ManualDrills/2.jpg?w=150;480;768;1280&format=webp;jpg&as=srcset';
-import MD_3 from '../assets/ManualDrills/3.jpg?w=150;480;768;1280&format=webp;jpg&as=srcset';
+import ManualDrills_Hero from '../assets/ManualDrills/Hero.jpg?w=150;480;768;1280&format=webp;jpg&as=srcset';
+import ManualDrills_1 from '../assets/ManualDrills/1.jpg?w=150;480;768;1280&format=webp;jpg&as=srcset';
+import ManualDrills_2 from '../assets/ManualDrills/2.jpg?w=150;480;768;1280&format=webp;jpg&as=srcset';
+import ManualDrills_3 from '../assets/ManualDrills/3.jpg?w=150;480;768;1280&format=webp;jpg&as=srcset';
 
-import H_Hero from '../assets/Hammers/Hero.png?w=150;480;768;1280&format=webp;jpg&as=srcset';
+import Hammers_Hero from '../assets/Hammers/Hero.png?w=150;480;768;1280&format=webp;jpg&as=srcset';
 
-// import MP1_Hero from '../assets/MP-1.90/hero.jpg';
-// import MP1_2 from '../assets/MP-1.90/2.jpg';
-// import MP1_3 from '../assets/MP-1.90/3.jpg';
-// import MP1_4 from '../assets/MP-1.90/4.jpg';
-
-// import MP2_Hero from '../assets/MP-2.60/hero.jpg';
-
-// import MP2_1 from '../assets/MP-2.60/1.jpg';
-// import MP2_2 from '../assets/MP-2.60/2.jpg';
-// import MP2_3 from '../assets/MP-2.60/3.jpg';
-// import MP2_4 from '../assets/MP-2.60/4.jpg';
-
-// import MP3_Hero from '../assets/MP-3.90/hero.jpg';
-// import MP3_1 from '../assets/MP-3.90/1.jpg';
-// import MP3_2 from '../assets/MP-3.90/2.jpg';
-// import MP3_3 from '../assets/MP-3.90/3.jpg';
-// import MP3_4 from '../assets/MP-3.90/4.jpg';
-
-// import MP4_Hero from '../assets/MP-4.100/hero.jpg';
-
-// import MP4_2 from '../assets/MP-4.100/2.jpg';
-// import MP4_3 from '../assets/MP-4.100/3.jpg';
-// import MP4_4 from '../assets/MP-4.100/4.jpg';
-
-// import DE_Hero from '../assets/DE-1.30/hero.jpg';
-// import DE_1 from '../assets/DE-1.30/1.jpg';
-// import DE_2 from '../assets/DE-1.30/2.jpg';
-// import DE_3 from '../assets/DE-1.30/3.jpg';
-
-// import DH_Hero from '../assets/DH-1.30/Hero.jpg'
-// import DH_1 from '../assets/DH-1.30/1.jpg'
-// import DH_2 from '../assets/DH-1.30/2.jpg'
-// import DH_3 from '../assets/DH-1.30/3.jpg'
-
-// import BOPROB_Hero from '../assets/BOPROB_III/Hero.jpg'
-// import BOPROB_2 from '../assets/BOPROB_III/2.jpg'
-// import BOPROB_3 from '../assets/BOPROB_III/3.jpg'
-// import BOPROB_4 from '../assets/BOPROB_III/4.jpg'
-
-// import LayDown_Hero from '../assets/Frames/Laydown/Hero.jpg'
-// import LayDown_1 from '../assets/Frames/Laydown/1.jpg'
-// import LayDown_2 from '../assets/Frames/Laydown/2.jpg'
-// import LayDown_3 from '../assets/Frames/Laydown/3.jpg'
-
-// import TPH_Hero from '../assets/Frames/Three-point/Hero.jpg'
-// import TPH_1 from '../assets/Frames/Three-point/1.jpg'
-// import TPH_2 from '../assets/Frames/Three-point/2.jpg'
-// import TPH_3 from '../assets/Frames/Three-point/3.jpg'
-// import TPH_4 from '../assets/Frames/Three-point/4.jpg'
-
-// import FC_Hero from '../assets/Frames/Full-Conversion/Hero.jpg'
-// import FC_1 from '../assets/Frames/Full-Conversion/1.jpg'
-// import FC_2 from '../assets/Frames/Full-Conversion/2.jpg'
-// import FC_3 from '../assets/Frames/Full-Conversion/3.jpg'
-
-// import Trailer_Hero from '../assets/Trailers/Hero.jpg'
-// import Trailer_1 from '../assets/Trailers/1.jpg'
-// import Trailer_2 from '../assets/Trailers/2.jpg'
-// import Trailer_3 from '../assets/Trailers/3.jpg'
-
-// import PP_Hero from '../assets/Powerpacks/Hero.jpg'
-// import PP_1 from '../assets/Powerpacks/1.jpg'
-// import PP_2 from '../assets/Powerpacks/2.jpg'
-// import PP_3 from '../assets/Powerpacks/3.jpg'
-// import PP_4 from '../assets/Powerpacks/4.jpg'
-// import PP_5 from '../assets/Powerpacks/5.jpg'
-// import PP_6 from '../assets/Powerpacks/6.jpg'
-// import PP_7 from '../assets/Powerpacks/7.jpg'
-
-// import SpareParts_Hero from '../assets/SpareParts/Hero.jpg';
-// import SpareParts_2 from '../assets/SpareParts/2.jpg';
-// import SpareParts_3 from '../assets/SpareParts/3.jpg';
-// import SpareParts_4 from '../assets/SpareParts/4.jpg';
-
-// import CB_Hero from '../assets/CoolBox/Hero.jpg'
-// import CB_1 from '../assets/CoolBox/1.jpg'
-// import CB_2 from '../assets/CoolBox/2.jpg'
-// import CB_3 from '../assets/CoolBox/3.jpg'
-
-// import LED_Hero from '../assets/LEDLights/Hero.jpg'
-// import LED_1 from '../assets/LEDLights/1.jpg'
-// import LED_2 from '../assets/LEDLights/2.jpg'
-// import LED_3 from '../assets/LEDLights/3.jpg'
-
-// import EC_Hero from '../assets/Ext_Camera/Hero.jpg'
-// import EC_1 from '../assets/Ext_Camera/1.jpg'
-// import EC_2 from '../assets/Ext_Camera/2.jpg'
-// import EC_3 from '../assets/Ext_Camera/3.jpg'
-
-// import MD_Hero from '../assets/ManualDrills/Hero.jpg'
-// import MD_1 from '../assets/ManualDrills/1.jpg'
-// import MD_2 from '../assets/ManualDrills/2.jpg'
-// import MD_3 from '../assets/ManualDrills/3.jpg'
-
-// import H_Hero from '../assets/Hammers/Hero.png'
 
 const createProducts = (t: any): Product[] => {
   return [
@@ -202,7 +107,7 @@ const createProducts = (t: any): Product[] => {
       name: "MP-1.90",
       nickname: t('mp1.nickname'),
       category: "SmartSystems",
-      image: MP1_Hero,
+      image: MP190_Hero,
       heroVideo: "",
       specs: t('mp1.specs', { returnObjects: true }) || [],
       icon: Gauge,
@@ -224,7 +129,7 @@ const createProducts = (t: any): Product[] => {
       applications: t('mp1.applications', { returnObjects: true }) || [],
       howToUse: t('mp1.howToUse', { returnObjects: true }) || [],
       technicalSpecs: t('mp1.technicalSpecs', { returnObjects: true }) || [],
-      gallery: [MP1_Hero, MP1_2, MP1_3, MP1_4],
+      gallery: [MP190_Hero, MP190_2, MP190_3, MP190_4],
       testimonials: t('mp1.testimonials', { returnObjects: true }) || [],
     },
     // MP-2
@@ -235,7 +140,7 @@ const createProducts = (t: any): Product[] => {
       nickname: t('mp2.nickname'),
       category: "SmartSystems",
       bestseller: true,
-      image: MP2_Hero,
+      image: MP260_Hero,
       heroVideo: '40DoQB6vey0',
       specs: t('mp2.specs', { returnObjects: true }) || [],
       icon: Gauge,
@@ -257,7 +162,7 @@ const createProducts = (t: any): Product[] => {
       howToUse: t('mp2.howToUse', { returnObjects: true }) || [],
       applications: t('mp2.applications', { returnObjects: true }) || [],
       technicalSpecs: t('mp2.technicalSpecs', { returnObjects: true }) || [],
-      gallery: [MP2_1, MP2_2, MP2_3, MP2_4],
+      gallery: [MP260_1, MP260_2, MP260_3, MP260_4],
       testimonials: t('mp2.testimonials', { returnObjects: true }) || [],
     },
     // MP-3
@@ -268,7 +173,7 @@ const createProducts = (t: any): Product[] => {
       nickname: t('mp3.nickname'),
       category: "SmartSystems",
       bestseller: true,
-      image: MP3_Hero,
+      image: MP390_Hero,
       heroVideo: '40DoQB6vey0',
       specs: t('mp3.specs', { returnObjects: true }) || [],
       icon: Gauge,
@@ -290,7 +195,7 @@ const createProducts = (t: any): Product[] => {
       howToUse: t('mp3.howToUse', { returnObjects: true }) || [],
       applications: t('mp3.applications', { returnObjects: true }) || [],
       technicalSpecs: t('mp3.technicalSpecs', { returnObjects: true }) || [],
-      gallery: [MP3_1, MP3_2, MP3_3, MP3_4],
+      gallery: [MP390_1, MP390_2, MP390_3, MP390_4],
       testimonials: t('mp3.testimonials', { returnObjects: true }) || [],
     },
     // MP-4
@@ -301,7 +206,7 @@ const createProducts = (t: any): Product[] => {
       nickname: t('mp4.nickname'),
       category: "SmartSystems",
       bestseller: false,
-      image: MP4_Hero,
+      image: MP4100_Hero,
       heroVideo: "",
       specs: t('mp4.specs', { returnObjects: true }) || [],
       icon: Gauge,
@@ -323,7 +228,7 @@ const createProducts = (t: any): Product[] => {
       howToUse: t('mp4.howToUse', { returnObjects: true }) || [],
       applications: t('mp4.applications', { returnObjects: true }) || [],
       technicalSpecs: t('mp4.technicalSpecs', { returnObjects: true }) || [],
-      gallery: [MP4_Hero, MP4_2, MP4_3, MP4_4],
+      gallery: [MP4100_Hero, MP4100_2, MP4100_3, MP4100_4],
       testimonials: t('mp4.testimonials', { returnObjects: true }) || [],
     },
     // DH
@@ -334,7 +239,7 @@ const createProducts = (t: any): Product[] => {
       nickname: t('dh.nickname'),
       category: "SmartSystems",
       bestseller: true,
-      image: DH_Hero,
+      image: DH130_Hero,
       heroVideo: "",
       specs: t('dh.specs', { returnObjects: true }) || [],
       icon: Wrench,
@@ -356,7 +261,7 @@ const createProducts = (t: any): Product[] => {
       applications: t('dh.applications', { returnObjects: true }) || [],
       howToUse: t('dh.howToUse', { returnObjects: true }) || [],
       technicalSpecs: t('dh.technicalSpecs', { returnObjects: true }) || [],
-      gallery: [DH_Hero, DH_1, DH_2, DH_3],
+      gallery: [DH130_Hero, DH130_1, DH130_2, DH130_3],
       testimonials: t('dh.testimonials', { returnObjects: true }) || [],
     },
     // DE
@@ -367,7 +272,7 @@ const createProducts = (t: any): Product[] => {
       nickname: t('de.nickname'),
       category: "SmartSystems",
       bestseller: true,
-      image: DE_Hero,
+      image: DE130_Hero,
       heroVideo: 'm6BqgLotHT8',
       specs: t('de.specs', { returnObjects: true }) || [],
       icon: Zap,
@@ -389,7 +294,7 @@ const createProducts = (t: any): Product[] => {
       applications: t('de.applications', { returnObjects: true }) || [],
       howToUse: t('de.howToUse', { returnObjects: true }) || [],
       technicalSpecs: t('de.technicalSpecs', { returnObjects: true }) || [],
-      gallery: [DE_Hero, DE_1, DE_2, DE_3],
+      gallery: [DE130_Hero, DE130_1, DE130_2, DE130_3],
       testimonials: t('de.testimonials', { returnObjects: true }) || [],
     },
     // BOPROB
@@ -458,11 +363,10 @@ const createProducts = (t: any): Product[] => {
       id: 2001,
       date: 2025,
       name: t('tph.name'),
-
       nickname: t('tph.nickname'),
       category: "accessory",
       bestseller: false,
-      image: TPH_Hero,
+      image: ThreePointHitch_Hero,
       heroVideo: "",
       icon: "",
       specs: t('tph.specs', { returnObjects: true }) || [],
@@ -478,7 +382,7 @@ const createProducts = (t: any): Product[] => {
       applications: t('tph.applications', { returnObjects: true }) || [],
       howToUse: t('tph.howToUse', { returnObjects: true }) || [],
       technicalSpecs: t('tph.technicalSpecs', { returnObjects: true }) || [],
-      gallery: [TPH_4, TPH_1, TPH_2, TPH_3],
+      gallery: [ThreePointHitch_4, ThreePointHitch_1, ThreePointHitch_2, ThreePointHitch_3],
       testimonials: t('tph.testimonials', { returnObjects: true }) || [],
     },
     // Full Conversion
@@ -489,7 +393,7 @@ const createProducts = (t: any): Product[] => {
       nickname: t('fc.nickname'),
       category: "accessory",
       bestseller: true,
-      image: FC_Hero,
+      image: FullConversion_Hero,
       heroVideo: "",
       icon: "",
       specs: t('fc.specs', { returnObjects: true }) || [],
@@ -505,7 +409,7 @@ const createProducts = (t: any): Product[] => {
       applications: t('fc.applications', { returnObjects: true }) || [],
       howToUse: t('fc.howToUse', { returnObjects: true }) || [],
       technicalSpecs: t('fc.technicalSpecs', { returnObjects: true }) || [],
-      gallery: [FC_Hero, FC_1, FC_2, FC_3],
+      gallery: [FullConversion_Hero, FullConversion_1, FullConversion_2, FullConversion_3],
       testimonials: t('fc.testimonials', { returnObjects: true }) || [],
     },
     // Trailers
@@ -547,7 +451,7 @@ const createProducts = (t: any): Product[] => {
       category: "accessory",
       type: "Powerpack",
       bestseller: false,
-      image: PP_Hero,
+      image: PowerPack_Hero,
       heroVideo: "",
       icon: "",
       specs: t('powerpack.specs', { returnObjects: true }) || [],
@@ -563,7 +467,7 @@ const createProducts = (t: any): Product[] => {
       applications: t('powerpack.applications', { returnObjects: true }) || [],
       howToUse: t('powerpack.howToUse', { returnObjects: true }) || [],
       technicalSpecs: t('powerpack.technicalSpecs', { returnObjects: true }) || [],
-      gallery: [PP_Hero, PP_1, PP_2, PP_3, PP_4, PP_5, PP_6, PP_7],
+      gallery: [PowerPack_Hero, PowerPack_1, PowerPack_2, PowerPack_3, PowerPack_4, PowerPack_5, PowerPack_6, PowerPack_7],
       testimonials: t('powerpack.testimonials', { returnObjects: true }) || [],
     },
     // Spare Parts
@@ -606,7 +510,7 @@ const createProducts = (t: any): Product[] => {
       categoryName: "Extras",
       type: "Compressor Cooler",
       bestseller: false,
-      image: CB_Hero,
+      image: CoolBox_Hero,
       heroVideo: "",
       icon: "",
       specs: t('coolbox.specs', { returnObjects: true }) || [],
@@ -622,7 +526,7 @@ const createProducts = (t: any): Product[] => {
       applications: t('coolbox.applications', { returnObjects: true }) || [],
       howToUse: t('coolbox.howToUse', { returnObjects: true }) || [],
       technicalSpecs: t('coolbox.technicalSpecs', { returnObjects: true }) || [],
-      gallery: [CB_Hero, CB_1, CB_2, CB_3],
+      gallery: [CoolBox_Hero, CoolBox_1, CoolBox_2, CoolBox_3],
       testimonials: [],
     },
     // LED Light Kit
@@ -666,7 +570,7 @@ const createProducts = (t: any): Product[] => {
       categoryName: "Extras",
       type: "Monitoring",
       bestseller: false,
-      image: EC_Hero,
+      image: ExternalCamera_Hero,
       heroVideo: "",
       icon: "",
       specs: t('camera.specs', { returnObjects: true }) || [],
@@ -682,7 +586,7 @@ const createProducts = (t: any): Product[] => {
       applications: t('camera.applications', { returnObjects: true }) || [],
       howToUse: t('camera.howToUse', { returnObjects: true }) || [],
       technicalSpecs: t('camera.technicalSpecs', { returnObjects: true }) || [],
-      gallery: [EC_Hero, EC_1, EC_2, EC_3],
+      gallery: [ExternalCamera_Hero, ExternalCamera_1, ExternalCamera_2, ExternalCamera_3],
       testimonials: [],
     },
     // Probes, Dipsticks and Accessories
@@ -726,7 +630,7 @@ const createProducts = (t: any): Product[] => {
       categoryName: "Manual Samplers",
       type: "DrillRod",
       bestseller: false,
-      image: MD_Hero,
+      image: ManualDrills_Hero,
       heroVideo: "",
       icon: null,
       specs: t('drillrods.specs', { returnObjects: true }) || [],
@@ -743,7 +647,7 @@ const createProducts = (t: any): Product[] => {
       howToUse: t('drillrods.howToUse', { returnObjects: true }) || [],
       technicalSpecs: t('drillrods.technicalSpecs', { returnObjects: true }) || [],
       table: t('drillrods.table', { returnObjects: true }) || [],
-      gallery: [MD_Hero, MD_1, MD_2, MD_3],
+      gallery: [ManualDrills_Hero, ManualDrills_1, ManualDrills_2, ManualDrills_3],
       testimonials: [],
     },
     // Hammers
@@ -757,7 +661,7 @@ const createProducts = (t: any): Product[] => {
       categoryName: "Manual Tools",
       type: "HammerSet",
       bestseller: false,
-      image: H_Hero,
+      image: Hammers_Hero,
       heroVideo: "",
       icon: null,
       specs: t('hammers.specs', { returnObjects: true }) || [],
@@ -774,7 +678,7 @@ const createProducts = (t: any): Product[] => {
       howToUse: t('hammers.howToUse', { returnObjects: true }) || [],
       technicalSpecs: t('hammers.technicalSpecs', { returnObjects: true }) || [],
       table: t('hammers.table', { returnObjects: true }) || [],
-      gallery: [H_Hero],
+      gallery: [Hammers_Hero],
       testimonials: []
     }
   ];

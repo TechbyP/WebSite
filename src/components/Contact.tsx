@@ -479,7 +479,7 @@ const ContactPage = () => {
                                         <div className="ml-3 text-sm">
                                             <label htmlFor="dataConsent" className="font-medium text-gray-700">
                                                 {t('formular.consent')}{' '}
-                                                <a href="/privacy-policy" className="text-blue-600 hover:text-green-600 underline transition-colors">
+                                                <a href="/privacy" className="text-blue-600 hover:text-green-600 underline transition-colors">
                                                     {t('formular.privacyPolicy')}
                                                 </a>
                                                 . <span className="text-red-500">*</span>

@@ -307,7 +307,8 @@
     "displayOrder": "Display Order",
     "saving": "Saving...",
     "saveSlide": "Save Slide",
-    "readMore": "Read More"
+    "readMore": "Read More",
+    "link": "Button Link"
   },
   "editor": {
     "announcements": "Announcements",
@@ -1074,7 +1075,7 @@
     "title": "Frequently Asked Questions",
     "shipping": {
       "question": "What are your shipping options?",
-      "answer": "We ship worldwide via DHL, FedEx, and other trusted carriers. Standard shipping within Germany takes 2-3 business days. International shipping times vary by destination. Expedited shipping options are available."
+      "answer": "We ship worldwide via DHL, DPD, and other trusted carriers. Standard shipping within Germany takes 2-3 business days. International shipping times vary by destination. Expedited shipping options are available."
     },
     "training": {
       "question": "Do you offer training for your equipment?",

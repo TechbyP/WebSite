@@ -273,7 +273,7 @@ const FileDownloadPage = () => {
                                         <div className="mt-3">
                                             <span className={`inline-flex items-center px-2.5 py-0.5 rounded-full text-xs font-medium ${CATEGORIES[file.category].color}`}>
                                                 {CATEGORIES[file.category].icon}
-                                                <span className="ml-1">{t(`categories.${file.category}`)}</span>
+                                                <span className="ml-1">{t(`downloads.categories.${file.category}`)}</span>
                                             </span>
                                         </div>
                                     </div>
@@ -316,9 +316,11 @@ const FileDownloadPage = () => {
             </div>
 
             {/* File Preview Modal */}
+            {/* File Preview Modal */}
             <AnimatePresence>
                 {selectedFile && (
                     <>
+                        {/* Backdrop */}
                         <motion.div
                             initial={{ opacity: 0 }}
                             animate={{ opacity: 1 }}
@@ -328,27 +330,27 @@ const FileDownloadPage = () => {
                             key="backdrop"
                         />
 
+                        {/* Modal */}
                         <motion.div
                             initial={{ opacity: 0, y: 20 }}
                             animate={{ opacity: 1, y: 0 }}
                             exit={{ opacity: 0, y: 20 }}
-                            className="fixed inset-0 z-50 flex items-center justify-center p-4"
+                            className="fixed inset-0 z-50 flex items-center justify-center p-0 sm:p-4"
                             key="modal"
                         >
                             <div
-                                className="bg-white rounded-lg shadow-xl w-full max-w-4xl max-h-[90vh] overflow-auto"
+                                className="bg-white rounded-lg shadow-xl w-full h-full sm:w-full sm:max-w-4xl sm:h-auto sm:max-h-[90vh] overflow-auto"
                                 onClick={(e) => e.stopPropagation()}
                             >
-                                <div className="p-6">
+                                <div className="flex flex-col h-full sm:h-auto p-4 sm:p-6">
+                                    {/* Header */}
                                     <div className="flex justify-between items-start">
                                         <div>
-                                            <h3 className="text-lg font-medium text-gray-900">
-                                                {selectedFile.name}
-                                            </h3>
+                                            <h3 className="text-lg font-medium text-gray-900">{selectedFile.name}</h3>
                                             <div className="mt-1">
                                                 <span className={`inline-flex items-center px-2.5 py-0.5 rounded-full text-xs font-medium ${CATEGORIES[selectedFile.category].color}`}>
                                                     {CATEGORIES[selectedFile.category].icon}
-                                                    <span className="ml-1">{t(`categories.${selectedFile.category}`)}</span>
+                                                    <span className="ml-1">{t(`downloads.categories.${selectedFile.category}`)}</span>
                                                 </span>
                                             </div>
                                         </div>
@@ -372,38 +374,30 @@ const FileDownloadPage = () => {
                                         </div>
                                     </div>
 
-                                    <div className="mt-4">
+                                    {/* Preview */}
+                                    <div className="flex-1 mt-4 flex items-center justify-center w-full">
                                         {previewType === 'pdf' && (
-                                            <div className="w-full h-[70vh]">
-                                                <iframe
-                                                    sizes="(max-width: 768px) 50vw, 25vw"
-srcSet={selectedFile.previewUrl}
-                                                    className="w-full h-full border border-gray-200 rounded-lg"
-                                                    title={selectedFile.name}
-                                                />
-                                            </div>
+                                            <iframe
+                                                src={selectedFile.previewUrl}
+                                                className="w-full h-full sm:h-[70vh] border border-gray-200 rounded-lg"
+                                                title={selectedFile.name}
+                                            />
                                         )}
                                         {previewType === 'image' && (
-                                            <div className="flex justify-center">
-                                                <img
-                                                    sizes="(max-width: 768px) 50vw, 25vw"
-srcSet={selectedFile.previewUrl}
-                                                    alt={selectedFile.name}
-                                                    className="max-h-[70vh] max-w-full object-contain border border-gray-200 rounded-lg"
-                                                />
-                                            </div>
+                                            <img
+                                                src={selectedFile.previewUrl}
+                                                alt={selectedFile.name}
+                                                className="w-full h-full sm:max-h-[70vh] object-contain border border-gray-200 rounded-lg"
+                                            />
                                         )}
                                         {previewType === 'video' && (
-                                            <div className="flex justify-center">
-                                                <video
-                                                    controls
-                                                    className="max-h-[70vh] max-w-full border border-gray-200 rounded-lg"
-                                                >
-                                                    <source sizes="(max-width: 768px) 50vw, 25vw"
-srcSet={selectedFile.previewUrl} type={`video/${selectedFile.type}`} />
-                                                    {t('downloads.videoNotSupported')}
-                                                </video>
-                                            </div>
+                                            <video
+                                                controls
+                                                className="w-full h-full sm:max-h-[70vh] border border-gray-200 rounded-lg"
+                                            >
+                                                <source src={selectedFile.previewUrl} type={`video/${selectedFile.type}`} />
+                                                {t('downloads.videoNotSupported')}
+                                            </video>
                                         )}
                                     </div>
                                 </div>
@@ -412,6 +406,7 @@ srcSet={selectedFile.previewUrl} type={`video/${selectedFile.type}`} />
                     </>
                 )}
             </AnimatePresence>
+
         </section>
     );
 };
