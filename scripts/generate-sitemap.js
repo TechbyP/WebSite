@@ -7,50 +7,57 @@ import { Readable } from 'stream';
 // Configuration
 const DOMAIN = 'https://www.techbyp.com';
 const BUILD_DATE = new Date().toISOString();
+const DEFAULT_IMAGE = `${DOMAIN}/assets/default-product-image.jpg`;
+const LICENSE_URL = `${DOMAIN}/license`;
+const COMPANY_LOCATION = 'Germany';
 
 // Get current directory path
 const __filename = fileURLToPath(import.meta.url);
 const __dirname = path.dirname(__filename);
 
-// Path to your products.tsx file
+// Path configuration
 const productsPath = path.join(__dirname, '../src/data/products.tsx');
-// Path to your localization files
 const enJsonPath = path.join(__dirname, '../src/locales/en.json');
 const deJsonPath = path.join(__dirname, '../src/locales/de.json');
 
 function loadTranslations() {
-  const enContent = fs.readFileSync(enJsonPath, 'utf-8');
-  const deContent = fs.readFileSync(deJsonPath, 'utf-8');
-  
   try {
-    const enTranslations = JSON.parse(enContent);
-    const deTranslations = JSON.parse(deContent);
-    return { en: enTranslations, de: deTranslations };
+    const enContent = fs.readFileSync(enJsonPath, 'utf-8');
+    const deContent = fs.readFileSync(deJsonPath, 'utf-8');
+    return {
+      en: JSON.parse(enContent),
+      de: JSON.parse(deContent)
+    };
   } catch (err) {
     console.error('Error parsing translation files:', err);
     throw err;
   }
 }
 
+function extractTranslation(translations, key) {
+  if (!key) return '';
+  const translationPath = key.split('.');
+  let result = translations.en;
+  for (const part of translationPath) {
+    result = result?.[part];
+    if (!result) break;
+  }
+  return result || '';
+}
+
 function extractProducts(translations) {
   const content = fs.readFileSync(productsPath, 'utf-8');
   
-  // Find the products array more reliably
+  // Find the products array
   const arrayStart = content.indexOf('return [');
-  if (arrayStart === -1) {
-    console.error('Failed to find products array start');
-    throw new Error('Could not locate products array');
-  }
-
+  if (arrayStart === -1) throw new Error('Could not locate products array');
+  
   let arrayContent = content.slice(arrayStart + 'return ['.length);
   const arrayEnd = arrayContent.indexOf('];');
-  if (arrayEnd === -1) {
-    console.error('Failed to find products array end');
-    throw new Error('Could not locate products array end');
-  }
+  if (arrayEnd === -1) throw new Error('Could not locate products array end');
   arrayContent = arrayContent.slice(0, arrayEnd);
 
-  // Improved product block extraction
+  // Parse product blocks
   const productBlocks = [];
   let currentBlock = '';
   let braceLevel = 0;
@@ -72,11 +79,8 @@ function extractProducts(translations) {
     }
 
     if (char === '"' || char === "'" || char === '`') {
-      if (!inString) {
-        inString = char;
-      } else if (inString === char) {
-        inString = false;
-      }
+      if (!inString) inString = char;
+      else if (inString === char) inString = false;
     }
 
     if (!inString) {
@@ -96,7 +100,6 @@ function extractProducts(translations) {
           productBlocks.push(currentBlock);
           currentBlock = '';
           inProduct = false;
-          continue;
         }
       }
     } else if (inProduct) {
@@ -109,8 +112,8 @@ function extractProducts(translations) {
   for (const block of productBlocks) {
     try {
       const cleanBlock = block
-        .replace(/\/\/.*$/gm, '') // remove single-line comments
-        .replace(/,\s*$/, '');    // remove trailing commas
+        .replace(/\/\/.*$/gm, '')
+        .replace(/,\s*$/, '');
 
       const getProp = (propName) => {
         const regex = new RegExp(`${propName}\\s*:\\s*(["'\`])(.*?)\\1|${propName}\\s*:\\s*([^,\\s}]+)`);
@@ -119,70 +122,57 @@ function extractProducts(translations) {
       };
 
       const id = getProp('id');
+      if (!id) continue;
+
+      // Extract basic properties
       const image = getProp('image');
       const heroVideo = getProp('heroVideo');
-      const date = getProp('date');
       const bestseller = cleanBlock.includes('bestseller: true');
 
-      // Matches: name: "Some Name"
-      const directMatch = cleanBlock.match(/name\s*:\s*(["'`])(.*?)\1/);
-      const directName = directMatch ? directMatch[2] : null;
+      // Extract names and descriptions
+      const directName = cleanBlock.match(/name\s*:\s*(["'`])(.*?)\1/)?.[2];
+      const nameKey = cleanBlock.match(/name\s*:\s*t\(['"](.*?)['"]\)/)?.[1];
+      // const heroDescKey = cleanBlock.match(/herodescription\s*:\s*t\(['"](.*?)['"]\)/)?.[1];
+      const descKey = cleanBlock.match(/description\s*:\s*t\(['"](.*?)['"]\)/)?.[1];
 
-      // Matches: name: t("some.translation.key")
-      const tMatch = cleanBlock.match(/name\s*:\s*t\(['"](.*?)['"]\)/);
-      const nameKey = tMatch ? tMatch[1] : null;
+      // Resolve translations
+      const name = directName || extractTranslation(translations, nameKey) || `Product ${id}`;
+      // const heroDescription = extractTranslation(translations, heroDescKey);
+      const description = extractTranslation(translations, descKey);
+      const shortDescription =  description || '';
 
-      if (id) {
-        let name;
+      // Clean name for slug
+      const cleanName = name.replace(/[^\w\s-]/g, '').trim();
 
-        if (directName) {
-          // Always prefer explicit string name
-          name = directName;
-        } else if (nameKey) {
-          // Resolve from translations if no direct string
-          const translationPath = nameKey.split('.');
-          let translation = translations.en;
-          for (const part of translationPath) {
-            translation = translation?.[part];
-            if (!translation) break;
-          }
-          if (!translation) {
-            translation = translations.de;
-            for (const part of translationPath) {
-              translation = translation?.[part];
-              if (!translation) break;
-            }
-          }
-          name = translation || `Product ${id}`;
-        } else {
-          name = `Product ${id}`;
-        }
+      // Determine product type
+      const isAccessory = cleanName.includes('Accessory') || cleanName.includes('Probe');
+      const isSmartSystem = cleanName.includes('MP-');
 
-        // Clean name for slug
-        const cleanName = name.replace(/[^\w\s-]/g, '').trim();
+      const product = {
+        id,
+        name: cleanName,
+        description: shortDescription,
+        imagePath: image ? image.replace(/["'`]/g, '').split('?')[0] : null,
+        videoId: heroVideo || null,
+        lastmod: BUILD_DATE,
+        priority: bestseller ? 0.6 : (isAccessory ? 0.3 : 0.4),
+        changefreq: isSmartSystem ? 'yearly' : 'monthly',
+        isAccessory,
+        isSmartSystem
+      };
 
-        const product = {
-          id,
-          name: cleanName,
-          imagePath: image ? image.replace(/["'`]/g, '').split('?')[0] : null,
-          videoId: heroVideo || null,
-          lastmod: date ? new Date(parseInt(date)).toISOString() : new Date().toISOString(),
-          priority: bestseller ? 0.9 : 0.7,
-          changefreq: bestseller ? 'weekly' : 'monthly'
-        };
-
-        if (product.imagePath && !product.imagePath.includes('undefined')) {
-          product.imageUrl = `${DOMAIN}/assets/${
-            product.imagePath.includes('.')
-              ? product.imagePath.replace(/^\.\.\/assets\//, '')
-              : `${product.imagePath.replace(/^\.\.\/assets\//, '')}.jpg`
-          }`;
-        } else {
-          product.imageUrl = null;
-        }
-
-        products.push(product);
+      // Handle image URL
+      if (product.imagePath && !product.imagePath.includes('undefined')) {
+        product.imageUrl = `${DOMAIN}/assets/${
+          product.imagePath.includes('.')
+            ? product.imagePath.replace(/^\.\.\/assets\//, '')
+            : `${product.imagePath.replace(/^\.\.\/assets\//, '')}.jpg`
+        }`;
+      } else {
+        product.imageUrl = DEFAULT_IMAGE;
       }
+
+      products.push(product);
     } catch (err) {
       console.error('Error processing product block:', err.message);
       console.log('Problematic block:', block.substring(0, 200));
@@ -198,56 +188,77 @@ async function generateSitemap() {
     const products = extractProducts(translations);
     const stream = new SitemapStream({ 
       hostname: DOMAIN,
-      xmlns: { image: true, video: true }
+      xmlns: { 
+        image: true, 
+        video: true,
+        news: false,
+        xhtml: false,
+        mobile: false,
+        image: {
+          image: true
+        },
+        video: {
+          video: true
+        }
+      }
     });
 
-    // Static routes
+    // Static routes with optimized priorities
     const staticRoutes = [
       { url: '/', changefreq: 'daily', priority: 1.0, lastmod: BUILD_DATE },
-      { url: '/contact', changefreq: 'monthly', priority: 0.5, lastmod: BUILD_DATE },
-      { url: '/configurator', changefreq: 'weekly', priority: 0.8, lastmod: BUILD_DATE }
+      { url: '/configurator', changefreq: 'weekly', priority: 0.9, lastmod: BUILD_DATE },
+      { url: '/products', changefreq: 'monthly', priority: 0.8, lastmod: BUILD_DATE },
+      { url: '/contact', changefreq: 'yearly', priority: 0.3, lastmod: BUILD_DATE },
+      { url: '/terms', changefreq: 'yearly', priority: 0.1, lastmod: BUILD_DATE }
     ];
+
     staticRoutes.forEach(route => stream.write(route));
 
-    // Product routes
+    // Process products
     products.forEach(product => {
-      // Create a more SEO-friendly slug
       const slug = product.name.toLowerCase()
-        .replace(/\s+/g, '-')         // Replace spaces with -
-        .replace(/[^\w-]+/g, '')      // Remove all non-word chars
-        .replace(/--+/g, '-')         // Replace multiple - with single -
-        .replace(/^-+/, '')           // Trim - from start of text
-        .replace(/-+$/, '');          // Trim - from end of text
+        .replace(/\s+/g, '-')
+        .replace(/[^\w-]+/g, '')
+        .replace(/--+/g, '-')
+        .replace(/^-+/, '')
+        .replace(/-+$/, '');
 
       const entry = {
         url: `/product/${slug}-${product.id}`,
         changefreq: product.changefreq,
         priority: product.priority,
-        lastmod: product.lastmod
+        lastmod: product.lastmod,
+        img: [{
+          url: product.imageUrl,
+          caption: `${product.name}: ${product.description.substring(0, 120)}...`,
+          title: product.name,
+          geo_location: COMPANY_LOCATION,
+          license: LICENSE_URL
+        }]
       };
 
-      if (product.imageUrl) {
-        entry.img = [{
-          url: product.imageUrl,
-          caption: product.name,
-          title: product.name
-        }];
-      }
-
       if (product.videoId) {
+        const isYouTube = product.videoId.length === 11 && !product.videoId.includes('/');
+        
         entry.video = [{
-          thumbnail_loc: product.imageUrl || `${DOMAIN}/assets/default-thumbnail.jpg`,
-          title: product.name,
-          description: `Video demonstration of ${product.name}`,
-          content_loc: product.videoId.includes('youtube') 
-            ? `https://www.youtube.com/watch?v=${product.videoId}`
-            : `${DOMAIN}/videos/${product.videoId}`,
+          thumbnail_loc: product.imageUrl,
+          title: `${product.name} Demonstration`,
+          description: product.description || `Video showing features of ${product.name}`,
           family_friendly: 'yes',
-          duration: product.name.includes('MP-') ? 180 : 120,
+          duration: product.isSmartSystem ? 180 : 90,
           live: 'no',
           requires_subscription: 'no',
-          upload_date: product.lastmod.split('T')[0] // YYYY-MM-DD
+          upload_date: product.lastmod.split('T')[0],
+          tags: product.isSmartSystem ? 
+            ['sampling', 'technology', 'automation'] : 
+            ['accessory', 'tool', 'measurement']
         }];
+
+        if (isYouTube) {
+          entry.video[0].player_loc = `https://www.youtube.com/embed/${product.videoId}`;
+        } else {
+          entry.video[0].content_loc = `${DOMAIN}/videos/${product.videoId.replace(/\.\w+$/, '')}.mp4`;
+        }
       }
 
       stream.write(entry);
@@ -257,21 +268,15 @@ async function generateSitemap() {
 
     const sitemap = (await streamToPromise(Readable.from(stream)))
       .toString()
-      .replace(/<\/url>\s*<\/url>/g, '</url>'); // fix duplicate closing tags
+      .replace(/<\/url>\s*<\/url>/g, '</url>');
 
     fs.writeFileSync(path.join(__dirname, '../public/sitemap.xml'), sitemap);
 
-    console.log(`✅ Sitemap generated:
+    console.log(`✅ Sitemap generated with:
+- ${staticRoutes.length} static URLs
 - ${products.length} product URLs
-- ${products.filter(p => p.imageUrl).length} images
+- ${products.filter(p => p.imageUrl !== DEFAULT_IMAGE).length} custom images
 - ${products.filter(p => p.videoId).length} videos`);
-
-    // Log all product URLs for verification
-    console.log('\nAll product URLs:');
-    products.forEach(p => {
-      const slug = p.name.toLowerCase().replace(/\s+/g, '-').replace(/[^\w-]+/g, '');
-      console.log(`/product/${slug}-${p.id}`);
-    });
 
   } catch (error) {
     console.error('❌ Sitemap generation failed:', error);
