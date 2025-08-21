@@ -1,13 +1,8 @@
 {
-
-  
-"headerTheme": {
-  "switchToDark": "Dunkler Modus",
-  "switchToLight": "Heller Modus"
-},
-
-
-
+  "headerTheme": {
+    "switchToDark": "Dunkler Modus",
+    "switchToLight": "Heller Modus"
+  },
   "termsOfService": {
     "back": "Zurück",
     "title": "Nutzungsbedingungen",
@@ -186,6 +181,7 @@
     }
   },
   "blogEdit": {
+    "chooseFile": "Datei zum Hochladen auswählen",
     "selectArticle": "Wählen Sie einen Artikel aus",
     "wantToCreateArticle": "Erstellen Sie Ihren ersten Artikel, um zu beginnen",
     "selectFromArticle": "Wählen Sie einen Artikel aus der Seitenleiste oder erstellen Sie einen neuen",
@@ -248,7 +244,6 @@
     "like": "Diesen Kommentar mögen",
     "unlike": "Diesen Kommentar nicht mehr mögen"
   },
-
   "loadingArticle": "Artikel wird geladen...",
   "errorLoadingArticle": "Fehler beim Laden des Artikels",
   "backToBlog": "Zurück zum Blog",
@@ -266,7 +261,6 @@
   "views": "Ansichten",
   "category": "{{category}}",
   "readTime": "{{time}} Lesezeit",
-
   "heroEditor": {
     "fetchError": "Fehler beim Laden der Hero-Elemente",
     "createSuccess": "Element erfolgreich erstellt!",
@@ -696,7 +690,7 @@
       "contact": "Kontakt",
       "privacyPolicy": "Datenschutz",
       "terms": "Nutzungsbedingungen",
-      "imprint":"Impressum"
+      "imprint": "Impressum"
     },
     "social": {
       "facebook": "Facebook",
@@ -1183,7 +1177,9 @@
         "previousMessage": "Vorherige Nachricht",
         "type": "Typ",
         "title": "Titel",
-        "changes": "Änderungen"
+        "changes": "Änderungen",
+        "email": "E-Mail des Clubmitglieds",
+        "deleted by": "Gelöscht von"
       }
     },
     "common": {
@@ -1191,9 +1187,9 @@
       "thisWeek": "diese Woche",
       "today": "heute",
       "justNow": "gerade eben",
-      "minutesAgo": "vor {count} Minute(n)",
-      "hoursAgo": "vor {count} Stunde(n)",
-      "daysAgo": "vor {count} Tag(en)",
+      "minutesAgo": "vor {{count}} Minute(n)",
+      "hoursAgo": "vor {{count}} Stunde(n)",
+      "daysAgo": "vor {{count}} Tag(en)",
       "openMenu": "Menü öffnen",
       "closeMenu": "Menü schließen",
       "toggleLanguage": "Sprache wechseln",
@@ -1822,7 +1818,7 @@
     ]
   },
   "trailer": {
-    "name": "Spezial-anhänger",
+    "name": "Anhänger-Spezial",
     "nickname": "Feldtransporter",
     "specs": [
       "Feuerverzinkt – Rost hat keine Chance.",
@@ -1927,7 +1923,7 @@
     ]
   },
   "spareparts": {
-    "name": "Empfohlene Ersatzteile",
+    "name": "Ersatzteile Empfohlen",
     "nickname": "Die Lebensretter",
     "specs": [
       "Werksgeprüfte Ersatzteile für alle Modelle",
@@ -2018,8 +2014,8 @@
     "testimonials": []
   },
   "led": {
-    "name": "LED-Arbeitsleuchte 1700",
-    "nickname": "Die Mitternachtssonne",
+    "name": "LED-Joblampe 1700",
+    "nickname": "Mitternachts-Sonne",
     "specs": [
       "Schwenkbare LED-Arbeitsleuchte für Nahfeldbeleuchtung",
       "Blendende 1700 Lumen Ausgangsleistung von 4 LEDs",

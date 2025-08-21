@@ -6,9 +6,6 @@ import sanitizeHtml from 'sanitize-html';
 
 /**
  * Formats bytes to human-readable format
- * @param bytes Number of bytes
- * @param decimals Number of decimal places
- * @returns Formatted string (e.g., "1.5 MB")
  */
 export const formatBytes = (bytes: number, decimals = 2): string => {
   if (bytes === 0) return '0 Bytes';
@@ -24,8 +21,6 @@ export const formatBytes = (bytes: number, decimals = 2): string => {
 
 /**
  * Formats milliseconds to human-readable time
- * @param ms Time in milliseconds
- * @returns Formatted string (e.g., "1.5s", "500ms")
  */
 export const formatTime = (ms: number): string => {
   if (ms === undefined || ms === null) return 'N/A';
@@ -34,9 +29,7 @@ export const formatTime = (ms: number): string => {
 };
 
 /**
- * Formats a number with commas as thousand separators
- * @param num Number to format
- * @returns Formatted string (e.g., "1,234,567")
+ * Formats a number with commas
  */
 export const formatNumber = (num: number): string => {
   if (num === undefined || num === null) return 'N/A';
@@ -44,10 +37,7 @@ export const formatNumber = (num: number): string => {
 };
 
 /**
- * Formats a percentage value
- * @param value Number between 0 and 1
- * @param decimals Number of decimal places
- * @returns Formatted string (e.g., "45.67%")
+ * Formats percentage
  */
 export const formatPercentage = (value: number, decimals = 2): string => {
   if (value === undefined || value === null) return 'N/A';
@@ -55,42 +45,42 @@ export const formatPercentage = (value: number, decimals = 2): string => {
 };
 
 /**
- * Formats a date string to relative time (e.g., "2 hours ago")
- * @param dateString ISO date string
- * @returns Relative time string
+ * Formats relative time
  */
 export const formatRelativeTime = (dateString: string): string => {
   const date = new Date(dateString);
   const now = new Date();
   const seconds = Math.floor((now.getTime() - date.getTime()) / 1000);
-  
-  const intervals = {
+
+  const intervals: Record<string, number> = {
     year: 31536000,
     month: 2592000,
     week: 604800,
     day: 86400,
     hour: 3600,
     minute: 60,
-    second: 1
+    second: 1,
   };
-  
+
   for (const [unit, secondsInUnit] of Object.entries(intervals)) {
     const interval = Math.floor(seconds / secondsInUnit);
     if (interval >= 1) {
       return `${interval} ${unit}${interval === 1 ? '' : 's'} ago`;
     }
   }
-  
+
   return 'just now';
 };
 
-// Existing formatting functions from your original file
+/**
+ * Formats content (HTML or Markdown) for display
+ * Adapted for dark mode
+ */
 export const formatContentForDisplay = (content: string[] | string | undefined): JSX.Element[] => {
   if (!content) {
-    return [<div key="0" className="mb-4"><p>No content available</p></div>];
+    return [<div key="0" className="mb-4"><p className="text-gray-900 dark:text-gray-100">No content available</p></div>];
   }
 
-  // Handle both string and string[] input
   const contentArray = Array.isArray(content) ? content : [content];
 
   return contentArray.map((text, index) => {
@@ -98,7 +88,6 @@ export const formatContentForDisplay = (content: string[] | string | undefined):
       return <div key={`spacer-${index}`} className="h-6" />;
     }
 
-    // Check if the content is HTML (from RichTextEditor)
     const isHtml = /<[a-z][\s\S]*>/i.test(text);
 
     if (isHtml) {
@@ -113,18 +102,18 @@ export const formatContentForDisplay = (content: string[] | string | undefined):
       return (
         <div 
           key={`html-${index}`} 
-          className="mb-4 prose max-w-none"
+          className="mb-4 prose max-w-none text-gray-900 dark:text-gray-100"
           dangerouslySetInnerHTML={{ __html: sanitizedHtml }}
         />
       );
     }
 
-    // Handle markdown content
     const markdownComponent = (
       <ReactMarkdown 
         key={`markdown-${index}`}
         rehypePlugins={[rehypeRaw]}
         remarkPlugins={[remarkGfm]}
+        className="text-gray-900 dark:text-gray-100"
       >
         {text}
       </ReactMarkdown>
@@ -139,20 +128,13 @@ export const formatContentForDisplay = (content: string[] | string | undefined):
         </div>
       );
     }
-    return (
-      <div key={index} className="mb-4">
-        {markdownComponent}
-      </div>
-    );
+
+    return <div key={index} className="mb-4">{markdownComponent}</div>;
   }).filter(Boolean) as JSX.Element[];
 };
 
 export const formatDate = (dateString: string): string => {
-  const options: Intl.DateTimeFormatOptions = {
-    year: 'numeric',
-    month: 'long',
-    day: 'numeric',
-  };
+  const options: Intl.DateTimeFormatOptions = { year: 'numeric', month: 'long', day: 'numeric' };
   return new Date(dateString).toLocaleDateString('en-US', options);
 };
 
@@ -168,7 +150,6 @@ export const generateExcerpt = (content: string[] | undefined, maxLength = 160):
     .trim();
 
   if (firstPara.length <= maxLength) return firstPara;
-
   return firstPara.substring(0, maxLength).replace(/\s+\S*$/, '') + '...';
 };
 

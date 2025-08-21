@@ -523,39 +523,48 @@ const ProductDetail = () => {
         </div>
       </div>
 
-      <div className="mobile-order-sticky lg:hidden">
-        <button
-          onClick={() => {
-            setSelectedProductId(product.id.toString());
-            setShowOrderModal(true);
-          }}
-          className="mobile-order-button bg-brandgreen text-white font-medium"
-        >
-          <ShoppingCart className="h-4 w-4" />
-          {t('product.order')}
-        </button>
+      <div
+  className="mobile-order-sticky lg:hidden fixed bottom-0 left-0 right-0 flex justify-around gap-2 p-2 bg-white dark:bg-gray-900 border-t border-gray-200 dark:border-gray-700 z-50"
+>
+  <button
+    onClick={() => {
+      setSelectedProductId(product.id.toString());
+      setShowOrderModal(true);
+    }}
+    className={`mobile-order-button flex-1 flex items-center justify-center gap-2 px-4 py-3 font-medium text-white rounded-lg transition-colors ${
+      product.id >= 1000 && product.id < 2000
+        ? "bg-brandgreen hover:bg-green-900"
+        : "bg-brandgreen hover:bg-green-900 w-full"
+    }`}
+  >
+    <ShoppingCart className="h-5 w-5" />
+    {t('product.order')}
+  </button>
 
-        <button
-          onClick={() => showProductToast(product)}
-          className="mobile-order-button border border-brandgreen text-brandgreen font-medium bg-white dark:bg-gray-800"
-        >
-          <svg
-            xmlns="http://www.w3.org/2000/svg"
-            className="h-4 w-4"
-            fill="none"
-            viewBox="0 0 24 24"
-            stroke="currentColor"
-          >
-            <path
-              strokeLinecap="round"
-              strokeLinejoin="round"
-              strokeWidth={2}
-              d="M9 5H7a2 2 0 00-2 2v12a2 2 0 002 2h10a2 2 0 002-2V7a2 2 0 00-2-2h-2M9 5a2 2 0 002 2h2a2 2 0 002-2M9 5a2 2 0 012-2h2a2 2 0 012 2"
-            />
-          </svg>
-          {t('product.configure')}
-        </button>
-      </div>
+  {product.id >= 1000 && product.id < 2000 && (
+    <button
+      onClick={() => showProductToast(product)}
+      className="mobile-order-button flex-1 flex items-center justify-center gap-2 px-4 py-3 font-medium rounded-lg border border-brandgreen text-brandgreen bg-white dark:bg-gray-800 hover:bg-brandgreen hover:text-white transition-colors"
+    >
+      <svg
+        xmlns="http://www.w3.org/2000/svg"
+        className="h-5 w-5"
+        fill="none"
+        viewBox="0 0 24 24"
+        stroke="currentColor"
+      >
+        <path
+          strokeLinecap="round"
+          strokeLinejoin="round"
+          strokeWidth={2}
+          d="M9 5H7a2 2 0 00-2 2v12a2 2 0 002 2h10a2 2 0 002-2V7a2 2 0 00-2-2h-2M9 5a2 2 0 002 2h2a2 2 0 002-2M9 5a2 2 0 012-2h2a2 2 0 012 2"
+        />
+      </svg>
+      {t('product.configure')}
+    </button>
+  )}
+</div>
+
 
       {showOrderModal && selectedProductId && (
         <div

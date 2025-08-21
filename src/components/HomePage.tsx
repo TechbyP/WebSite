@@ -30,7 +30,7 @@ export default function HomePage() {
 
       {/* Above-the-fold content */}
       <Announcement />
-      <CombinedHero /> {/* Hero image is LCP-critical */}
+      <CombinedHero /> 
 
       {/* Lazy-load below-the-fold content */}
       <Suspense fallback={<div>Loading content...</div>}>

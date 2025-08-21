@@ -3,6 +3,7 @@ import { Article } from './types/articles';
 import { useTranslation } from 'react-i18next';
 import RichTextEditor from './RichTextEditor';
 import AvatarImage from '../../assets/pictures/Logo-Symbol.png';
+import { useTheme } from '../../utils/context/theme-context';
 
 interface ArticleFormProps {
   article: Partial<Article>;
@@ -26,6 +27,7 @@ const ArticleForm = ({
   onLanguageChange,
 }: ArticleFormProps) => {
   const { t } = useTranslation();
+  const { theme } = useTheme();
   const [formData, setFormData] = useState<Partial<Article>>(article);
   const [imageFile, setImageFile] = useState<File | null>(null);
   const [avatarFile, setAvatarFile] = useState<File | null>(null);
@@ -38,7 +40,7 @@ const ArticleForm = ({
     setAvatarUrl(article.author?.avatar || '');
   }, [article]);
 
-  const handleInputChange = (field: keyof ArticleContent, value: string) => {
+  const handleInputChange = (field: keyof Article['content'], value: string) => {
     setFormData(prev => ({
       ...prev,
       content: {
@@ -58,7 +60,7 @@ const ArticleForm = ({
         ...prev.content,
         [language]: {
           ...prev.content?.[language],
-          content: content, // This now matches the expected array structure
+          content: content,
         },
       },
     }));
@@ -99,160 +101,59 @@ const ArticleForm = ({
     onSave(formData);
   };
 
+  const inputClass =
+    'w-full px-4 py-2 rounded-xl border bg-white/80 dark:bg-gray-800/80 ' +
+    'border-gray-300 dark:border-gray-700 text-gray-900 dark:text-gray-100 ' +
+    'focus:outline-none focus:ring-2 focus:ring-blue-500 transition';
+
+  const labelClass = 'block text-sm font-medium text-gray-700 dark:text-gray-300 mb-1';
+
   return (
-    <div className="bg-white p-8 rounded-xl shadow-lg">
-      <h2 className="text-2xl font-black uppercase text-gray-900 mb-6">
+    <div className="bg-white/70 dark:bg-gray-900/70 backdrop-blur-lg p-8 rounded-2xl shadow-xl border border-gray-200 dark:border-gray-800">
+      <h2 className="text-2xl font-bold text-gray-900 dark:text-gray-100 mb-6">
         {article.id ? t('blogEdit.edit') : t('blogEdit.newArticle')}
       </h2>
 
-      <div className="mb-6 flex space-x-4">
-        <button
-          type="button"
-          onClick={() => onLanguageChange('en')}
-          className={`px-4 py-2 rounded ${language === 'en' ? 'bg-blue-600 text-white' : 'bg-gray-200'}`}
-        >
-          {t('blogEdit.english')}
-        </button>
-        <button
-          type="button"
-          onClick={() => onLanguageChange('de')}
-          className={`px-4 py-2 rounded ${language === 'de' ? 'bg-blue-600 text-white' : 'bg-gray-200'}`}
-        >
-          {t('blogEdit.german')}
-        </button>
+      {/* Language Toggle */}
+      <div className="mb-6 flex bg-gray-100 dark:bg-gray-800 rounded-xl p-1 w-fit">
+        {(['en', 'de'] as const).map(lang => (
+          <button
+            key={lang}
+            type="button"
+            onClick={() => onLanguageChange(lang)}
+            className={`px-4 py-2 rounded-lg text-sm font-medium transition ${
+              language === lang
+                ? 'bg-blue-600 text-white shadow'
+                : 'text-gray-600 dark:text-gray-300 hover:bg-gray-200 dark:hover:bg-gray-700'
+            }`}
+          >
+            {t(lang === 'en' ? 'blogEdit.english' : 'blogEdit.german')}
+          </button>
+        ))}
       </div>
 
-      <form onSubmit={handleSubmit}>
-        <div className="grid grid-cols-1 gap-6 mb-6">
+      <form onSubmit={handleSubmit} className="space-y-8">
+        {/* Article Info */}
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
           <div>
-            <label className="block text-sm font-medium text-gray-700 mb-1">
-              {t('blogEdit.title')}
-            </label>
+            <label className={labelClass}>{t('blogEdit.title')}</label>
             <input
               type="text"
               value={formData.content?.[language]?.title || ''}
               onChange={(e) => handleInputChange('title', e.target.value)}
-              className="w-full px-4 py-2 border border-gray-300 rounded-md focus:ring-blue-500 focus:border-blue-500"
+              className={inputClass}
               required
             />
           </div>
 
           <div>
-            <label className="block text-sm font-medium text-gray-700 mb-1">
-              {t('blogEdit.excerpt')}
-            </label>
-            <textarea
-              value={formData.content?.[language]?.excerpt || ''}
-              onChange={(e) => handleInputChange('excerpt', e.target.value)}
-              className="w-full px-4 py-2 border border-gray-300 rounded-md focus:ring-blue-500 focus:border-blue-500"
-              rows={3}
-              required
-            />
-          </div>
-
-          <div>
-            <label className="block text-sm font-medium text-gray-700 mb-1">
-              {t('blogEdit.content')}
-            </label>
-            <RichTextEditor
-              content={formData.content?.[language]?.content || ['']}
-              onChange={handleContentChange}
-              onImageUpload={onImageUpload}
-              language={language}
-            />
-          </div>
-
-          <div>
-            <label className="block text-sm font-medium text-gray-700 mb-1">
-              {t('blogEdit.authorName')}
-            </label>
-            <input
-              type="text"
-              value={formData.author?.name || ''}
-              onChange={(e) =>
-                setFormData(prev => ({
-                  ...prev,
-                  author: {
-                    ...prev.author,
-                    name: e.target.value,
-                  },
-                }))
-              }
-              className="w-full px-4 py-2 border border-gray-300 rounded-md focus:ring-blue-500 focus:border-blue-500"
-              required
-            />
-          </div>
-
-          <div>
-            <label className="block text-sm font-medium text-gray-700 mb-1">
-              {t('blogEdit.authorRole')}
-            </label>
-            <input
-              type="text"
-              value={formData.author?.role || ''}
-              onChange={(e) =>
-                setFormData(prev => ({
-                  ...prev,
-                  author: {
-                    ...prev.author,
-                    role: e.target.value,
-                  },
-                }))
-              }
-              className="w-full px-4 py-2 border border-gray-300 rounded-md focus:ring-blue-500 focus:border-blue-500"
-              required
-            />
-          </div>
-
-          <div>
-            <label className="block text-sm font-medium text-gray-700 mb-1">
-              {t('blogEdit.date')}
-            </label>
-            <input
-              type="date"
-              value={formData.date ? new Date(formData.date).toISOString().split('T')[0] : ''}
-              onChange={(e) =>
-                setFormData(prev => ({
-                  ...prev,
-                  date: new Date(e.target.value).toISOString(),
-                }))
-              }
-              className="w-full px-4 py-2 border border-gray-300 rounded-md focus:ring-blue-500 focus:border-blue-500"
-              required
-            />
-          </div>
-
-          <div>
-            <label className="block text-sm font-medium text-gray-700 mb-1">
-              {t('blogEdit.readTime')}
-            </label>
-            <input
-              type="text"
-              value={formData.readTime || ''}
-              onChange={(e) =>
-                setFormData(prev => ({
-                  ...prev,
-                  readTime: e.target.value,
-                }))
-              }
-              className="w-full px-4 py-2 border border-gray-300 rounded-md focus:ring-blue-500 focus:border-blue-500"
-              required
-            />
-          </div>
-
-          <div>
-            <label className="block text-sm font-medium text-gray-700 mb-1">
-              {t('blogEdit.category')}
-            </label>
+            <label className={labelClass}>{t('blogEdit.category')}</label>
             <select
               value={formData.category || ''}
               onChange={(e) =>
-                setFormData(prev => ({
-                  ...prev,
-                  category: e.target.value,
-                }))
+                setFormData(prev => ({ ...prev, category: e.target.value }))
               }
-              className="w-full px-4 py-2 border border-gray-300 rounded-md focus:ring-blue-500 focus:border-blue-500"
+              className={inputClass}
               required
             >
               {Object.entries(t('blogEdit.categories', { returnObjects: true })).map(([key, value]) => (
@@ -262,65 +163,132 @@ const ArticleForm = ({
               ))}
             </select>
           </div>
+        </div>
 
+        {/* Excerpt & Content */}
+        <div>
+          <label className={labelClass}>{t('blogEdit.excerpt')}</label>
+          <textarea
+            value={formData.content?.[language]?.excerpt || ''}
+            onChange={(e) => handleInputChange('excerpt', e.target.value)}
+            className={inputClass}
+            rows={3}
+            required
+          />
+        </div>
+
+        <div>
+          <label className={labelClass}>{t('blogEdit.content')}</label>
+          <RichTextEditor
+            content={formData.content?.[language]?.content || ['']}
+            onChange={handleContentChange}
+            onImageUpload={onImageUpload}
+            language={language}
+          />
+        </div>
+
+        {/* Author */}
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
           <div>
-            <label className="block text-sm font-medium text-gray-700 mb-1">
-              {t('blogEdit.articleImage')}
-            </label>
-            <div className="flex items-center space-x-4">
-              <input
-                type="file"
-                onChange={(e) => setImageFile(e.target.files?.[0] || null)}
-                className="w-full px-4 py-2 border border-gray-300 rounded-md focus:ring-blue-500 focus:border-blue-500"
-              />
-              <button
-                type="button"
-                onClick={handleImageUpload}
-                disabled={!imageFile || isLoading}
-                className="px-4 py-2 bg-blue-600 text-white rounded-md hover:bg-blue-700 disabled:bg-gray-400"
-              >
-                {t('blogEdit.uploadFile')}
-              </button>
-            </div>
-            {imageUrl && (
-              <div className="mt-2">
-                <img
-                  sizes="(max-width: 768px) 50vw, 25vw"
-srcSet={imageUrl}
-                
-                  alt="Article preview"
-                  className="max-h-40 rounded-md"
-                />
-              </div>
-            )}
-            <p className="mt-1 text-sm text-gray-500">{t('blogEdit.orPasteUrl')}</p>
+            <label className={labelClass}>{t('blogEdit.authorName')}</label>
             <input
               type="text"
-              value={imageUrl}
-              onChange={(e) => {
-                setImageUrl(e.target.value);
-                setFormData(prev => ({ ...prev, image: e.target.value }));
-              }}
-              className="w-full mt-2 px-4 py-2 border border-gray-300 rounded-md focus:ring-blue-500 focus:border-blue-500"
-              placeholder="https://example.com/image.jpg"
+              value={formData.author?.name || ''}
+              onChange={(e) =>
+                setFormData(prev => ({ ...prev, author: { ...prev.author, name: e.target.value } }))
+              }
+              className={inputClass}
+              required
             />
           </div>
 
           <div>
-            <label className="block text-sm font-medium text-gray-700 mb-1">
-              {t('blogEdit.authorAvatar')}
-            </label>
-            <div className="flex items-center space-x-4 mb-2">
+            <label className={labelClass}>{t('blogEdit.authorRole')}</label>
+            <input
+              type="text"
+              value={formData.author?.role || ''}
+              onChange={(e) =>
+                setFormData(prev => ({ ...prev, author: { ...prev.author, role: e.target.value } }))
+              }
+              className={inputClass}
+              required
+            />
+          </div>
+        </div>
+
+        {/* Metadata */}
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+          <div>
+            <label className={labelClass}>{t('blogEdit.date')}</label>
+            <input
+              type="date"
+              value={formData.date ? new Date(formData.date).toISOString().split('T')[0] : ''}
+              onChange={(e) => setFormData(prev => ({ ...prev, date: new Date(e.target.value).toISOString() }))}
+              className={inputClass}
+              required
+            />
+          </div>
+
+          <div>
+            <label className={labelClass}>{t('blogEdit.readTime')}</label>
+            <input
+              type="text"
+              value={formData.readTime || ''}
+              onChange={(e) => setFormData(prev => ({ ...prev, readTime: e.target.value }))}
+              className={inputClass}
+              required
+            />
+          </div>
+        </div>
+
+        {/* Image Upload */}
+        <div>
+          <label className={labelClass}>{t('blogEdit.articleImage')}</label>
+          <div className="flex flex-col space-y-3">
+            <div className="border-2 border-dashed rounded-xl p-4 text-center hover:border-blue-400 transition">
               <input
                 type="file"
-                onChange={(e) => setAvatarFile(e.target.files?.[0] || null)}
-                className="w-full px-4 py-2 border border-gray-300 rounded-md focus:ring-blue-500 focus:border-blue-500"
+                id="article-image"
+                onChange={(e) => setImageFile(e.target.files?.[0] || null)}
+                className="hidden"
               />
+              <label htmlFor="article-image" className="cursor-pointer text-sm text-gray-600 dark:text-gray-300">
+                {t('blogEdit.chooseFile')}
+              </label>
+            </div>
+            <button
+              type="button"
+              onClick={handleImageUpload}
+              disabled={!imageFile || isLoading}
+              className="px-4 py-2 bg-blue-600 text-white rounded-lg hover:bg-blue-700 disabled:bg-gray-400"
+            >
+              {t('blogEdit.uploadFile')}
+            </button>
+            {imageUrl && (
+              <img srcSet={imageUrl} alt="Article preview" className="max-h-40 rounded-lg shadow" />
+            )}
+          </div>
+        </div>
+
+        {/* Avatar Upload */}
+        <div>
+          <label className={labelClass}>{t('blogEdit.authorAvatar')}</label>
+          <div className="flex flex-col space-y-3">
+            <div className="flex items-center gap-4">
+              <input
+                type="file"
+                id="avatar-upload"
+                onChange={(e) => setAvatarFile(e.target.files?.[0] || null)}
+                className="hidden"
+              />
+              <label htmlFor="avatar-upload" className="px-4 py-2 border rounded-lg cursor-pointer text-sm">
+                {t('blogEdit.chooseFile')}
+              </label>
               <button
                 type="button"
                 onClick={handleAvatarUpload}
                 disabled={!avatarFile || isLoading}
-                className="px-4 py-2 bg-blue-600 text-white rounded-md hover:bg-blue-700 disabled:bg-gray-400"
+                className="px-4 py-2 bg-blue-600 text-white rounded-lg hover:bg-blue-700 disabled:bg-gray-400"
               >
                 {t('blogEdit.uploadFile')}
               </button>
@@ -328,63 +296,32 @@ srcSet={imageUrl}
                 type="button"
                 onClick={() => {
                   setAvatarUrl(AvatarImage);
-                  setFormData(prev => ({
-                    ...prev,
-                    author: {
-                      ...prev.author,
-                      avatar: AvatarImage
-                    }
-                  }));
+                  setFormData(prev => ({ ...prev, author: { ...prev.author, avatar: AvatarImage } }));
                 }}
-                className="px-4 py-2 bg-gray-200 text-gray-700 rounded-md hover:bg-gray-300"
-                disabled={isLoading}
+                className="px-4 py-2 bg-gray-200 dark:bg-gray-700 dark:text-gray-200 rounded-lg hover:bg-gray-300"
               >
                 {t('blogEdit.useDefault')}
               </button>
             </div>
             {avatarUrl && (
-              <div className="mb-2">
-                <img
-                  sizes="(max-width: 768px) 50vw, 25vw"
-srcSet={avatarUrl}
-                  
-                  alt="Author avatar preview"
-                  className="w-16 h-16 rounded-full object-cover border-2 border-gray-300"
-                />
-              </div>
+              <img srcSet={avatarUrl} alt="Author avatar" className="w-16 h-16 rounded-full object-cover shadow" />
             )}
-            <p className="mt-1 text-sm text-gray-500">{t('blogEdit.orPasteUrl')}</p>
-            <input
-              type="text"
-              value={avatarUrl}
-              onChange={(e) => {
-                setAvatarUrl(e.target.value);
-                setFormData(prev => ({
-                  ...prev,
-                  author: {
-                    ...prev.author,
-                    avatar: e.target.value,
-                  },
-                }));
-              }}
-              className="w-full mt-2 px-4 py-2 border border-gray-300 rounded-md focus:ring-blue-500 focus:border-blue-500"
-              placeholder="https://example.com/avatar.jpg"
-            />
           </div>
         </div>
 
-        <div className="flex justify-end space-x-4">
+        {/* Actions */}
+        <div className="flex justify-end gap-4">
           <button
             type="button"
             onClick={onCancel}
-            className="px-6 py-2 border border-gray-300 rounded-md text-gray-700 hover:bg-gray-50"
+            className="px-6 py-2 rounded-lg border border-gray-300 dark:border-gray-600 text-gray-700 dark:text-gray-200 hover:bg-gray-50 dark:hover:bg-gray-700"
           >
             {t('blogEdit.cancel')}
           </button>
           <button
             type="submit"
             disabled={isLoading}
-            className="px-6 py-2 bg-blue-600 text-white rounded-md hover:bg-blue-700 disabled:bg-gray-400"
+            className="px-6 py-2 rounded-lg bg-blue-600 text-white hover:bg-blue-700 disabled:bg-gray-400"
           >
             {isLoading ? t('saving') : t('blogEdit.saveArticle')}
           </button>

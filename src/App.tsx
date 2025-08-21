@@ -163,9 +163,11 @@ function App() {
           <Route
             element={
               <PrivateRoute>
-                <AdminLayout>
-                  <Outlet />
-                </AdminLayout>
+                <ThemeProvider>
+                  <AdminLayout>
+                    <Outlet />
+                  </AdminLayout>
+                </ThemeProvider>
               </PrivateRoute>
             }
           >

@@ -1,4 +1,3 @@
-// src/pages/AdminDashboard.tsx
 import { useState, useEffect, useCallback } from 'react';
 import { useNavigate, Outlet } from 'react-router-dom';
 import { useAuth } from './hooks/AuthContext';
@@ -8,7 +7,7 @@ import { logActivity } from '../../utils/activityLogger';
 import { toast, ToastContainer } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 import { useTranslation } from 'react-i18next';
-import { FiGlobe } from 'react-icons/fi';
+import { FiGlobe, FiMoon, FiSun } from 'react-icons/fi';
 import {
     FiHome,
     FiEdit,
@@ -28,9 +27,9 @@ import BlogPostEditor from '../blog/BlogPostEditor';
 import HeroPageEditor from '../hero/HeroPageEditor';
 import AnnouncementEditor from '../announcement/AnnouncementEditor';
 import Logo from '../../assets/pictures/techbyp.png';
+import TechBypLogoDark from '../../assets/pictures/techbypLogoDark.png'
 import logo_small from '../../assets/pictures/Logo-Symbol.png';
 import { motion, AnimatePresence } from 'framer-motion';
-import { useTheme } from './hooks/useTheme';
 import { ConfirmationDialog } from './ui/ConfirmationDialog';
 import { Skeleton } from './ui/Skeleton';
 
@@ -60,6 +59,14 @@ type Activity = {
     metadata?: any;
 };
 
+type ClubMember = {
+    id: string;
+    email: string;
+    name: string;
+    source: string;
+    joinedDate: any;
+};
+
 const AdminDashboard = () => {
     const { user, logout } = useAuth();
     const { t, i18n } = useTranslation();
@@ -86,7 +93,28 @@ const AdminDashboard = () => {
         onConfirm: () => { },
         onCancel: () => { }
     });
-    
+
+    // Add dark mode state and toggle function
+    const [isDarkMode, setIsDarkMode] = useState(() => {
+        const savedTheme = localStorage.getItem('theme');
+        return savedTheme === 'dark' || (!savedTheme && window.matchMedia('(prefers-color-scheme: dark)').matches);
+    });
+
+    // Apply dark mode class to document
+    useEffect(() => {
+        if (isDarkMode) {
+            document.documentElement.classList.add('dark');
+            localStorage.setItem('theme', 'dark');
+        } else {
+            document.documentElement.classList.remove('dark');
+            localStorage.setItem('theme', 'light');
+        }
+    }, [isDarkMode]);
+
+    const toggleDarkMode = () => {
+        setIsDarkMode(!isDarkMode);
+    };
+
     const getDisplayName = useCallback((email: string): string => {
         const nameMap: Record<string, string> = {
             "d.alex@techbyp.com": "David",
@@ -160,7 +188,7 @@ const AdminDashboard = () => {
                     await deleteDoc(doc(db, 'club_members', memberId));
                     toast.success('Member deleted successfully');
 
-                    // Only log from the admin's perspective
+                    // Log the member deletion activity
                     await addDoc(collection(db, 'analytics'), {
                         event: 'member_deleted',
                         userId: user?.uid,
@@ -188,6 +216,7 @@ const AdminDashboard = () => {
             const oneWeekAgo = new Date();
             oneWeekAgo.setDate(oneWeekAgo.getDate() - 7);
 
+            // Updated query to include member events
             const q = query(
                 collection(db, 'analytics'),
                 where('timestamp', '>=', oneWeekAgo),
@@ -196,7 +225,9 @@ const AdminDashboard = () => {
                     'content_created',
                     'content_updated',
                     'comment_edited',
-                    'comment_deleted'
+                    'comment_deleted',
+                    'member_joined',
+                    'member_deleted'
                 ]),
                 orderBy('timestamp', 'desc'),
                 limit(20)
@@ -332,6 +363,7 @@ const AdminDashboard = () => {
                                 change={`${siteStats.articles > 0 ? '+' : ''}${Math.round((siteStats.articles / 7) * 100)}% ${t('adminDashboard.common.thisWeek')}`}
                                 icon={<FiFileText className="w-6 h-6" />}
                                 loading={isLoading}
+                                isDarkMode={isDarkMode}
                             />
                             <DashboardCard
                                 title={t('adminDashboard.stats.announcements')}
@@ -339,21 +371,22 @@ const AdminDashboard = () => {
                                 change={`${siteStats.announcements > 0 ? '+' : ''}${Math.round((siteStats.announcements / 1) * 100)}% ${t('adminDashboard.common.today')}`}
                                 icon={<FiBell className="w-6 h-6" />}
                                 loading={isLoading}
+                                isDarkMode={isDarkMode}
                             />
                         </div>
 
                         {/* Comments Section */}
-                        <div className="lg:col-span-2 bg-white rounded-xl shadow-lg p-6 border border-gray-200">
+                        <div className={`lg:col-span-2 rounded-xl shadow-lg p-6 border ${isDarkMode ? 'bg-gray-800 border-gray-700' : 'bg-white border-gray-200'}`}>
                             <div className="flex justify-between items-center mb-4">
-                                <h3 className="text-lg font-black uppercase text-gray-800">
+                                <h3 className={`text-lg font-black uppercase ${isDarkMode ? 'text-white' : 'text-gray-800'}`}>
                                     {t('adminDashboard.stats.comments')}
                                 </h3>
-                                <span className="text-xs bg-brandgreen/10 text-brandgreen px-2 py-1 rounded-full">
+                                <span className={`text-xs ${isDarkMode ? 'bg-green-900/30 text-green-400' : 'bg-brandgreen/10 text-brandgreen'} px-2 py-1 rounded-full`}>
                                     {latestComments.length} {t('adminDashboard.comments.count')}
                                 </span>
                             </div>
                             {latestComments.length === 0 ? (
-                                <p className="text-gray-500 text-center py-4">
+                                <p className={`text-center py-4 ${isDarkMode ? 'text-gray-400' : 'text-gray-500'}`}>
                                     {t('adminDashboard.comments.noComments')}
                                 </p>
                             ) : (
@@ -363,7 +396,7 @@ const AdminDashboard = () => {
                                             key={comment.id}
                                             initial={{ opacity: 0, y: 10 }}
                                             animate={{ opacity: 1, y: 0 }}
-                                            className="bg-white/70 hover:bg-white/90 transition-all duration-200 rounded-lg p-4 shadow-sm border border-gray-100"
+                                            className={`${isDarkMode ? 'bg-gray-700/70 hover:bg-gray-700/90 border-gray-600' : 'bg-white/70 hover:bg-white/90 border-gray-100'} transition-all duration-200 rounded-lg p-4 shadow-sm border`}
                                         >
                                             <div className="flex justify-between items-start gap-3">
                                                 <div className="flex-1 min-w-0">
@@ -372,14 +405,14 @@ const AdminDashboard = () => {
                                                             {comment.userName?.charAt(0)?.toUpperCase() || 'A'}
                                                         </div>
                                                         <div>
-                                                            <p className="text-sm font-medium text-gray-800">{comment.userName}</p>
-                                                            <p className="text-xs text-gray-600">{comment.company}</p>
+                                                            <p className={`text-sm font-medium ${isDarkMode ? 'text-white' : 'text-gray-800'}`}>{comment.userName}</p>
+                                                            <p className={`text-xs ${isDarkMode ? 'text-gray-400' : 'text-gray-600'}`}>{comment.company}</p>
                                                         </div>
                                                         <div className="ml-auto flex items-center">
                                                             {[...Array(5)].map((_, i) => (
                                                                 <span
                                                                     key={i}
-                                                                    className={`text-lg ${i < comment.rating ? 'text-yellow-400' : 'text-gray-300'}`}
+                                                                    className={`text-lg ${i < comment.rating ? 'text-yellow-400' : isDarkMode ? 'text-gray-600' : 'text-gray-300'}`}
                                                                 >
                                                                     ★
                                                                 </span>
@@ -391,32 +424,32 @@ const AdminDashboard = () => {
                                                         <div className="mt-2 space-y-2">
                                                             <div className="grid grid-cols-2 gap-2">
                                                                 <div>
-                                                                    <label className="block text-xs text-gray-500 mb-1">
+                                                                    <label className={`block text-xs mb-1 ${isDarkMode ? 'text-gray-400' : 'text-gray-500'}`}>
                                                                         {t('adminDashboard.comments.name')}
                                                                     </label>
                                                                     <input
                                                                         type="text"
                                                                         value={editedCommentName}
                                                                         onChange={(e) => setEditedCommentName(e.target.value)}
-                                                                        className="w-full p-2 border border-gray-200 rounded-lg text-sm focus:ring-2 focus:ring-brandgreen focus:border-transparent"
+                                                                        className={`w-full p-2 rounded-lg text-sm focus:ring-2 focus:ring-brandgreen focus:border-transparent ${isDarkMode ? 'bg-gray-600 border-gray-500 text-white' : 'border border-gray-200'}`}
                                                                     />
                                                                 </div>
                                                                 <div>
-                                                                    <label className="block text-xs text-gray-500 mb-1">
+                                                                    <label className={`block text-xs mb-1 ${isDarkMode ? 'text-gray-400' : 'text-gray-500'}`}>
                                                                         {t('adminDashboard.comments.company')}
                                                                     </label>
                                                                     <input
                                                                         type="text"
                                                                         value={editedCommentCompany}
                                                                         onChange={(e) => setEditedCommentCompany(e.target.value)}
-                                                                        className="w-full p-2 border border-gray-200 rounded-lg text-sm focus:ring-2 focus:ring-brandgreen focus:border-transparent"
+                                                                        className={`w-full p-2 rounded-lg text-sm focus:ring-2 focus:ring-brandgreen focus:border-transparent ${isDarkMode ? 'bg-gray-600 border-gray-500 text-white' : 'border border-gray-200'}`}
                                                                     />
                                                                 </div>
                                                             </div>
                                                             <textarea
                                                                 value={editedCommentText}
                                                                 onChange={(e) => setEditedCommentText(e.target.value)}
-                                                                className="w-full p-2 border border-gray-200 rounded-lg text-sm focus:ring-2 focus:ring-brandgreen focus:border-transparent"
+                                                                className={`w-full p-2 rounded-lg text-sm focus:ring-2 focus:ring-brandgreen focus:border-transparent ${isDarkMode ? 'bg-gray-600 border-gray-500 text-white' : 'border border-gray-200'}`}
                                                                 rows={3}
                                                                 autoFocus
                                                             />
@@ -430,7 +463,7 @@ const AdminDashboard = () => {
                                                                 </button>
                                                                 <button
                                                                     onClick={() => setEditingCommentId(null)}
-                                                                    className="flex items-center gap-1 px-3 py-1.5 bg-gray-200 hover:bg-gray-300 text-gray-700 text-sm rounded-lg transition-colors"
+                                                                    className={`flex items-center gap-1 px-3 py-1.5 text-sm rounded-lg transition-colors ${isDarkMode ? 'bg-gray-600 hover:bg-gray-500 text-white' : 'bg-gray-200 hover:bg-gray-300 text-gray-700'}`}
                                                                 >
                                                                     <FiX className="w-3 h-3" />
                                                                     {t('adminDashboard.comments.cancel')}
@@ -439,15 +472,15 @@ const AdminDashboard = () => {
                                                         </div>
                                                     ) : (
                                                         <>
-                                                            <p className="text-sm text-gray-700 mt-1 whitespace-pre-line">
+                                                            <p className={`text-sm mt-1 whitespace-pre-line ${isDarkMode ? 'text-gray-300' : 'text-gray-700'}`}>
                                                                 {comment.text || t('adminDashboard.comments.noContent')}
                                                             </p>
                                                             <div className="flex items-center gap-2 mt-2">
-                                                                <span className="text-xs text-gray-500">
+                                                                <span className={`text-xs ${isDarkMode ? 'text-gray-500' : 'text-gray-500'}`}>
                                                                     {comment.timestamp?.toDate().toLocaleString()}
                                                                 </span>
                                                                 {comment.edited && (
-                                                                    <span className="text-xs text-gray-500">
+                                                                    <span className={`text-xs ${isDarkMode ? 'text-gray-500' : 'text-gray-500'}`}>
                                                                         • {t('adminDashboard.comments.edited')}
                                                                     </span>
                                                                 )}
@@ -459,14 +492,14 @@ const AdminDashboard = () => {
                                                     <div className="flex gap-1">
                                                         <button
                                                             onClick={() => handleEditComment(comment)}
-                                                            className="p-1.5 text-gray-500 hover:text-brandgreen hover:bg-brandgreen/10 rounded-full transition-colors"
+                                                            className={`p-1.5 hover:text-brandgreen rounded-full transition-colors ${isDarkMode ? 'text-gray-400 hover:bg-gray-600' : 'text-gray-500 hover:bg-brandgreen/10'}`}
                                                             aria-label={t('adminDashboard.comments.edit')}
                                                         >
                                                             <FiEdit className="w-4 h-4" />
                                                         </button>
                                                         <button
                                                             onClick={() => handleDeleteComment(comment.id)}
-                                                            className="p-1.5 text-gray-500 hover:text-red-600 hover:bg-red-100 rounded-full transition-colors"
+                                                            className={`p-1.5 hover:text-red-600 rounded-full transition-colors ${isDarkMode ? 'text-gray-400 hover:bg-gray-600' : 'text-gray-500 hover:bg-red-100'}`}
                                                             aria-label={t('adminDashboard.comments.delete')}
                                                         >
                                                             <FiTrash2 className="w-4 h-4" />
@@ -481,12 +514,12 @@ const AdminDashboard = () => {
                         </div>
 
                         {/* Club Members Section */}
-                        <div className="lg:col-span-1 bg-white rounded-xl shadow-lg p-6 border border-gray-200">
-                            <h3 className="text-lg font-black uppercase text-gray-800 mb-4">
+                        <div className={`lg:col-span-1 rounded-xl shadow-lg p-6 border ${isDarkMode ? 'bg-gray-800 border-gray-700' : 'bg-white border-gray-200'}`}>
+                            <h3 className={`text-lg font-black uppercase mb-4 ${isDarkMode ? 'text-white' : 'text-gray-800'}`}>
                                 {t('adminDashboard.stats.members')}
                             </h3>
                             {latestClubMembers.length === 0 ? (
-                                <p className="text-gray-500 text-center py-4">
+                                <p className={`text-center py-4 ${isDarkMode ? 'text-gray-400' : 'text-gray-500'}`}>
                                     {t('adminDashboard.members.noMembers')}
                                 </p>
                             ) : (
@@ -496,7 +529,7 @@ const AdminDashboard = () => {
                                             key={member.id}
                                             initial={{ opacity: 0, y: 10 }}
                                             animate={{ opacity: 1, y: 0 }}
-                                            className="bg-white/70 hover:bg-white/90 transition-all duration-200 rounded-lg p-4 shadow-sm border border-gray-100"
+                                            className={`${isDarkMode ? 'bg-gray-700/70 hover:bg-gray-700/90 border-gray-600' : 'bg-white/70 hover:bg-white/90 border-gray-100'} transition-all duration-200 rounded-lg p-4 shadow-sm border`}
                                         >
                                             <div className="flex items-center justify-between gap-3">
                                                 <div className="flex items-center gap-3 flex-1">
@@ -504,15 +537,15 @@ const AdminDashboard = () => {
                                                         {member.name?.charAt(0)?.toUpperCase() || 'M'}
                                                     </div>
                                                     <div className="min-w-0 flex-1">
-                                                        <p className="text-sm font-medium text-gray-800 break-all">
+                                                        <p className={`text-sm font-medium break-all ${isDarkMode ? 'text-white' : 'text-gray-800'}`}>
                                                             {member.name || t('adminDashboard.members.unknownMember')}
                                                         </p>
-                                                        <p className="text-xs text-gray-600 break-all">{member.email}</p>
+                                                        <p className={`text-xs break-all ${isDarkMode ? 'text-gray-400' : 'text-gray-600'}`}>{member.email}</p>
                                                         <div className="flex justify-between items-center">
-                                                            <p className="text-xs text-gray-500">
+                                                            <p className={`text-xs ${isDarkMode ? 'text-gray-500' : 'text-gray-500'}`}>
                                                                 {t('adminDashboard.members.joined')}: {member.joinedDate?.toDate().toLocaleDateString()}
                                                             </p>
-                                                            <span className="text-xs bg-gray-100 text-gray-600 px-2 py-1 rounded-full">
+                                                            <span className={`text-xs px-2 py-1 rounded-full ${isDarkMode ? 'bg-gray-600 text-gray-300' : 'bg-gray-100 text-gray-600'}`}>
                                                                 {member.source}
                                                             </span>
                                                         </div>
@@ -520,7 +553,7 @@ const AdminDashboard = () => {
                                                 </div>
                                                 <button
                                                     onClick={() => handleDeleteMember(member.id)}
-                                                    className="p-1.5 text-gray-500 hover:text-red-600 hover:bg-red-100 rounded-full transition-colors"
+                                                    className={`p-1.5 hover:text-red-600 rounded-full transition-colors ${isDarkMode ? 'text-gray-400 hover:bg-gray-600' : 'text-gray-500 hover:bg-red-100'}`}
                                                     aria-label={t('adminDashboard.members.delete')}
                                                 >
                                                     <FiTrash2 className="w-4 h-4" />
@@ -533,20 +566,20 @@ const AdminDashboard = () => {
                         </div>
 
                         {/* Activity Feed - full width under comments + members */}
-                        <div className="lg:col-span-3 bg-white rounded-xl shadow-lg p-6 border border-gray-200">
+                        <div className={`lg:col-span-3 rounded-xl shadow-lg p-6 border ${isDarkMode ? 'bg-gray-800 border-gray-700' : 'bg-white border-gray-200'}`}>
                             <div className="flex justify-between items-center mb-4">
-                                <h3 className="text-lg font-black uppercase text-gray-800">
+                                <h3 className={`text-lg font-black uppercase ${isDarkMode ? 'text-white' : 'text-gray-800'}`}>
                                     {t('adminDashboard.stats.activity')}
                                 </h3>
                                 <button
                                     onClick={fetchRecentActivity}
-                                    className="text-sm text-brandgreen hover:text-green-700 flex items-center gap-1"
+                                    className={`text-sm flex items-center gap-1 ${isDarkMode ? 'text-green-400 hover:text-green-300' : 'text-brandgreen hover:text-green-700'}`}
                                 >
                                     {t('adminDashboard.activity.refresh')}
                                     <FiExternalLink className="w-3 h-3" />
                                 </button>
                             </div>
-                            <ActivityFeed activities={recentActivity} t={t} />
+                            <ActivityFeed activities={recentActivity} t={t} isDarkMode={isDarkMode} />
                         </div>
                     </div>
                 );
@@ -554,7 +587,7 @@ const AdminDashboard = () => {
     };
 
     return (
-        <div className="min-h-screen bg-gray-50">
+        <div className={`min-h-screen ${isDarkMode ? 'bg-gray-900' : 'bg-gray-50'}`}>
             <ToastContainer
                 position="top-right"
                 autoClose={5000}
@@ -565,7 +598,7 @@ const AdminDashboard = () => {
                 pauseOnFocusLoss
                 draggable
                 pauseOnHover
-                theme="colored"
+                theme={isDarkMode ? "dark" : "light"}
             />
 
             <ConfirmationDialog
@@ -583,10 +616,10 @@ const AdminDashboard = () => {
             <div className="lg:hidden fixed top-4 right-4 z-50">
                 <button
                     onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
-                    className="p-2 rounded-lg bg-white shadow-md border border-gray-200 hover:bg-gray-100 transition-all"
+                    className={`p-2 rounded-lg shadow-md border transition-all ${isDarkMode ? 'bg-gray-800 border-gray-700 hover:bg-gray-700 text-white' : 'bg-white border-gray-200 hover:bg-gray-100 text-gray-700'}`}
                     aria-label={isMobileMenuOpen ? t('adminDashboard.common.closeMenu') : t('adminDashboard.common.openMenu')}
                 >
-                    <svg className="w-6 h-6 text-gray-700" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                         {isMobileMenuOpen ? (
                             <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M6 18L18 6M6 6l12 12" />
                         ) : (
@@ -598,10 +631,10 @@ const AdminDashboard = () => {
 
             <div className="flex">
                 {/* Sidebar */}
-                <aside className={`fixed inset-y-0 left-0 z-40 w-64 bg-white shadow-xl transform ${isMobileMenuOpen ? 'translate-x-0' : '-translate-x-full'} lg:translate-x-0 transition-transform duration-300 ease-in-out border-r border-gray-200`}>
+                <aside className={`fixed inset-y-0 left-0 z-40 w-64 shadow-xl transform ${isMobileMenuOpen ? 'translate-x-0' : '-translate-x-full'} lg:translate-x-0 transition-transform duration-300 ease-in-out border-r ${isDarkMode ? 'bg-gray-800 border-gray-700' : 'bg-white border-gray-200'}`}>
                     <div className="flex flex-col h-full p-6">
                         <img
-                            srcSet={Logo}
+                            src={isDarkMode ? TechBypLogoDark : Logo}
                             sizes="(max-width: 768px) 50vw, 25vw"
                             alt="Admin Portal"
                             className="w-96 h-16 mb-10 object-contain cursor-pointer transform transition-transform duration-300 hover:scale-110"
@@ -615,37 +648,41 @@ const AdminDashboard = () => {
                                     label={t('adminDashboard.tabs.dashboard')}
                                     active={activeTab === 'dashboard'}
                                     onClick={() => setActiveTab('dashboard')}
+                                    isDarkMode={isDarkMode}
                                 />
                                 <NavItem
                                     icon={<FiEdit className="w-5 h-5" />}
                                     label={t('adminDashboard.tabs.blog')}
                                     active={activeTab === 'blog'}
                                     onClick={() => setActiveTab('blog')}
+                                    isDarkMode={isDarkMode}
                                 />
                                 <NavItem
                                     icon={<FiImage className="w-5 h-5" />}
                                     label={t('adminDashboard.tabs.hero')}
                                     active={activeTab === 'hero'}
                                     onClick={() => setActiveTab('hero')}
+                                    isDarkMode={isDarkMode}
                                 />
                                 <NavItem
                                     icon={<FiBell className="w-5 h-5" />}
                                     label={t('adminDashboard.tabs.announcements')}
                                     active={activeTab === 'announcements'}
                                     onClick={() => setActiveTab('announcements')}
+                                    isDarkMode={isDarkMode}
                                 />
                             </ul>
                         </nav>
 
                         <div className="mt-auto">
-                            <div className="p-4 bg-gray-50 rounded-xl mb-4 border border-gray-200">
+                            <div className={`p-4 rounded-xl mb-4 border ${isDarkMode ? 'bg-gray-700 border-gray-600' : 'bg-gray-50 border-gray-200'}`}>
                                 <div className="flex items-center space-x-3">
                                     <div className="w-10 h-10 rounded-full bg-white flex items-center justify-center text-white font-black uppercase">
                                         <img srcSet={logo_small} alt="Small logo" className="w-6 h-6" />
                                     </div>
                                     <div>
-                                        <p className="font-bold text-gray-900 truncate max-w-[160px]">{displayName}</p>
-                                        <p className="text-xs text-gray-500 uppercase">
+                                        <p className={`font-bold truncate max-w-[160px] ${isDarkMode ? 'text-white' : 'text-gray-900'}`}>{displayName}</p>
+                                        <p className={`text-xs uppercase ${isDarkMode ? 'text-gray-400' : 'text-gray-500'}`}>
                                             {t(`adminDashboard.user.role.${userRole}`)}
                                         </p>
                                     </div>
@@ -654,7 +691,7 @@ const AdminDashboard = () => {
                             <div className="flex items-center gap-4">
                                 <button
                                     onClick={() => i18n.changeLanguage(i18n.language === 'en' ? 'de' : 'en')}
-                                    className="flex-1 flex items-center space-x-2 p-3 text-left rounded-lg hover:bg-gray-100 text-gray-700 transition-colors font-medium"
+                                    className={`flex-1 flex items-center space-x-2 p-3 text-left rounded-lg transition-colors font-medium ${isDarkMode ? 'text-gray-300 hover:bg-gray-700' : 'text-gray-700 hover:bg-gray-100'}`}
                                     title={t('adminDashboard.common.toggleLanguage')}
                                 >
                                     <FiGlobe className="w-5 h-5" />
@@ -662,11 +699,20 @@ const AdminDashboard = () => {
                                 </button>
 
                                 <button
+                                    onClick={toggleDarkMode}
+                                    className={`flex-1 flex items-center space-x-2 p-3 text-left rounded-lg transition-colors font-medium ${isDarkMode ? 'text-gray-300 hover:bg-gray-700' : 'text-gray-700 hover:bg-gray-100'}`}
+                                    title={isDarkMode ? t('adminDashboard.common.switchToLight') : t('adminDashboard.common.switchToDark')}
+                                >
+                                    {isDarkMode ? <FiSun className="w-5 h-5" /> : <FiMoon className="w-5 h-5" />}
+                                    <span>{isDarkMode ? "" : ""}</span>
+                                </button>
+
+                                <button
                                     onClick={handleLogout}
-                                    className="flex-1 flex items-center space-x-2 p-3 text-left rounded-lg hover:bg-gray-100 text-gray-700 transition-colors font-medium"
+                                    className={`flex-1 flex items-center space-x-2 p-3 text-left rounded-lg transition-colors font-medium ${isDarkMode ? 'text-gray-300 hover:bg-gray-700' : 'text-gray-700 hover:bg-gray-100'}`}
                                 >
                                     <FiLogOut className="w-5 h-5" />
-                                    <span>{t('adminDashboard.common.logout')}</span>
+                                    {/* <span>{t('adminDashboard.common.logout')}</span> */}
                                 </button>
                             </div>
                         </div>
@@ -677,7 +723,7 @@ const AdminDashboard = () => {
                 <main className="flex-1 lg:ml-64 min-h-screen p-4 md:p-8">
                     <div className="max-w-7xl mx-auto">
                         <div className="flex flex-col md:flex-row justify-between items-start md:items-center mb-6 md:mb-8 gap-4">
-                            <h1 className="text-2xl md:text-3xl font-black uppercase text-gray-900">
+                            <h1 className={`text-2xl md:text-3xl font-black uppercase ${isDarkMode ? 'text-white' : 'text-gray-900'}`}>
                                 {activeTab === 'dashboard' && t('adminDashboard.greeting', { name: displayName })}
                                 {activeTab === 'blog' && t('adminDashboard.tabs.blog')}
                                 {activeTab === 'hero' && t('adminDashboard.tabs.hero')}
@@ -685,10 +731,10 @@ const AdminDashboard = () => {
                             </h1>
 
                             <div className="flex items-center space-x-4">
-                                <span className="text-sm text-gray-600">
+                                <span className={`text-sm ${isDarkMode ? 'text-gray-400' : 'text-gray-600'}`}>
                                     {t('adminDashboard.common.lastUpdated')}: {new Date().toLocaleString()}
                                 </span>
-                                <div className="h-8 w-8 rounded-full bg-green-100 flex items-center justify-center">
+                                <div className={`h-8 w-8 rounded-full flex items-center justify-center ${isDarkMode ? 'bg-green-900/30' : 'bg-green-100'}`}>
                                     <div className="h-2 w-2 rounded-full bg-brandgreen animate-pulse"></div>
                                 </div>
                             </div>
@@ -697,7 +743,7 @@ const AdminDashboard = () => {
                         {isLoading ? (
                             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
                                 {[...Array(3)].map((_, i) => (
-                                    <Skeleton key={i} className="h-36 rounded-xl" />
+                                    <Skeleton key={i} className={`h-36 rounded-xl ${isDarkMode ? 'bg-gray-700' : ''}`} />
                                 ))}
                             </div>
                         ) : (
@@ -711,66 +757,84 @@ const AdminDashboard = () => {
 };
 
 // Helper components
-const NavItem = ({ icon, label, active, onClick }: {
+const NavItem = ({ icon, label, active, onClick, isDarkMode }: {
     icon: React.ReactNode,
     label: string,
     active: boolean,
-    onClick: () => void
+    onClick: () => void,
+    isDarkMode: boolean
 }) => (
     <motion.li whileTap={{ scale: 0.95 }}>
         <button
             onClick={onClick}
             className={`w-full flex items-center space-x-3 p-4 rounded-xl transition-all duration-200 ${active
-                ? 'bg-brandgreen/10 text-brandgreen font-bold border-l-4 border-brandgreen'
-                : 'text-gray-700 hover:bg-gray-100 font-medium'
+                ? `${isDarkMode ? 'bg-brandgreen/20 text-brandgreen' : 'bg-brandgreen/10 text-brandgreen'} font-bold border-l-4 border-brandgreen`
+                : `${isDarkMode ? 'text-gray-300 hover:bg-gray-700' : 'text-gray-700 hover:bg-gray-100'} font-medium`
                 }`}
             aria-current={active ? 'page' : undefined}
         >
-            <span className={`${active ? 'text-brandgreen' : 'text-gray-600'}`}>
+            <span className={`${active ? 'text-brandgreen' : isDarkMode ? 'text-gray-400' : 'text-gray-600'}`}>
                 {icon}
             </span>
             <span>{label}</span>
         </button>
     </motion.li>
 );
-
-const DashboardCard = ({ title, value, change, icon, loading }: {
+const DashboardCard = ({ title, value, change, icon, loading, isDarkMode }: {
     title: string,
     value: string | number,
     change: string,
     icon: React.ReactNode,
-    loading?: boolean
+    loading?: boolean,
+    isDarkMode: boolean
 }) => (
-    <div className="bg-white rounded-xl shadow-lg p-6 border border-gray-200 hover:shadow-md transition-shadow">
+    <div className={`rounded-xl shadow-lg p-6 border transition-shadow ${isDarkMode
+        ? 'bg-gray-800 border-gray-700 hover:shadow-gray-800/20'
+        : 'bg-white border-gray-200 hover:shadow-md'}`}>
         <div className="flex justify-between items-start">
             <div>
-                <p className="text-sm font-medium text-gray-500 uppercase tracking-wider">{title}</p>
+                <p className={`text-sm font-medium uppercase tracking-wider ${isDarkMode
+                    ? 'text-gray-400'
+                    : 'text-gray-500'}`}>
+                    {title}
+                </p>
                 {loading ? (
-                    <Skeleton className="h-9 w-24 mt-2" />
+                    <Skeleton className={`h-9 w-24 mt-2 ${isDarkMode ? 'bg-gray-700' : ''}`} />
                 ) : (
-                    <h3 className="text-3xl font-black mt-2 text-gray-900">{value}</h3>
+                    <h3 className={`text-3xl font-black mt-2 ${isDarkMode
+                        ? 'text-white'
+                        : 'text-gray-900'}`}>
+                        {value}
+                    </h3>
                 )}
                 {loading ? (
-                    <Skeleton className="h-6 w-20 mt-3" />
+                    <Skeleton className={`h-6 w-20 mt-3 ${isDarkMode ? 'bg-gray-700' : ''}`} />
                 ) : (
                     <p className={`text-xs mt-3 px-3 py-1 rounded-full inline-flex items-center ${change.startsWith('+') || typeof change === 'number'
-                        ? 'bg-green-100 text-green-800'
-                        : 'bg-red-100 text-red-800'
+                            ? isDarkMode
+                                ? 'bg-green-900/30 text-green-400'
+                                : 'bg-green-100 text-green-800'
+                            : isDarkMode
+                                ? 'bg-red-900/30 text-red-400'
+                                : 'bg-red-100 text-red-800'
                         }`}>
                         {change}
                     </p>
                 )}
             </div>
-            <div className="p-3 rounded-lg bg-brandgreen/10 text-brandgreen">
+            <div className={`p-3 rounded-lg ${isDarkMode
+                ? 'bg-brandgreen/20 text-brandgreen'
+                : 'bg-brandgreen/10 text-brandgreen'}`}>
                 {icon}
             </div>
         </div>
     </div>
 );
 
-const ActivityFeed = ({ activities, t }: {
+const ActivityFeed = ({ activities, t, isDarkMode }: {
     activities: Activity[],
-    t: (key: string, options?: any) => string
+    t: (key: string, options?: any) => string,
+    isDarkMode: boolean
 }) => {
     const [expandedActivity, setExpandedActivity] = useState<string | null>(null);
 
@@ -784,7 +848,9 @@ const ActivityFeed = ({ activities, t }: {
             'comment_edited': <FiEdit className="w-4 h-4 text-yellow-500" />,
             'comment_deleted': <FiTrash2 className="w-4 h-4 text-red-500" />,
             'content_created': <FiFileText className="w-4 h-4 text-purple-500" />,
-            'content_updated': <FiEdit className="w-4 h-4 text-brandgreen" />
+            'content_updated': <FiEdit className="w-4 h-4 text-brandgreen" />,
+            'member_joined': <FiUsers className="w-4 h-4 text-green-500" />,
+            'member_deleted': <FiTrash2 className="w-4 h-4 text-red-500" />
         };
         return iconMap[event] || <FiEdit className="w-4 h-4 text-gray-500" />;
     };
@@ -814,10 +880,12 @@ const ActivityFeed = ({ activities, t }: {
         const renderField = (label: string, value: any) => (
             value && (
                 <div className="flex">
-                    <span className="text-gray-500 min-w-[80px]">
+                    <span className={`min-w-[80px] ${isDarkMode ? 'text-gray-400' : 'text-gray-500'}`}>
                         {t(`adminDashboard.activity.metadata.${label.toLowerCase()}`)}:
                     </span>
-                    <span className="font-medium text-gray-800">{value}</span>
+                    <span className={`font-medium ${isDarkMode ? 'text-gray-300' : 'text-gray-800'}`}>
+                        {value}
+                    </span>
                 </div>
             )
         );
@@ -834,19 +902,23 @@ const ActivityFeed = ({ activities, t }: {
 
                         {(metadata.text || metadata.newText) && (
                             <div className="mt-1">
-                                <p className="text-gray-500">
+                                <p className={isDarkMode ? 'text-gray-400' : 'text-gray-500'}>
                                     {t('adminDashboard.activity.metadata.currentMessage')}:
                                 </p>
-                                <p className="text-gray-700 italic">"{metadata.text || metadata.newText}"</p>
+                                <p className={`italic ${isDarkMode ? 'text-gray-300' : 'text-gray-700'}`}>
+                                    "{metadata.text || metadata.newText}"
+                                </p>
                             </div>
                         )}
 
                         {event === 'comment_edited' && metadata.previousText && (
                             <div className="mt-1">
-                                <p className="text-gray-500">
+                                <p className={isDarkMode ? 'text-gray-400' : 'text-gray-500'}>
                                     {t('adminDashboard.activity.metadata.previousMessage')}:
                                 </p>
-                                <p className="text-gray-700 italic line-through">"{metadata.previousText}"</p>
+                                <p className={`italic line-through ${isDarkMode ? 'text-gray-400' : 'text-gray-600'}`}>
+                                    "{metadata.previousText}"
+                                </p>
                             </div>
                         )}
                     </div>
@@ -860,10 +932,12 @@ const ActivityFeed = ({ activities, t }: {
                         {renderField('Title', metadata.title)}
                         {metadata.changes && (
                             <div className="mt-1">
-                                <p className="text-gray-500">
+                                <p className={isDarkMode ? 'text-gray-400' : 'text-gray-500'}>
                                     {t('adminDashboard.activity.metadata.changes')}:
                                 </p>
-                                <p className="text-xs bg-gray-100 p-2 rounded">
+                                <p className={`text-xs p-2 rounded ${isDarkMode
+                                    ? 'bg-gray-700 text-gray-300'
+                                    : 'bg-gray-100 text-gray-800'}`}>
                                     {metadata.changes}
                                 </p>
                             </div>
@@ -871,10 +945,23 @@ const ActivityFeed = ({ activities, t }: {
                     </div>
                 );
 
+            case 'member_joined':
+            case 'member_deleted':
+                return (
+                    <div className="mt-2 text-sm space-y-1">
+                        {renderField('Email', metadata.email)}
+                        {renderField('Name', metadata.name)}
+                        {renderField('Source', metadata.source)}
+                        {metadata.deletedBy && renderField('Deleted By', metadata.deletedBy)}
+                    </div>
+                );
+
             default:
                 return (
                     <div className="mt-2">
-                        <pre className="text-xs bg-gray-100 p-2 rounded overflow-x-auto">
+                        <pre className={`text-xs p-2 rounded overflow-x-auto ${isDarkMode
+                            ? 'bg-gray-700 text-gray-300'
+                            : 'bg-gray-100 text-gray-800'}`}>
                             {JSON.stringify(metadata, null, 2)}
                         </pre>
                     </div>
@@ -884,30 +971,35 @@ const ActivityFeed = ({ activities, t }: {
 
     if (!activities || activities.length === 0) {
         return (
-            <div className="text-center py-8 text-gray-500">
+            <div className={`text-center py-8 ${isDarkMode ? 'text-gray-400' : 'text-gray-500'}`}>
                 {t('adminDashboard.activity.noActivity')}
             </div>
         );
     }
 
     return (
-        <div className="divide-y divide-gray-200 max-h-[500px] overflow-y-auto">
+        <div className={`divide-y ${isDarkMode ? 'divide-gray-700' : 'divide-gray-200'} max-h-[500px] overflow-y-auto`}>
             {activities.slice(0, 50).map((activity) => (
                 <div key={activity.id} className="py-4 first:pt-0 last:pb-0">
                     <div
-                        className="flex items-start cursor-pointer hover:bg-gray-50 p-2 rounded-lg transition-colors"
+                        className={`flex items-start cursor-pointer p-2 rounded-lg transition-colors ${isDarkMode
+                                ? 'hover:bg-gray-700/50'
+                                : 'hover:bg-gray-50'
+                            }`}
                         onClick={() => setExpandedActivity(expandedActivity === activity.id ? null : activity.id)}
                         aria-expanded={expandedActivity === activity.id}
                     >
-                        <div className="w-8 h-8 rounded-full bg-gray-100 flex items-center justify-center mt-1 flex-shrink-0">
+                        <div className={`w-8 h-8 rounded-full flex items-center justify-center mt-1 flex-shrink-0 ${isDarkMode ? 'bg-gray-700' : 'bg-gray-100'
+                            }`}>
                             {getEventIcon(activity.event)}
                         </div>
                         <div className="ml-3 min-w-0 flex-1">
                             <div className="flex items-center justify-between">
-                                <p className="text-sm font-medium text-gray-900">
+                                <p className={`text-sm font-medium ${isDarkMode ? 'text-white' : 'text-gray-900'}`}>
                                     {activity.userEmail || 'System'} {formatEvent(activity.event)}
                                 </p>
-                                <span className="text-xs text-gray-500 whitespace-nowrap ml-2">
+                                <span className={`text-xs whitespace-nowrap ml-2 ${isDarkMode ? 'text-gray-400' : 'text-gray-500'
+                                    }`}>
                                     {formatTime(activity.timestamp)}
                                 </span>
                             </div>
@@ -919,14 +1011,15 @@ const ActivityFeed = ({ activities, t }: {
                                         animate={{ opacity: 1, height: 'auto' }}
                                         exit={{ opacity: 0, height: 0 }}
                                         transition={{ duration: 0.2 }}
-                                        className="mt-2 bg-gray-50 p-3 rounded-lg overflow-hidden"
+                                        className={`mt-2 p-3 rounded-lg overflow-hidden ${isDarkMode ? 'bg-gray-700' : 'bg-gray-50'
+                                            }`}
                                     >
                                         {renderMetadata(activity.metadata, activity.event)}
                                     </motion.div>
                                 )}
                             </AnimatePresence>
                         </div>
-                        <div className="ml-2 text-gray-400">
+                        <div className={`ml-2 ${isDarkMode ? 'text-gray-500' : 'text-gray-400'}`}>
                             {expandedActivity === activity.id ? (
                                 <FiChevronUp className="w-4 h-4" />
                             ) : (

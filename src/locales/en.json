@@ -193,6 +193,7 @@
     }
   },
   "blogEdit": {
+     "chooseFile" :"Choose a file to upload",
     "selectArticle": "Select an article",
     "wantToCreateArticle": "Create your first article to get started",
     "selectFromArticle": "Choose an article from the sidebar or create a new one",
@@ -950,6 +951,8 @@
     }
   },
   "blog": {
+
+   
     "categories": {
       "all": "All"
     },
@@ -1209,7 +1212,9 @@
         "previousMessage": "Previous message",
         "type": "Type",
         "title": "Title",
-        "changes": "Changes"
+        "changes": "Changes",
+        "email":"Club member's email",
+        "deleted by": "Deleted by"
       }
     },
     "common": {
@@ -1217,9 +1222,9 @@
       "thisWeek": "this week",
       "today": "today",
       "justNow": "just now",
-      "minutesAgo": "{count} minute(s) ago",
-      "hoursAgo": "{count} hour(s) ago",
-      "daysAgo": "{count} day(s) ago",
+      "minutesAgo": "{{count}} minute(s) ago",
+      "hoursAgo": "{{count}} hour(s) ago",
+      "daysAgo": "{{count}} day(s) ago",
       "openMenu": "Open menu",
       "closeMenu": "Close menu",
       "toggleLanguage": "Toggle language",
