@@ -4,6 +4,10 @@ import { fileURLToPath } from 'url';
 import { SitemapStream, streamToPromise } from 'sitemap';
 import { Readable } from 'stream';
 
+// Load environment variables from .env file
+import dotenv from 'dotenv';
+dotenv.config({ path: path.resolve(process.cwd(), '.env') });
+
 // Configuration
 const DOMAIN = 'https://www.techbyp.com';
 const BUILD_DATE = new Date().toISOString();
@@ -19,6 +23,39 @@ const __dirname = path.dirname(__filename);
 const productsPath = path.join(__dirname, '../src/data/products.tsx');
 const enJsonPath = path.join(__dirname, '../src/locales/en.json');
 const deJsonPath = path.join(__dirname, '../src/locales/de.json');
+
+// Global variables
+let db = null;
+
+const FIREBASE_TIMEOUT = 10000; // 10 seconds
+
+async function initializeFirebase() {
+  try {
+    const { initializeApp } = await import('firebase/app');
+    const { getFirestore } = await import('firebase/firestore');
+
+    const timeoutPromise = new Promise((_, reject) => {
+      setTimeout(() => reject(new Error('Firebase initialization timeout')), FIREBASE_TIMEOUT);
+    });
+
+    const firebaseConfig = {
+      apiKey: process.env.VITE_FIREBASE_API_KEY,
+      authDomain: process.env.VITE_FIREBASE_AUTH_DOMAIN,
+      projectId: process.env.VITE_FIREBASE_PROJECT_ID,
+      storageBucket: process.env.VITE_FIREBASE_STORAGE_BUCKET,
+      messagingSenderId: process.env.VITE_FIREBASE_MESSAGING_SENDER_ID,
+      appId: process.env.VITE_FIREBASE_APP_ID
+    };
+
+    const app = await Promise.race([initializeApp(firebaseConfig), timeoutPromise]);
+    const firestoreDb = getFirestore(app);
+    console.log('✅ Firebase initialized successfully');
+    return firestoreDb;
+  } catch (error) {
+    console.warn('⚠️ Firebase initialization failed:', error.message);
+    return null;
+  }
+}
 
 function loadTranslations() {
   try {
@@ -132,12 +169,10 @@ function extractProducts(translations) {
       // Extract names and descriptions
       const directName = cleanBlock.match(/name\s*:\s*(["'`])(.*?)\1/)?.[2];
       const nameKey = cleanBlock.match(/name\s*:\s*t\(['"](.*?)['"]\)/)?.[1];
-      // const heroDescKey = cleanBlock.match(/herodescription\s*:\s*t\(['"](.*?)['"]\)/)?.[1];
       const descKey = cleanBlock.match(/description\s*:\s*t\(['"](.*?)['"]\)/)?.[1];
 
       // Resolve translations
       const name = directName || extractTranslation(translations, nameKey) || `Product ${id}`;
-      // const heroDescription = extractTranslation(translations, heroDescKey);
       const description = extractTranslation(translations, descKey);
       const shortDescription =  description || '';
 
@@ -182,10 +217,107 @@ function extractProducts(translations) {
   return products;
 }
 
+async function fetchBlogArticles() {
+  const BLOG_CACHE_PATH = path.join(__dirname, '.blog-cache.json');
+  const FETCH_TIMEOUT = 8000; // 8 seconds timeout
+
+  // Try to load from cache first for faster builds
+  if (fs.existsSync(BLOG_CACHE_PATH)) {
+    try {
+      const cachedData = JSON.parse(fs.readFileSync(BLOG_CACHE_PATH, 'utf-8'));
+      const cacheAge = Date.now() - (cachedData.timestamp || 0);
+      const MAX_CACHE_AGE = 24 * 60 * 60 * 1000; // 24 hours
+      
+      // Use cache if it's less than 24 hours old
+      if (cacheAge < MAX_CACHE_AGE) {
+        console.log('📚 Using cached blog articles (fresh)');
+        return cachedData.articles;
+      }
+      console.log('📚 Cache exists but is stale, fetching fresh data...');
+    } catch (e) {
+      console.warn('⚠️ Failed to load cached blog articles:', e.message);
+    }
+  }
+
+  try {
+    const articlesCollection = collection(db, 'articles');
+    const q = query(articlesCollection, orderBy('date', 'desc'));
+    
+    // Create a timeout promise to prevent hanging
+    const timeoutPromise = new Promise((_, reject) => {
+      setTimeout(() => reject(new Error(`Firebase fetch timed out after ${FETCH_TIMEOUT}ms`)), FETCH_TIMEOUT);
+    });
+
+    console.log('⏳ Fetching blog articles from Firebase...');
+    
+    // Race between the Firebase query and the timeout
+    const querySnapshot = await Promise.race([getDocs(q), timeoutPromise]);
+    const articles = [];
+
+    querySnapshot.forEach((doc) => {
+      const data = doc.data();
+      
+      const article = {
+        id: doc.id,
+        content: {
+          en: data.content?.en || { title: '', content: [''], excerpt: '' },
+          de: data.content?.de || { title: '', content: [''], excerpt: '' }
+        },
+        author: data.author || { 
+          name: 'TechByP', 
+          role: 'Director of Deep Thoughts & Deeper Holes', 
+          avatar: '' 
+        },
+        date: data.date || new Date().toISOString(),
+        readTime: data.readTime || '3 min',
+        category: data.category || 'technology',
+        image: data.image || '',
+        relatedArticles: data.relatedArticles || []
+      };
+
+      articles.push(article);
+    });
+
+    // Cache the successful results
+    try {
+      const cacheData = {
+        timestamp: Date.now(),
+        articles: articles
+      };
+      fs.writeFileSync(BLOG_CACHE_PATH, JSON.stringify(cacheData, null, 2));
+      console.log(`💾 Blog articles cached (${articles.length} articles)`);
+    } catch (cacheError) {
+      console.warn('⚠️ Failed to cache blog articles:', cacheError.message);
+    }
+
+    return articles;
+
+  } catch (error) {
+    console.warn('⚠️ Blog article fetch failed:', error.message);
+    
+    // Fall back to cache if available, even if stale
+    if (fs.existsSync(BLOG_CACHE_PATH)) {
+      try {
+        const cachedData = JSON.parse(fs.readFileSync(BLOG_CACHE_PATH, 'utf-8'));
+        console.log('🔄 Falling back to cached blog articles');
+        return cachedData.articles || [];
+      } catch (e) {
+        console.warn('⚠️ Failed to load cached blog articles as fallback:', e.message);
+      }
+    }
+    
+    return [];
+  }
+}
+
 async function generateSitemap() {
   try {
     const translations = loadTranslations();
     const products = extractProducts(translations);
+    
+    console.log('⏳ Starting blog article fetch...');
+    const blogArticles = await fetchBlogArticles();
+    
     const stream = new SitemapStream({ 
       hostname: DOMAIN,
       xmlns: { 
@@ -193,13 +325,7 @@ async function generateSitemap() {
         video: true,
         news: false,
         xhtml: false,
-        mobile: false,
-        image: {
-          image: true
-        },
-        video: {
-          video: true
-        }
+        mobile: false
       }
     });
 
@@ -208,6 +334,7 @@ async function generateSitemap() {
       { url: '/', changefreq: 'daily', priority: 1.0, lastmod: BUILD_DATE },
       { url: '/configurator', changefreq: 'weekly', priority: 0.9, lastmod: BUILD_DATE },
       { url: '/products', changefreq: 'monthly', priority: 0.8, lastmod: BUILD_DATE },
+      { url: '/blog', changefreq: 'weekly', priority: 0.7, lastmod: BUILD_DATE },
       { url: '/contact', changefreq: 'yearly', priority: 0.3, lastmod: BUILD_DATE },
       { url: '/terms', changefreq: 'yearly', priority: 0.1, lastmod: BUILD_DATE }
     ];
@@ -264,6 +391,33 @@ async function generateSitemap() {
       stream.write(entry);
     });
 
+    // Process blog articles
+    blogArticles.forEach(article => {
+      const title = article.content.en.title || article.content.de.title || 'Untitled';
+      const slug = title.toLowerCase()
+        .replace(/\s+/g, '-')
+        .replace(/[^\w-]+/g, '')
+        .replace(/--+/g, '-')
+        .replace(/^-+/, '')
+        .replace(/-+$/, '');
+
+      const entry = {
+        url: `/blog/${slug}-${article.id}`,
+        changefreq: 'monthly',
+        priority: 0.6,
+        lastmod: article.date,
+        img: article.image ? [{
+          url: article.image,
+          caption: `${title}: ${article.content.en.excerpt || article.content.de.excerpt || ''}`.substring(0, 120),
+          title: title,
+          geo_location: COMPANY_LOCATION,
+          license: LICENSE_URL
+        }] : []
+      };
+
+      stream.write(entry);
+    });
+
     stream.end();
 
     const sitemap = (await streamToPromise(Readable.from(stream)))
@@ -275,6 +429,7 @@ async function generateSitemap() {
     console.log(`✅ Sitemap generated with:
 - ${staticRoutes.length} static URLs
 - ${products.length} product URLs
+- ${blogArticles.length} blog article URLs
 - ${products.filter(p => p.imageUrl !== DEFAULT_IMAGE).length} custom images
 - ${products.filter(p => p.videoId).length} videos`);
 
@@ -282,6 +437,12 @@ async function generateSitemap() {
     console.error('❌ Sitemap generation failed:', error);
     process.exit(1);
   }
+}
+
+// Check if Firebase environment variables are set
+if (!process.env.VITE_FIREBASE_API_KEY) {
+  console.error('❌ Firebase environment variables are not set. Please set VITE_FIREBASE_API_KEY, VITE_FIREBASE_AUTH_DOMAIN, VITE_FIREBASE_PROJECT_ID, etc.');
+  process.exit(1);
 }
 
 generateSitemap();

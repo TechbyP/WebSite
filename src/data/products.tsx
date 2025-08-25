@@ -1,6 +1,5 @@
 
 import { Wrench, Target, Gauge, Drill, Zap, Settings, Hammer } from 'lucide-react';
-import { useTranslation } from 'react-i18next';
 import { Product } from './types/products';
 
 
@@ -92,12 +91,25 @@ import ExternalCamera_2 from '../assets/Ext_Camera/2.jpg?w=150;480;768;1280&form
 import ExternalCamera_3 from '../assets/Ext_Camera/3.jpg?w=150;480;768;1280&format=webp;jpg&as=srcset';
 
 import ManualDrills_Hero from '../assets/ManualDrills/Hero.jpg?w=150;480;768;1280&format=webp;jpg&as=srcset';
-import ManualDrills_1 from '../assets/ManualDrills/1.jpg?w=150;480;768;1280&format=webp;jpg&as=srcset';
 import ManualDrills_2 from '../assets/ManualDrills/2.jpg?w=150;480;768;1280&format=webp;jpg&as=srcset';
 import ManualDrills_3 from '../assets/ManualDrills/3.jpg?w=150;480;768;1280&format=webp;jpg&as=srcset';
 
 import Hammers_Hero from '../assets/Hammers/Hero.png?w=150;480;768;1280&format=webp;jpg&as=srcset';
 
+import Göttinger_Hero from '../assets/Goetinger/Hero.jpg?w=150;480;768;1280&format=webp;jpg&as=srcset';
+import Göttinger_1 from '../assets/Goetinger/1.jpg?w=150;480;768;1280&format=webp;jpg&as=srcset';
+import Göttinger_2 from '../assets/Goetinger/2.jpg?w=150;480;768;1280&format=webp;jpg&as=srcset';
+import Göttinger_3 from '../assets/Goetinger/3.jpg?w=150;480;768;1280&format=webp;jpg&as=srcset';
+import Göttinger_4 from '../assets/Goetinger/4.jpg?w=150;480;768;1280&format=webp;jpg&as=srcset';
+
+import Probes_Hero from '../assets/Probes/Hero.jpg?w=150;480;768;1280&format=webp;jpg&as=srcset';
+import Probes_1 from '../assets/Probes/1.jpg?w=150;480;768;1280&format=webp;jpg&as=srcset';
+import Probes_2 from '../assets/Probes/2.jpg?w=150;480;768;1280&format=webp;jpg&as=srcset';
+
+import Raupen_Hero from '../assets/Nitratraupe/hero.jpg?w=150;480;768;1280&format=webp;jpg&as=srcset';
+import Raupen_1 from '../assets/Nitratraupe/1.jpg?w=150;480;768;1280&format=webp;jpg&as=srcset';
+import Raupen_2 from '../assets/Nitratraupe/2.jpg?w=150;480;768;1280&format=webp;jpg&as=srcset';
+import Raupen_3 from '../assets/Nitratraupe/3.jpg?w=150;480;768;1280&format=webp;jpg&as=srcset';
 
 const createProducts = (t: any): Product[] => {
   return [
@@ -599,7 +611,7 @@ const createProducts = (t: any): Product[] => {
       categoryName: "Manual Samplers",
       type: "DrillRod",
       bestseller: true,
-      image: "",
+      image: Probes_Hero,
       heroVideo: "",
       icon: Drill,
       specs: t('probes.specs', { returnObjects: true }) || [],
@@ -616,7 +628,10 @@ const createProducts = (t: any): Product[] => {
       howToUse: t('probes.howToUse', { returnObjects: true }) || [],
       technicalSpecs: t('probes.technicalSpecs', { returnObjects: true }) || [],
       table: t('probes.table', { returnObjects: true }) || [],
-      gallery: [],
+      gallery: [Probes_Hero,
+        Probes_1,
+        Probes_2
+      ],
       testimonials: t('probes.testimonials', { returnObjects: true }) || [],
     },
     // Drill Rods
@@ -647,7 +662,7 @@ const createProducts = (t: any): Product[] => {
       howToUse: t('drillrods.howToUse', { returnObjects: true }) || [],
       technicalSpecs: t('drillrods.technicalSpecs', { returnObjects: true }) || [],
       table: t('drillrods.table', { returnObjects: true }) || [],
-      gallery: [ManualDrills_Hero, ManualDrills_1, ManualDrills_2, ManualDrills_3],
+      gallery: [ManualDrills_Hero,  ManualDrills_2, ManualDrills_3],
       testimonials: [],
     },
     // Hammers
@@ -680,7 +695,77 @@ const createProducts = (t: any): Product[] => {
       table: t('hammers.table', { returnObjects: true }) || [],
       gallery: [Hammers_Hero],
       testimonials: []
-    }
+    },
+    //Goetinger Drills
+    {
+  id: 4004,
+  date: 2025,
+  productKey: "goettingerDrills",
+  name: t('goettingerDrills.name'),
+  nickname: t('goettingerDrills.nickname'),
+  category: "manual",
+  categoryName: "Manual Tools",
+  type: "GoettingerDrillSet",
+  bestseller: false,
+  image: Göttinger_Hero,
+  heroVideo: "",
+  icon: null,
+  specs: t('goettingerDrills.specs', { returnObjects: true }) || [],
+  priceValue: undefined,
+  price: t('goettingerDrills.price'),
+  electric: false,
+  manual: true,
+  hydraulic: false,
+  description: t('goettingerDrills.description'),
+  herodescription: t('goettingerDrills.herodescription'),
+  detailedDescription: t('goettingerDrills.detailedDescription'),
+  features: t('goettingerDrills.features', { returnObjects: true }) || [],
+  applications: t('goettingerDrills.applications', { returnObjects: true }) || [],
+  howToUse: t('goettingerDrills.howToUse', { returnObjects: true }) || [],
+  technicalSpecs: t('goettingerDrills.technicalSpecs', { returnObjects: true }) || {},
+  table: t('goettingerDrills.table', { returnObjects: true }) || [],
+  gallery: [Göttinger_Hero,
+    Göttinger_1,
+    Göttinger_2,
+    Göttinger_3,
+    Göttinger_4
+  ],
+  testimonials: []
+    },
+{
+  id: 5000,
+  date: 21.02,
+  name: "Nitratraupe",
+  nickname: t('raupe.nickname'),
+  category: "Bespoke Machinery",
+  bestseller: false,
+  image: Raupen_Hero,
+  heroVideo: "AkAbm-EYoo0", 
+  specs: t('raupe.specs', { returnObjects: true }) || [],
+  icon: Gauge,
+  priceValue: 20000,
+  hydraulic: true,
+  manual: true,
+  electric: false,
+  layers: 3,
+  depth: 90,
+  weight: 220,
+  horizons: 3,
+  magazines: 3,
+  samplingCycleTime: 20,
+  description: t('raupe.description'),
+  herodescription: t('raupe.herodescription'),
+  detailedDescription: t('raupe.detailedDescription'),
+  price: t('raupe.price'),
+  features: t('raupe.features', { returnObjects: true }) || [],
+  howToUse: t('raupe.howToUse', { returnObjects: true }) || [],
+  applications: t('raupe.applications', { returnObjects: true }) || [],
+  technicalSpecs: t('raupe.technicalSpecs', { returnObjects: true }) || [],
+  gallery: [Raupen_Hero, Raupen_1, Raupen_2,Raupen_3],
+  testimonials: t('raupe.testimonials', { returnObjects: true }) || [],
+}
+
+
   ];
 };
 

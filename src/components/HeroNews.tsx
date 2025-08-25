@@ -365,6 +365,7 @@ const CombinedHero = () => {
                         onAnimationComplete={handleAnimationComplete}
                         className="absolute inset-0"
                     >
+                        {/* Background */}
                         <div id="Hero" className="absolute inset-0 bg-black/40 overflow-hidden">
                             <img
                                 src={currentItem.image}
@@ -376,38 +377,70 @@ const CombinedHero = () => {
                             <div className="absolute inset-0 bg-gradient-to-r from-gray-900/80 via-gray-900/60 to-gray-900/40"></div>
                         </div>
 
+                        {/* Content */}
                         <div className="relative z-20 h-full flex flex-col justify-center px-4 sm:px-8 md:px-12 lg:px-24 xl:px-32 py-16 md:py-24">
                             <div className="w-full max-w-2xl md:max-w-3xl lg:max-w-4xl xl:max-w-5xl">
                                 {isHomeScreen ? (
                                     <motion.div
-                                        initial={{ opacity: 0 }}
-                                        animate={{ opacity: 1 }}
-                                        transition={{ delay: 0.3 }}
-                                        className="flex flex-col w-full max-w-2xl md:max-w-3xl lg:max-w-4xl xl:max-w-5xl gap-6 md:gap-8"
+                                        initial="hidden"
+                                        animate="visible"
+                                        variants={{
+                                            hidden: {},
+                                            visible: {
+                                                transition: {
+                                                    staggerChildren: 0.3, // text elements stagger
+                                                },
+                                            },
+                                        }}
+                                        className="flex flex-col w-full gap-6 md:gap-8"
                                     >
                                         {/* Tagline */}
-                                        <span className="inline-block w-max px-3 py-1 text-sm font-medium text-brandgreen bg-blue-400/10 rounded-full backdrop-blur-sm">
+                                        <motion.span
+                                            variants={{
+                                                hidden: { opacity: 0, y: -10 },
+                                                visible: { opacity: 1, y: 0 },
+                                            }}
+                                            className="inline-block w-max px-3 py-1 text-sm font-medium text-brandgreen bg-blue-400/10 rounded-full backdrop-blur-sm"
+                                        >
                                             {t('hero.home.tagline')}
-                                        </span>
-
+                                        </motion.span>
 
                                         {/* Title */}
-                                        <h1 className="text-left leading-tight text-white font-black">
+                                        <motion.h1
+                                            variants={{
+                                                hidden: { opacity: 0, y: -10 },
+                                                visible: { opacity: 1, y: 0 },
+                                            }}
+                                            className="text-left leading-tight text-white font-black"
+                                        >
                                             <span className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl block uppercase">
                                                 {t('hero.home.titleLine1')}
                                             </span>
                                             <span className="text-5xl sm:text-6xl md:text-7xl lg:text-8xl xl:text-9xl block text-brandgreen uppercase">
                                                 {t('hero.home.titleLine2')}
                                             </span>
-                                        </h1>
+                                        </motion.h1>
 
                                         {/* Description */}
-                                        <p className="text-lg sm:text-xl md:text-2xl text-gray-200 leading-relaxed">
+                                        <motion.p
+                                            variants={{
+                                                hidden: { opacity: 0, y: -10 },
+                                                visible: { opacity: 1, y: 0 },
+                                            }}
+                                            className="text-lg sm:text-xl md:text-2xl text-gray-200 leading-relaxed"
+                                        >
                                             {t('hero.home.description')}
-                                        </p>
+                                        </motion.p>
 
                                         {/* Buttons */}
-                                        <div className="flex flex-col sm:flex-row gap-3 sm:gap-4 items-start sm:items-center">
+                                        <motion.div
+                                            variants={{
+                                                hidden: { opacity: 0, y: 20 },
+                                                visible: { opacity: 1, y: 0 },
+                                            }}
+                                            transition={{ delay: 0.6 }} // buttons animate after text
+                                            className="flex flex-col sm:flex-row gap-3 sm:gap-4 items-start sm:items-center"
+                                        >
                                             <HomeScreenButton onClick={() => scrollToSection('products')} withIcon>
                                                 {t('hero.home.ctaProducts')}
                                             </HomeScreenButton>
@@ -416,7 +449,7 @@ const CombinedHero = () => {
                                                 <Play className="mr-2 h-4 w-4 sm:h-5 sm:w-5" />
                                                 {t('hero.home.ctaDemo')}
                                             </HomeScreenButton>
-                                        </div>
+                                        </motion.div>
                                     </motion.div>
                                 ) : (
                                     <>
@@ -443,7 +476,7 @@ const CombinedHero = () => {
 
                                         <motion.p
                                             initial={{ opacity: 0, y: 30 }}
-                                            animate={{ opacity: 1 }}
+                                            animate={{ opacity: 1, y: 0 }}
                                             transition={{ delay: 0.7 }}
                                             className="text-lg sm:text-xl md:text-2xl text-gray-200 mb-6 md:mb-8 w-full md:w-4/5 lg:w-3/4 leading-relaxed"
                                         >
@@ -466,7 +499,7 @@ const CombinedHero = () => {
                                                 item={{
                                                     ...currentItem,
                                                     cta: getLocalizedContent(currentItem, 'cta'),
-                                                    link: getLocalizedContent(currentItem, 'link')
+                                                    link: getLocalizedContent(currentItem, 'link'),
                                                 }}
                                             />
                                         )}
@@ -477,6 +510,7 @@ const CombinedHero = () => {
                     </motion.div>
                 )}
             </AnimatePresence>
+
         </section>
 
 

@@ -7,7 +7,7 @@ import { ChatMessages } from './ChatMessages';
 import { ChatInput } from './ChatInput';
 import { Props, ChatMessage } from './types';
 import { introMessages, getSystemMessage } from './utils';
-
+import { useTranslation } from 'react-i18next';
 // Constants for API configuration
 const API_CONFIGS = [
   {
@@ -41,9 +41,9 @@ export const ChatWidget = React.memo(({ open, setOpen }: Props) => {
   const [viewportHeight, setViewportHeight] = useState(window.innerHeight);
   const [isScrolling, setIsScrolling] = useState(false);
   const [lastScrollPos, setLastScrollPos] = useState(0);
-  const [isHidden, setIsHidden] = useState(false);
+  // const [isHidden, setIsHidden] = useState(false);
   const [showFlap, setShowFlap] = useState(false);
-
+const { t } = useTranslation();
   // Refs
   const messagesEndRef = useRef<HTMLDivElement>(null);
   const inputRef = useRef<HTMLInputElement>(null);
@@ -56,7 +56,10 @@ export const ChatWidget = React.memo(({ open, setOpen }: Props) => {
 
   // Memoized values
   const isMobile = useMemo(() => window.innerWidth <= 768, []);
-  const systemMessage = useMemo(() => getSystemMessage(location.pathname), [location.pathname]);
+const systemMessage = useMemo(
+  () => getSystemMessage(location.pathname, t),
+  [location.pathname, t] // add `t` to dependency array
+);
 
 
  // Enhanced animation variants

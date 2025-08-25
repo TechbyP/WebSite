@@ -1,61 +1,55 @@
 {
-
-
- "headerTheme": {
+  "headerTheme": {
     "switchToDark": "Dark mode",
     "switchToLight": "Light mode"
- 
-},
-
-"termsOfService":{
-
-  "back": "Back",
-  "title": "Terms of Service",
-  "intro": {
-    "text1": "These Terms of Service apply to all offerings by",
-    "company": "Bodenprobetechnik Peters GmbH",
-    "address": "Am Fliegerhorst 11, 49610 Quakenbrück, Germany (\"we\", \"us\", \"our\")"
   },
-  "sections": {
-    "1": {
-      "title": "1. Acceptance of Terms",
-      "text": "By accessing or using the TechByP website and services, you agree to be bound by these Terms of Service. If you do not agree, please do not use our services."
+  "termsOfService": {
+    "back": "Back",
+    "title": "Terms of Service",
+    "intro": {
+      "text1": "These Terms of Service apply to all offerings by",
+      "company": "Bodenprobetechnik Peters GmbH",
+      "address": "Am Fliegerhorst 11, 49610 Quakenbrück, Germany (\"we\", \"us\", \"our\")"
     },
-    "2": {
-      "title": "2. Use of Services",
-      "text": "You may use our website and services only for lawful purposes and in accordance with these Terms. You agree not to:",
-      "list": [
-        "Use the services in any way that violates applicable laws",
-        "Attempt to gain unauthorized access to our systems",
-        "Interfere with the proper working of our services",
-        "Use any automated means to access our services without permission"
-      ]
-    },
-    "3": {
-      "title": "3. Intellectual Property",
-      "text": "All content on our website, including text, graphics, logos, and images, is the property of TechByP and is protected by intellectual property laws. You may not use our content without our express written permission."
-    },
-    "4": {
-      "title": "4. Product Information",
-      "text": "We strive to provide accurate product information, but we do not warrant that product descriptions or other content is complete, reliable, or error-free. Specifications are subject to change without notice."
-    },
-    "5": {
-      "title": "5. Limitation of Liability",
-      "text": "TechByP shall not be liable for any indirect, incidental, special, or consequential damages resulting from the use or inability to use our services, even if we have been advised of the possibility of such damages."
-    },
-    "6": {
-      "title": "6. Governing Law",
-      "text": "These Terms shall be governed by and construed in accordance with the laws of Germany, without regard to its conflict of law provisions."
-    },
-    "7": {
-      "title": "7. Changes to Terms",
-      "text": "We reserve the right to modify these Terms at any time. Your continued use of our services after such modifications constitutes your acceptance of the new Terms.",
-      "effectiveDate": "Effective date: July 31, 2025"
+    "sections": {
+      "1": {
+        "title": "1. Acceptance of Terms",
+        "text": "By accessing or using the TechByP website and services, you agree to be bound by these Terms of Service. If you do not agree, please do not use our services."
+      },
+      "2": {
+        "title": "2. Use of Services",
+        "text": "You may use our website and services only for lawful purposes and in accordance with these Terms. You agree not to:",
+        "list": [
+          "Use the services in any way that violates applicable laws",
+          "Attempt to gain unauthorized access to our systems",
+          "Interfere with the proper working of our services",
+          "Use any automated means to access our services without permission"
+        ]
+      },
+      "3": {
+        "title": "3. Intellectual Property",
+        "text": "All content on our website, including text, graphics, logos, and images, is the property of TechByP and is protected by intellectual property laws. You may not use our content without our express written permission."
+      },
+      "4": {
+        "title": "4. Product Information",
+        "text": "We strive to provide accurate product information, but we do not warrant that product descriptions or other content is complete, reliable, or error-free. Specifications are subject to change without notice."
+      },
+      "5": {
+        "title": "5. Limitation of Liability",
+        "text": "TechByP shall not be liable for any indirect, incidental, special, or consequential damages resulting from the use or inability to use our services, even if we have been advised of the possibility of such damages."
+      },
+      "6": {
+        "title": "6. Governing Law",
+        "text": "These Terms shall be governed by and construed in accordance with the laws of Germany, without regard to its conflict of law provisions."
+      },
+      "7": {
+        "title": "7. Changes to Terms",
+        "text": "We reserve the right to modify these Terms at any time. Your continued use of our services after such modifications constitutes your acceptance of the new Terms.",
+        "effectiveDate": "Effective date: July 31, 2025"
+      }
     }
-}},
-
-
- "back": "Back",
+  },
+  "back": "Back",
   "imprint": "Imprint",
   "legalDisclosure": {
     "title": "Legal Disclosure",
@@ -120,12 +114,6 @@
       "country": "Germany"
     }
   },
-
-
-
-
-
-
   "cookie": {
     "message": "No biscuits here, just digital cookies. They help us improve your ride through our website. Carry on, and you’re giving them a thumbs-up.",
     "learnMore": "Learn more",
@@ -193,7 +181,7 @@
     }
   },
   "blogEdit": {
-     "chooseFile" :"Choose a file to upload",
+    "chooseFile": "Choose a file to upload",
     "selectArticle": "Select an article",
     "wantToCreateArticle": "Create your first article to get started",
     "selectFromArticle": "Choose an article from the sidebar or create a new one",
@@ -417,7 +405,8 @@
       "all": "ALL PRODUCTS",
       "smartsystems": "SMART SYSTEMS",
       "accessory": "ADD-ONS",
-      "manual": "HAND TOOLS"
+      "manual": "HAND TOOLS",
+      "Bespoke Machinery": "BESPOKE MACHINERY"
     },
     "languageSwitcher": {
       "en": "",
@@ -464,7 +453,9 @@
     "all": "ALL PRODUCTS",
     "manual": "HAND TOOLS",
     "smartsystems": "SMART SYSTEMS",
-    "accessory": "ADD-ONS"
+    "accessory": "ADD-ONS",
+    "bespoke machinery": "BESPOKE",
+    "Bespoke Machinery": "BESPOKE"
   },
   "productCard": {
     "readMore": "Read more",
@@ -589,7 +580,6 @@
     }
   ],
   "certifications": [
-  
     {
       "abbr": "CE",
       "text": "CE Certified",
@@ -704,7 +694,7 @@
       "contact": "Contact",
       "privacyPolicy": "Privacy Policy",
       "terms": "Terms of Service",
-      "imprint":"Imprint"
+      "imprint": "Imprint"
     },
     "social": {
       "facebook": "Facebook",
@@ -951,8 +941,6 @@
     }
   },
   "blog": {
-
-   
     "categories": {
       "all": "All"
     },
@@ -1147,8 +1135,6 @@
     },
     "videoNotSupported": "Your browser doesn't support HTML5 video."
   },
-
-
   "adminDashboard": {
     "greeting": "Welcome back!",
     "user": {
@@ -1213,7 +1199,7 @@
         "type": "Type",
         "title": "Title",
         "changes": "Changes",
-        "email":"Club member's email",
+        "email": "Club member's email",
         "deleted by": "Deleted by"
       }
     },
@@ -1238,16 +1224,8 @@
     },
     "permissionsError": "Error checking permissions"
   },
-
-
-
-
-
-
-
   "mp1": {
     "nickname": "Full-Core Retriever",
-    
     "specs": [
       "Depth: 0–90 cm (stepless)",
       "Semi-automatic",
@@ -1741,7 +1719,6 @@
     },
     "testimonials": []
   },
-
   "tph": {
     "name": "Three‑Point Hitch",
     "nickname": "Mount Kit",
@@ -2541,6 +2518,131 @@
       }
     ],
     "testimonials": []
-  }
+  },
+  "goettingerDrills": {
+    "name": "Göttinger Soil Corers",
+    "nickname": "Precision Sampling Made Effortless",
+    "specs": [
+      "Designed for Nmin sampling down to 90 cm",
+      "Manual operation—no extra tools required",
+      "Specially hardened steel groove ensures minimal friction",
+      "Three interlocking drill diameters optimize insertion and extraction"
+    ],
+    "description": "Who needs a gym membership when you have the Göttinger Soil Corers? One person, a light 2.5 kg tool, and you’re ready to conquer the soil—without leaving a trace on the field or terrorizing any buried cables.",
+    "herodescription": "From the <strong>delicate clay</strong> to <strong>lightly compacted sand</strong>, these corers slice through with <strong>minimal fuss</strong>. Three perfectly calibrated drill layers, <strong>cushioned handles</strong>, and a clever <strong>fräs profile</strong> make sampling feel less like work and more like wizardry.",
+    "detailedDescription": "<p className='mt-4'>Single-handed operation, <strong>no heavy machinery</strong>, <strong>no extra helpers</strong>, just you and the earth. The Göttinger drills separate <strong>three soil layers</strong> with precision, giving you reliable N-min samples weighing <strong>500–1000g</strong> from <strong>16 parallel strikes per depth section</strong>.</p><p className='mt-4'>Caution: these are champions of <strong>gentle soils</strong>. <strong>Rocky, bone-dry, or tightly packed sand</strong> might push their patience. But in ideal conditions, it’s as close as you’ll get to a <strong>soil-sampling magic wand</strong>.</p>",
+    "price": "Price on request",
+    "features": [
+      "Single-person operation",
+      "Lightweight at just ~2.5 kg",
+      "Higher efficiency than conventional hand tools",
+      "Zero field damage—no crushing crops",
+      "Safe for drains, cables, and underground lines",
+      "Works even in wet soils",
+      "Exact 3-layer separation for N-min samples",
+      "Improved grip comfort thanks to reinforced handle padding"
+    ],
+    "applications": [
+      "Manual Nmin soil sampling in light soils",
+      "Field conditions where machinery cannot be used",
+      "Reliable layer separation for precise analysis"
+    ],
+    "howToUse": [
+      "Insert the corer by hand into the soil",
+      "Pull out carefully to collect the sample",
+      "Repeat 16 parallel strikes per depth section for reliable results",
+      "Avoid rocky or overly compacted soils"
+    ],
+    "technicalSpecs": {
+      "0-30 cm corer": "Diameter 18 mm, groove 14 mm",
+      "30-60 cm corer": "Diameter 16 mm, groove 12 mm",
+      "60-90 cm corer": "Diameter 14 mm, groove 10 mm",
+      "Complete set": "Includes one corer for each depth section (0-30 cm, 30-60 cm, 60-90 cm)"
+    },
+    "table": [
+      {
+        "emNo": "5001",
+        "articleName": "Göttinger corer (0-30 cm), Ø 18 mm, groove 14 mm"
+      },
+      {
+        "emNo": "5002",
+        "articleName": "Göttinger corer (30-60 cm), Ø 16 mm, groove 12 mm"
+      },
+      {
+        "emNo": "5003",
+        "articleName": "Göttinger corer (60-90 cm), Ø 14 mm, groove 10 mm"
+      },
+      {
+        "emNo": "5004",
+        "articleName": "Complete Göttinger corer set, including all three depth sections"
+      }
+    ],
+    "testimonials": []
+  },
+  "raupe": {
+    "nickname": "The Dirt Whisperer",
+    "specs": [
+      "Depth: 0–90 cm (optional 120 cm)",
+      "Hydraulic & semi-automatic",
+      "3-layer sampling",
+      "Manual visual check for each core"
+    ],
+    "description": "Rough terrain? Slope? Cornfield maze? No problem. This crawler doesn’t complain—it just samples.",
+    "herodescription": "The <strong>Nitratraupe</strong> is the sort of machine any soil enthusiast would nod at approvingly. Capable of <strong>0–90 cm soil sampling</strong> across <strong>three layers</strong>, it navigates rough terrain like a polite but relentless toddler on tracks. Semi-automatic, hydraulically assisted, and guided by your eyes (because the machine respects your intelligence).",
+   "detailedDescription": "<p className='mt-4'><strong>Precision meets brute force</strong> in a surprisingly courteous package. The <strong>Nitratraupe</strong> cuts a <strong>clean soil profile</strong> without mixing layers (<strong>no rotary drills required</strong>). <strong>Three layers—0–30, 30–60, 60–90 cm</strong> are extracted with <strong>finesse</strong>.</p><p className='mt-4'>It runs off the <strong>carrier vehicle's engine</strong>, so <strong>no extra combustion motor tantrums</strong>. <strong>Manual sampling</strong> lets you <strong>visually inspect the core</strong>, keeping <strong>costs and headaches low</strong>.</p><p className='mt-4'>Tracks make it <strong>narrow enough to squeeze between growing corn</strong>, and with a <strong>remote control</strong>, you can <strong>raise, lower, spin, and sample</strong> without leaving your comfort zone. A <strong>true gentleman’s soil-sampling crawler</strong>.</p>",
 
+    "price": "From €20,000",
+    "features": [
+      "Hydraulic semi-automatic extraction down to 90 cm (optional 120 cm)",
+      "Three-layer sampling for horizon-specific precision",
+      "Manual core inspection keeps you in charge",
+      "Carrier engine powers the hydraulic system—no extra motors",
+      "Remote control: raise, lower, rotate, sample",
+      "Tracks are narrow for passage between corn",
+      "High-frequency hydraulic hammer (2400 blows/min, 40J per blow)",
+      "Durable and low-maintenance",
+      "Quick spare parts service (2h) and repairs on-site (12h)"
+    ],
+    "howToUse": [
+      "Drive the crawler to the sampling site",
+      "Lay the machine down for stability during travel if needed",
+      "Raise the sampling rod upright via remote control",
+      "Hydraulically drive the rod into the soil and rotate to extract the core",
+      "Repeat for the three layers: 0–30, 30–60, 60–90 cm",
+      "Remove core, inspect visually, and store in waterproof containers"
+    ],
+    "applications": [
+      "Nmin/nitrate soil testing",
+      "Environmental and agricultural soil monitoring",
+      "Soil profiling and research",
+      "Field work on slopes and rough terrain"
+    ],
+    "technicalSpecs": {
+      "Sampling Depth": "0–90 cm (optional 120 cm)",
+      "Sampling Type": "Impact-driven, semi-automatic",
+      "Hammer Unit": "Hydraulic, 2400 strokes/min, 40 J/blow",
+      "Horizons": "3 layers (0–30, 30–60, 60–90 cm)",
+      "Magazines": "3",
+      "Sampling Cycle Time": "20 sec/core",
+      "Carrier Vehicle": "Crawler, tracks powered by engine",
+      "Track Width": "Max 700 mm",
+      "Remote Control": "Full operation of crawler and sampling unit",
+      "Engine": "Honda, ≥6.5 HP",
+      "Weight": "220 kg"
+    },
+    "testimonials": [
+      {
+        "quote": "Handles muddy slopes like a professional mountaineer. We never lose a sample.",
+        "author": "Dr. Anna Fischer",
+        "company": "Soil Research Lab",
+        "rating": 5
+      },
+      {
+        "quote": "The 3-layer separation is genius. Simple, effective, and makes field life easier.",
+        "author": "Lars Becker",
+        "company": "AgriSoil GmbH",
+        "rating": 5
+      }
+    ]
+  }
 }

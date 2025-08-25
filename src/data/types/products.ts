@@ -1,28 +1,28 @@
 export interface Product {
   id: number;
-  date: number;
-  name: string;
-  nickname: string;
-  productKey: string;
-  category: string;
+  date?: number;
+  name?: string;
+  nickname?: string;
+  productKey?: string;
+  category?: string;
   categoryName?: string;
   bestseller?: boolean;
-  image: string;
-  heroVideo: string;
-  specs: string[];
-  icon: any;
-  description: string;
-  detailedDescription: string | JSX.Element;
+  image?: string;
+  heroVideo?: string;
+  specs?: string[];
+  icon?: any;
+  description?: string;
+  detailedDescription?: string | JSX.Element;
   herodescription?: string | JSX.Element;
-  price: string;
-  features: string[];
+  price?: string;
+  features?: string[];
   howToUse?: string[];
-  applications: string[];
-  technicalSpecs: {
+  applications?: string[];
+  technicalSpecs?: {
     [key: string]: string | JSX.Element;
   };
-  gallery: string[];
-  testimonials: {
+  gallery?: string[];
+  testimonials?: {
     quote: string;
     author: string;
     company: string;

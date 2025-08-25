@@ -33,7 +33,7 @@ const useMediaQuery = (query: string) => {
 };
 
 // Constants
-const CATEGORIES = ["all", "smartsystems", "accessory", "manual"];
+const CATEGORIES = ["all", "smartsystems", "accessory", "manual", "Bespoke Machinery"];
 
 const ProductShowcase = () => {
   const { t } = useTranslation();

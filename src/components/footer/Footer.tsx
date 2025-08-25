@@ -231,16 +231,16 @@ const Footer = () => {
             </ul>
 
             <div className="flex items-center justify-end mt-6 space-x-4">
-              <a href="https://www.facebook.com/techbyp" target="_blank" rel="noopener noreferrer" aria-label={t('foot.social.facebook')} className="hover:text-brandgreen">
+              <a href="https://www.facebook.com" target="_blank" rel="noopener noreferrer" aria-label={t('foot.social.facebook')} className="hover:text-brandgreen">
                 <Facebook className="h-6 w-6" />
               </a>
-              <a href="https://www.instagram.com/techbyp" target="_blank" rel="noopener noreferrer" aria-label={t('foot.social.instagram')} className="hover:text-brandgreen">
+              <a href="https://www.instagram.com/techbyp.international/" target="_blank" rel="noopener noreferrer" aria-label={t('foot.social.instagram')} className="hover:text-brandgreen">
                 <Instagram className="h-6 w-6" />
               </a>
               <a href="https://www.linkedin.com/company/techbyp" target="_blank" rel="noopener noreferrer" aria-label={t('foot.social.linkedin')} className="hover:text-brandgreen">
                 <Linkedin className="h-6 w-6" />
               </a>
-              <a href="https://www.youtube.com/channel/techbyp" target="_blank" rel="noopener noreferrer" aria-label={t('foot.social.youtube')} className="hover:text-brandgreen">
+              <a href="https://www.youtube.com/@TechbyP/featured" target="_blank" rel="noopener noreferrer" aria-label={t('foot.social.youtube')} className="hover:text-brandgreen">
                 <Youtube className="h-6 w-6" />
               </a>
             </div>

@@ -404,7 +404,8 @@
       "all": "ALLE PRODUKTE",
       "smartsystems": "SMART SYSTEMS",
       "accessory": "ZUBEHÖR",
-      "manual": "HANDWERKZEUG"
+      "manual": "HANDWERKZEUG",
+      "BespokeMachinery": "MAßGESCHNEIDERTE MASCHINEN"
     },
     "languageSwitcher": {
       "en": "",
@@ -451,7 +452,9 @@
     "all": "ALLE PRODUKTE",
     "manual": "HANDWERKZEUG",
     "smartsystems": "SMART SYSTEMS",
-    "accessory": "ZUBEHÖR"
+    "accessory": "ZUBEHÖR",
+    "Bespoke Machinery": "MAßGESCHNEIDERTE",
+    "bespoke machinery": "MAßGESCHNEIDERTE"
   },
   "productCard": {
     "readMore": "Mehr lesen",
@@ -2503,5 +2506,130 @@
       }
     ],
     "testimonials": []
+  },
+  "goettingerDrills": {
+    "name": "Göttinger Bohrstöcke",
+    "nickname": "Präzision beim Probennahme, mühelos wie ein Spaziergang",
+    "specs": [
+      "Für Nmin-Probenahme bis 90 cm entwickelt",
+      "Manuelle Handhabung – keine zusätzlichen Werkzeuge nötig",
+      "Speziell gehärtete Stahlnut für minimalen Reibungswiderstand",
+      "Drei aufeinander abgestimmte Bohrdurchmesser für optimales Ein- und Herausstechen"
+    ],
+    "description": "Wer braucht schon ein Fitnessstudio, wenn man die Göttinger Bohrstöcke hat? Eine Person, ein leichtes Werkzeug von 2,5 kg, und schon ist man bereit, den Boden zu erobern – ohne Spuren auf dem Feld oder Schaden an unterirdischen Kabeln zu hinterlassen.",
+    "herodescription": "Von <strong>zartem Lehm</strong> bis <strong>leicht verdichtetem Sand</strong> schneiden diese Bohrstöcke mit <strong>minimalem Aufwand</strong>. Drei perfekt kalibrierte Bohrschichten, <strong>gepolsterte Griffe</strong> und ein cleveres <strong>Fräsprofil</strong> machen die Probennahme weniger zu Arbeit und mehr zu Zauberei.",
+    "detailedDescription": "<p className='mt-4'>Einhandbetrieb, <strong>keine schweren Maschinen</strong>, <strong>keine Helfer nötig</strong>, nur Sie und der Boden. Die Göttinger Bohrstöcke trennen <strong>drei Bodenschichten</strong> präzise und liefern zuverlässige Nmin-Proben mit <strong>500–1000 g</strong> Material aus <strong>16 parallelen Einstichen pro Tiefenabschnitt</strong>.</p><p className='mt-4'>Achtung: Diese Werkzeuge sind Champions für <strong>leichte Böden</strong>. <strong>Steinige, ausgetrocknete oder stark verdichtete Sandböden</strong> können ihre Geduld auf die Probe stellen. Unter idealen Bedingungen ist dies jedoch so nah an einem <strong>Zauberstab für Probennahmen</strong>, wie man es bekommt.</p>",
+    "price": "Preis auf Anfrage",
+    "features": [
+      "Probeentnahme durch nur eine Person",
+      "Gesamtgewicht nur etwa 2,5 kg",
+      "Höhere Arbeitsleistung als bei herkömmlichen Handgeräten",
+      "Keine Schäden auf dem Acker",
+      "Sicher für Drainagen, Kabel und Leitungen",
+      "Auch bei nassen Böden einsetzbar",
+      "Exakte Trennung der 3 Schichten für Nmin-Proben",
+      "Verbesserte Handhabung durch verstärkte Polster an den Griffen"
+    ],
+    "applications": [
+      "Manuelle Nmin-Probenahme in leichten Böden",
+      "Einsatz auf Feldern, wo Maschinen nicht möglich sind",
+      "Zuverlässige Schichttrennung für präzise Analyse"
+    ],
+    "howToUse": [
+      "Bohrstock von Hand in den Boden drücken",
+      "Sorgfältig herausziehen, um die Probe zu entnehmen",
+      "16 parallele Einstiche pro Tiefenabschnitt für zuverlässige Ergebnisse",
+      "Nicht auf steinigen oder stark verdichteten Böden verwenden"
+    ],
+    "technicalSpecs": {
+      "Bohrstock 0-30 cm": "Durchmesser 18 mm, Nut 14 mm",
+      "Bohrstock 30-60 cm": "Durchmesser 16 mm, Nut 12 mm",
+      "Bohrstock 60-90 cm": "Durchmesser 14 mm, Nut 10 mm",
+      "Komplettsatz": "Je ein Bohrstock für jeden Tiefenabschnitt (0-30 cm, 30-60 cm, 60-90 cm)"
+    },
+    "table": [
+      {
+        "emNo": "5001",
+        "articleName": "Göttinger Bohrstock (0-30 cm), Ø 18 mm, Nut 14 mm"
+      },
+      {
+        "emNo": "5002",
+        "articleName": "Göttinger Bohrstock (30-60 cm), Ø 16 mm, Nut 12 mm"
+      },
+      {
+        "emNo": "5003",
+        "articleName": "Göttinger Bohrstock (60-90 cm), Ø 14 mm, Nut 10 mm"
+      },
+      {
+        "emNo": "5004",
+        "articleName": "Komplettsatz Göttinger Bohrstöcke, bestehend aus allen drei Tiefenabschnitten"
+      }
+    ],
+    "testimonials": []
+  },
+  "raupe": {
+    "nickname": "Der Bodenflüsterer",
+    "specs": [
+      "Tiefe: 0–90 cm (optional 120 cm)",
+      "Hydraulisch & halbautomatisch",
+      "3-Schichten-Beprobung",
+      "Manuelle visuelle Kontrolle jeder Probe"
+    ],
+    "description": "Unwegsames Gelände? Steigung? Maislabyrinth? Kein Problem. Diese Raupe beschwert sich nicht – sie beprobt einfach.",
+    "herodescription": "Die <strong>Nitratraupe</strong> ist eine Maschine, die jedem Bodenliebhaber anerkennend zunicken lässt. Sie kann <strong>0–90 cm Bodenproben</strong> über <strong>drei Schichten</strong> entnehmen und meistert unwegsames Gelände wie ein höflicher, aber unermüdlicher Kleinkind-Panzer. Halbautomatisch, hydraulisch unterstützt und von Ihren Augen gesteuert (weil die Maschine Ihren Verstand respektiert).",
+    "detailedDescription": "<p className='mt-4'><strong>Präzision trifft rohe Kraft</strong> in überraschend höflicher Verpackung. Die <strong>Nitratraupe</strong> erstellt ein <strong>sauberes Bodenprofil</strong> ohne Schichtvermischung (<strong>keine Drehbohrer nötig</strong>). <strong>Drei Schichten—0–30, 30–60, 60–90 cm</strong> werden mit <strong>Finesse</strong> entnommen.</p><p className='mt-4'>Sie nutzt den <strong>Motor des Trägerfahrzeugs</strong>, also <strong>keine zusätzlichen Verbrennungsmotor-Kapriolen</strong>. <strong>Manuelles Beproben</strong> erlaubt die <strong>visuelle Kontrolle des Kerns</strong> und hält <strong>Kosten und Ärger niedrig</strong>.</p><p className='mt-4'>Die Raupen machen sie <strong>schmal genug, um zwischen wachsenden Maispflanzen hindurchzufahren</strong>, und mit der <strong>Fernbedienung</strong> können Sie <strong>heben, senken, drehen und beproben</strong>, ohne Ihren Komfortbereich zu verlassen. Ein <strong>wahrhaft gentlemanartiger Bodenbeprobungs-Crawler</strong>.</p>",
+    "price": "Ab 20.000 €",
+    "features": [
+      "Hydraulische, halbautomatische Entnahme bis 90 cm (optional 120 cm)",
+      "3-Schichten-Beprobung für präzise Horizontentnahme",
+      "Manuelle Kontrolle der Proben, Sie bleiben am Ruder",
+      "Träger-Motor versorgt die Hydraulik – keine Extra-Motoren",
+      "Fernbedienung: aufrichten, ablegen, drehen, probieren",
+      "Ketten schmal genug für Durchfahrt zwischen Mais",
+      "Hochfrequentes hydraulisches Hammerwerk (2400 Schläge/Min, 40 J/Schlag)",
+      "Robust und wartungsarm",
+      "Ersatzteile innerhalb von 2h, Vor-Ort-Reparatur innerhalb von 12h"
+    ],
+    "howToUse": [
+      "Fahren Sie die Raupe zum Beprobungsort",
+      "Für bessere Stabilität während der Fahrt ablegen, falls nötig",
+      "Probenstange per Fernbedienung aufrichten",
+      "Hydraulisch in den Boden treiben und für die Entnahme drehen",
+      "Für alle drei Schichten wiederholen: 0–30, 30–60, 60–90 cm",
+      "Probe entnehmen, visuell prüfen und in wasserdichte Behälter legen"
+    ],
+    "applications": [
+      "Nmin-/Nitrat-Bodenuntersuchungen",
+      "Umwelt- und Agrar-Bodenmonitoring",
+      "Bodenprofilierung & Forschung",
+      "Feldarbeit auf Steigungen und unwegsamem Gelände"
+    ],
+    "technicalSpecs": {
+      "Beprobungstiefe": "0–90 cm (optional 120 cm)",
+      "Beprobungstyp": "Schlaggetrieben, halbautomatisch",
+      "Hammerwerk": "Hydraulisch, 2400 Schläge/Min, 40 J/Schlag",
+      "Horizonte": "3 Schichten (0–30, 30–60, 60–90 cm)",
+      "Magazine": "3",
+      "Probenzykluszeit": "20 sec/Kern",
+      "Trägerfahrzeug": "Raupe, Ketten vom Motor betrieben",
+      "Kettenbreite": "max. 700 mm",
+      "Fernbedienung": "Volle Steuerung der Raupe und Probenentnahme",
+      "Motor": "Honda, ≥6,5 PS",
+      "Gewicht": "220 kg"
+    },
+    "testimonials": [
+      {
+        "quote": "Bewältigt schlammige Steigungen wie ein professioneller Bergsteiger. Keine Probe geht verloren.",
+        "author": "Dr. Anna Fischer",
+        "company": "Soil Research Lab",
+        "rating": 5
+      },
+      {
+        "quote": "Die 3-Schichten-Beprobung ist genial. Einfach, effektiv und erleichtert die Feldarbeit enorm.",
+        "author": "Lars Becker",
+        "company": "AgriSoil GmbH",
+        "rating": 5
+      }
+    ]
   }
 }

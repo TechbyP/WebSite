@@ -76,20 +76,27 @@ export const formatRelativeTime = (dateString: string): string => {
  * Formats content (HTML or Markdown) for display
  * Adapted for dark mode
  */
-export const formatContentForDisplay = (content: string[] | string | undefined): JSX.Element[] => {
+export const formatContentForDisplay = (
+  content: string[] | string | undefined
+): JSX.Element[] => {
   if (!content) {
-    return [<div key="0" className="mb-4"><p className="text-gray-900 dark:text-gray-100">No content available</p></div>];
+    return [
+      <div key="0" className="mb-4">
+        <p className="text-gray-900 dark:text-gray-100">No content available</p>
+      </div>
+    ];
   }
 
   const contentArray = Array.isArray(content) ? content : [content];
 
   return contentArray.map((text, index) => {
     if (!text || text.trim() === '' || text.trim() === '<p></p>' || text.trim() === '<p><br></p>') {
-      return <div key={`spacer-${index}`} className="h-6" />;
+      return <div key={`spacer-${index}`} className="spacing-paragraph" />;
     }
 
     const isHtml = /<[a-z][\s\S]*>/i.test(text);
 
+    // For HTML content
     if (isHtml) {
       const sanitizedHtml = sanitizeHtml(text, {
         allowedTags: sanitizeHtml.defaults.allowedTags.concat(['img']),
@@ -100,37 +107,30 @@ export const formatContentForDisplay = (content: string[] | string | undefined):
       });
 
       return (
-        <div 
-          key={`html-${index}`} 
-          className="mb-4 prose max-w-none text-gray-900 dark:text-gray-100"
+        <div
+          key={`html-${index}`}
+          className={`mb-4 prose max-w-none text-gray-900 dark:text-gray-100 ${
+            index === 0 ? 'first-paragraph-with-dropcap' : ''
+          }`}
           dangerouslySetInnerHTML={{ __html: sanitizedHtml }}
         />
       );
     }
 
-    const markdownComponent = (
-      <ReactMarkdown 
+    // For Markdown / plain text content
+    return (
+      <div
         key={`markdown-${index}`}
-        rehypePlugins={[rehypeRaw]}
-        remarkPlugins={[remarkGfm]}
-        className="text-gray-900 dark:text-gray-100"
+        className={`mb-4 prose max-w-none text-gray-900 dark:text-gray-100 ${
+          index === 0 ? 'first-paragraph-with-dropcap' : ''
+        }`}
       >
-        {text}
-      </ReactMarkdown>
+        <ReactMarkdown rehypePlugins={[rehypeRaw]} remarkPlugins={[remarkGfm]}>
+          {text}
+        </ReactMarkdown>
+      </div>
     );
-
-    if (index === 0) {
-      return (
-        <div key={index} className="mb-4">
-          <p className="first-letter:text-5xl first-letter:float-left first-letter:pr-2 first-letter:leading-none">
-            {markdownComponent}
-          </p>
-        </div>
-      );
-    }
-
-    return <div key={index} className="mb-4">{markdownComponent}</div>;
-  }).filter(Boolean) as JSX.Element[];
+  });
 };
 
 export const formatDate = (dateString: string): string => {

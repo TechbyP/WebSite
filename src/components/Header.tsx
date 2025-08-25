@@ -259,7 +259,7 @@ export const HeaderProvider: React.FC<{ children: React.ReactNode }> = ({ childr
                 <button
                   onClick={() => navigate('/downloads')}
                   className="flex items-center text-gray-700 dark:text-gray-300 hover:text-brandgreen dark:hover:text-brandgreen px-2 py-2 text-sm md:text-base font-medium focus:outline-brandgreen focus:outline-2 focus:outline-offset-2 rounded transition-colors duration-200"
-                  // aria-label={t('header.navigation.downloads')}
+                // aria-label={t('header.navigation.downloads')}
                 >
                   <Download className="h-4 w-4 md:h-5 md:w-5 mr-1" aria-hidden="true" />
                   {/* <span className={`${viewportSize === 'md' ? 'hidden md:inline' : ''}`}>
@@ -427,13 +427,11 @@ export const HeaderProvider: React.FC<{ children: React.ReactNode }> = ({ childr
                       }}
                       className="w-full px-4 py-3 text-lg font-black text-gray-700 dark:text-gray-300 bg-white dark:bg-gray-800 border border-gray-300 dark:border-gray-600 rounded-lg focus:outline-none focus:ring-2 focus:ring-brandgreen transition-colors"
                     >
-                      {languageOptions.map((lang) => (
-                        <option key={lang.code} value={lang.code}>
-                          {lang.flag} {lang.name}
-                        </option>
-                      ))}
+                      <option value="en">🇬🇧 English</option>
+                      <option value="de">🇩🇪 Deutsch</option>
                     </select>
                   </div>
+
                 </div>
               </nav>
             )}

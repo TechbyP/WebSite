@@ -1,103 +1,5 @@
 import { Wrench, Target, Gauge, Drill, Zap, Settings, Hammer } from 'lucide-react';
 
-import MP1_Hero from '../assets/MP-1.90/hero.jpg';
-
-import MP1_2 from '../assets/MP-1.90/2.jpg';
-import MP1_3 from '../assets/MP-1.90/3.jpg';
-import MP1_4 from '../assets/MP-1.90/4.jpg';
-
-import MP2_Hero from '../assets/MP-2.60/hero.jpg';
-
-import MP2_1 from '../assets/MP-2.60/1.jpg';
-import MP2_2 from '../assets/MP-2.60/2.jpg';
-import MP2_3 from '../assets/MP-2.60/3.jpg';
-import MP2_4 from '../assets/MP-2.60/4.jpg';
-
-import MP3_Hero from '../assets/MP-3.90/hero.jpg';
-import MP3_1 from '../assets/MP-3.90/1.jpg';
-import MP3_2 from '../assets/MP-3.90/2.jpg';
-import MP3_3 from '../assets/MP-3.90/3.jpg';
-import MP3_4 from '../assets/MP-3.90/4.jpg';
-
-import MP4_Hero from '../assets/MP-4.100/hero.jpg';
-
-import MP4_2 from '../assets/MP-4.100/2.jpg';
-import MP4_3 from '../assets/MP-4.100/3.jpg';
-import MP4_4 from '../assets/MP-4.100/4.jpg';
-
-import DE_Hero from '../assets/DE-1.30/hero.jpg';
-import DE_1 from '../assets/DE-1.30/1.jpg';
-import DE_2 from '../assets/DE-1.30/2.jpg';
-import DE_3 from '../assets/DE-1.30/3.jpg';
-
-import DH_Hero from '../assets/DH-1.30/Hero.jpg'
-import DH_1 from '../assets/DH-1.30/1.jpg'
-import DH_2 from '../assets/DH-1.30/2.jpg'
-import DH_3 from '../assets/DH-1.30/3.jpg'
-
-import BOPROB_Hero from '../assets/BOPROB_III/Hero.jpg'
-import BOPROB_2 from '../assets/BOPROB_III/2.jpg'
-import BOPROB_3 from '../assets/BOPROB_III/3.jpg'
-import BOPROB_4 from '../assets/BOPROB_III/4.jpg'
-
-import LayDown_Hero from '../assets/Frames/Laydown/Hero.jpg'
-import LayDown_1 from '../assets/Frames/Laydown/1.jpg'
-import LayDown_2 from '../assets/Frames/Laydown/2.jpg'
-import LayDown_3 from '../assets/Frames/Laydown/3.jpg'
-
-import TPH_Hero from '../assets/Frames/Three-point/Hero.jpg'
-import TPH_1 from '../assets/Frames/Three-point/1.jpg'
-import TPH_2 from '../assets/Frames/Three-point/2.jpg'
-import TPH_3 from '../assets/Frames/Three-point/3.jpg'
-import TPH_4 from '../assets/Frames/Three-point/4.jpg'
-
-import FC_Hero from '../assets/Frames/Full-Conversion/Hero.jpg'
-import FC_1 from '../assets/Frames/Full-Conversion/1.jpg'
-import FC_2 from '../assets/Frames/Full-Conversion/2.jpg'
-import FC_3 from '../assets/Frames/Full-Conversion/3.jpg'
-
-import Trailer_Hero from '../assets/Trailers/Hero.jpg'
-import Trailer_1 from '../assets/Trailers/1.jpg'
-import Trailer_2 from '../assets/Trailers/2.jpg'
-import Trailer_3 from '../assets/Trailers/3.jpg'
-
-import PP_Hero from '../assets/Powerpacks/Hero.jpg'
-import PP_1 from '../assets/Powerpacks/1.jpg'
-import PP_2 from '../assets/Powerpacks/2.jpg'
-import PP_3 from '../assets/Powerpacks/3.jpg'
-import PP_4 from '../assets/Powerpacks/4.jpg'
-import PP_5 from '../assets/Powerpacks/5.jpg'
-import PP_6 from '../assets/Powerpacks/6.jpg'
-import PP_7 from '../assets/Powerpacks/7.jpg'
-
-import SpareParts_Hero from '../assets/SpareParts/Hero.jpg';
-import SpareParts_2 from '../assets/SpareParts/2.jpg';
-import SpareParts_3 from '../assets/SpareParts/3.jpg';
-import SpareParts_4 from '../assets/SpareParts/4.jpg';
-
-import CB_Hero from '../assets/CoolBox/Hero.jpg'
-import CB_1 from '../assets/CoolBox/1.jpg'
-import CB_2 from '../assets/CoolBox/2.jpg'
-import CB_3 from '../assets/CoolBox/3.jpg'
-
-import LED_Hero from '../assets/LEDLights/Hero.jpg'
-import LED_1 from '../assets/LEDLights/1.jpg'
-import LED_2 from '../assets/LEDLights/2.jpg'
-import LED_3 from '../assets/LEDLights/3.jpg'
-
-import EC_Hero from '../assets/Ext_Camera/Hero.jpg'
-import EC_1 from '../assets/Ext_Camera/1.jpg'
-import EC_2 from '../assets/Ext_Camera/2.jpg'
-import EC_3 from '../assets/Ext_Camera/3.jpg'
-
-import MD_Hero from '../assets/ManualDrills/Hero.jpg'
-import MD_1 from '../assets/ManualDrills/1.jpg'
-import MD_2 from '../assets/ManualDrills/2.jpg'
-import MD_3 from '../assets/ManualDrills/3.jpg'
-
-import H_Hero from '../assets/Hammers/Hero.png'
-
-
 export interface Product {
   id: number;
   date: number;
@@ -157,7 +59,7 @@ export const products: Product[] = [
     name: "MP-1.90",
     nickname: "Full-Core Retriever",
     category: "SmartSystems",
-    image: MP1_Hero,
+    image: "",
     heroVideo: "",
     specs: [
       "Depth: 0–90 cm (stepless)",
@@ -237,10 +139,7 @@ export const products: Product[] = [
       "Mounting": "Pickup trucks, trailers, light agricultural vehicles"
     },
     gallery: [
-      MP1_Hero,
-      MP1_2,
-      MP1_3,
-      MP1_4,
+     
 
     ],
     testimonials: [
@@ -266,7 +165,7 @@ export const products: Product[] = [
     nickname: "Mid Range MultiPRO",
     category: "SmartSystems",
     bestseller: true,
-    image: MP2_Hero,
+    image: "",
     heroVideo: '40DoQB6vey0',
     specs: [
       "Depth: up to 60 cm",
@@ -349,10 +248,7 @@ export const products: Product[] = [
       "Weight": "200 kg"
     },
     gallery: [
-      MP2_1,
-      MP2_2,
-      MP2_3,
-      MP2_4
+   
     ],
     testimonials: [
       {
@@ -377,7 +273,7 @@ export const products: Product[] = [
     nickname: "TripleLayer Pro",
     category: "SmartSystems",
     bestseller: true,
-    image: MP3_Hero,
+    image: "",
     heroVideo: '40DoQB6vey0',
     specs: [
       "Depth: up to 95 cm",
@@ -469,10 +365,7 @@ export const products: Product[] = [
 
     },
     gallery: [
-      MP3_1,
-      MP3_2,
-      MP3_3,
-      MP3_4
+    
     ],
     testimonials: [
       {
@@ -497,7 +390,7 @@ export const products: Product[] = [
     nickname: "UltraDepth MAX",
     category: "SmartSystems",
     bestseller: false,
-    image: MP4_Hero,
+    image: "",
     heroVideo: "",
     specs: [
       "Depth: up to 100 cm",
@@ -578,10 +471,7 @@ export const products: Product[] = [
       "Weight": "215 kg"
     },
     gallery: [
-      MP4_Hero,
-      MP4_2,
-      MP4_3,
-      MP4_4
+   
     ],
     testimonials: [
       {
@@ -606,7 +496,7 @@ export const products: Product[] = [
     nickname: "Hydraulic Scout",
     category: "SmartSystems",
     bestseller: true,
-    image: DH_Hero,
+    image: "",
     heroVideo: "",
     specs: [
       "Depth: up to 30 cm",
@@ -698,10 +588,7 @@ export const products: Product[] = [
     },
 
     gallery: [
-      DH_Hero,
-      DH_1,
-      DH_2,
-      DH_3
+   
     ],
 
     testimonials: [
@@ -733,7 +620,7 @@ export const products: Product[] = [
     nickname: "Electric Scout",
     category: "SmartSystems",
     bestseller: true,
-    image: DE_Hero,
+    image:"",
     heroVideo: 'm6BqgLotHT8',
     specs: [
       "Depth: up to 30 cm ",
@@ -818,10 +705,7 @@ export const products: Product[] = [
 
     },
     gallery: [
-      DE_Hero,
-      DE_1,
-      DE_2,
-      DE_3,
+ 
     ],
     testimonials: [
       {
@@ -853,7 +737,7 @@ export const products: Product[] = [
     nickname: "The Sixteen Express",
     category: "SmartSystems",
     bestseller: true,
-    image: BOPROB_Hero,
+    image: "",
     heroVideo: "",
     specs: [
       "Depth: 10–30 cm",
@@ -958,10 +842,7 @@ export const products: Product[] = [
 
 
     gallery: [
-      BOPROB_Hero,
-      BOPROB_2,
-      BOPROB_3,
-      BOPROB_4,
+      
     ],
 
     testimonials: [
@@ -987,7 +868,7 @@ export const products: Product[] = [
   },
 
   ///2000
-  // Accessory categories as separate product entries for use in your product page
+  
 
   // Lay-down
   {
@@ -998,7 +879,7 @@ export const products: Product[] = [
     category: "accessory",
     bestseller: false,
 
-    image: LayDown_Hero,
+    image: "",
     heroVideo: "",
     icon: "",
 
@@ -1107,10 +988,7 @@ export const products: Product[] = [
     },
 
     gallery: [
-      LayDown_Hero,
-      LayDown_1,
-      LayDown_2,
-      LayDown_3,
+   
     ],
     testimonials: []
   },
@@ -1123,7 +1001,7 @@ export const products: Product[] = [
     category: "accessory",
     bestseller: false,
 
-    image: TPH_Hero,
+    image: "",
     heroVideo: "",
     icon: "",
 
@@ -1207,10 +1085,7 @@ export const products: Product[] = [
     },
 
     gallery: [
-      TPH_4,
-      TPH_1,
-      TPH_2,
-      TPH_3,
+    
     ],
 
     testimonials: [
@@ -1240,7 +1115,7 @@ export const products: Product[] = [
     category: "accessory",
     bestseller: true,
 
-    image: FC_Hero,
+    image: "",
     heroVideo: "",
     icon: "",
 
@@ -1327,10 +1202,7 @@ export const products: Product[] = [
     ,
 
     gallery: [
-      FC_Hero,
-      FC_1,
-      FC_2,
-      FC_3,
+    
 
     ],
 
@@ -1359,7 +1231,7 @@ export const products: Product[] = [
     type: "Trailer",
     bestseller: true,
 
-    image: Trailer_Hero,
+    image: "",
     heroVideo: "",
     icon: "",
 
@@ -1452,10 +1324,7 @@ export const products: Product[] = [
     },
 
     gallery: [
-      Trailer_Hero,
-      Trailer_1,
-      Trailer_2,
-      Trailer_3
+   
     ],
 
     testimonials: [
@@ -1479,7 +1348,7 @@ export const products: Product[] = [
     type: "Powerpack",
     bestseller: false,
 
-    image: PP_Hero,
+    image: "",
     heroVideo: "",
     icon: "",
 
@@ -1558,14 +1427,7 @@ export const products: Product[] = [
     },
 
     gallery: [
-      PP_Hero,
-      PP_1,
-      PP_2,
-      PP_3,
-      PP_4,
-      PP_5,
-      PP_6,
-      PP_7
+    
     ],
 
     testimonials: [
@@ -1589,7 +1451,7 @@ export const products: Product[] = [
     type: "Spare Parts",
     bestseller: true,
 
-    image: SpareParts_Hero,
+    image: "",
     heroVideo: "",
     icon: "",
 
@@ -1665,11 +1527,7 @@ export const products: Product[] = [
     },
 
     gallery: [
-      SpareParts_Hero,
-
-      SpareParts_2,
-      SpareParts_3,
-      SpareParts_4
+    
     ],
 
     testimonials: [
@@ -1693,7 +1551,7 @@ export const products: Product[] = [
     categoryName: "Extras",
     type: "Compressor Cooler",
     bestseller: false,
-    image: CB_Hero, // Add image path or URL
+    image: "", // Add image path or URL
     heroVideo: "", // Optional: Add promotional video URL
     icon: "", // Optional: Add small icon path
     specs: [
@@ -1762,10 +1620,7 @@ export const products: Product[] = [
       Weight: "24 kg (dry weight)"
     },
     gallery: [
-      CB_Hero,
-      CB_1,
-      CB_2,
-      CB_3
+     
     ], // Add image URLs
     testimonials: [] // Add user reviews if available
   },
@@ -1781,7 +1636,7 @@ export const products: Product[] = [
     categoryName: "Extras",
     type: "Lighting",
     bestseller: false,
-    image: LED_Hero, // Add product image path
+    image: "", // Add product image path
     heroVideo: "", // Optional
     icon: "", // Optional
     specs: [
@@ -1850,10 +1705,7 @@ export const products: Product[] = [
       Diameter: "75 mm",
       Certification: "ECE R10 compliant"
     },
-    gallery: [LED_Hero,
-      LED_1,
-      LED_2,
-      LED_3
+    gallery: [
     ], // Add product images
     testimonials: []
   },
@@ -1868,7 +1720,7 @@ export const products: Product[] = [
     categoryName: "Extras",
     type: "Monitoring",
     bestseller: false,
-    image: EC_Hero, // Add image path
+    image: "", // Add image path
     heroVideo: "", // Optional
     icon: "", // Optional
     specs: [
@@ -1943,10 +1795,7 @@ export const products: Product[] = [
 
     },
     gallery: [
-      EC_Hero,
-      EC_1,
-      EC_2,
-      EC_3
+    
     ], // Add machine-mount images
     testimonials: []
   },
@@ -2072,7 +1921,7 @@ export const products: Product[] = [
     categoryName: "Manual Samplers",
     type: "DrillRod",
     bestseller: false,
-    image: MD_Hero,  // you can replace with actual image variable if available
+    image: "",  // you can replace with actual image variable if available
     heroVideo: "",
     icon: null,   // add icon if you have one
     specs: [
@@ -2155,10 +2004,7 @@ export const products: Product[] = [
       { emNo: "645245", articleName: "Wooden field book frame, size DIN A3, weight 0.9 kg" },
       { emNo: "645260", articleName: "Field book frame made of plastic, size DIN A3, weight 0.7 kg" }
     ],
-    gallery: [MD_Hero,
-      MD_1,
-      MD_2,
-      MD_3],
+    gallery: [],
     testimonials: []
   },
   // Hammers
@@ -2171,7 +2017,7 @@ export const products: Product[] = [
     categoryName: "Manual Tools",
     type: "HammerSet",
     bestseller: false,
-    image: H_Hero,
+    image: "",
     heroVideo: "",
     icon: null,
     specs: [
@@ -2260,9 +2106,86 @@ export const products: Product[] = [
       { emNo: "3299.080", articleName: "Allen screw with nut for soft-face hammer 80 mm Ø" },
       { emNo: "3299.100", articleName: "Allen screw with nut for soft-face hammer 100 mm Ø" }
     ],
-    gallery: [H_Hero],
+    gallery: [],
     testimonials: []
   },
+{
+  id: 5001,
+  date: 2025,
+  name: "Göttinger Soil Corers",
+  nickname: "Precision Sampling Made Effortless",
+  category: "manual",
+  categoryName: "Manual Tools",
+  type: "GoettingerDrillSet",
+  bestseller: false,
+  image: "",
+  heroVideo: "",
+  icon: null,
+  specs: [
+    "Designed for Nmin sampling down to 90 cm",
+    "Manual operation—no extra tools required",
+    "Specially hardened steel groove ensures minimal friction",
+    "Three interlocking drill diameters optimize insertion and extraction"
+  ],
+  priceValue: undefined,
+  price: "Price on request",
+  electric: false,
+  manual: true,
+  hydraulic: false,
+  description: "Who needs a gym membership when you have the Göttinger Soil Corers? One person, a light 2.5 kg tool, and you’re ready to conquer the soil—without leaving a trace on the field or terrorizing any buried cables.",
+  herodescription: (
+    <>
+      <p>
+        From the <strong>delicate clay</strong> to <strong>lightly compacted sand</strong>, these corers slice through with <strong>minimal fuss</strong>. Three perfectly calibrated drill layers, <strong>cushioned handles</strong>, and a clever <strong>fräs profile</strong> make sampling feel less like work and more like wizardry.
+      </p>
+    </>
+  ),
+  detailedDescription: (
+    <>
+      <p className="mt-4">
+        Single-handed operation, <strong>no heavy machinery</strong>, <strong>no extra helpers</strong>, just you and the earth. The Göttinger drills separate <strong>three soil layers</strong> with precision, giving you reliable N-min samples weighing <strong>500–1000g</strong> from <strong>16 parallel strikes per depth section</strong>.
+      </p>
+      <p className="mt-4">
+        Caution: these are champions of <strong>gentle soils</strong>. <strong>Rocky, bone-dry, or tightly packed sand</strong> might push their patience. But in ideal conditions, it’s as close as you’ll get to a <strong>soil-sampling magic wand</strong>.
+      </p>
+    </>
+  ),
+  features: [
+    "Single-person operation",
+    "Lightweight at just ~2.5 kg",
+    "Higher efficiency than conventional hand tools",
+    "Zero field damage—no crushing crops",
+    "Safe for drains, cables, and underground lines",
+    "Works even in wet soils",
+    "Exact 3-layer separation for N-min samples",
+    "Improved grip comfort thanks to reinforced handle padding"
+  ],
+  applications: [
+    "Manual Nmin soil sampling in light soils",
+    "Field conditions where machinery cannot be used",
+    "Reliable layer separation for precise analysis"
+  ],
+  howToUse: [
+    "Insert the corer by hand into the soil",
+    "Pull out carefully to collect the sample",
+    "Repeat 16 parallel strikes per depth section for reliable results",
+    "Avoid rocky or overly compacted soils"
+  ],
+  technicalSpecs: {
+    "0-30 cm corer": "Diameter 18 mm, groove 14 mm",
+    "30-60 cm corer": "Diameter 16 mm, groove 12 mm",
+    "60-90 cm corer": "Diameter 14 mm, groove 10 mm",
+    "Complete set": "Includes one corer for each depth section (0-30 cm, 30-60 cm, 60-90 cm)"
+  },
+  table: [
+    { emNo: "5001", articleName: "Göttinger corer (0-30 cm), Ø 18 mm, groove 14 mm" },
+    { emNo: "5002", articleName: "Göttinger corer (30-60 cm), Ø 16 mm, groove 12 mm" },
+    { emNo: "5003", articleName: "Göttinger corer (60-90 cm), Ø 14 mm, groove 10 mm" },
+    { emNo: "5004", articleName: "Complete Göttinger corer set, including all three depth sections" }
+  ],
+  gallery: [],
+  testimonials: []
+}
 
   
 

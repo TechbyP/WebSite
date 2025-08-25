@@ -13,25 +13,22 @@ export interface RelatedArticle {
 }
 
 export interface ArticleContent {
+  title: string;
   content: string[];
   excerpt: string;
 }
 
-interface Article {
-  title: {
-    en: string;
-    de: string;
-  };
+export interface Article {
+  id: string; // You need this property based on your usage
   content: {
-    en: { content: string[]; excerpt: string };
-    de: { content: string[]; excerpt: string };
+    en: ArticleContent;
+    de: ArticleContent;
   };
   author: Author;
   date: string;
   readTime: string;
   category: string;
   image: string;
-
   relatedArticles: RelatedArticle[];
 }
 

@@ -7,30 +7,7 @@ import { Helmet } from 'react-helmet-async';
 import { db } from '../firebase';
 import { collection, getDocs, query, orderBy } from 'firebase/firestore';
 import { useTranslation } from 'react-i18next';
-
-interface Author {
-  name: string;
-  role: string;
-  avatar: string;
-}
-
-interface ArticleContent {
-  content: string[];
-  excerpt: string;
-}
-
-interface Article {
-  id: string;
-  title: { [key: string]: string };
-  content: { [key: string]: ArticleContent };
-  author: Author;
-  date: string;
-  readTime: string;
-  category: string;
-  image: string;
-  featured?: boolean;
-  trending?: boolean;
-}
+import { Article } from '../types/article'; // Update import path
 
 const useMediaQuery = (query: string) => {
   const [matches, setMatches] = useState(false);
@@ -75,11 +52,19 @@ const BlogList = () => {
   const isMobile = useMediaQuery('(max-width: 768px)');
 
   const getLocalizedContent = (article: Article) => {
-    const lang = i18n.language;
+    const lang = i18n.language as keyof typeof article.content;
+    const defaultLang = 'en' as const;
+    
+    // Get available languages from the article
+    const availableLangs = Object.keys(article.content) as (keyof typeof article.content)[];
+    const targetLang = availableLangs.includes(lang) ? lang : defaultLang;
+    
+    const content = article.content[targetLang];
+    
     return {
-      title: article.title[lang] || article.title.en,
-      excerpt: article.content[lang]?.excerpt || article.content.en.excerpt,
-      content: article.content[lang]?.content || article.content.en.content
+      title: content?.title || 'No title available',
+      excerpt: content?.excerpt || 'No excerpt available',
+      content: content?.content || ['No content available']
     };
   };
 
@@ -89,7 +74,10 @@ const BlogList = () => {
         const q = query(collection(db, 'articles'), orderBy('date', 'desc'));
         const snapshot = await getDocs(q);
         const articlesData: Article[] = [];
-        snapshot.forEach(doc => articlesData.push({ ...doc.data() as Article, id: doc.id }));
+        snapshot.forEach(doc => {
+          const data = doc.data() as Omit<Article, 'id'>;
+          articlesData.push({ ...data, id: doc.id });
+        });
         setArticles(articlesData);
         setFilteredArticles(articlesData);
       } catch (error) { console.error(error); }
@@ -129,7 +117,7 @@ const BlogList = () => {
       >
         <div className="flex flex-row">
           <div className="w-1/3 relative">
-            <img srcSet={article.image} alt={localized.title} className="w-full h-full object-cover" loading="lazy" />
+            <img src={article.image} alt={localized.title} className="w-full h-full object-cover" loading="lazy" />
             {article.featured && <div className="absolute top-2 left-2 bg-brandgreen text-white px-2 py-0.5 rounded-full text-xs font-black">{t('blog.labels.featured')}</div>}
             {article.trending && <div className="absolute top-2 left-2 bg-white/90 dark:bg-gray-700/80 backdrop-blur-sm text-xs font-black px-2 py-0.5 rounded-full">{t('blog.labels.trending')}</div>}
           </div>
@@ -240,7 +228,7 @@ const BlogList = () => {
                   return (
                     <div key={article.id} className="grid grid-cols-1 lg:grid-cols-2 gap-8">
                       <div className="relative h-64 lg:h-full">
-                        <img srcSet={article.image} alt={localized.title} className="w-full h-full object-cover" loading="lazy" />
+                        <img src={article.image} alt={localized.title} className="w-full h-full object-cover" loading="lazy" />
                         <div className="absolute bottom-4 left-4 bg-brandgreen text-white px-3 py-1 rounded-full text-sm font-black">{t('blog.labels.featured')}</div>
                       </div>
                       <div className="p-8 flex flex-col justify-center">
@@ -263,39 +251,6 @@ const BlogList = () => {
           </FadeInWhenVisible>
         )}
 
-        {/* Trending Articles */}
-        {filteredArticles.some(a => a.trending) && (
-          <FadeInWhenVisible>
-            <section className="mb-16">
-              <h2 className="text-3xl md:text-4xl font-black leading-tight text-gray-900 dark:text-gray-100 mb-6 uppercase">{t('blog.sections.trendingNow')}</h2>
-              <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
-                <AnimatePresence mode="popLayout">
-                  {filteredArticles.filter(a => a.trending).map(article => {
-                    const localized = getLocalizedContent(article);
-                    return isMobile ? <MobileArticleCard key={article.id} article={article} /> : (
-                      <article key={article.id} className="bg-white dark:bg-gray-800 rounded-xl overflow-hidden shadow-sm dark:shadow-none border border-gray-200 dark:border-gray-700 hover:shadow-md dark:hover:shadow-lg transition-shadow duration-300">
-                        <div className="relative h-48">
-                          <img srcSet={article.image} alt={localized.title} className="w-full h-full object-cover" loading="lazy" />
-                          <div className="absolute top-4 right-4 bg-white/90 dark:bg-gray-700/80 backdrop-blur-sm text-xs font-black px-2 py-1 rounded-full">{t('blog.labels.trending')}</div>
-                        </div>
-                        <div className="p-6">
-                          <div className="flex items-center space-x-3 mb-3">
-                            <span className="text-xs font-black text-brandblue dark:text-blue-300">{article.category.toUpperCase()}</span>
-                            <span className="text-xs text-gray-500 dark:text-gray-400 flex items-center font-black"><Clock className="h-3 w-3 mr-1" />{article.readTime}</span>
-                          </div>
-                          <h3 className="text-xl font-black mb-3 line-clamp-2">{localized.title}</h3>
-                          <p className="text-gray-600 dark:text-gray-300 text-sm mb-4 line-clamp-2 font-black">{localized.excerpt}</p>
-                          <button onClick={() => navigate(`/blog/${article.id}`)} className="text-sm font-black text-brandblue dark:text-blue-300 hover:text-blue-800 transition-colors">{t('blog.buttons.readMore')}</button>
-                        </div>
-                      </article>
-                    );
-                  })}
-                </AnimatePresence>
-              </div>
-            </section>
-          </FadeInWhenVisible>
-        )}
-
         {/* Latest Articles */}
         <FadeInWhenVisible>
           <section>
@@ -307,7 +262,7 @@ const BlogList = () => {
                   return isMobile ? <MobileArticleCard key={article.id} article={article} /> : (
                     <article key={article.id} className="group bg-white dark:bg-gray-800 rounded-xl overflow-hidden shadow-sm dark:shadow-none border border-gray-200 dark:border-gray-700 hover:shadow-md dark:hover:shadow-lg transition-shadow duration-300">
                       <div className="relative h-48 overflow-hidden">
-                        <img srcSet={article.image} alt={localized.title} className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" loading="lazy" />
+                        <img src={article.image} alt={localized.title} className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" loading="lazy" />
                       </div>
                       <div className="p-6">
                         <div className="flex items-center space-x-3 mb-3">

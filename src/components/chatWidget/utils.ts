@@ -2,6 +2,8 @@ import { products } from '../../data/AI_Products';
 import { manualData } from '../../data/mpManual';
 import { Product } from './types';
 import { ChatMessage } from './types';
+import { useTranslation } from 'react-i18next';
+
 
 /** ✳️ Assistant welcome lines */
 export const introMessages = [
@@ -26,9 +28,8 @@ const flattenSection = (section: any, indent = 0): string => {
     })
     .join('\n');
 };
-
 /** 🧠 Get manual section based on product slug */
-export const getManualSection = (slug: string): string => {
+export const getManualSection = (slug: string, t: any): string => {
   const match = slug.toUpperCase().includes('MP')
     ? 'MP-Series'
     : slug.toUpperCase().includes('DH')
@@ -39,24 +40,42 @@ export const getManualSection = (slug: string): string => {
           ? 'BOPROB'
           : null;
 
-  if (!match || !manualData[match]) return '';
-  return flattenSection(manualData[match], 1);
+  if (!match) return '';
+  
+  const manualData = t(`manual.${match}`, { returnObjects: true });
+  if (!manualData) return '';
+  
+  const flattenSection = (section: any, indent = 0): string => {
+    const pad = '  '.repeat(indent);
+    if (typeof section === 'string') return `${pad}- ${section}`;
+    return Object.entries(section)
+      .map(([key, val]) => {
+        const header = `${pad}**${key}:**`;
+        const body = typeof val === 'string' ? `${pad}- ${val}` : flattenSection(val, indent + 1);
+        return `${header}\n${body}`;
+      })
+      .join('\n');
+  };
+
+  return flattenSection(manualData, 1);
 };
 
-/** 🧾 Product summary */
-const getProductSummary = (products: Product[]) => {
-  return products.map((p: Product) => {
+/** 🧾 Product summary using i18n */
+export const getProductSummary = (products: any[], t: any) => {
+  return products.map((p: any) => {
     const specs = Object.entries(p.technicalSpecs)
-      .map(([k, v]) => `${k}: ${v}`)
+      .map(([k, v]) => `${t(`products.specs.${k}`)}: ${v}`)
       .join('; ');
-    return `Product: ${p.name} (${p.nickname})\nCategory: ${p.category}\nPrice: ${p.price}\nDescription: ${p.description}\nFeatures: ${p.features.join(', ')}\nSpecs: ${specs}`;
+    return `Product: ${t(`products.names.${p.name}`)} (${t(`products.nicknames.${p.nickname}`)})\nCategory: ${t(`products.categories.${p.category}`)}\nPrice: ${p.price}\nDescription: ${t(`products.descriptions.${p.description}`)}\nFeatures: ${p.features.map(f => t(`products.features.${f}`)).join(', ')}\nSpecs: ${specs}`;
   }).join('\n\n');
 };
 
+
 /** 🧠 Main system prompt for Groq */
-export const getSystemMessage = (pathname: string): ChatMessage => {
+export const getSystemMessage = (pathname: string, t: any): ChatMessage => {
   const slug = pathname?.split('/').pop() ?? '';
-  const productManual = getManualSection(slug);
+  const productManual = getManualSection(slug, t);
+
   const pageContent = typeof window !== 'undefined' && document?.body?.innerText
     ? document.body.innerText.replace(/\s+/g, ' ').trim().slice(0, 3000)
     : '';
@@ -127,10 +146,10 @@ This is the manual section for the product:
 
 ${productManual}
 
-Product catalog:
-${getProductSummary(products)}
-
-Current page: ${pathname}
-Page content preview: ${pageContent}`
+    Product catalog:
+      ${getProductSummary(products, t)}
+      Current page: ${pathname}
+      Page content preview: ${pageContent}
+    `
   };
 };
