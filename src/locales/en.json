@@ -1227,7 +1227,7 @@
   "mp1": {
     "nickname": "Full-Core Retriever",
     "specs": [
-      "Depth: 0–90 cm (stepless)",
+      "Depth: 0–90 cm, optional 120cm (stepless)",
       "Semi-automatic",
       "Full-core visibility",
       "16sec/core sampling cycle"

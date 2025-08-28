@@ -1219,7 +1219,7 @@
     "detailedDescription": "<p className='mt-4'><strong>Universitäten lieben das Ding.</strong> Und nicht nur, weil es ein bisschen wie ein Raketenwerfer aussieht. Es gibt <strong>volle Sicht auf das Bodenprofil</strong> – kein Vermischen, kein Raten bei den Schichten, sondern ein sauberer, vertikaler Schnitt durch die Erdinnereien. <strong>Perfekt für Nmin-Proben</strong>, klar, aber auch für alle, die wirklich sehen wollen, was da unten passiert.</p><p className='mt-4'>Das Ganze ist <strong>hydraulisch angetrieben, halbautomatisch und ziemlich clever</strong>. Es gräbt mit millimetergenauer Höflichkeit, und wenn es auf etwas Unfreundliches trifft – wie einen Stein oder eine alte römische Münze – <strong>stoppt</strong> es einfach. Kein Drama. Keine kaputten Teile.</p><p className='mt-4'>Und das Beste: Es ist <strong>deutsche Ingenieurskunst auf den Punkt gebracht</strong>. Sauber, effizient, absolut logisch. Wie <strong>Beethoven … wenn er Bodenprobennehmer wäre</strong>.</p>",
     "price": "Ab 14.200 €",
     "features": [
-      "Intakter Bodenkerne (0–90 cm) für Profilübersicht",
+      "Intakter Bodenkerne 0–90 cm (optional 120 cm) für die Profilübersicht",
       "Zentimetergenaue Tiefensteuerung",
       "Hinderniserkennung mit automatischem Stopp",
       "Manuelle Kernentnahme für Probenintegrität",
@@ -1591,7 +1591,7 @@
       "Probenahme im Schleppbetrieb während der Fahrt",
       "16 Proben in ca. 4 Minuten"
     ],
-    "description": "Anhängen, probieren, weiterfahren – kein Stress, kein Warten.",
+    "description": "Anhängen, beproben, weiterfahren – kein Stress, kein Warten.",
     "herodescription": "Das ist der <strong>BOPROB III</strong> – oder auch charmant <strong>Der Sechzehn-Express</strong> genannt. Ein Anhänger, der während der Fahrt Bodenproben nimmt. Wirklich. Kein Anhalten, kein Knöpfchendrücken, keine Schreierei am Praktikanten. Einfach anhängen und den Job machen lassen.",
     "detailedDescription": "<p className='mt-4'>Der <strong>Sechzehn-Express</strong> ist ein cleveres Gerät. Ein <strong>Anhänger-Bodenprobennehmer</strong>, der arbeitet, während du fährst. So sollte alles funktionieren – tut es aber nicht.</p><p className='mt-4'>Die Probenahme läuft flott dank eines <strong>hydraulischen Hammers</strong> und einer <strong>360°-Drehkurbel</strong>, die wie ein höflicher Presslufthammer den Boden ansticht und den Kern in das Magazin auswirft.</p><p className='mt-4'>Alles wird von einem <strong>7-Zoll-Touchscreen</strong> überwacht – ein feines Teil –, damit du jederzeit weißt, was läuft. Optional gibt’s sogar eine Kamera, falls du zuschauen willst oder einfach dein neues Spielzeug bewundern möchtest.</p><p className='mt-4'>Große, weiche Reifen (<strong>235/60 R16</strong>, für Kenner) sorgen für minimalen Bodendruck – schlammiges Gelände? Nur, wenn du es drauf anlegst.</p><p className='mt-4'>Anhängen lässt sich der Anhänger spielend leicht an <strong>Traktoren, Pickups, Quads oder was immer eine Anhängerkupplung hat</strong>. Kein Gefummel, keine Adapter, keine Werkstatt-Heldenaktionen. Und nach getaner Arbeit einfach abkoppeln.</p><p className='mt-4'>Fährst du zu schnell oder zu langsam (weil du die Landschaft genießt), macht die Maschine einfach nicht mit. Schlauer als mancher Fahrer.</p>",
     "price": "Ab 28.500 €",
@@ -1655,7 +1655,7 @@
     "nickname": "Montagekit",
     "name": "Lay-Down",
     "specs": [
-      "Standard 50 mm Anhängerkupplung mit 13-poligem 12-V-Stecker erforderlich",
+      "Standard 50 mm kupplungsflansch mit 13-poligem 12-V-Stecker erforderlich",
       "Gewicht: ca. 70 kg (DH/DE), ca. 80 kg (MP-Halterung)",
       "EN 10025 S355 Stahl, pulverbeschichtet, 4 mm stark",
       "Klapp- und Kupplungsstabilität"
@@ -1711,7 +1711,7 @@
     "name": "Dreipunkt-Bock",
     "nickname": "Montagekit",
     "specs": [
-      "Passt zu Traktoren mit Kat-2 oder Kat-3 Dreipunkt-Kraftheber",
+      "Passt zu Traktoren mit Kat-1 oder Kat-2 Aufnahme",
       "Schwere A-Rahmen-Stahlkonstruktion",
       "Schwarze Epoxid-Korrosionsschutzbeschichtung",
       "Kompatibel mit allen MP-, DH- und DE-Bodenprobenehmern"
@@ -1886,12 +1886,12 @@
       "LCD-Batteriestatus bei elektrischen Modellen – Ladezustand auf einen Blick",
       "Rücklauf- und Saugfiltration für sauberen Hydraulikbetrieb inklusive"
     ],
-    "description": "Für alle, die MP- oder DH-Einheiten ohne Bordstrom betreiben – diese Einheiten liefern zuverlässige hydraulische oder elektrische Energie, wohin Ihre Arbeit Sie auch führt.",
+    "description": "Für alle, die MP- oder DH-Einheiten ohne Bordhydraulik betreiben – diese Einheiten liefern zuverlässige hydraulische oder elektrische Energie, wohin Ihre Arbeit Sie auch führt.",
     "herodescription": "<strong>Power-Pack</strong> sind wie die zuverlässigen Butler der Bodenprobennahme – sie bieten <strong>verlässliche, tragbare Energie</strong>, damit Ihre Geräte keinen Wutanfall bekommen. Ob Sie den <strong>klassischen hydraulischen Antrieb</strong> bevorzugen oder den <strong>flüsterleisen elektrischen Charme</strong>, diese Einheiten haben Sie im Rücken.<br/>Eingepackt in ein <strong>robustes Stahlgehäuse</strong>, härter als Ihr durchschnittlicher Traktor, mit praktischen Extras wie <strong>LCD-Batteriestatus</strong> und <strong>Filtersystemen</strong> – der treue Begleiter, von dem Sie nicht wussten, dass Sie ihn im Feld brauchen.",
     "detailedDescription": "<p className='mt-4'>Das hydraulische Modell, perfekt abgestimmt auf <strong>MP-</strong> und <strong>DH-Serie</strong>, bietet einen <strong>13 PS Benzinmotor</strong> und einen <strong>22 L Öltank</strong>, der <strong>135 bar Druck</strong> bei <strong>20 L/min</strong> liefert – das ist echte Kraft für wenn Sie sich wie ein mechanischer Overlord fühlen wollen.</p><p className='mt-4'>Der elektrische Verwandte, speziell für die <strong>DE-Serie</strong> entwickelt, hat eine <strong>24 V / 100 Ah Batterie</strong>, ein <strong>rostfreies Stahlgehäuse</strong> und ein <strong>LCD-Display</strong> um den Energiezustand im Auge zu behalten. Ideal für alle, die einen leiseren, saubereren und höflicheren Ansatz bei der Bodenprobennahme bevorzugen.</p><p className='mt-4'>Beide Modelle sind <strong>tragbar</strong>, <strong>robust gebaut</strong> und haben <strong>Rücklauf-/Saugfiltration</strong> um Ihre wertvolle Hydraulik vor Dreck zu schützen – weil niemand vorzeitigen Verschleiß mag, oder?</p>",
     "price": "Ab €3.450",
     "features": [
-      "Hydraulisch oder elektrisch betrieben für Ihren Arbeitsablauf",
+      "Bordhydraulik oder elektrisch betrieben für Ihren Arbeitsablauf",
       "Robustes Stahlgehäuse mit Korrosionsschutz",
       "LCD-Batteriestatus bei elektrischen Modellen",
       "Rücklauf- und Saugfiltration für langlebige Hydraulik",
@@ -1934,7 +1934,7 @@
       "Einzelverpackt, beschriftet und feldeinsatzbereit",
       "Unterstützt durch TechbyP's Zuverlässigkeitsstandards"
     ],
-    "description": "Weil nichts einen guten Tag im Feld so ruiniert wie ein undichtes Fitting oder ein gerissener Riemen. Dies sind die offiziellen, empfohlenen Ersatzteile – handverlesen für Ihre MP-, DH-, DE- oder BOPROB III-Maschine und bereit, Sie aus der Patsche zu helfen, bevor es losgeht.",
+    "description": "Weil nichts einen guten Tag im Feld so ruiniert wie ein undichtes Bauteil oder ein gerissener Riemen. Dies sind die offiziellen, empfohlenen Ersatzteile – handverlesen für Ihre MP-, DH-, DE- oder BOPROB III-Maschine und bereit, Sie aus der Patsche zu helfen, bevor es losgeht.",
     "herodescription": "Betrachten Sie diese als den Erste-Hilfe-Kasten für Ihren Bodenprobenehmer. Ob Sie in einem bayerischen Moor oder einer bulgarischen Staubschüssel unterwegs sind – die richtigen <strong>Original-Ersatzteile</strong> zur Hand zu haben verwandelt ein potenzielles Desaster in ein lässig gemeistertes Ärgernis.<br/>Jedes Kit enthält die üblichen Verdächtigen – <strong>O-Ringe, Hydraulikkupplungen, Filter, Riemen</strong> und die Teile, die still und leise die meiste Arbeit leisten. Kein Improvisieren mit Draht oder geborgten Teilen vom Kumpel sein Mähdrescher.",
     "detailedDescription": "<p className='mt-4'>Dies sind die <strong>empfohlenen Ersatzteil-Kits</strong> für die <strong>MP-Serie</strong>, <strong>DH-Serie</strong>, <strong>DE-Serie</strong> und <strong>BOPROB III</strong> Probenehmer. Und nein, sie sind nicht optional. Sie sind, was die Ingenieure verwenden. Was die Servicetechniker verwenden. Was Sie im Werkzeugkasten haben sollten, wenn Sie es auch nur halbwegs ernst meinen mit der Betriebsbereitschaft.</p><p className='mt-4'>In jedem Kit finden Sie die üblichen Verdächtigen – <strong>Dichtungen, Filter, Hydraulikanschlüsse, Relais und Druckleitungen</strong> – die Teile, die die Flüssigkeit dort halten, wo sie sein soll, und den Strom in die richtige Richtung fließen lassen. Es ist wie eine Ersatzunterhose auf einem Langstreckenflug: Sie hoffen, sie nicht zu brauchen, aber Sie sind verdammt froh, wenn Sie sie haben.</p><p className='mt-4'>Teile sind <strong>einzeln verpackt und beschriftet</strong>, damit Sie nicht einen halben Tag damit verbringen, herauszufinden, ob diese Unterlegscheibe an die Rücklaufleitung oder den Ölfilter passt. Und natürlich sind sie alle <strong>werksgeprüft</strong> und dafür gemacht, einfach einzubauen zu sein – ohne Bastelei.</p>",
     "price": "Ab €450",
@@ -2017,7 +2017,7 @@
     "testimonials": []
   },
   "led": {
-    "name": "LED-Joblampe 1700",
+    "name": "LED-Arbeitsleuchte 1700",
     "nickname": "Mitternachts-Sonne",
     "specs": [
       "Schwenkbare LED-Arbeitsleuchte für Nahfeldbeleuchtung",
@@ -2070,8 +2070,8 @@
     "name": "Externe Kamera",
     "nickname": "Der Wachturm",
     "specs": [
-      "5MP 4G Kamera für Bodenprobennahme-Rigs",
-      "Direkt an Ihren Maschinenrahmen montierbar",
+      "IP69K mit Nachtsicht",
+      "Gestochen scharfe Bilder",
       "Live-Videofeed auf Ihr Handy oder Tablet via App",
       "75° Blickwinkel mit IR-Nachtsicht bis 15 m"
     ],
@@ -2121,7 +2121,7 @@
     "nickname": "Der N-min Purist",
     "specs": [
       "Werkzeugstahlkonstruktion (HRC 52)",
-      "Konisches Taperprofil (40→38 mm / 35→33 mm / 30→28 mm)",
+      "Konisches Profil (40→38 mm / 35→33 mm / 30→28 mm)",
       "Laserätzte Tiefenmarkierungen alle 10 cm",
       "Kompatibel mit N-min Probennahmeprotokollen (VDLUFA, ISO 14255)"
     ],
@@ -2269,7 +2269,7 @@
     "name": "Bohrstangen Ø22 mm für normale Bodenprofile",
     "nickname": "Der Tiefenöffner",
     "specs": [
-      "Bohrnut Ø 22 mm, Gesamtlänge 1100 mm, nutzbare Länge 1000 mm",
+      "Bohrnut rille, Gesamtlänge 1100 mm, nutzbare Länge 1000 mm",
       "12 mm Nut zur Aufnahme von Bodenproben",
       "Verlängerungen 1000 mm lang mit 5/8” Innengewinde auf beiden Seiten",
       "Spezielle Schraubenschlüssel zum Festziehen inklusive"
@@ -2509,7 +2509,7 @@
   },
   "goettingerDrills": {
     "name": "Göttinger Bohrstöcke",
-    "nickname": "Präzision beim Probennahme, mühelos wie ein Spaziergang",
+    "nickname": "Leicht Präzise",
     "specs": [
       "Für Nmin-Probenahme bis 90 cm entwickelt",
       "Manuelle Handhabung – keine zusätzlichen Werkzeuge nötig",
@@ -2568,9 +2568,9 @@
     "testimonials": []
   },
   "raupe": {
-    "nickname": "Der Bodenflüsterer",
+    "nickname": "Bodengeist",
     "specs": [
-      "Tiefe: 0–90 cm (optional 120 cm)",
+      "Tiefe: 0–90 cm ",
       "Hydraulisch & halbautomatisch",
       "3-Schichten-Beprobung",
       "Manuelle visuelle Kontrolle jeder Probe"

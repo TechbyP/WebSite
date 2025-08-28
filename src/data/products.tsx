@@ -252,7 +252,7 @@ const createProducts = (t: any): Product[] => {
       category: "SmartSystems",
       bestseller: true,
       image: DH130_Hero,
-      heroVideo: "",
+      heroVideo: "Lg1I2b6iUTA",
       specs: t('dh.specs', { returnObjects: true }) || [],
       icon: Wrench,
       priceValue: 8950,
