@@ -2,7 +2,7 @@ import { useState, useEffect } from 'react';
 import { useParams, useNavigate } from 'react-router-dom';
 import { ArrowLeft, Star, ChevronLeft, ChevronRight, ShoppingCart, FileText, Users, Award } from 'lucide-react';
 import { getProductById, getProductsByCategory } from '../data/products';
-import OrderNow from './OrderNow';
+import OrderNow from '../components/OrderNow';
 import {
   getProductMediaFallbacks,
   getCategoryLabel,
@@ -12,7 +12,7 @@ import {
 } from '../utils/DefaultPics';
 import VideoSection from '../utils/VideoSection';
 import Comments from '../utils/Comments';
-import { showProductToast } from './configurator/utils/ShowToastContent';
+import { showProductToast } from '../components/configurator/utils/ShowToastContent';
 import { Helmet } from 'react-helmet-async';
 import { useTranslation } from 'react-i18next';
 import parseHtmlText from '../utils/parseText'

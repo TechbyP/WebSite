@@ -1,4 +1,14 @@
 {
+ "notFound": {
+    "title": "Ach herrje! Seite nicht gefunden",
+    "description": {
+      "line1": "Nun ja. Sie sind von der digitalen Datenautobahn abgekommen und im elektronischen Gestrüpp gelandet.",
+      "line2": "Nicht defekt, nur... etwas orientierungslos. Ähnlich wie ich in einem Pariser Kreisverkehr."
+    },
+    "backButton": "Zurück zum Hauptmenü",
+    "footer": "(Vernünftige Entscheidung, eigentlich.)"
+  },
+
   "headerTheme": {
     "switchToDark": "Dunkler Modus",
     "switchToLight": "Heller Modus"
@@ -1214,7 +1224,7 @@
       "Volle Kernsichtbarkeit",
       "16 Sek./Kern Probennahmezyklus"
     ],
-    "description": "Intakte Bodenkerne von 0–90 cm, wissenschaftliche Präzision, deutscher Starrsinn.",
+    "description": "Intakte Bodenkerne von 0–90 cm, wissenschaftliche Präzision, deutsche Zähigkeit.",
     "herodescription": "Es ist nicht auffällig. Es schreit nicht. Es hat kein WLAN. Aber was es <strong>tut</strong> – besser als fast alles andere – ist, dir einen <strong>perfekten, ununterbrochenen Boden-Kern</strong> zu liefern, von der Oberfläche bis <strong>90 Zentimeter tief</strong>. Ja, die ganze Geschichte, von Kruste bis Unterboden, alles in einem Zug. Es ist wie ein <strong>MRT fürs Erdreich</strong>.",
     "detailedDescription": "<p className='mt-4'><strong>Universitäten lieben das Ding.</strong> Und nicht nur, weil es ein bisschen wie ein Raketenwerfer aussieht. Es gibt <strong>volle Sicht auf das Bodenprofil</strong> – kein Vermischen, kein Raten bei den Schichten, sondern ein sauberer, vertikaler Schnitt durch die Erdinnereien. <strong>Perfekt für Nmin-Proben</strong>, klar, aber auch für alle, die wirklich sehen wollen, was da unten passiert.</p><p className='mt-4'>Das Ganze ist <strong>hydraulisch angetrieben, halbautomatisch und ziemlich clever</strong>. Es gräbt mit millimetergenauer Höflichkeit, und wenn es auf etwas Unfreundliches trifft – wie einen Stein oder eine alte römische Münze – <strong>stoppt</strong> es einfach. Kein Drama. Keine kaputten Teile.</p><p className='mt-4'>Und das Beste: Es ist <strong>deutsche Ingenieurskunst auf den Punkt gebracht</strong>. Sauber, effizient, absolut logisch. Wie <strong>Beethoven … wenn er Bodenprobennehmer wäre</strong>.</p>",
     "price": "Ab 14.200 €",

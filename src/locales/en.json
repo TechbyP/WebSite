@@ -1,4 +1,14 @@
 {
+ "notFound": {
+    "title": "Good Grief! Page Not Found",
+    "description": {
+      "line1": "Right then. You've wandered off the digital motorway and ended up in the shrubbery.",
+      "line2": "It's not broken, it's just… rather lost. A bit like me in a French roundabout."
+    },
+    "backButton": "Back to Safety",
+    "footer": "(Splendid idea, really.)"
+  },
+
   "headerTheme": {
     "switchToDark": "Dark mode",
     "switchToLight": "Light mode"

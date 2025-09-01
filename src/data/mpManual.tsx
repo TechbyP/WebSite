@@ -379,6 +379,6 @@ The following must be observed when attached to the tractor:
 7. ATTENTION: The appliance must be placed in a position where it cannot tip over!`
   },
 
-  "X. SPARE PARTS LIST": "Spare parts list for the S4 MULTIPROB 120 - UP"
+  "X. SPARE PARTS LIST": "For spare parts list for the MP1,2,3,4- Contact us at www.techbyp.com/contact"
 };
 

@@ -2,25 +2,25 @@ import React, { useEffect, useState } from 'react';
 import { Routes, Route, useLocation, Outlet } from 'react-router-dom';
 import Cookies from 'js-cookie';
 import { useTranslation } from 'react-i18next';
-import { HeaderProvider } from './components/Header';
+import { HeaderProvider } from './pages/Header';
 import CookieBanner from './components/CookieBanner';
-import Footer from './components/footer/Footer';
-import ProductDetail from './components/ProductDetail';
+import Footer from './pages/footer/Footer';
+import ProductDetail from './pages/ProductDetail';
 import OrderNow from './components/OrderNow';
 import { ChatWidget } from './components/chatWidget/index';
-import BlogList from './components/BlogList';
-import ArticleDetail from './components/ArticleDetail';
+import BlogList from './pages/BlogList';
+import ArticleDetail from './pages/ArticleDetail';
 import BlogPostEditor from './admin/blog/BlogPostEditor';
 import ScrollToTop from './utils/ScrollToTop';
-import ContactPage from './components/Contact';
-import PrivacyPolicy from './components/footer/PrivacyPolicy';
-import TermsOfService from './components/footer/TermsOfService';
-import Imprint from './components/footer/Imprint';
-import FileDownloadPage from './components/Downloads';
+import ContactPage from './pages/Contact';
+import PrivacyPolicy from './pages/footer/PrivacyPolicy';
+import TermsOfService from './pages/footer/TermsOfService';
+import Imprint from './pages/footer/Imprint';
+import FileDownloadPage from './pages/Downloads';
 import { Toaster } from 'sonner';
 import { Configurator } from './components/configurator/Configurator';
 import { ConfiguratorProvider } from './components/configurator/contexts/ConfiguratorContext';
-import HomePage from './components/HomePage';
+import HomePage from './pages/HomePage';
 import { AuthProvider } from './admin/dashboard/hooks/AuthContext';
 import PrivateRoute from './admin/PrivateRoute';
 import Login from './admin/dashboard/Login';
@@ -28,10 +28,9 @@ import HeroPageEditor from './admin/hero/HeroPageEditor';
 import AdminDashboard from './admin/dashboard/AdminDashboard';
 import AdminLayout from './admin/AdminLayout';
 import AnnouncementEditor from './admin/announcement/AnnouncementEditor';
-import { collection, addDoc } from 'firebase/firestore';
-import { db } from './firebase';
 import { initializeProducts, products } from './data/products';
 import { ThemeProvider } from '../src/utils/context/theme-context';
+import NotFound from './pages/NotFound';
 
 const COOKIE_CONSENT_NAME = 'cookie_consent';
 
@@ -59,20 +58,6 @@ const loadGoogleAnalytics = () => {
   `;
   document.head.appendChild(script2);
 };
-
-// Log pageviews to Firebase
-// const trackPageView = async (path: string) => {
-//   try {
-//     await addDoc(collection(db, 'analytics'), {
-//       event: 'page_view',
-//       timestamp: new Date(),
-//       path,
-//       userAgent: navigator.userAgent,
-//     });
-//   } catch (error) {
-//     console.error('Failed to log page view:', error);
-//   }
-// };
 
 function App() {
   const [chatOpen, setChatOpen] = useState(false);
@@ -158,6 +143,7 @@ function App() {
             <Route path="/blog/:id" element={<ArticleDetail />} />
             <Route path="/configurator" element={<Configurator products={products} />} />
             <Route path="/login" element={<Login />} />
+             <Route path="*" element={<NotFound />} />
           </Route>
 
           <Route

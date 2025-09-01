@@ -7,7 +7,7 @@ import { Helmet } from 'react-helmet-async';
 import { db } from '../firebase';
 import { collection, getDocs, query, orderBy } from 'firebase/firestore';
 import { useTranslation } from 'react-i18next';
-import { Article } from '../types/article'; // Update import path
+import { Article } from '../admin/blog/types/articles'; // Update import path
 
 const useMediaQuery = (query: string) => {
   const [matches, setMatches] = useState(false);

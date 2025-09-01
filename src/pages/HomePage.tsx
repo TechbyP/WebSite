@@ -9,7 +9,7 @@ const ProductShowcase = lazy(() => import('./ProductShowcase'));
 const Applications = lazy(() => import('./Applications'));
 const About = lazy(() => import('./About'));
 const Trust = lazy(() => import('./Trust'));
-const Newsletter = lazy(() => import('./Newsletter'));
+const Newsletter = lazy(() => import('../components/Newsletter'));
 
 export default function HomePage() {
   return (

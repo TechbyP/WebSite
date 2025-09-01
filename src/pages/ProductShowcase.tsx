@@ -5,12 +5,12 @@ import { useInView } from 'react-intersection-observer';
 import { ArrowRight } from 'lucide-react';
 import { useTranslation } from 'react-i18next';
 import { products } from '../data/products';
-import OrderNow from './OrderNow';
+import OrderNow from '../components/OrderNow';
 import Sort from '../utils/ProductSorting';
 import { getProductMediaFallbacks } from '../utils/DefaultPics';
 import { useHeader } from './Header';
 import VideoSection from '../utils/VideoSection';
-import { showProductToast } from './configurator/utils/ShowToastContent';
+import { showProductToast } from '../components/configurator/utils/ShowToastContent';
 import posterImage from '../assets/pictures/hero.jpg';
 import { initializeProducts } from '../data/products';
 import { useTheme } from '../utils/context/theme-context'; // Import the theme context
