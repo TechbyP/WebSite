@@ -985,98 +985,112 @@
     "twitterTitle": "TechByP kontaktieren | Experten für Bodenprobennahme",
     "twitterDescription": "Fragen zu unseren Geräten oder Services? Kontaktieren Sie noch heute den Support- oder Vertrieb von TechByP."
   },
-  "title": "TechByP kontaktieren",
-  "description": "Seit über 30 Jahren sind wir der verlässliche Partner für Bodenproben-Profis – weil Graben in der Erde erstklassige Ausrüstung verdient. Fragen zu unseren cleveren Geräten für Umwelt- oder geotechnische Abenteuer? Unser Team steht bereit, um Fachsimpeln, Rätsel zu lösen oder einfach darüber zu reden, wie Ihre nächste Bodenprobe ein Meisterwerk wird.",
-  "address": {
-    "title": "Hauptsitz",
-    "company": "TechByP GmbH",
-    "street": "Am Fliegerhorst 11",
-    "city": "D-49610 Quakenbrück, Deutschland",
-    "phone": "+49 (0) 54 31 93 644 0",
-    "email": "info@bodenprobetechnik.de"
-  },
-  "hours": {
-    "title": "Geschäftszeiten",
-    "weekdays": "Montag - Donnerstag",
-    "weekdaysTime": "7:30 - 16:30 Uhr",
-    "friday": "Freitag",
-    "fridayTime": "7:30 - 14:30 Uhr",
-    "closed": "Wochenende und deutsche Feiertage geschlossen"
-  },
-  "phone": {
-    "title": "Telefon-Support",
-    "description": "Für sofortige Unterstützung rufen Sie unser Support-Team während der Geschäftszeiten an.",
-    "number": "+49 (0) 54 31 93 644 0",
-    "supportExt": "Technischer Support: Durchw. 123",
-    "salesExt": "Vertrieb: Durchw. 124"
-  },
-  "email": {
-    "title": "E-Mail-Support",
-    "description": "Senden Sie uns eine E-Mail und wir antworten innerhalb von 24 Stunden an Werktagen.",
-    "main": "info@bodenprobetechnik.de",
-    "technical": "Technisch",
-    "sales": "Vertrieb"
-  },
-  "formular": {
-    "placeholders": {
-      "name": "Falls Sie nicht anonym bleiben möchten",
-      "company": "Oder etwas, das Sie sich ausgedacht haben",
-      "email": "Idealerweise nicht aus der Steinzeit",
-      "phone": "Wir ignorieren es eh und mailen stattdessen",
-      "message": "Genug Details, damit wir nicht wild raten müssen"
+
+"contact_page": {
+    "title": "Kontakt zu TechByP",
+    "description": "Seit über 30 Jahren sind wir der verlässliche Sidekick für Profis der Bodenprobennahme – denn im Dreck wühlen verdient erstklassiges Werkzeug. Fragen zu unseren cleveren Geräten für Umwelt- oder geotechnische Abenteuer? Unser Team steht bereit, um zu fachsimpeln, Rätsel zu lösen oder einfach darüber zu plaudern, wie Ihre nächste Bodenprobe zum Meisterwerk wird.",
+    "address": {
+      "title": "Hauptsitz",
+      "company": "Bodenprobetechnik Peters GmbH",
+      "street": "Am Fliegerhorst 11",
+      "city": "D-49610 Quakenbrück, Deutschland",
+      "phone": "+49 (0) 54 31 93 644 0",
+      "email": "info@bodenprobetechnik.de"
     },
-    "title": "Kontaktformular",
-    "name": "Name",
-    "company": "Firma",
-    "email": "E-Mail",
-    "phone": "Telefon",
-    "subject": "Betreff",
-    "message": "Nachricht",
-    "subjects": {
-      "general": "Allgemeine Anfrage",
-      "product": "Produktinformation",
-      "support": "Technischer Support",
-      "service": "Serviceanfrage",
-      "distributor": "Vertriebsanfrage",
-      "parts": "Ersatzteile",
-      "other": "Sonstiges"
+    "hours": {
+      "title": "Geschäftszeiten",
+      "weekdays": "Montag - Donnerstag",
+      "weekdaysTime": "07:30 - 16:30 Uhr",
+      "friday": "Freitag",
+      "fridayTime": "07:30 - 14:30 Uhr",
+      "closed": "Geschlossen an Wochenenden und deutschen Feiertagen"
     },
-    "consent": "Ich stimme der Verarbeitung meiner Daten gemäß der",
-    "privacyPolicy": "Datenschutzerklärung",
-    "submit": "Nachricht senden",
-    "sending": "Wird gesendet...",
-    "anotherMessage": "Weitere Nachricht senden",
-    "success": "Nachricht erfolgreich gesendet!",
-    "successTitle": "Vielen Dank für Ihre Nachricht!",
-    "successMessage": "Wir haben Ihre Anfrage erhalten und melden uns innerhalb von 24 Stunden an Werktagen bei Ihnen.",
-    "errors": {
-      "bot": "Bot erkannt.",
-      "recaptcha": "Bitte lösen Sie das reCAPTCHA.",
-      "consent": "Bitte stimmen Sie unserer Datenschutzrichtlinie zu.",
-      "failed": "Nachricht konnte nicht gesendet werden. Bitte versuchen Sie es erneut."
+    "phone": {
+      "title": "Telefonischer Support",
+      "description": "Für sofortige Hilfe rufen Sie unser Support-Team während der Geschäftszeiten an.",
+      "number": "+49 (0) 54 31 93 644 0",
+      "supportExt": "Technischer Support: Durchwahl 123",
+      "salesExt": "Vertrieb: Durchwahl 124"
+    },
+    "email": {
+      "title": "E-Mail Support",
+      "description": "Senden Sie uns eine E-Mail und wir antworten innerhalb von 24 Stunden an Werktagen.",
+      "main": "info@bodenprobetechnik.de",
+      "technical": "Technischer Support",
+      "sales": "Vertrieb"
+    },
+    "formular": {
+      "serialNumber": "Seriennummer",
+      "customerNumber": "Kundennummer",
+      "additionalFieldsNote": "Für technischen Support oder Ersatzteilanfragen bitte folgende Angaben machen:",
+      "placeholders": {
+        "serialNumber": "Zu finden auf der schwarzen Plakette.",
+        "customerNumber": "Auf der Rechnung steht die Antwort.",
+        "name": "Es sei denn, Anonymität ist gerade in Mode",
+        "company": "Oder etwas, das Sie sich ausgedacht haben",
+        "email": "Am besten nicht aus der Modem-Ära",
+        "phone": "Wir ignorieren es eh und mailen stattdessen",
+        "message": "Genug Details, damit wir nicht raten müssen"
+      },
+      "title": "Schneller Kontakt",
+      "name": "Vollständiger Name",
+      "company": "Firma",
+      "email": "E-Mail",
+      "phone": "Telefon",
+      "subject": "Betreff",
+      "message": "Nachricht",
+      "subjects": {
+        "general": "Allgemeine Anfrage",
+        "product": "Produktinformationen",
+        "support": "Technischer Support",
+        "service": "Serviceanfrage",
+        "distributor": "Distributor-Anfrage",
+        "parts": "Ersatzteile",
+        "other": "Sonstiges"
+      },
+      "consent": "Ich stimme der Verarbeitung meiner Daten gemäß der",
+      "privacyPolicy": "Datenschutzerklärung",
+      "submit": "Nachricht senden",
+      "sending": "Sende...",
+      "anotherMessage": "Weitere Nachricht senden",
+      "success": "Nachricht erfolgreich gesendet!",
+      "successTitle": "Vielen Dank für Ihre Nachricht!",
+      "successMessage": "Wir haben Ihre Anfrage erhalten und melden uns innerhalb von 24 Stunden an Werktagen zurück.",
+      "errors": {
+        "serialNumberRequired": "Seriennummer für technischen Support oder Ersatzteile erforderlich",
+        "customerNumberRequired": "Kundennummer für technischen Support oder Ersatzteile erforderlich",
+        "bot": "Bot erkannt.",
+        "recaptcha": "Bitte reCAPTCHA ausfüllen.",
+        "consent": "Bitte stimmen Sie unserer Datenverarbeitung zu.",
+        "failed": "Nachricht konnte nicht gesendet werden. Bitte erneut versuchen."
+      }
+    },
+    "map": {
+      "title": "Standort TechByP",
+      "visit": "Besuchen Sie uns",
+      "description": "Unser Hauptsitz in Quakenbrück, Deutschland, ist der Ort, an dem wir unsere Bodenprobengeräte entwickeln und fertigen.",
+      "directions": "Anfahrt"
+    },
+    "faq": {
+      "title": "Häufig gestellte Fragen",
+      "shipping": {
+        "question": "Welche Versandoptionen gibt es?",
+        "answer": "Wir versenden weltweit über DHL, DPD und andere zuverlässige Anbieter. Standardversand innerhalb Deutschlands dauert 2-3 Werktage. Internationale Lieferzeiten variieren je nach Zielort. Expressversand ist verfügbar."
+      },
+      "training": {
+        "question": "Bieten Sie Schulungen für Ihre Geräte an?",
+        "answer": "Ja, wir bieten umfassende Schulungen für alle unsere Bodenprobengeräte an. Die Schulung kann bei Ihnen vor Ort oder in unserem Werk in Quakenbrück stattfinden. Kontaktieren Sie unser Vertriebsteam, um Schulungstermine zu vereinbaren."
+      },
+      "distributor": {
+        "question": "Wie kann ich Distributor werden?",
+        "answer": "Wir sind stets an qualifizierten Vertriebspartnern weltweit interessiert. Bitte kontaktieren Sie unseren Vertrieb mit Informationen über Ihr Unternehmen und Ihre Markterfahrung, um den Bewerbungsprozess zu starten."
+      }
     }
   },
-  "map": {
-    "title": "TechByP Standort",
-    "visit": "Besuchen Sie uns",
-    "description": "Unser Hauptsitz in Quakenbrück, Deutschland, ist der Ort, an dem wir unsere Bodenprobengeräte entwickeln und produzieren.",
-    "directions": "Wegbeschreibung"
-  },
-  "faq": {
-    "title": "Häufig gestellte Fragen",
-    "shipping": {
-      "question": "Welche Versandoptionen bieten Sie an?",
-      "answer": "Wir versenden weltweit über DHL, DPD und andere vertrauenswürdige Speditionen. Standardversand innerhalb Deutschlands dauert 2-3 Werktage. Internationale Lieferzeiten variieren je nach Ziel. Expressversand ist verfügbar."
-    },
-    "training": {
-      "question": "Bieten Sie Schulungen für Ihre Geräte an?",
-      "answer": "Ja, wir bieten umfassende Schulungsprogramme für alle unsere Bodenprobengeräte. Schulungen können bei Ihnen vor Ort oder in unserer Einrichtung in Quakenbrück durchgeführt werden. Kontaktieren Sie unseren Vertrieb, um Schulungstermine zu vereinbaren."
-    },
-    "distributor": {
-      "question": "Wie kann ich Vertriebspartner werden?",
-      "answer": "Wir sind stets an Partnerschaften mit qualifizierten Vertriebspartnern weltweit interessiert. Bitte kontaktieren Sie unsere Vertriebsabteilung mit Informationen zu Ihrem Unternehmen und Markterfahrung, um den Bewerbungsprozess zu starten."
-    }
-  },
+
+
+
+
   "orderNow": {
     "title": "Lassen Sie die Magie geschehen.",
     "placeholderName": "Ihr Name, wenn ich bitten darf.",

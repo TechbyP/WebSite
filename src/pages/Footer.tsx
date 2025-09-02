@@ -1,10 +1,10 @@
 import React, { useState } from 'react';
 import { Phone, Mail, MapPin, Facebook, Instagram, Linkedin, Youtube } from 'lucide-react';
 import { useNavigate } from 'react-router-dom';
-import logo from '../../assets/pictures/Logo-Symbol.png';
+import logo from '../assets/pictures/Logo-Symbol.png';
 import { toast } from 'sonner';
 import { addDoc, collection } from 'firebase/firestore';
-import { db } from '../../firebase';
+import { db } from '../firebase.js';
 import { useTranslation } from 'react-i18next';
 
 const Footer = () => {

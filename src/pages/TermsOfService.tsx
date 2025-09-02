@@ -2,7 +2,7 @@ import React from 'react';
 import { ArrowLeft } from 'lucide-react';
 import { useNavigate } from 'react-router-dom';
 import { useTranslation } from 'react-i18next';
-import { useTheme } from '../../utils/context/theme-context'; // import your hook
+import { useTheme } from '../utils/context/theme-context.js'; // import your hook
 
 const TermsOfService = () => {
   const navigate = useNavigate();
