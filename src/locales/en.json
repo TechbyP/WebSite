@@ -1741,15 +1741,15 @@
     "name": "Three‑Point Hitch",
     "nickname": "Mount Kit",
     "specs": [
-      "Fits Cat‑2 or Cat‑3 tractor 3‑point PTO systems",
+      "Fits Cat‑1 or Cat‑2 tractor 3‑point PTO systems",
       "Heavy‑duty A‑frame steel construction",
       "Black epoxy corrosion protection",
       "Compatible with all MP-series, DH, and DE soil sampling machines"
     ],
     "description": "Makes your tractor be a soil-sampling beast, harnessing PTO power for hydraulic sampler integration. Tough, reliable, no-nonsense.",
-    "herodescription": "<strong>Tractor 3‑Point Hitch Frame</strong>: The heavyweight champion for Cat‑2/3 tractors, designed to mount your hydraulic soil sampler straight onto the tractor's PTO system with a hydraulic pump platform to match.",
+    "herodescription": "<strong>Tractor 3‑Point Hitch Frame</strong>: The heavyweight champion for Cat‑1/2 tractors, designed to mount your hydraulic soil sampler straight onto the tractor's PTO system with a hydraulic pump platform to match.",
     "detailedDescription": "<p className='mt-4'>Imagine the <strong>steel backbone</strong> your tractor never knew it needed. Crafted from <strong>thick A‑frame steel</strong> and cloaked in <strong>black epoxy armor</strong>, this mount bolts cleanly onto your tractor's lift arms. It's built to survive farm life — rain, mud, and the odd tractor tantrum included. The kit comes with <strong>lift bars and all mounting bolts</strong>, so no improvising with rusty nails or duct tape.</p><p className='mt-4'>Suitable for <strong>compact tractors with lift arm spacing around 50 to 60 inches</strong>, this frame supports the hydraulic pump directly powered by your PTO shaft, giving you efficient hydraulic flow for smooth soil sampling. It's the upgrade that makes your tractor feel like it's ready to take on the <strong>field Olympics</strong>.</p>",
-    "price": "From €2 790",
+    "price": "From €1.650",
     "features": [
       "Welded A‑frame steel—sturdy enough for actual work",
       "PTO pump mount—because zip ties aren't engineering",
@@ -1770,7 +1770,7 @@
       "Fit sampler, test, nod approvingly"
     ],
     "technicalSpecs": {
-      "Type": "Cat‑2/3 Tractor 3‑Point Hitch Frame",
+      "Type": "Cat‑1/2 Tractor 3‑Point Hitch Frame",
       "Construction": "Welded heavy-duty A‑frame steel with epoxy finish",
       "PTO Compatibility": "Standard tractor PTO drives hydraulic pump",
       "Includes": "Lift bars, mounting bolts, and installation hardware",

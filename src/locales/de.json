@@ -1,5 +1,5 @@
 {
- "notFound": {
+  "notFound": {
     "title": "Ach herrje! Seite nicht gefunden",
     "description": {
       "line1": "Nun ja. Sie sind von der digitalen Datenautobahn abgekommen und im elektronischen Gestrüpp gelandet.",
@@ -8,7 +8,6 @@
     "backButton": "Zurück zum Hauptmenü",
     "footer": "(Vernünftige Entscheidung, eigentlich.)"
   },
-
   "headerTheme": {
     "switchToDark": "Dunkler Modus",
     "switchToLight": "Heller Modus"
@@ -985,8 +984,7 @@
     "twitterTitle": "TechByP kontaktieren | Experten für Bodenprobennahme",
     "twitterDescription": "Fragen zu unseren Geräten oder Services? Kontaktieren Sie noch heute den Support- oder Vertrieb von TechByP."
   },
-
-"contact_page": {
+  "contact_page": {
     "title": "Kontakt zu TechByP",
     "description": "Seit über 30 Jahren sind wir der verlässliche Sidekick für Profis der Bodenprobennahme – denn im Dreck wühlen verdient erstklassiges Werkzeug. Fragen zu unseren cleveren Geräten für Umwelt- oder geotechnische Abenteuer? Unser Team steht bereit, um zu fachsimpeln, Rätsel zu lösen oder einfach darüber zu plaudern, wie Ihre nächste Bodenprobe zum Meisterwerk wird.",
     "address": {
@@ -1087,10 +1085,6 @@
       }
     }
   },
-
-
-
-
   "orderNow": {
     "title": "Lassen Sie die Magie geschehen.",
     "placeholderName": "Ihr Name, wenn ich bitten darf.",
@@ -1741,9 +1735,9 @@
       "Kompatibel mit allen MP-, DH- und DE-Bodenprobenehmern"
     ],
     "description": "Verwandelt Ihren Traktor in eine Bodenprobennahmebestie, indem er die Zapfwelle für den hydraulischen Probenehmer nutzt. Robust, zuverlässig, ohne Schnickschnack.",
-    "herodescription": "<strong>Dreipunktaufhängung für Traktoren</strong>: Der Schwergewichts-Champion für Kat-2/3 Traktoren, entwickelt um Ihren hydraulischen Bodenprobenehmer direkt an das Krafthebersystem anzuschließen – inklusive Hydraulikpumpen-Plattform.",
+    "herodescription": "<strong>Dreipunktaufhängung für Traktoren</strong>: Der Schwergewichts-Champion für Kat-1/2 Traktoren, entwickelt um Ihren hydraulischen Bodenprobenehmer direkt an das Krafthebersystem anzuschließen – inklusive Hydraulikpumpen-Plattform.",
     "detailedDescription": "<p className='mt-4'>Stellen Sie sich das <strong>stählerne Rückgrat</strong> vor, das Ihr Traktor nie kannte. Aus <strong>dickem A-Rahmen-Stahl</strong> gefertigt und in <strong>schwarzer Epoxid-Beschichtung</strong> gehüllt, wird diese Halterung sicher an den Hubarmen befestigt. Gebaut um das Farmleben zu überstehen – Regen, Schlamm und gelegentliche Traktor-Wutanfälle inklusive. Das Kit enthält <strong>Hubstangen und alle Befestigungsschrauben</strong>, also kein Improvisieren mit rostigen Nägeln oder Klebeband.</p><p className='mt-4'>Geeignet für <strong>Kompakttraktoren mit Hubarmabständen von etwa 50 bis 60 Zoll</strong>, unterstützt dieser Rahmen die Hydraulikpumpe, die direkt von der Zapfwelle angetrieben wird – für effizienten Hydraulikfluss und reibungslose Bodenprobennahme. Das Upgrade, das Ihren Traktor bereit macht für die <strong>Feldolympiade</strong>.</p>",
-    "price": "Ab €2.790",
+    "price": "Ab €1.650",
     "features": [
       "Geschweißter A-Rahmen-Stahl – stabil genug für echte Arbeit",
       "Zapfwellenpumpenhalterung – weil Kabelbinder keine Ingenieurskunst sind",
@@ -1764,7 +1758,7 @@
       "Probenehmer einbauen, testen, zufrieden nicken"
     ],
     "technicalSpecs": {
-      "Typ": "Kat-2/3 Traktor-Dreipunktaufhängung",
+      "Typ": "Kat-1/2 Traktor-Dreipunktaufhängung",
       "Konstruktion": "Geschweißter schwerer A-Rahmen-Stahl mit Epoxid-Beschichtung",
       "Zapfwellen-Kompatibilität": "Standard-Traktor-Zapfwelle treibt Hydraulikpumpe an",
       "Inhalt": "Hubstangen, Befestigungsschrauben und Montagematerial",
