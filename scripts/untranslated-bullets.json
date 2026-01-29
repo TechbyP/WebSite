@@ -1,0 +1,1714 @@
+[
+  {
+    "key": "termsOfService.sections.2.list[0]",
+    "value": "Use the services in any way that violates applicable laws"
+  },
+  {
+    "key": "termsOfService.sections.2.list[1]",
+    "value": "Attempt to gain unauthorized access to our systems"
+  },
+  {
+    "key": "termsOfService.sections.2.list[2]",
+    "value": "Interfere with the proper working of our services"
+  },
+  {
+    "key": "termsOfService.sections.2.list[3]",
+    "value": "Use any automated means to access our services without permission"
+  },
+  {
+    "key": "privacy.dataCollection.items[0]",
+    "value": "Contact us through our website"
+  },
+  {
+    "key": "privacy.dataCollection.items[1]",
+    "value": "Request a quote or product information"
+  },
+  {
+    "key": "privacy.dataCollection.items[2]",
+    "value": "Subscribe to our newsletter"
+  },
+  {
+    "key": "privacy.dataCollection.items[3]",
+    "value": "Download resources from our site"
+  },
+  {
+    "key": "privacy.useOfData.items[0]",
+    "value": "Provide and maintain our services"
+  },
+  {
+    "key": "privacy.useOfData.items[1]",
+    "value": "Respond to your inquiries and requests"
+  },
+  {
+    "key": "privacy.useOfData.items[2]",
+    "value": "Improve our website and products"
+  },
+  {
+    "key": "privacy.useOfData.items[3]",
+    "value": "Send periodic emails (you can unsubscribe at any time)"
+  },
+  {
+    "key": "privacy.cookies.items[0]",
+    "value": "Necessary Cookies: Required for basic website functionality."
+  },
+  {
+    "key": "privacy.cookies.items[1]",
+    "value": "Analytics Cookies: We use Google Analytics to collect anonymous usage statistics and improve our offerings."
+  },
+  {
+    "key": "privacy.rights.items[0]",
+    "value": "Access, update, or delete your information"
+  },
+  {
+    "key": "privacy.rights.items[1]",
+    "value": "Object to our processing of your data"
+  },
+  {
+    "key": "privacy.rights.items[2]",
+    "value": "Request restriction of processing"
+  },
+  {
+    "key": "privacy.rights.items[3]",
+    "value": "Request data portability"
+  },
+  {
+    "key": "application.applications.agriculture.features[0]",
+    "value": "Soil pH Testing"
+  },
+  {
+    "key": "application.applications.agriculture.features[1]",
+    "value": "Nutrient Analysis"
+  },
+  {
+    "key": "application.applications.agriculture.features[2]",
+    "value": "Compaction Assessment"
+  },
+  {
+    "key": "application.applications.agriculture.features[3]",
+    "value": "Irrigation Planning"
+  },
+  {
+    "key": "application.applications.geotechnicalSurvey.features[0]",
+    "value": "Bearing Capacity"
+  },
+  {
+    "key": "application.applications.geotechnicalSurvey.features[1]",
+    "value": "Settlement Analysis"
+  },
+  {
+    "key": "application.applications.geotechnicalSurvey.features[2]",
+    "value": "Slope Stability"
+  },
+  {
+    "key": "application.applications.geotechnicalSurvey.features[3]",
+    "value": "Foundation Design"
+  },
+  {
+    "key": "application.applications.environmentalResearch.features[0]",
+    "value": "Contamination Detection"
+  },
+  {
+    "key": "application.applications.environmentalResearch.features[1]",
+    "value": "Groundwater Monitoring"
+  },
+  {
+    "key": "application.applications.environmentalResearch.features[2]",
+    "value": "Environmental Impact"
+  },
+  {
+    "key": "application.applications.environmentalResearch.features[3]",
+    "value": "Remediation Planning"
+  },
+  {
+    "key": "application.applications.construction.features[0]",
+    "value": "Site Preparation"
+  },
+  {
+    "key": "application.applications.construction.features[1]",
+    "value": "Material Testing"
+  },
+  {
+    "key": "application.applications.construction.features[2]",
+    "value": "Quality Control"
+  },
+  {
+    "key": "application.applications.construction.features[3]",
+    "value": "Safety Assessment"
+  },
+  {
+    "key": "partners[0]",
+    "value": "Technical University of Munich"
+  },
+  {
+    "key": "partners[1]",
+    "value": "University of Göttingen"
+  },
+  {
+    "key": "partners[2]",
+    "value": "Julius Kühn-Institut"
+  },
+  {
+    "key": "partners[3]",
+    "value": "Humboldt University Berlin"
+  },
+  {
+    "key": "partners[4]",
+    "value": "Bavarian State Institute of Agriculture"
+  },
+  {
+    "key": "partners[5]",
+    "value": "RWTH Aachen University"
+  },
+  {
+    "key": "mp1.specs[0]",
+    "value": "Depth: 0–90 cm, optional 120cm (stepless)"
+  },
+  {
+    "key": "mp1.specs[1]",
+    "value": "Semi-automatic"
+  },
+  {
+    "key": "mp1.specs[2]",
+    "value": "Full-core visibility"
+  },
+  {
+    "key": "mp1.specs[3]",
+    "value": "16sec/core sampling cycle"
+  },
+  {
+    "key": "mp1.features[0]",
+    "value": "Full-length (0–90 cm) intact soil core for profile visibility"
+  },
+  {
+    "key": "mp1.features[1]",
+    "value": "Centimetre-precise depth control"
+  },
+  {
+    "key": "mp1.features[2]",
+    "value": "Obstacle detection with automatic stop"
+  },
+  {
+    "key": "mp1.features[3]",
+    "value": "Manual core removal for sample integrity"
+  },
+  {
+    "key": "mp1.features[4]",
+    "value": "Fits pickups, trailers, and lightweight vehicles"
+  },
+  {
+    "key": "mp1.features[5]",
+    "value": "Upgradeable to MP-3.90 or MP-4.100"
+  },
+  {
+    "key": "mp1.applications[0]",
+    "value": "N-min soil sampling"
+  },
+  {
+    "key": "mp1.applications[1]",
+    "value": "Academic and university research"
+  },
+  {
+    "key": "mp1.applications[2]",
+    "value": "Environmental monitoring"
+  },
+  {
+    "key": "mp1.applications[3]",
+    "value": "Soil morphology and profile analysis"
+  },
+  {
+    "key": "mp1.applications[4]",
+    "value": "Precision agriculture"
+  },
+  {
+    "key": "mp1.howToUse[0]",
+    "value": "Step 1 – Impact Insertion: A grooved rod is driven into the soil using a high-frequency hydraulic hammer. It sounds aggressive, but it's all very civilised."
+  },
+  {
+    "key": "mp1.howToUse[1]",
+    "value": "Step 2 – Hydraulic Retraction with Rotation: The rod is rotated and retracted hydraulically, ensuring the core stays pristine. Surgical precision, minus the scalpel."
+  },
+  {
+    "key": "mp1.howToUse[2]",
+    "value": "Step 3 – Core Revelation: The unbroken soil core is exposed for scientific admiration. All layers visible—from humus to hardpan."
+  },
+  {
+    "key": "mp1.howToUse[3]",
+    "value": "Step 4 – Manual Core Discharge: The core is manually removed. It's a quiet, satisfying moment of science. Like pulling data out of the Earth with your hands."
+  },
+  {
+    "key": "mp2.specs[0]",
+    "value": "Depth: 0-60 cm"
+  },
+  {
+    "key": "mp2.specs[1]",
+    "value": "Fully Automatic"
+  },
+  {
+    "key": "mp2.specs[2]",
+    "value": "Optimised for N-min profiling"
+  },
+  {
+    "key": "mp2.specs[3]",
+    "value": "18 sec/core sampling cycle"
+  },
+  {
+    "key": "mp2.features[0]",
+    "value": "Fully automatic extraction to 60 cm"
+  },
+  {
+    "key": "mp2.features[1]",
+    "value": "Smart logic: discards or keeps samples based on your settings"
+  },
+  {
+    "key": "mp2.features[2]",
+    "value": "Impact-driven sampling with auto-discharge"
+  },
+  {
+    "key": "mp2.features[3]",
+    "value": "Layer separation option for horizon-specific sampling"
+  },
+  {
+    "key": "mp2.features[4]",
+    "value": "Waterproof sample containers"
+  },
+  {
+    "key": "mp2.features[5]",
+    "value": "Customisable sampling depth and horizon count"
+  },
+  {
+    "key": "mp2.features[6]",
+    "value": "Obstacle detection and safe auto-shutdown"
+  },
+  {
+    "key": "mp2.features[7]",
+    "value": "Built for real, daily use – not just weekend hobbyists"
+  },
+  {
+    "key": "mp2.howToUse[0]",
+    "value": "Drives a grooved rod into the soil using a high-frequency hydraulic hammer — yes, it sounds as satisfying as it is"
+  },
+  {
+    "key": "mp2.howToUse[1]",
+    "value": "Hydraulically rotates and retracts the rod without disturbing your samples"
+  },
+  {
+    "key": "mp2.howToUse[2]",
+    "value": "Samples are automatically discharged into their proper containers"
+  },
+  {
+    "key": "mp2.howToUse[3]",
+    "value": "Optional layer separation sorts the soil by horizon during extraction"
+  },
+  {
+    "key": "mp2.applications[0]",
+    "value": "Nmin/Nitrate profiling"
+  },
+  {
+    "key": "mp2.applications[1]",
+    "value": "Precision agriculture"
+  },
+  {
+    "key": "mp2.applications[2]",
+    "value": "Environmental soil monitoring"
+  },
+  {
+    "key": "mp2.applications[3]",
+    "value": "Field sampling on a budget with ambitions"
+  },
+  {
+    "key": "mp3.specs[0]",
+    "value": "Depth: 0-95 cm"
+  },
+  {
+    "key": "mp3.specs[1]",
+    "value": "Fully Automatic"
+  },
+  {
+    "key": "mp3.specs[2]",
+    "value": "3-Layer Separation"
+  },
+  {
+    "key": "mp3.specs[3]",
+    "value": "20 sec/core sampling cycle"
+  },
+  {
+    "key": "mp3.features[0]",
+    "value": "Fully automatic extraction down to 95 cm"
+  },
+  {
+    "key": "mp3.features[1]",
+    "value": "Optional 3-layer separation for horizon-specific sampling"
+  },
+  {
+    "key": "mp3.features[2]",
+    "value": "Takes 3 consecutive samples without leaving the seat"
+  },
+  {
+    "key": "mp3.features[3]",
+    "value": "Mounts on pickups, trailers, or anything vaguely roadworthy"
+  },
+  {
+    "key": "mp3.features[4]",
+    "value": "Auto-discharge and sample sorting during extraction"
+  },
+  {
+    "key": "mp3.features[5]",
+    "value": "Customizable sampling depth and horizon count"
+  },
+  {
+    "key": "mp3.features[6]",
+    "value": "Waterproof containers for sample storage"
+  },
+  {
+    "key": "mp3.features[7]",
+    "value": "Auto-shutdown when it hits a rock and says 'nope'"
+  },
+  {
+    "key": "mp3.features[8]",
+    "value": "Smart logic: discards or keeps samples based on settings"
+  },
+  {
+    "key": "mp3.features[9]",
+    "value": "Built for serious, continuous use — this isn't your casual, once-in-a-while gadget."
+  },
+  {
+    "key": "mp3.howToUse[0]",
+    "value": "Drives a serious-looking grooved rod into the soil with a high-frequency hydraulic hammer — think of it as a very precise poke"
+  },
+  {
+    "key": "mp3.howToUse[1]",
+    "value": "Hydraulically rotates and retracts the rod, avoiding the sort of brutish yanking that upsets soil and engineers alike"
+  },
+  {
+    "key": "mp3.howToUse[2]",
+    "value": "Automatically empties the auger on the way up — no scooping, no fiddling, just a polite drop into the sample containers"
+  },
+  {
+    "key": "mp3.howToUse[3]",
+    "value": "Distributes sample material neatly into separate containers depending on soil horizon — because even dirt should know where it belongs"
+  },
+  {
+    "key": "mp3.applications[0]",
+    "value": "Precision agriculture"
+  },
+  {
+    "key": "mp3.applications[1]",
+    "value": "Environmental soil monitoring"
+  },
+  {
+    "key": "mp3.applications[2]",
+    "value": "Nmin/Nitrate testing"
+  },
+  {
+    "key": "mp3.applications[3]",
+    "value": "Soil profiling & research"
+  },
+  {
+    "key": "mp3.applications[4]",
+    "value": "Field work where speed, accuracy, and coffee breaks matter"
+  },
+  {
+    "key": "mp4.specs[0]",
+    "value": "Depth: 0-100 cm"
+  },
+  {
+    "key": "mp4.specs[1]",
+    "value": "Fully Automatic"
+  },
+  {
+    "key": "mp4.specs[2]",
+    "value": "4-Layer Separation"
+  },
+  {
+    "key": "mp4.specs[3]",
+    "value": "22 sec/core sampling cycle"
+  },
+  {
+    "key": "mp4.features[0]",
+    "value": "Fully automatic extraction to 100 cm"
+  },
+  {
+    "key": "mp4.features[1]",
+    "value": "Optional 4-layer separation for horizon-specific sampling"
+  },
+  {
+    "key": "mp4.features[2]",
+    "value": "Auto-discharge and sample sorting during extraction"
+  },
+  {
+    "key": "mp4.features[3]",
+    "value": "Smart logic: discards or keeps samples based on your settings"
+  },
+  {
+    "key": "mp4.features[4]",
+    "value": "Customizable sampling depth and horizon count"
+  },
+  {
+    "key": "mp4.features[5]",
+    "value": "Mounts on pickups, trailers, or anything vaguely roadworthy"
+  },
+  {
+    "key": "mp4.features[6]",
+    "value": "Obstacle detection and safe auto-shutdown"
+  },
+  {
+    "key": "mp4.features[7]",
+    "value": "Waterproof sample containers"
+  },
+  {
+    "key": "mp4.features[8]",
+    "value": "Digital keyboard for on-the-fly adjustments"
+  },
+  {
+    "key": "mp4.features[9]",
+    "value": "Built for real, daily use – not just occasional science days"
+  },
+  {
+    "key": "mp4.howToUse[0]",
+    "value": "Drives a grooved rod into the soil using a high-frequency hydraulic hammer — elegantly brutal"
+  },
+  {
+    "key": "mp4.howToUse[1]",
+    "value": "Hydraulically rotates and retracts the rod — no yanking, no drama"
+  },
+  {
+    "key": "mp4.howToUse[2]",
+    "value": "Automatically empties the auger into appropriate containers on the way up"
+  },
+  {
+    "key": "mp4.howToUse[3]",
+    "value": "Distributes sample material neatly into separate containers depending on soil horizon"
+  },
+  {
+    "key": "mp4.applications[0]",
+    "value": "Deep soil profiling"
+  },
+  {
+    "key": "mp4.applications[1]",
+    "value": "Environmental and agricultural research"
+  },
+  {
+    "key": "mp4.applications[2]",
+    "value": "Nmin/Nitrate testing"
+  },
+  {
+    "key": "mp4.applications[3]",
+    "value": "Precision agriculture"
+  },
+  {
+    "key": "mp4.applications[4]",
+    "value": "Field work requiring serious depth and sample fidelity"
+  },
+  {
+    "key": "dh.specs[0]",
+    "value": "Depth: 0-30 cm"
+  },
+  {
+    "key": "dh.specs[1]",
+    "value": "Fully Automatic"
+  },
+  {
+    "key": "dh.specs[2]",
+    "value": "Suspension-independent depth control"
+  },
+  {
+    "key": "dh.specs[3]",
+    "value": "5 sec/core sampling cycle"
+  },
+  {
+    "key": "dh.features[0]",
+    "value": "Hydraulic drive for dependable, powerful drilling"
+  },
+  {
+    "key": "dh.features[1]",
+    "value": "Precision millimetre depth adjustment"
+  },
+  {
+    "key": "dh.features[2]",
+    "value": "Not affected by vehicle suspension—no surprises underground"
+  },
+  {
+    "key": "dh.features[3]",
+    "value": "Two preset depths for fast switching"
+  },
+  {
+    "key": "dh.features[4]",
+    "value": "Compact and portable at 43 kg"
+  },
+  {
+    "key": "dh.features[5]",
+    "value": "Mounts easily on a range of light vehicles"
+  },
+  {
+    "key": "dh.applications[0]",
+    "value": "Macronutrient soil sampling"
+  },
+  {
+    "key": "dh.applications[1]",
+    "value": "Precision farming (with a bit of old-school power)"
+  },
+  {
+    "key": "dh.applications[2]",
+    "value": "Agricultural and environmental research"
+  },
+  {
+    "key": "dh.applications[3]",
+    "value": "Soil health and nutrient monitoring"
+  },
+  {
+    "key": "dh.howToUse[0]",
+    "value": "Park your rig and position the sampler where the soil's calling."
+  },
+  {
+    "key": "dh.howToUse[1]",
+    "value": "Select your preferred depth (yes, down to the millimetre)."
+  },
+  {
+    "key": "dh.howToUse[2]",
+    "value": "Hit the button and let the hydraulic muscle do the heavy lifting."
+  },
+  {
+    "key": "dh.howToUse[3]",
+    "value": "Pull out your perfect soil core and feel quietly pleased with yourself."
+  },
+  {
+    "key": "de.specs[0]",
+    "value": "Depth: 0-30 cm"
+  },
+  {
+    "key": "de.specs[1]",
+    "value": "Fully electric drilling system"
+  },
+  {
+    "key": "de.specs[2]",
+    "value": "Suspension-independent depth control"
+  },
+  {
+    "key": "de.specs[3]",
+    "value": "5 sec/core sampling cycle"
+  },
+  {
+    "key": "de.features[0]",
+    "value": "Fully electric drilling for clean, precise sampling"
+  },
+  {
+    "key": "de.features[1]",
+    "value": "Millimeter-precise depth adjustment (because close enough isn't good enough)"
+  },
+  {
+    "key": "de.features[2]",
+    "value": "Independent of vehicle suspension to avoid depth tantrums"
+  },
+  {
+    "key": "de.features[3]",
+    "value": "Two quick-select depth presets"
+  },
+  {
+    "key": "de.features[4]",
+    "value": "Compact and lightweight at 47 kg"
+  },
+  {
+    "key": "de.features[5]",
+    "value": "Runs on a 24 V external battery pack (sold separately)"
+  },
+  {
+    "key": "de.applications[0]",
+    "value": "Macronutrient soil sampling"
+  },
+  {
+    "key": "de.applications[1]",
+    "value": "Precision farming with a bit of style"
+  },
+  {
+    "key": "de.applications[2]",
+    "value": "Agricultural and environmental research"
+  },
+  {
+    "key": "de.applications[3]",
+    "value": "Soil health and nutrient monitoring"
+  },
+  {
+    "key": "de.howToUse[0]",
+    "value": "Position the sampler where the soil needs a look-see."
+  },
+  {
+    "key": "de.howToUse[1]",
+    "value": "Choose your depth. Millimeter increments, because we're picky."
+  },
+  {
+    "key": "de.howToUse[2]",
+    "value": "Press the button and watch the electric drill politely do its job."
+  },
+  {
+    "key": "de.howToUse[3]",
+    "value": "Pull out the soil core and marvel at your perfectly sampled earth."
+  },
+  {
+    "key": "boprob.specs[0]",
+    "value": "Depth: 10–30 cm"
+  },
+  {
+    "key": "boprob.specs[1]",
+    "value": "Fully Automatic"
+  },
+  {
+    "key": "boprob.specs[2]",
+    "value": "Tow-behind sampling while driving"
+  },
+  {
+    "key": "boprob.specs[3]",
+    "value": "16 samples in ~4 min"
+  },
+  {
+    "key": "boprob.features[0]",
+    "value": "Hydraulic impact and rotation system"
+  },
+  {
+    "key": "boprob.features[1]",
+    "value": "360° rotating crank with auto-discharge"
+  },
+  {
+    "key": "boprob.features[2]",
+    "value": "Samples while driving—no need to stop"
+  },
+  {
+    "key": "boprob.features[3]",
+    "value": "7-inch touchscreen display for control and monitoring"
+  },
+  {
+    "key": "boprob.features[4]",
+    "value": "Optional onboard camera for visual feedback"
+  },
+  {
+    "key": "boprob.features[5]",
+    "value": "Low soil compaction from 235/60 R16 wheels"
+  },
+  {
+    "key": "boprob.features[6]",
+    "value": "No tractor mods needed—trailer mounts quickly"
+  },
+  {
+    "key": "boprob.features[7]",
+    "value": "Speed-sensitive protection against misuse"
+  },
+  {
+    "key": "boprob.applications[0]",
+    "value": "High-throughput macronutrient sampling"
+  },
+  {
+    "key": "boprob.applications[1]",
+    "value": "Precision farming with minimal fuel use"
+  },
+  {
+    "key": "boprob.applications[2]",
+    "value": "Soil health monitoring on large acreages"
+  },
+  {
+    "key": "boprob.applications[3]",
+    "value": "Shallow horizon sampling during transit"
+  },
+  {
+    "key": "boprob.howToUse[0]",
+    "value": "Attach the trailer to a suitable tractor or tow-capable vehicle—no modifications needed."
+  },
+  {
+    "key": "boprob.howToUse[1]",
+    "value": "Set your desired depth and sample interval on the touchscreen."
+  },
+  {
+    "key": "boprob.howToUse[2]",
+    "value": "Drive at 4–15 km/h and let the machine sample automatically."
+  },
+  {
+    "key": "boprob.howToUse[3]",
+    "value": "Check camera and screen as needed, or just carry on farming."
+  },
+  {
+    "key": "boprob.howToUse[4]",
+    "value": "When 16 samples are collected, empty and reload the magazine."
+  },
+  {
+    "key": "laydown.specs[0]",
+    "value": "Standard 50 mm tow hitch with a 13‑pin 12 V socket required."
+  },
+  {
+    "key": "laydown.specs[1]",
+    "value": "Weight: ≈70 kg (DH/DE); ≈80 kg (MP bracket)"
+  },
+  {
+    "key": "laydown.specs[2]",
+    "value": "EN 10025 S355 steel, powder-coated, 4 mm thick"
+  },
+  {
+    "key": "laydown.specs[3]",
+    "value": "Fold-down & hitch stability"
+  },
+  {
+    "key": "laydown.features[0]",
+    "value": "Tow‑hitch + 13‑pin mounting (no welding, no trauma)"
+  },
+  {
+    "key": "laydown.features[1]",
+    "value": "TÜV‑approved for road and field use"
+  },
+  {
+    "key": "laydown.features[2]",
+    "value": "Structural EN S355 steel, powder-coated"
+  },
+  {
+    "key": "laydown.features[3]",
+    "value": "Quick‑release M16 mounting hardware included"
+  },
+  {
+    "key": "laydown.features[4]",
+    "value": "Foldable design tested to 10 000 deployment cycles"
+  },
+  {
+    "key": "laydown.features[5]",
+    "value": "Supports external power packs (hydraulic or battery)"
+  },
+  {
+    "key": "laydown.applications[0]",
+    "value": "ATV/UTV soil sampling platforms"
+  },
+  {
+    "key": "laydown.applications[1]",
+    "value": "Utility and pickup truck installations"
+  },
+  {
+    "key": "laydown.applications[2]",
+    "value": "Hydraulic MP‑series or electric DE/DH samplers"
+  },
+  {
+    "key": "laydown.applications[3]",
+    "value": "Seasonal use or fully mounted field rigs"
+  },
+  {
+    "key": "laydown.howToUse[0]",
+    "value": "Vehicle has ISO 50 mm tow ball? Check."
+  },
+  {
+    "key": "laydown.howToUse[1]",
+    "value": "Vehicle has a 13‑pin 12 V socket (for DE‑1.30)? Check."
+  },
+  {
+    "key": "laydown.howToUse[2]",
+    "value": "Hydraulic output available (135–220 bar @60 L/min)?"
+  },
+  {
+    "key": "laydown.howToUse[3]",
+    "value": "Fold down, test power, and begin sampling."
+  },
+  {
+    "key": "tph.specs[0]",
+    "value": "Fits Cat‑1 or Cat‑2 tractor 3‑point PTO systems"
+  },
+  {
+    "key": "tph.specs[1]",
+    "value": "Heavy‑duty A‑frame steel construction"
+  },
+  {
+    "key": "tph.specs[2]",
+    "value": "Black epoxy corrosion protection"
+  },
+  {
+    "key": "tph.specs[3]",
+    "value": "Compatible with all MP-series, DH, and DE soil sampling machines"
+  },
+  {
+    "key": "tph.features[0]",
+    "value": "Welded A‑frame steel—sturdy enough for actual work"
+  },
+  {
+    "key": "tph.features[1]",
+    "value": "PTO pump mount—because zip ties aren't engineering"
+  },
+  {
+    "key": "tph.features[2]",
+    "value": "Black epoxy finish—like paint, but smarter"
+  },
+  {
+    "key": "tph.features[3]",
+    "value": "Comes with bolts and lift bars—no scrounging required"
+  },
+  {
+    "key": "tph.features[5]",
+    "value": "Works with MP, DH, and DE samplers"
+  },
+  {
+    "key": "tph.applications[0]",
+    "value": "Hydraulic soil sampling—properly"
+  },
+  {
+    "key": "tph.applications[1]",
+    "value": "PTO-powered fieldwork with minimal swearing"
+  },
+  {
+    "key": "tph.applications[2]",
+    "value": "Tractor retrofits that make sense"
+  },
+  {
+    "key": "tph.howToUse[0]",
+    "value": "Attach to lift arms—tighten like you mean it"
+  },
+  {
+    "key": "tph.howToUse[1]",
+    "value": "Mount pump baseplate—don't cross-thread"
+  },
+  {
+    "key": "tph.howToUse[2]",
+    "value": "Connect PTO and route hoses neatly"
+  },
+  {
+    "key": "tph.howToUse[3]",
+    "value": "Fit sampler, test, nod approvingly"
+  },
+  {
+    "key": "fc.specs[0]",
+    "value": "Compatible with pickups and UTVs"
+  },
+  {
+    "key": "fc.specs[1]",
+    "value": "Custom powder-coated steel frame with aluminium tool panels"
+  },
+  {
+    "key": "fc.specs[2]",
+    "value": "OEM parts removed and stored; frame TÜV-certified"
+  },
+  {
+    "key": "fc.specs[3]",
+    "value": "Supports all MP-series, DH, and DE soil samplers"
+  },
+  {
+    "key": "fc.features[0]",
+    "value": "Universal fit for pickups and UTVs (Hilux, Gator, Kubota, etc.)"
+  },
+  {
+    "key": "fc.features[1]",
+    "value": "Aluminium-covered steel frame: durable and corrosion-resistant"
+  },
+  {
+    "key": "fc.features[2]",
+    "value": "Supports tool storage, lighting, coolers, and sampler systems"
+  },
+  {
+    "key": "fc.features[3]",
+    "value": "TÜV-certified and road-legal in EU"
+  },
+  {
+    "key": "fc.features[4]",
+    "value": "Fully compatible with all MP, DE, and DH machines"
+  },
+  {
+    "key": "fc.applications[0]",
+    "value": "Permanent field rig conversions"
+  },
+  {
+    "key": "fc.applications[1]",
+    "value": "Fleet builds for large-scale soil sampling"
+  },
+  {
+    "key": "fc.applications[2]",
+    "value": "Upgrades for agricultural and environmental research vehicles"
+  },
+  {
+    "key": "fc.howToUse[0]",
+    "value": "Select your sampling machine — MP-series, DH, or DE. Sensible choices, all of them."
+  },
+  {
+    "key": "fc.howToUse[1]",
+    "value": "Ensure your vehicle has a hitch receiver or trailer coupling. If not, one can be arranged. We're not savages."
+  },
+  {
+    "key": "fc.howToUse[2]",
+    "value": "Bring us the vehicle — or let us source a suitable model."
+  },
+  {
+    "key": "fc.howToUse[3]",
+    "value": "We fit the steel frame, bolt on the sampler, handle the paperwork, and send you off to do battle with soil."
+  },
+  {
+    "key": "trailer.specs[0]",
+    "value": "Hot-dip galvanised—rust doesn't stand a chance."
+  },
+  {
+    "key": "trailer.specs[1]",
+    "value": "Braked or non-braked options: choose your level of control"
+  },
+  {
+    "key": "trailer.specs[2]",
+    "value": "Track width fixed at 1.35 m"
+  },
+  {
+    "key": "trailer.features[0]",
+    "value": "Hot-dip galvanised body and chassis—long life, fewer complaints"
+  },
+  {
+    "key": "trailer.features[1]",
+    "value": "Braked and non-braked options—pick your handling style"
+  },
+  {
+    "key": "trailer.features[2]",
+    "value": "Single-axle with mechanical drum brakes for stable towing"
+  },
+  {
+    "key": "trailer.features[3]",
+    "value": "Shock absorbers for 100 km/h road approval—smooth ride, no rattling"
+  },
+  {
+    "key": "trailer.features[4]",
+    "value": "Track width 1.35 m with jack‑castor wheels included"
+  },
+  {
+    "key": "trailer.features[5]",
+    "value": "LT285/75 R16 aluminium rims or MT215/75 R15 steel—tread the fields, not flip over"
+  },
+  {
+    "key": "trailer.features[6]",
+    "value": "Support wheel included for easy hand maneuvering"
+  },
+  {
+    "key": "trailer.features[7]",
+    "value": "Built to haul MP-series, DH, and DE samplers—no IKEA instructions required"
+  },
+  {
+    "key": "trailer.features[8]",
+    "value": "Integrated tool, light, and cooler storage—work smarter, not harder"
+  },
+  {
+    "key": "trailer.applications[0]",
+    "value": "Field transport of MP, DH, and DE sampler kits"
+  },
+  {
+    "key": "trailer.applications[1]",
+    "value": "Hauling crates, coolboxes, and more across farms"
+  },
+  {
+    "key": "trailer.applications[2]",
+    "value": "Light-duty environments, both rural and contracting sites"
+  },
+  {
+    "key": "trailer.howToUse[0]",
+    "value": "Select braked or non-braked depending on your towing vehicle and load."
+  },
+  {
+    "key": "trailer.howToUse[1]",
+    "value": "Hitched with standard 50 mm ball coupling—no exotic engineering required."
+  },
+  {
+    "key": "trailer.howToUse[2]",
+    "value": "Load your sampler and kit, secure all straps and tie-downs."
+  },
+  {
+    "key": "trailer.howToUse[3]",
+    "value": "Tow it at sensible speeds—no drifting or unintended adventure."
+  },
+  {
+    "key": "powerpack.specs[0]",
+    "value": "Hydraulic or electric powered to fit your power needs"
+  },
+  {
+    "key": "powerpack.specs[1]",
+    "value": "Portable, durable steel casing built for rough fieldwork"
+  },
+  {
+    "key": "powerpack.specs[2]",
+    "value": "LCD battery status on electric models—know your charge at a glance"
+  },
+  {
+    "key": "powerpack.specs[3]",
+    "value": "Return and suction filtration included for clean hydraulic operation"
+  },
+  {
+    "key": "powerpack.features[0]",
+    "value": "Hydraulic or electric powered to suit your workflow"
+  },
+  {
+    "key": "powerpack.features[1]",
+    "value": "Rugged steel casing with corrosion protection"
+  },
+  {
+    "key": "powerpack.features[2]",
+    "value": "LCD battery status on electric models"
+  },
+  {
+    "key": "powerpack.features[3]",
+    "value": "Return and suction filtration for hydraulic longevity"
+  },
+  {
+    "key": "powerpack.features[4]",
+    "value": "Portable and easy to mount or transport"
+  },
+  {
+    "key": "powerpack.applications[0]",
+    "value": "Power source for MP-series and DH-series soil samplers"
+  },
+  {
+    "key": "powerpack.applications[1]",
+    "value": "Field operations requiring independent hydraulic or electric power"
+  },
+  {
+    "key": "powerpack.applications[2]",
+    "value": "Remote sampling locations without vehicle power supply"
+  },
+  {
+    "key": "powerpack.howToUse[0]",
+    "value": "Pick hydraulic or electric depending on how much oomph your sampler demands (and how fancy you feel)."
+  },
+  {
+    "key": "powerpack.howToUse[1]",
+    "value": "Bolt it on securely to your vehicle or trailer—no improvising with duct tape, please."
+  },
+  {
+    "key": "powerpack.howToUse[2]",
+    "value": "Keep an eye on power levels via LCD (electric) or fuel/oil gauges (hydraulic)—because surprises are for birthday parties, not fieldwork."
+  },
+  {
+    "key": "powerpack.howToUse[3]",
+    "value": "Top up oil and change filters regularly—treat it well, and it'll keep your sampler humming like a charm."
+  },
+  {
+    "key": "spareparts.specs[0]",
+    "value": "Factory-approved spares for all models"
+  },
+  {
+    "key": "spareparts.specs[1]",
+    "value": "Critical components for high-wear and mission-critical assemblies"
+  },
+  {
+    "key": "spareparts.specs[2]",
+    "value": "Individually packaged, labelled, and field-service ready"
+  },
+  {
+    "key": "spareparts.specs[3]",
+    "value": "Backed by TechbyP's reliability standards"
+  },
+  {
+    "key": "spareparts.features[0]",
+    "value": "Recommended spare parts for MP, DH, DE and BOPROB III soil samplers"
+  },
+  {
+    "key": "spareparts.features[1]",
+    "value": "Includes critical wear components and emergency repair items"
+  },
+  {
+    "key": "spareparts.features[2]",
+    "value": "Factory-approved for seamless compatibility"
+  },
+  {
+    "key": "spareparts.features[3]",
+    "value": "Clearly labelled and packaged for field use"
+  },
+  {
+    "key": "spareparts.features[4]",
+    "value": "Helps reduce downtime during critical sampling campaigns"
+  },
+  {
+    "key": "spareparts.applications[0]",
+    "value": "Field repairs and preventive maintenance on BPT soil samplers"
+  },
+  {
+    "key": "spareparts.applications[1]",
+    "value": "Keeping high-wear components in service-ready condition"
+  },
+  {
+    "key": "spareparts.applications[2]",
+    "value": "Avoiding project delays due to unavailable parts"
+  },
+  {
+    "key": "spareparts.howToUse[0]",
+    "value": "Keep one kit per machine—because nobody likes cannibalising parts from the unit you're not using."
+  },
+  {
+    "key": "spareparts.howToUse[1]",
+    "value": "Replace high-wear components according to service intervals or visible wear."
+  },
+  {
+    "key": "spareparts.howToUse[2]",
+    "value": "Use only the labelled components for their intended locations (guessing is not heroic, it's expensive)."
+  },
+  {
+    "key": "spareparts.howToUse[3]",
+    "value": "Restock your kit after use so you're never caught without it twice."
+  },
+  {
+    "key": "coolbox.specs[0]",
+    "value": "Dual-zone compressor cooling/freezing to -20°C"
+  },
+  {
+    "key": "coolbox.specs[1]",
+    "value": "Independent compartments with LED lighting"
+  },
+  {
+    "key": "coolbox.specs[2]",
+    "value": "Digital display, USB charging, and app control"
+  },
+  {
+    "key": "coolbox.specs[3]",
+    "value": "Works on 12/24 V DC or 230 V AC power"
+  },
+  {
+    "key": "coolbox.features[0]",
+    "value": "Dual compartments can cool or freeze independently"
+  },
+  {
+    "key": "coolbox.features[1]",
+    "value": "Digital display with touch controls and mobile app"
+  },
+  {
+    "key": "coolbox.features[2]",
+    "value": "Built-in LED lighting and USB charging port"
+  },
+  {
+    "key": "coolbox.features[3]",
+    "value": "Lids open from both sides for maximum faffing potential"
+  },
+  {
+    "key": "coolbox.features[4]",
+    "value": "Runs on 12/24 V DC or 110–240 V AC"
+  },
+  {
+    "key": "coolbox.applications[0]",
+    "value": "Transporting temperature-sensitive samples in hot climates"
+  },
+  {
+    "key": "coolbox.applications[1]",
+    "value": "Multi-day expeditions without sacrificing cold beverages"
+  },
+  {
+    "key": "coolbox.applications[2]",
+    "value": "Keeping gel packs and specimens within lab-compliant temperatures"
+  },
+  {
+    "key": "coolbox.applications[3]",
+    "value": "Emergency beer preservation at remote job sites"
+  },
+  {
+    "key": "coolbox.howToUse[0]",
+    "value": "Plug into vehicle or AC power before loading"
+  },
+  {
+    "key": "coolbox.howToUse[1]",
+    "value": "Set target temperatures via the control panel or app"
+  },
+  {
+    "key": "coolbox.howToUse[2]",
+    "value": "Use compartments as fridge-freezer, fridge-fridge, or freezer-freezer"
+  },
+  {
+    "key": "coolbox.howToUse[3]",
+    "value": "Load samples upright, and avoid overstuffing (yes, we know you will anyway)"
+  },
+  {
+    "key": "coolbox.howToUse[4]",
+    "value": "Clean regularly unless you're conducting a microbial growth study"
+  },
+  {
+    "key": "led.specs[0]",
+    "value": "Pivot-mounted LED work light for near-field illumination"
+  },
+  {
+    "key": "led.specs[1]",
+    "value": "Blinding 1700 lumen output from 4 LEDs"
+  },
+  {
+    "key": "led.specs[2]",
+    "value": "Durable aluminum housing, IP6K9K rated"
+  },
+  {
+    "key": "led.specs[3]",
+    "value": "Compatible with 12–24 V DC systems"
+  },
+  {
+    "key": "led.features[0]",
+    "value": "1700 lumen output from 4 high-intensity LEDs"
+  },
+  {
+    "key": "led.features[1]",
+    "value": "Pivoting bracket for precise aiming"
+  },
+  {
+    "key": "led.features[2]",
+    "value": "IP6K9K and IP6K7 ingress protection"
+  },
+  {
+    "key": "led.features[3]",
+    "value": "Patterned lens for near-field spread"
+  },
+  {
+    "key": "led.features[4]",
+    "value": "Compact and rugged aluminum housing"
+  },
+  {
+    "key": "led.applications[0]",
+    "value": "Night-time drilling and soil sampling"
+  },
+  {
+    "key": "led.applications[1]",
+    "value": "Equipment lighting on rigs and trailers"
+  },
+  {
+    "key": "led.applications[2]",
+    "value": "Work zones in tunnels, forests, or 'middle of nowhere'"
+  },
+  {
+    "key": "led.applications[3]",
+    "value": "Emergency repair lighting"
+  },
+  {
+    "key": "led.howToUse[0]",
+    "value": "Mount securely using included pivot bracket"
+  },
+  {
+    "key": "led.howToUse[1]",
+    "value": "Wire into 12 or 24 V DC supply (assembly by qualified personnel)"
+  },
+  {
+    "key": "led.howToUse[2]",
+    "value": "Aim beam toward work zone"
+  },
+  {
+    "key": "led.howToUse[3]",
+    "value": "Avoid staring directly into it unless you enjoy retinal regret"
+  },
+  {
+    "key": "camera.specs[0]",
+    "value": "5MP 4G camera for soil sampling rigs"
+  },
+  {
+    "key": "camera.specs[1]",
+    "value": "Mounts directly to your machine frame"
+  },
+  {
+    "key": "camera.specs[2]",
+    "value": "Live video feed to your mobile or tablet via app"
+  },
+  {
+    "key": "camera.specs[3]",
+    "value": "75° field of view with IR night vision up to 15 m"
+  },
+  {
+    "key": "camera.features[0]",
+    "value": "Live video streaming over 4G network"
+  },
+  {
+    "key": "camera.features[1]",
+    "value": "75° fixed-angle lens with night vision"
+  },
+  {
+    "key": "camera.features[2]",
+    "value": "Mounts directly to TechByp sampling machines"
+  },
+  {
+    "key": "camera.features[3]",
+    "value": "App control with image adjustment (WDR, BLC, etc.)"
+  },
+  {
+    "key": "camera.features[4]",
+    "value": "Optional onboard recording via micro SD"
+  },
+  {
+    "key": "camera.applications[0]",
+    "value": "Monitoring soil sampling operations from inside the vehicle"
+  },
+  {
+    "key": "camera.applications[1]",
+    "value": "Live alignment checks during drilling"
+  },
+  {
+    "key": "camera.applications[2]",
+    "value": "Operator training and video documentation"
+  },
+  {
+    "key": "camera.applications[3]",
+    "value": "Avoiding blind drilling and unexpected surprises"
+  },
+  {
+    "key": "camera.howToUse[0]",
+    "value": "Mount securely to machine using bracket"
+  },
+  {
+    "key": "camera.howToUse[1]",
+    "value": "Insert SIM card and optional SD card"
+  },
+  {
+    "key": "camera.howToUse[2]",
+    "value": "Connect to 12V power supply on the rig"
+  },
+  {
+    "key": "camera.howToUse[3]",
+    "value": "Launch app to stream live feed from camera"
+  },
+  {
+    "key": "camera.howToUse[4]",
+    "value": "Wipe clean occasionally—but only when unplugged!"
+  },
+  {
+    "key": "probes.specs[0]",
+    "value": "Tool steel construction (HRC 52)"
+  },
+  {
+    "key": "probes.specs[1]",
+    "value": "Conical taper profile (40→38 mm / 35→33 mm / 30→28 mm)"
+  },
+  {
+    "key": "probes.specs[2]",
+    "value": "Laser-etched depth markings every 10 cm"
+  },
+  {
+    "key": "probes.specs[3]",
+    "value": "Compatible with N-min sampling protocols (VDLUFA, ISO 14255)"
+  },
+  {
+    "key": "probes.features[0]",
+    "value": "Three tapered diameters minimize friction and maximize sampling ease"
+  },
+  {
+    "key": "probes.features[1]",
+    "value": "HRC 52 hardened tool steel for durability and strength"
+  },
+  {
+    "key": "probes.features[2]",
+    "value": "Laser-etched depth markings every 10 cm for precise sampling"
+  },
+  {
+    "key": "probes.features[3]",
+    "value": "Pre-broken cutting edges for consistent, clean penetration"
+  },
+  {
+    "key": "probes.features[4]",
+    "value": "Compatible with toggle handles and chisels for efficient sample extraction"
+  },
+  {
+    "key": "probes.applications[0]",
+    "value": "N-min nitrate profiling"
+  },
+  {
+    "key": "probes.applications[1]",
+    "value": "Academic and commercial soil research"
+  },
+  {
+    "key": "probes.applications[2]",
+    "value": "Manual sampling in hard, stony, or clay-heavy soils"
+  },
+  {
+    "key": "probes.howToUse[0]",
+    "value": "Choose rod diameter based on desired sample depth"
+  },
+  {
+    "key": "probes.howToUse[1]",
+    "value": "Rotate the rod while applying downward pressure; taper does the heavy lifting"
+  },
+  {
+    "key": "probes.howToUse[2]",
+    "value": "Use toggle handles (Items 1030 or 1031) to extract the rod smoothly"
+  },
+  {
+    "key": "probes.howToUse[3]",
+    "value": "Clean soil residues with the chisel (Item 1051) to maintain groove integrity between samples"
+  },
+  {
+    "key": "drillrods.specs[0]",
+    "value": "Drilling groove Ø 22 mm, total length 1100 mm, usable length 1000 mm"
+  },
+  {
+    "key": "drillrods.specs[1]",
+    "value": "12 mm groove for holding soil samples"
+  },
+  {
+    "key": "drillrods.specs[2]",
+    "value": "Extensions 1000 mm long with 5/8” internal thread on both sides"
+  },
+  {
+    "key": "drillrods.specs[3]",
+    "value": "Includes special wrenches for tightening"
+  },
+  {
+    "key": "drillrods.features[0]",
+    "value": "Ø 22 mm drilling groove with 12 mm soil sample groove"
+  },
+  {
+    "key": "drillrods.features[1]",
+    "value": "Modular design with interchangeable parts bolted together"
+  },
+  {
+    "key": "drillrods.features[2]",
+    "value": "1000 mm usable length per rod section"
+  },
+  {
+    "key": "drillrods.features[3]",
+    "value": "Special striking heads for hand hammer or machine use"
+  },
+  {
+    "key": "drillrods.features[4]",
+    "value": "Special wrenches for secure tightening"
+  },
+  {
+    "key": "drillrods.features[5]",
+    "value": "Lifting devices for easy rod extraction"
+  },
+  {
+    "key": "drillrods.applications[0]",
+    "value": "Opening normal soil profiles up to 10 meters depth"
+  },
+  {
+    "key": "drillrods.applications[1]",
+    "value": "Manual soil sampling in non-rocky soils"
+  },
+  {
+    "key": "drillrods.applications[2]",
+    "value": "Flexible rod length adjustment for variable depth sampling"
+  },
+  {
+    "key": "drillrods.howToUse[0]",
+    "value": "Assemble rods and extensions to required length using connecting bolts"
+  },
+  {
+    "key": "drillrods.howToUse[1]",
+    "value": "Use appropriate striking head with hand hammer or machine"
+  },
+  {
+    "key": "drillrods.howToUse[2]",
+    "value": "Tighten rod sections using special wrenches (SW 18)"
+  },
+  {
+    "key": "drillrods.howToUse[3]",
+    "value": "Extract rods using jack lifting device with clamp chain or one-arm puller with ball clamp"
+  },
+  {
+    "key": "hammers.specs[0]",
+    "value": "Variety of hammers with impact surfaces from 80 mm Ø to 150 mm square"
+  },
+  {
+    "key": "hammers.specs[1]",
+    "value": "Soft-face and nylon hammers with malleable cast iron housing"
+  },
+  {
+    "key": "hammers.specs[2]",
+    "value": "Handles made of wood or hickory with various lengths"
+  },
+  {
+    "key": "hammers.specs[3]",
+    "value": "Interchangeable hammer heads and inserts"
+  },
+  {
+    "key": "hammers.features[0]",
+    "value": "Square hammer with 135x135 mm impact surface, 4.3 kg"
+  },
+  {
+    "key": "hammers.features[1]",
+    "value": "Round plastic hammer with 150 mm Ø impact surface"
+  },
+  {
+    "key": "hammers.features[2]",
+    "value": "Soft-face hammers with malleable cast iron housing"
+  },
+  {
+    "key": "hammers.features[3]",
+    "value": "Nylon soft-face hammer variants"
+  },
+  {
+    "key": "hammers.features[4]",
+    "value": "Interchangeable hammer heads and inserts"
+  },
+  {
+    "key": "hammers.features[5]",
+    "value": "Wooden and hickory handles of varying lengths"
+  },
+  {
+    "key": "hammers.applications[0]",
+    "value": "Manual soil sampling requiring precise impact force"
+  },
+  {
+    "key": "hammers.applications[1]",
+    "value": "Protection of delicate soil structures with soft-face hammers"
+  },
+  {
+    "key": "hammers.applications[2]",
+    "value": "Versatile hammer selection for different sampling equipment"
+  },
+  {
+    "key": "hammers.howToUse[0]",
+    "value": "Select hammer type according to soil hardness and sampling method"
+  },
+  {
+    "key": "hammers.howToUse[1]",
+    "value": "Use appropriate handle length for leverage and comfort"
+  },
+  {
+    "key": "hammers.howToUse[2]",
+    "value": "Replace hammer heads or inserts as needed for optimal performance"
+  },
+  {
+    "key": "hammers.howToUse[3]",
+    "value": "Maintain wooden handles and tighten screws regularly"
+  },
+  {
+    "key": "goettingerDrills.specs[0]",
+    "value": "Designed for Nmin sampling down to 90 cm"
+  },
+  {
+    "key": "goettingerDrills.specs[1]",
+    "value": "Manual operation—no extra tools required"
+  },
+  {
+    "key": "goettingerDrills.specs[2]",
+    "value": "Specially hardened steel groove ensures minimal friction"
+  },
+  {
+    "key": "goettingerDrills.specs[3]",
+    "value": "Three interlocking drill diameters optimize insertion and extraction"
+  },
+  {
+    "key": "goettingerDrills.features[0]",
+    "value": "Single-person operation"
+  },
+  {
+    "key": "goettingerDrills.features[1]",
+    "value": "Lightweight at just ~2.5 kg"
+  },
+  {
+    "key": "goettingerDrills.features[2]",
+    "value": "Higher efficiency than conventional hand tools"
+  },
+  {
+    "key": "goettingerDrills.features[3]",
+    "value": "Zero field damage—no crushing crops"
+  },
+  {
+    "key": "goettingerDrills.features[4]",
+    "value": "Safe for drains, cables, and underground lines"
+  },
+  {
+    "key": "goettingerDrills.features[5]",
+    "value": "Works even in wet soils"
+  },
+  {
+    "key": "goettingerDrills.features[6]",
+    "value": "Exact 3-layer separation for N-min samples"
+  },
+  {
+    "key": "goettingerDrills.features[7]",
+    "value": "Improved grip comfort thanks to reinforced handle padding"
+  },
+  {
+    "key": "goettingerDrills.applications[0]",
+    "value": "Manual Nmin soil sampling in light soils"
+  },
+  {
+    "key": "goettingerDrills.applications[1]",
+    "value": "Field conditions where machinery cannot be used"
+  },
+  {
+    "key": "goettingerDrills.applications[2]",
+    "value": "Reliable layer separation for precise analysis"
+  },
+  {
+    "key": "goettingerDrills.howToUse[0]",
+    "value": "Insert the corer by hand into the soil"
+  },
+  {
+    "key": "goettingerDrills.howToUse[1]",
+    "value": "Pull out carefully to collect the sample"
+  },
+  {
+    "key": "goettingerDrills.howToUse[2]",
+    "value": "Repeat 16 parallel strikes per depth section for reliable results"
+  },
+  {
+    "key": "goettingerDrills.howToUse[3]",
+    "value": "Avoid rocky or overly compacted soils"
+  },
+  {
+    "key": "raupe.specs[0]",
+    "value": "Depth: 0–90 cm (optional 120 cm)"
+  },
+  {
+    "key": "raupe.specs[1]",
+    "value": "Hydraulic & semi-automatic"
+  },
+  {
+    "key": "raupe.specs[2]",
+    "value": "3-layer sampling"
+  },
+  {
+    "key": "raupe.specs[3]",
+    "value": "Manual visual check for each core"
+  },
+  {
+    "key": "raupe.features[0]",
+    "value": "Hydraulic semi-automatic extraction down to 90 cm (optional 120 cm)"
+  },
+  {
+    "key": "raupe.features[1]",
+    "value": "Three-layer sampling for horizon-specific precision"
+  },
+  {
+    "key": "raupe.features[2]",
+    "value": "Manual core inspection keeps you in charge"
+  },
+  {
+    "key": "raupe.features[3]",
+    "value": "Carrier engine powers the hydraulic system—no extra motors"
+  },
+  {
+    "key": "raupe.features[4]",
+    "value": "Remote control: raise, lower, rotate, sample"
+  },
+  {
+    "key": "raupe.features[5]",
+    "value": "Tracks are narrow for passage between corn"
+  },
+  {
+    "key": "raupe.features[6]",
+    "value": "High-frequency hydraulic hammer (2400 blows/min, 40J per blow)"
+  },
+  {
+    "key": "raupe.features[7]",
+    "value": "Durable and low-maintenance"
+  },
+  {
+    "key": "raupe.features[8]",
+    "value": "Quick spare parts service (2h) and repairs on-site (12h)"
+  },
+  {
+    "key": "raupe.howToUse[0]",
+    "value": "Drive the crawler to the sampling site"
+  },
+  {
+    "key": "raupe.howToUse[1]",
+    "value": "Lay the machine down for stability during travel if needed"
+  },
+  {
+    "key": "raupe.howToUse[2]",
+    "value": "Raise the sampling rod upright via remote control"
+  },
+  {
+    "key": "raupe.howToUse[3]",
+    "value": "Hydraulically drive the rod into the soil and rotate to extract the core"
+  },
+  {
+    "key": "raupe.howToUse[4]",
+    "value": "Repeat for the three layers: 0–30, 30–60, 60–90 cm"
+  },
+  {
+    "key": "raupe.howToUse[5]",
+    "value": "Remove core, inspect visually, and store in waterproof containers"
+  },
+  {
+    "key": "raupe.applications[0]",
+    "value": "Nmin/nitrate soil testing"
+  },
+  {
+    "key": "raupe.applications[1]",
+    "value": "Environmental and agricultural soil monitoring"
+  },
+  {
+    "key": "raupe.applications[2]",
+    "value": "Soil profiling and research"
+  },
+  {
+    "key": "raupe.applications[3]",
+    "value": "Field work on slopes and rough terrain"
+  }
+]

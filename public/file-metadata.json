@@ -1,6 +1,26 @@
 [
   {
     "id": "1",
+    "name": "Flyer BOPROB III_ DE.pdf",
+    "type": "pdf",
+    "category": "Brochure",
+    "size": "4.47 MB",
+    "date": "2025-09-22T10:47:06.176Z",
+    "url": "/files/Flyer BOPROB III_ DE.pdf",
+    "previewUrl": "/files/Flyer BOPROB III_ DE.pdf"
+  },
+  {
+    "id": "2",
+    "name": "Flyer BOPROB III_ ENG.pdf",
+    "type": "pdf",
+    "category": "Brochure",
+    "size": "4.20 MB",
+    "date": "2025-09-22T08:46:07.735Z",
+    "url": "/files/Flyer BOPROB III_ ENG.pdf",
+    "previewUrl": "/files/Flyer BOPROB III_ ENG.pdf"
+  },
+  {
+    "id": "3",
     "name": "Flyer DE-1.30 DE.pdf",
     "type": "pdf",
     "category": "Brochure",
@@ -10,7 +30,7 @@
     "previewUrl": "/files/Flyer DE-1.30 DE.pdf"
   },
   {
-    "id": "2",
+    "id": "4",
     "name": "Flyer DE-1.30 ENG.pdf",
     "type": "pdf",
     "category": "Brochure",
@@ -20,7 +40,47 @@
     "previewUrl": "/files/Flyer DE-1.30 ENG.pdf"
   },
   {
-    "id": "3",
+    "id": "5",
+    "name": "Flyer DH-1.30 DE.pdf",
+    "type": "pdf",
+    "category": "Brochure",
+    "size": "2.20 MB",
+    "date": "2025-10-06T12:49:54.973Z",
+    "url": "/files/Flyer DH-1.30 DE.pdf",
+    "previewUrl": "/files/Flyer DH-1.30 DE.pdf"
+  },
+  {
+    "id": "6",
+    "name": "Flyer DH-1.30 ENG.pdf",
+    "type": "pdf",
+    "category": "Brochure",
+    "size": "2.13 MB",
+    "date": "2025-10-06T12:20:08.872Z",
+    "url": "/files/Flyer DH-1.30 ENG.pdf",
+    "previewUrl": "/files/Flyer DH-1.30 ENG.pdf"
+  },
+  {
+    "id": "7",
+    "name": "Flyer MP-1.90 DE.pdf",
+    "type": "pdf",
+    "category": "Brochure",
+    "size": "28.15 MB",
+    "date": "2025-10-07T09:11:30.417Z",
+    "url": "/files/Flyer MP-1.90 DE.pdf",
+    "previewUrl": "/files/Flyer MP-1.90 DE.pdf"
+  },
+  {
+    "id": "8",
+    "name": "Flyer MP-1.90 ENG.pdf",
+    "type": "pdf",
+    "category": "Brochure",
+    "size": "28.32 MB",
+    "date": "2025-10-07T09:11:58.310Z",
+    "url": "/files/Flyer MP-1.90 ENG.pdf",
+    "previewUrl": "/files/Flyer MP-1.90 ENG.pdf"
+  },
+  {
+    "id": "9",
     "name": "Flyer MP-2.60 DE.pdf",
     "type": "pdf",
     "category": "Brochure",
@@ -30,7 +90,7 @@
     "previewUrl": "/files/Flyer MP-2.60 DE.pdf"
   },
   {
-    "id": "4",
+    "id": "10",
     "name": "Flyer MP-2.60 ENG.pdf",
     "type": "pdf",
     "category": "Brochure",
@@ -40,7 +100,7 @@
     "previewUrl": "/files/Flyer MP-2.60 ENG.pdf"
   },
   {
-    "id": "5",
+    "id": "11",
     "name": "Flyer MP-2.60 RO.pdf",
     "type": "pdf",
     "category": "Brochure",
@@ -50,7 +110,7 @@
     "previewUrl": "/files/Flyer MP-2.60 RO.pdf"
   },
   {
-    "id": "6",
+    "id": "12",
     "name": "Flyer MP-3.90 DE.pdf",
     "type": "pdf",
     "category": "Brochure",
@@ -60,7 +120,7 @@
     "previewUrl": "/files/Flyer MP-3.90 DE.pdf"
   },
   {
-    "id": "7",
+    "id": "13",
     "name": "Flyer MP-3.90 ENG.pdf",
     "type": "pdf",
     "category": "Brochure",
@@ -68,5 +128,25 @@
     "date": "2025-08-18T10:45:37.315Z",
     "url": "/files/Flyer MP-3.90 ENG.pdf",
     "previewUrl": "/files/Flyer MP-3.90 ENG.pdf"
+  },
+  {
+    "id": "14",
+    "name": "Flyer MP-4.100 DE.pdf",
+    "type": "pdf",
+    "category": "Brochure",
+    "size": "30.39 MB",
+    "date": "2025-10-07T09:13:31.099Z",
+    "url": "/files/Flyer MP-4.100 DE.pdf",
+    "previewUrl": "/files/Flyer MP-4.100 DE.pdf"
+  },
+  {
+    "id": "15",
+    "name": "Flyer MP-4.100 ENG.pdf",
+    "type": "pdf",
+    "category": "Brochure",
+    "size": "30.17 MB",
+    "date": "2025-10-07T09:12:58.740Z",
+    "url": "/files/Flyer MP-4.100 ENG.pdf",
+    "previewUrl": "/files/Flyer MP-4.100 ENG.pdf"
   }
 ]

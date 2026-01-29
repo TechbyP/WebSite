@@ -176,20 +176,39 @@ export const HeaderProvider: React.FC<{ children: React.ReactNode }> = ({ childr
   };
 
   // Language options configuration
-  const languageOptions = [
-    {
-      code: 'en',
-      name: t('header.languageSwitcher.en'),
-      flag: '🇬🇧',
-      ariaLabel: t('header.languageSwitcher.switchToEnglish')
-    },
-    {
-      code: 'de',
-      name: t('header.languageSwitcher.de'),
-      flag: '🇩🇪',
-      ariaLabel: t('header.languageSwitcher.switchToGerman')
-    }
-  ];
+const languageOptions = [
+  {
+    code: 'en',
+    name: t('header.languageSwitcher.en'),
+    flag: '🇬🇧',
+    ariaLabel: t('header.languageSwitcher.switchToEnglish')
+  },
+  {
+    code: 'de',
+    name: t('header.languageSwitcher.de'),
+    flag: '🇩🇪',
+    ariaLabel: t('header.languageSwitcher.switchToGerman')
+  },
+  {
+    code: 'es',
+    name: t('header.languageSwitcher.es'),
+    flag: '🇪🇸',
+    ariaLabel: t('header.languageSwitcher.switchToSpanish')
+  },
+  {
+    code: 'fr',
+    name: t('header.languageSwitcher.fr'),
+    flag: '🇫🇷',
+    ariaLabel: t('header.languageSwitcher.switchToFrench')
+  },
+  {
+    code: 'ro',
+    name: t('header.languageSwitcher.ro'),
+    flag: '🇷🇴',
+    ariaLabel: t('header.languageSwitcher.switchToRomanian')
+  }
+];
+
 
   return (
 
@@ -429,6 +448,9 @@ export const HeaderProvider: React.FC<{ children: React.ReactNode }> = ({ childr
                     >
                       <option value="en">🇬🇧 English</option>
                       <option value="de">🇩🇪 Deutsch</option>
+                      <option value="es">🇪🇸 Español</option>
+                      <option value="fr">🇫🇷 Français</option>
+                      <option value="ro">🇷🇴 Română</option>
                     </select>
                   </div>
 

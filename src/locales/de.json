@@ -419,6 +419,9 @@
     "languageSwitcher": {
       "en": "",
       "de": "",
+       "es": "",
+       "fr": "",
+       "ro": "",
       "ariaLabel": "Sprache ändern"
     }
   },
@@ -1485,8 +1488,8 @@
     ],
     "description": "Effizient, zuverlässig und unaufdringlich stark. Bodenproben mit hydraulischer Power.",
     "herodescription": "Der <strong>DH-1.30</strong> ist ein robuster hydraulischer Bodenprobenehmer, der mit ruhiger Kraft arbeitet – keine Spielerei, sondern solide Ergebnisse. Bohrt bis zu <strong>30 cm</strong> tief, angetrieben von einem Hydraulikmotor, also viel Power, ohne Elektronik. Etwas lauter als sein elektrischer Kollege, aber kein Angeber. Einfach nur zuverlässig, Tag für Tag.",
-    "detailedDescription": "<p class='mt-4'>Der <strong>DH-1.30</strong> kombiniert das durchdachte Design seines <strong>elektrischen Bruders</strong> mit einem <strong>hydraulischen Motor</strong> – ideal, wenn Sie Hydraulikleistung zur Verfügung haben und mehr Drehmoment brauchen.</p><p class='mt-4'>Die <strong>Tiefensteuerung</strong> ist präzise bis auf den Millimeter und gleicht unebenen Boden spielend aus.</p><p class='mt-4'>Bedienung ist kinderleicht: <strong>Ein Knopf, zwei voreingestellte Tiefen</strong> – wer will schon komplizierte Steuerungen?</p><p class='mt-4'>Mit 45 kg ist das Gerät robust, aber leicht genug, um ohne Gabelstapler bewegt zu werden.</p><p class='mt-4'>Montierbar auf Quads, Anhängern, Pickups oder leichten Fahrzeugen – vielseitig und praktisch.</p><p class='mt-4'>Wer klassische Hydraulik und deutsche Ingenieurskunst schätzt, trifft hier eine gute Wahl.</p>",
-    "price": "Ab 11.200 €",
+    "detailedDescription": "<p class='mt-4'>Der <strong>DH-1.30</strong> kombiniert das durchdachte Design seines <strong>elektrischen Bruders</strong> mit einem <strong>hydraulischen Motor</strong> – ideal, wenn Sie Hydraulikleistung zur Verfügung haben und mehr Drehmoment brauchen.</p><p class='mt-4'>Die <strong>Tiefensteuerung</strong> ist präzise bis auf den Millimeter und gleicht unebenen Boden spielend aus.</p><p class='mt-4'>Bedienung ist kinderleicht: <strong>Ein Knopf, zwei voreingestellte Tiefen</strong> – wer will schon komplizierte Steuerungen?</p><p class='mt-4'>Mit 43 kg ist das Gerät robust, aber leicht genug, um ohne Gabelstapler bewegt zu werden.</p><p class='mt-4'>Montierbar auf Quads, Anhängern, Pickups oder leichten Fahrzeugen – vielseitig und praktisch.</p><p class='mt-4'>Wer klassische Hydraulik und deutsche Ingenieurskunst schätzt, trifft hier eine gute Wahl.</p>",
+    "price": "Ab 8.950 €",
     "features": [
       "Hydraulisch angetrieben, kein Akku oder Kabel",
       "Vollautomatische Entnahme bis 30 cm",
@@ -1520,7 +1523,7 @@
       "Montageoptionen": "Quad, Anhänger, Pickup, Leichtfahrzeug",
       "Behälter": "Wasserdicht, robust",
       "Antriebsquelle": "Hydraulikmotor (135 bar, 20 l/min)",
-      "Gewicht": "45 kg"
+      "Gewicht": "43 kg"
     },
     "testimonials": [
       {
@@ -1554,7 +1557,7 @@
       "Millimetergenaue Tiefenverstellung (weil fast reicht nicht)",
       "Unabhängig von Fahrwerksbewegungen – keine Tiefen-Zickereien",
       "Zwei Schnellwahl-Tiefen",
-      "Kompakt und leicht mit 45 kg",
+      "Kompakt und leicht mit 43 kg",
       "Läuft mit 24-V-Akku-Pack (separat erhältlich)"
     ],
     "applications": [
@@ -1578,7 +1581,7 @@
       "Mounting Options": "Quads, Pickup, Anhänger, Leichtfahrzeuge",
       "Control": "Elektrisches Knopfpaneel",
       "Operating Voltage": "24 V DC",
-      "Weight": "45 kg"
+      "Weight": "43 kg"
     },
     "testimonials": [
       {
@@ -1611,7 +1614,7 @@
     ],
     "description": "Anhängen, beproben, weiterfahren – kein Stress, kein Warten.",
     "herodescription": "Das ist der <strong>BOPROB III</strong> – oder auch charmant <strong>Der Sechzehn-Express</strong> genannt. Ein Anhänger, der während der Fahrt Bodenproben nimmt. Wirklich. Kein Anhalten, kein Knöpfchendrücken, keine Schreierei am Praktikanten. Einfach anhängen und den Job machen lassen.",
-    "detailedDescription": "<p className='mt-4'>Der <strong>Sechzehn-Express</strong> ist ein cleveres Gerät. Ein <strong>Anhänger-Bodenprobennehmer</strong>, der arbeitet, während du fährst. So sollte alles funktionieren – tut es aber nicht.</p><p className='mt-4'>Die Probenahme läuft flott dank eines <strong>hydraulischen Hammers</strong> und einer <strong>360°-Drehkurbel</strong>, die wie ein höflicher Presslufthammer den Boden ansticht und den Kern in das Magazin auswirft.</p><p className='mt-4'>Alles wird von einem <strong>7-Zoll-Touchscreen</strong> überwacht – ein feines Teil –, damit du jederzeit weißt, was läuft. Optional gibt’s sogar eine Kamera, falls du zuschauen willst oder einfach dein neues Spielzeug bewundern möchtest.</p><p className='mt-4'>Große, weiche Reifen (<strong>235/60 R16</strong>, für Kenner) sorgen für minimalen Bodendruck – schlammiges Gelände? Nur, wenn du es drauf anlegst.</p><p className='mt-4'>Anhängen lässt sich der Anhänger spielend leicht an <strong>Traktoren, Pickups, Quads oder was immer eine Anhängerkupplung hat</strong>. Kein Gefummel, keine Adapter, keine Werkstatt-Heldenaktionen. Und nach getaner Arbeit einfach abkoppeln.</p><p className='mt-4'>Fährst du zu schnell oder zu langsam (weil du die Landschaft genießt), macht die Maschine einfach nicht mit. Schlauer als mancher Fahrer.</p>",
+    "detailedDescription": "<p className='mt-4'>Der <strong>Sechzehn-Express</strong> ist ein cleveres Gerät. Ein <strong>Anhänger-Bodenprobennehmer</strong>, der arbeitet, während du fährst. So sollte alles funktionieren – tut es aber nicht.</p><p className='mt-4'>Die Probenahme läuft flott dank einer <strong>360°-Drehkurbel</strong>, die wie ein höflicher Presslufthammer den Boden ansticht und den Kern in das Magazin auswirft.</p><p className='mt-4'>Alles wird von einem <strong>7-Zoll-Touchscreen</strong> überwacht – ein feines Teil –, damit du jederzeit weißt, was läuft. Optional gibt’s sogar eine Kamera, falls du zuschauen willst oder einfach dein neues Spielzeug bewundern möchtest.</p><p className='mt-4'>Große, weiche Reifen (<strong>235/60 R16</strong>, für Kenner) sorgen für minimalen Bodendruck – schlammiges Gelände? Nur, wenn du es drauf anlegst.</p><p className='mt-4'>Anhängen lässt sich der Anhänger spielend leicht an <strong>Traktoren, Pickups, Quads oder was immer eine Anhängerkupplung hat</strong>. Kein Gefummel, keine Adapter, keine Werkstatt-Heldenaktionen. Und nach getaner Arbeit einfach abkoppeln.</p><p className='mt-4'>Fährst du zu schnell oder zu langsam (weil du die Landschaft genießt), macht die Maschine einfach nicht mit. Schlauer als mancher Fahrer.</p>",
     "price": "Ab 28.500 €",
     "features": [
       "Hydraulischer Hammerschlag und Drehmechanismus",
@@ -1673,7 +1676,7 @@
     "nickname": "Montagekit",
     "name": "Lay-Down",
     "specs": [
-      "Standard 50 mm kupplungsflansch mit 13-poligem 12-V-Stecker erforderlich",
+      "Standard 50 mm Kupplungsflansch mit 13-poligem 12-V-Stecker erforderlich",
       "Gewicht: ca. 70 kg (DH/DE), ca. 80 kg (MP-Halterung)",
       "EN 10025 S355 Stahl, pulverbeschichtet, 4 mm stark",
       "Klapp- und Kupplungsstabilität"
@@ -1681,7 +1684,7 @@
     "description": "Ein unaufgeregter Montagebügel für deinen Sampler – passt an die meisten zivilisierten Fahrzeuge, ohne Theater.",
     "herodescription": "Das <strong>Montagekit</strong> ist die unscheinbare, aber unverzichtbare Halterung, die deinen Sampler zuverlässig an <strong>50 mm Anhängerkupplungen</strong> mit Standard <strong>13-poligem 12-V-Stecker</strong> befestigt. Stabile, pulverbeschichtete Konstruktion aus <strong>4 mm starkem EN 10025 S355 Stahl</strong> hält alles fest, ohne zu klappern oder sich zu verbiegen – auch bei holprigem Gelände.</p><p className='mt-4'>Passt perfekt zu <strong>DE-1.30, DH-Serie und MP-Halterungen</strong>. Klappbar für einfaches An- und Abkuppeln.</p>",
     "detailedDescription": "<p className='mt-4'>Der <strong>Montagebügel</strong> macht das Anbringen deines Samplers an das Zugfahrzeug zum Kinderspiel. Kein Gefrickel mit Sonderadaptern oder Spezialwerkzeug. Einfach montieren, zuschrauben, fertig.</p><p className='mt-4'>Dank pulverbeschichteter Oberfläche trotzt er Regen, Schlamm und Rost. Das Material ist robust genug, um auch mal ein paar Schläge oder Stöße im Feld abzubekommen, ohne die Struktur zu verlieren.</p><p className='mt-4'>Ein weiterer Vorteil ist die klappbare Konstruktion, die das An- und Abkuppeln extrem erleichtert – ideal, wenn du den Sampler öfter wechselst oder transportierst.</p><p className='mt-4'>Der Bügel ist kompatibel mit <strong>Standard-Anhängerkupplungen (50 mm, 13-polig 12V)</strong>, wie man sie in ganz Europa kennt. So bleibt dein Equipment flexibel und sicher.</p>",
-    "price": "ab 650 €",
+    "price": "AB 2.790 €",
     "features": [
       "Standard 50 mm Anhängerkupplung kompatibel",
       "Pulverbeschichteter EN 10025 S355 Stahl, 4 mm stark",
@@ -2043,7 +2046,7 @@
       "Langlebiges Aluminiumgehäuse, IP6K9K bewertet",
       "Kompatibel mit 12–24 V DC Systemen"
     ],
-    "description": "Dunkelheit ist keine Ausrede. Mit 1700 Lumen in einer kompakten, gepanzerten Einheit ist diese LED-Arbeitsleuchte das Ergebnis einer Kreuzung aus Stirnlampe und kleiner Sonne. Ob mitten in der Probennahme oder im Fluch – Sie werden alles klar sehen.",
+    "description": "Dunkelheit ist keine Ausrede. Mit 1700 Lumen in einer kompakten, gepanzerten Einheit ist diese LED-Arbeitsleuchte das Ergebnis einer Kreuzung aus Stirnlampe und kleiner Sonne.",
     "herodescription": "<strong>Probennahme im Dunkeln? Die Sonne vergessen?</strong> Kein Problem. Die Mitternachtssonne liefert <strong>ernsthaft starkes Licht</strong> ohne Hitze, Lärm oder Dieselrechnung.<br/>Montieren, ausrichten, einschalten – dann fragen Sie sich, wie Sie je ohne leben konnten. Es ist keine romantische Beleuchtung. Es ist <strong>mach-den-Job-Beleuchtung</strong>.",
     "detailedDescription": "<p className='mt-4'>Die <strong>LED-Arbeitsleuchte 1700</strong> ist eine <strong>felderprobte, no-nonsense Leuchte</strong>, entwickelt um Dunkelheit zu durchschneiden wie eine Kettensäge Butter. Mit brutalen <strong>1700 Lumen</strong> liefert sie fokussierte Nahfeldbeleuchtung für Probennahme-Rigs, Maschinen oder jede Situation, in der 'Ich glaube ich sehe was' nicht gut genug ist.</p><p className='mt-4'>Mit einem <strong>schwarz eloxierten Aluminiumgehäuse</strong> und den Standards <strong>IP6K7 und IP6K9K</strong> widersteht diese Einheit Wasserstrahlen, Staubstürmen und wahrscheinlich den meisten Ihrer Fehler. Ein <strong>schwenkbarer Halter</strong> ermöglicht präzises Ausrichten, während die <strong>gemusterte Linse</strong> den Strahl breit und nutzbar hält.</p><p className='mt-4'>Kompatibel mit <strong>12–24 V DC</strong> Systemen, zieht die Leuchte 24 W und kommt mit offenen Kabelenden für einfache Integration. Montage durch qualifiziertes Personal erforderlich – <strong>weil schmelzende Kabel im echten Leben weniger lustig sind</strong>.</p>",
     "price": "€67",
@@ -2140,7 +2143,7 @@
     "specs": [
       "Werkzeugstahlkonstruktion (HRC 52)",
       "Konisches Profil (40→38 mm / 35→33 mm / 30→28 mm)",
-      "Laserätzte Tiefenmarkierungen alle 10 cm",
+      "Lasergeätzte Tiefenmarkierungen alle 10 cm",
       "Kompatibel mit N-min Probennahmeprotokollen (VDLUFA, ISO 14255)"
     ],
     "description": "Der Goldstandard für manuelle N-min Probennahme – präzisionsgefertigte, konische Bohrgestänge für harte Böden und Laborgenauigkeit.",
@@ -2287,7 +2290,7 @@
     "name": "Bohrstangen Ø22 mm für normale Bodenprofile",
     "nickname": "Der Tiefenöffner",
     "specs": [
-      "Bohrnut rille, Gesamtlänge 1100 mm, nutzbare Länge 1000 mm",
+      "Bohrnutrille, Gesamtlänge 1100 mm, nutzbare Länge 1000 mm",
       "12 mm Nut zur Aufnahme von Bodenproben",
       "Verlängerungen 1000 mm lang mit 5/8” Innengewinde auf beiden Seiten",
       "Spezielle Schraubenschlüssel zum Festziehen inklusive"

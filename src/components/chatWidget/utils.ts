@@ -2,7 +2,7 @@ import { products } from '../../data/products';
 import { manualData } from '../../data/mpManual';
 import { Product } from './types';
 import { ChatMessage } from './types';
-import { useTranslation } from 'react-i18next';
+
 
 /** ✳️ Assistant welcome lines - Updated for brevity */
 export const introMessages = [

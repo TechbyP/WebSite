@@ -1,0 +1,2677 @@
+{
+  "notFound": {
+    "title": "Of, nu găsim pagina!",
+    "description": {
+      "line1": "Se pare că te-ai rătăcit pe autostrada digitală și ai ajuns în tufișuri.",
+      "line2": "Nu e stricată, doar... puțin pierdută. Ca mine într-un sens giratoriu din Franța."
+    },
+    "backButton": "Înapoi la siguranță",
+    "footer": "(Foarte inspirat, într-adevăr.)"
+  },
+  "headerTheme": {
+    "switchToDark": "Mod întunecat",
+    "switchToLight": "Mod deschis"
+  },
+  "termsOfService": {
+    "back": "Înapoi",
+    "title": "Termeni și condiții",
+    "intro": {
+      "text1": "Acești Termeni și Condiții se aplică tuturor ofertelor furnizate de",
+      "company": "Bodenprobetechnik Peters GmbH",
+      "address": "Am Fliegerhorst 11, 49610 Quakenbrück, Germania (\"noi\", \"nostru\")"
+    },
+    "sections": {
+      "1": {
+        "title": "1. Acceptarea termenilor",
+        "text": "Prin accesarea sau utilizarea site-ului și a serviciilor TechByP, sunteți de acord să respectați acești Termeni și Condiții. Dacă nu sunteți de acord, vă rugăm să nu utilizați serviciile noastre."
+      },
+      "2": {
+        "title": "2. Utilizarea serviciilor",
+        "text": "Puteți folosi site-ul și serviciile noastre numai în scopuri legale și în conformitate cu acești Termeni. Sunteți de acord să nu:",
+        "list": [
+          "Folosiți serviciile într-un mod care încalcă legislația aplicabilă",
+          "Încercați să obțineți acces neautorizat la sistemele noastre",
+          "Interferați cu funcționarea corectă a serviciilor noastre",
+          "Folosiți mijloace automate pentru a accesa serviciile noastre fără permisiune"
+        ]
+      },
+      "3": {
+        "title": "3. Proprietate intelectuală",
+        "text": "Tot conținutul de pe site-ul nostru, inclusiv texte, grafice, sigle și imagini, este proprietatea TechByP și este protejat de legile privind proprietatea intelectuală. Nu puteți folosi conținutul nostru fără permisiunea noastră scrisă expresă."
+      },
+      "4": {
+        "title": "4. Informații despre produse",
+        "text": "Ne străduim să oferim informații exacte despre produse, dar nu garantăm că descrierile produselor sau alte conținuturi sunt complete, fiabile sau fără erori. Specificații pot fi modificate fără notificare."
+      },
+      "5": {
+        "title": "5. Limitarea răspunderii",
+        "text": "TechByP nu va fi răspunzătoare pentru eventuale daune indirecte, incidentale, speciale sau consecințe rezultate din utilizarea sau imposibilitatea de utilizare a serviciilor noastre, chiar dacă am fost informați despre posibilitatea unor astfel de daune."
+      },
+      "6": {
+        "title": "6. Legea aplicabilă",
+        "text": "Acești Termeni vor fi guvernați și interpretați în conformitate cu legile Germaniei, fără a ține cont de conflictul de legi."
+      },
+      "7": {
+        "title": "7. Modificări ale termenilor",
+        "text": "Ne rezervăm dreptul de a modifica acești Termeni în orice moment. Utilizarea continuă a serviciilor noastre după astfel de modificări constituie acceptarea noilor Termeni.",
+        "effectiveDate": "Data intrării în vigoare: 31 iulie 2025"
+      }
+    }
+  },
+  "back": "Înapoi",
+  "imprint": "Mentă legală",
+  "legalDisclosure": {
+    "title": "Declarație legală",
+    "text": "Conform § 5 TMG (Legea germană privind telemediale)"
+  },
+  "company": {
+    "name": "Bodenprobetechnik Peters GmbH",
+    "address": {
+      "street": "Am Fliegerhorst 11",
+      "zipCity": "49610 Quakenbrück",
+      "country": "Germania"
+    }
+  },
+  "contact": {
+    "title": "Contact",
+    "phoneLabel": "Telefon:",
+    "phone": "+49 (0) 5431 936440",
+    "emailLabel": "Email:",
+    "email": "info@bodenprobetechnik.de",
+    "websiteLabel": "Site web:",
+    "website": "https://www.bodenprobetechnik.de"
+  },
+  "representedBy": {
+    "title": "Reprezentat de",
+    "name": "Walter Peters (Director General)"
+  },
+  "registerEntry": {
+    "title": "Înregistrare în registru",
+    "entry": "Înregistrare în Registrul Comerțului:",
+    "registerCourt": "Instanța de înregistrare: Amtsgericht Osnabrück",
+    "registrationNumber": "Număr de înregistrare: HRB 216172"
+  },
+  "vatId": {
+    "title": "ID TVA",
+    "text": "Conform §27a din Legea germană privind TVA:",
+    "id": "DE343019007"
+  },
+  "taxNumber": {
+    "title": "Număr de impozit",
+    "text": "Steuer-Nr.: 67/201/26982"
+  },
+  "bankDetails": {
+    "title": "Detalii bancare",
+    "bankLabel": "Bancă:",
+    "bank": "Kreissparkasse Bersenbrück",
+    "accountNoLabel": "Nr. cont:",
+    "accountNo": "085 4251 14",
+    "bankCodeLabel": "Cod bancar (BLZ):",
+    "bankCode": "265 515 40",
+    "ibanLabel": "IBAN:",
+    "iban": "DE42 2655 1540 0085 4251 14",
+    "bicLabel": "BIC:",
+    "bic": "NOLADE21BEB"
+  },
+  "responsibleContent": {
+    "title": "Responsabil pentru conținut",
+    "text": "Conform § 55 Abs. 2 RStV:",
+    "name": "Walter Peters",
+    "address": {
+      "street": "Am Fliegerhorst 11",
+      "zipCity": "49610 Quakenbrück",
+      "country": "Germania"
+    }
+  },
+  "cookie": {
+    "message": "Niciun fursec aici, doar cookie-uri digitale. Ne ajută să îmbunătățim experiența pe site.",
+    "learnMore": "Află mai multe",
+    "accept": "Da, e în regulă.",
+    "reject": "Refuză cookie-urile"
+  },
+  "privacy": {
+    "back": "Înapoi",
+    "title": "Politica de confidențialitate",
+    "introduction": {
+      "title": "1. Introducere",
+      "text": "TechByP (\"noi\", \"nostru\") se angajează să protejeze confidențialitatea dvs. Această politică explică cum colectăm, folosim și protejăm informațiile dvs."
+    },
+    "dataCollection": {
+      "title": "2. Colectarea datelor",
+      "text": "Putem colecta informații personale, cum ar fi numele, adresa de email, numărul de telefon și detalii despre companie când dumneavoastră:",
+      "items": [
+        "Contactați-ne prin site-ul nostru",
+        "Solicitați o ofertă sau informații despre produs",
+        "Abonați-vă la newsletter-ul nostru",
+        "Descărcați resurse de pe site-ul nostru"
+      ]
+    },
+    "useOfData": {
+      "title": "3. Utilizarea datelor",
+      "text": "Folosim informațiile colectate pentru:",
+      "items": [
+        "Furnizăm și întreținem serviciile noastre",
+        "Răspundem la întrebările și solicitările dvs.",
+        "Îmbunătățim site-ul și produsele noastre",
+        "Trimitem emailuri periodice (vă puteți dezabona oricând)"
+      ]
+    },
+    "dataProtection": {
+      "title": "4. Protecția datelor",
+      "text": "Implementăm măsuri tehnice și organizatorice adecvate pentru a proteja datele dvs. personale împotriva accesului neautorizat, modificării sau distrugerii."
+    },
+    "thirdParty": {
+      "title": "5. Servicii terțe",
+      "text": "Putem angaja companii terțe pentru a facilita serviciile noastre (de ex., găzduire site, analize). Aceste terțe părți au acces la informațiile dvs. doar pentru a îndeplini sarcini specifice în numele nostru."
+    },
+    "cookies": {
+      "title": "6. Cookie-uri și urmărire",
+      "text": "Folosim cookie-uri pentru a îmbunătăți experiența și a analiza traficul. Această secțiune explică ce cookie-uri folosim și cum le puteți gestiona.",
+      "items": [
+        "Cookie-uri necesare: necesare pentru funcționalitatea de bază a site-ului.",
+        "Cookie-uri de analiză: folosim Google Analytics pentru a colecta statistici anonime și a îmbunătăți ofertele."
+      ],
+      "manageText": "Puteți accepta cookie-urile pentru a îmbunătăți experiența sau le puteți refuza din setările browserului. Unele funcționalități pot fi indisponibile dacă refuzați cookie-urile."
+    },
+    "rights": {
+      "title": "7. Drepturile dvs.",
+      "text": "Aveți dreptul de a:",
+      "items": [
+        "Accesați, actualizați sau ștergeți informațiile dvs.",
+        "Formulați obiecții cu privire la prelucrarea datelor dvs.",
+        "Solicitați restricționarea prelucrării",
+        "Solicitați portabilitatea datelor"
+      ],
+      "contact": "Pentru a exercita aceste drepturi, contactați-ne la privacy@techbyp.com."
+    },
+    "changes": {
+      "title": "8. Modificări ale acestei politici",
+      "text": "Putem actualiza Politica de Confidențialitate periodic. Vă vom informa despre modificări prin publicarea noii politici pe această pagină."
+    }
+  },
+  "blogEdit": {
+    "chooseFile": "Alege un fișier pentru încărcare",
+    "selectArticle": "Selectează un articol",
+    "wantToCreateArticle": "Creează primul tău articol pentru a începe",
+    "selectFromArticle": "Alege un articol din bara laterală sau creează unul nou",
+    "author": "Nume autor",
+    "title": "Titlu",
+    "excerpt": "Rezumat",
+    "content": "Conținut",
+    "authorName": "Nume autor",
+    "authorRole": "Rol autor",
+    "date": "Dată",
+    "readTime": "Timp de citire",
+    "category": "Categorie",
+    "articleImage": "Imagine articol",
+    "authorAvatar": "Avatar autor",
+    "uploadFile": "Încarcă fișier",
+    "useDefault": "Folosește implicit",
+    "orPasteUrl": "Sau lipește URL-ul imaginii direct",
+    "cancel": "Anulează",
+    "saveArticle": "Salvează articolul",
+    "edit": "Editează",
+    "delete": "Șterge",
+    "newArticle": "Articol nou",
+    "searchArticles": "Caută articole...",
+    "language": "Limbă",
+    "english": "Engleză",
+    "german": "Germană",
+    "articles": "Articole",
+    "allCategories": "Toate categoriile",
+    "sortBy": "Sortează după",
+    "newestFirst": "Cele mai noi prima",
+    "oldestFirst": "Cele mai vechi prima",
+    "titleAtoZ": "Titlu (A-Z)",
+    "titleZtoA": "Titlu (Z-A)",
+    "shortestFirst": "Cel mai scurt mai întâi",
+    "longestFirst": "Cel mai lung mai întâi",
+    "noArticlesFound": "Nu s-au găsit articole",
+    "publishedOn": "Publicat la",
+    "addParagraph": "Adaugă paragraf",
+    "removeParagraph": "Elimină paragraf",
+    "markdownSupported": "Folosește formatare Markdown",
+    "categories": {
+      "technology": "Tehnologie",
+      "events": "Evenimente",
+      "sustainability": "Sustenabilitate",
+      "team": "Echipă",
+      "soil": "Solf",
+      "how-to": "Ghid",
+      "machine": "Mașină"
+    }
+  },
+  "commentsFunction": {
+    "placeholderName": "Numele tău (sau cum vrei să fii numit)",
+    "placeholderCompany": "Companie (opțional)",
+    "placeholderText": "Spune-ne părerea ta (fără spoilere)",
+    "rating": "Evaluare",
+    "rateStar": "Evaluează cu {{star}} stea",
+    "submit": "Trimite",
+    "anonymous": "Anonim",
+    "anonymousInitial": "A",
+    "fromCompany": "de la {{company}}",
+    "like": "Îmi place acest comentariu",
+    "unlike": "Nu-mi mai place acest comentariu"
+  },
+  "loadingArticle": "Se încarcă articolul...",
+  "errorLoadingArticle": "Eroare la încărcarea articolului",
+  "backToBlog": "Înapoi la blog",
+  "articleNotFound": "Articolul nu a fost găsit",
+  "failedToLoad": "Încarcare eșuată",
+  "checkThisArticle": "Vezi acest articol",
+  "backToArticles": "Înapoi la articole",
+  "share": "Distribuie",
+  "print": "Tipărește",
+  "twitter": "Twitter",
+  "linkedin": "LinkedIn",
+  "email": "Email",
+  "moreLikeThis": "Alte articole asemănătoare",
+  "comments": "Comentarii ({{count}})",
+  "views": "vizualizări",
+  "category": "{{category}}",
+  "readTime": "{{time}} citire",
+  "heroEditor": {
+    "fetchError": "Eroare la încărcarea elementelor din secțiunea principală",
+    "createSuccess": "Element creat cu succes!",
+    "updateSuccess": "Element actualizat cu succes!",
+    "saveError": "Eroare la salvarea elementului",
+    "deleteConfirm": "Sigur doriți să ștergeți acest element?",
+    "delete": "Șterge",
+    "cancel": "Anulează",
+    "deleteSuccess": "Element șters cu succes!",
+    "deleteError": "Eroare la ștergerea elementului",
+    "createSlide": "Creează un slide nou",
+    "editSlide": "Editează slide",
+    "homeScreen": "Ecran principal",
+    "untitledSlide": "Slide fără titlu",
+    "noSlides": "Nu s-au găsit slide-uri",
+    "selectSlide": "Selectează un slide",
+    "createFirstSlide": "Creează primul slide pentru a începe",
+    "chooseOrCreate": "Alege un slide din bara laterală sau creează unul nou",
+    "createNewSlide": "Creează slide nou",
+    "addNewSlide": "Adaugă slide nou",
+    "edit": "Editează",
+    "language": "Limbă",
+    "slideType": "Tip slide",
+    "event": "Eveniment",
+    "product": "Produs",
+    "article": "Articol",
+    "title": "Titlu",
+    "excerpt": "Rezumat",
+    "date": "Dată",
+    "datePlaceholder": "ex. 9-15 noiembrie 2025",
+    "selectBlogPost": "Selectează postarea de blog",
+    "callToAction": "Îndemn la acțiune",
+    "ctaPlaceholder": "ex. Află mai multe",
+    "backgroundImage": "Imagine de fundal",
+    "required": "Obligatoriu",
+    "uploading": "Se încarcă...",
+    "selectImage": "Selectează imagine",
+    "uploadingImage": "Se încarcă imaginea...",
+    "displayOrder": "Ordine afișare",
+    "saving": "Se salvează...",
+    "saveSlide": "Salvează slide",
+    "readMore": "Citește mai mult",
+    "link": "Link buton"
+  },
+  "editor": {
+    "announcements": "Anunțuri",
+    "newAnnouncement": "Anunț nou",
+    "active": "Activ",
+    "inactive": "Inactiv",
+    "priority": "Prioritate",
+    "delete": "Șterge",
+    "createNew": "Creează anunț nou",
+    "editAnnouncement": "Editează anunț",
+    "tag": "Etichetă",
+    "tagPlaceholder": "Despre ce este",
+    "title": "Titlu",
+    "titlePlaceholder": "Textul alb",
+    "subtitle": "Subtitlu",
+    "subtitlePlaceholder": "Textul verde mai mic",
+    "dateInfo": "Informații despre dată",
+    "dateInfoPlaceholder": "Când?",
+    "location": "Locație",
+    "locationPlaceholder": "Unde?",
+    "priorityLabel": "(Cele cu prioritate mai mare se afișează primele)",
+    "ctaPrimary": "Text CTA primar",
+    "ctaPrimaryPlaceholder": "Text buton (ex. 'Închide')",
+    "ctaPrimaryLink": "Link CTA primar",
+    "ctaPrimaryLinkPlaceholder": "Link opțional (lasă gol pentru a închide modalul)",
+    "ctaSecondary": "Text CTA secundar",
+    "ctaSecondaryPlaceholder": "Buton opțional",
+    "ctaSecondaryLink": "Link CTA secundar",
+    "ctaSecondaryLinkPlaceholder": "Link opțional",
+    "description": "Descriere",
+    "image": "Imagine",
+    "hasImage": "Acest anunț are deja o imagine",
+    "removeImage": "Elimină imaginea curentă",
+    "uploading": "Se încarcă...",
+    "replaceImage": "Înlocuiește imaginea",
+    "selectImage": "Selectează imagine",
+    "currentImage": "Imagine curentă:",
+    "imagePreview": "Previzualizare imagine:",
+    "activeAnnouncement": "Anunț activ",
+    "showDelay": "Întârziere afișare (ms)",
+    "new": "Nou",
+    "save": "Salvează anunț",
+    "saving": "Se salvează...",
+    "loadError": "Eroare la încărcarea anunțurilor",
+    "imageUploadSuccess": "Imagine încărcată cu succes!",
+    "imageUploadError": "Eroare la încărcarea imaginii",
+    "imageRemoved": "Imagine eliminată",
+    "createSuccess": "Anunț creat cu succes!",
+    "updateSuccess": "Anunț actualizat cu succes!",
+    "createError": "Eroare la crearea anunțului",
+    "updateError": "Eroare la actualizarea anunțului",
+    "deleteConfirm": "Sigur doriți să ștergeți acest anunț?",
+    "deleteSuccess": "Anunț șters cu succes!",
+    "deleteError": "Eroare la ștergerea anunțului"
+  },
+  "announcement": {
+    "close": "Închide anunțul"
+  },
+  "modal": {
+    "invalidEmail": "Adresa de email introdusă nu pare validă. Încearcă din nou.",
+    "success": "Perfect! Ești membru TechByP. Bine ai venit.",
+    "error": "Ceva nu a mers bine. Încearcă din nou.",
+    "imageAlt": "Alătură-te clubului TechByP",
+    "closeLabel": "Închide fereastra",
+    "title": "Alătură-te clubului TechByP.",
+    "description": "E ca o societate secretă, dar fără strângere de mână — doar emailuri despre chestii tehnice interesante. Promitem să nu exagerăm cu spam-ul.",
+    "placeholder": "email@exemplu.com",
+    "button": "Abonează-te",
+    "loading": "Se abonează...",
+    "note": "Prin click accepți să primești emailuri care conțin fie 'briliante', fie ocazional 'cum a trecut asta?'."
+  },
+  "footer": {
+    "invalidEmail": "Adresa de email nu pare validă.",
+    "success": "Super! Ești abonat la TechByP.",
+    "error": "Ceva nu a mers bine. Încearcă din nou.",
+    "title": "Vrei mai mult TechByP în viața ta?",
+    "description": "Alătură-te clubului nostru. E ca un newsletter, dar cu mai multă personalitate.",
+    "placeholder": "Adresă de email",
+    "button": "Abonează-te",
+    "note": "Îți vom trimite emailuri ocazionale. Probabil nu la 3 dimineața.",
+    "copyright": "© {{year}} TechByP – Bodenprobetechnik Peters. Toate drepturile rezervate."
+  },
+  "header": {
+    "logoAlt": "Logo TechByP",
+    "logoLabel": "Mergi la pagina principală",
+    "navigation": {
+      "products": "PRODUSE",
+      "applications": "APLICAȚII",
+      "about": "DESPRE",
+      "insights": "INFORMAȚII",
+      "contact": "CONTACT",
+      "downloads": "DESCĂRCĂRI"
+    },
+    "mobileMenu": {
+      "open": "Deschide meniul",
+      "close": "Închide meniul"
+    },
+    "categories": {
+      "all": "TOATE PRODUSELE",
+      "smartsystems": "SISTEME INTELIGENTE",
+      "accessory": "ACCESORII",
+      "manual": "UNELTE MANUALE",
+      "Bespoke Machinery": "MAȘINĂRII CUSTOMIZATE"
+    },
+    "languageSwitcher": {
+      "en": "",
+      "de": "",
+      "es": "",
+      "fr": "",
+      "ro": "",
+      "ariaLabel": "Schimbă limba"
+    }
+  },
+  "hero": {
+    "loading": "Se încarcă conținutul principal...",
+    "newsTypes": {
+      "product": "Noutăți produs",
+      "event": "Eveniment",
+      "announcement": "Anunț",
+      "blog": "Blog"
+    },
+    "ctaDemo": "Vezi demonstrația",
+    "videoTitle": "Vezi produsele noastre în acțiune",
+    "categoryDescriptions": {
+      "bestseller": "Acestea sunt mașinile care se vând rapid — robuste, de încredere și populare pentru un motiv întemeiat.",
+      "all": "Tot ce oferim, de la cele mari și robuste până la cele mici și ingenioase.",
+      "smartsystems": "Partea inteligentă a prelevării de sol — automată, precisă și extrem de bine proiectată.",
+      "accessory": "Accesoriile care țin totul laolaltă — ajutoare utile pentru funcționare.",
+      "manual": "Unelte manuale de încredere — practice, robuste și durabile."
+    },
+    "customEquipment": {
+      "title": "Ai nevoie de echipament personalizat?",
+      "description": "Echipa noastră de inginerie poate proiecta și fabrica echipamente specializate adaptate cerințelor tale.",
+      "viewCatalog": "Vezi catalogul complet",
+      "contactEngineering": "Contactează echipa de inginerie",
+      "quickConfigure": "Configurare rapidă pentru toate produsele"
+    },
+    "home": {
+      "tagline": "Made in Germany din 1989",
+      "titleLine1": "De încredere,",
+      "titleLine2": "pentru viață.",
+      "description": "Ceea ce facem este destul de simplu: construim lucruri bine — proiectate cu atenție și adaptate nevoilor tale. Și apoi le îmbunătățim, datorită feedback-ului tău. Calitate pe termen lung.",
+      "ctaProducts": "Explorează produsele",
+      "ctaDemo": "Urmărește demonstrația"
+    }
+  },
+  "categories": {
+    "all": "TOATE PRODUSELE",
+    "manual": "UNELTE MANUALE",
+    "smartsystems": "SISTEME INTELIGENTE",
+    "accessory": "ACCESORII",
+    "bespoke machinery": "CUSTOMIZATE",
+    "Bespoke Machinery": "CUSTOMIZATE"
+  },
+  "productCard": {
+    "readMore": "Citește mai mult",
+    "showLess": "Arată mai puțin",
+    "configure": "Configurează",
+    "quickConfigure": "Configurare rapidă",
+    "quote": "Solicită ofertă",
+    "requestQuote": "Cere ofertă",
+    "toggleMenu": "Comută meniul categorii"
+  },
+  "sortDropdown": {
+    "defaultLabel": "Sortează după...",
+    "ariaLabels": {
+      "toggleSort": "Comută ordinea sortării",
+      "clearSort": "Șterge sortarea"
+    },
+    "options": {
+      "price": {
+        "main": "Preț",
+        "description": "să nu‑ți golească portofelul"
+      },
+      "electric": {
+        "main": "Electric",
+        "description": "plin de energie"
+      },
+      "hydraulic": {
+        "main": "Hidraulic",
+        "description": "forță lichidă"
+      },
+      "depth": {
+        "main": "Adâncime",
+        "description": "cât de adânc să mergem"
+      },
+      "magazines": {
+        "main": "Magazine",
+        "description": "mai multe, mai bine"
+      }
+    }
+  },
+  "application": {
+    "heading": "Proiectat pentru orice misiune de prelevare a solului",
+    "subheading": "Fie că este cercetare agricolă sau construcții grele, uneltele noastre oferă precizie pe care o apreciază chiar și cei mai exigenți ingineri.",
+    "applications": {
+      "agriculture": {
+        "title": "Agricultură",
+        "description": "Analiza sănătății solului, cartografierea nutrienților și optimizarea producției pentru ferme moderne.",
+        "features": [
+          "Testare pH sol",
+          "Analiză nutrienți",
+          "Evaluare compactare",
+          "Planificare irigații"
+        ]
+      },
+      "geotechnicalSurvey": {
+        "title": "Sondaj geotehnic",
+        "description": "Analiza fundațiilor, stabilitatea pantelor și evaluarea amplasamentelor pentru proiecte inginerești.",
+        "features": [
+          "Capacitate portanta",
+          "Analiză tasare",
+          "Stabilitate pantă",
+          "Proiectare fundații"
+        ]
+      },
+      "environmentalResearch": {
+        "title": "Cercetare de mediu",
+        "description": "Detectarea contaminărilor, monitorizarea mediului și evaluarea impactului ecologic.",
+        "features": [
+          "Detectare contaminare",
+          "Monitorizare ape subterane",
+          "Impact de mediu",
+          "Planificare remediere"
+        ]
+      },
+      "construction": {
+        "title": "Construcții",
+        "description": "Pregătirea sitului, testarea materialelor și controlul calității pentru proiecte de infrastructură.",
+        "features": [
+          "Pregătire șantier",
+          "Testare materiale",
+          "Controlul calității",
+          "Evaluare siguranță"
+        ]
+      }
+    },
+    "customSolutionPrompt": "Ai nevoie de o soluție personalizată?",
+    "contactButton": "Contactează inginerii noștri"
+  },
+  "partnersHeader": {
+    "title": "De încredere pentru institute de cercetare și industrie de top",
+    "description": "Universități și institute agricole se bazează pe Bodenprobetechnik Peters pentru tehnologie de prelevare a solului de precizie."
+  },
+  "partners": [
+    "Technical University of Munich",
+    "University of Göttingen",
+    "Julius Kühn-Institut",
+    "Humboldt University Berlin",
+    "Bavarian State Institute of Agriculture",
+    "RWTH Aachen University"
+  ],
+  "testimonialsHeader": {
+    "title": "Ce spun clienții noștri",
+    "description": "Profesioniști din agricultură, geotehnică și consultanță de mediu au încredere în echipamentele TechByP."
+  },
+  "testimonials": [
+    {
+      "quote": "Bodenprobetechnik Peters' soil samplers deliver unmatched precision and durability in field conditions. Their machines are vital to our soil health research.",
+      "author": "Prof. Dr. Markus Schneider",
+      "position": "Head of Soil Science, University of Göttingen",
+      "rating": 5
+    },
+    {
+      "quote": "We rely on Bodenprobetechnik Peters for robust equipment that performs reliably in demanding geotechnical projects across Germany.",
+      "author": "Anna Meier",
+      "position": "Senior Project Engineer, Geotechnik GmbH",
+      "rating": 5
+    },
+    {
+      "quote": "Exceptional German engineering combined with attentive customer service makes Bodenprobetechnik Peters our preferred partner for soil sampling technology.",
+      "author": "Dr. Thomas Wagner",
+      "position": "Agricultural Consultant",
+      "rating": 5
+    }
+  ],
+  "certifications": [
+    {
+      "abbr": "CE",
+      "text": "Certificat CE",
+      "bgClass": "bg-red-600"
+    },
+    {
+      "abbr": "DE",
+      "text": "Fabricat în Germania",
+      "bgClass": "bg-gray-800"
+    }
+  ],
+  "certifications.title": "Certificări de calitate",
+  "about": {
+    "madeInGermany": "Fabricat în Germania",
+    "engineeringExcellence": "Excelență în inginerie.",
+    "introText": "Fiecare mașină pe care o construim este modelată de feedback-ul din teren al celor care o folosesc. Dacă ceva poate fi făcut mai rezistent, mai inteligent sau mai ușor de utilizat, noi ne ocupăm.",
+    "alwaysImproving": "ÎNTOTDEAUNA ÎMBUNĂTĂȚIM",
+    "ourMissionTitle": "Misiunea noastră",
+    "ourMissionText": "Să furnizăm unelte de prelevare a solului care câștigă încrederea experților agricoli și a cercetătorilor — din câmpuri până la laboratoare.",
+    "ourJourneyTitle": "Călătoria noastră",
+    "milestones": [
+      {
+        "year": "1989",
+        "event": "Bodenprobetechnik Nietfeld ia naștere — fondată de Walter Nietfeld și gata să sape."
+      },
+      {
+        "year": "2021",
+        "event": "Walter Peters preia conducerea și redenumește compania Bodenprobetechnik Peters GmbH. Aceeași misiune, nume proaspăt."
+      },
+      {
+        "year": "2022",
+        "event": "TechbyP este lansat — clienții noștri internaționali ne cunoșteau deja, acum am făcut-o oficial."
+      },
+      {
+        "year": "2023",
+        "event": "O fabrică nouă strălucitoare se ridică în Quakenbrück, Germania. Precizia are acum o casă nouă."
+      },
+      {
+        "year": "2025",
+        "event": "Rețeaua noastră globală de distribuție primește un upgrade serios. Mai multe țări, mai multe probe, mai multă dragoste pentru sol."
+      }
+    ],
+    "stats": [
+      {
+        "icon": "Globe",
+        "value": "25+",
+        "label": "Țări deservite"
+      },
+      {
+        "icon": "Users",
+        "value": "50+",
+        "label": "Parteneri de cercetare"
+      },
+      {
+        "icon": "Wrench",
+        "value": "35+",
+        "label": "Ani de experiență"
+      },
+      {
+        "icon": "Award",
+        "value": "ISO",
+        "label": "Calitate certificată"
+      }
+    ]
+  },
+  "foot": {
+    "alt": {
+      "logo": "Logo TechByP"
+    },
+    "footer": {
+      "tagline": "Echipament proiectat în Germania pentru profesioniștii solului.",
+      "contact": {
+        "location": "Quakenbrück, Germania",
+        "phone": "+49 (0) 54 31 93 644 0",
+        "email": "info@techbyp.com"
+      },
+      "rights": "© {{year}} TechByP – Bodenprobetechnik Peters. Toate drepturile rezervate."
+    },
+    "newsletter": {
+      "title": "Alătură-te",
+      "description": "Alătură-te clubului nostru. E ca un newsletter, dar cu mai multă personalitate.",
+      "placeholder": "adresa@ta.ro",
+      "subscribe": "Abonează-te",
+      "subscribing": "Se abonează...",
+      "success": "Super! Ești abonat la TechByP.",
+      "note": "Îți vom trimite emailuri ocazionale. Probabil nu la 3 dimineața.",
+      "errorInvalidEmail": "Adresa de email nu pare validă.",
+      "errorSubmit": "Ceva nu a mers bine. Încearcă din nou."
+    },
+    "errors": {
+      "invalidEmail": "Adresa de email nu pare validă.",
+      "generic": "Ceva nu a mers bine. Încearcă din nou."
+    },
+    "dirtTools": {
+      "title": "Unelte pentru sol",
+      "manualProbes": "Sonde manuale",
+      "smartSystems": "Sisteme inteligente",
+      "accessories": "Accesoriile",
+      "customSolutions": "Soluții personalizate"
+    },
+    "support": {
+      "title": "Suport",
+      "downloadCenter": "Centru de descărcări",
+      "userManuals": "Manuale utilizator",
+      "techSupport": "Suport tehnic",
+      "training": "Instruire și certificare"
+    },
+    "company": {
+      "title": "Companie",
+      "aboutUs": "Despre noi",
+      "news": "Noutăți și actualizări",
+      "contact": "Contact",
+      "privacyPolicy": "Politica de confidențialitate",
+      "terms": "Termeni și condiții",
+      "imprint": "Mențiune legală"
+    },
+    "social": {
+      "facebook": "Facebook",
+      "linkedin": "LinkedIn",
+      "youtube": "YouTube",
+      "instagram": "Instagram"
+    }
+  },
+  "product": {
+    "notFound": "Produsul nu a fost găsit",
+    "meta": {
+      "title": "{{brand}} | {{product}} - {{category}}",
+      "description": "{{nickname}}: {{herodescription}} Funcții includ {{features}}. Perfect pentru {{applications}}."
+    },
+    "whatMakesItGreat": "De ce e extraordinar",
+    "goodsCurrentlyGracing": "Produse disponibile pe raft",
+    "articleNo": "Nr. articol",
+    "description": "Descriere",
+    "highlights": "Caracteristici principale",
+    "itShinesHere": "Se evidențiază",
+    "satisfyingBit": "Această parte e chiar satisfăcătoare",
+    "upClosePersonal": "În detaliu",
+    "specsSmarts": "Specificații și funcționalități",
+    "otherCategory": "Alt {{category}}",
+    "provenInField": "Dovedit pe teren",
+    "engineeredForPros": "Proiectat pentru profesioniști",
+    "orderNow": "Comandă acum",
+    "quickConfigure": "Configurare rapidă",
+    "builtTough": "Construit robust, cu inginerie germană",
+    "worryFree": "1 an de liniște",
+    "helpFromHumans": "Ajutor de la oameni care știu meserie",
+    "needHelp": "Ai nevoie de ajutor?",
+    "requestConsultation": "Solicită consultanță tehnică",
+    "downloadBrochure": "Descarcă broșura produsului",
+    "contactSales": "Contactează echipa de vânzări",
+    "order": "Comandă",
+    "configure": "Configurează"
+  },
+  "commons": {
+    "close": "Închide",
+    "previous": "Precedent",
+    "next": "Următor",
+    "imageCounter": "{{current}} din {{total}}",
+    "thumbnail": "Miniatură {{number}}"
+  },
+  "warning": {
+    "sixteenExpress": {
+      "noMountingNeeded": "Oh! The Sixteen Express nu necesită montare - e gata de folosit!",
+      "hasOwnMounting": "Veste bună! The Sixteen Express vine cu propriul sistem de montare.",
+      "noPowerpacksNeeded": "The Sixteen Express nu are nevoie de pachete de alimentare suplimentare.",
+      "selfAcknowledging": "Se recunoaște singur!",
+      "alreadyPerfect1": "Spun că The Sixteen Express e deja perfect — nu e nevoie să modifici nimic!",
+      "alreadyPerfect2": "De ce ai schimba ceva? Este The Sixteen Express!",
+      "alreadyPerfect3": "A tinkering with perfection? Not necessary.",
+      "alreadyPerfect4": "The Sixteen Express nu necesită configurare — necesită apreciere."
+    }
+  },
+  "customerInfo": {
+    "title": "Informații client",
+    "description": "Introduceți detaliile dvs. pentru a finaliza configurarea."
+  },
+  "form": {
+    "fullName": "Nume complet",
+    "fullNamePlaceholder": "Ion Popescu",
+    "email": "Email",
+    "emailPlaceholder": "adresa@ta.ro",
+    "additionalNotes": "Note suplimentare (opțional)",
+    "additionalNotesPlaceholder": "Orice cerință specială?"
+  },
+  "summary": {
+    "title": "Selecția ta",
+    "total": "Total",
+    "pricingNoticeTitle": "Notă privind prețul:",
+    "pricingNoticeText": "Toate prețurile sunt în Euro (€) și nu includ TVA. Prețurile sunt orientative și pot varia în funcție de configurație, opțiuni și disponibilitate."
+  },
+  "buttonsConfigurator": {
+    "back": "Înapoi",
+    "completeOrder": "Finalizează comanda",
+    "processing": "Se procesează..."
+  },
+  "errorsConfigurator": {
+    "botDetected": "Bot detectat.",
+    "completeRecaptcha": "Vă rugăm să completați reCAPTCHA.",
+    "submitFailed": "Trimiterea configurației a eșuat. Încercați din nou."
+  },
+  "submission": {
+    "successTitle": "Configurare trimisă!",
+    "successMessage": "Am primit cererea dvs. și vă vom contacta în curând.",
+    "startNewConfig": "Începe o nouă configurare",
+    "backToHome": "Înapoi la pagina principală"
+  },
+  "productNames": {
+    "trailerMount": "Sistem de remorcă",
+    "powerPack": "Pachet de alimentare"
+  },
+  "unknownProduct": "Produs necunoscut",
+  "notSelected": "Neselectat",
+  "notApplicable": "N/A",
+  "noExtrasSelected": "Niciun extras selectat",
+  "extrasStep": {
+    "title": "Selectați opționalele",
+    "description": "Îmbunătățiți {{productName}} cu aceste accesorii opționale",
+    "unnamedProduct": "Produs fără nume",
+    "noDescription": "Nu există descriere disponibilă",
+    "priceNotAvailable": "Preț indisponibil"
+  },
+  "buttons": {
+    "back": "Înapoi",
+    "continue": "Continuă"
+  },
+  "error": {
+    "somethingWentWrong": "Ceva nu a mers bine",
+    "tryAgain": "Încercați din nou"
+  },
+  "mountingMethod": {
+    "title": "Alege metoda de montare",
+    "subtitle": "Cum intenționați să montați produsul {{productName}}? Alegeți cu atenție.",
+    "trailer": {
+      "alt": "Montare remorcă",
+      "title": "Remorcă specială",
+      "subtitle": "Transport pentru câmp",
+      "description": "Remorcă robustă pentru transportul echipamentului de prelevare a solului.",
+      "price": "De la €3,600"
+    },
+    "vehicle": {
+      "alt": "Montare pe vehicul",
+      "title": "Montare pe vehicul",
+      "subtitle": "Kit de montare",
+      "description": "Detectivul urban al solului — transformă vehiculul tău de zi cu zi într-un instrument dedicat pentru prelevare.",
+      "price": "De la €1 665"
+    }
+  },
+  "powerOptions": {
+    "title": "Opțiuni de alimentare",
+    "trailerDescription": "Alege pachetul de alimentare potrivit pentru montare pe remorcă.",
+    "vehicleDescription": "Alege pachetul de alimentare potrivit pentru montare pe vehicul."
+  },
+  "powerpackWarning": {
+    "title": "Nu a fost selectat un Power Pack",
+    "trailerMessage": "Nu ați selectat un power pack. Remorcile necesită un power pack pentru a funcționa.",
+    "vehicleMessage": "Nu ați selectat un power pack. Vehiculele, de obicei, necesită un power pack pentru a funcționa.",
+    "acknowledge": "Înțeleg riscurile și doresc să continui fără power pack.",
+    "goBack": "Înapoi",
+    "proceed": "Continuă"
+  },
+  "common": {
+    "continue": "Continuă"
+  },
+  "products": {
+    "lay-down-frame": {
+      "name": "Cadru Lay-down",
+      "nickname": "Cadru",
+      "price": "€1.200",
+      "description": "Un cadru robust pentru a susține echipamentul."
+    },
+    "three-point-hitch": {
+      "name": "Cârlig trei puncte",
+      "nickname": "Cârlig",
+      "price": "€1.450",
+      "description": "Cârlig standard trei puncte pentru atașare ușoară."
+    },
+    "full-conversion": {
+      "name": "Conversie completă",
+      "nickname": "Conversie",
+      "price": "€2.300",
+      "description": "Kit complet de conversie pentru flexibilitate maximă."
+    }
+  },
+  "productSelection": {
+    "title": "Selectează produsul tău",
+    "description": "Aruncă o privire peste sistemele noastre inteligente — alege-l pe cel care îți face munca mai ușoară.",
+    "unnamedProduct": "Produs fără nume",
+    "product": "Produs",
+    "priceUnavailable": "Preț indisponibil",
+    "bestsellerShort": "TOP",
+    "bestseller": "CEL MAI VÂNDUT",
+    "smartTag": "INTELIGENT",
+    "smartSystemsTag": "SISTEME INTELIGENTE",
+    "noDescription": "Nu există descriere disponibilă",
+    "titleShort": "Alege produs",
+    "descriptionShort": "Alege din sistemele noastre inteligente pentru eficiență pe teren."
+  },
+  "vehicleMounting": {
+    "title": "Tip montare pe vehicul",
+    "description": "Deci, cum doriți exact să atașați {{productName}}? Poate părea plictisitor, dar credeți‑ne — dacă greșiți aici, restul nu are șanse.",
+    "mountingLabel": "MONTARE"
+  },
+  "progress": {
+    "included": "✅ Inclus",
+    "selected": "✅ Selectat:",
+    "notSelected": "🔲 Neselectat",
+    "gear": "⚙️",
+    "car": "🚗",
+    "powerPackSelected": "🔋 Power Pack selectat",
+    "powerPackRequired": "🔋 Obligatoriu",
+    "powerPackOptional": "🔋 Opțional",
+    "extrasSelected": "🎁 {{count}} selectate",
+    "noExtras": "📦 Niciun extras",
+    "done": "Finalizat",
+    "detailsProvided": "Detalii furnizate",
+    "notCompleted": "🔲 Neterminat"
+  },
+  "configurator": {
+    "productToast": {
+      "close": "Închide",
+      "desc1": {
+        "short": "Intrarea în configurator — asamblează mașina ta de prelevare."
+      },
+      "desc2": {
+        "part1": "Alege-ți",
+        "part2": ", decide dacă vrei să fie tras sau montat, gândește la alimentarea externă și adaugă opțiuni adiționale."
+      },
+      "desc3": "Practic, e plug-and-play cu noroi și motorină. Apasă butonul dacă ești gata să începi această nobilă misiune.",
+      "configure": "Configurează {{productName}}",
+      "machine": "mașină"
+    },
+    "steps": {
+      "product": "Produs",
+      "mounting": "Montare",
+      "vehicleType": "Tip vehicul",
+      "power": "Alimentare",
+      "extras": "Opționale",
+      "finish": "Finalizare"
+    }
+  },
+  "blog": {
+    "categories": {
+      "all": "Toate",
+      "technology": "Technology",
+      "events": "Events",
+      "soil": "Soil"
+    },
+    "sections": {
+      "featuredStory": "Poveste recomandată",
+      "trendingNow": "În trend",
+      "latestArticles": "Ultimele articole"
+    },
+    "buttons": {
+      "digDeeper": "Săpă mai adânc",
+      "continueReading": "Continuă lectura",
+      "readMore": "Citește mai mult",
+      "showLess": "Arată mai puțin",
+      "resetFilters": "Resetează filtrele"
+    },
+    "empty": {
+      "noArticles": "Nu s-au găsit articole",
+      "tryAdjusting": "Încearcă să ajustezi căutarea sau filtrul pentru a găsi ce cauți."
+    },
+    "meta": {
+      "title": "Insight-uri & Știri | TECHBYP",
+      "description": "Explorează ultimele insight-uri, actualizări de produs și din culisele ingineriei TECHBYP — unde prelevarea solului întâlnește precizia germană.",
+      "ogTitle": "Blog TECHBYP – Insight-uri despre prelevarea solului și altele",
+      "ogDescription": "Analize tehnice, lansări de produse și povești din teren — toate de la echipa TECHBYP."
+    },
+    "headings": {
+      "insightsHub": "Hub de insight-uri",
+      "tagline": "Discuții inteligente de la echipa care face mașini pentru prelevarea solului."
+    },
+    "placeholders": {
+      "search": "Caută articole..."
+    },
+    "labels": {
+      "featured": "Recomandat",
+      "trending": "Popular"
+    },
+    "buttons1": {
+      "readMore": "Citește mai mult",
+      "showLess": "Arată mai puțin",
+      "resetFilters": "Resetează filtrele"
+    }
+  },
+  "meta": {
+    "title": "Contact TechByP | Experți în prelevarea solului",
+    "description": "Contactează TechByP – partenerul tău de încredere pentru echipamente de prelevare a solului. Scrie-ne pentru întrebări, suport sau pentru a deveni distribuitor.",
+    "ogTitle": "Contact TechByP | Experți în prelevarea solului",
+    "ogDescription": "Have questions about our equipment or services? Get in touch with TechByP's support and sales teams today.",
+    "ogUrl": "https://www.techbyp.com/contact",
+    "ogImage": "https://www.techbyp.com/assets/og-image.jpg",
+    "twitterTitle": "Contact TechByP | Experți în prelevarea solului",
+    "twitterDescription": "Ai întrebări despre echipamentele noastre sau serviciile noastre? Contactează echipa de suport și vânzări TechByP azi."
+  },
+  "contact_page": {
+    "title": "Contact",
+    "description": "De peste 30 de ani, am fost ajutorul de încredere pentru profesioniștii în prelevarea solului — pentru că să sapi în pământ merită echipamente de top. Ai întrebări despre gadgeturile noastre inteligente pentru aventuri geotehnice sau de mediu? Echipa noastră e gata să discute, să rezolve probleme sau pur și simplu să te ajute să obții o probă perfectă.",
+    "address": {
+      "title": "Sediu central",
+      "company": "Bodenprobetechnik Peters GmbH",
+      "street": "Am Fliegerhorst 11",
+      "city": "D-49610 Quakenbrück, Germania",
+      "phone": "+49 (0) 54 31 93 644 0",
+      "email": "info@bodenprobetechnik.de"
+    },
+    "hours": {
+      "title": "Program de lucru",
+      "weekdays": "Luni - Joi",
+      "weekdaysTime": "07:30 - 16:30",
+      "friday": "Vineri",
+      "fridayTime": "07:30 - 14:30",
+      "closed": "Închis în weekend și în zilele libere naționale germane"
+    },
+    "phone": {
+      "title": "Suport telefonic",
+      "description": "Pentru asistență imediată, sunați echipa noastră de suport în timpul programului.",
+      "number": "+49 (0) 54 31 93 644 0",
+      "supportExt": "Suport tehnic: int. 123",
+      "salesExt": "Vânzări: int. 124"
+    },
+    "email": {
+      "title": "Suport prin email",
+      "description": "Trimiteți-ne un email și vă vom răspunde în 24 de ore în zilele lucrătoare.",
+      "main": "info@bodenprobetechnik.de",
+      "technical": "Tehnic",
+      "sales": "Vânzări"
+    },
+    "formular": {
+      "serialNumber": "Număr de serie",
+      "customerNumber": "Număr client",
+      "additionalFieldsNote": "Pentru suport tehnic sau cereri de piese de schimb, vă rugăm să furnizați:",
+      "placeholders": {
+        "serialNumber": "Se găsește pe plăcuța neagră.",
+        "customerNumber": "Factura conține răspunsul.",
+        "name": "Dacă nu doriți să fiți anonim",
+        "company": "Sau compania dvs.",
+        "email": "adresa@ta.ro",
+        "phone": "Telefon",
+        "message": "Detalii suficiente pentru a nu trebui să ghicim"
+      },
+      "title": "Contact rapid",
+      "name": "Nume complet",
+      "company": "Companie",
+      "email": "Email",
+      "phone": "Telefon",
+      "subject": "Subiect",
+      "message": "Mesaj",
+      "subjects": {
+        "general": "Întrebare generală",
+        "product": "Informații produs",
+        "support": "Suport tehnic",
+        "service": "Cerere serviciu",
+        "distributor": "Întrebare distribuitor",
+        "parts": "Piese de schimb",
+        "other": "Altele"
+      },
+      "consent": "Sunt de acord cu prelucrarea datelor mele conform",
+      "privacyPolicy": "politicii de confidențialitate",
+      "submit": "Trimite mesajul",
+      "sending": "Se trimite...",
+      "anotherMessage": "Trimite un alt mesaj",
+      "success": "Mesaj trimis cu succes!",
+      "successTitle": "Mulțumim pentru mesaj!",
+      "successMessage": "Am primit solicitarea dvs. și vă vom răspunde în 24 de ore în zilele lucrătoare.",
+      "errors": {
+        "serialNumberRequired": "Numărul de serie este obligatoriu pentru suport tehnic sau piese de schimb",
+        "customerNumberRequired": "Numărul client este obligatoriu pentru suport tehnic sau piese de schimb",
+        "bot": "Bot detectat.",
+        "recaptcha": "Vă rugăm să completați reCAPTCHA.",
+        "consent": "Vă rugăm să acceptați politica noastră de prelucrare a datelor.",
+        "failed": "Eroare la trimiterea mesajului. Încercați din nou."
+      }
+    },
+    "map": {
+      "title": "Locația TechByP",
+      "visit": "Vizitează-ne",
+      "description": "Sediul nostru din Quakenbrück, Germania, este locul unde proiectăm și fabricăm echipamentele noastre.",
+      "directions": "Obține indicații"
+    },
+    "faq": {
+      "title": "Întrebări frecvente",
+      "shipping": {
+        "question": "Care sunt opțiunile de livrare?",
+        "answer": "Livrăm la nivel mondial; durata variază după destinație."
+      },
+      "training": {
+        "question": "Oferiți instruire pentru echipamente?",
+        "answer": "Da — oferim instruire la sediu sau la locația ta."
+      },
+      "distributor": {
+        "question": "Cum pot deveni distribuitor?",
+        "answer": "Contactează-vă departamentul de vânzări pentru detalii despre parteneriat."
+      }
+    }
+  },
+  "orderNow": {
+    "title": "Să facem magia să se întâmple.",
+    "placeholderName": "Numele tău, te rog.",
+    "placeholderEmail": {
+      "short": "adresa@ta.ro"
+    },
+    "placeholderMessage": "Folosește cuvinte. E util.",
+    "close": "Închide",
+    "submit": "Trimite",
+    "success": "Mesaj trimis cu succes!",
+    "fail": "Trimitere eșuată. Încearcă din nou.",
+    "botDetected": "Bot detectat.",
+    "completeRecaptcha": "Vă rugăm să completați reCAPTCHA.",
+    "product": "Produs"
+  },
+  "downloads": {
+    "meta": {
+      "title": "Centrul de resurse | Descarcă manuale, broșuri și specificații",
+      "description": "Răsfoiți și descărcați manuale, broșuri, specificații tehnice și alte resurse pentru produsele noastre."
+    },
+    "title": "Centrul de resurse",
+    "subtitle": "Descarcă manuale, broșuri, specificații tehnice și altele",
+    "loading": "Se încarcă...",
+    "error": {
+      "title": "Eroare",
+      "fetchFailed": "Eșec la încărcarea metadatelor"
+    },
+    "categories": {
+      "all": "Toate resursele",
+      "manuals": "Manuale",
+      "brochures": "Broșuri",
+      "techspecs": "Specificații tehnice",
+      "other": "Altele"
+    },
+    "search": {
+      "placeholder": {
+        "short": "Caută..."
+      }
+    },
+    "sort": {
+      "label": "Sortează după",
+      "name": "Nume",
+      "date": "Dată",
+      "size": "Dimensiune"
+    },
+    "download": "Descarcă",
+    "close": "Închide",
+    "empty": {
+      "title": "Niciun fișier găsit",
+      "search": "Încearcă un alt cuvânt de căutare",
+      "category": "Nu există fișiere în această categorie"
+    },
+    "videoNotSupported": "Browserul tău nu suportă video HTML5."
+  },
+  "adminDashboard": {
+    "greeting": "Bun venit înapoi!",
+    "user": {
+      "role": {
+        "admin": "Administrator",
+        "editor": "Editor",
+        "viewer": "Vizualizator"
+      }
+    },
+    "tabs": {
+      "dashboard": "Tablou de bord",
+      "blog": "Articole blog",
+      "hero": "Secțiunea principală",
+      "announcements": "Anunțuri"
+    },
+    "stats": {
+      "articles": "Articole",
+      "announcements": "Anunțuri",
+      "comments": "Comentarii",
+      "members": "Membri club",
+      "activity": "Activitate recentă"
+    },
+    "comments": {
+      "count": "comentarii",
+      "noComments": "Nu există comentarii încă",
+      "noContent": "[Fără conținut]",
+      "name": "Nume",
+      "company": "Companie",
+      "save": "Salvează",
+      "cancel": "Anulează",
+      "edit": "Editează",
+      "delete": "Șterge",
+      "edited": "Editat",
+      "updateSuccess": "Comentariu actualizat cu succes",
+      "updateError": "Eroare la actualizarea comentariului",
+      "deleteSuccess": "Comentariu șters cu succes",
+      "deleteError": "Eroare la ștergerea comentariului"
+    },
+    "members": {
+      "noMembers": "Nu există membri încă",
+      "unknownMember": "Membru necunoscut",
+      "joined": {
+        "short": "Ăl s-a alăturat"
+      },
+      "delete": "Șterge membru"
+    },
+    "activity": {
+      "noActivity": "Nicio activitate recentă",
+      "refresh": "Reîmprospătează",
+      "fetchError": "Eroare la încărcarea activității",
+      "events": {
+        "comment_added": "a adăugat un comentariu",
+        "comment_edited": "a editat un comentariu",
+        "comment_deleted": "a șters un comentariu",
+        "content_created": "a creat conținut",
+        "content_updated": "a actualizat conținut"
+      },
+      "metadata": {
+        "user": "Utilizator",
+        "company": "Companie",
+        "rating": "Evaluare",
+        "currentMessage": "Mesaj curent",
+        "previousMessage": "Mesaj anterior",
+        "type": "Tip",
+        "title": "Titlu",
+        "changes": "Modificări",
+        "email": "Email",
+        "deleted by": "șters de"
+      }
+    },
+    "common": {
+      "lastUpdated": "Ultima actualizare",
+      "thisWeek": "astăptămână",
+      "today": "azi",
+      "justNow": "acum",
+      "minutesAgo": "{{count}} minute în urmă",
+      "hoursAgo": "{{count}} ore în urmă",
+      "daysAgo": "{{count}} zile în urmă",
+      "openMenu": "Deschide meniul",
+      "closeMenu": "Închide meniul",
+      "toggleLanguage": "Comută limba",
+      "logout": "Deconectare"
+    },
+    "confirmation": {
+      "deleteComment": {
+        "title": "Șterge comentariu",
+        "message": "Sigur doriți să ștergeți acest comentariu? Această acțiune este ireversibilă."
+      }
+    },
+    "permissionsError": "Eroare la verificarea permisiunilor"
+  },
+  "mp1": {
+    "nickname": "Full-Core Retriever",
+    "specs": [
+      "Adâncime: 0–90 cm, opțional 120 cm (fără trepte)",
+      "Semi-automat",
+      "Vizibilitate nucleu complet",
+      "Ciclu de prelevare 16 s/nucleu"
+    ],
+    "description": "Nucleu intact 0–90 cm, precizie științifică, robustețe germană.",
+    "herodescription": "Nu e spectaculos. Nu strigă. Nu face Wi-Fi. Dar oferă un nucleu perfect, neîntrerupt, de la suprafață până la 90 cm.",
+    "detailedDescription": "Universitățile adoră acest echipament. Oferă vizibilitate completă a profilului de sol — fără amestecare, fără estimări ale stratificării, doar o secțiune curată, verticală.",
+    "price": "De la €14,200",
+    "features": [
+      "Nucleu de sol intact de lungime completă (0–90 cm) pentru vizibilitatea profilului",
+      "Control al adâncimii cu precizie în centimetri",
+      "Detectare obstacole cu oprire automată",
+      "Îndepărtare manuală a nucleului pentru integritatea probei",
+      "Se potrivește pe pick-up-uri, remorci și vehicule ușoare",
+      "Posibilitate de upgrade la MP-3.90 sau MP-4.100"
+    ],
+    "applications": [
+      "Prelevare sol N-min",
+      "Cercetare academică și universitară",
+      "Monitorizare de mediu",
+      "Analiză morfologie și profil sol",
+      "Agricultură de precizie"
+    ],
+    "howToUse": [
+      "Pasul 1 – Inserție prin impact: O tijă canelată este condusă în sol folosind un ciocan hidraulic de frecvență înaltă. Sună agresiv, dar totul este foarte civilizat.",
+      "Pasul 2 – Retracție hidraulică cu rotație: Tija este rotită și retrasă hidraulic, asigurând că nucleul rămâne imaculat. Precizie chirurgicală, fără scalpel.",
+      "Pasul 3 – Revelarea nucleului: Nucleul intact de sol este expus pentru admirație științifică. Toate straturile vizibile — de la humus la hardpan.",
+      "Pasul 4 – Descărcare manuală a nucleului: Nucleul este îndepărtat manual. Este un moment liniștit și satisfăcător de știință. Ca să extragi date din Pământ cu mâinile."
+    ],
+    "technicalSpecs": {
+      "Sampling Depth": "0–90 cm (fără trepte)",
+      "Sample Type": "Nucleu complet, profil integral",
+      "Sampling Cycle": "16 sec/nucleu",
+      "Power Supply": "Hidraulic (135 bar, 20 L/min, 12VDC)",
+      "Obstacle Detection": "Da",
+      "Control Panel": "Digital",
+      "Weight": "185 kg",
+      "Mounting": "Pick-up, remorcă, vehicule ușoare"
+    },
+    "testimonials": [
+      {
+        "quote": "MP-1.90 este un adevărat cal de povară. Ne oferă vizibilitate completă a nucleului, ceea ce este esențial pentru programele noastre de predare și lucru pe teren.",
+        "author": "Prof. Klaus Brenner",
+        "company": "University of Göttingen, Dept. of Soil Science",
+        "rating": 5
+      },
+      {
+        "quote": "Este superb supra-ingineriat, într-un mod foarte german. Fiecare nucleu pe care îl extragem este imaculat. Studenții adoră să-l folosească.",
+        "author": "Dr. Lucia Romero",
+        "company": "University of Zaragoza – Faculty of Agronomy",
+        "rating": 5
+      }
+    ]
+  },
+  "mp2": {
+    "nickname": "Mid Range MultiPRO",
+    "specs": [
+      "Adâncime: 0-60 cm",
+      "Complet automat",
+      "Optimizat pentru profilarea N-min",
+      "Ciclu de prelevare 18 s/nucleu"
+    ],
+    "description": "Extracție automată la 60 cm, optimizat pentru profilarea N-min.",
+    "herodescription": "MP-2.60 este un echipament practic pentru profilarea N-min — funcțional, fiabil și eficient.",
+    "detailedDescription": "Simplu și fiabil, proiectat pentru profilarea automată a azotului până la 60 cm. Opțional se poate activa separarea stratelor.",
+    "price": "De la €16,500",
+    "features": [
+      "Extracție complet automată până la 60 cm",
+      "Logică inteligentă: aruncă sau păstrează probele pe baza setărilor dvs.",
+      "Prelevare condusă prin impact cu descărcare automată",
+      "Opțiune de separare a straturilor pentru prelevare specifică orizontului",
+      "Containere etanșe pentru probe",
+      "Adâncime de prelevare și număr de orizonturi personalizabile",
+      "Detecție obstacole și oprire automată sigură",
+      "Construit pentru utilizare reală, zilnică — nu doar pentru hobby-iștii de weekend"
+    ],
+    "applications": [
+      "Profilare Nmin/Nitrat",
+      "Agricultură de precizie",
+      "Monitorizare sol de mediu",
+      "Prelevare pe teren cu buget și ambiții"
+    ],
+    "technicalSpecs": {
+      "Sampling Depth": "0–60 cm",
+      "Sampling Type": "Impact-driven, complet automat",
+      "Hammer Unit": "Hidraulic, frecvență înaltă",
+      "Horizons": "1–2 straturi",
+      "Magazines": "3",
+      "Sampling Cycle Time": "18 sec/nucleu",
+      "Mounting Options": "Pick-up, remorcă, vehicul ușor",
+      "Sample Sorting": "Automat, pe orizonturi",
+      "Special Features": "Detecție obstacole, oprire automată",
+      "Power Source": "Hidraulic (135 bar, 20 L/min, 12VDC)",
+      "Weight": "200 kg"
+    },
+    "testimonials": [
+      {
+        "quote": "Fiabil, ușor de utilizat și oferă exact ceea ce avem nevoie pentru lucrul nostru cu nitratul din sol.",
+        "author": "Prof. Lars Becker",
+        "company": "AgriData Solutions",
+        "rating": 5
+      },
+      {
+        "quote": "O alegere excelentă pentru orice echipă care începe cu prelevarea automată. Performanță solidă, întreținere scăzută.",
+        "author": "Dr. Hannah Lee",
+        "company": "Soil Research Group",
+        "rating": 4
+      }
+    ],
+    "howToUse": [
+      "Conduce o tijă canelată în sol folosind un ciocan hidraulic de frecvență înaltă — da, sună la fel de satisfăcător pe cât este",
+      "Rotește și retrage hidraulic tija fără a deranja probele dvs.",
+      "Probele sunt descărcate automat în containerele lor corespunzătoare",
+      "Separația opțională a straturilor sortează solul pe orizont în timpul extracției"
+    ]
+  },
+  "mp3": {
+    "nickname": "TripleLayer Pro",
+    "specs": [
+      "Adâncime: 0-95 cm",
+      "Complet automat",
+      "Separare în 3 straturi",
+      "Ciclu de prelevare 20 s/nucleu"
+    ],
+    "description": "Extracție 0–95 cm, 3 straturi, complet automat.",
+    "herodescription": "MP-3.90 combină gândirea germană cu robustețea — proiectat pentru prelevare de profunzime.",
+    "detailedDescription": "Precizie și eficiență integrate, montabil pe pickup, remorcă sau vehicul ușor.",
+    "price": "De la €23,500",
+    "features": [
+      "Extracție complet automată până la 95 cm",
+      "Separație opțională în 3 straturi pentru prelevare specifică orizontului",
+      "Ia 3 probe consecutive fără să părăsești scaunul",
+      "Se montează pe pickup-uri, remorci sau orice e vag practicabil",
+      "Descărcare automată și sortare probe în timpul extracției",
+      "Adâncime de prelevare și număr de orizonturi personalizabile",
+      "Containere etanșe pentru stocarea probelor",
+      "Oprire automată când lovește o piatră și spune 'nu'",
+      "Logică inteligentă: aruncă sau păstrează probe pe baza setărilor",
+      "Construit pentru utilizare serioasă, continuă — acesta nu e gadgetul tău ocazional."
+    ],
+    "applications": [
+      "Agricultură de precizie",
+      "Monitorizare sol de mediu",
+      "Testare Nmin/Nitrat",
+      "Profilare sol și cercetare",
+      "Lucru pe teren unde viteza, acuratețea și pauzele de cafea contează"
+    ],
+    "technicalSpecs": {
+      "Sampling Depth": "0–95 cm",
+      "Sampling Type": "Impact-driven, complet automat",
+      "Hammer Unit": "Hidraulic, frecvență înaltă",
+      "Horizons": "1–3 straturi (configurabil)",
+      "Magazines": "3",
+      "Sampling Cycle Time": "18 sec/nucleu",
+      "Mounting Options": "Pick-up, remorcă, vehicul ușor",
+      "Sample Sorting": "Automat, pe orizonturi",
+      "Special Features": "Detecție obstacole, containere etanșe",
+      "Penetration Control": "Oprire automată la obstacol",
+      "Power Source": "Hidraulic (135 bar, 20 L/min, 12VDC)",
+      "Weight": "200 kg"
+    },
+    "testimonials": [
+      {
+        "quote": "Perfect pentru cercetarea noastră privind zonele umede. Funcționează excepțional în solurile bogate în argilă unde alte burghie eșuează.",
+        "author": "Dr. Maria Santos",
+        "company": "Wetland Research Center",
+        "rating": 5
+      },
+      {
+        "quote": "Designul semi-cilindru este genial pentru solurile coezive. Calitatea probelor este constant excelentă.",
+        "author": "Robert Taylor",
+        "company": "Soil Dynamics Lab",
+        "rating": 5
+      }
+    ],
+    "howToUse": [
+      "Conduce o tijă canelată serioasă în sol cu un ciocan hidraulic de frecvență înaltă — gândește-te la asta ca la o împungere foarte precisă",
+      "Rotește și retrage hidraulic tija, evitând genul de smucitură brutală care supără solul și inginerii deopotrivă",
+      "Golește automat burghiul în drum spre sus — fără săpătură, fără bâjbâială, doar o picătură politicoasă în containerele de probe",
+      "Distribuie materialul probei ordonat în containere separate în funcție de orizontul solului — pentru că până și pământul ar trebui să știe unde îi e locul"
+    ]
+  },
+  "mp4": {
+    "nickname": "UltraDepth MAX",
+    "specs": [
+      "Adâncime: 0-100 cm",
+      "Complet automat",
+      "Separare în 4 straturi",
+      "Ciclu de prelevare 22 s/nucleu"
+    ],
+    "description": "Extracție până la 100 cm, 4 straturi, complet automat.",
+    "herodescription": "MP-4.100 este un sampler automat pentru profunzimi mari, precis și robust.",
+    "detailedDescription": "<p className='mt-4'>Designed for those who demand <strong>depth and discipline</strong>, the MP-4.100 gets right into the soil and does the job with no grumbling and no manual scooping. A <strong>hydraulic impact system</strong> powers a grooved rod into the ground, where it quietly gets on with the job of extracting science-grade samples. Once retracted, it <strong>automatically empties</strong> the goods into their proper places.</p><p className='mt-4'>It's got <strong>smart logic</strong> that decides whether to keep or toss material based on your settings, and a <strong>layer separation mechanism</strong> that's surprisingly polite about where each horizon goes. Mount it on a pickup, trailer, or anything vaguely roadworthy and off you go.",
+    "price": "De la €25,500",
+    "features": [
+      "Extracție complet automată până la 100 cm",
+      "Separație opțională în 4 straturi pentru prelevare specifică orizontului",
+      "Descărcare automată și sortare probe în timpul extracției",
+      "Logică inteligentă: aruncă sau păstrează probe pe baza setărilor",
+      "Adâncime de prelevare și număr de orizonturi personalizabile",
+      "Se montează pe pickup-uri, remorci sau orice e vag practicabil",
+      "Detecție obstacole și oprire automată sigură",
+      "Containere etanșe pentru probe",
+      "Tastatură digitală pentru ajustări în timp real",
+      "Construit pentru utilizare reală, zilnică — nu doar pentru zile ocazionale de știință"
+    ],
+    "applications": [
+      "Profilare sol profund",
+      "Cercetare de mediu și agricolă",
+      "Testare Nmin/Nitrat",
+      "Agricultură de precizie",
+      "Lucru pe teren care necesită adâncime serioasă și fidelitate a probelor"
+    ],
+    "technicalSpecs": {
+      "Sampling Depth": "0–100 cm",
+      "Sampling Type": "Impact-driven, complet automat",
+      "Hammer Unit": "Hidraulic, frecvență înaltă",
+      "Horizons": "1–4 straturi",
+      "Magazines": "4",
+      "Sampling Cycle Time": "22 sec/nucleu",
+      "Mounting Options": "Pick-up, remorcă, vehicul ușor",
+      "Sample Sorting": "Automat, pe orizonturi",
+      "Special Features": "Detecție obstacole, containere etanșe, panou digital",
+      "Power Source": "Hidraulic (135 bar, 20 L/min, 12VDC)",
+      "Weight": "215 kg"
+    },
+    "testimonials": [
+      {
+        "quote": "Manipulează solurile grele și profilele adânci mai bine decât orice metodă manuală pe care am încercat-o. Cu adevărat fără intervenție manuală și precis.",
+        "author": "Dr. Felix Hartmann",
+        "company": "GeoCrop Labs",
+        "rating": 5
+      },
+      {
+        "quote": "Fiabil și inteligent — logica probelor ne salvează ore de post-procesare.",
+        "author": "Dr. Nina Weber",
+        "company": "AgroField Analytics",
+        "rating": 5
+      }
+    ],
+    "howToUse": [
+      "Conduce o tijă canelată în sol folosind un ciocan hidraulic de frecvență înaltă — elegant brutal",
+      "Rotește și retrage hidraulic tija — fără smucituri, fără dramă",
+      "Golește automat burghiul în containerele corespunzătoare în drum spre sus",
+      "Distribuie materialul probei ordonat în containere separate în funcție de orizontul solului"
+    ]
+  },
+  "dh": {
+    "nickname": "Hydraulic Scout",
+    "specs": [
+      "Adâncime: 0-30 cm",
+      "Complet automat",
+      "Control adâncime independent de suspensie",
+      "Ciclu de prelevare 5 s/nucleu"
+    ],
+    "description": "Adâncime 0–30 cm, sistem de foraj electric sau hidraulic, control precis.",
+    "herodescription": "DH-1.30 este un sampler hidraulic robust, ideal pentru soluri dificile — puternic și fiabil.",
+    "detailedDescription": "Schimbă motorul pe hidraulic pentru mai mult cuplu; control precis la milimetru pentru adâncime.",
+    "price": "De la €8,950",
+    "features": [
+      "Acționare hidraulică pentru foraj fiabil și puternic",
+      "Ajustare precisă a adâncimii în milimetri",
+      "Neafectat de suspensia vehiculului — fără surprize subterane",
+      "Două adâncimi presetate pentru comutare rapidă",
+      "Compact și portabil la 43 kg",
+      "Se montează ușor pe o gamă de vehicule ușoare"
+    ],
+    "applications": [
+      "Prelevare sol macronutrienți",
+      "Agricultură de precizie (cu un pic de putere old-school)",
+      "Cercetare agricolă și de mediu",
+      "Monitorizare sănătate sol și nutrienți"
+    ],
+    "howToUse": [
+      "Parchează echipamentul și poziționează sampler-ul unde solul cheamă.",
+      "Selectează adâncimea preferată (da, până la milimetru).",
+      "Apasă butonul și lasă mușchiul hidraulic să facă ridicarea grea.",
+      "Scoate nucleul perfect de sol și simte-te liniștit mulțumit de tine."
+    ],
+    "technicalSpecs": {
+      "Sampling Depth": "0–30 cm",
+      "Sample Type": "Nucleu single-core, complet automat",
+      "Horizons": "1",
+      "Magazines": "1",
+      "Sampling Cycle Time": "5 sec/nucleu",
+      "Mounting Options": "Quad, pickup, remorcă, vehicul ușor",
+      "Control": "Panou de control push-button",
+      "Power Source": "Motor hidraulic",
+      "Weight": "43 kg"
+    },
+    "testimonials": [
+      {
+        "quote": "Acționarea hidraulică a DH-1.30 înseamnă fără compromisuri în privința puterii sau preciziei. Perfect pentru soluri mai dure și zile mai lungi pe teren.",
+        "author": "Sven Becker",
+        "company": "AgriTech Solutions",
+        "rating": 5
+      },
+      {
+        "quote": "Montat pe remorca noastră, DH-1.30 gestionează totul cu încredere liniștită. Controlul adâncimii este exact de fiecare dată.",
+        "author": "Maria Schneider",
+        "company": "Soil Science Research Group",
+        "rating": 5
+      },
+      {
+        "quote": "O mașină robustă și fiabilă, cu suficientă putere pentru a face munca pe teren să pară mai puțin grea.",
+        "author": "Tomás Herrera",
+        "company": "Precision Agriculture Co.",
+        "rating": 4
+      }
+    ]
+  },
+  "de": {
+    "nickname": "Electric Scout",
+    "specs": [
+      "Adâncime: 0-30 cm",
+      "Sistem de foraj complet electric",
+      "Control adâncime independent de suspensie",
+      "Ciclu de prelevare 5 s/nucleu"
+    ],
+    "description": "Sistem de foraj electric, silențios și foarte precis.",
+    "herodescription": "DE-1.30 este un sampler electric compact — silențios și fiabil pentru prelevarea la 30 cm.",
+    "detailedDescription": "<p className='mt-4'>Building on the trusty <strong>N2012 model</strong>, the <strong>DE-1.30</strong> uses an <strong>electric drill</strong> that's so precise it could probably thread a needle—if soil sampling were into embroidery. <strong>Millimetre adjustments</strong> mean you get exactly the depth you want, no matter how bumpy or unpredictable the terrain. It's a bit like a <strong>polite butler</strong> who won't let you down.</p><p className='mt-4'>The <strong>control unit</strong> is simplicity itself—press a button and off it goes. <strong>Two preset depths</strong> let you switch between sampling jobs faster than you can say <em>'groundbreaking technology'</em> (see what I did there?). No faffing about with complicated menus or cryptic controls.</p><p className='mt-4'>At just <strong>45 kilograms</strong> and powered by a <strong>24 V battery pack</strong> (sold separately), it's <strong>light enough to be nimble</strong> but <strong>tough enough to handle real-world fieldwork</strong>. No need to call in a crane or an ex-army sergeant to move it.</p><p className='mt-4'>The DE-1.30 can be easily mounted on <strong>quads, trailers, and a variety of light vehicles</strong>, making it versatile for many field conditions.</p><p className='mt-4'>So, if you want <strong>precise, dependable soil samples</strong> without the petrol engine drama or the noise of a heavy drill, the DE-1.30 is your go-to machine. It's <strong>German engineering</strong> with a <strong>quiet, electric twist</strong> that just gets the job done.",
+    "price": "De la €12,600",
+    "features": [
+      "Foraj complet electric pentru prelevare curată și precisă",
+      "Ajustare precisă a adâncimii în milimetri (pentru că aproape nu este suficient de bine)",
+      "Independent de suspensia vehiculului pentru a evita problemele de adâncime",
+      "Două presetări rapide pentru adâncime",
+      "Compact și ușor la 47 kg",
+      "Funcționează cu un pachet baterie extern de 24 V (vândut separat)"
+    ],
+    "applications": [
+      "Prelevare de probe de sol pentru macronutrienți",
+      "Agricultură de precizie cu un strop de stil",
+      "Cercetare agricolă și de mediu",
+      "Monitorizarea sănătății solului și a nutrienților"
+    ],
+    "howToUse": [
+      "Poziționați sampler-ul acolo unde solul trebuie inspectat.",
+      "Alegeți adâncimea. Incrementări în milimetri, pentru că suntem pretențioși.",
+      "Apăsați butonul și urmăriți burghiul electric care își face treaba politicos.",
+      "Scoateți nucleul de sol și admirați pământul perfect eșantionat."
+    ],
+    "technicalSpecs": {
+      "Sampling Depth": "0–30 cm",
+      "Sample Type": "Single-core, automat complet",
+      "Horizons": "1",
+      "Magazines": "1",
+      "Sampling Cycle Time": "5 sec/nucleu",
+      "Mounting Options": "Quad, pickup, remorcă, vehicul ușor",
+      "Control": "Panou de control push-button",
+      "Operating Voltage": "24 VDC",
+      "Weight": "47 kg"
+    },
+    "testimonials": [
+      {
+        "quote": "Precizia și ușurința de utilizare a DE-1.30 au transformat rutina noastră de prelevare a probelor de sol. Burghiul electric este șoptit liniștit și remarcabil de fiabil.",
+        "author": "Sven Becker",
+        "company": "AgriTech Solutions",
+        "rating": 5
+      },
+      {
+        "quote": "Montarea DE-1.30 pe quad-ul nostru a făcut munca pe teren incredibil de eficientă. Controlul adâncimii și puterea bateriei sunt perfecte pentru prelevarea în mișcare.",
+        "author": "Maria Schneider",
+        "company": "Soil Science Research Group",
+        "rating": 5
+      },
+      {
+        "quote": "Ușor dar robust, DE-1.30 gestionează cu ușurință condițiile de sol dure. Unitatea de control prietenoasă cu utilizatorul este un mare plus în locații îndepărtate.",
+        "author": "Tomás Herrera",
+        "company": "Precision Agriculture Co.",
+        "rating": 4
+      }
+    ]
+  },
+  "boprob": {
+    "nickname": "The Sixteen Express",
+    "specs": [
+      "Adâncime: 10–30 cm",
+      "Complet automat",
+      "Prelevare în remorcă în timp ce conduceți",
+      "16 probe în ~4 min"
+    ],
+    "description": "Remorcă care prelevează 16 probe în mișcare — fără oprire.",
+    "herodescription": "BOPROB III, numit The Sixteen Express, ia probe în timp ce te deplasezi — fără opriri.",
+    "detailedDescription": "<p class='mt-4'>The Sixteen Express este un echipament ingenios de tip remorcă conceput pentru a preleva probe în timp ce te deplasezi. Mecanismul rotativ de 360° pătrunde în sol, extrage nucleele și le depozitează în reviste de probe.</p><p class='mt-4'>Controlul se face printr-un ecran tactil de 7 inch, iar opțional se poate monta o cameră pentru monitorizare. Roțile mari (235/60 R16) reduc presiunea asupra solului, iar prinderea la remorcă este compatibilă cu tractoare, pickup-uri și ATV-uri.</p><p class='mt-4'>Sistemul previne eșantionarea la viteze nepotrivite, asigurând consistența datelor.</p>",
+    "price": "--",
+    "features": [
+      "Sistem hidraulic de impact și rotație",
+      "Manivelă rotativă 360° cu descărcare automată",
+      "Prelevează probe în timp ce conduceți—nu este nevoie să opriți",
+      "Ecran tactil de 7 inch pentru control și monitorizare",
+      "Cameră opțională la bord pentru feedback vizual",
+      "Compacție scăzută a solului de la roțile 235/60 R16",
+      "Nu sunt necesare modificări ale tractorului—remorca se montează rapid",
+      "Protecție sensibilă la viteză împotriva utilizării greșite"
+    ],
+    "applications": [
+      "Prelevare de macronutrienți cu debit mare",
+      "Agricultură de precizie cu utilizare minimă de combustibil",
+      "Monitorizarea sănătății solului pe suprafețe mari",
+      "Prelevare de probe din orizonturi superficiale în timpul tranzitului"
+    ],
+    "howToUse": [
+      "Atașați remorca la un tractor potrivit sau vehicul cu capacitate de remorcare—nu sunt necesare modificări.",
+      "Setați adâncimea dorită și intervalul de eșantionare pe ecranul tactil.",
+      "Conduceți la 4–15 km/h și lăsați mașina să eșantioneze automat.",
+      "Verificați camera și ecranul după cum este necesar, sau continuați pur și simplu agricultura.",
+      "Când sunt colectate 16 probe, goliți și reîncărcați revista."
+    ],
+    "technicalSpecs": {
+      "Sampling Depth": "10–30 cm",
+      "Sample Type": "Impact-driven, fully automatic",
+      "Horizons": "1",
+      "Magazines": "16",
+      "Sampling Cycle Time": "8–10 secunde per probă",
+      "Mounting Options": "Remorcă tractabilă (potrivită pentru tractoare sau vehicule cu cârlig standard)",
+      "Control": "Panou tactil de 7 inch",
+      "Power Source": "Hidraulic",
+      "Wheels": "235/60 R16, presiune redusă asupra solului",
+      "Weight": "Aprox. 600 kg"
+    },
+    "testimonials": [
+      {
+        "quote": "Am terminat un sondaj de 10 hectare în mai puțin de o oră. The Sixteen Express pur și simplu funcționează. Fără dramă, fără oprire.",
+        "author": "Lena Hoffmann",
+        "company": "TerraCrop Systems",
+        "rating": 5
+      },
+      {
+        "quote": "Ecranul tactil este receptiv, iar calitatea prelevării este exactă. Gestionează frumos solurile noastre bogate în argilă.",
+        "author": "Henrik Voss",
+        "company": "Nordland AgriTech",
+        "rating": 5
+      },
+      {
+        "quote": "Economisește uzura tractorului și a șoferului. Una dintre cele mai bune investiții pentru prelevarea la scară largă pe care am făcut-o.",
+        "author": "Jürgen Möller",
+        "company": "FieldScan GmbH",
+        "rating": 5
+      }
+    ],
+    "notes": {
+      "short": "Performanța variază în funcție de condițiile terenului"
+    }
+  },
+  "laydown": {
+    "nickname": "Mount Kit",
+    "name": "Cadru Lay-down",
+    "specs": [
+      "Cârlig remorcă standard 50 mm cu mufă 13 pini 12 V necesară.",
+      "Greutate: ≈70 kg (DH/DE); ≈80 kg (suport MP)",
+      "Oțel EN 10025 S355, vopsit cu pulbere, grosime 4 mm",
+      "Stabilitate pliabilă și de cârlig"
+    ],
+    "description": "Un suport simplu și robust pentru montarea sampler-ului—se potrivește pe majoritatea vehiculelor.",
+    "herodescription": "Acest cadru Lay-down, certificat TÜV, se montează la cârligul remorcii și susține versiunile MP, DH și DE ale samplerelor.",
+    "detailedDescription": "<p class='mt-4'>Se montează pe șasiul vehiculului, permițând transportul și utilizarea sampler-ului cu ușurință. Se pliază pentru deplasare și se desface pentru operare. Este robust, testat și finisat profesional.</p>",
+    "price": "De la €2 790",
+    "features": [
+      "Cârlig remorcă + montare 13 pini (fără sudură, fără traumă)",
+      "Aprobat TÜV pentru utilizare rutieră și pe teren",
+      "Oțel structural EN S355, vopsit cu pulbere",
+      "Hardware de montare M16 cu eliberare rapidă inclus",
+      "Design pliabil testat la 10 000 de cicluri de desfășurare",
+      "Susține pachete de putere externe (hidraulice sau baterie)"
+    ],
+    "applications": [
+      "Platforme de prelevare a probelor de sol ATV/UTV",
+      "Instalații pentru vehicule utilitare și pickup",
+      "Sampler-e hidraulice serie MP sau electrice DE/DH",
+      "Utilizare sezonieră sau echipamente de teren complet montate"
+    ],
+    "howToUse": [
+      "Vehiculul are bilă de remorcare ISO 50 mm? Verificați.",
+      "Vehiculul are o mufă 13 pini 12 V (pentru DE-1.30)? Verificați.",
+      "Ieșire hidraulică disponibilă (135–220 bar @60 L/min)?",
+      "Pliati, testați puterea și începeți prelevarea."
+    ],
+    "technicalSpecs": {
+      "Weight": "70 kg (DH/DE); 80 kg (versiune MP)",
+      "Material": "Oțel EN S355, grosime 4 mm, vopsit (RAL 9005)",
+      "Mount Interface": "Cârlig remorcă 50 mm ISO + mufă 13 pini pentru DE-1.30",
+      "Hydraulic Input": "135–220 bar; 20–90 L/min; furtun DN 19/¾″",
+      "Power Options": "Powerpack hidraulic extern sau baterie",
+      "Certifications": "TÜV DE-745-K-2024; conform EN 12642 și ISO 1496-3",
+      "Corrosion Resistance": "≥1000 h salt spray (ISO 9227)",
+      "Included Hardware": "Bolți M16×45-8.8 + șuruburi autoblocante M10, toate placate",
+      "Cycle Life": "10 000 plieri (test durabilitate)",
+      "Warranty": "12 luni",
+      "Bracket Compatibility": "Compatibil cu toate modelele MP (MP-1.90 până la MP-4.100), DH și DE"
+    },
+    "testimonials": []
+  },
+  "tph": {
+    "name": "Three‑Point Hitch",
+    "nickname": "Mount Kit",
+    "specs": [
+      "Se potrivește Cat‑1 or Cat‑2 tractor 3‑point PTO systems",
+      "Heavy‑duty A‑frame steel construction",
+      "Black epoxy corrosion protection",
+      "Compatible with all MP-series, DH, and DE soil sampling machines"
+    ],
+    "description": "Transformă tractorul într-un campion al prelevării de probe—folosind puterea PTO pentru integrarea hidraulică.",
+    "herodescription": "Cadru pentru montare pe 3 puncte destinat tractoarelor Cat‑1/2, proiectat pentru a monta sampler-ul hidraulic și pompa hidraulică aferentă.",
+    "detailedDescription": "<p class='mt-4'>Cadru robust din oțel A‑frame, finisaj epoxidic negru, proiectat pentru viața de fermă—include bare de ridicare și șuruburi de montaj.</p>",
+    "price": "De la €1 650",
+    "features": [
+      "Cadru A-frame sudat din oțel — suficient de robust pentru muncă reală",
+      "Montare pompă PTO — pentru că legăturile nu sunt inginerie",
+      "Finisaj epoxidic negru — ca vopseaua, dar mai inteligent",
+      "Vine cu șuruburi și bare de ridicare — fără căutare suplimentară",
+      "Se potrivește cu brațele de ridicare Cat‑2/3 (50–60″)",
+      "Funcționează cu sampler-ele MP, DH și DE"
+    ],
+    "applications": [
+      "Prelevare hidraulică a solului — corespunzător",
+      "Lucru pe teren alimentat de PTO cu înjurături minime",
+      "Retrofit-uri pentru tractor care au sens"
+    ],
+    "howToUse": [
+      "Atașați la brațele de ridicare — strângeți ca și cum ați vrea",
+      "Montați placa de bază a pompei — nu încrucișați filetul",
+      "Conectați PTO și rutați furtunurile ordonat",
+      "Potriți sampler-ul, testați, încuviințați aprobator"
+    ],
+    "technicalSpecs": {
+      "Type": "Cadru 3‑puncte Cat‑1/2 pentru tractor",
+      "Construction": "Oțel A‑frame sudat, finisaj epoxidic",
+      "PTO Compatibility": "PTO standard pentru pompa hidraulică",
+      "Includes": "Bare de ridicare, bolțuri de montare, accesorii",
+      "Frame Size": "Se potrivește cu brațele de ridicare 50–60\"",
+      "Corrosion Protection": "Vopsire epoxidică durabilă",
+      "Weight": "Aprox. 120 kg",
+      "Certification": "Robustețe comercială pentru uz agricol",
+      "Compatibility": "Compatibil cu toate mașinile seriei MP, DH și DE"
+    },
+    "testimonials": [
+      {
+        "quote": "Fixat direct, fără surprize. L-am folosit cu MP-2.60 — cadru solid, totul se potrivește, fără zgomot. Aș cumpăra din nou.",
+        "author": "J. Bauer",
+        "company": "Bauer Agrar GmbH",
+        "rating": 5
+      },
+      {
+        "quote": "L-am pus pe tractor în mai puțin de o oră. Pompa PTO funcționează lin, sampler-ul se montează curat. Pur și simplu funcționează.",
+        "author": "L. Schneider",
+        "company": "Schneider Feldtechnik",
+        "rating": 5
+      }
+    ]
+  },
+  "fc": {
+    "name": "Full Conversion",
+    "nickname": "Conversion Kit",
+    "specs": [
+      "Compatibil cu pickup-uri și UTV-uri",
+      "Cadru din oțel vopsit cu pulbere personalizat cu panouri din aluminiu pentru scule",
+      "Piese OEM demontate și stocate; cadru certificat TÜV",
+      "Susține toate sampler-ele de sol serie MP, DH și DE"
+    ],
+    "description": "Transformă vehiculul utilitar sau pickup-ul într-o mașină de prelevare a probelor.",
+    "herodescription": "Kitul de conversie înlocuiește rama sau platforma cu una specială din oțel și panouri din aluminiu, aprobat TÜV și legal pentru drum.",
+    "detailedDescription": "<p class='mt-4'>Înlocuiește cu grijă lada standard cu o ramă din oțel și carcase din aluminiu, oferind montaj adecvat pentru mașinile noastre și spațiu pentru scule și echipament.</p>",
+    "price": "De la €4 590",
+    "features": [
+      "Potrivire universală pentru pickup-uri și UTV-uri (Hilux, Gator, Kubota, etc.)",
+      "Cadru din oțel acoperit cu aluminiu: durabil și rezistent la coroziune",
+      "Susține depozitarea sculelor, iluminarea, răcitoarele și sistemele de eșantionare",
+      "Certificat TÜV și legal pe drum în UE",
+      "Complet compatibil cu toate mașinile MP, DE și DH"
+    ],
+    "applications": [
+      "Conversii permanente ale echipamentelor de teren",
+      "Construcții de flotă pentru prelevarea de probe de sol la scară largă",
+      "Actualizări pentru vehicule de cercetare agricolă și de mediu"
+    ],
+    "howToUse": [
+      "Selectați mașina de eșantionare — serie MP, DH sau DE. Alegeri rezonabile, toate.",
+      "Asigurați-vă că vehiculul are un receptor de cârlig sau cuplaj remorcă. Dacă nu, se poate aranja. Nu suntem sălbatici.",
+      "Aduceți-ne vehiculul — sau lăsați-ne să găsim un model potrivit.",
+      "Montăm cadrul din oțel, fixăm sampler-ul, gestionăm documentele și vă trimitem să luptați cu solul."
+    ],
+    "technicalSpecs": {
+      "Compatible Vehicles": "Pickup-uri (Hilux, Ranger, etc.) și UTV-uri",
+      "Construction": "Cadru oțel, vopsit; cutii din aluminiu",
+      "Vehicle Requirements": "Prindere standard sau cuplaj remorcă",
+      "Certification": "TÜV aprobat",
+      "OEM Parts": "Piese OEM demontate, etichetate și păstrate",
+      "Sampler Compatibility": "MP-series, DH-series, DE-series",
+      "Frame Weight": "Aprox. 110 kg"
+    },
+    "testimonials": [
+      {
+        "quote": "Am lăsat Hilux-ul, l-am luat o săptămână mai târziu gata pentru prelevare. Construcție curată, totul se potrivește bine. Fără probleme.",
+        "author": "T. Klein",
+        "company": "GeoFarm Solutions",
+        "rating": 5
+      },
+      {
+        "quote": "Cadru solid, aspect inteligent. Rulăm două unități DH pe Rangers convertiți — mult mai ușor decât remorcile în câmpuri strâmte.",
+        "author": "M. Becker",
+        "company": "AgroTest GmbH",
+        "rating": 5
+      }
+    ]
+  },
+  "trailer": {
+    "name": "Remorci speciale",
+    "nickname": "Field Haulers",
+    "specs": [
+      "Galvanizat la cald—rugina nu are șanse.",
+      "Opțiuni frânate sau nefrânate: alegeți nivelul de control",
+      "Lățime ecartament fixă la 1.35 m",
+      "Proiectat să se potrivească perfect sistemelor serie MP, DH/DE"
+    ],
+    "description": "Remorci robuste care transportă sistemele MP și DH/DE cu ușurință.",
+    "herodescription": "Remorci galvanizate la cald, cu opțiuni frânate și nefrânate, proiectate pentru a transporta kiturile de prelevare pe teren cu precizie germană.",
+    "detailedDescription": "<p class='mt-4'>Cu ampatament fix de 1.35 m și roți cu pivot, remorca manevrează ușor terenul și suportă sarcini considerabile, în funcție de versiune.</p>",
+    "price": "De la €3 600",
+    "features": [
+      "Caroserie și șasiu galvanizate la cald—durată lungă de viață, mai puține reclamații",
+      "Opțiuni frânate și nefrânate—alegeți stilul de manevrare",
+      "Osie simplă cu frâne mecanice cu tambur pentru tractare stabilă",
+      "Amortizoare pentru aprobare rutieră la 100 km/h—mers lin, fără zgomot",
+      "Lățime ecartament 1.35 m cu roți jack-castor incluse",
+      "Jante din aluminiu LT285/75 R16 sau oțel MT215/75 R15—călcați câmpurile, nu răsturnați",
+      "Roată de sprijin inclusă pentru manevrare ușoară manuală",
+      "Construit pentru a transporta sampler-e serie MP, DH și DE—nu sunt necesare instrucțiuni IKEA",
+      "Depozitare integrată pentru scule, lumină și răcitoare—lucrați mai inteligent, nu mai greu"
+    ],
+    "applications": [
+      "Transport pe teren al kiturilor de eșantionare MP, DH și DE",
+      "Transportarea de lăzi, cutii frigorifice și altele prin ferme",
+      "Medii cu sarcină ușoară, atât rurale cât și șantiere de contractare"
+    ],
+    "howToUse": [
+      "Selectați frânat sau nefrânat în funcție de vehiculul de tractare și sarcină.",
+      "Cuplat cu cuplaj standard de bilă de 50 mm—nu este necesară inginerie exotică.",
+      "Încărcați sampler-ul și kit-ul, fixați toate curelele și legăturile.",
+      "Tractați la viteze rezonabile—fără derapaj sau aventuri neintenționate."
+    ],
+    "technicalSpecs": {
+      "Track Width": "1.35 m",
+      "Load Options": "550 kg (standard), upgrade opțional până la 1 500 kg GTW",
+      "Rims/Tyre Size": "LT285/75 R16 sau MT215/75 R15",
+      "Brakes": "Frâne mecanice (versiunea frânată)",
+      "Shock Absorbers": "Aprobat pentru tractare la 100 km/h",
+      "Support Wheel": "Include roată de sprijin",
+      "Chassis": "Oțel galvanizat la cald, S235",
+      "Body Height": "1.2 m",
+      "Trailer Weight": "Aprox. 300 kg",
+      "Lighting": "LED 12 V, placă lumină legală",
+      "Warranty": "12 luni garanție producător"
+    },
+    "testimonials": [
+      {
+        "quote": "O mașină robustă și fiabilă, cu suficientă putere pentru a face munca pe teren să pară mai puțin grea.",
+        "author": "Tomás Herrera",
+        "company": "Precision Agriculture Co.",
+        "rating": 4
+      }
+    ]
+  },
+  "powerpack": {
+    "name": "Power Pack",
+    "nickname": "Independent Drive Units",
+    "specs": [
+      "Alimentat hidraulic sau electric pentru a se potrivi nevoilor dvs. de putere",
+      "Carcasă din oțel portabilă, durabilă, construită pentru lucrări de teren dure",
+      "Indicator LCD al bateriei pe modelele electrice—cunoașteți încărcarea dintr-o privire",
+      "Filtrare de retur și aspirație inclusă pentru operare hidraulică curată"
+    ],
+    "description": "Pachete de alimentare portabile pentru utilaje MP sau DH fără putere integrată.",
+    "herodescription": "Powerpack-urile oferă putere portabilă fiabilă: opțiuni hidraulice sau electrice, carcasă robustă, afișaj LCD pentru stare baterie și sisteme de filtrare.",
+    "detailedDescription": "<p class='mt-4'>Modelul hidraulic are motor pe benzină 13 CP și rezervor ulei 22 L, oferind 135 bar la 20 L/min. Modelul electric are baterie 24 V / 100 Ah și afișaj LCD.</p>",
+    "price": "De la €3 450",
+    "features": [
+      "Alimentare hidraulică sau electrică, adaptată fluxului tău de lucru",
+      "Carcasă robustă din oțel cu protecție împotriva coroziunii",
+      "Indicator LCD al bateriei pe modelele electrice",
+      "Filtrare de retur și aspirație pentru durabilitatea sistemului hidraulic",
+      "Portabil și ușor de montat sau transportat"
+    ],
+    "applications": [
+      "Sursă de alimentare pentru prelevatoarele de sol seria MP și DH",
+      "Operațiuni pe teren care necesită alimentare hidraulică sau electrică independentă",
+      "Locații de prelevare îndepărtate, fără sursă de alimentare de la vehicul"
+    ],
+    "howToUse": [
+      "Alege hidraulic sau electric în funcție de câtă putere solicită prelevatorul tău (și cât de sofisticat te simți).",
+      "Fixează-l bine pe vehiculul sau remorca ta — fără improvizații cu bandă adezivă, te rog.",
+      "Monitorizează nivelurile de alimentare prin LCD (electric) sau prin indicatoare de combustibil/ulei (hidraulic) — surprizele sunt pentru petreceri, nu pentru lucrul pe teren.",
+      "Completează uleiul și schimbă filtrele regulat — îngrijește-l bine și va menține prelevatorul funcționând impecabil."
+    ],
+    "technicalSpecs": {
+      "Hydraulic Model": "Motor 13 HP, rezervor 22 L, 135 bar, 20 L/min",
+      "Electric Model": "Baterie 24 V / 100 Ah, afișaj LCD",
+      "Weight": "Aprox. 65 kg (hidraulic), 48 kg (electric)",
+      "Dimensions": "50 x 40 x 45 cm",
+      "Material": "Carcasă metalică cu protecție anticorozivă",
+      "Warranty": "12 luni pentru componente electrice"
+    },
+    "testimonials": [
+      {
+        "quote": "O mașină robustă și fiabilă, cu suficientă putere pentru a face munca pe teren să pară mai puțin grea.",
+        "author": "Tomás Herrera",
+        "company": "Precision Agriculture Co.",
+        "rating": 4
+      }
+    ]
+  },
+  "spareparts": {
+    "name": "Piese de schimb recomandate",
+    "nickname": "The Lifesavers",
+    "specs": [
+      "Piese de schimb aprobate de fabrică pentru toate modelele",
+      "Componente critice pentru ansambluri cu uzură mare și misiuni critice",
+      "Ambalate individual, etichetate și gata pentru service pe teren",
+      "Susținute de standardele de fiabilitate TechbyP"
+    ],
+    "description": "Piese de schimb oficiale pentru MP, DH, DE și BOPROB III—pentru a evita întreruperile neașteptate în lucru.",
+    "herodescription": "Seturile de piese sunt trusa de prim-ajutor pentru sampler—O-ringuri, cuplaje hidraulice, filtre și alte componente esențiale, gata să rezolve probleme pe teren.",
+    "detailedDescription": "<p class='mt-4'>Seturile includ garnituri, filtre, cuplaje și piese certificate de uzină, ambalate și etichetate pentru utilizare rapidă.</p>",
+    "price": "De la €450",
+    "features": [
+      "Piese de schimb recomandate pentru sampler-e de sol MP, DH, DE și BOPROB III",
+      "Include componente critice de uzură și articole de reparație de urgență",
+      "Aprobate de fabrică pentru compatibilitate perfectă",
+      "Etichetate clar și ambalate pentru utilizare pe teren",
+      "Ajută la reducerea timpului de nefuncționare în timpul campaniilor critice de eșantionare"
+    ],
+    "applications": [
+      "Reparații pe teren și întreținere preventivă pe sampler-e de sol BPT",
+      "Menținerea componentelor cu uzură mare în stare de funcționare",
+      "Evitarea întârzierilor proiectelor din cauza pieselor indisponibile"
+    ],
+    "howToUse": [
+      "Păstrați un kit per mașină—pentru că nimeni nu-i place să canibalizeze piese de la unitatea pe care nu o folosește.",
+      "Înlocuiți componentele cu uzură mare conform intervalelor de service sau uzurii vizibile.",
+      "Utilizați numai componentele etichetate pentru locațiile lor destinate (ghicirea nu este eroică, este costisitoare).",
+      "Reumpleți kit-ul după utilizare pentru a nu fi niciodată prins fără el de două ori."
+    ],
+    "technicalSpecs": {
+      "Compatibility": "MP-1.90, MP-2.60, MP-3.90, MP-4.100, DH, DE-1.30, BOPROB III",
+      "Included Parts": "Cuplaje hidraulice, filtre, O-ringuri, solenoide, curele, linii de presiune",
+      "Packaging": "Ambalare individuală, etichetată",
+      "Shelf Life": "5 ani în condiții uscate",
+      "Restock Options": "Piese individuale disponibile la cerere"
+    },
+    "testimonials": [
+      {
+        "quote": "Obișnuiam să improvizez cu piese aleatorii — până când am petrecut două ore în noroi reconstruind o valvă cu gumă de mestecat. Niciodată din nou.",
+        "author": "Dr. Lena Bauer",
+        "company": "AgroLab Germany",
+        "rating": 5
+      }
+    ]
+  },
+  "drillrods": {
+    "name": "Tije de foraj Ø22 mm pentru profile normale",
+    "nickname": "The Deep Opener",
+    "specs": [
+      "Canelură de foraj Ø 22 mm, lungime totală 1100 mm, lungime utilizabilă 1000 mm",
+      "Canelură de 12 mm pentru păstrarea probelor de sol",
+      "Extensii de 1000 mm lungime cu filet intern 5/8” pe ambele părți",
+      "Include chei speciale pentru strângere"
+    ],
+    "description": "Tije robuste Ø22 mm pentru deschidere profile până la 10 m, cu părți modulare.",
+    "herodescription": "Tije modulare, secțiuni de 1 m, cu canelură de 12 mm pentru păstrarea probei și conectare prin filete robuste.",
+    "detailedDescription": "<p class='mt-4'>Fiecare secțiune de 1000 mm oferă precizie, cu filet 5/8” pentru extensii și opțiuni de ridicare sigure.</p>",
+    "price": "Preț la cerere",
+    "features": [
+      "Canelură de foraj Ø 22 mm cu canelură de probă de sol de 12 mm",
+      "Design modular cu părți interschimbabile fixate cu șuruburi",
+      "Lungime utilizabilă de 1000 mm per secțiune tijă",
+      "Capete de lovire speciale pentru ciocan manual sau utilizare mașină",
+      "Chei speciale pentru strângere sigură",
+      "Dispozitive de ridicare pentru extracție ușoară a tijelor"
+    ],
+    "applications": [
+      "Deschiderea profilelor normale de sol până la 10 metri adâncime",
+      "Prelevare manuală de probe de sol în soluri nerocase",
+      "Ajustare flexibilă a lungimii tijei pentru eșantionare variabilă a adâncimii"
+    ],
+    "howToUse": [
+      "Asamblați tijele și extensiile la lungimea necesară folosind șuruburi de conectare",
+      "Utilizați capul de lovire potrivit cu ciocan manual sau mașină",
+      "Strângeți secțiunile tijei folosind chei speciale (SW 18)",
+      "Extrageți tijele folosind dispozitiv de ridicare cu cric cu lanț de clemă sau extractor cu un braț cu clemă cu bilă"
+    ],
+    "technicalSpecs": {
+      "Diameter": "22 mm",
+      "Groove width": "12 mm",
+      "Rod length": "1100 mm total, 1000 mm utilizabili",
+      "Extension length": "1000 mm cu filet 5/8”",
+      "Thread size": "Filet 5/8\" internal și extern",
+      "Recommended tools": "Chei speciale SW 18",
+      "Lifting devices": "Cric cu bară de ridicare și lanț, extractor cu clemă"
+    },
+    "table": [
+      {
+        "emNo": "1100",
+        "articleName": "Drill groove Ø 22 mm, NL 1000 mm, groove 12 mm"
+      },
+      {
+        "emNo": "1101",
+        "articleName": "Extension with 5/8\" internal thread"
+      },
+      {
+        "emNo": "1102",
+        "articleName": "Connecting bolt, 5/8\" external thread SW 18"
+      },
+      {
+        "emNo": "1103",
+        "articleName": "Special wrench SW 18"
+      },
+      {
+        "emNo": "1049",
+        "articleName": "Impact head for hand probing"
+      },
+      {
+        "emNo": "1110",
+        "articleName": "Jack with lifting bar (short)"
+      },
+      {
+        "emNo": "1111",
+        "articleName": "Lifting bar (long)"
+      },
+      {
+        "emNo": "1112",
+        "articleName": "Clamp frog"
+      },
+      {
+        "emNo": "1113",
+        "articleName": "Clamp chain"
+      },
+      {
+        "emNo": "1120",
+        "articleName": "One-arm puller with integrated ball clamp"
+      },
+      {
+        "emNo": "1125",
+        "articleName": "Single-arm puller for probes and rods Ø 32-65 mm, lifting tube Ø 44 mm x 1500 mm, lifting capacity approx. 4 t"
+      },
+      {
+        "emNo": "1126",
+        "articleName": "Jaw clamp"
+      },
+      {
+        "emNo": "645250",
+        "articleName": "Wooden field book frame, size DIN A4, weight 0.6 kg"
+      },
+      {
+        "emNo": "645242",
+        "articleName": "Field book frame made of plastic, size DIN A4, weight 0.4 kg"
+      },
+      {
+        "emNo": "645245",
+        "articleName": "Wooden field book frame, size DIN A3, weight 0.9 kg"
+      },
+      {
+        "emNo": "645260",
+        "articleName": "Field book frame made of plastic, size DIN A3, weight 0.7 kg"
+      }
+    ],
+    "testimonials": []
+  },
+  "hammers": {
+    "name": "Ciocane și accesorii",
+    "nickname": "Ciocanul potrivit pentru fiecare treabă",
+    "specs": [
+      "Varietate de ciocane cu suprafețe de impact de la 80 mm Ø la 150 mm pătrat",
+      "Ciocane cu față moale și nylon cu carcasă din fontă maleabilă",
+      "Mânere din lemn sau hickory cu lungimi variate",
+      "Capete de ciocan și inserții interschimbabile"
+    ],
+    "description": "Alege ciocanul potrivit pentru solul tău — de la capete dure la față moale din nylon.",
+    "herodescription": "De la ciocanul pătrat masiv la cel cu față moale din nylon, avem instrumentele pentru precizie și confort.",
+    "detailedDescription": "<p class='mt-4'>Specificații pentru diverse capete și mânere, inclusiv opțiuni din lemn și hickory.</p>",
+    "price": "Preț la cerere",
+    "features": [
+      "Ciocan pătrat cu suprafață de impact 135x135 mm, 4.3 kg",
+      "Ciocan rotund din plastic cu suprafață de impact 150 mm Ø",
+      "Ciocane cu față moale cu carcasă din fontă maleabilă",
+      "Variante de ciocan cu față moale din nylon",
+      "Capete de ciocan și inserții interschimbabile",
+      "Mânere din lemn și hickory de lungimi variabile"
+    ],
+    "applications": [
+      "Prelevare manuală de probe de sol care necesită forță de impact precisă",
+      "Protecția structurilor delicate de sol cu ciocane cu față moale",
+      "Selecție versatilă de ciocane pentru diferite echipamente de eșantionare"
+    ],
+    "howToUse": [
+      "Selectați tipul de ciocan în funcție de duritatea solului și metoda de eșantionare",
+      "Utilizați lungimea potrivită a mânerului pentru pârghie și confort",
+      "Înlocuiți capetele de ciocan sau inserțiile după cum este necesar pentru performanță optimă",
+      "Întrețineți mânerele din lemn și strângeți șuruburile regulat"
+    ],
+    "technicalSpecs": {
+      "Square hammer": "Suprafață impact 135x135 mm, greutate 4.3 kg",
+      "Round plastic hammer": "Suprafață 150 mm Ø, greutate 4.3 kg",
+      "Soft-face hammer": "Suprafață 80-125 mm Ø, greutate 2.9 - 6.7 kg",
+      "Nylon soft-face hammer": "Suprafață 80 mm Ø, greutate 3.0 - 3.2 kg",
+      "Handles": "Mânere din lemn și hickory, lungimi 395 - 900 mm",
+      "Inserts": "Inserții superplastice și nylon, diverse diametre",
+      "Screws": "Șurub Allen cu piuliță pentru dimensiuni 80 și 100 mm"
+    },
+    "table": [
+      {
+        "emNo": "1061",
+        "articleName": "Ciocan pătrat, suprafață impact 135x135 mm, lungime cap: 200 mm, greutate 4.3 kg"
+      },
+      {
+        "emNo": "1062",
+        "articleName": "Cap de ciocan pentru ciocan pătrat (Art. Nr. 1061)"
+      },
+      {
+        "emNo": "1063",
+        "articleName": "Mâner pentru ciocanul pătrat cu șurub"
+      },
+      {
+        "emNo": "1070",
+        "articleName": "Ciocan rotund din plastic, suprafață impact 150 mm Ø, lungime cap: 200 mm, greutate 4.3 kg"
+      },
+      {
+        "emNo": "1071",
+        "articleName": "Cap de ciocan pentru ciocan rotund din plastic (Art. Nr. 1070)"
+      },
+      {
+        "emNo": "1072",
+        "articleName": "Mâner de ciocan pentru ciocan rotund din plastic (Art. Nr. 1070)"
+      },
+      {
+        "emNo": "3007.080",
+        "articleName": "Ciocan cu față moale din superplastic cu carcasă din fontă maleabilă și mâner din lemn, suprafață impact 80 mm Ø, lungime 490 mm, greutate aprox. 2.930 g"
+      },
+      {
+        "emNo": "3007.081",
+        "articleName": "Ciocan cu față moale din superplastic cu carcasă din fontă maleabilă și mâner din lemn, suprafață impact 80 mm Ø, lungime 800 mm, greutate aprox. 3.240 g"
+      },
+      {
+        "emNo": "3007.100",
+        "articleName": "Ciocan cu față moale din superplastic cu carcasă din fontă maleabilă și mâner din lemn, suprafață impact 100 mm Ø, lungime 1000 mm, greutate aprox. 5.300 g"
+      },
+      {
+        "emNo": "3007.125",
+        "articleName": "Ciocan cu față moale din superplastic cu carcasă din fontă maleabilă și mâner din lemn, suprafață impact 125 mm Ø, lungime 1040 mm, greutate aprox. 6.700 g"
+      },
+      {
+        "emNo": "3008.080",
+        "articleName": "Ciocan cu față moale din nylon cu carcasă din fontă maleabilă și mâner din lemn, suprafață impact 80 mm Ø, lungime 490 mm, greutate aprox. 3.090 g"
+      },
+      {
+        "emNo": "3008.081",
+        "articleName": "Ciocan cu față moale din nylon cu carcasă din fontă maleabilă și mâner din lemn, suprafață impact 80 mm Ø, lungime 700 mm, greutate aprox. 3.240 g"
+      },
+      {
+        "emNo": "3207.080",
+        "articleName": "Inserție pentru ciocan cu față moale, superplastic 80 mm Ø"
+      },
+      {
+        "emNo": "3207.100",
+        "articleName": "Inserție pentru ciocan cu față moale, superplastic 100 mm Ø"
+      },
+      {
+        "emNo": "3207.125",
+        "articleName": "Inserție pentru ciocan cu față moale, superplastic 125 mm Ø"
+      },
+      {
+        "emNo": "3208.080",
+        "articleName": "Inserție pentru ciocan cu față moale, nylon 80 mm Ø"
+      },
+      {
+        "emNo": "3244.080",
+        "articleName": "Mâner din hickory pentru ciocan 80 mm Ø, lungime mâner 395 mm"
+      },
+      {
+        "emNo": "3244.081",
+        "articleName": "Mâner din hickory pentru ciocan 80 mm Ø, lungime mâner 700 mm"
+      },
+      {
+        "emNo": "3244.100",
+        "articleName": "Mâner din hickory pentru ciocan 100 mm Ø, lungime mâner 900 mm"
+      },
+      {
+        "emNo": "3244.125",
+        "articleName": "Mâner din hickory pentru ciocan 125 mm Ø, lungime mâner 900 mm"
+      },
+      {
+        "emNo": "3299.080",
+        "articleName": "Șurub Allen cu piuliță pentru ciocan cu față moale 80 mm Ø"
+      },
+      {
+        "emNo": "3299.100",
+        "articleName": "Șurub Allen cu piuliță pentru ciocan cu față moale 100 mm Ø"
+      }
+    ],
+    "testimonials": []
+  },
+  "goettingerDrills": {
+    "name": "Göttinger Soil Corers",
+    "nickname": "Precizie fără efort",
+    "specs": [
+      "Proiectat pentru prelevare Nmin până la 90 cm",
+      "Operație manuală—nu sunt necesare unelte suplimentare",
+      "Canelură din oțel special călită asigură frecare minimă",
+      "Trei diametre de foraj interconectate optimizează inserția și extracția"
+    ],
+    "description": "Carote de mână ușoare pentru prelevare precisă în soluri fine.",
+    "herodescription": "Core-uri eficiente pentru lut și nisip slab compactat; manevrare ușoară și separare în 3 straturi.",
+    "detailedDescription": "<p class='mt-4'>Core-uri ușoare, operare cu o singură mână, set complet pentru 0-90 cm.</p>",
+    "price": "Preț la cerere",
+    "features": [
+      "Operație cu o singură persoană",
+      "Ușor, doar ~2.5 kg",
+      "Eficiență mai mare decât instrumentele manuale convenționale",
+      "Fără deteriorare a terenului—fără zdrobire a culturilor",
+      "Sigur pentru canale, cabluri și linii subterane",
+      "Funcționează chiar și în soluri umede",
+      "Separare exactă în 3 straturi pentru probe N-min",
+      "Confort îmbunătățit al prinderii datorită căptușelii mânerului întărite"
+    ],
+    "applications": [
+      "Prelevare manuală de probe de sol Nmin în soluri ușoare",
+      "Condiții de teren unde mașinăriile nu pot fi utilizate",
+      "Separare fiabilă a straturilor pentru analiză precisă"
+    ],
+    "howToUse": [
+      "Introduceți corer-ul manual în sol",
+      "Scoateți cu grijă pentru a colecta proba",
+      "Repetați 16 lovituri paralele per secțiune de adâncime pentru rezultate fiabile",
+      "Evitați solurile stâncoase sau prea compactate"
+    ],
+    "technicalSpecs": {
+      "0-30 cm corer": "Diametru 18 mm, canelură 14 mm",
+      "30-60 cm corer": "Diametru 16 mm, canelură 12 mm",
+      "60-90 cm corer": "Diametru 14 mm, canelură 10 mm",
+      "Complete set": "Include un corer pentru fiecare secțiune de adâncime"
+    },
+    "table": [
+      {
+        "emNo": "5001",
+        "articleName": "Göttinger corer (0-30 cm), Ø 18 mm, groove 14 mm"
+      },
+      {
+        "emNo": "5002",
+        "articleName": "Göttinger corer (30-60 cm), Ø 16 mm, groove 12 mm"
+      },
+      {
+        "emNo": "5003",
+        "articleName": "Göttinger corer (60-90 cm), Ø 14 mm, groove 10 mm"
+      },
+      {
+        "emNo": "5004",
+        "articleName": "Complete Göttinger corer set, including all three depth sections"
+      }
+    ],
+    "testimonials": []
+  },
+  "raupe": {
+    "nickname": "The Dirt Whisperer",
+    "specs": [
+      "Adâncime: 0–90 cm (opțional 120 cm)",
+      "Hidraulic și semi-automat",
+      "Eșantionare în 3 straturi",
+      "Verificare vizuală manuală pentru fiecare nucleu"
+    ],
+    "description": "Crawler pentru teren dificil — prelevează cu încredere pe pante și în culturi.",
+    "herodescription": "Nitratraupe prelevează pe 3 straturi până la 90 cm, manevrabil pe teren accidentat și control prin telecomandă.",
+    "detailedDescription": "<p class='mt-4'>Precizie și robustețe; funcționare semi-automată cu unitate de ridicare și eșantionare.</p>",
+    "price": "De la €20 000",
+    "features": [
+      "Extracție hidraulică semi-automată până la 90 cm (opțional 120 cm)",
+      "Eșantionare în trei straturi pentru precizie specifică orizontului",
+      "Inspecția manuală a nucleului vă ține în control",
+      "Motorul purtător alimentează sistemul hidraulic—fără motoare suplimentare",
+      "Telecomandă: ridicare, coborâre, rotație, eșantionare",
+      "Șenilele sunt înguste pentru trecere între porumb",
+      "Ciocan hidraulic de înaltă frecvență (2400 lovituri/min, 40J per lovitură)",
+      "Durabil și cu întreținere scăzută",
+      "Serviciu rapid de piese de schimb (2h) și reparații pe loc (12h)"
+    ],
+    "howToUse": [
+      "Conduceți crawler-ul la locul de eșantionare",
+      "Așezați mașina jos pentru stabilitate în timpul deplasării dacă este necesar",
+      "Ridicați tija de eșantionare în poziție verticală prin telecomandă",
+      "Conduceți hidraulic tija în sol și rotiți pentru a extrage nucleul",
+      "Repetați pentru cele trei straturi: 0–30, 30–60, 60–90 cm",
+      "Scoateți nucleul, inspectați vizual și depozitați în containere impermeabile"
+    ],
+    "applications": [
+      "Testare a solului Nmin/nitrați",
+      "Monitorizarea solului de mediu și agricol",
+      "Profilarea solului și cercetare",
+      "Lucru pe teren pe pante și teren accidentat"
+    ],
+    "technicalSpecs": {
+      "Sampling Depth": "0–90 cm (opțional 120 cm)",
+      "Sampling Type": "Impact-driven, semi-automatic",
+      "Hammer Unit": "Hidraulic, 2400 lovituri/min, 40 J/lovitură",
+      "Horizons": "3 straturi (0–30, 30–60, 60–90 cm)",
+      "Magazines": "3",
+      "Sampling Cycle Time": "20 sec/probă",
+      "Carrier Vehicle": "Crawler, șenile acționate de motor",
+      "Track Width": "Max 700 mm",
+      "Remote Control": "Control complet al crawler-ului și unității de prelevare",
+      "Engine": "Honda, ≥6.5 HP",
+      "Weight": "220 kg"
+    },
+    "testimonials": [
+      {
+        "quote": "Gestionează pantele noroioase ca un alpinist profesionist. Nu pierdem niciodată o probă.",
+        "author": "Dr. Anna Fischer",
+        "company": "Soil Research Lab",
+        "rating": 5
+      },
+      {
+        "quote": "Separația în 3 straturi este genială. Simplă, eficientă și face viața pe teren mai ușoară.",
+        "author": "Lars Becker",
+        "company": "AgriSoil GmbH",
+        "rating": 5
+      }
+    ]
+  },
+  "productShowcase": {
+    "title": "Produsele noastre",
+    "videoTitle": "Vezi produsele noastre în acțiune",
+    "categoryDescriptions": {
+      "bestseller": "Acestea sunt mașinile care se vând rapid — robuste, de încredere și populare din motive întemeiate.",
+      "all": "Tot ce oferim, de la cele mari și robuste până la cele mici și ingenioase.",
+      "smartsystems": "Partea inteligentă a prelevării de sol — automată, precisă și foarte bine proiectată.",
+      "accessory": "Accesoriile care țin totul laolaltă — ajutoare utile pentru funcționare.",
+      "manual": "Unelte manuale de încredere — practice, robuste și durabile."
+    },
+    "customEquipment": {
+      "title": "Ai nevoie de echipament personalizat?",
+      "description": "Echipa noastră de inginerie poate proiecta și fabrica echipamente specializate adaptate cerințelor tale.",
+      "viewCatalog": "Vezi catalogul complet",
+      "contactEngineering": "Contactează echipa de inginerie",
+      "quickConfigure": "Configurare rapidă pentru toate produsele"
+    }
+  },
+  "coolbox": {
+    "name": "Coolbox 95L",
+    "nickname": "The Chiller",
+    "specs": [
+      "Compresor cu două zone răcire/congelare până la -20°C",
+      "Compartimente independente cu iluminare LED",
+      "Afișaj digital, încărcare USB și control prin aplicație",
+      "Funcționează pe putere 12/24 V DC sau 230 V AC"
+    ],
+    "description": "Răcitoare portabilă de 95L pentru probe și provizii pe teren.",
+    "herodescription": "Coolbox 95L păstrează probele reci până la -20°C, are compresor eficient și compartimente configurabile, ideal pentru misiuni pe teren.",
+    "detailedDescription": "<p class='mt-4'>Dual compartimente configurabile ca frigider sau congelator, compresor eficient și control prin panou sau aplicație.</p>",
+    "price": "€1000",
+    "features": [
+      "Compartimentele duble pot răci sau congela independent",
+      "Afișaj digital cu controale tactile și aplicație mobilă",
+      "Iluminare LED încorporată și port de încărcare USB",
+      "Capacele se deschid din ambele părți pentru potențial maxim de acces",
+      "Funcționează pe 12/24 V DC sau 110–240 V AC"
+    ],
+    "applications": [
+      "Transportarea probelor sensibile la temperatură în climate calde",
+      "Expediții de mai multe zile fără a sacrifica băuturile reci",
+      "Păstrarea pachetelor de gel și a specimenelor la temperaturi conforme cu laboratorul",
+      "Conservarea berii de urgență la șantiere îndepărtate"
+    ],
+    "howToUse": [
+      "Conectați la puterea vehiculului sau AC înainte de încărcare",
+      "Setați temperaturile țintă prin panoul de control sau aplicație",
+      "Utilizați compartimentele ca frigider-congelator, frigider-frigider sau congelator-congelator",
+      "Încărcați probele în poziție verticală și evitați supraîncărcarea (da, știm că veți face oricum)",
+      "Curățați regulat decât dacă efectuați un studiu de creștere microbiană"
+    ],
+    "technicalSpecs": {
+      "Capacity": "95 L",
+      "TemperatureRange": "-20°C până la +10°C",
+      "PowerSupply": "12/24 V DC sau 110–240 V AC",
+      "PowerConsumption": "6 A (12 V) / 3 A (24 V)",
+      "ExternalDimensions": "826 × 528 × 465 mm",
+      "InternalConfiguration": "2 compartimente iluminate cu LED",
+      "Weight": "24 kg"
+    },
+    "testimonials": []
+  },
+  "led": {
+    "name": "Lumină LED 1700",
+    "nickname": "The Midnight Sun",
+    "specs": [
+      "Lumină de lucru LED montată pe pivot pentru iluminare în câmp apropiat",
+      "Ieșire orbitoare de 1700 lumeni de la 4 LED-uri",
+      "Carcasă din aluminiu durabilă, clasificată IP6K9K",
+      "Compatibil cu sisteme 12–24 V DC"
+    ],
+    "description": "Lumină de lucru compactă, 1700 lumeni, robustă pentru utilizare pe teren.",
+    "herodescription": "Lumină de lucru pentru teren, oferă iluminare puternică fără căldură, ideală pentru operare în întuneric.",
+    "detailedDescription": "<p class='mt-4'>Carcasă din aluminiu, grad IP6K7/IP6K9K, bracket pivotant pentru orientare precisă.</p>",
+    "price": "€67",
+    "features": [
+      "Ieșire de 1700 lumeni de la 4 LED-uri de înaltă intensitate",
+      "Suport pivotant pentru orientare precisă",
+      "Protecție împotriva pătrunderii IP6K9K și IP6K7",
+      "Lentilă modelată pentru răspândire în câmp apropiat",
+      "Carcasă din aluminiu compactă și robustă"
+    ],
+    "applications": [
+      "Foraj și prelevare de probe de sol noaptea",
+      "Iluminare echipamente pe platforme și remorci",
+      "Zone de lucru în tuneluri, păduri sau 'mijlocul nicăieri'",
+      "Iluminare de reparații de urgență"
+    ],
+    "howToUse": [
+      "Montați în siguranță folosind suportul pivotant inclus",
+      "Conectați la alimentare 12 sau 24 V DC (asamblare de către personal calificat)",
+      "Îndreptați fasciculul către zona de lucru",
+      "Evitați să priviți direct în el decât dacă vă place regretul retinian"
+    ],
+    "technicalSpecs": {
+      "Voltage": "12/24 V DC",
+      "PowerConsumption": "24 W",
+      "LuminousFlux": "1700 lm",
+      "ColorTemperature": "5700 K",
+      "NumberOfLEDs": "4",
+      "LightDistribution": "Iluminare de apropiere",
+      "Mounting": "Suport pivotant",
+      "PlugType": "Cablu deschis",
+      "CableLength": "800 mm",
+      "IngressProtection": "IP6K7 / IP6K9K",
+      "Housing": "Aluminiu, finisaj negru",
+      "Dimensions": "75 × 98 × 41 mm",
+      "Diameter": "75 mm",
+      "Certification": "Conform ECE R10"
+    },
+    "testimonials": []
+  },
+  "camera": {
+    "name": "Cameră externă",
+    "nickname": "The Watchtower",
+    "specs": [
+      "Cameră 5MP 4G pentru platforme de prelevare a solului",
+      "Se montează direct pe cadrul mașinii",
+      "Flux video live către mobil sau tabletă prin aplicație",
+      "Câmp vizual de 75° cu vedere nocturnă IR până la 15 m"
+    ],
+    "description": "Cameră de monitorizare externă care transmite imaginea în timp real către cabina operatorului.",
+    "herodescription": "Camerele urmăresc capul de prelevare și transmit video live prin 4G, oferind vizibilitate în timp real și funcții de înregistrare opționale.",
+    "detailedDescription": "<p class='mt-4'>Cameră 5MP pentru montare externă, transmisie 4G, vizualizare prin aplicație, slot micro SD pentru înregistrări.</p>",
+    "price": "€225",
+    "features": [
+      "Transmisie video live prin rețea 4G",
+      "Lentilă cu unghi fix de 75° cu vedere nocturnă",
+      "Se montează direct pe mașinile de eșantionare TechByp",
+      "Control prin aplicație cu ajustare imagine (WDR, BLC, etc.)",
+      "Înregistrare opțională la bord prin micro SD"
+    ],
+    "applications": [
+      "Monitorizarea operațiunilor de prelevare a probelor de sol din interiorul vehiculului",
+      "Verificări de aliniere live în timpul forajului",
+      "Instruire operatori și documentare video",
+      "Evitarea forajului orb și a surprizelor neașteptate"
+    ],
+    "howToUse": [
+      "Montați în siguranță pe mașină folosind suportul",
+      "Introduceți card SIM și card SD opțional",
+      "Conectați la alimentare 12V pe platformă",
+      "Lansați aplicația pentru a transmite feed live de la cameră",
+      "Ștergeți curat ocazional—dar numai când este deconectat!"
+    ],
+    "technicalSpecs": {
+      "Resolution": "5 MP",
+      "Transmission": "4G LTE",
+      "IRIllumination": "Da, până la 15 m",
+      "ViewingAngle": "75°",
+      "PanTilt": "Nu",
+      "Audio": "Da",
+      "ControlViaApp": "Da (iOS/Android)",
+      "SDCardSlot": "Da, până la 128 GB",
+      "PowerSupply": "12V DC",
+      "HousingType": "Carcasă robustă pentru exterior",
+      "Mounting": "Suport cu șurub (inclus)",
+      "Dimensions": "80 × 45 × 80 mm",
+      "IngressProtection": "Rezistent la intemperii pentru montare exterioară"
+    },
+    "testimonials": []
+  },
+  "probes": {
+    "name": "Sonde și accesorii",
+    "nickname": "The N-min Purist",
+    "specs": [
+      "Construcție din oțel scule (HRC 52)",
+      "Profil conic (40→38 mm / 35→33 mm / 30→28 mm)",
+      "Marcaje adâncime gravate cu laser la fiecare 10 cm",
+      "Compatibil cu protocoale de eșantionare N-min (VDLUFA, ISO 14255)"
+    ],
+    "description": "Sonde pentru prelevare manuală N-min — proiectate pentru precizie în soluri dificile.",
+    "herodescription": "Sonde din oțel pentru prelevare precisă, cu marcaje laser la fiecare 10 cm pentru determinarea exactă a adâncimii.",
+    "detailedDescription": "<p class='mt-4'>Gama include 3 dimensiuni conice pentru diverse adâncimi, cu marcaje laser pentru repetabilitate și accesorii de ridicare.</p>",
+    "price": "Preț la cerere",
+    "features": [
+      "Trei diametre conice minimizează frecarea și maximizează ușurința eșantionării",
+      "Oțel scule călită HRC 52 pentru durabilitate și rezistență",
+      "Marcaje adâncime gravate cu laser la fiecare 10 cm pentru eșantionare precisă",
+      "Muchii de tăiere pre-rupte pentru penetrare consistentă și curată",
+      "Compatibil cu mânere basculante și dălți pentru extracție eficientă a probelor"
+    ],
+    "applications": [
+      "Profilare nitrați N-min",
+      "Cercetare academică și comercială a solului",
+      "Eșantionare manuală în soluri dure, pietroase sau cu argilă grea"
+    ],
+    "howToUse": [
+      "Alegeți diametrul tijei în funcție de adâncimea dorită a probei",
+      "Rotiți tija în timp ce aplicați presiune în jos; conicitatea face munca grea",
+      "Utilizați mânere basculante (Articole 1030 sau 1031) pentru a extrage tija lin",
+      "Curățați reziduurile de sol cu dăltiul (Articol 1051) pentru a menține integritatea canelurii între probe"
+    ],
+    "technicalSpecs": {
+      "Material": "Oțel scule (HRC 52)",
+      "Taper": "40→38 mm / 35→33 mm / 30→28 mm",
+      "Markings": "Marcaje laser la fiecare 10 cm",
+      "Compatibility": "Protocoale N-min (VDLUFA, ISO 14255)",
+      "Weight": "Aprox. 2.1 kg/m (diametru 40 mm)"
+    },
+    "table": [
+      {
+        "emNo": "1001",
+        "articleName": "Boring bar, effective length 1000 mm, total length 1150 mm, groove 18 mm, conical, round"
+      },
+      {
+        "emNo": "1001.2",
+        "articleName": "Boring bar, usable length 1000 mm, total length 1150 mm, groove 18 mm, conical, round with markings in 10 cm sections and broken cutting edges"
+      },
+      {
+        "emNo": "1003",
+        "articleName": "Boring bar, effective length 1200 mm, total length 1350 mm, groove 18 mm, conical, round"
+      },
+      {
+        "emNo": "1005",
+        "articleName": "Boring bar, effective length 1500 mm, total length 1650 mm, groove 18 mm, conical, round"
+      },
+      {
+        "emNo": "1030",
+        "articleName": "Toggle for lifting and emptying the drill rod, length 300 mm"
+      },
+      {
+        "emNo": "1031",
+        "articleName": "Toggle for lifting and emptying the drill rod, length 600 mm"
+      },
+      {
+        "emNo": "1040",
+        "articleName": "1 set of sampling probes (N-min drill bit set) for three depths. Each drill bit consists of the actual sampling probe, an extension, and the impact head with a cross-bore.\n(0-30 cm Ø 40-38 mm, 30-60 cm Ø 35-33 mm, 60-90 cm Ø 30-28 mm). All parts tool steel, developed for hard soils."
+      },
+      {
+        "emNo": "1041",
+        "articleName": "Probe, useful length 0-30 cm, outer diameter 40-38 mm, conical"
+      },
+      {
+        "emNo": "1042",
+        "articleName": "Extension for the 0-30 cm probe"
+      },
+      {
+        "emNo": "1043",
+        "articleName": "Probe, usable length 30-60 cm, outer diameter 35-33 mm, conical"
+      },
+      {
+        "emNo": "1044",
+        "articleName": "Extension for the 30-60 cm probe"
+      },
+      {
+        "emNo": "1045",
+        "articleName": "Probe, usable length 60-90 cm, outer diameter 30-28 mm, conical"
+      },
+      {
+        "emNo": "1046",
+        "articleName": "Extension for the 60-90 cm probe"
+      },
+      {
+        "emNo": "1049",
+        "articleName": "Impact head with cross hole"
+      },
+      {
+        "emNo": "1050",
+        "articleName": "Dial rod with shrink-fitted impact head for taking soil samples up to 2 m deep, Ø 15 mm, 8x8 groove. Used with NL 1000 percussion drill rod (Art. No. 1001)."
+      },
+      {
+        "emNo": "1051",
+        "articleName": "Chisel for stripping and removing the soil sample, 18 mm, round"
+      },
+      {
+        "emNo": "1052",
+        "articleName": "Chisel for stripping and removing the soil sample, 15 mm, round"
+      },
+      {
+        "emNo": "1053",
+        "articleName": "Chisel for stripping and removing the soil sample, 14 mm, square"
+      },
+      {
+        "emNo": "1054",
+        "articleName": "Chisel for stripping and removing the soil sample, 8 mm, square"
+      },
+      {
+        "emNo": "1055",
+        "articleName": "Chisel for stripping and removing the soil sample, 12 mm, square"
+      },
+      {
+        "emNo": "1060",
+        "articleName": "Impact-lifting combination for impact drill rods and 2 m long dipsticks (square hammer, pull hook, and pull ring). Hammer impact surface 135 x 135 mm, 200 mm long, weight approx. 4300 g."
+      },
+      {
+        "emNo": "1061",
+        "articleName": "Square hammer complete"
+      },
+      {
+        "emNo": "1064",
+        "articleName": "drawing ring"
+      },
+      {
+        "emNo": "1065",
+        "articleName": "Pulling hook"
+      },
+      {
+        "emNo": "1085",
+        "articleName": "Stainless steel soil probe for locating soil compaction and soil layers. Effective length 1000 mm with markings at 100 mm intervals, 8 mm diameter."
+      }
+    ],
+    "testimonials": [
+      {
+        "quote": "Am folosit aceste tije timp de 15 ani — încă cel mai fiabil instrument pentru lucrul N-min. Conicitatea face toată diferența în argilă.",
+        "author": "Dr. Lena Bauer",
+        "company": "AgroLab Germany",
+        "rating": 5
+      }
+    ]
+  }
+}

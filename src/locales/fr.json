@@ -1,0 +1,2654 @@
+{
+  "notFound": {
+    "title": "Mon Dieu ! Page Introuvable",
+    "description": {
+      "line1": "Bon, vous vous êtes égaré sur l'autoroute numérique et vous avez fini dans les buissons.",
+      "line2": "Ce n'est pas cassé, c'est juste... un peu perdu. Un peu comme moi dans un giratoire français."
+    },
+    "backButton": "Retour à la sécurité",
+    "footer": "(Excellente idée, vraiment.)"
+  },
+  "headerTheme": {
+    "switchToDark": "Mode sombre",
+    "switchToLight": "Mode clair"
+  },
+  "termsOfService": {
+    "back": "Retour",
+    "title": "Conditions d'utilisation",
+    "intro": {
+      "text1": "Ces conditions d'utilisation s'appliquent à toutes les offres de",
+      "company": "Bodenprobetechnik Peters GmbH",
+      "address": "Am Fliegerhorst 11, 49610 Quakenbrück, Allemagne (\"nous\", \"notre\")"
+    },
+    "sections": {
+      "1": {
+        "title": "1. Acceptation des conditions",
+        "text": "En accédant à ou en utilisant le site Web et les services de TechByP, vous acceptez d'être lié par ces conditions d'utilisation. Si vous n'êtes pas d'accord, veuillez ne pas utiliser nos services."
+      },
+      "2": {
+        "title": "2. Utilisation des services",
+        "text": "Vous pouvez utiliser notre site Web et nos services uniquement à des fins légales et conformément à ces conditions. Vous acceptez de ne pas :",
+        "list": [
+          "Utiliser les services d'une manière qui viole les lois applicables",
+          "Tenter d'accéder non autorisé à nos systèmes",
+          "Interférer avec le fonctionnement correct de nos services",
+          "Utiliser des moyens automatisés pour accéder à nos services sans permission"
+        ]
+      },
+      "3": {
+        "title": "3. Propriété intellectuelle",
+        "text": "Tout le contenu de notre site Web, y compris le texte, les graphiques, les logos et les images, est la propriété de TechByP et est protégé par les lois sur la propriété intellectuelle. Vous ne pouvez pas utiliser notre contenu sans notre permission écrite expresse."
+      },
+      "4": {
+        "title": "4. Informations sur les produits",
+        "text": "Nous nous efforçons de fournir des informations précises sur les produits, mais nous ne garantissons pas que les descriptions de produits ou autres contenus soient complets, fiables ou sans erreurs. Les spécifications sont sujettes à modification sans préavis."
+      },
+      "5": {
+        "title": "5. Limitation de responsabilité",
+        "text": "TechByP ne sera pas responsable des dommages indirects, accessoires, spéciaux ou consécutifs résultant de l'utilisation ou de l'incapacité à utiliser nos services, même si nous avons été avisés de la possibilité de tels dommages."
+      },
+      "6": {
+        "title": "6. Droit applicable",
+        "text": "Ces conditions sont régies par et interprétées conformément aux lois de l'Allemagne, sans égard à ses dispositions relatives aux conflits de lois."
+      },
+      "7": {
+        "title": "7. Modifications des conditions",
+        "text": "Nous nous réservons le droit de modifier ces conditions à tout moment. Votre utilisation continue de nos services après ces modifications constitue votre acceptation des nouvelles conditions.",
+        "effectiveDate": "Date d'entrée en vigueur : 31 juillet 2025"
+      }
+    }
+  },
+  "back": "Retour",
+  "imprint": "Mentions légales",
+  "legalDisclosure": {
+    "title": "Informations légales",
+    "text": "Conformément à § 5 TMG (Loi allemande sur les services de télémédias)"
+  },
+  "company": {
+    "name": "Bodenprobetechnik Peters GmbH",
+    "address": {
+      "street": "Am Fliegerhorst 11",
+      "zipCity": "49610 Quakenbrück",
+      "country": "Allemagne"
+    }
+  },
+  "contact": {
+    "title": "Contact",
+    "phoneLabel": "Téléphone :",
+    "phone": "+49 (0) 5431 936440",
+    "emailLabel": "Email :",
+    "email": "info@bodenprobetechnik.de",
+    "websiteLabel": "Site Web :",
+    "website": "https://www.bodenprobetechnik.de"
+  },
+  "representedBy": {
+    "title": "Représenté par",
+    "name": "Walter Peters (Directeur général)"
+  },
+  "registerEntry": {
+    "title": "Inscription au registre",
+    "entry": "Inscription au registre du commerce :",
+    "registerCourt": "Tribunal d'inscription : Amtsgericht Osnabrück",
+    "registrationNumber": "Numéro d'inscription : HRB 216172"
+  },
+  "vatId": {
+    "title": "Numéro de TVA",
+    "text": "Conformément à l'article 27a de la loi allemande sur la TVA :",
+    "id": "DE343019007"
+  },
+  "taxNumber": {
+    "title": "Numéro de contribuable",
+    "text": "Steuer-Nr.: 67/201/26982"
+  },
+  "bankDetails": {
+    "title": "Coordonnées bancaires",
+    "bankLabel": "Banque :",
+    "bank": "Kreissparkasse Bersenbrück",
+    "accountNoLabel": "Numéro de compte :",
+    "accountNo": "085 4251 14",
+    "bankCodeLabel": "Code bancaire (BLZ) :",
+    "bankCode": "265 515 40",
+    "ibanLabel": "IBAN :",
+    "iban": "DE42 2655 1540 0085 4251 14",
+    "bicLabel": "BIC :",
+    "bic": "NOLADE21BEB"
+  },
+  "responsibleContent": {
+    "title": "Responsable du contenu",
+    "text": "Conformément à § 55 Abs. 2 RStV :",
+    "name": "Walter Peters",
+    "address": {
+      "street": "Am Fliegerhorst 11",
+      "zipCity": "49610 Quakenbrück",
+      "country": "Allemagne"
+    }
+  },
+  "cookie": {
+    "message": "Pas de biscuits ici, juste des cookies numériques. Ils nous aident à améliorer votre visite sur notre site Web. Continuez, et vous les approuvez.",
+    "learnMore": "En savoir plus",
+    "accept": "Oui, allez-y.",
+    "reject": "Rejeter les cookies"
+  },
+  "privacy": {
+    "back": "Retour",
+    "title": "Politique de confidentialité",
+    "introduction": {
+      "title": "1. Introduction",
+      "text": "TechByP (\"nous\", \"nos\" ou \"notre\") s'engage à protéger votre vie privée. Cette politique de confidentialité explique comment nous collectons, utilisons, divulguons et protégeons vos informations lorsque vous visitez notre site Web."
+    },
+    "dataCollection": {
+      "title": "2. Collecte de données",
+      "text": "Nous pouvons collecter des informations personnelles telles que votre nom, adresse e-mail, numéro de téléphone et détails de l'entreprise lorsque vous :",
+      "items": [
+        "Nous contactez via notre site Web",
+        "Demandez un devis ou des informations sur les produits",
+        "Vous abonnez à notre infolettre",
+        "Téléchargez des ressources de notre site"
+      ]
+    },
+    "useOfData": {
+      "title": "3. Utilisation des données",
+      "text": "Nous utilisons les informations que nous collectons pour :",
+      "items": [
+        "Fournir et maintenir nos services",
+        "Répondre à vos demandes et requêtes",
+        "Améliorer notre site Web et nos produits",
+        "Envoyer des e-mails périodiques (vous pouvez vous désabonner à tout moment)"
+      ]
+    },
+    "dataProtection": {
+      "title": "4. Protection des données",
+      "text": "Nous mettons en œuvre des mesures techniques et organisationnelles appropriées pour protéger vos données personnelles contre l'accès non autorisé, la modification ou la destruction."
+    },
+    "thirdParty": {
+      "title": "5. Services tiers",
+      "text": "Nous pouvons faire appel à des sociétés tierces pour faciliter nos services (par exemple, hébergement Web, analyse). Ces tiers ont accès à vos informations uniquement pour effectuer des tâches spécifiques en notre nom."
+    },
+    "cookies": {
+      "title": "6. Cookies et suivi",
+      "text": "Nous utilisons des cookies pour améliorer votre expérience et analyser le trafic. Cette section explique quels cookies nous utilisons et comment vous pouvez les gérer.",
+      "items": [
+        "Cookies nécessaires : Requis pour la fonctionnalité de base du site Web.",
+        "Cookies d'analyse : Nous utilisons Google Analytics pour collecter des statistiques d'utilisation anonymes et améliorer nos services."
+      ],
+      "manageText": "Vous pouvez accepter les cookies pour améliorer votre expérience ou les refuser via les paramètres de votre navigateur. Certaines fonctionnalités peuvent ne pas être disponibles si vous refusez les cookies."
+    },
+    "rights": {
+      "title": "7. Vos droits",
+      "text": "Vous avez le droit de :",
+      "items": [
+        "Accéder, mettre à jour ou supprimer vos informations",
+        "Vous opposer à notre traitement de vos données",
+        "Demander la restriction du traitement",
+        "Demander la portabilité des données"
+      ],
+      "contact": "Pour exercer ces droits, veuillez nous contacter à privacy@techbyp.com."
+    },
+    "changes": {
+      "title": "8. Modifications de cette politique",
+      "text": "Nous pouvons mettre à jour notre politique de confidentialité de temps en temps. Nous vous informerons de toute modification en publiant la nouvelle politique sur cette page."
+    }
+  },
+  "blogEdit": {
+    "chooseFile": "Choisir un fichier à télécharger",
+    "selectArticle": "Sélectionner un article",
+    "wantToCreateArticle": "Créez votre premier article pour commencer",
+    "selectFromArticle": "Choisissez un article dans la barre latérale ou créez-en un nouveau",
+    "author": "Nom de l'auteur",
+    "title": "Titre",
+    "excerpt": "Extrait",
+    "content": "Contenu",
+    "authorName": "Nom de l'auteur",
+    "authorRole": "Rôle de l'auteur",
+    "date": "Date",
+    "readTime": "Temps de lecture",
+    "category": "Catégorie",
+    "articleImage": "Image de l'article",
+    "authorAvatar": "Avatar de l'auteur",
+    "uploadFile": "Télécharger un fichier",
+    "useDefault": "Utiliser la valeur par défaut",
+    "orPasteUrl": "Ou collez l'URL de l'image directement",
+    "cancel": "Annuler",
+    "saveArticle": "Enregistrer l'article",
+    "edit": "Modifier",
+    "delete": "Supprimer",
+    "newArticle": "Nouvel article",
+    "searchArticles": "Rechercher des articles...",
+    "language": "Langue",
+    "english": "Anglais",
+    "german": "Allemand",
+    "articles": "Articles",
+    "allCategories": "Toutes les catégories",
+    "sortBy": "Trier par",
+    "newestFirst": "Le plus récent en premier",
+    "oldestFirst": "Le plus ancien en premier",
+    "titleAtoZ": "Titre (A-Z)",
+    "titleZtoA": "Titre (Z-A)",
+    "shortestFirst": "Le plus court en premier",
+    "longestFirst": "Le plus long en premier",
+    "noArticlesFound": "Aucun article trouvé",
+    "publishedOn": "Publié le",
+    "addParagraph": "Ajouter un paragraphe",
+    "removeParagraph": "Supprimer un paragraphe",
+    "markdownSupported": "Utiliser la mise en forme Markdown",
+    "categories": {
+      "technology": "Technologie",
+      "events": "Événements",
+      "sustainability": "Durabilité",
+      "team": "Équipe",
+      "soil": "Sol",
+      "how-to": "Comment faire",
+      "machine": "Machine"
+    }
+  },
+  "commentsFunction": {
+    "placeholderName": "Votre nom (ou ce que vous aimeriez être appelé)",
+    "placeholderCompany": "Entreprise (facultatif, mais nous ne vous suivrons pas)",
+    "placeholderText": "Dites-nous ce que vous en pensez vraiment (pas de spoilers)",
+    "rating": "Note",
+    "rateStar": "Noter {{star}} étoile",
+    "submit": "Envoyez dans la nature",
+    "anonymous": "Anonyme",
+    "anonymousInitial": "A",
+    "fromCompany": "de {{company}}",
+    "like": "J'aime ce commentaire",
+    "unlike": "Je n'aime pas ce commentaire"
+  },
+  "loadingArticle": "Chargement de l'article...",
+  "errorLoadingArticle": "Erreur lors du chargement de l'article",
+  "backToBlog": "Retour au blog",
+  "articleNotFound": "Article introuvable",
+  "failedToLoad": "Impossible de charger l'article",
+  "checkThisArticle": "Consultez cet article",
+  "backToArticles": "Retour aux articles",
+  "share": "Partager",
+  "print": "Imprimer",
+  "twitter": "Twitter",
+  "linkedin": "LinkedIn",
+  "email": "Email",
+  "moreLikeThis": "Plus comme ceci",
+  "comments": "Commentaires ({{count}})",
+  "views": "vues",
+  "category": "{{category}}",
+  "readTime": "{{time}} de lecture",
+  "heroEditor": {
+    "fetchError": "Impossible de charger les éléments héros",
+    "createSuccess": "Élément créé avec succès !",
+    "updateSuccess": "Élément mis à jour avec succès !",
+    "saveError": "Impossible d'enregistrer l'élément",
+    "deleteConfirm": "Êtes-vous sûr de vouloir supprimer cet élément ?",
+    "delete": "Supprimer",
+    "cancel": "Annuler",
+    "deleteSuccess": "Élément supprimé avec succès !",
+    "deleteError": "Impossible de supprimer l'élément",
+    "createSlide": "Créer une nouvelle diapositive",
+    "editSlide": "Modifier la diapositive",
+    "homeScreen": "Écran d'accueil",
+    "untitledSlide": "Diapositive sans titre",
+    "noSlides": "Aucune diapositive trouvée",
+    "selectSlide": "Sélectionner une diapositive",
+    "createFirstSlide": "Créez votre première diapositive pour commencer",
+    "chooseOrCreate": "Choisissez une diapositive dans la barre latérale ou créez-en une nouvelle",
+    "createNewSlide": "Créer une nouvelle diapositive",
+    "addNewSlide": "Ajouter une nouvelle diapositive",
+    "edit": "Modifier",
+    "language": "Langue",
+    "slideType": "Type de diapositive",
+    "event": "Événement",
+    "product": "Produit",
+    "article": "Article",
+    "title": "Titre",
+    "excerpt": "Extrait",
+    "date": "Date",
+    "datePlaceholder": "p. ex., 9-15 novembre 2025",
+    "selectBlogPost": "Sélectionner un article de blog",
+    "callToAction": "Appel à l'action",
+    "ctaPlaceholder": "p. ex., En savoir plus",
+    "backgroundImage": "Image de fond",
+    "required": "Requis",
+    "uploading": "Téléchargement...",
+    "selectImage": "Sélectionner une image",
+    "uploadingImage": "Téléchargement de l'image...",
+    "displayOrder": "Ordre d'affichage",
+    "saving": "Enregistrement...",
+    "saveSlide": "Enregistrer la diapositive",
+    "readMore": "En savoir plus",
+    "link": "Lien du bouton"
+  },
+  "editor": {
+    "announcements": "Annonces",
+    "newAnnouncement": "Nouvelle annonce",
+    "active": "Active",
+    "inactive": "Inactive",
+    "priority": "Priorité",
+    "delete": "Supprimer",
+    "createNew": "Créer une nouvelle annonce",
+    "editAnnouncement": "Modifier l'annonce",
+    "tag": "Étiquette",
+    "tagPlaceholder": "Ce que c'est",
+    "title": "Titre",
+    "titlePlaceholder": "Le texte blanc",
+    "subtitle": "Sous-titre",
+    "subtitlePlaceholder": "Le texte vert plus petit",
+    "dateInfo": "Informations sur la date",
+    "dateInfoPlaceholder": "Quand ?",
+    "location": "Localisation",
+    "locationPlaceholder": "Où ?",
+    "priorityLabel": "(Les plus élevés s'affichent en premier)",
+    "ctaPrimary": "Texte d'appel à l'action principal",
+    "ctaPrimaryPlaceholder": "Texte du bouton (p. ex. 'Fermer')",
+    "ctaPrimaryLink": "Lien d'appel à l'action principal",
+    "ctaPrimaryLinkPlaceholder": "Lien optionnel (laisser vide pour juste fermer la fenêtre modale)",
+    "ctaSecondary": "Texte d'appel à l'action secondaire",
+    "ctaSecondaryPlaceholder": "Bouton optionnel",
+    "ctaSecondaryLink": "Lien d'appel à l'action secondaire",
+    "ctaSecondaryLinkPlaceholder": "Lien optionnel",
+    "description": "Description",
+    "image": "Image",
+    "hasImage": "Cette annonce a déjà une image",
+    "removeImage": "Supprimer l'image actuelle",
+    "uploading": "Téléchargement...",
+    "replaceImage": "Remplacer l'image",
+    "selectImage": "Sélectionner une image",
+    "currentImage": "Image actuelle :",
+    "imagePreview": "Aperçu de l'image :",
+    "activeAnnouncement": "Annonce active",
+    "showDelay": "Délai d'affichage (ms)",
+    "new": "Nouveau",
+    "save": "Enregistrer l'annonce",
+    "saving": "Enregistrement...",
+    "loadError": "Impossible de charger les annonces",
+    "imageUploadSuccess": "Image téléchargée avec succès !",
+    "imageUploadError": "Impossible de télécharger l'image",
+    "imageRemoved": "Image supprimée",
+    "createSuccess": "Annonce créée avec succès !",
+    "updateSuccess": "Annonce mise à jour avec succès !",
+    "createError": "Impossible de créer l'annonce",
+    "updateError": "Impossible de mettre à jour l'annonce",
+    "deleteConfirm": "Êtes-vous sûr de vouloir supprimer cette annonce ?",
+    "deleteSuccess": "Annonce supprimée avec succès !",
+    "deleteError": "Impossible de supprimer l'annonce"
+  },
+  "announcement": {
+    "close": "Fermer l'annonce"
+  },
+  "modal": {
+    "invalidEmail": "Maintenant, maintenant, ce n'est pas une adresse e-mail correcte. Réessayez.",
+    "success": "Bien joué ! Vous êtes officiellement membre du club TechByP. Bienvenue à bord.",
+    "error": "Eh bien, cela a mal tourné. Vous voulez réessayer ?",
+    "imageAlt": "Rejoindre le club TechByP",
+    "closeLabel": "Fermer la fenêtre modale",
+    "title": "Rejoindre le club TechbyP.",
+    "description": "C'est comme une société secrète, mais sans la poignée de main secrète — juste des e-mails sur des technologies astucieuses. Nous promettez de réduire le spam au minimum, principalement.",
+    "placeholder": "votre@email-correct.com",
+    "button": "Rejoindre maintenant",
+    "loading": "Inscription... La partie ennuyeuse, j'en ai peur.",
+    "note": "En cliquant, vous acceptez de recevoir des e-mails contenant soit \"du génie pur\" soit occasionnellement \"comment cela a-t-il pu glisser ?\""
+  },
+  "footer": {
+    "invalidEmail": "Cela ne ressemble pas à une adresse e-mail correcte, mon ami.",
+    "success": "Santé ! Vous êtes maintenant membre du club TechByP.",
+    "error": "Quelque chose a mal tourné. Réessayez ?",
+    "title": "Vous voulez plus de TechByP dans votre vie ?",
+    "description": "Rejoignez notre club. C'est comme une infolettre, mais avec 47% plus de personnalité (et moins de mauvaises blagues).",
+    "placeholder": "Adresse e-mail",
+    "button": "Rejoindre",
+    "note": "Nous vous enverrons des e-mails occasionnellement. Probablement pas à 3 heures du matin, mais qui sait ?"
+  },
+  "header": {
+    "logoAlt": "Logo TechByP",
+    "logoLabel": "Aller à l'accueil",
+    "navigation": {
+      "products": "PRODUITS",
+      "applications": "APPLICATIONS",
+      "about": "À PROPOS",
+      "insights": "CONNAISSANCES",
+      "contact": "CONTACT",
+      "downloads": "Téléchargements"
+    },
+    "mobileMenu": {
+      "open": "Ouvrir le menu",
+      "close": "Fermer le menu"
+    },
+    "categories": {
+      "all": "TOUS LES PRODUITS",
+      "smartsystems": "SYSTÈMES INTELLIGENTS",
+      "accessory": "MODULES COMPLÉMENTAIRES",
+      "manual": "OUTILS À MAIN",
+      "Bespoke Machinery": "ÉQUIPEMENT SUR MESURE"
+    },
+    "languageSwitcher": {
+      "en": "",
+      "de": "",
+      "es": "",
+      "fr": "",
+      "ro": "",
+      "ariaLabel": "Changer la langue"
+    }
+  },
+  "hero": {
+    "loading": "Chargement du contenu héros...",
+    "newsTypes": {
+      "product": "Mise à jour produit",
+      "event": "Événement",
+      "announcement": "Annonce",
+      "blog": "Blog"
+    },
+    "home": {
+      "tagline": "Fabriqué en Allemagne depuis 1989",
+      "titleLine1": "Fiable,",
+      "titleLine2": "pour la vie.",
+      "description": "Ce que nous faisons est plutôt simple, vraiment. Nous construisons les choses correctement — soigneusement conçues, pensées attentivement et adaptées à vos besoins. Et ensuite, nous les rendons encore meilleures, grâce à ce que vous nous dites. C'est de la qualité, dès le départ, et tout au long.",
+      "ctaProducts": "Explorer les produits",
+      "ctaDemo": "Regarder la démo"
+    }
+  },
+  "productShowcase": {
+    "title": "Nos produits",
+    "videoTitle": "Voir nos produits en action",
+    "categoryDescriptions": {
+      "bestseller": "Ce sont les machines qui s'alignent pratiquement pour être achetées — solides, fiables et populaires pour de bonnes raisons.",
+      "all": "Tout ce que nous avons, des gros et robustes aux petits et astucieusement satisfaisants.",
+      "smartsystems": "Le côté intelligent de l'échantillonnage des sols — automatique, précis et remarquablement bien élevé.",
+      "accessory": "Les bits qui maintiennent tout ensemble — des réalisateurs discrets du monde du soutien.",
+      "manual": "Des outils fiables et tactiles sur lesquels vous pouvez compter — satisfaisants à utiliser et conçus pour durer."
+    },
+    "customEquipment": {
+      "title": "Avez-vous besoin d'équipement personnalisé ?",
+      "description": "Notre équipe d'ingénierie peut concevoir et fabriquer des équipements spécialisés adaptés à vos besoins spécifiques.",
+      "viewCatalog": "Voir le catalogue complet",
+      "contactEngineering": "Contacter l'ingénierie",
+      "quickConfigure": "Configuration rapide de tous les produits"
+    }
+  },
+  "categories": {
+    "all": "TOUS LES PRODUITS",
+    "manual": "OUTILS À MAIN",
+    "smartsystems": "SYSTÈMES INTELLIGENTS",
+    "accessory": "MODULES COMPLÉMENTAIRES",
+    "bespoke machinery": "SUR MESURE",
+    "Bespoke Machinery": "SUR MESURE"
+  },
+  "productCard": {
+    "readMore": "En savoir plus",
+    "showLess": "Afficher moins",
+    "configure": "Configurer",
+    "quickConfigure": "Configuration rapide",
+    "quote": "Obtenir un devis",
+    "requestQuote": "Demander un devis",
+    "toggleMenu": "Basculer le menu des catégories"
+  },
+  "sortDropdown": {
+    "defaultLabel": "Trier par...",
+    "ariaLabels": {
+      "toggleSort": "Basculer l'ordre de tri",
+      "clearSort": "Effacer le tri"
+    },
+    "options": {
+      "price": {
+        "main": "Prix",
+        "description": "ne pas casser la banque"
+      },
+      "electric": {
+        "main": "Électrique",
+        "description": "bourdonnant de puissance"
+      },
+      "hydraulic": {
+        "main": "Hydraulique",
+        "description": "muscle liquide"
+      },
+      "depth": {
+        "main": "Profondeur",
+        "description": "à quelle profondeur allons-nous"
+      },
+      "magazines": {
+        "main": "Magasins",
+        "description": "plus c'est meilleur"
+      }
+    }
+  },
+  "application": {
+    "heading": "Conçu pour chaque mission de sol",
+    "subheading": "Qu'il s'agisse de recherche agricole ou de construction lourde, nos outils fonctionnent avec la précision qui ferait même hocher la tête au plus strict ingénieur allemand.",
+    "applications": {
+      "agriculture": {
+        "title": "Agriculture",
+        "description": "Analyse de la santé des sols, cartographie des nutriments et optimisation du rendement des cultures pour les opérations agricoles modernes.",
+        "features": [
+          "Test du pH du sol",
+          "Analyse des nutriments",
+          "Évaluation du compactage",
+          "Planification de l'irrigation"
+        ]
+      },
+      "geotechnicalSurvey": {
+        "title": "Sondage géotechnique",
+        "description": "Analyse des fondations, stabilité des pentes et évaluation des sites de construction pour les projets d'ingénierie.",
+        "features": [
+          "Capacité portante",
+          "Analyse des tassements",
+          "Stabilité des pentes",
+          "Conception des fondations"
+        ]
+      },
+      "environmentalResearch": {
+        "title": "Recherche environnementale",
+        "description": "Détection de la contamination, surveillance environnementale et évaluation de l'impact écologique.",
+        "features": [
+          "Détection de la contamination",
+          "Surveillance des eaux souterraines",
+          "Impact environnemental",
+          "Planification de la remédiation"
+        ]
+      },
+      "construction": {
+        "title": "Construction",
+        "description": "Préparation du site, essai des matériaux et contrôle de qualité pour les projets de construction et d'infrastructure.",
+        "features": [
+          "Préparation du site",
+          "Essai des matériaux",
+          "Contrôle de qualité",
+          "Évaluation de la sécurité"
+        ]
+      }
+    },
+    "customSolutionPrompt": "Besoin d'une solution personnalisée ?",
+    "contactButton": "Contacter nos ingénieurs"
+  },
+  "partnersHeader": {
+    "title": "Partenaires de recherche et d'industrie de confiance",
+    "description": "Les universités allemandes et les instituts agricoles font confiance à Bodenprobetechnik Peters pour la technologie d'échantillonnage des sols de précision."
+  },
+  "partners": [
+    "Université technique de Munich",
+    "Université de Göttingen",
+    "Julius Kühn-Institut",
+    "Université Humboldt de Berlin",
+    "Institut bavarois d'État d'agriculture",
+    "Université RWTH Aachen"
+  ],
+  "testimonialsHeader": {
+    "title": "Ce que disent nos clients",
+    "description": "Les professionnels de l'agriculture, de la géotechnique et des consultants en environnement font confiance à l'équipement TechbyP."
+  },
+  "testimonials": [
+    {
+      "quote": "Les échantillonneurs de sol de Bodenprobetechnik Peters offrent une précision et une durabilité inégalées dans les conditions de terrain. Leurs machines sont essentielles à notre recherche sur la santé des sols.",
+      "author": "Prof. Dr. Markus Schneider",
+      "position": "Chef du département de science des sols, Université de Göttingen",
+      "rating": 5
+    },
+    {
+      "quote": "Nous dépendons de Bodenprobetechnik Peters pour son équipement robuste qui fonctionne de manière fiable dans les projets géotechniques exigeants à travers l'Allemagne.",
+      "author": "Anna Meier",
+      "position": "Ingénieur de projet senior, Geotechnik GmbH",
+      "rating": 5
+    },
+    {
+      "quote": "L'ingénierie allemande exceptionnelle combinée à un service client attentionné fait de Bodenprobetechnik Peters notre partenaire préféré pour la technologie d'échantillonnage des sols.",
+      "author": "Dr. Thomas Wagner",
+      "position": "Consultant en agriculture",
+      "rating": 5
+    }
+  ],
+  "certifications": [
+    {
+      "abbr": "CE",
+      "text": "Certifié CE",
+      "bgClass": "bg-red-600"
+    },
+    {
+      "abbr": "DE",
+      "text": "Fabriqué en Allemagne",
+      "bgClass": "bg-gray-800"
+    }
+  ],
+  "certifications.title": "Certifications de qualité",
+  "about": {
+    "madeInGermany": "Fabriqué en Allemagne",
+    "engineeringExcellence": "Excellence en ingénierie.",
+    "introText": "Chaque machine que nous construisons est façonnée par les commentaires réels des gens qui les utilisent. Si quelque chose peut être rendu plus fort, plus intelligent ou un peu plus facile à manier, nous y sommes. C'est comme nous travaillons — pratique, obsédés par les détails et toujours à l'écoute.",
+    "alwaysImproving": "TOUJOURS EN AMÉLIORATION",
+    "ourMissionTitle": "Notre mission",
+    "ourMissionText": "Fournir des outils d'échantillonnage des sols qui gagnent la confiance des experts agricoles et des chercheurs — des champs qui roulent aux blouses blanches. Conçus avec la précision allemande et soutenus par des équipes de soutien qui répondent réellement au téléphone, nous nous engageons à rendre votre travail plus facile, plus précis et un peu moins compliqué.",
+    "ourJourneyTitle": "Notre parcours",
+    "milestones": [
+      {
+        "year": "1989",
+        "event": "Bodenprobetechnik Nietfeld naît — fondée par Walter Nietfeld et prête à creuser."
+      },
+      {
+        "year": "2021",
+        "event": "Walter Peters prend les rênes et renomme l'entreprise Bodenprobetechnik Peters GmbH. Même mission, nom frais."
+      },
+      {
+        "year": "2022",
+        "event": "TechbyP est lancé — nos clients internationaux nous connaissaient déjà, maintenant nous l'avons officialisé."
+      },
+      {
+        "year": "2023",
+        "event": "Une toute nouvelle usine s'élève à Quakenbrück, Allemagne. La précision a désormais un nouveau foyer."
+      },
+      {
+        "year": "2025",
+        "event": "Notre réseau de distribution mondial subit une sérieuse mise à niveau. Plus de pays, plus d'échantillons, plus d'amour du sol."
+      }
+    ],
+    "stats": [
+      {
+        "icon": "Globe",
+        "value": "25+",
+        "label": "Pays desservis"
+      },
+      {
+        "icon": "Users",
+        "value": "50+",
+        "label": "Partenaires de recherche"
+      },
+      {
+        "icon": "Wrench",
+        "value": "35+",
+        "label": "Années d'expérience"
+      },
+      {
+        "icon": "Award",
+        "value": "ISO",
+        "label": "Qualité certifiée"
+      }
+    ]
+  },
+  "foot": {
+    "alt": {
+      "logo": "Logo TechByP"
+    },
+    "footer": {
+      "tagline": "Équipement conçu en Allemagne qui creuse profondément — littéralement. Pour les professionnels du sol qui connaissent leur terre.",
+      "contact": {
+        "location": "Quakenbrück, Allemagne",
+        "phone": "+49 (0) 54 31 93 644 0",
+        "email": "info@techbyp.com"
+      },
+      "rights": "© {{year}} TechByP – Bodenprobetechnik Peters. Tous droits réservés."
+    },
+    "newsletter": {
+      "title": "Rejoindre le club",
+      "description": "Rejoignez notre club. C'est comme une infolettre, mais avec 47% plus de personnalité (et moins de mauvaises blagues).",
+      "placeholder": "votre@email.com",
+      "subscribe": "S'abonner",
+      "subscribing": "Abonnement en cours...",
+      "success": "Santé ! Vous êtes maintenant membre du club TechByP.",
+      "note": "Nous vous enverrons des e-mails occasionnellement. Probablement pas à 3 heures du matin, mais qui sait ?",
+      "errorInvalidEmail": "Cela ne ressemble pas à une adresse e-mail correcte.",
+      "errorSubmit": "Quelque chose s'est mal passé. Réessayez ?"
+    },
+    "errors": {
+      "invalidEmail": "Cela ne ressemble pas à une adresse e-mail correcte.",
+      "generic": "Quelque chose s'est mal passé. Réessayez ?"
+    },
+    "dirtTools": {
+      "title": "Outils de terre",
+      "manualProbes": "Sondes manuelles",
+      "smartSystems": "Systèmes intelligents",
+      "accessories": "Accessoires",
+      "customSolutions": "Solutions personnalisées"
+    },
+    "support": {
+      "title": "Soutien",
+      "downloadCenter": "Centre de téléchargement",
+      "userManuals": "Manuels d'utilisation",
+      "techSupport": "Support technique",
+      "training": "Formation et certification"
+    },
+    "company": {
+      "title": "Entreprise",
+      "aboutUs": "À propos de nous",
+      "news": "Actualités et mises à jour",
+      "contact": "Contact",
+      "privacyPolicy": "Politique de confidentialité",
+      "terms": "Conditions d'utilisation",
+      "imprint": "Mentions légales"
+    },
+    "social": {
+      "facebook": "Facebook",
+      "linkedin": "LinkedIn",
+      "youtube": "YouTube",
+      "instagram": "Instagram"
+    }
+  },
+  "product": {
+    "notFound": "Produit introuvable",
+    "meta": {
+      "title": "{{brand}} | {{product}} - {{category}}",
+      "description": "{{nickname}}: {{herodescription}} Les caractéristiques incluent {{features}}. Parfait pour {{applications}}."
+    },
+    "whatMakesItGreat": "Ce qui le rend excellent",
+    "goodsCurrentlyGracing": "Les biens qui ornent actuellement cette étagère de leur présence",
+    "articleNo": "N° article",
+    "description": "Description",
+    "highlights": "Points forts",
+    "itShinesHere": "C'est ici qu'il brille",
+    "satisfyingBit": "Cette partie est plutôt satisfaisante, en réalité",
+    "upClosePersonal": "De près et personnel",
+    "specsSmarts": "Spécifications et smarts",
+    "otherCategory": "Autre {{category}}",
+    "provenInField": "Éprouvé sur le terrain",
+    "engineeredForPros": "Conçu pour les professionnels",
+    "orderNow": "Commander maintenant",
+    "quickConfigure": "Configuration rapide",
+    "builtTough": "Conçu dur, alimenté par le génie allemand",
+    "worryFree": "1 an de tranquillité d'esprit",
+    "helpFromHumans": "Aide de gens qui connaissent leur affaire",
+    "needHelp": "Besoin d'aide ?",
+    "requestConsultation": "Demander une consultation technique",
+    "downloadBrochure": "Télécharger la brochure produit",
+    "contactSales": "Contacter l'équipe de vente",
+    "order": "Commander",
+    "configure": "Configurer"
+  },
+  "commons": {
+    "close": "Fermer",
+    "previous": "Précédent",
+    "next": "Suivant",
+    "imageCounter": "{{current}} sur {{total}}",
+    "thumbnail": "Vignette {{number}}"
+  },
+  "warning": {
+    "sixteenExpress": {
+      "noMountingNeeded": "Oh non ! Le Sixteen Express n'a pas besoin de montage - c'est parfait tel quel !",
+      "hasOwnMounting": "Bonne nouvelle ! Le Sixteen Express est livré avec sa propre solution de montage - c'est un génie par conception",
+      "noPowerpacksNeeded": "Le Sixteen Express est comme un bon vin - il n'a besoin d'aucun pack de puissance supplémentaire, il est déjà à plein bouquet",
+      "selfAcknowledging": "Reconnaître quoi ? Le Sixteen Express se reconnaît !",
+      "alreadyPerfect1": "Je dis, le Sixteen Express est déjà parfait - pas besoin de modifier les paramètres !",
+      "alreadyPerfect2": "Pourquoi voudriez-vous changer quelque chose ? C'est le Sixteen Express !",
+      "alreadyPerfect3": "Bricoler la perfection ? Comment très non-Clarkson de votre part.",
+      "alreadyPerfect4": "Le Sixteen Express n'a pas besoin de configuration - il a besoin d'appréciation."
+    }
+  },
+  "customerInfo": {
+    "title": "Informations client",
+    "description": "Veuillez entrer vos détails pour terminer la configuration."
+  },
+  "form": {
+    "fullName": "Nom complet",
+    "fullNamePlaceholder": "Jean Dupont",
+    "email": "Email",
+    "emailPlaceholder": "votre@email.com",
+    "additionalNotes": "Remarques supplémentaires (Optionnel)",
+    "additionalNotesPlaceholder": "Des exigences spéciales ?"
+  },
+  "summary": {
+    "title": "Votre sélection",
+    "total": "Total",
+    "pricingNoticeTitle": "Avis sur les prix :",
+    "pricingNoticeText": "Tous les prix sont en euros (€) et excluent la TVA. Les prix sont à titre indicatif uniquement et peuvent varier selon la configuration finale, les options sélectionnées et la disponibilité. Le prix final sera confirmé dans votre devis personnalisé."
+  },
+  "buttonsConfigurator": {
+    "back": "Retour",
+    "completeOrder": "Commander",
+    "processing": "Traitement..."
+  },
+  "errorsConfigurator": {
+    "botDetected": "Bot détecté.",
+    "completeRecaptcha": "Veuillez compléter le reCAPTCHA.",
+    "submitFailed": "Impossible de soumettre votre configuration. Veuillez réessayer."
+  },
+  "submission": {
+    "successTitle": "Configuration soumise !",
+    "successMessage": "Nous avons reçu votre demande et vous contacterons sous peu.",
+    "startNewConfig": "Commencer une nouvelle configuration",
+    "backToHome": "Retour à l'accueil"
+  },
+  "productNames": {
+    "trailerMount": "Montage sur remorque",
+    "powerPack": "Pack d'alimentation"
+  },
+  "unknownProduct": "Produit inconnu",
+  "notSelected": "Non sélectionné",
+  "notApplicable": "N/A",
+  "noExtrasSelected": "Aucun extra sélectionné",
+  "extrasStep": {
+    "title": "Sélectionner les accessoires optionnels",
+    "description": "Améliorez votre {{productName}} avec ces accessoires optionnels",
+    "unnamedProduct": "Produit sans nom",
+    "noDescription": "Aucune description disponible",
+    "priceNotAvailable": "Prix non disponible"
+  },
+  "buttons": {
+    "back": "Retour",
+    "continue": "Continuer"
+  },
+  "error": {
+    "somethingWentWrong": "Quelque chose s'est mal passé",
+    "tryAgain": "Réessayer"
+  },
+  "mountingMethod": {
+    "title": "Choisissez votre aventure de montage",
+    "subtitle": "Donc, comment prévoyez-vous de faire danser votre {{productName}} avec la saleté ? Choisissez judicieusement.",
+    "trailer": {
+      "alt": "Montage sur remorque",
+      "title": "Remorques spéciales",
+      "subtitle": "Transporteurs de terrain",
+      "description": "Le chuchoteur de sol nomade — parfait pour galoper à travers les champs sans s'engager sur un seul trajet.",
+      "price": "À partir de 3 600 €"
+    },
+    "vehicle": {
+      "alt": "Montage sur véhicule",
+      "title": "Montage sur véhicule",
+      "subtitle": "Kit de montage",
+      "description": "Le détective urbain du sol — transformez votre véhicule quotidien en détective de saleté dédié.",
+      "price": "À partir de 1 665 €"
+    }
+  },
+  "powerOptions": {
+    "title": "Options d'alimentation",
+    "trailerDescription": "Choisissez le pack d'alimentation approprié pour le montage sur remorque.",
+    "vehicleDescription": "Choisissez le pack d'alimentation approprié pour le montage sur véhicule."
+  },
+  "powerpackWarning": {
+    "title": "Aucun pack d'alimentation sélectionné",
+    "trailerMessage": "Vous n'avez pas sélectionné de pack d'alimentation. Les remorques nécessitent un pack d'alimentation pour fonctionner.",
+    "vehicleMessage": "Vous n'avez pas sélectionné de pack d'alimentation. Les véhicules nécessitent généralement un pack d'alimentation pour fonctionner.",
+    "acknowledge": "Je comprends les risques et je souhaite continuer sans pack d'alimentation.",
+    "goBack": "Retourner",
+    "proceed": "Continuer"
+  },
+  "common": {
+    "continue": "Continuer"
+  },
+  "products": {
+    "123": {
+      "name": "Pack d'alimentation standard",
+      "nickname": "SPP",
+      "price": "€1,200"
+    },
+    "124": {
+      "name": "Pack d'alimentation avancé",
+      "nickname": "APP",
+      "price": "€1,800"
+    }
+  },
+  "productSelection": {
+    "title": "Sélectionner votre produit",
+    "description": "Jetez un coup d'œil à nos systèmes intelligents astucieux — choisissez celui qui facilite votre travail.",
+    "unnamedProduct": "Produit sans nom",
+    "product": "Produit",
+    "priceUnavailable": "Prix non disponible",
+    "bestsellerShort": "MEILLEUR",
+    "bestseller": "MEILLEUR VENDEUR",
+    "smartTag": "SMART",
+    "smartSystemsTag": "SYSTÈMES INTELLIGENTS",
+    "noDescription": "Aucune description disponible"
+  },
+  "vehicleMounting": {
+    "title": "Type de montage sur véhicule",
+    "description": "D'accord, comment exactement voulez-vous attacher votre {{productName}} ? Cela peut sembler un peu ennuyeux, mais faites-moi confiance — si vous vous trompez, le reste n'a aucune chance.",
+    "mountingLabel": "MONTAGE"
+  },
+  "products.lay-down-frame": {
+    "name": "Cadre couché",
+    "nickname": "Cadre",
+    "price": "€1,200",
+    "description": "Un cadre robuste pour coucher votre équipement."
+  },
+  "products.three-point-hitch": {
+    "name": "Attelage trois points",
+    "nickname": "Attelage",
+    "price": "€1,450",
+    "description": "Attelage trois points standard pour un attachement facile."
+  },
+  "products.full-conversion": {
+    "name": "Conversion complète",
+    "nickname": "Conversion",
+    "price": "€2,300",
+    "description": "Kit de conversion complet pour une flexibilité maximale."
+  },
+  "progress": {
+    "included": "✅ Inclus",
+    "selected": "✅ Sélectionné :",
+    "notSelected": "🔲 Non sélectionné",
+    "gear": "⚙️",
+    "car": "🚗",
+    "powerPackSelected": "🔋 Pack d'alimentation sélectionné",
+    "powerPackRequired": "🔋 Requis",
+    "powerPackOptional": "🔋 Optionnel",
+    "extrasSelected": "🎁 {{count}} sélectionné",
+    "noExtras": "📦 Aucun extra",
+    "done": "Fait",
+    "detailsProvided": "Détails fournis",
+    "notCompleted": "🔲 Non complété"
+  },
+  "configurator": {
+    "productToast": {
+      "close": "Fermer",
+      "desc1": "D'accord. Ce que vous regardez n'est pas juste un bouton qui vous emmène quelque part. C'est l'entrée du configurateur — un mécanisme sophistiqué conçu pour vous aider à assembler une machine qui pique le sol pour vivre.",
+      "desc2": {
+        "part1": "Choisissez votre",
+        "part2": ", décidez si elle doit être traînée derrière un véhicule ou boulonnée sur l'un, réfléchissez à la question éternelle de l'alimentation externe, et ornez-la avec des accessoires optionnels que vous insisterez presque certainement être essentiels."
+      },
+      "desc3": "En essence, c'est plug-and-play rencontre boue et diesel. Appuyez sur le bouton si vous êtes prêt à commencer cette noble entreprise.",
+      "configure": "Configurer le {{productName}}",
+      "machine": "machine"
+    },
+    "steps": {
+      "product": "Produit",
+      "mounting": "Montage",
+      "vehicleType": "Type de véhicule",
+      "power": "Alimentation",
+      "extras": "Accessoires",
+      "finish": "Terminer"
+    }
+  },
+  "blog": {
+    "categories": {
+      "all": "Tous"
+    },
+    "sections": {
+      "featuredStory": "Histoire en vedette",
+      "trendingNow": "Tendance maintenant",
+      "latestArticles": "Derniers articles"
+    },
+    "buttons": {
+      "digDeeper": "Creuser plus profond",
+      "continueReading": "Continuer la lecture",
+      "readMore": "En savoir plus",
+      "showLess": "Afficher moins",
+      "resetFilters": "Réinitialiser les filtres"
+    },
+    "empty": {
+      "noArticles": "Aucun article trouvé",
+      "tryAdjusting": "Essayez d'ajuster votre recherche ou filtre pour trouver ce que vous recherchez."
+    },
+    "meta": {
+      "title": "Connaissances et actualités | TECHBYP",
+      "description": "Explorez les dernières connaissances, mises à jour produits et coulisses d'ingénierie de TECHBYP — où l'échantillonnage des sols rencontre la précision allemande.",
+      "ogTitle": "Blog TECHBYP – Connaissances et bien plus en matière d'échantillonnage des sols",
+      "ogDescription": "Plongées techniques, lancements de produits et histoires de terrain — tous de l'équipe chez TECHBYP."
+    },
+    "headings": {
+      "insightsHub": "Hub de connaissances",
+      "tagline": "Des paroles intelligentes des gens qui fabriquent des machines qui font des trous dans le sol pour vivre."
+    },
+    "placeholders": {
+      "search": "Rechercher des articles..."
+    },
+    "labels": {
+      "featured": "En vedette",
+      "trending": "Tendance"
+    },
+    "buttons1": {
+      "readMore": "En savoir plus",
+      "showLess": "Afficher moins",
+      "resetFilters": "Réinitialiser les filtres"
+    }
+  },
+  "meta": {
+    "title": "Contacter TechByP | Experts en échantillonnage des sols",
+    "description": "Entrez en contact avec TechByP – votre partenaire fiable pour l'équipement d'échantillonnage des sols. Contactez-nous pour toute demande, support ou pour devenir distributeur.",
+    "ogTitle": "Contacter TechByP | Experts en échantillonnage des sols",
+    "ogDescription": "Vous avez des questions sur notre équipement ou nos services ? Entrez en contact avec les équipes de soutien et de vente de TechByP aujourd'hui.",
+    "ogUrl": "https://www.techbyp.com/contact",
+    "ogImage": "https://www.techbyp.com/assets/og-image.jpg",
+    "twitterTitle": "Contacter TechByP | Experts en échantillonnage des sols",
+    "twitterDescription": "Vous avez des questions sur notre équipement ou nos services ? Entrez en contact avec TechByP aujourd'hui."
+  },
+  "contact_page": {
+    "title": "Contacter TechByP",
+    "description": "Depuis plus de 30 ans, nous avons été le partenaire fiable des professionnels de l'échantillonnage des sols — car faire des trous dans la saleté mérite un équipement de premier ordre. Vous avez des questions sur nos gadgets astucieux pour les aventures environnementales ou géotechniques ? Notre équipe est prête et attend de discuter des affaires, de résoudre des énigmes ou simplement de discuter de la façon de rendre votre prochain échantillon de sol un chef-d'œuvre.",
+    "address": {
+      "title": "Siège social",
+      "company": "Bodenprobetechnik Peters GmbH",
+      "street": "Am Fliegerhorst 11",
+      "city": "D-49610 Quakenbrück, Allemagne",
+      "phone": "+49 (0) 54 31 93 644 0",
+      "email": "info@bodenprobetechnik.de"
+    },
+    "hours": {
+      "title": "Heures de bureau",
+      "weekdays": "Lundi - Jeudi",
+      "weekdaysTime": "7h30 - 16h30",
+      "friday": "Vendredi",
+      "fridayTime": "7h30 - 14h30",
+      "closed": "Fermé les weekends et jours fériés allemands"
+    },
+    "phone": {
+      "title": "Support téléphonique",
+      "description": "Pour une assistance immédiate, appelez notre équipe d'assistance pendant les heures de bureau.",
+      "number": "+49 (0) 54 31 93 644 0",
+      "supportExt": "Support technique : Ext. 123",
+      "salesExt": "Vente : Ext. 124"
+    },
+    "email": {
+      "title": "Support par email",
+      "description": "Envoyez-nous un email et nous vous répondrons dans les 24 heures en jours ouvrables.",
+      "main": "info@bodenprobetechnik.de",
+      "technical": "Technique",
+      "sales": "Vente"
+    },
+    "formular": {
+      "serialNumber": "Numéro de série",
+      "customerNumber": "Numéro client",
+      "additionalFieldsNote": "Pour le support technique ou les demandes de pièces de rechange, veuillez fournir :",
+      "placeholders": {
+        "serialNumber": "C'est sur la plaque noire.",
+        "customerNumber": "La facture détient la réponse.",
+        "name": "À moins que vous ayez décidé que l'anonymat est à la mode",
+        "company": "Ou quelque chose que vous avez inventé",
+        "email": "Idéalement pas de l'ère de l'accès commuté",
+        "phone": "Bien que nous l'ignorerons et enverrons un email à la place",
+        "message": "Assez de détails pour que nous ne devinions pas sauvagement"
+      },
+      "title": "Contact rapide",
+      "name": "Nom complet",
+      "company": "Entreprise",
+      "email": "Email",
+      "phone": "Téléphone",
+      "subject": "Sujet",
+      "message": "Message",
+      "subjects": {
+        "general": "Demande générale",
+        "product": "Information sur le produit",
+        "support": "Support technique",
+        "service": "Demande de service",
+        "distributor": "Demande de distributeur",
+        "parts": "Pièces de rechange",
+        "other": "Autre"
+      },
+      "consent": "Je suis d'accord avec le traitement de mes données conformément à la",
+      "privacyPolicy": "politique de confidentialité",
+      "submit": "Envoyer le message",
+      "sending": "Envoi...",
+      "anotherMessage": "Envoyer un autre message",
+      "success": "Message envoyé avec succès !",
+      "successTitle": "Merci pour votre message !",
+      "successMessage": "Nous avons reçu votre demande et vous répondrons dans les 24 heures en jours ouvrables.",
+      "errors": {
+        "serialNumberRequired": "Le numéro de série est requis pour le support technique ou les pièces de rechange",
+        "customerNumberRequired": "Le numéro client est requis pour le support technique ou les pièces de rechange",
+        "bot": "Bot détecté.",
+        "recaptcha": "Veuillez compléter le reCAPTCHA.",
+        "consent": "Veuillez accepter notre politique de traitement des données.",
+        "failed": "Impossible d'envoyer le message. Veuillez réessayer."
+      }
+    },
+    "map": {
+      "title": "Localisation de TechByP",
+      "visit": "Nous visiter",
+      "description": "Notre siège social à Quakenbrück, Allemagne, est l'endroit où nous concevons et fabriquons notre équipement d'échantillonnage des sols.",
+      "directions": "Obtenir des directions"
+    },
+    "faq": {
+      "title": "Questions fréquemment posées",
+      "shipping": {
+        "question": "Quelles sont vos options d'expédition ?",
+        "answer": "Nous expédions dans le monde entier via DHL, DPD et autres transporteurs de confiance. L'expédition standard en Allemagne prend 2 à 3 jours ouvrables. Les délais d'expédition internationaux varient selon la destination. Les options d'expédition accélérée sont disponibles."
+      },
+      "training": {
+        "question": "Offrez-vous une formation pour votre équipement ?",
+        "answer": "Oui, nous proposons des programmes de formation complets pour tous nos équipements d'échantillonnage des sols. La formation peut être dispensée à votre emplacement ou à nos installations à Quakenbrück. Contactez notre équipe de vente pour organiser des séances de formation."
+      },
+      "distributor": {
+        "question": "Comment puis-je devenir distributeur ?",
+        "answer": "Nous sommes toujours intéressés par les partenariats avec des distributeurs qualifiés dans le monde entier. Veuillez contacter notre département commercial avec les détails de votre entreprise et votre expérience du marché pour commencer le processus de candidature."
+      }
+    }
+  },
+  "orderNow": {
+    "title": "Rendre la magie possible.",
+    "placeholderName": "Votre nom, si vous plaît.",
+    "placeholderEmail": "La chose avec un @ dedans.",
+    "placeholderMessage": "Utilisez les mots. C'est très excitant.",
+    "close": "Fermer",
+    "submit": "Boom. Fait.",
+    "success": "Message envoyé avec succès !",
+    "fail": "Impossible d'envoyer le message. Veuillez réessayer.",
+    "botDetected": "Bot détecté.",
+    "completeRecaptcha": "Veuillez compléter le reCAPTCHA.",
+    "product": "Produit"
+  },
+  "downloads": {
+    "meta": {
+      "title": "Centre de ressources | Télécharger des manuels, brochures et spécifications",
+      "description": "Parcourez et téléchargez des manuels, brochures, spécifications techniques et d'autres ressources pour nos produits."
+    },
+    "title": "Centre de ressources",
+    "subtitle": "Téléchargez les manuels, brochures, spécifications techniques et bien plus",
+    "loading": "Chargement...",
+    "error": {
+      "title": "Erreur",
+      "fetchFailed": "Impossible de récupérer les métadonnées"
+    },
+    "categories": {
+      "all": "Toutes les ressources",
+      "manuals": "Manuels",
+      "brochures": "Brochures",
+      "techspecs": "Spécifications techniques",
+      "other": "Autre"
+    },
+    "search": {
+      "placeholder": "Rechercher des fichiers..."
+    },
+    "sort": {
+      "label": "Trier par",
+      "name": "Nom",
+      "date": "Date",
+      "size": "Taille"
+    },
+    "download": "Télécharger",
+    "close": "Fermer",
+    "empty": {
+      "title": "Aucun fichier trouvé",
+      "search": "Essayez un terme de recherche différent",
+      "category": "Aucun fichier disponible dans cette catégorie"
+    },
+    "videoNotSupported": "Votre navigateur ne supporte pas la vidéo HTML5."
+  },
+  "adminDashboard": {
+    "greeting": "Bienvenue à nouveau !",
+    "user": {
+      "role": {
+        "admin": "Admin",
+        "editor": "Éditeur",
+        "viewer": "Visionneur"
+      }
+    },
+    "tabs": {
+      "dashboard": "Tableau de bord",
+      "blog": "Articles de blog",
+      "hero": "Section Héros",
+      "announcements": "Annonces"
+    },
+    "stats": {
+      "articles": "Articles",
+      "announcements": "Annonces",
+      "comments": "Commentaires récents",
+      "members": "Membres du club",
+      "activity": "Activité récente"
+    },
+    "comments": {
+      "count": "commentaires",
+      "noComments": "Aucun commentaire pour le moment",
+      "noContent": "[Aucun contenu]",
+      "name": "Nom",
+      "company": "Entreprise",
+      "save": "Enregistrer",
+      "cancel": "Annuler",
+      "edit": "Modifier",
+      "delete": "Supprimer",
+      "edited": "Modifié",
+      "updateSuccess": "Commentaire mis à jour avec succès",
+      "updateError": "Impossible de mettre à jour le commentaire",
+      "deleteSuccess": "Commentaire supprimé avec succès",
+      "deleteError": "Impossible de supprimer le commentaire"
+    },
+    "members": {
+      "noMembers": "Aucun membre pour le moment",
+      "unknownMember": "Membre inconnu",
+      "joined": "Rejointe",
+      "delete": "Supprimer le membre"
+    },
+    "activity": {
+      "noActivity": "Aucune activité récente",
+      "refresh": "Actualiser",
+      "fetchError": "Impossible de charger l'activité",
+      "events": {
+        "comment_added": "a ajouté un commentaire",
+        "comment_edited": "a modifié un commentaire",
+        "comment_deleted": "a supprimé un commentaire",
+        "content_created": "contenu créé",
+        "content_updated": "contenu mis à jour"
+      },
+      "metadata": {
+        "user": "Utilisateur",
+        "company": "Entreprise",
+        "rating": "Note",
+        "currentMessage": "Message actuel",
+        "previousMessage": "Message précédent",
+        "type": "Type",
+        "title": "Titre",
+        "changes": "Modifications",
+        "email": "Email du membre du club",
+        "deleted by": "Supprimé par"
+      }
+    },
+    "common": {
+      "lastUpdated": "Dernière mise à jour",
+      "thisWeek": "cette semaine",
+      "today": "aujourd'hui",
+      "justNow": "à l'instant",
+      "minutesAgo": "il y a {{count}} minute(s)",
+      "hoursAgo": "il y a {{count}} heure(s)",
+      "daysAgo": "il y a {{count}} jour(s)",
+      "openMenu": "Ouvrir le menu",
+      "closeMenu": "Fermer le menu",
+      "toggleLanguage": "Basculer la langue",
+      "logout": "Se déconnecter"
+    },
+    "confirmation": {
+      "deleteComment": {
+        "title": "Supprimer le commentaire",
+        "message": "Êtes-vous sûr de vouloir supprimer ce commentaire ? Cette action ne peut pas être annulée."
+      }
+    },
+    "permissionsError": "Erreur lors de la vérification des autorisations"
+  },
+  "mp1": {
+    "nickname": "Full-Core Retriever",
+    "specs": [
+      "Profondeur : 0–90 cm, optionnel 120 cm (progressive)",
+      "Semi-automatique",
+      "Visibilité complète du noyau",
+      "Cycle d'échantillonnage 16 sec/core"
+    ],
+    "description": "Carottes de sol intactes de 0–90 cm, précision scientifique, obstination allemande.",
+    "herodescription": "Ce n'est pas criard. Ça ne crie pas. Ça ne fait pas Wi-Fi. Mais ce qu'il <strong>fait</strong> — mieux que presque rien d'autre — c'est vous donner un <strong>carottier de sol parfait et ininterrompu</strong>, de la surface à <strong>90 centimètres dessous</strong>. Oui, toute l'histoire, de la croûte au sous-sol, en un seul.  C'est comme une <strong>IRM pour la terre</strong>.",
+    "detailedDescription": "<p className='mt-4'><strong>Les universités adorent cette chose</strong>. Et ce n'est pas seulement parce qu'il ressemble vaguement à un lanceur de fusée. Il donne <strong>une visibilité complète du profil du sol</strong> — pas de mélange, pas de devinettes de stratification, juste une tranche verticale propre des entrailles de la Terre. <strong>Parfait pour l'échantillonnage N-min</strong>, oui, mais aussi pour ceux qui aiment réellement voir ce qui se passe en bas.</p><p className='mt-4'>Maintenant, c'est <strong>hydrauliquement alimenté, semi-automatique et très intelligent</strong>. Il creusera avec une politesse millimétrique, et s'il rencontre quelque chose d'hostile — comme une roche ou une vieille pièce de monnaie romaine — il <strong>s'arrête simplement</strong>. Pas de drame. Aucun bit cassé.</p><p className='mt-4'>Et le meilleur : c'est l'<strong>ingénierie allemande réduite à l'essentiel</strong>. Propre, efficace, absolument logique. Comme <strong>Beethoven… s'il était un échantillonneur de sol</strong>.</p>",
+    "price": "À partir de 14 200 €",
+    "features": [
+      "Carottier complet (0–90 cm) intacte pour la visibilité du profil",
+      "Contrôle de profondeur précis au centimètre",
+      "Détection d'obstacle avec arrêt automatique",
+      "Retrait manuel du noyau pour l'intégrité de l'échantillon",
+      "S'adapte aux pick-up, remorques et véhicules légers",
+      "Améliorable à MP-3.90 ou MP-4.100"
+    ],
+    "applications": [
+      "Échantillonnage de sol N-min",
+      "Recherche universitaire et académique",
+      "Surveillance environnementale",
+      "Analyse de la morphologie et du profil du sol",
+      "Agriculture de précision"
+    ],
+    "howToUse": [
+      "Étape 1 – Insertion d'impact : Une tige rainurée est enfoncée dans le sol à l'aide d'un marteau hydraulique haute fréquence. Cela semble agressif, mais c'est très civilisé.",
+      "Étape 2 – Rétraction hydraulique avec rotation : La tige est tournée et rétractée hydrauliquement, ce qui garantit que le noyau reste pristine. Précision chirurgicale, moins le scalpel.",
+      "Étape 3 – Révélation du noyau : Le carottier de sol ininterrompu est exposé pour l'admiration scientifique. Toutes les couches visibles — de l'humus au hardpan.",
+      "Étape 4 – Décharge manuelle du noyau : Le noyau est retiré manuellement. C'est un moment tranquille et satisfaisant de la science. Comme tirer les données de la Terre avec vos mains."
+    ],
+    "technicalSpecs": {
+      "Profondeur d'échantillonnage": "0–90 cm (progressive)",
+      "Type d'échantillon": "Noyau unique, profil complet",
+      "Cycle d'échantillonnage": "16 sec/core",
+      "Alimentation": "Hydraulique (135 bar, 20 L/min, 12 VDC)",
+      "Détection d'obstacle": "Oui",
+      "Panneau de contrôle": "Numérique",
+      "Poids": "185 kg",
+      "Montage": "Camions pick-up, remorques, véhicules agricoles légers"
+    },
+    "testimonials": [
+      {
+        "quote": "Le MP-1.90 est un vrai cheval de trait. Il nous donne une visibilité complète du noyau, ce qui est essentiel pour nos programmes d'enseignement et de travail sur le terrain.",
+        "author": "Prof. Klaus Brenner",
+        "company": "Université de Göttingen, Département des sciences du sol",
+        "rating": 5
+      },
+      {
+        "quote": "C'est magnifiquement sur-ingéniérisé, à la manière très allemande. Chaque noyau que nous extrayons est pristine. Les étudiants adorent l'utiliser.",
+        "author": "Dr. Lucia Romero",
+        "company": "Université de Saragosse – Faculté d'agronomie",
+        "rating": 5
+      }
+    ]
+  },
+  "mp2": {
+    "nickname": "Mid Range MultiPRO",
+    "specs": [
+      "Profondeur : 0-60 cm",
+      "Entièrement automatique",
+      "Optimisé pour le profilage N-min",
+      "Cycle d'échantillonnage 18 sec/core"
+    ],
+    "description": "Profilage automatique de l'azote sans les problèmes.",
+    "herodescription": "Rencontrez le <strong>MP-2.60</strong> — une machine merveilleusement pratique pour l'<strong>échantillonnage du sol N-min</strong>. Il descend à 60 cm, obtient ce dont il a besoin et continue sans demander le thé ou les louanges. Conçu pour être <strong>fiable, pas ridicule</strong>, c'est idéal pour quiconque aime que les choses fonctionnent correctement la première fois.",
+    "detailedDescription": "<p className='mt-4'>Dans un monde de complication excessive, le <strong>MP-2.60</strong> est rafraîchissamment simple. Il est construit spécifiquement pour le <strong>profilage automatique de l'azote</strong> — sans tous ces problèmes avec des tarières manuelles ou des devinettes. Il utilise un <strong>marteau hydraulique haute fréquence</strong> pour percer le sol comme un petit marteau-piqueur doux, puis tourne tranquillement et soulève la tige avant de <strong>poliment déposer l'échantillon</strong> dans son conteneur.</p><p className='mt-4'>Il a une <strong>logique interne intelligente</strong> pour décider quels bits du sol garder, et si vous le souhaitez, vous pouvez même activer la <strong>séparation des couches</strong> pour l'échantillonnage spécifique à l'horizon. Les échantillons eux-mêmes atterrissent dans des <strong>conteneurs étanches</strong>, et l'unité entière se monte confortablement sur les remorques, les pick-up ou essentiellement n'importe quoi qui roule et ne s'effondre pas.</p><p className='mt-4'>Et si vos ambitions de recherche dépassent sa limite de 60 cm, ne vous inquiétez pas — le MP-2.60 est entièrement <strong>améliorable au MP-3.90 ou MP-4.100</strong>.</p>",
+    "price": "À partir de 16 500 €",
+    "features": [
+      "Extraction entièrement automatique jusqu'à 60 cm",
+      "Logique intelligente : rejette ou garde les échantillons selon vos paramètres",
+      "Échantillonnage programmé avec auto-décharge",
+      "Option de séparation des couches pour l'échantillonnage spécifique à l'horizon",
+      "Conteneurs d'échantillons étanches",
+      "Profondeur d'échantillonnage et nombre d'horizons personnalisables",
+      "Détection d'obstacle et arrêt automatique sûr",
+      "Conçu pour l'utilisation quotidienne réelle – pas seulement pour les amateurs de fin de semaine"
+    ],
+    "howToUse": [
+      "Entraîne une tige rainurée dans le sol à l'aide d'un marteau hydraulique haute fréquence — oui, c'est aussi satisfaisant que c'est",
+      "Tourne et rétracte hydrauliquement la tige sans perturber vos échantillons",
+      "Les échantillons sont automatiquement déchargés dans leurs conteneurs appropriés",
+      "Séparation des couches optionnelle classe le sol par horizon pendant l'extraction"
+    ],
+    "applications": [
+      "Profilage Nmin/Nitrate",
+      "Agriculture de précision",
+      "Surveillance environnementale du sol",
+      "Travail de terrain sur un budget avec des ambitions"
+    ],
+    "technicalSpecs": {
+      "Profondeur d'échantillonnage": "0–60 cm",
+      "Type d'échantillon": "Programmé par impact, entièrement automatique",
+      "Unité de marteau": "Hydraulique, haute fréquence",
+      "Horizons": "1–2 couches",
+      "Magasins": "3",
+      "Temps du cycle d'échantillonnage": "18 sec/core",
+      "Options de montage": "Pick-up, remorque ou tout ce qui est vaguement routier",
+      "Tri des échantillons": "Séparation automatique spécifique à l'horizon",
+      "Caractéristiques spéciales": "Détection d'obstacle, Conteneurs étanches, Clavier numérique",
+      "Source d'alimentation": "Système hydraulique (135 bar, 20 l/min, 12 VDC)",
+      "Poids": "200 kg"
+    },
+    "testimonials": [
+      {
+        "quote": "Fiable, facile à utiliser et offre exactement ce dont nous avons besoin pour notre travail de nitrate du sol.",
+        "author": "Prof. Lars Becker",
+        "company": "AgriData Solutions",
+        "rating": 5
+      },
+      {
+        "quote": "Un excellent choix pour toute équipe commençant tout juste avec l'échantillonnage automatisé. Performance solide, maintenance faible.",
+        "author": "Dr. Hannah Lee",
+        "company": "Soil Research Group",
+        "rating": 4
+      }
+    ]
+  },
+  "mp3": {
+    "nickname": "TripleLayer Pro",
+    "specs": [
+      "Profondeur : 0-95 cm",
+      "Entièrement automatique",
+      "Séparation à 3 couches",
+      "Cycle d'échantillonnage 20 sec/core"
+    ],
+    "description": "Assez dur pour gérer le sol, assez intelligent pour travailler efficacement.",
+    "herodescription": "Le <strong>MP-3.90</strong> est ce qui se passe quand vous prenez la <strong>pensée allemande</strong>, vous versez une partie du <strong>sur-ingéniering</strong>, puis vous lui demandez de <strong>creuser des trous pour la science</strong>. Conçu pour extraire des échantillons de sol jusqu'à <strong>95 cm</strong> sans même une plainte de l'opérateur, il peut faire <strong>la séparation à 3 couches</strong>, <strong>auto-décharge</strong>, et décider (tout seul) quand abandonner si le sol résiste.",
+    "detailedDescription": "<p className='mt-4'>Maintenant, la <strong>précision et l'efficacité</strong> ne sont pas juste des mots à la mode ici — elles sont intelligemment intégrées, afin que vous puissiez vous concentrer sur les données plutôt que de combattre une saleté têtue. Il gère les sols difficiles avec <strong>à peine aucun problème de l'opérateur</strong>, ce qui en fait un compagnon plutôt fiable pour un travail scientifique sérieux ou une recherche appropriée sur le terrain.</p><p className='mt-4'>Il se glissera facilement sur les pick-up, les remorques, les tracteurs ou à peu près n'importe quoi qui est vaguement routier, avec des <strong>paramètres de profondeur et d'horizon personnalisables</strong> pour s'adapter à ce dont vous avez besoin. De plus, vos échantillons finissent sûr et sain dans des <strong>conteneurs étanches</strong>, ce qui est un joli toucher.</p><p className='mt-4'>Et voilà le truc — c'est conçu pour une <strong>utilisation professionnelle et appropriée</strong>, pas le jouet d'un guerrier du week-end. Solide, fiable et tranquillement compétent — exactement ce à quoi vous vous attendriez de l'ingénierie allemande, vraiment.</p>",
+    "price": "À partir de 23 500 €",
+    "features": [
+      "Extraction entièrement automatique jusqu'à 95 cm",
+      "Séparation facultative à 3 couches pour l'échantillonnage spécifique à l'horizon",
+      "Prend 3 échantillons consécutifs sans quitter votre siège",
+      "Se monte sur des pick-up, des remorques ou à peu près n'importe quoi qui est vaguement routier",
+      "Auto-décharge et tri des échantillons pendant l'extraction",
+      "Profondeur d'échantillonnage et nombre d'horizons personnalisables",
+      "Conteneurs étanches pour le stockage des échantillons",
+      "Auto-arrêt quand il tape une roche et dit 'nope'",
+      "Logique intelligente : rejette ou garde les échantillons selon les paramètres",
+      "Conçu pour une utilisation continue et appropriée — ce n'est pas votre gadget casual, une fois par ci par là."
+    ],
+    "howToUse": [
+      "Entraîne une tige sérieuse rainurée dans le sol avec un marteau hydraulique haute fréquence — pensez à elle comme une très légère piqûre précise",
+      "Tourne et rétracte hydrauliquement la tige, en évitant le type de yanking brutal qui contrarie le sol et les ingénieurs",
+      "Vide automatiquement l'alésoir sur le chemin du retour — pas de pelle, pas de bricolage, juste un dépôt poli dans les conteneurs d'échantillons",
+      "Distribue soigneusement le matériel d'échantillon dans des conteneurs séparés selon l'horizon du sol — parce que même la saleté devrait savoir où elle appartient"
+    ],
+    "applications": [
+      "Agriculture de précision",
+      "Surveillance environnementale du sol",
+      "Test Nmin/Nitrate",
+      "Profilage et recherche du sol",
+      "Travail sur le terrain où la vitesse, la précision et les pauses-café sont importants"
+    ],
+    "technicalSpecs": {
+      "Profondeur d'échantillonnage": "0–95 cm",
+      "Type d'échantillon": "Programmé par impact, entièrement automatique",
+      "Unité de marteau": "Hydraulique, 2 200 coups/min",
+      "Horizons": "1–3 couches (configurable par l'utilisateur)",
+      "Magasins": "3",
+      "Temps du cycle d'échantillonnage": "18 sec/core",
+      "Options de montage": "Pick-up, remorque ou véhicule léger",
+      "Tri des échantillons": "Séparation automatique spécifique à l'horizon",
+      "Caractéristiques spéciales": "Détection d'obstacle, Conteneurs étanches, Clavier numérique",
+      "Contrôle de pénétration": "Arrêt automatique",
+      "Source d'alimentation": "Système hydraulique (135 bar, 20 l/min, 12 VDC)",
+      "Poids": "200 kg"
+    },
+    "testimonials": [
+      {
+        "quote": "Parfait pour notre recherche en zones humides. Fonctionne exceptionnellement bien dans les sols riches en argile où d'autres alésoirs échouent.",
+        "author": "Dr. Maria Santos",
+        "company": "Wetland Research Center",
+        "rating": 5
+      },
+      {
+        "quote": "La conception en demi-cylindre est brillante pour les sols cohésifs. La qualité de l'échantillon est régulièrement excellente.",
+        "author": "Robert Taylor",
+        "company": "Soil Dynamics Lab",
+        "rating": 5
+      }
+    ]
+  },
+  "mp4": {
+    "nickname": "UltraDepth MAX",
+    "specs": [
+      "Profondeur : 0-100 cm",
+      "Entièrement automatique",
+      "Séparation à 4 couches",
+      "Cycle d'échantillonnage 22 sec/core"
+    ],
+    "description": "Sol profond, trié intelligemment. Pas de problèmes, juste de la profondeur.",
+    "herodescription": "Ceci est le <strong>MP-4.100</strong> — imaginez si un marteau hydraulique et un doctorat en science du sol avaient un enfant. C'est un <strong>échantillonneur entièrement automatique</strong> qui descend jusqu'à <strong>100 cm</strong> complets, tire jusqu'à <strong>quatre couches</strong>, et les trie comme un majordome avec un passe-temps géologique. C'est ce que vous obtenez si vous demandez à l'Allemagne de faire une taupe.",
+    "detailedDescription": "<p className='mt-4'>Conçu pour ceux qui exigent la <strong>profondeur et la discipline</strong>, le MP-4.100 descend correctement dans le sol et fait le travail sans se plaindre et sans pelle manuelle. Un <strong>système d'impact hydraulique</strong> alimente une tige rainurée dans le sol, où elle tranquillement se met au travail d'extraction d'échantillons de qualité scientifique. Une fois rétractée, elle <strong>vide automatiquement</strong> les biens dans leurs places appropriées.</p><p className='mt-4'>Il a une <strong>logique intelligente</strong> qui décide de garder ou de rejeter le matériel selon vos paramètres, et un <strong>mécanisme de séparation des couches</strong> qui est surprenamment poli quant à l'endroit où chaque horizon va. Montez-le sur un pick-up, une remorque ou à peu près n'importe quoi qui est vaguement routier et vous y allez.</p>",
+    "price": "À partir de 25 500 €",
+    "features": [
+      "Extraction entièrement automatique jusqu'à 100 cm",
+      "Séparation facultative à 4 couches pour l'échantillonnage spécifique à l'horizon",
+      "Auto-décharge et tri des échantillons pendant l'extraction",
+      "Logique intelligente : rejette ou garde les échantillons selon les paramètres",
+      "Profondeur d'échantillonnage et nombre d'horizons personnalisables",
+      "Se monte sur des pick-up, des remorques ou à peu près n'importe quoi qui est vaguement routier",
+      "Détection d'obstacle et arrêt automatique sûr",
+      "Conteneurs étanches pour le stockage des échantillons",
+      "Clavier numérique pour les ajustements en vol",
+      "Conçu pour une utilisation appropriée et quotidienne – ce n'est pas votre gadget occasionnel, une fois par ci par là"
+    ],
+    "howToUse": [
+      "Entraîne une tige rainurée dans le sol à l'aide d'un marteau hydraulique haute fréquence — élégamment brutal",
+      "Tourne et rétracte hydrauliquement la tige — pas de yanking, pas de drame",
+      "Vide automatiquement l'alésoir dans les conteneurs appropriés sur le chemin du retour",
+      "Distribue soigneusement le matériel d'échantillon dans des conteneurs séparés selon l'horizon du sol"
+    ],
+    "applications": [
+      "Profilage profond du sol",
+      "Recherche environnementale et agricole",
+      "Test Nmin/Nitrate",
+      "Agriculture de précision",
+      "Travail sur le terrain nécessitant une profondeur et une fidélité d'échantillon sérieuses"
+    ],
+    "technicalSpecs": {
+      "Profondeur d'échantillonnage": "0–100 cm",
+      "Type d'échantillon": "Programmé par impact, entièrement automatique",
+      "Unité de marteau": "Hydraulique, haute fréquence",
+      "Horizons": "1–4 couches",
+      "Magasins": "4",
+      "Temps du cycle d'échantillonnage": "22 sec/core",
+      "Options de montage": "Pick-up, remorque ou véhicule léger",
+      "Tri des échantillons": "Séparation automatique spécifique à l'horizon",
+      "Caractéristiques spéciales": "Détection d'obstacle, Conteneurs étanches, Clavier numérique",
+      "Source d'alimentation": "Système hydraulique (135 bar, 20 l/min, 12 VDC)",
+      "Poids": "215 kg"
+    },
+    "testimonials": [
+      {
+        "quote": "Il gère les sols lourds et les profils profonds mieux que n'importe quelle méthode manuelle que nous avons essayée. Vraiment sans intervention et précis.",
+        "author": "Dr. Felix Hartmann",
+        "company": "GeoCrop Labs",
+        "rating": 5
+      },
+      {
+        "quote": "Fiable et intelligent — la logique d'échantillon nous économise des heures de post-traitement.",
+        "author": "Dr. Nina Weber",
+        "company": "AgroField Analytics",
+        "rating": 5
+      }
+    ]
+  },
+  "dh": {
+    "nickname": "Hydraulic Scout",
+    "specs": [
+      "Profondeur : 0-30 cm",
+      "Entièrement automatique",
+      "Contrôle de profondeur indépendant de la suspension",
+      "Cycle d'échantillonnage 5 sec/core"
+    ],
+    "description": "Efficace, fiable et silencieusement confiant. Échantillonnage des sols, mais avec un peu de muscle hydraulique derrière.",
+    "herodescription": "Le <strong>DH-1.30</strong> est un échantillonneur de sol robuste et hydraulique construit pour fonctionner avec une confiance tranquille et une puissance régulière — pas de surcomplication, juste des résultats solides. Forage en douceur jusqu'à <strong>30 centimètres</strong>, il est alimenté par un moteur hydraulique — afin que vous obteniez beaucoup de force, sans électricité nécessaire. Un peu plus bruyant que son cousin électrique, bien sûr, mais ce n'est pas un show-off. Juste un travail fiable et solide, jour après jour.",
+    "detailedDescription": "<p className='mt-4'>Le <strong>DH-1.30</strong> reprend la conception sensée de son <strong>homologue électrique</strong> mais échange la batterie pour un <strong>moteur hydraulique</strong> — idéal si vous avez accès à l'alimentation hydraulique et que vous en voulez un peu plus <strong>couple</strong>.</p><p className='mt-4'><strong>Contrôle de la profondeur</strong> est tranchant et précis, avec des <strong>ajustements en millimètres</strong> pour gérer le terrain inégal comme si ce n'était rien.</p><p className='mt-4'>L'opération est délicieusement simple : <strong>un bouton, deux profondeurs prédéfinies</strong> — parce que la vie est trop courte pour les commandes fastidieuses.</p><p className='mt-4'>Il pèse un solide <strong>43 kg</strong>, construit <strong>assez dur</strong> pour gérer le travail sur le terrain réel mais <strong>assez léger</strong> pour que vous n'ayez pas besoin d'un chariot élévateur ou d'un homme fort pour le déplacer.</p><p className='mt-4'><strong>Facilement monté</strong> sur des quads, des remorques, des pick-up ou des véhicules légers, cette chose est faite pour la <strong>polyvalence</strong>.</p><p className='mt-4'>Pour ceux qui préfèrent la <strong>fiabilité classique de la puissance hydraulique</strong> avec l'<strong>ingénierie allemande dépendante</strong>, cet échantillonneur est le choix sensible.</p>",
+    "price": "À partir de 8 950 €",
+    "features": [
+      "Entraînement hydraulique pour le forage fiable et puissant",
+      "Ajustement de profondeur en millimètres précis",
+      "Non affecté par la suspension du véhicule — pas de surprises souterraines",
+      "Deux profondeurs prédéfinies pour un commutation rapide",
+      "Compact et portable à 43 kg",
+      "Se monte facilement sur une gamme de véhicules légers"
+    ],
+    "applications": [
+      "Échantillonnage de sol macronutriments",
+      "Agriculture de précision (avec un peu de puissance à l'ancienne)",
+      "Recherche agricole et environnementale",
+      "Surveillance de la santé et de la nutrition des sols"
+    ],
+    "howToUse": [
+      "Garez votre plate-forme et positionnez l'échantillonneur où le sol appelle.",
+      "Sélectionnez votre profondeur préférée (oui, jusqu'au millimètre).",
+      "Appuyez sur le bouton et laissez le muscle hydraulique faire le levage lourd.",
+      "Tirez votre noyau de sol parfait et soyez silencieusement satisfait de vous-même."
+    ],
+    "technicalSpecs": {
+      "Profondeur d'échantillonnage": "0–30 cm",
+      "Type d'échantillon": "Noyau unique, entièrement automatique",
+      "Horizons": "1",
+      "Magasins": "1",
+      "Temps du cycle d'échantillonnage": "5 secondes par noyau",
+      "Options de montage": "Quad, pick-up, remorque ou véhicule léger",
+      "Contrôle": "Panneau de bouton-poussoir électrique",
+      "Source d'alimentation": "Moteur hydraulique",
+      "Poids": "43 kg"
+    },
+    "testimonials": [
+      {
+        "quote": "L'entraînement hydraulique du DH-1.30 signifie aucun compromis sur la puissance ou la précision. Parfait pour les sols plus durs et les plus longs jours de terrain.",
+        "author": "Sven Becker",
+        "company": "AgriTech Solutions",
+        "rating": 5
+      },
+      {
+        "quote": "Monté sur notre remorque, le DH-1.30 gère tout avec une confiance tranquille. Contrôle de la profondeur à chaque fois.",
+        "author": "Maria Schneider",
+        "company": "Soil Science Research Group",
+        "rating": 5
+      },
+      {
+        "quote": "Une machine robuste et fiable avec assez de force pour rendre le travail sur le terrain moins ressembler à un travail difficile.",
+        "author": "Tomás Herrera",
+        "company": "Precision Agriculture Co.",
+        "rating": 4
+      }
+    ]
+  },
+  "de": {
+    "nickname": "Electric Scout",
+    "specs": [
+      "Profondeur : 0-30 cm",
+      "Système de forage entièrement électrique",
+      "Contrôle de profondeur indépendant de la suspension",
+      "Cycle d'échantillonnage 5 sec/core"
+    ],
+    "description": "Intelligent, silencieux et très nimble. Rendre l'échantillonnage des sols presque sans effort.",
+    "herodescription": "Le <strong>DE-1.30</strong> est l'<strong>échantillonneur de sol sensé et compact</strong> qui tranquillement se met au travail — foraging vers le bas jusqu'à <strong>30 centimètres</strong> sans faire de problème ou vous avez besoin de chaîne-fumer pendant qu'il fonctionne. C'est <strong>électrique</strong>, afin <strong>pas de fumées, pas de bruit</strong>, juste un échantillonnage de sol fiable et propre.",
+    "detailedDescription": "<p className='mt-4'>S'appuyant sur le modèle de confiance <strong>N2012</strong>, le <strong>DE-1.30</strong> utilise une <strong>foreuse électrique</strong> qui est si précise qu'elle pourrait probablement enfiler une aiguille — si l'échantillonnage des sols était dans la broderie. <strong>Les ajustements en millimètres</strong> signifient que vous obtenez exactement la profondeur que vous voulez, peu importe comment le terrain est bosselé ou imprévisible. C'est un peu comme un <strong>majordome poli</strong> qui ne vous laissera pas tomber.</p><p className='mt-4'>L'<strong>unité de contrôle</strong> est la simplicité elle-même — appuyez sur un bouton et c'est parti. <strong>Deux profondeurs prédéfinies</strong> vous laissent basculer entre les travaux d'échantillonnage plus vite que vous ne pouvez dire <em>'technologie révolutionnaire'</em> (voyez ce que j'ai fait là ?). Pas de bricolage avec des menus compliqués ou des contrôles cryptiques.</p><p className='mt-4'>À seulement <strong>45 kilogrammes</strong> et alimenté par un <strong>pack de batterie 24 V</strong> (vendu séparément), c'est <strong>assez léger pour être nimble</strong> mais <strong>assez dur pour gérer un travail de terrain réel</strong>. Pas besoin d'appeler une grue ou un ancien sergent de l'armée pour le déplacer.</p><p className='mt-4'>Le DE-1.30 peut être facilement monté sur des <strong>quads, des remorques et une variété de véhicules légers</strong>, ce qui le rend polyvalent pour de nombreuses conditions de terrain.</p><p className='mt-4'>Donc, si vous voulez des <strong>échantillons de sol précis et fiables</strong> sans les dramatures du moteur à essence ou le bruit d'une foreuse lourde, le DE-1.30 est votre machine. C'est de l'<strong>ingénierie allemande</strong> avec une <strong>tournure électrique silencieuse</strong> qui fait juste le travail.</p>",
+    "price": "À partir de 12 600 €",
+    "features": [
+      "Forage entièrement électrique pour un échantillonnage propre et précis",
+      "Ajustement de profondeur en millimètres précis (parce que assez proche n'est pas assez bon)",
+      "Indépendant de la suspension du véhicule pour éviter les crises de profondeur",
+      "Deux sélections rapides de profondeur prédéfinies",
+      "Compact et léger à 47 kg",
+      "Fonctionne sur un pack de batterie externe 24 V (vendu séparément)"
+    ],
+    "applications": [
+      "Échantillonnage de sol macronutriments",
+      "Agriculture de précision avec un peu de style",
+      "Recherche agricole et environnementale",
+      "Surveillance de la santé et de la nutrition des sols"
+    ],
+    "howToUse": [
+      "Positionnez l'échantillonneur où le sol a besoin d'un coup d'œil.",
+      "Choisissez votre profondeur. Incréments de millimètres, parce que nous sommes pointilleux.",
+      "Appuyez sur le bouton et regardez la foreuse électrique poliment faire son travail.",
+      "Tirez le noyau du sol et émerveillez-vous devant votre terre parfaitement échantillonnée."
+    ],
+    "technicalSpecs": {
+      "Profondeur d'échantillonnage": "0–30 cm",
+      "Type d'échantillon": "Noyau unique, entièrement automatique",
+      "Horizons": "1",
+      "Magasins": "1",
+      "Temps du cycle d'échantillonnage": "5 sec/core",
+      "Options de montage": "Quads, pick-up, remorque ou véhicule léger",
+      "Contrôle": "Panneau de contrôle de bouton-poussoir électrique",
+      "Tension de fonctionnement": "24 VDC",
+      "Poids": "47 kg"
+    },
+    "testimonials": [
+      {
+        "quote": "La précision du DE-1.30 et la facilité d'utilisation ont transformé notre routine d'échantillonnage des sols. La foreuse électrique est silencieuse et remarquablement fiable.",
+        "author": "Sven Becker",
+        "company": "AgriTech Solutions",
+        "rating": 5
+      },
+      {
+        "quote": "Monter le DE-1.30 sur notre quad a rendu le travail de terrain incroyablement efficace. Son contrôle de profondeur et son alimentation par batterie sont parfaits pour l'échantillonnage en déplacement.",
+        "author": "Maria Schneider",
+        "company": "Soil Science Research Group",
+        "rating": 5
+      },
+      {
+        "quote": "Léger mais robuste, le DE-1.30 gère sans effort les conditions de sol difficiles. L'unité de contrôle conviviale est un gros plus dans les endroits éloignés.",
+        "author": "Tomás Herrera",
+        "company": "Precision Agriculture Co.",
+        "rating": 4
+      }
+    ]
+  },
+  "boprob": {
+    "nickname": "The Sixteen Express",
+    "specs": [
+      "Profondeur : 10–30 cm",
+      "Entièrement automatique",
+      "Échantillonnage en remorquage pendant la conduite",
+      "16 échantillons en ~4 min"
+    ],
+    "description": "Remorquez-le, échantillonnez-le, puis continuez à avancer — pas de problèmes, pas d'attente.",
+    "herodescription": "Ceci est le <strong>BOPROB III</strong> — également connu, plutôt avec jaunisse, comme le <strong>Sixteen Express</strong>. C'est une remorque qui prend des échantillons de sol pendant que vous conduisez. Oui, vraiment. Pas d'arrêt, pas d'appui sur le bouton, pas de crier sur les stagiaires. Remorquez-le derrière quelque chose avec des roues et laissez-le se mettre au travail.",
+    "detailedDescription": "<p className='mt-4'>Maintenant, le <strong>Sixteen Express</strong> est ce que vous appelleriez un peu d'ingénierie astucieuse. C'est un <strong>échantillonneur de sol en remorque</strong> conçu pour faire son travail pendant que vous continuez à vous déplacer. Ce qui, franchement, est la façon dont tout devrait fonctionner — mais ça ne le fait pas.</p><p className='mt-4'>L'échantillonnage se déroule à un rythme plutôt rapide grâce à une <strong>manivelle rotative</strong> qui va les 360° complets, poignardant dans le sol comme un petit marteau-piqueur poli, puis poliment éjectant le noyau dans le magazine d'échantillon.</p><p className='mt-4'>Tout est surveillé par un <strong>écran tactile de 7 pouces</strong> — un peu de kit joli — afin que vous sachiez exactement ce qu'il fait à tout moment. Il y a même une caméra optionnelle, au cas où vous voudriez le voir fonctionner, ou juste admirer votre achat.</p><p className='mt-4'>Les roues sont grandes et molles — <strong>235/60 R16</strong>, si vous êtes dans ce genre de choses — ce qui signifie une pression au sol minimale et pas d'être embourbé dans un champ boueux, à moins que vous ayez vraiment essayé.</p><p className='mt-4'>Il se commande facilement aux <strong>tracteurs, camions pick-up, quads — ou à peu près n'importe quoi d'autre avec un crochet de remorquage</strong>, vraiment. Aucun bricolage, pas d'adaptateurs, pas d'héroïsme d'atelier requis. Et une fois que vous avez terminé, il se détache tout aussi facilement.</p><p className='mt-4'>Si vous conduisez trop vite — ou trop lentement, peut-être parce que vous admirez le paysage — le système refuse simplement d'échantillonner. Ce qui est brillant, parce que cela signifie que la machine est plus intelligente que le conducteur moyen.</p>",
+    "price": "28 500 €",
+    "features": [
+      "Système d'impact et de rotation hydraulique",
+      "Manivelle rotative 360° avec auto-décharge",
+      "Échantillons pendant la conduite — pas besoin de s'arrêter",
+      "Affichage tactile de 7 pouces pour le contrôle et la surveillance",
+      "Caméra embarquée optionnelle pour les commentaires visuels",
+      "Faible compaction du sol à partir des roues 235/60 R16",
+      "Pas de mods de tracteur nécessaires — la remorque monte rapidement",
+      "Protection sensible à la vitesse contre les mauvais usages"
+    ],
+    "applications": [
+      "Échantillonnage macronutriments à débit élevé",
+      "Agriculture de précision avec une utilisation minimale de carburant",
+      "Surveillance de la santé des sols sur de grandes surfaces",
+      "Échantillonnage d'horizon peu profond en transit"
+    ],
+    "howToUse": [
+      "Attachez la remorque à un tracteur ou un véhicule capable de remorquer — pas de modifications nécessaires.",
+      "Définissez votre profondeur et l'intervalle d'échantillon souhaitées sur l'écran tactile.",
+      "Conduisez à 4–15 km/h et laissez la machine échantillonner automatiquement.",
+      "Vérifiez la caméra et l'écran au besoin, ou continuez à cultiver.",
+      "Quand 16 échantillons sont collectés, videz et rechargez le magazine."
+    ],
+    "technicalSpecs": {
+      "Profondeur d'échantillonnage": "10–30 cm",
+      "Type d'échantillon": "Programmé par impact, entièrement automatique",
+      "Horizons": "1",
+      "Magasins": "16",
+      "Temps du cycle d'échantillonnage": "8–10 secondes par échantillon",
+      "Options de montage": "Remorque en remorquage (s'adapte aux tracteurs ou à tout véhicule avec attelage standard)",
+      "Contrôle": "Panneau tactile de 7 pouces",
+      "Source d'alimentation": "Hydraulique",
+      "Roues": "235/60 R16, faible compaction du sol",
+      "Poids": "Approx. 600 kg"
+    },
+    "testimonials": [
+      {
+        "quote": "Nous avons terminé un sondage de 10 hectares en moins d'une heure. Le Sixteen Express fonctionne simplement. Pas de drame, pas d'arrêt.",
+        "author": "Lena Hoffmann",
+        "company": "TerraCrop Systems",
+        "rating": 5
+      },
+      {
+        "quote": "L'écran tactile est réactif et la qualité d'échantillon est parfaite. Il gère magnifiquement nos sols riches en argile.",
+        "author": "Henrik Voss",
+        "company": "Nordland AgriTech",
+        "rating": 5
+      },
+      {
+        "quote": "Il réduit l'usure du tracteur et du pilote. L'un des meilleurs investissements pour l'échantillonnage à grande échelle que nous avons pris.",
+        "author": "Jürgen Möller",
+        "company": "FieldScan GmbH",
+        "rating": 5
+      }
+    ]
+  },
+  "laydown": {
+    "nickname": "Kit de montage",
+    "name": "Cadre rabattable",
+    "specs": [
+      "Attelage de remorquage standard 50 mm avec prise 13 broches 12 V requise.",
+      "Poids : ≈70 kg (DH/DE) ; ≈80 kg (support MP)",
+      "Acier EN 10025 S355, revêtement en poudre, épaisseur 4 mm",
+      "Rabattable et stabilité d'attelage"
+    ],
+    "description": "Un support de montage sans chichi pour votre échantillonneur—s'adapte à l'arrière de la plupart des véhicules civilisés sans les transformer en camions Franken.",
+    "herodescription": "<strong>Brillamment sensé.</strong> Ce cadre rabattable, kit de montage certifié TÜV, se boulonne à votre attelage de remorquage comme s'il y appartenait. Supporte nos échantillonneurs séries MP, DH et DE.",
+    "detailedDescription": "<p className='mt-4'>Monté sur le plateau du camion connecté à cet endroit où vit votre <strong>barre de remorquage</strong>—juste en dessous du <strong>couvercle du coffre</strong> et au-dessus du <strong>drame du tuyau d'échappement</strong>—ce cadre vous permet de transporter un échantillonneur de sol complet avec <strong>élégance</strong>. <strong>Rabattez-le pour opérer, relevez-le pour partir dîner</strong>. Il est <strong>solide</strong>, <strong>testé</strong>, et <strong>peint comme un meuble d'outils allemand</strong>.</p><p className='mt-4'>Les clients peuvent choisir leur niveau d'implication : certains préfèrent <strong>installer le cadre eux-mêmes</strong> avec l'aide de nos <strong>instructions infaillibles</strong> ; d'autres <strong>passent avec leur véhicule</strong> et nous laissent gérer le <strong>montage et la magie hydraulique</strong> ; et pour ceux qui aiment la <strong>gratification instantanée</strong>, nous offrons également des <strong>rigs de terrain entièrement équipés</strong>—<strong>pré-montés</strong>, <strong>testés</strong>, et généralement assez <strong>satisfaits d'eux-mêmes</strong>.</p>",
+    "price": "À partir de 2 790 €",
+    "features": [
+      "Attelage de remorquage + montage 13 broches (pas de soudure, pas de traumatisme)",
+      "Approuvé TÜV pour usage routier et terrain",
+      "Acier structurel EN S355, revêtement en poudre",
+      "Matériel de montage M16 à dégagement rapide inclus",
+      "Conception pliable testée à 10 000 cycles de déploiement",
+      "Supporte les packs d'alimentation externes (hydraulique ou batterie)"
+    ],
+    "applications": [
+      "Plateformes d'échantillonnage de sol ATV/UTV",
+      "Installations utilitaires et camionnettes",
+      "Échantillonneurs hydrauliques MP ou électriques DE/DH",
+      "Usage saisonnier ou rigs de terrain entièrement montés"
+    ],
+    "howToUse": [
+      "Le véhicule a une boule d'attelage ISO 50 mm ? Cochez.",
+      "Le véhicule a une prise 13 broches 12 V (pour DE-1.30) ? Cochez.",
+      "Sortie hydraulique disponible (135–220 bar @60 L/min) ?",
+      "Rabattez, testez l'alimentation, et commencez l'échantillonnage."
+    ],
+    "technicalSpecs": {
+      "Poids": "70 kg (DH/DE) ; 80 kg (version MP)",
+      "Matériau": "Acier EN S355, épaisseur 4 mm, revêtement en poudre RAL 9005",
+      "Interface de montage": "Attelage ISO 50 mm + fiche 13 broches DE-1.30",
+      "Entrée hydraulique": "135–220 bar ; 20–90 L/min ; Tuyau DN 19/¾″, éclatement ≥500 bar",
+      "Options d'alimentation": "Pack d'alimentation hydraulique externe ou batterie",
+      "Certifications": "TÜV DE-745-K-2024 ; Conforme EN 12642 + ISO 1496-3",
+      "Résistance à la corrosion": "≥1 000 h brouillard salin neutre (ISO 9227)",
+      "Matériel inclus": "M16×45-8.8 + boulons auto-verrouillants M10, tous plaqués",
+      "Durée de vie des cycles": "10 000 pliages (test de durabilité du mécanisme)",
+      "Garantie": "12 mois standard",
+      "Compatibilité des supports": "Tous les modèles MP (MP-1.90 à MP-4.100), DH et DE"
+    },
+    "testimonials": []
+  },
+  "tph": {
+    "name": "Attelage trois points",
+    "nickname": "Kit de montage",
+    "specs": [
+      "S'adapte aux systèmes PTO trois points Cat-1 ou Cat-2 du tracteur",
+      "Construction en acier A-frame robuste",
+      "Protection contre la corrosion époxy noire",
+      "Compatible avec toutes les machines d'échantillonnage de sol séries MP, DH et DE"
+    ],
+    "description": "Transforme votre tracteur en bête d'échantillonnage de sol, utilisant la puissance PTO pour l'intégration d'échantillonneur hydraulique. Dur, fiable, sans chichi.",
+    "herodescription": "<strong>Cadre d'attelage trois points du tracteur</strong> : Le champion poids lourd pour tracteurs Cat-1/2, conçu pour monter votre échantillonneur hydraulique directement sur le système PTO du tracteur avec une plateforme de pompe hydraulique correspondante.",
+    "detailedDescription": "<p className='mt-4'>Imaginez la <strong>colonne vertébrale en acier</strong> dont votre tracteur n'a jamais su qu'il avait besoin. Façonnée à partir d'<strong>acier A-frame épais</strong> et enveloppée d'<strong>armure époxy noire</strong>, ce montage se boulonne proprement sur les bras de levage de votre tracteur. Il est construit pour survivre à la vie agricole — pluie, boue, et le caprice occasionnel du tracteur inclus. Le kit vient avec <strong>barres de levage et tous les boulons de montage</strong>, donc pas d'improvisation avec des clous rouillés ou du ruban adhésif.</p><p className='mt-4'>Convient pour <strong>tracteurs compacts avec espacement des bras de levage autour de 50 à 60 pouces</strong>, ce cadre supporte la pompe hydraulique directement alimentée par votre arbre PTO, vous donnant un débit hydraulique efficace pour un échantillonnage de sol fluide. C'est la mise à niveau qui fait sentir votre tracteur prêt à affronter les <strong>Olympiades du champ</strong>.</p>",
+    "price": "À partir de 1 650 €",
+    "features": [
+      "Acier A-frame soudé—assez robuste pour le vrai travail",
+      "Support de pompe PTO—parce que les attaches zip ne sont pas de l'ingénierie",
+      "Finition époxy noire—comme de la peinture, mais plus intelligente",
+      "Vient avec boulons et barres de levage—pas de récupération requise",
+      "S'adapte aux bras de levage Cat-2/3 (50–60\")",
+      "Fonctionne avec échantillonneurs MP, DH et DE"
+    ],
+    "applications": [
+      "Échantillonnage hydraulique du sol—correctement",
+      "Travail de terrain alimenté par PTO avec un minimum de jurons",
+      "Rétrofittings de tracteur qui ont du sens"
+    ],
+    "howToUse": [
+      "Attachez aux bras de levage—serrez comme si vous le pensiez",
+      "Montez la plaque de base de la pompe—ne croisez pas les filets",
+      "Connectez PTO et routez les tuyaux proprement",
+      "Adaptez échantillonneur, testez, hochez la tête avec approbation"
+    ],
+    "technicalSpecs": {
+      "Type": "Cadre d'attelage trois points Cat-1/2 du tracteur",
+      "Construction": "Acier A-frame robuste soudé avec finition époxy",
+      "Compatibilité PTO": "Arbres PTO de tracteur standard entraînent la pompe hydraulique",
+      "Inclut": "Barres de levage, boulons de montage et matériel d'installation",
+      "Taille du cadre": "S'adapte à l'espacement des bras de levage 50–60\" typique des tracteurs compacts",
+      "Protection contre la corrosion": "Revêtement époxy noir durable",
+      "Poids": "Approx. 120 kg",
+      "Certification": "Robustesse de grade commercial pour usage agricole",
+      "Compatibilité": "Fonctionne avec toutes les machines d'échantillonnage de sol séries MP, DH et DE"
+    },
+    "testimonials": [
+      {
+        "quote": "Se boulonne directement, pas de surprises. Utilisé avec notre MP-2.60 — cadre solide, tout s'adapte, pas de cliquetis. Achèterais à nouveau.",
+        "author": "J. Bauer",
+        "company": "Bauer Agrar GmbH",
+        "rating": 5
+      },
+      {
+        "quote": "Mis sur le tracteur en moins d'une heure. Pompe PTO fonctionne en douceur, échantillonneur se monte proprement. Ça marche simplement.",
+        "author": "L. Schneider",
+        "company": "Schneider Feldtechnik",
+        "rating": 5
+      }
+    ]
+  },
+  "fc": {
+    "name": "Conversion complète",
+    "nickname": "Kit de conversion",
+    "specs": [
+      "Compatible avec camionnettes et UTV",
+      "Cadre en acier sur mesure avec panneaux d'outils en aluminium",
+      "Pièces OEM retirées et stockées ; cadre certifié TÜV",
+      "Supporte tous les échantillonneurs de sol séries MP, DH et DE"
+    ],
+    "description": "Transforme votre véhicule utilitaire ou camionnette en bête d'échantillonnage de sol sans chichi. Plateau retiré, cadre monté, outils chargés.",
+    "herodescription": "<strong>Kit de conversion complète</strong> remplace le plateau de camion standard ou la plateforme UTV avec un cadre en acier sur mesure et des couvertures en aluminium—conçu spécifiquement pour l'échantillonnage de sol avec <strong>machines séries MP, DH et DE</strong>. Approuvé TÜV, légal sur route, et plutôt astucieux.",
+    "detailedDescription": "<p className='mt-4'><strong>Si votre UTV ou camionnette rêve de grandeur, c'est son moment.</strong> Nous retirons soigneusement le plateau de série et le remplaçons par un cadre de conversion en acier, enveloppé de panneaux en aluminium qui crient 'opérateur professionnel' plus fort qu'un Hilux à fond sur gravier.</p><p className='mt-4'><strong>Il vous donne un montage approprié pour toutes nos machines, stockage intégré pour glacières, outils, éclairage—basiquement tout sauf le déjeuner préparé.</strong> Certifié par TÜV, construit pour des campagnes sérieuses, et étrangement satisfaisant à regarder.</p>",
+    "price": "À partir de 4 590 €",
+    "features": [
+      "Ajustement universel pour camionnettes et UTV (Hilux, Gator, Kubota, etc.)",
+      "Cadre en acier couvert d'aluminium : durable et résistant à la corrosion",
+      "Supporte le stockage d'outils, éclairage, glacières et systèmes d'échantillonnage",
+      "Certifié TÜV et légal sur route en UE",
+      "Entièrement compatible avec toutes les machines MP, DE et DH"
+    ],
+    "applications": [
+      "Conversions de rigs de terrain permanents",
+      "Constructions de flotte pour échantillonnage de sol à grande échelle",
+      "Mises à niveau pour véhicules de recherche agricole et environnementale"
+    ],
+    "howToUse": [
+      "Sélectionnez votre machine d'échantillonnage — séries MP, DH ou DE. Choix sensés, tous.",
+      "Assurez-vous que votre véhicule a un récepteur d'attelage ou un accouplement de remorque. Sinon, on peut en arranger un. Nous ne sommes pas des sauvages.",
+      "Apportez-nous le véhicule — ou laissez-nous sourcer un modèle approprié.",
+      "Nous ajustons le cadre en acier, boulonnons l'échantillonneur, gérons la paperasse, et vous envoyons affronter le sol."
+    ],
+    "technicalSpecs": {
+      "Véhicules compatibles": "Camionnettes (Hilux, Ranger, etc.) et UTV (Gator, RTV, Ranger, etc.)",
+      "Construction": "Cadre en acier, revêtement en poudre. Boîtes en aluminium.",
+      "Exigences du véhicule": "Récepteur d'attelage standard ou accouplement de remorque. Bien sûr.",
+      "Certification": "Approuvé TÜV. Naturellement.",
+      "Pièces OEM": "Retirées. Stockées. Étiquetées. Très allemand.",
+      "Compatibilité échantillonneur": "Séries MP, DH, DE.",
+      "Poids du cadre": "Approx. 110 kg."
+    },
+    "testimonials": [
+      {
+        "quote": "Déposé le Hilux, récupéré une semaine plus tard prêt à échantillonner. Construction propre, tout s'adapte bien. Pas de tracas.",
+        "author": "T. Klein",
+        "company": "GeoFarm Solutions",
+        "rating": 5
+      },
+      {
+        "quote": "Cadre solide, disposition intelligente. Nous faisons tourner deux unités DH sur des Rangers convertis — beaucoup plus facile que les remorques dans les champs étroits.",
+        "author": "M. Becker",
+        "company": "AgroTest GmbH",
+        "rating": 5
+      }
+    ]
+  },
+  "trailer": {
+    "name": "Remorques spéciales",
+    "nickname": "Transporteurs de terrain",
+    "specs": [
+      "Galvanisé à chaud—la rouille n'a aucune chance.",
+      "Options freinées ou non freinées : choisissez votre niveau de contrôle",
+      "Largeur de voie fixe à 1,35 m",
+      "Conçu pour s'adapter parfaitement aux échantillonneurs séries MP, DH et DE"
+    ],
+    "description": "Ces remorques transportent les systèmes MP-series, DH/DE sans effort à travers tout ce qui n'est pas un mur.",
+    "herodescription": "<strong>Remorques spéciales – Transporteurs de terrain</strong> sont des <strong>remorques robustes, galvanisées à chaud</strong> avec des options <strong>freinées et non freinées</strong>, conçues pour transporter votre kit d'échantillonnage de sol—que ce soit <strong>MP, DH ou DE</strong>—à travers champs et fermes avec <strong>précision germanique</strong>.<br/>Elles viennent avec <strong>un stockage astucieux pour outils, lumières et glacières</strong>—pour que vous puissiez travailler toute la journée sans le tracas habituel.",
+    "detailedDescription": "<p className='mt-4'>Avec une largeur de voie fixe de <strong>1,35 m</strong> et des <strong>roues jack-castor</strong>, le Transporteur de terrain manœuvre comme un chariot de courses sensé—mais avec plus d'acier et moins de points faibles.</p><p className='mt-4'>Choisissez les <strong>modèles freinés</strong> pour des charges plus lourdes ou des pentes plus raides—jusqu'à <strong>3 500 kg PTAC</strong>—pour que vous puissiez transporter des échantillonneurs de sol sans rêver de nouveaux plaquettes de frein à chaque voyage.</p>",
+    "price": "À partir de 3 600 €",
+    "features": [
+      "Carrosserie et châssis galvanisés à chaud—longue durée de vie, moins de plaintes",
+      "Options freinées et non freinées—choisissez votre style de maniement",
+      "Essieu simple avec freins à tambour mécaniques pour un remorquage stable",
+      "Amortisseurs pour approbation routière à 100 km/h—trajet fluide, pas de cliquetis",
+      "Largeur de voie 1,35 m avec roues jack-castor incluses",
+      "Jantes en aluminium LT285/75 R16 ou acier MT215/75 R15—marchez sur les champs, pas de retournement",
+      "Roue de support incluse pour une manœuvre manuelle facile",
+      "Construit pour transporter les échantillonneurs séries MP, DH et DE—pas d'instructions IKEA requises",
+      "Stockage intégré pour outils, lumières et glacières—travaillez plus intelligemment, pas plus dur"
+    ],
+    "applications": [
+      "Transport de terrain des kits d'échantillonneurs MP, DH et DE",
+      "Transport de caisses, glacières et plus à travers les fermes",
+      "Environnements légers, à la fois ruraux et sites de contrat"
+    ],
+    "howToUse": [
+      "Sélectionnez freiné ou non freiné selon votre véhicule de remorquage et charge.",
+      "Accroché avec accouplement à boule standard 50 mm—pas d'ingénierie exotique requise.",
+      "Chargez votre échantillonneur et kit, sécurisez toutes les sangles et attaches.",
+      "Remorquez à des vitesses sensées—pas de dérapage ou d'aventure involontaire."
+    ],
+    "technicalSpecs": {
+      "Largeur de voie": "1,35 m",
+      "Options de charge": "550 kg (freiné/non freiné), mise à niveau lourde à 1 500 kg PTAC",
+      "Jantes/Taille de pneu": "LT285/75 R16 sur jantes en aluminium ou MT215/75 R15",
+      "Freins": "Freins à tambour mécaniques (version freinée), configuration essieu simple",
+      "Amortisseurs": "Approuvés pour remorquage à 100 km/h",
+      "Roue de support": "Incluse",
+      "Châssis": "Acier galvanisé à chaud, classé S235",
+      "Hauteur de carrosserie": "1,2 m",
+      "Poids de remorque": "Approx. 300 kg",
+      "Éclairage": "LED 12 V, tableau d'éclairage légal sur route",
+      "Garantie": "Garantie fabricant de 12 mois"
+    },
+    "testimonials": [
+      {
+        "quote": "Une machine robuste et fiable avec assez de puissance pour rendre le travail de terrain moins comme du travail dur.",
+        "author": "Tomás Herrera",
+        "company": "Precision Agriculture Co.",
+        "rating": 4
+      }
+    ]
+  },
+  "powerpack": {
+    "name": "Bloc d'alimentation",
+    "nickname": "Unités d'entraînement indépendantes",
+    "specs": [
+      "Alimenté hydrauliquement ou électriquement pour répondre à vos besoins en puissance",
+      "Boîtier en acier portable et durable conçu pour le travail de terrain rude",
+      "État de la batterie LCD sur les modèles électriques—connaissez votre charge d'un coup d'œil",
+      "Filtration de retour et d'aspiration incluse pour une opération hydraulique propre"
+    ],
+    "description": "Pour ceux qui font fonctionner des unités MP ou DH sans puissance embarquée, ces blocs délivrent une énergie hydraulique ou électrique constante où que votre travail vous emmène.",
+    "herodescription": "<strong>Blocs d'alimentation</strong> sont comme les majordomes fiables de l'échantillonnage de sol—offrant une <strong>puissance portable fiable</strong> pour que vos machines ne fassent pas de crise. Que vous préfériez le <strong>grognement hydraulique classique</strong> ou le <strong>charme électrique silencieux</strong>, ces blocs vous soutiennent.<br/>Enveloppés dans un <strong>boîtier en acier robuste</strong> plus dur que votre tracteur moyen, avec des avantages sensés comme <strong>l'état de la batterie LCD</strong> et <strong>systèmes de filtration</strong>, ils sont le fidèle acolyte que vous ne saviez pas que vous aviez besoin sur le terrain.",
+    "detailedDescription": "<p className='mt-4'>Le modèle hydraulique, parfaitement adapté aux machines <strong>séries MP</strong> et <strong>séries DH</strong>, se vante d'un <strong>moteur à essence de 13 CV</strong> et d'un <strong>réservoir d'huile de 22 L</strong>, poussant <strong>135 bar de pression</strong> à <strong>20 L/min</strong>—c'est du grognement sérieux pour quand vous voulez vous sentir comme un véritable seigneur mécanique.</p><p className='mt-4'>Le cousin électrique, conçu spécifiquement pour la <strong>série DE</strong>, arbore une <strong>batterie 24 V / 100 Ah</strong>, une <strong>armure en acier inoxydable</strong>, et un <strong>écran LCD</strong> pour garder un œil sur ses propres niveaux de puissance. Idéal pour ceux qui préfèrent une approche plus silencieuse, plus propre, et franchement plus polie de l'échantillonnage de sol.</p><p className='mt-4'>Les deux modèles sont <strong>portables</strong>, <strong>robustement construits</strong>, et viennent avec <strong>filtration de retour/aspiration</strong> pour empêcher vos hydrauliques précieuses de s'étouffer avec la saleté—parce que personne n'aime l'usure prématurée, n'est-ce pas ?</p>",
+    "price": "À partir de 3 450 €",
+    "features": [
+      "Alimenté hydrauliquement ou électriquement pour s'adapter à votre flux de travail",
+      "Boîtier en acier robuste avec protection contre la corrosion",
+      "État de la batterie LCD sur les modèles électriques",
+      "Filtration de retour et d'aspiration pour la longévité hydraulique",
+      "Portable et facile à monter ou transporter"
+    ],
+    "applications": [
+      "Source d'alimentation pour échantillonneurs de sol séries MP et DH",
+      "Opérations de terrain nécessitant une puissance hydraulique ou électrique indépendante",
+      "Emplacements d'échantillonnage distants sans alimentation électrique du véhicule"
+    ],
+    "howToUse": [
+      "Choisissez hydraulique ou électrique selon combien d'énergie votre échantillonneur exige (et combien vous vous sentez chic).",
+      "Boulonnez-le solidement à votre véhicule ou remorque—pas d'improvisation avec du ruban adhésif, s'il vous plaît.",
+      "Gardez un œil sur les niveaux de puissance via LCD (électrique) ou jauges de carburant/huile (hydraulique)—parce que les surprises sont pour les anniversaires, pas le travail de terrain.",
+      "Remplissez l'huile et changez les filtres régulièrement—traitez-le bien, et il gardera votre échantillonneur ronronnant comme un charme."
+    ],
+    "technicalSpecs": {
+      "Modèle hydraulique": "Moteur à essence 13 CV, réservoir d'huile 22 L, pression 135 bar, débit 20 L/min, système électrique 12 V",
+      "Modèle électrique": "Batterie 24 V / 100 Ah, affichage d'état LCD, enceinte en acier inoxydable",
+      "Poids": "Approx. 65 kg (hydraulique), 48 kg (électrique)",
+      "Dimensions": "50 x 40 x 45 cm (HxLxP)",
+      "Matériau": "Boîtier en acier avec protection contre la corrosion",
+      "Garantie": "Garantie de 12 mois sur les composants électriques"
+    },
+    "testimonials": [
+      {
+        "quote": "Une machine robuste et fiable avec assez de puissance pour rendre le travail de terrain moins comme du travail dur.",
+        "author": "Tomás Herrera",
+        "company": "Precision Agriculture Co.",
+        "rating": 4
+      }
+    ]
+  },
+  "spareparts": {
+    "name": "Pièces de rechange recommandées",
+    "nickname": "Les Sauveurs",
+    "specs": [
+      "Pièces de rechange approuvées par l'usine pour tous les modèles",
+      "Composants critiques pour assemblages à usure élevée et critiques pour la mission",
+      "Emballés individuellement, étiquetés et prêts pour le service sur le terrain",
+      "Soutenus par les normes de fiabilité de TechByP"
+    ],
+    "description": "Parce que rien ne ruine une bonne journée sur le terrain comme un raccord cassé ou un joint qui fuit. Ce sont les pièces de rechange officielles, recommandées—sélectionnées à la main pour votre machine MP, DH, DE ou BOPROB III, et prêtes à vous sortir des ennuis avant qu'ils ne commencent.",
+    "herodescription": "Pensez à ces pièces comme à la trousse de premiers secours pour votre échantillonneur de sol. Que vous soyez dans un marais en Bavière ou dans un désert de poussière en Bulgarie, avoir les bonnes <strong>pièces OEM</strong> sous la main transforme un désastre potentiel en hoquet géré avec suffisance.<br/>Chaque kit inclut les suspects habituels—<strong>joints toriques, raccords hydrauliques, filtres, courroies</strong>, et les bits qui travaillent le plus silencieusement. Pas d'improvisation avec du fil de ballage ou des pièces empruntées à la moissonneuse de votre pote.",
+    "detailedDescription": "<p className='mt-4'>Ce sont les <strong>kits de pièces de rechange recommandés</strong> pour les échantillonneurs <strong>séries MP</strong>, <strong>séries DH</strong>, <strong>séries DE</strong>, et <strong>BOPROB III</strong>. Et non, ils ne sont pas optionnels. Ce sont ce que les ingénieurs utilisent. Ce que les techniciens de service utilisent. Ce que vous devriez avoir dans la boîte à outils si vous êtes même légèrement sérieux sur la disponibilité.</p><p className='mt-4'>À l'intérieur de chaque kit, vous trouverez les suspects habituels—<strong>joints, filtres, raccords hydrauliques, relais, et lignes de pression</strong>—les bits qui gardent le fluide où il est censé être et le courant circulant dans la bonne direction. C'est comme porter une paire de sous-vêtements de rechange sur un vol long-courrier : vous espérez ne pas en avoir besoin, mais vous serez sacrément content si c'est le cas.</p><p className='mt-4'>Les pièces sont <strong>emballées et étiquetées individuellement</strong>, donc vous ne passez pas une demi-journée à essayer de comprendre si cette rondelle s'adapte à la ligne de retour ou au filtre à huile. Et bien sûr, elles sont toutes <strong>certifiées usine</strong> et conçues pour s'insérer sans aucun massacre.</p>",
+    "price": "À partir de 450 €",
+    "features": [
+      "Pièces de rechange recommandées pour échantillonneurs de sol MP, DH, DE et BOPROB III",
+      "Inclut composants d'usure critiques et articles de réparation d'urgence",
+      "Approuvées usine pour compatibilité transparente",
+      "Clairement étiquetées et emballées pour usage sur le terrain",
+      "Aide à réduire les temps d'arrêt pendant les campagnes d'échantillonnage critiques"
+    ],
+    "applications": [
+      "Réparations sur le terrain et maintenance préventive sur échantillonneurs de sol BPT",
+      "Garder les composants à usure élevée en condition prêts pour le service",
+      "Éviter les retards de projet dus à des pièces indisponibles"
+    ],
+    "howToUse": [
+      "Gardez un kit par machine—parce que personne n'aime cannibaliser des pièces de l'unité que vous n'utilisez pas.",
+      "Remplacez les composants à usure élevée selon les intervalles de service ou l'usure visible.",
+      "Utilisez seulement les composants étiquetés pour leurs emplacements prévus (deviner n'est pas héroïque, c'est cher).",
+      "Reconstituez votre kit après usage pour ne jamais être pris sans deux fois."
+    ],
+    "technicalSpecs": {
+      "Compatibilité": "MP-1.90, MP-2.60, MP-3.90, MP-4.100, MP-1.120, séries DH, DE-1.30, BOPROB III",
+      "Pièces incluses": "Raccords hydrauliques, filtres, joints toriques, solénoïdes, courroies, relais, lignes de pression (varie par kit)",
+      "Emballage": "Emballés individuellement et étiquetés",
+      "Durée de vie en stock": "5 ans dans des conditions de stockage sèches",
+      "Options de reconstitution": "Pièces individuelles disponibles sur demande"
+    },
+    "testimonials": [
+      {
+        "quote": "J'avais l'habitude d'improviser avec des pièces aléatoires—jusqu'à ce que je passe deux heures dans la boue à reconstruire une vanne avec du chewing-gum. Plus jamais.",
+        "author": "Elena Mihăilescu",
+        "company": "AgroTest România",
+        "rating": 5
+      }
+    ]
+  },
+  "coolbox": {
+    "name": "Glacière 95L",
+    "nickname": "Le Refroidisseur",
+    "specs": [
+      "Refroidissement/congélation par compresseur à double zone jusqu'à -20°C",
+      "Compartiments indépendants avec éclairage LED",
+      "Affichage numérique, charge USB et contrôle par app",
+      "Fonctionne sur alimentation 12/24 V DC ou 230 V AC"
+    ],
+    "description": "Parce que parfois vos échantillons—ou votre bière—méritent mieux que la misère tiède. Avec cette bête de 95L, vous apportez une toundra arctique portable sur le chantier. Possiblement exagéré. Mais définitivement brillant.",
+    "herodescription": "Vous connaissez la sensation—vous êtes à mi-chemin d'une montagne, tout est dans les délais, puis quelqu'un ouvre la glacière pour trouver... <strong>de la soupe</strong>. Plus maintenant. <strong>Le Refroidisseur transforme les sourires suffisants en soulagement glacé</strong>, littéralement.<br/>Il <strong>refroidit</strong>. Il <strong>congèle</strong>. Il <strong>brille</strong>. Et oui, il a une <strong>app</strong>—parce que votre téléphone n'est pas assez suffisant déjà. Les ingénieurs allemands pourraient appeler ça une <em>Kühlbox</em>. <strong>Nous appelons ça 'apporter le frigo, parce que nous pouvons.'</strong>",
+    "detailedDescription": "<p className='mt-4'>La <strong>Glacière 95L</strong> est, franchement, <strong>plus capable que la plupart des minibars d'hôtel</strong>. Compartiments doubles, chacun configurable comme frigo ou congélateur, signifient que vous pouvez garder votre kit d'échantillons d'un côté et le déjeuner de l'autre—et avoir encore de la place pour <strong>satisfaction suffisante</strong>.</p><p className='mt-4'>Elle est alimentée par un <strong>compresseur LG haute efficacité</strong> (ce qui est plus que ce que la climatisation de votre voiture peut dire), et refroidit jusqu'à <strong>-20°C</strong> même quand il fait assez chaud pour frire un œuf sur le toit. Utilisez-la via le panneau de contrôle ou l'<strong>app Alpicool</strong> si vous êtes le genre de personne qui contrôle son frigo depuis un hamac.</p><p className='mt-4'>Pour une autonomie étendue, associez-la avec la <strong>batterie optionnelle</strong> (non incluse), vous donnant <strong>4 à 24 heures</strong> de refroidissement autonome. Ou branchez-la au véhicule et <strong>ne vous inquiétez plus jamais</strong>. Elle est construite pour encaisser—<strong>bien que nous conseillions contre ça, évidemment.</strong></p>",
+    "price": "1000 €",
+    "features": [
+      "Compartiments doubles peuvent refroidir ou congeler indépendamment",
+      "Affichage numérique avec contrôles tactiles et app mobile",
+      "Éclairage LED intégré et port de charge USB",
+      "Couvercles s'ouvrent des deux côtés pour potentiel maximum de faffing",
+      "Fonctionne sur 12/24 V DC ou 110–240 V AC"
+    ],
+    "applications": [
+      "Transport d'échantillons sensibles à la température dans les climats chauds",
+      "Expéditions multi-jours sans sacrifier les boissons froides",
+      "Garder les packs de gel et spécimens dans des températures conformes au labo",
+      "Préservation d'urgence de bière sur les chantiers distants"
+    ],
+    "howToUse": [
+      "Branchez sur alimentation véhicule ou AC avant chargement",
+      "Définissez températures cibles via le panneau de contrôle ou l'app",
+      "Utilisez compartiments comme frigo-congélateur, frigo-frigo ou congélateur-congélateur",
+      "Chargez échantillons debout, et évitez le surchargement (oui, nous savons que vous le ferez quand même)",
+      "Nettoyez régulièrement à moins que vous ne conduisiez une étude de croissance microbienne"
+    ],
+    "technicalSpecs": {
+      "Capacité": "95 L",
+      "Plage de température": "-20°C à +10°C",
+      "Alimentation": "12/24 V DC ou 110–240 V AC",
+      "Consommation d'énergie": "6 A (12 V) / 3 A (24 V) ≈ 0,3 kWh/24h",
+      "Dimensions extérieures": "826 × 528 × 465 mm (+25 mm dégagement poignée)",
+      "Configuration interne": "2 compartiments éclairés LED avec couvercles individuels",
+      "Poids": "24 kg (poids sec)"
+    },
+    "testimonials": []
+  },
+  "led": {
+    "name": "Lampe de travail LED 1700",
+    "nickname": "Le Soleil de Minuit",
+    "specs": [
+      "Lampe de travail LED montée sur pivot pour illumination de proximité",
+      "Sortie éblouissante de 1700 lumens de 4 LEDs",
+      "Boîtier en aluminium durable, classé IP6K9K",
+      "Compatible avec systèmes 12–24 V DC"
+    ],
+    "description": "L'obscurité n'est pas une excuse. Avec 1700 lumens emballés dans une unité compacte et blindée, cette lampe de travail LED est ce qui arrive quand vous croisez un phare avec un petit soleil. Que vous soyez au milieu d'un échantillon ou d'un juron, vous verrez tout—clairement.",
+    "herodescription": "<strong>Échantillonnage dans le noir ? Oublié le soleil ?</strong> Pas de problème. Le Soleil de Minuit délivre une <strong>illumination sérieusement puissante</strong> sans la chaleur, le bruit, ou la facture diesel.<br/>Montez-la, pointez-la, allumez-la—puis demandez-vous comment vous avez jamais vécu sans. Ce n'est pas un éclairage romantique. C'est un <strong>éclairage pour faire le boulot</strong>.",
+    "detailedDescription": "<p className='mt-4'>La <strong>Lampe de travail LED 1700</strong> est un <strong>luminaires testé sur le terrain, sans chichi</strong> conçu pour couper l'obscurité comme une tronçonneuse à travers le beurre. Avec une sortie brutale de <strong>1700 lumens</strong>, elle délivre un éclairage de proximité focalisé pour rigs d'échantillonnage, machinerie, ou toute situation où 'Je pense que je vois quelque chose' n'est pas assez bon.</p><p className='mt-4'>Construite avec un <strong>boîtier en aluminium anodisé noir</strong> et répondant aux normes <strong>IP6K7 et IP6K9K</strong>, cette unité ignore les jets d'eau, les tempêtes de poussière, et probablement la plupart de vos erreurs. Un <strong>support pivotant</strong> permet un ciblage précis, tandis que la <strong>lentille texturée</strong> garde le faisceau large et utilisable.</p><p className='mt-4'>Compatible avec systèmes <strong>12–24 V DC</strong>, la lumière tire 24 W et vient avec des extrémités de câble ouvertes pour une intégration facile. L'assemblage par personnel qualifié est requis—<strong>parce que faire fondre les fils est moins drôle dans la vraie vie</strong>.</p>",
+    "price": "67 €",
+    "features": [
+      "Sortie de 1700 lumens de 4 LEDs haute intensité",
+      "Support pivotant pour ciblage précis",
+      "Protection d'entrée IP6K9K et IP6K7",
+      "Lentille texturée pour propagation de proximité",
+      "Boîtier en aluminium compact et robuste"
+    ],
+    "applications": [
+      "Forage et échantillonnage de sol de nuit",
+      "Éclairage d'équipement sur rigs et remorques",
+      "Zones de travail dans tunnels, forêts, ou 'milieu de nulle part'",
+      "Éclairage de réparation d'urgence"
+    ],
+    "howToUse": [
+      "Montez solidement en utilisant le support pivotant inclus",
+      "Câblez dans alimentation 12 ou 24 V DC (assemblage par personnel qualifié)",
+      "Visez le faisceau vers la zone de travail",
+      "Évitez de regarder directement dedans à moins que vous aimiez le regret rétinien"
+    ],
+    "technicalSpecs": {
+      "Tension": "12/24 V DC",
+      "Consommation d'énergie": "24 W",
+      "Flux lumineux": "1700 lm",
+      "Température de couleur": "5700 K",
+      "Nombre de LEDs": "4",
+      "Distribution de lumière": "Illumination de proximité",
+      "Montage": "Support de montage pivotant",
+      "Type de fiche": "Extrémités de câble ouvertes",
+      "Longueur de câble": "800 mm",
+      "Protection d'entrée": "IP6K7 / IP6K9K",
+      "Boîtier": "Aluminium, finition noire",
+      "Dimensions": "75 mm (H) × 98 mm (L) × 41 mm (P)",
+      "Diamètre": "75 mm",
+      "Certification": "Conforme ECE R10"
+    },
+    "testimonials": []
+  },
+  "camera": {
+    "name": "Caméra externe",
+    "nickname": "La Tour de guet",
+    "specs": [
+      "Caméra 5MP 4G pour rigs d'échantillonnage de sol",
+      "Se monte directement sur le cadre de votre machine",
+      "Flux vidéo en direct vers votre mobile ou tablette via app",
+      "Champ de vision de 75° avec vision nocturne IR jusqu'à 15 m"
+    ],
+    "description": "Pourquoi deviner ce qui se passe derrière le rig quand vous pouvez le regarder se produire en temps réel. La Tour de guet se monte sur votre machine et diffuse des images en direct directement dans votre cabine. Pas de câbles. Pas d'angles morts. Pas de surprises.",
+    "herodescription": "<strong>Avez-vous déjà essayé de reculer votre rig à l'aveugle avec un échantillonneur de 3 tonnes à l'arrière ?</strong> Pas idéal. La Tour de guet vous donne <strong>des yeux sur la perceuse</strong>—du confort de votre siège de conducteur. Surveillez chaque mouvement, frappe, et oscillation.<br/>Connectez via 4G. Voyez depuis votre téléphone. <strong>Parce qu'être à deux endroits à la fois est maintenant techniquement possible.</strong>",
+    "detailedDescription": "<p className='mt-4'><strong>La Tour de guet</strong> est une <strong>caméra 5MP prête pour le terrain</strong> conçue pour se monter directement sur votre machine d'échantillonnage de sol. Une fois installée, elle diffuse une vidéo en direct vers votre tablette ou téléphone en utilisant 4G—pour que vous puissiez voir ce qui se passe à l'arrière du rig sans quitter votre siège (ou crier à travers un champ boueux).</p><p className='mt-4'>Son <strong>angle de vision de 75°</strong> donne une visibilité complète de la tête d'échantillonnage, tandis que la <strong>vision nocturne infrarouge</strong> étend cette confiance bien dans le crépuscule. Que vous vérifiiez l'alignement, confirmiez la chute de carotte, ou admiriez simplement vos compétences de forage, tout est visible en temps réel.</p><p className='mt-4'>L'app est gratuite, la configuration prend des minutes, et il n'y a pas besoin de Wi-Fi local. Avec une carte micro SD optionnelle (jusqu'à 128 GB), vous pouvez même <strong>enregistrer les opérations pour documentation ou formation</strong>. La configuration est plug-and-play, avec une mise en garde importante : <strong>insérez la carte SIM correctement ou passez l'après-midi à diagnostiquer votre propre impatience</strong>.</p><p className='mt-4'>Elle est étanche à la pluie, étanche à la boue, et obstinément fiable—exactement ce que vous voulez de quelque chose boulonné à une machine vibrante au milieu de nulle part.</p>",
+    "price": "225 €",
+    "features": [
+      "Diffusion vidéo en direct sur réseau 4G",
+      "Lentille à angle fixe de 75° avec vision nocturne",
+      "Se monte directement sur machines d'échantillonnage TechByp",
+      "Contrôle par app avec ajustement d'image (WDR, BLC, etc.)",
+      "Enregistrement embarqué optionnel via micro SD"
+    ],
+    "applications": [
+      "Surveillance des opérations d'échantillonnage de sol depuis l'intérieur du véhicule",
+      "Vérifications d'alignement en direct pendant le forage",
+      "Formation d'opérateur et documentation vidéo",
+      "Éviter le forage aveugle et les surprises inattendues"
+    ],
+    "howToUse": [
+      "Montez solidement à la machine en utilisant le support",
+      "Insérez carte SIM et carte SD optionnelle",
+      "Connectez à alimentation 12V sur le rig",
+      "Lancez l'app pour diffuser le flux en direct de la caméra",
+      "Nettoyez occasionnellement—mais seulement quand débranché !"
+    ],
+    "technicalSpecs": {
+      "Résolution": "5 MP",
+      "Transmission": "4G LTE",
+      "Illumination IR": "Oui, jusqu'à 15 m",
+      "Angle de vision": "75°",
+      "PanTilt": "Non (lentille fixe)",
+      "Audio": "Oui",
+      "Contrôle via app": "Oui (iOS/Android)",
+      "Slot carte SD": "Oui, jusqu'à 128 GB",
+      "Alimentation": "12V DC",
+      "Type de boîtier": "Mini caméra, corps robuste",
+      "Montage": "Montage vis/pivot (inclus)",
+      "Dimensions": "80 mm (L) × 45 mm (H) × 80 mm (P)",
+      "Protection d'entrée": "Étanche pour montage extérieur"
+    },
+    "testimonials": []
+  },
+  "probes": {
+    "name": "Sondes, Jauges et Accessoires",
+    "nickname": "Le Puriste N-min",
+    "specs": [
+      "Construction en acier outil (HRC 52)",
+      "Profil conique effilé (40→38 mm / 35→33 mm / 30→28 mm)",
+      "Marquages de profondeur gravés au laser tous les 10 cm",
+      "Compatible avec les protocoles d'échantillonnage N-min (VDLUFA, ISO 14255)"
+    ],
+    "description": "L'étalon-or pour l'échantillonnage manuel N-min—barres de forage effilées conçues avec précision, construites pour les sols durs et une précision de laboratoire.",
+    "herodescription": "Pas n'importe quelles barres—ce sont des <strong>scalpels en acier outil ultra-tranchants</strong> pour l'amateur de sol qui exige de la précision. Leur conception effilée signifie moins de tracas, moins de friction, et ces <strong>marques de 10 cm gravées au laser</strong> ? Parfaites pour savoir exactement à quelle profondeur vous avez piqué—parce que les couches de sol n'aiment pas être dérangées, et vous non plus.",
+    "detailedDescription": "<p className='mt-4'>Conçues pour ceux qui prennent le sol au sérieux (et eux-mêmes, un peu moins) : trois tailles effilées lisses—<strong>40→38 mm</strong> pour 0-30 cm, <strong>35→33 mm</strong> pour 30-60 cm, et <strong>30→28 mm</strong> pour 60-90 cm—tranchent dans l'argile et le gravier obstinés comme un couteau chaud dans du beurre, grâce à des bords pré-cassés prêts à faire le gros du travail.</p><p className='mt-4'>Chaque barre arbore des <strong>incréments de 10 cm gravés au laser</strong> qui ne s'effacent pas plus vite que votre enthousiasme un lundi matin. Associez-les à des bascules (Articles 1030/1031) pour un levage facile, et un ciseau (Article 1051) pour dépouiller les échantillons proprement—parce que l'échantillonnage devrait ressembler à une poussée douce, pas à une lutte de bras.</p>",
+    "price": "Prix sur demande",
+    "features": [
+      "Trois diamètres effilés minimisent la friction et maximisent la facilité d'échantillonnage",
+      "Acier outil trempé HRC 52 pour la durabilité et la résistance",
+      "Marquages de profondeur gravés au laser tous les 10 cm pour un échantillonnage précis",
+      "Bords de coupe pré-cassés pour une pénétration constante et propre",
+      "Compatible avec les poignées bascules et ciseaux pour une extraction efficace des échantillons"
+    ],
+    "applications": [
+      "Profilage des nitrates N-min",
+      "Recherche sur les sols académique et commerciale",
+      "Échantillonnage manuel dans les sols durs, pierreux ou argileux"
+    ],
+    "howToUse": [
+      "Choisissez le diamètre de la barre en fonction de la profondeur d'échantillon souhaitée",
+      "Faites tourner la barre tout en appliquant une pression vers le bas ; l'effilage fait le gros du travail",
+      "Utilisez les poignées bascules (Articles 1030 ou 1031) pour extraire la barre en douceur",
+      "Nettoyez les résidus de sol avec le ciseau (Article 1051) pour maintenir l'intégrité des rainures entre les échantillons"
+    ],
+    "technicalSpecs": {
+      "Matériau": "Acier outil (HRC 52)",
+      "Effilage": "40→38 mm / 35→33 mm / 30→28 mm",
+      "Marquages": "Gravés au laser tous les 10 cm",
+      "Compatibilité": "Protocoles N-min (VDLUFA, ISO 14255)",
+      "Poids": "Environ 2,1 kg par mètre (barre de diamètre 40 mm)"
+    },
+    "table": [
+      {
+        "emNo": "1001",
+        "articleName": "Barre de forage, longueur effective 1000 mm, longueur totale 1150 mm, rainure 18 mm, conique, ronde"
+      },
+      {
+        "emNo": "1001.2",
+        "articleName": "Barre de forage, longueur utile 1000 mm, longueur totale 1150 mm, rainure 18 mm, conique, ronde avec marquages en sections de 10 cm et bords de coupe cassés"
+      },
+      {
+        "emNo": "1003",
+        "articleName": "Barre de forage, longueur effective 1200 mm, longueur totale 1350 mm, rainure 18 mm, conique, ronde"
+      },
+      {
+        "emNo": "1005",
+        "articleName": "Barre de forage, longueur effective 1500 mm, longueur totale 1650 mm, rainure 18 mm, conique, ronde"
+      },
+      {
+        "emNo": "1030",
+        "articleName": "Bascule pour lever et vider la barre de forage, longueur 300 mm"
+      },
+      {
+        "emNo": "1031",
+        "articleName": "Bascule pour lever et vider la barre de forage, longueur 600 mm"
+      },
+      {
+        "emNo": "1040",
+        "articleName": "1 ensemble de sondes d'échantillonnage (ensemble de mèches de forage N-min) pour trois profondeurs. Chaque mèche de forage se compose de la sonde d'échantillonnage réelle, une extension et la tête d'impact avec un trou transversal.\n(0-30 cm Ø 40-38 mm, 30-60 cm Ø 35-33 mm, 60-90 cm Ø 30-28 mm). Toutes les pièces en acier outil, développées pour les sols durs."
+      },
+      {
+        "emNo": "1041",
+        "articleName": "Sonde, longueur utile 0-30 cm, diamètre extérieur 40-38 mm, conique"
+      },
+      {
+        "emNo": "1042",
+        "articleName": "Extension pour la sonde 0-30 cm"
+      },
+      {
+        "emNo": "1043",
+        "articleName": "Sonde, longueur utile 30-60 cm, diamètre extérieur 35-33 mm, conique"
+      },
+      {
+        "emNo": "1044",
+        "articleName": "Extension pour la sonde 30-60 cm"
+      },
+      {
+        "emNo": "1045",
+        "articleName": "Sonde, longueur utile 60-90 cm, diamètre extérieur 30-28 mm, conique"
+      },
+      {
+        "emNo": "1046",
+        "articleName": "Extension pour la sonde 60-90 cm"
+      },
+      {
+        "emNo": "1049",
+        "articleName": "Tête d'impact avec trou transversal"
+      },
+      {
+        "emNo": "1050",
+        "articleName": "Barre de cadran avec tête d'impact ajustée par rétrécissement pour prendre des échantillons de sol jusqu'à 2 m de profondeur, Ø 15 mm, rainure 8x8. Utilisée avec la barre de forage percutante NL 1000 (N° art. 1001)."
+      },
+      {
+        "emNo": "1051",
+        "articleName": "Ciseau pour dépouiller et retirer l'échantillon de sol, 18 mm, rond"
+      },
+      {
+        "emNo": "1052",
+        "articleName": "Ciseau pour dépouiller et retirer l'échantillon de sol, 15 mm, rond"
+      },
+      {
+        "emNo": "1053",
+        "articleName": "Ciseau pour dépouiller et retirer l'échantillon de sol, 14 mm, carré"
+      },
+      {
+        "emNo": "1054",
+        "articleName": "Ciseau pour dépouiller et retirer l'échantillon de sol, 8 mm, carré"
+      },
+      {
+        "emNo": "1055",
+        "articleName": "Ciseau pour dépouiller et retirer l'échantillon de sol, 12 mm, carré"
+      },
+      {
+        "emNo": "1060",
+        "articleName": "Combinaison impact-levage pour barres de forage percutantes et jauges de 2 m de long (marteau carré, crochet de traction et anneau de traction). Surface d'impact du marteau 135 x 135 mm, 200 mm de long, poids environ 4300 g."
+      },
+      {
+        "emNo": "1061",
+        "articleName": "Marteau carré complet"
+      },
+      {
+        "emNo": "1064",
+        "articleName": "Anneau de dessin"
+      },
+      {
+        "emNo": "1065",
+        "articleName": "Crochet de traction"
+      },
+      {
+        "emNo": "1085",
+        "articleName": "Sonde de sol en acier inoxydable pour localiser la compaction du sol et les couches de sol. Longueur effective 1000 mm avec marquages à intervalles de 100 mm, diamètre 8 mm."
+      }
+    ],
+    "testimonials": [
+      {
+        "quote": "Nous utilisons ces barres depuis 15 ans—toujours l'outil le plus fiable pour le travail N-min. L'effilage fait toute la différence dans l'argile.",
+        "author": "Dr. Lena Bauer",
+        "company": "AgroLab Allemagne",
+        "rating": 5
+      }
+    ]
+  },
+  "drillrods": {
+    "name": "Barres de forage Ø22 mm pour profils de sol normaux",
+    "nickname": "L'Ouvreur Profond",
+    "specs": [
+      "Rainure de forage Ø 22 mm, longueur totale 1100 mm, longueur utile 1000 mm",
+      "Rainure de 12 mm pour retenir les échantillons de sol",
+      "Extensions de 1000 mm de long avec filetage interne 5/8” des deux côtés",
+      "Inclut des clés spéciales pour le serrage"
+    ],
+    "description": "Barres de forage robustes (Ø 22 mm) conçues pour ouvrir des profils de sol normaux jusqu'à 10 m de profondeur avec des pièces modulaires interchangeables pour un ajustement flexible de la longueur.",
+    "herodescription": "Rencontrez les <strong>barres de forage modulaires</strong> avec une rainure de forage <strong>22 mm</strong> soignée, construites pour affronter des profils de sol jusqu'à une <strong>10 mètres de profondeur</strong> sérieuse. Grâce aux boulons de connexion, vous pouvez ajuster la longueur plus rapidement que vous ne pouvez dire 'Bob's your uncle,' et les têtes de frappe gèrent tout—du coup occasionnel au plein machine.",
+    "detailedDescription": "<p className='mt-4'>Chaque section est une <strong>précision d'ingénierie de 1000 mm solide</strong>, arborant une <strong>rainure de 12 mm</strong> pour garder vos échantillons de sol fermement en place tout en les remontant des profondeurs. Les extensions se vissent facilement avec des <strong>filetages internes 5/8”</strong>—parce que parfois, plus c'est juste plus.</p><p className='mt-4'>Serrez avec des <strong>clés SW 18 spéciales</strong>—pas de glissement, pas de drame. Pour le grand final, choisissez votre arme : un <strong>élévateur à vérin avec chaîne de serrage</strong> ou un <strong>extracteur à un bras avec pince à billes</strong>, tous conçus pour faire le travail en toute sécurité et sans transpirer.</p>",
+    "price": "Prix sur demande",
+    "features": [
+      "Rainure de forage Ø 22 mm avec rainure d'échantillon de sol de 12 mm",
+      "Conception modulaire avec pièces interchangeables boulonnées ensemble",
+      "Longueur utile de 1000 mm par section de barre",
+      "Têtes de frappe spéciales pour marteau à main ou machine",
+      "Clés spéciales pour un serrage sécurisé",
+      "Dispositifs de levage pour une extraction facile des barres"
+    ],
+    "applications": [
+      "Ouverture de profils de sol normaux jusqu'à 10 mètres de profondeur",
+      "Échantillonnage manuel des sols dans les sols non rocheux",
+      "Ajustement flexible de la longueur des barres pour l'échantillonnage à profondeur variable"
+    ],
+    "howToUse": [
+      "Assembler les barres et extensions à la longueur requise en utilisant les boulons de connexion",
+      "Utiliser la tête de frappe appropriée avec marteau à main ou machine",
+      "Serrer les sections de barres en utilisant les clés spéciales (SW 18)",
+      "Extraire les barres en utilisant l'appareil de levage à vérin avec chaîne de serrage ou l'extracteur à un bras avec pince à billes"
+    ],
+    "technicalSpecs": {
+      "Diamètre": "22 mm",
+      "Largeur de rainure": "12 mm",
+      "Longueur de barre": "Total 1100 mm, utile 1000 mm",
+      "Longueur d'extension": "1000 mm avec filetage interne 5/8”",
+      "Taille de filetage": "Filetage interne et externe 5/8\"",
+      "Outils recommandés": "Clés spéciales SW 18",
+      "Dispositifs de levage": "Vérin avec barre de levage et chaîne de serrage, extracteur à un bras avec pince à billes intégrée"
+    },
+    "table": [
+      {
+        "emNo": "1100",
+        "articleName": "Rainure de forage Ø 22 mm, NL 1000 mm, rainure 12 mm"
+      },
+      {
+        "emNo": "1101",
+        "articleName": "Extension avec filetage interne 5/8\""
+      },
+      {
+        "emNo": "1102",
+        "articleName": "Boulon de connexion, filetage externe 5/8\" SW 18"
+      },
+      {
+        "emNo": "1103",
+        "articleName": "Clé spéciale SW 18"
+      },
+      {
+        "emNo": "1049",
+        "articleName": "Tête d'impact pour sondage manuel"
+      },
+      {
+        "emNo": "1110",
+        "articleName": "Vérin avec barre de levage (court)"
+      },
+      {
+        "emNo": "1111",
+        "articleName": "Barre de levage (longue)"
+      },
+      {
+        "emNo": "1112",
+        "articleName": "Grenouille de serrage"
+      },
+      {
+        "emNo": "1113",
+        "articleName": "Chaîne de serrage"
+      },
+      {
+        "emNo": "1120",
+        "articleName": "Extracteur à un bras avec pince à billes intégrée"
+      },
+      {
+        "emNo": "1125",
+        "articleName": "Extracteur à un bras pour sondes et barres Ø 32-65 mm, tube de levage Ø 44 mm x 1500 mm, capacité de levage environ 4 t"
+      },
+      {
+        "emNo": "1126",
+        "articleName": "Pince à mâchoires"
+      },
+      {
+        "emNo": "645250",
+        "articleName": "Cadre de livre de terrain en bois, taille DIN A4, poids 0,6 kg"
+      },
+      {
+        "emNo": "645242",
+        "articleName": "Cadre de livre de terrain en plastique, taille DIN A4, poids 0,4 kg"
+      },
+      {
+        "emNo": "645245",
+        "articleName": "Cadre de livre de terrain en bois, taille DIN A3, poids 0,9 kg"
+      },
+      {
+        "emNo": "645260",
+        "articleName": "Cadre de livre de terrain en plastique, taille DIN A3, poids 0,7 kg"
+      }
+    ],
+    "testimonials": []
+  },
+  "hammers": {
+    "name": "Sélection de marteaux et accessoires",
+    "nickname": "Le bon marteau pour chaque travail",
+    "specs": [
+      "Variété de marteaux avec surfaces d'impact de 80 mm Ø à 150 mm carrés",
+      "Marteaux à face douce et en nylon avec boîtier en fonte malléable",
+      "Manches en bois ou en hickory de différentes longueurs",
+      "Têtes de marteau et inserts interchangeables"
+    ],
+    "description": "Chaque marteau est un héros à sa façon. Choisissez celui qui convient à votre saga d'échantillonnage des sols et n'oubliez pas les fidèles acolytes—nos accessoires.",
+    "herodescription": "Du <strong>marteau carré solide et sans chichi</strong> au <strong>toucher délicat d'un marteau à face douce en nylon</strong>, nous avons les outils pour rendre votre échantillonnage des sols <strong>moins pénible, plus raffiné</strong>. Choisissez judicieusement—<strong>précision, puissance et confort</strong> vous attendent.",
+    "detailedDescription": "<p className='mt-4'>Besoin de canaliser votre Thor intérieur avec un imposant <strong>marteau carré de 4,3 kg</strong> arborant une <strong>surface d'impact de 135x135 mm</strong> ? Ou peut-être un <strong>marteau à face douce en nylon léger comme une plume</strong> pour amadouer le sol avec subtilité ? Dans tous les cas, <strong>votre souhait est notre commandement</strong>.</p><p className='mt-4'>Envie d'un peu de flair DIY ? <strong>Échangez les têtes comme un chef change de couteaux</strong>, choisissez parmi <strong>des manches en bois ou en hickory de toutes longueurs</strong>, et couronnez le tout avec <strong>des inserts aussi durs ou doux que vous le souhaitez</strong>. C'est comme un costume sur mesure—mais pour votre marteau.</p>",
+    "price": "Prix sur demande",
+    "features": [
+      "Marteau carré avec surface d'impact 135x135 mm, 4,3 kg",
+      "Marteau rond en plastique avec surface d'impact 150 mm Ø",
+      "Marteaux à face douce avec boîtier en fonte malléable",
+      "Variantes de marteaux à face douce en nylon",
+      "Têtes de marteau et inserts interchangeables",
+      "Manches en bois et en hickory de longueurs variables"
+    ],
+    "applications": [
+      "Échantillonnage manuel des sols nécessitant une force d'impact précise",
+      "Protection des structures de sol délicates avec des marteaux à face douce",
+      "Sélection de marteaux polyvalents pour différents équipements d'échantillonnage"
+    ],
+    "howToUse": [
+      "Sélectionnez le type de marteau selon la dureté du sol et la méthode d'échantillonnage",
+      "Utilisez la longueur de manche appropriée pour l'effet de levier et le confort",
+      "Remplacez les têtes de marteau ou les inserts selon les besoins pour des performances optimales",
+      "Entretenez les manches en bois et serrez les vis régulièrement"
+    ],
+    "technicalSpecs": {
+      "Square hammer": "Surface d'impact 135x135 mm, longueur de tête 200 mm, poids 4,3 kg",
+      "Round plastic hammer": "Surface d'impact 150 mm Ø, longueur de tête 200 mm, poids 4,3 kg",
+      "Soft-face hammer": "Surface d'impact 80-125 mm Ø, manche en bois, poids 2,9 - 6,7 kg",
+      "Nylon soft-face hammer": "Surface d'impact 80 mm Ø, manche en bois, poids 3,0 - 3,2 kg",
+      "Handles": "En bois et en hickory, longueurs de 395 mm à 900 mm",
+      "Inserts": "Superplastique et nylon, divers diamètres",
+      "Screws": "Vis Allen avec écrou pour tailles de marteau à face douce 80 et 100 mm Ø"
+    },
+    "table": [
+      {
+        "emNo": "1061",
+        "articleName": "Marteau carré, surface d'impact 135x135 mm, longueur de tête : 200 mm, poids 4,3 kg"
+      },
+      {
+        "emNo": "1062",
+        "articleName": "Tête de marteau pour marteau carré (N° art. 1061)"
+      },
+      {
+        "emNo": "1063",
+        "articleName": "Manche pour le marteau carré avec vis"
+      },
+      {
+        "emNo": "1070",
+        "articleName": "Marteau rond en plastique, surface d'impact 150 mm Ø, longueur de tête : 200 mm, poids 4,3 kg"
+      },
+      {
+        "emNo": "1071",
+        "articleName": "Tête de marteau pour marteau rond en plastique (N° art. 1070)"
+      },
+      {
+        "emNo": "1072",
+        "articleName": "Manche de marteau pour marteau rond en plastique (N° art. 1070)"
+      },
+      {
+        "emNo": "3007.080",
+        "articleName": "Marteau à face douce en superplastique avec boîtier en fonte malléable et manche en bois, surface d'impact 80 mm Ø, longueur 490 mm, poids approx. 2 930 g"
+      },
+      {
+        "emNo": "3007.081",
+        "articleName": "Marteau à face douce en superplastique avec boîtier en fonte malléable et manche en bois, surface d'impact 80 mm Ø, longueur 800 mm, poids approx. 3 240 g"
+      },
+      {
+        "emNo": "3007.100",
+        "articleName": "Marteau à face douce en superplastique avec boîtier en fonte malléable et manche en bois, surface d'impact 100 mm Ø, longueur 1000 mm, poids approx. 5 300 g"
+      },
+      {
+        "emNo": "3007.125",
+        "articleName": "Marteau à face douce en superplastique avec boîtier en fonte malléable et manche en bois, surface d'impact 125 mm Ø, longueur 1040 mm, poids approx. 6 700 g"
+      },
+      {
+        "emNo": "3008.080",
+        "articleName": "Marteau à face douce en nylon avec boîtier en fonte malléable et manche en bois, surface d'impact 80 mm Ø, longueur 490 mm, poids approx. 3 090 g"
+      },
+      {
+        "emNo": "3008.081",
+        "articleName": "Marteau à face douce en nylon avec boîtier en fonte malléable et manche en bois, surface d'impact 80 mm Ø, longueur 700 mm, poids approx. 3 240 g"
+      },
+      {
+        "emNo": "3207.080",
+        "articleName": "Insert pour le marteau à face douce, super plastique 80 mm Ø"
+      },
+      {
+        "emNo": "3207.100",
+        "articleName": "Insert pour le marteau à face douce, super plastique 100 mm Ø"
+      },
+      {
+        "emNo": "3207.125",
+        "articleName": "Insert pour le marteau à face douce, super plastique 125 mm Ø"
+      },
+      {
+        "emNo": "3208.080",
+        "articleName": "Insert pour le marteau à face douce, nylon 80 mm Ø"
+      },
+      {
+        "emNo": "3244.080",
+        "articleName": "Manche en hickory pour marteau 80 mm Ø, longueur de manche 395 mm"
+      },
+      {
+        "emNo": "3244.081",
+        "articleName": "Manche en hickory pour marteau 80 mm Ø, longueur de manche 700 mm"
+      },
+      {
+        "emNo": "3244.100",
+        "articleName": "Manche en hickory pour marteau 100 mm Ø, longueur de manche 900 mm"
+      },
+      {
+        "emNo": "3244.125",
+        "articleName": "Manche en hickory pour marteau 125 mm Ø, longueur de manche 900 mm"
+      },
+      {
+        "emNo": "3299.080",
+        "articleName": "Vis Allen avec écrou pour marteau à face douce 80 mm Ø"
+      },
+      {
+        "emNo": "3299.100",
+        "articleName": "Vis Allen avec écrou pour marteau à face douce 100 mm Ø"
+      }
+    ],
+    "testimonials": []
+  },
+  "goettingerDrills": {
+    "name": "Carottes de sol Göttinger",
+    "nickname": "Échantillonnage de précision rendu facile",
+    "specs": [
+      "Conçu pour l'échantillonnage Nmin jusqu'à 90 cm",
+      "Opération manuelle—pas d'outils supplémentaires requis",
+      "Rainure en acier spécialement durci assure une friction minimale",
+      "Trois diamètres de forage interverrouillés optimisent l'insertion et l'extraction"
+    ],
+    "description": "Qui a besoin d'un abonnement à la salle de sport quand on a les carottes de sol Göttinger ? Une personne, un outil léger de 2,5 kg, et vous êtes prêt à conquérir le sol—sans laisser de trace sur le champ ou terroriser les câbles enterrés.",
+    "herodescription": "De l'<strong>argile délicate</strong> au <strong>sable légèrement compacté</strong>, ces carottes coupent avec <strong>un minimum d'agitation</strong>. Trois couches de forage parfaitement calibrées, <strong>poignées amorties</strong>, et un profil <strong>fräs</strong> astucieux rendent l'échantillonnage moins comme du travail et plus comme de la magie.",
+    "detailedDescription": "<p className='mt-4'>Opération à une main, <strong>pas de machinerie lourde</strong>, <strong>pas d'aides supplémentaires</strong>, juste vous et la terre. Les forets Göttinger séparent <strong>trois couches de sol</strong> avec précision, vous donnant des échantillons N-min fiables pesant <strong>500–1000g</strong> de <strong>16 frappes parallèles par section de profondeur</strong>.</p><p className='mt-4'>Attention : ce sont des champions des <strong>sols doux</strong>. Le <strong>sable rocheux, sec comme les os, ou serré</strong> pourrait pousser leur patience. Mais dans des conditions idéales, c'est aussi proche que vous le pouvez d'une <strong>baguette magique d'échantillonnage de sol</strong>.</p>",
+    "price": "Prix sur demande",
+    "features": [
+      "Opération à une personne",
+      "Léger à seulement ~2,5 kg",
+      "Efficacité supérieure aux outils manuels conventionnels",
+      "Zéro dommage au champ—pas d'écrasement de cultures",
+      "Sûr pour drains, câbles et lignes souterraines",
+      "Fonctionne même dans les sols humides",
+      "Séparation exacte en 3 couches pour échantillons N-min",
+      "Confort de préhension amélioré grâce au rembourrage de poignée renforcé"
+    ],
+    "applications": [
+      "Échantillonnage manuel de sol Nmin dans les sols légers",
+      "Conditions de terrain où la machinerie ne peut pas être utilisée",
+      "Séparation fiable des couches pour une analyse précise"
+    ],
+    "howToUse": [
+      "Insérez la carotte à la main dans le sol",
+      "Retirez soigneusement pour collecter l'échantillon",
+      "Répétez 16 frappes parallèles par section de profondeur pour des résultats fiables",
+      "Évitez les sols rocheux ou trop compactés"
+    ],
+    "technicalSpecs": {
+      "Carotte 0-30 cm": "Diamètre 18 mm, rainure 14 mm",
+      "Carotte 30-60 cm": "Diamètre 16 mm, rainure 12 mm",
+      "Carotte 60-90 cm": "Diamètre 14 mm, rainure 10 mm",
+      "Ensemble complet": "Inclut une carotte pour chaque section de profondeur (0-30 cm, 30-60 cm, 60-90 cm)"
+    },
+    "table": [
+      {
+        "emNo": "5001",
+        "articleName": "Carotte Göttinger (0-30 cm), Ø 18 mm, rainure 14 mm"
+      },
+      {
+        "emNo": "5002",
+        "articleName": "Carotte Göttinger (30-60 cm), Ø 16 mm, rainure 12 mm"
+      },
+      {
+        "emNo": "5003",
+        "articleName": "Carotte Göttinger (60-90 cm), Ø 14 mm, rainure 10 mm"
+      },
+      {
+        "emNo": "5004",
+        "articleName": "Ensemble complet de carottes Göttinger, incluant toutes les trois sections de profondeur"
+      }
+    ],
+    "testimonials": []
+  },
+  "raupe": {
+    "nickname": "Le Chuchoteur de Terre",
+    "specs": [
+      "Profondeur : 0–90 cm (optionnel 120 cm)",
+      "Hydraulique et semi-automatique",
+      "Échantillonnage en 3 couches",
+      "Vérification visuelle manuelle pour chaque carotte"
+    ],
+    "description": "Terrain accidenté ? Pente ? Labyrinthe de maïs ? Pas de problème. Ce crawler ne se plaint pas—il échantillonne simplement.",
+    "herodescription": "Le <strong>Nitratraupe</strong> est le genre de machine que tout passionné de sol approuverait d'un hochement de tête. Capable d'<strong>échantillonnage de sol de 0–90 cm</strong> sur <strong>trois couches</strong>, il navigue sur un terrain accidenté comme un enfant poli mais implacable sur chenilles. Semi-automatique, assisté hydrauliquement, et guidé par vos yeux (parce que la machine respecte votre intelligence).",
+    "detailedDescription": "<p className='mt-4'><strong>La précision rencontre la force brute</strong> dans un emballage étonnamment courtois. Le <strong>Nitratraupe</strong> coupe un <strong>profil de sol propre</strong> sans mélanger les couches (<strong>pas de forets rotatifs requis</strong>). <strong>Trois couches—0–30, 30–60, 60–90 cm</strong> sont extraites avec <strong>finesse</strong>.</p><p className='mt-4'>Il fonctionne avec le <strong>moteur du véhicule porteur</strong>, donc <strong>pas de crises de moteur à combustion supplémentaires</strong>. L'<strong>échantillonnage manuel</strong> vous permet d'<strong>inspecter visuellement la carotte</strong>, gardant les <strong>coûts et les maux de tête bas</strong>.</p><p className='mt-4'>Les chenilles le rendent <strong>assez étroit pour se faufiler entre le maïs en croissance</strong>, et avec une <strong>télécommande</strong>, vous pouvez <strong>lever, abaisser, tourner et échantillonner</strong> sans quitter votre zone de confort. Un <strong>vrai crawler d'échantillonnage de sol de gentleman</strong>.</p>",
+    "price": "À partir de 20 000 €",
+    "features": [
+      "Extraction hydraulique semi-automatique jusqu'à 90 cm (optionnel 120 cm)",
+      "Échantillonnage en trois couches pour une précision spécifique à l'horizon",
+      "Inspection manuelle de la carotte vous garde en charge",
+      "Le moteur du porteur alimente le système hydraulique—pas de moteurs supplémentaires",
+      "Télécommande : lever, abaisser, tourner, échantillonner",
+      "Chenilles étroites pour passage entre le maïs",
+      "Marteau hydraulique haute fréquence (2400 coups/min, 40 J par coup)",
+      "Durable et faible maintenance",
+      "Service rapide de pièces de rechange (2h) et réparations sur site (12h)"
+    ],
+    "howToUse": [
+      "Conduisez le crawler au site d'échantillonnage",
+      "Posez la machine pour la stabilité pendant le transport si nécessaire",
+      "Levez la tige d'échantillonnage verticale via télécommande",
+      "Entraînez hydrauliquement la tige dans le sol et tournez pour extraire la carotte",
+      "Répétez pour les trois couches : 0–30, 30–60, 60–90 cm",
+      "Retirez la carotte, inspectez visuellement, et stockez dans des conteneurs étanches"
+    ],
+    "applications": [
+      "Test de sol Nmin/nitrate",
+      "Surveillance environnementale et agricole des sols",
+      "Profilage des sols et recherche",
+      "Travail de terrain sur pentes et terrains accidentés"
+    ],
+    "technicalSpecs": {
+      "Profondeur d'échantillonnage": "0–90 cm (optionnel 120 cm)",
+      "Type d'échantillonnage": "À impact, semi-automatique",
+      "Unité de marteau": "Hydraulique, 2400 coups/min, 40 J/coup",
+      "Horizons": "3 couches (0–30, 30–60, 60–90 cm)",
+      "Magasins": "3",
+      "Temps de cycle d'échantillonnage": "20 sec/carotte",
+      "Véhicule porteur": "Crawler, chenilles alimentées par moteur",
+      "Largeur de chenille": "Max 700 mm",
+      "Télécommande": "Fonctionnement complet du crawler et de l'unité d'échantillonnage",
+      "Moteur": "Honda, ≥6,5 CV",
+      "Poids": "220 kg"
+    },
+    "testimonials": [
+      {
+        "quote": "Gère les pentes boueuses comme un alpiniste professionnel. Nous ne perdons jamais un échantillon.",
+        "author": "Dr. Anna Fischer",
+        "company": "Soil Research Lab",
+        "rating": 5
+      },
+      {
+        "quote": "La séparation en 3 couches est géniale. Simple, efficace, et rend la vie sur le terrain plus facile.",
+        "author": "Lars Becker",
+        "company": "AgriSoil GmbH",
+        "rating": 5
+      }
+    ]
+  }
+}
