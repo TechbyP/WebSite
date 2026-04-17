@@ -227,6 +227,9 @@
     "shortestFirst": "Shortest first",
     "longestFirst": "Longest first",
     "noArticlesFound": "No articles found",
+    "noMatchingArticles": "No matching articles",
+    "noArticlesAvailable": "No articles available",
+    "noImage": "No image",
     "publishedOn": "Published on",
     "addParagraph": "Add Paragraph",
     "removeParagraph": "Remove Paragraph",
@@ -301,6 +304,7 @@
     "excerpt": "Excerpt",
     "date": "Date",
     "datePlaceholder": "e.g., November 9-15, 2025",
+    "noDate": "No date",
     "selectBlogPost": "Select Blog Post",
     "callToAction": "Call to Action",
     "ctaPlaceholder": "e.g., Learn More",
@@ -422,7 +426,16 @@
       "de": "",
       "es": "",
       "fr": "",
-       "ro": "",
+      "ro": "",
+      "pt": "",
+      "ru": "",
+      "switchToEnglish": "Switch to English",
+      "switchToGerman": "Switch to German",
+      "switchToSpanish": "Switch to Spanish",
+      "switchToFrench": "Switch to French",
+      "switchToRomanian": "Switch to Romanian",
+      "switchToPortuguese": "Switch to Portuguese",
+      "switchToRussian": "Switch to Russian",
       "ariaLabel": "Change language"
     }
   },
@@ -604,6 +617,7 @@
     }
   ],
   "certifications.title": "Quality Certifications",
+  "certificationsTitle": "Quality Certifications",
   "about": {
     "madeInGermany": "Made in Germany",
     "engineeringExcellence": "Engineering Excellence.",
@@ -800,6 +814,7 @@
   },
   "productNames": {
     "trailerMount": "Trailer Mount",
+    "vehicleMount": "Vehicle Mount",
     "powerPack": "Powerpack"
   },
   "unknownProduct": "Unknown Product",
@@ -914,6 +929,11 @@
       "nickname": "Conversion",
       "price": "€2,300",
       "description": "Complete conversion kit for maximum flexibility."
+    },
+    "specs": {
+      "depth": "Depth",
+      "weight": "Weight",
+      "horizons": "Horizons"
     }
   },
   "progress": {
@@ -970,8 +990,10 @@
     },
     "empty": {
       "noArticles": "No articles found",
-      "tryAdjusting": "Try adjusting your search or filter to find what you're looking for."
+      "tryAdjusting": "Try adjusting your search or filter to find what you're looking for.",
+      "emptyResults": "No results found"
     },
+    "emptyResults": "No results found",
     "meta": {
       "title": "Insights & News | TECHBYP",
       "description": "Explore the latest insights, product updates, and behind-the-scenes engineering from TECHBYP — where soil sampling meets German precision.",
@@ -1176,7 +1198,8 @@
       "announcements": "Announcements",
       "comments": "Recent Comments",
       "members": "Club Members",
-      "activity": "Recent Activity"
+      "activity": "Recent Activity",
+      "fetchError": "Failed to load statistics"
     },
     "comments": {
       "count": "comments",
@@ -1235,6 +1258,8 @@
       "openMenu": "Open menu",
       "closeMenu": "Close menu",
       "toggleLanguage": "Toggle language",
+      "switchToLight": "Switch to light mode",
+      "switchToDark": "Switch to dark mode",
       "logout": "Logout"
     },
     "confirmation": {

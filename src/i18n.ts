@@ -7,6 +7,8 @@ import de from './locales/de.json';
 import es from './locales/es.json';
 import fr from './locales/fr.json';
 import ro from './locales/ro.json';
+import pt from './locales/pt.json';
+import ru from './locales/ru.json';
 
 i18n
   .use(LanguageDetector) // Detects language from browser or localStorage
@@ -18,6 +20,8 @@ i18n
       es: { translation: es },
       fr: { translation: fr },
       ro: { translation: ro },
+      pt: { translation: pt },
+      ru: { translation: ru },
     },
     fallbackLng: 'en', // Default language
     interpolation: {

@@ -41,7 +41,7 @@ const ProductDetail = () => {
   if (!product) {
     return <div className="dark:text-white">{t('product.notFound')}</div>;
   }
-  const keyTranslations = {
+  const keyTranslationsDe = {
     "Sampling Depth": "Probentiefe",
     "Sampling Depth Example": "0–60 cm",
     "Sampling Type": "Probentyp",
@@ -65,6 +65,82 @@ const ProductDetail = () => {
     "Weight": "Gewicht",
     "Weight Example": "200 kg",
     "Wheels": "Räder"
+  };
+
+  const keyTranslationsRo = {
+    "Sampling Depth": "Adâncime de prelevare",
+    "Sample Type": "Tip probă",
+    "Sampling Type": "Tip prelevare",
+    "Hammer Unit": "Unitate ciocan",
+    "Horizons": "Orizonturi",
+    "Magazines": "Magazine",
+    "Sampling Cycle": "Ciclu de prelevare",
+    "Sampling Cycle Time": "Timp ciclu de prelevare",
+    "Mounting": "Montare",
+    "Mounting Options": "Opțiuni de montare",
+    "Sample Sorting": "Sortare probe",
+    "Special Features": "Caracteristici speciale",
+    "Power Source": "Sursă de alimentare",
+    "Power Supply": "Alimentare",
+    "Weight": "Greutate",
+    "Obstacle Detection": "Detecție obstacole",
+    "Control Panel": "Panou de control",
+    "Penetration Control": "Control penetrare",
+    "Control": "Control",
+    "Operating Voltage": "Tensiune de operare",
+    "Wheels": "Roți"
+  };
+
+  const keyTranslationsPt = {
+    "Sampling Depth": "Profundidade de amostragem",
+    "Sample Type": "Tipo de amostra",
+    "Sampling Type": "Tipo de amostragem",
+    "Hammer Unit": "Unidade de martelo",
+    "Horizons": "Horizontes",
+    "Magazines": "Carregadores",
+    "Sampling Cycle": "Ciclo de amostragem",
+    "Sampling Cycle Time": "Tempo do ciclo de amostragem",
+    "Mounting": "Montagem",
+    "Mounting Options": "Opções de montagem",
+    "Sample Sorting": "Classificação de amostras",
+    "Special Features": "Características especiais",
+    "Power Source": "Fonte de energia",
+    "Power Supply": "Alimentação",
+    "Weight": "Peso",
+    "Obstacle Detection": "Detecção de obstáculos",
+    "Control Panel": "Painel de controlo",
+    "Penetration Control": "Controlo de penetração",
+    "Control": "Controlo",
+    "Operating Voltage": "Tensão de operação",
+    "Wheels": "Rodas",
+    "Transmission": "Transmissão",
+    "ViewingAngle": "Ângulo de visão"
+  };
+
+  const keyTranslationsRu = {
+    "Sampling Depth": "Глубина отбора проб",
+    "Sample Type": "Тип пробы",
+    "Sampling Type": "Тип отбора",
+    "Hammer Unit": "Ударный узел",
+    "Horizons": "Горизонты",
+    "Magazines": "Магазины",
+    "Sampling Cycle": "Цикл отбора проб",
+    "Sampling Cycle Time": "Время цикла отбора",
+    "Mounting": "Монтаж",
+    "Mounting Options": "Варианты монтажа",
+    "Sample Sorting": "Сортировка проб",
+    "Special Features": "Особые функции",
+    "Power Source": "Источник питания",
+    "Power Supply": "Питание",
+    "Weight": "Вес",
+    "Obstacle Detection": "Обнаружение препятствий",
+    "Control Panel": "Панель управления",
+    "Penetration Control": "Контроль проникновения",
+    "Control": "Управление",
+    "Operating Voltage": "Рабочее напряжение",
+    "Wheels": "Колёса",
+    "Transmission": "Передача",
+    "ViewingAngle": "Угол обзора"
   };
 
 
@@ -363,7 +439,15 @@ const ProductDetail = () => {
                       {Object.entries(product.technicalSpecs).map(([key, value]) => (
                         <div key={key} className="flex justify-between py-2 border-b border-gray-200 dark:border-gray-700 last:border-b-0">
                           <span className="font-black uppercase text-brandblue dark:text-blue-400">
-                            {currentLanguage === 'de' ? (keyTranslations[key] || key) : key}:
+                            {currentLanguage === 'de'
+                              ? (keyTranslationsDe[key as keyof typeof keyTranslationsDe] || key)
+                              : currentLanguage === 'ro'
+                                ? (keyTranslationsRo[key as keyof typeof keyTranslationsRo] || key)
+                                : currentLanguage === 'pt'
+                                  ? (keyTranslationsPt[key as keyof typeof keyTranslationsPt] || key)
+                                  : currentLanguage === 'ru'
+                                    ? (keyTranslationsRu[key as keyof typeof keyTranslationsRu] || key)
+                                : key}:
                           </span>
                           <span className="text-brandblue dark:text-blue-400">{value}</span>
                         </div>

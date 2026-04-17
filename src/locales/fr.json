@@ -227,6 +227,9 @@
     "shortestFirst": "Le plus court en premier",
     "longestFirst": "Le plus long en premier",
     "noArticlesFound": "Aucun article trouvé",
+    "noMatchingArticles": "Aucun article correspondant",
+    "noArticlesAvailable": "Aucun article disponible",
+    "noImage": "Aucune image",
     "publishedOn": "Publié le",
     "addParagraph": "Ajouter un paragraphe",
     "removeParagraph": "Supprimer un paragraphe",
@@ -301,6 +304,7 @@
     "excerpt": "Extrait",
     "date": "Date",
     "datePlaceholder": "p. ex., 9-15 novembre 2025",
+    "noDate": "Aucune date",
     "selectBlogPost": "Sélectionner un article de blog",
     "callToAction": "Appel à l'action",
     "ctaPlaceholder": "p. ex., En savoir plus",
@@ -418,11 +422,20 @@
       "Bespoke Machinery": "ÉQUIPEMENT SUR MESURE"
     },
     "languageSwitcher": {
-      "en": "",
-      "de": "",
-      "es": "",
-      "fr": "",
-      "ro": "",
+      "en": "Anglais",
+      "de": "Allemand",
+      "es": "Espagnol",
+      "fr": "Français",
+      "ro": "Roumain",
+      "pt": "Portugais",
+      "ru": "Russe",
+      "switchToEnglish": "Passer à l'anglais",
+      "switchToGerman": "Passer à l'allemand",
+      "switchToSpanish": "Passer à l'espagnol",
+      "switchToFrench": "Passer au français",
+      "switchToRomanian": "Passer au roumain",
+      "switchToPortuguese": "Passer au portugais",
+      "switchToRussian": "Passer au russe",
       "ariaLabel": "Changer la langue"
     }
   },
@@ -604,6 +617,7 @@
     }
   ],
   "certifications.title": "Certifications de qualité",
+  "certificationsTitle": "Certifications de qualité",
   "about": {
     "madeInGermany": "Fabriqué en Allemagne",
     "engineeringExcellence": "Excellence en ingénierie.",
@@ -800,6 +814,7 @@
   },
   "productNames": {
     "trailerMount": "Montage sur remorque",
+    "vehicleMount": "Montage sur véhicule",
     "powerPack": "Pack d'alimentation"
   },
   "unknownProduct": "Produit inconnu",
@@ -884,23 +899,30 @@
     "description": "D'accord, comment exactement voulez-vous attacher votre {{productName}} ? Cela peut sembler un peu ennuyeux, mais faites-moi confiance — si vous vous trompez, le reste n'a aucune chance.",
     "mountingLabel": "MONTAGE"
   },
-  "products.lay-down-frame": {
-    "name": "Cadre couché",
-    "nickname": "Cadre",
-    "price": "€1,200",
-    "description": "Un cadre robuste pour coucher votre équipement."
-  },
-  "products.three-point-hitch": {
-    "name": "Attelage trois points",
-    "nickname": "Attelage",
-    "price": "€1,450",
-    "description": "Attelage trois points standard pour un attachement facile."
-  },
-  "products.full-conversion": {
-    "name": "Conversion complète",
-    "nickname": "Conversion",
-    "price": "€2,300",
-    "description": "Kit de conversion complet pour une flexibilité maximale."
+  "products": {
+    "lay-down-frame": {
+      "name": "Cadre couché",
+      "nickname": "Cadre",
+      "price": "€1,200",
+      "description": "Un cadre robuste pour coucher votre équipement."
+    },
+    "three-point-hitch": {
+      "name": "Attelage trois points",
+      "nickname": "Attelage",
+      "price": "€1,450",
+      "description": "Attelage trois points standard pour un attachement facile."
+    },
+    "full-conversion": {
+      "name": "Conversion complète",
+      "nickname": "Conversion",
+      "price": "€2,300",
+      "description": "Kit de conversion complet pour une flexibilité maximale."
+    },
+    "specs": {
+      "depth": "Profondeur",
+      "weight": "Poids",
+      "horizons": "Horizons"
+    }
   },
   "progress": {
     "included": "✅ Inclus",
@@ -956,8 +978,10 @@
     },
     "empty": {
       "noArticles": "Aucun article trouvé",
-      "tryAdjusting": "Essayez d'ajuster votre recherche ou filtre pour trouver ce que vous recherchez."
+      "tryAdjusting": "Essayez d'ajuster votre recherche ou filtre pour trouver ce que vous recherchez.",
+      "emptyResults": "Aucun résultat trouvé"
     },
+    "emptyResults": "Aucun résultat trouvé",
     "meta": {
       "title": "Connaissances et actualités | TECHBYP",
       "description": "Explorez les dernières connaissances, mises à jour produits et coulisses d'ingénierie de TECHBYP — où l'échantillonnage des sols rencontre la précision allemande.",
@@ -1162,7 +1186,8 @@
       "announcements": "Annonces",
       "comments": "Commentaires récents",
       "members": "Membres du club",
-      "activity": "Activité récente"
+      "activity": "Activité récente",
+      "fetchError": "Impossible de charger les statistiques"
     },
     "comments": {
       "count": "commentaires",
@@ -1221,6 +1246,8 @@
       "openMenu": "Ouvrir le menu",
       "closeMenu": "Fermer le menu",
       "toggleLanguage": "Basculer la langue",
+      "switchToLight": "Passer au mode clair",
+      "switchToDark": "Passer au mode sombre",
       "logout": "Se déconnecter"
     },
     "confirmation": {
@@ -1265,14 +1292,14 @@
       "Étape 4 – Décharge manuelle du noyau : Le noyau est retiré manuellement. C'est un moment tranquille et satisfaisant de la science. Comme tirer les données de la Terre avec vos mains."
     ],
     "technicalSpecs": {
-      "Profondeur d'échantillonnage": "0–90 cm (progressive)",
-      "Type d'échantillon": "Noyau unique, profil complet",
-      "Cycle d'échantillonnage": "16 sec/core",
-      "Alimentation": "Hydraulique (135 bar, 20 L/min, 12 VDC)",
-      "Détection d'obstacle": "Oui",
-      "Panneau de contrôle": "Numérique",
-      "Poids": "185 kg",
-      "Montage": "Camions pick-up, remorques, véhicules agricoles légers"
+      "Sampling Depth": "0–90 cm (progressive)",
+      "Sample Type": "Noyau unique, profil complet",
+      "Sampling Cycle": "16 sec/core",
+      "Power Supply": "Hydraulique (135 bar, 20 L/min, 12 VDC)",
+      "Obstacle Detection": "Oui",
+      "Control Panel": "Numérique",
+      "Weight": "185 kg",
+      "Mounting": "Camions pick-up, remorques, véhicules agricoles légers"
     },
     "testimonials": [
       {
@@ -1324,17 +1351,17 @@
       "Travail de terrain sur un budget avec des ambitions"
     ],
     "technicalSpecs": {
-      "Profondeur d'échantillonnage": "0–60 cm",
-      "Type d'échantillon": "Programmé par impact, entièrement automatique",
-      "Unité de marteau": "Hydraulique, haute fréquence",
+      "Sampling Depth": "0–60 cm",
+      "Sampling Type": "Programmé par impact, entièrement automatique",
+      "Hammer Unit": "Hydraulique, haute fréquence",
       "Horizons": "1–2 couches",
-      "Magasins": "3",
-      "Temps du cycle d'échantillonnage": "18 sec/core",
-      "Options de montage": "Pick-up, remorque ou tout ce qui est vaguement routier",
-      "Tri des échantillons": "Séparation automatique spécifique à l'horizon",
-      "Caractéristiques spéciales": "Détection d'obstacle, Conteneurs étanches, Clavier numérique",
-      "Source d'alimentation": "Système hydraulique (135 bar, 20 l/min, 12 VDC)",
-      "Poids": "200 kg"
+      "Magazines": "3",
+      "Sampling Cycle Time": "18 sec/core",
+      "Mounting Options": "Pick-up, remorque ou tout ce qui est vaguement routier",
+      "Sample Sorting": "Séparation automatique spécifique à l'horizon",
+      "Special Features": "Détection d'obstacle, Conteneurs étanches, Clavier numérique",
+      "Power Source": "Système hydraulique (135 bar, 20 l/min, 12 VDC)",
+      "Weight": "200 kg"
     },
     "testimonials": [
       {
@@ -1389,18 +1416,18 @@
       "Travail sur le terrain où la vitesse, la précision et les pauses-café sont importants"
     ],
     "technicalSpecs": {
-      "Profondeur d'échantillonnage": "0–95 cm",
-      "Type d'échantillon": "Programmé par impact, entièrement automatique",
-      "Unité de marteau": "Hydraulique, 2 200 coups/min",
+      "Sampling Depth": "0–95 cm",
+      "Sampling Type": "Programmé par impact, entièrement automatique",
+      "Hammer Unit": "Hydraulique, 2 200 coups/min",
       "Horizons": "1–3 couches (configurable par l'utilisateur)",
-      "Magasins": "3",
-      "Temps du cycle d'échantillonnage": "18 sec/core",
-      "Options de montage": "Pick-up, remorque ou véhicule léger",
-      "Tri des échantillons": "Séparation automatique spécifique à l'horizon",
-      "Caractéristiques spéciales": "Détection d'obstacle, Conteneurs étanches, Clavier numérique",
-      "Contrôle de pénétration": "Arrêt automatique",
-      "Source d'alimentation": "Système hydraulique (135 bar, 20 l/min, 12 VDC)",
-      "Poids": "200 kg"
+      "Magazines": "3",
+      "Sampling Cycle Time": "18 sec/core",
+      "Mounting Options": "Pick-up, remorque ou véhicule léger",
+      "Sample Sorting": "Séparation automatique spécifique à l'horizon",
+      "Special Features": "Détection d'obstacle, Conteneurs étanches, Clavier numérique",
+      "Penetration Control": "Arrêt automatique",
+      "Power Source": "Système hydraulique (135 bar, 20 l/min, 12 VDC)",
+      "Weight": "200 kg"
     },
     "testimonials": [
       {
@@ -1455,17 +1482,17 @@
       "Travail sur le terrain nécessitant une profondeur et une fidélité d'échantillon sérieuses"
     ],
     "technicalSpecs": {
-      "Profondeur d'échantillonnage": "0–100 cm",
-      "Type d'échantillon": "Programmé par impact, entièrement automatique",
-      "Unité de marteau": "Hydraulique, haute fréquence",
+      "Sampling Depth": "0–100 cm",
+      "Sampling Type": "Programmé par impact, entièrement automatique",
+      "Hammer Unit": "Hydraulique, haute fréquence",
       "Horizons": "1–4 couches",
-      "Magasins": "4",
-      "Temps du cycle d'échantillonnage": "22 sec/core",
-      "Options de montage": "Pick-up, remorque ou véhicule léger",
-      "Tri des échantillons": "Séparation automatique spécifique à l'horizon",
-      "Caractéristiques spéciales": "Détection d'obstacle, Conteneurs étanches, Clavier numérique",
-      "Source d'alimentation": "Système hydraulique (135 bar, 20 l/min, 12 VDC)",
-      "Poids": "215 kg"
+      "Magazines": "4",
+      "Sampling Cycle Time": "22 sec/core",
+      "Mounting Options": "Pick-up, remorque ou véhicule léger",
+      "Sample Sorting": "Séparation automatique spécifique à l'horizon",
+      "Special Features": "Détection d'obstacle, Conteneurs étanches, Clavier numérique",
+      "Power Source": "Système hydraulique (135 bar, 20 l/min, 12 VDC)",
+      "Weight": "215 kg"
     },
     "testimonials": [
       {
@@ -1515,15 +1542,15 @@
       "Tirez votre noyau de sol parfait et soyez silencieusement satisfait de vous-même."
     ],
     "technicalSpecs": {
-      "Profondeur d'échantillonnage": "0–30 cm",
-      "Type d'échantillon": "Noyau unique, entièrement automatique",
+      "Sampling Depth": "0–30 cm",
+      "Sample Type": "Noyau unique, entièrement automatique",
       "Horizons": "1",
-      "Magasins": "1",
-      "Temps du cycle d'échantillonnage": "5 secondes par noyau",
-      "Options de montage": "Quad, pick-up, remorque ou véhicule léger",
-      "Contrôle": "Panneau de bouton-poussoir électrique",
-      "Source d'alimentation": "Moteur hydraulique",
-      "Poids": "43 kg"
+      "Magazines": "1",
+      "Sampling Cycle Time": "5 secondes par noyau",
+      "Mounting Options": "Quad, pick-up, remorque ou véhicule léger",
+      "Control": "Panneau de bouton-poussoir électrique",
+      "Power Source": "Moteur hydraulique",
+      "Weight": "43 kg"
     },
     "testimonials": [
       {
@@ -1579,15 +1606,15 @@
       "Tirez le noyau du sol et émerveillez-vous devant votre terre parfaitement échantillonnée."
     ],
     "technicalSpecs": {
-      "Profondeur d'échantillonnage": "0–30 cm",
-      "Type d'échantillon": "Noyau unique, entièrement automatique",
+      "Sampling Depth": "0–30 cm",
+      "Sample Type": "Noyau unique, entièrement automatique",
       "Horizons": "1",
-      "Magasins": "1",
-      "Temps du cycle d'échantillonnage": "5 sec/core",
-      "Options de montage": "Quads, pick-up, remorque ou véhicule léger",
-      "Contrôle": "Panneau de contrôle de bouton-poussoir électrique",
-      "Tension de fonctionnement": "24 VDC",
-      "Poids": "47 kg"
+      "Magazines": "1",
+      "Sampling Cycle Time": "5 sec/core",
+      "Mounting Options": "Quads, pick-up, remorque ou véhicule léger",
+      "Control": "Panneau de contrôle de bouton-poussoir électrique",
+      "Operating Voltage": "24 VDC",
+      "Weight": "47 kg"
     },
     "testimonials": [
       {
@@ -1646,16 +1673,16 @@
       "Quand 16 échantillons sont collectés, videz et rechargez le magazine."
     ],
     "technicalSpecs": {
-      "Profondeur d'échantillonnage": "10–30 cm",
-      "Type d'échantillon": "Programmé par impact, entièrement automatique",
+      "Sampling Depth": "10–30 cm",
+      "Sample Type": "Programmé par impact, entièrement automatique",
       "Horizons": "1",
-      "Magasins": "16",
-      "Temps du cycle d'échantillonnage": "8–10 secondes par échantillon",
-      "Options de montage": "Remorque en remorquage (s'adapte aux tracteurs ou à tout véhicule avec attelage standard)",
-      "Contrôle": "Panneau tactile de 7 pouces",
-      "Source d'alimentation": "Hydraulique",
-      "Roues": "235/60 R16, faible compaction du sol",
-      "Poids": "Approx. 600 kg"
+      "Magazines": "16",
+      "Sampling Cycle Time": "8–10 secondes par échantillon",
+      "Mounting Options": "Remorque en remorquage (s'adapte aux tracteurs ou à tout véhicule avec attelage standard)",
+      "Control": "Panneau tactile de 7 pouces",
+      "Power Source": "Hydraulique",
+      "Wheels": "235/60 R16, faible compaction du sol",
+      "Weight": "Approx. 600 kg"
     },
     "testimonials": [
       {
@@ -1712,17 +1739,17 @@
       "Rabattez, testez l'alimentation, et commencez l'échantillonnage."
     ],
     "technicalSpecs": {
-      "Poids": "70 kg (DH/DE) ; 80 kg (version MP)",
-      "Matériau": "Acier EN S355, épaisseur 4 mm, revêtement en poudre RAL 9005",
-      "Interface de montage": "Attelage ISO 50 mm + fiche 13 broches DE-1.30",
-      "Entrée hydraulique": "135–220 bar ; 20–90 L/min ; Tuyau DN 19/¾″, éclatement ≥500 bar",
-      "Options d'alimentation": "Pack d'alimentation hydraulique externe ou batterie",
+      "Weight": "70 kg (DH/DE) ; 80 kg (version MP)",
+      "Material": "Acier EN S355, épaisseur 4 mm, revêtement en poudre RAL 9005",
+      "Mount Interface": "Attelage ISO 50 mm + fiche 13 broches DE-1.30",
+      "Hydraulic Input": "135–220 bar ; 20–90 L/min ; Tuyau DN 19/¾″, éclatement ≥500 bar",
+      "Power Options": "Pack d'alimentation hydraulique externe ou batterie",
       "Certifications": "TÜV DE-745-K-2024 ; Conforme EN 12642 + ISO 1496-3",
-      "Résistance à la corrosion": "≥1 000 h brouillard salin neutre (ISO 9227)",
-      "Matériel inclus": "M16×45-8.8 + boulons auto-verrouillants M10, tous plaqués",
-      "Durée de vie des cycles": "10 000 pliages (test de durabilité du mécanisme)",
-      "Garantie": "12 mois standard",
-      "Compatibilité des supports": "Tous les modèles MP (MP-1.90 à MP-4.100), DH et DE"
+      "Corrosion Resistance": "≥1 000 h brouillard salin neutre (ISO 9227)",
+      "Included Hardware": "M16×45-8.8 + boulons auto-verrouillants M10, tous plaqués",
+      "Cycle Life": "10 000 pliages (test de durabilité du mécanisme)",
+      "Warranty": "12 mois standard",
+      "Bracket Compatibility": "Tous les modèles MP (MP-1.90 à MP-4.100), DH et DE"
     },
     "testimonials": []
   },
@@ -1761,13 +1788,13 @@
     "technicalSpecs": {
       "Type": "Cadre d'attelage trois points Cat-1/2 du tracteur",
       "Construction": "Acier A-frame robuste soudé avec finition époxy",
-      "Compatibilité PTO": "Arbres PTO de tracteur standard entraînent la pompe hydraulique",
-      "Inclut": "Barres de levage, boulons de montage et matériel d'installation",
-      "Taille du cadre": "S'adapte à l'espacement des bras de levage 50–60\" typique des tracteurs compacts",
-      "Protection contre la corrosion": "Revêtement époxy noir durable",
-      "Poids": "Approx. 120 kg",
+      "PTO Compatibility": "Arbres PTO de tracteur standard entraînent la pompe hydraulique",
+      "Includes": "Barres de levage, boulons de montage et matériel d'installation",
+      "Frame Size": "S'adapte à l'espacement des bras de levage 50–60\" typique des tracteurs compacts",
+      "Corrosion Protection": "Revêtement époxy noir durable",
+      "Weight": "Approx. 120 kg",
       "Certification": "Robustesse de grade commercial pour usage agricole",
-      "Compatibilité": "Fonctionne avec toutes les machines d'échantillonnage de sol séries MP, DH et DE"
+      "Compatibility": "Fonctionne avec toutes les machines d'échantillonnage de sol séries MP, DH et DE"
     },
     "testimonials": [
       {
@@ -1816,13 +1843,13 @@
       "Nous ajustons le cadre en acier, boulonnons l'échantillonneur, gérons la paperasse, et vous envoyons affronter le sol."
     ],
     "technicalSpecs": {
-      "Véhicules compatibles": "Camionnettes (Hilux, Ranger, etc.) et UTV (Gator, RTV, Ranger, etc.)",
+      "Compatible Vehicles": "Camionnettes (Hilux, Ranger, etc.) et UTV (Gator, RTV, Ranger, etc.)",
       "Construction": "Cadre en acier, revêtement en poudre. Boîtes en aluminium.",
-      "Exigences du véhicule": "Récepteur d'attelage standard ou accouplement de remorque. Bien sûr.",
+      "Vehicle Requirements": "Récepteur d'attelage standard ou accouplement de remorque. Bien sûr.",
       "Certification": "Approuvé TÜV. Naturellement.",
-      "Pièces OEM": "Retirées. Stockées. Étiquetées. Très allemand.",
-      "Compatibilité échantillonneur": "Séries MP, DH, DE.",
-      "Poids du cadre": "Approx. 110 kg."
+      "OEM Parts": "Retirées. Stockées. Étiquetées. Très allemand.",
+      "Sampler Compatibility": "Séries MP, DH, DE.",
+      "Frame Weight": "Approx. 110 kg."
     },
     "testimonials": [
       {
@@ -1875,17 +1902,17 @@
       "Remorquez à des vitesses sensées—pas de dérapage ou d'aventure involontaire."
     ],
     "technicalSpecs": {
-      "Largeur de voie": "1,35 m",
-      "Options de charge": "550 kg (freiné/non freiné), mise à niveau lourde à 1 500 kg PTAC",
-      "Jantes/Taille de pneu": "LT285/75 R16 sur jantes en aluminium ou MT215/75 R15",
-      "Freins": "Freins à tambour mécaniques (version freinée), configuration essieu simple",
-      "Amortisseurs": "Approuvés pour remorquage à 100 km/h",
-      "Roue de support": "Incluse",
-      "Châssis": "Acier galvanisé à chaud, classé S235",
-      "Hauteur de carrosserie": "1,2 m",
-      "Poids de remorque": "Approx. 300 kg",
-      "Éclairage": "LED 12 V, tableau d'éclairage légal sur route",
-      "Garantie": "Garantie fabricant de 12 mois"
+      "Track Width": "1,35 m",
+      "Load Options": "550 kg (freiné/non freiné), mise à niveau lourde à 1 500 kg PTAC",
+      "Rims/Tyre Size": "LT285/75 R16 sur jantes en aluminium ou MT215/75 R15",
+      "Brakes": "Freins à tambour mécaniques (version freinée), configuration essieu simple",
+      "Shock Absorbers": "Approuvés pour remorquage à 100 km/h",
+      "Support Wheel": "Incluse",
+      "Chassis": "Acier galvanisé à chaud, classé S235",
+      "Body Height": "1,2 m",
+      "Trailer Weight": "Approx. 300 kg",
+      "Lighting": "LED 12 V, tableau d'éclairage légal sur route",
+      "Warranty": "Garantie fabricant de 12 mois"
     },
     "testimonials": [
       {
@@ -1928,12 +1955,12 @@
       "Remplissez l'huile et changez les filtres régulièrement—traitez-le bien, et il gardera votre échantillonneur ronronnant comme un charme."
     ],
     "technicalSpecs": {
-      "Modèle hydraulique": "Moteur à essence 13 CV, réservoir d'huile 22 L, pression 135 bar, débit 20 L/min, système électrique 12 V",
-      "Modèle électrique": "Batterie 24 V / 100 Ah, affichage d'état LCD, enceinte en acier inoxydable",
-      "Poids": "Approx. 65 kg (hydraulique), 48 kg (électrique)",
+      "Hydraulic Model": "Moteur à essence 13 CV, réservoir d'huile 22 L, pression 135 bar, débit 20 L/min, système électrique 12 V",
+      "Electric Model": "Batterie 24 V / 100 Ah, affichage d'état LCD, enceinte en acier inoxydable",
+      "Weight": "Approx. 65 kg (hydraulique), 48 kg (électrique)",
       "Dimensions": "50 x 40 x 45 cm (HxLxP)",
-      "Matériau": "Boîtier en acier avec protection contre la corrosion",
-      "Garantie": "Garantie de 12 mois sur les composants électriques"
+      "Material": "Boîtier en acier avec protection contre la corrosion",
+      "Warranty": "Garantie de 12 mois sur les composants électriques"
     },
     "testimonials": [
       {
@@ -1976,11 +2003,11 @@
       "Reconstituez votre kit après usage pour ne jamais être pris sans deux fois."
     ],
     "technicalSpecs": {
-      "Compatibilité": "MP-1.90, MP-2.60, MP-3.90, MP-4.100, MP-1.120, séries DH, DE-1.30, BOPROB III",
-      "Pièces incluses": "Raccords hydrauliques, filtres, joints toriques, solénoïdes, courroies, relais, lignes de pression (varie par kit)",
-      "Emballage": "Emballés individuellement et étiquetés",
-      "Durée de vie en stock": "5 ans dans des conditions de stockage sèches",
-      "Options de reconstitution": "Pièces individuelles disponibles sur demande"
+      "Compatibility": "MP-1.90, MP-2.60, MP-3.90, MP-4.100, MP-1.120, séries DH, DE-1.30, BOPROB III",
+      "Included Parts": "Raccords hydrauliques, filtres, joints toriques, solénoïdes, courroies, relais, lignes de pression (varie par kit)",
+      "Packaging": "Emballés individuellement et étiquetés",
+      "Shelf Life": "5 ans dans des conditions de stockage sèches",
+      "Restock Options": "Pièces individuelles disponibles sur demande"
     },
     "testimonials": [
       {
@@ -2025,13 +2052,13 @@
       "Nettoyez régulièrement à moins que vous ne conduisiez une étude de croissance microbienne"
     ],
     "technicalSpecs": {
-      "Capacité": "95 L",
-      "Plage de température": "-20°C à +10°C",
-      "Alimentation": "12/24 V DC ou 110–240 V AC",
-      "Consommation d'énergie": "6 A (12 V) / 3 A (24 V) ≈ 0,3 kWh/24h",
-      "Dimensions extérieures": "826 × 528 × 465 mm (+25 mm dégagement poignée)",
-      "Configuration interne": "2 compartiments éclairés LED avec couvercles individuels",
-      "Poids": "24 kg (poids sec)"
+      "Capacity": "95 L",
+      "TemperatureRange": "-20°C à +10°C",
+      "PowerSupply": "12/24 V DC ou 110–240 V AC",
+      "PowerConsumption": "6 A (12 V) / 3 A (24 V) ≈ 0,3 kWh/24h",
+      "ExternalDimensions": "826 × 528 × 465 mm (+25 mm dégagement poignée)",
+      "InternalConfiguration": "2 compartiments éclairés LED avec couvercles individuels",
+      "Weight": "24 kg (poids sec)"
     },
     "testimonials": []
   },
@@ -2068,19 +2095,19 @@
       "Évitez de regarder directement dedans à moins que vous aimiez le regret rétinien"
     ],
     "technicalSpecs": {
-      "Tension": "12/24 V DC",
-      "Consommation d'énergie": "24 W",
-      "Flux lumineux": "1700 lm",
-      "Température de couleur": "5700 K",
-      "Nombre de LEDs": "4",
-      "Distribution de lumière": "Illumination de proximité",
-      "Montage": "Support de montage pivotant",
-      "Type de fiche": "Extrémités de câble ouvertes",
-      "Longueur de câble": "800 mm",
-      "Protection d'entrée": "IP6K7 / IP6K9K",
-      "Boîtier": "Aluminium, finition noire",
+      "Voltage": "12/24 V DC",
+      "PowerConsumption": "24 W",
+      "LuminousFlux": "1700 lm",
+      "ColorTemperature": "5700 K",
+      "NumberOfLEDs": "4",
+      "LightDistribution": "Illumination de proximité",
+      "Mounting": "Support de montage pivotant",
+      "PlugType": "Extrémités de câble ouvertes",
+      "CableLength": "800 mm",
+      "IngressProtection": "IP6K7 / IP6K9K",
+      "Housing": "Aluminium, finition noire",
       "Dimensions": "75 mm (H) × 98 mm (L) × 41 mm (P)",
-      "Diamètre": "75 mm",
+      "Diameter": "75 mm",
       "Certification": "Conforme ECE R10"
     },
     "testimonials": []
@@ -2119,19 +2146,19 @@
       "Nettoyez occasionnellement—mais seulement quand débranché !"
     ],
     "technicalSpecs": {
-      "Résolution": "5 MP",
+      "Resolution": "5 MP",
       "Transmission": "4G LTE",
-      "Illumination IR": "Oui, jusqu'à 15 m",
-      "Angle de vision": "75°",
+      "IRIllumination": "Oui, jusqu'à 15 m",
+      "ViewingAngle": "75°",
       "PanTilt": "Non (lentille fixe)",
       "Audio": "Oui",
-      "Contrôle via app": "Oui (iOS/Android)",
-      "Slot carte SD": "Oui, jusqu'à 128 GB",
-      "Alimentation": "12V DC",
-      "Type de boîtier": "Mini caméra, corps robuste",
-      "Montage": "Montage vis/pivot (inclus)",
+      "ControlViaApp": "Oui (iOS/Android)",
+      "SDCardSlot": "Oui, jusqu'à 128 GB",
+      "PowerSupply": "12V DC",
+      "HousingType": "Mini caméra, corps robuste",
+      "Mounting": "Montage vis/pivot (inclus)",
       "Dimensions": "80 mm (L) × 45 mm (H) × 80 mm (P)",
-      "Protection d'entrée": "Étanche pour montage extérieur"
+      "IngressProtection": "Étanche pour montage extérieur"
     },
     "testimonials": []
   },
@@ -2167,11 +2194,11 @@
       "Nettoyez les résidus de sol avec le ciseau (Article 1051) pour maintenir l'intégrité des rainures entre les échantillons"
     ],
     "technicalSpecs": {
-      "Matériau": "Acier outil (HRC 52)",
-      "Effilage": "40→38 mm / 35→33 mm / 30→28 mm",
-      "Marquages": "Gravés au laser tous les 10 cm",
-      "Compatibilité": "Protocoles N-min (VDLUFA, ISO 14255)",
-      "Poids": "Environ 2,1 kg par mètre (barre de diamètre 40 mm)"
+      "Material": "Acier outil (HRC 52)",
+      "Taper": "40→38 mm / 35→33 mm / 30→28 mm",
+      "Markings": "Gravés au laser tous les 10 cm",
+      "Compatibility": "Protocoles N-min (VDLUFA, ISO 14255)",
+      "Weight": "Environ 2,1 kg par mètre (barre de diamètre 40 mm)"
     },
     "table": [
       {
@@ -2317,13 +2344,13 @@
       "Extraire les barres en utilisant l'appareil de levage à vérin avec chaîne de serrage ou l'extracteur à un bras avec pince à billes"
     ],
     "technicalSpecs": {
-      "Diamètre": "22 mm",
-      "Largeur de rainure": "12 mm",
-      "Longueur de barre": "Total 1100 mm, utile 1000 mm",
-      "Longueur d'extension": "1000 mm avec filetage interne 5/8”",
-      "Taille de filetage": "Filetage interne et externe 5/8\"",
-      "Outils recommandés": "Clés spéciales SW 18",
-      "Dispositifs de levage": "Vérin avec barre de levage et chaîne de serrage, extracteur à un bras avec pince à billes intégrée"
+      "Diameter": "22 mm",
+      "Groove width": "12 mm",
+      "Rod length": "Total 1100 mm, utile 1000 mm",
+      "Extension length": "1000 mm avec filetage interne 5/8”",
+      "Thread size": "Filetage interne et externe 5/8\"",
+      "Recommended tools": "Clés spéciales SW 18",
+      "Lifting devices": "Vérin avec barre de levage et chaîne de serrage, extracteur à un bras avec pince à billes intégrée"
     },
     "table": [
       {
@@ -2561,10 +2588,10 @@
       "Évitez les sols rocheux ou trop compactés"
     ],
     "technicalSpecs": {
-      "Carotte 0-30 cm": "Diamètre 18 mm, rainure 14 mm",
-      "Carotte 30-60 cm": "Diamètre 16 mm, rainure 12 mm",
-      "Carotte 60-90 cm": "Diamètre 14 mm, rainure 10 mm",
-      "Ensemble complet": "Inclut une carotte pour chaque section de profondeur (0-30 cm, 30-60 cm, 60-90 cm)"
+      "0-30 cm corer": "Diamètre 18 mm, rainure 14 mm",
+      "30-60 cm corer": "Diamètre 16 mm, rainure 12 mm",
+      "60-90 cm corer": "Diamètre 14 mm, rainure 10 mm",
+      "Complete set": "Inclut une carotte pour chaque section de profondeur (0-30 cm, 30-60 cm, 60-90 cm)"
     },
     "table": [
       {
@@ -2624,17 +2651,17 @@
       "Travail de terrain sur pentes et terrains accidentés"
     ],
     "technicalSpecs": {
-      "Profondeur d'échantillonnage": "0–90 cm (optionnel 120 cm)",
-      "Type d'échantillonnage": "À impact, semi-automatique",
-      "Unité de marteau": "Hydraulique, 2400 coups/min, 40 J/coup",
+      "Sampling Depth": "0–90 cm (optionnel 120 cm)",
+      "Sampling Type": "À impact, semi-automatique",
+      "Hammer Unit": "Hydraulique, 2400 coups/min, 40 J/coup",
       "Horizons": "3 couches (0–30, 30–60, 60–90 cm)",
-      "Magasins": "3",
-      "Temps de cycle d'échantillonnage": "20 sec/carotte",
-      "Véhicule porteur": "Crawler, chenilles alimentées par moteur",
-      "Largeur de chenille": "Max 700 mm",
-      "Télécommande": "Fonctionnement complet du crawler et de l'unité d'échantillonnage",
-      "Moteur": "Honda, ≥6,5 CV",
-      "Poids": "220 kg"
+      "Magazines": "3",
+      "Sampling Cycle Time": "20 sec/carotte",
+      "Carrier Vehicle": "Crawler, chenilles alimentées par moteur",
+      "Track Width": "Max 700 mm",
+      "Remote Control": "Fonctionnement complet du crawler et de l'unité d'échantillonnage",
+      "Engine": "Honda, ≥6,5 CV",
+      "Weight": "220 kg"
     },
     "testimonials": [
       {

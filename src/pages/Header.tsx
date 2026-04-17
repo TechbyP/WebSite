@@ -206,6 +206,18 @@ const languageOptions = [
     name: t('header.languageSwitcher.ro'),
     flag: '🇷🇴',
     ariaLabel: t('header.languageSwitcher.switchToRomanian')
+  },
+  {
+    code: 'pt',
+    name: t('header.languageSwitcher.pt'),
+    flag: '🇵🇹',
+    ariaLabel: t('header.languageSwitcher.switchToPortuguese')
+  },
+  {
+    code: 'ru',
+    name: t('header.languageSwitcher.ru'),
+    flag: '🇷🇺',
+    ariaLabel: t('header.languageSwitcher.switchToRussian')
   }
 ];
 

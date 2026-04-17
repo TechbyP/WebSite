@@ -422,6 +422,10 @@
        "es": "",
        "fr": "",
        "ro": "",
+       "pt": "",
+       "ru": "",
+      "switchToPortuguese": "Zu Portugiesisch wechseln",
+      "switchToRussian": "Zu Russisch wechseln",
       "ariaLabel": "Sprache ändern"
     }
   },

@@ -108,7 +108,7 @@ const Trust = () => {
         >
           <div className="bg-white dark:bg-gray-800 p-8 rounded-xl shadow-md dark:shadow-gray-700/20 inline-block text-left max-w-4xl w-full transition-all duration-300 hover:shadow-lg hover:dark:shadow-gray-700/30">
             <h3 className="text-xl font-black text-gray-900 dark:text-white mb-6 uppercase text-center transition-colors duration-300">
-              {t('certifications.title')}
+              {t('certificationsTitle')}
             </h3>
             <div className="flex flex-col gap-6">
               {certifications.map((cert, i) => (

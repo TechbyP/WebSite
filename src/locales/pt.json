@@ -1,0 +1,2669 @@
+{
+  "notFound": {
+    "title": "Boa dor! Página não encontrada",
+    "description": {
+      "line1": "Nesse momento. Você saiu da autoestrada digital e acabou nos arbustos.",
+      "line2": "Não está quebrado, está apenas… bastante perdido. Um pouco como eu numa rotunda francesa."
+    },
+    "backButton": "Voltar à segurança",
+    "footer": "(Idéia esplêndida, realmente.)"
+  },
+  "headerTheme": {
+    "switchToDark": "Modo escuro",
+    "switchToLight": "Modo claro"
+  },
+  "termsOfService": {
+    "back": "Voltar",
+    "title": "Termos de serviço",
+    "intro": {
+      "text1": "Estes Termos de Serviço se aplicam a todas as ofertas de",
+      "company": "Bodenprobetechnik Peters GmbH",
+      "address": "Am Fliegerhorst 11, 49610 Quakenbrück, Alemanha (\"nós\", \"nos\", \"nosso\")"
+    },
+    "sections": {
+      "1": {
+        "title": "1. Aceitação dos Termos",
+        "text": "Ao acessar ou usar o site e serviços da TechByP, você concorda em obedecer a estes Termos de Serviço. Caso não concorde, por favor não utilize nossos serviços."
+      },
+      "2": {
+        "title": "2. Uso de Serviços",
+        "text": "Você pode usar nosso site e serviços apenas para fins legais e de acordo com estes Termos. Você concorda em não:",
+        "list": [
+          "Usar os serviços de qualquer forma que viole as leis aplicáveis",
+          "Tentar obter acesso não autorizado aos nossos sistemas",
+          "Interferir no funcionamento adequado de nossos serviços",
+          "Usar qualquer meio automatizado para acessar nossos serviços sem permissão"
+        ]
+      },
+      "3": {
+        "title": "3. Propriedade Intelectual",
+        "text": "Todo o conteúdo do nosso site, incluindo textos, gráficos, logotipos e imagens, é propriedade da TechByP e é protegido pelas leis de propriedade intelectual. Você não pode usar nosso conteúdo sem nossa permissão expressa por escrito."
+      },
+      "4": {
+        "title": "4. Informações do produto",
+        "text": "Nós nos esforçamos para fornecer informações precisas sobre o produto, mas não garantimos que as descrições do produto ou outro conteúdo sejam completos, confiáveis ​​ou livres de erros. As especificações estão sujeitas a alterações sem aviso prévio."
+      },
+      "5": {
+        "title": "5. Limitação de responsabilidade",
+        "text": "A TechByP não será responsável por quaisquer danos indiretos, incidentais, especiais ou consequenciais resultantes do uso ou incapacidade de usar nossos serviços, mesmo que tenhamos sido avisados ​​da possibilidade de tais danos."
+      },
+      "6": {
+        "title": "6. Legislação Aplicável",
+        "text": "Estes Termos serão regidos e interpretados de acordo com as leis da Alemanha, independentemente de conflitos de disposições legais."
+      },
+      "7": {
+        "title": "7. Alterações nos Termos",
+        "text": "Reservamo-nos o direito de modificar estes Termos a qualquer momento. O uso continuado de nossos serviços após tais modificações constitui sua aceitação dos novos Termos.",
+        "effectiveDate": "Data de vigência: 31 de julho de 2025"
+      }
+    }
+  },
+  "back": "Voltar",
+  "imprint": "Impressão",
+  "legalDisclosure": {
+    "title": "Divulgação legal",
+    "text": "De acordo com § 5 TMG (Lei Alemã de Telemídia)"
+  },
+  "company": {
+    "name": "Bodenprobetechnik Peters GmbH",
+    "address": {
+      "street": "Am Fliegerhorst 11",
+      "zipCity": "49610 Quakenbrück",
+      "country": "Alemanha"
+    }
+  },
+  "contact": {
+    "title": "Contato",
+    "phoneLabel": "Telefone:",
+    "phone": "+49 (0) 5431 936440",
+    "emailLabel": "E-mail:",
+    "email": "info@bodenprobetechnik.de",
+    "websiteLabel": "Site:",
+    "website": "https://www.bodenprobetechnik.de"
+  },
+  "representedBy": {
+    "title": "Representado por",
+    "name": "Walter Peters (Diretor Geral)"
+  },
+  "registerEntry": {
+    "title": "Registro de entrada",
+    "entry": "Inscrição no Registo Comercial:",
+    "registerCourt": "Tribunal de Registo: Amtsgericht Osnabrück",
+    "registrationNumber": "Número de registo: HRB 216172"
+  },
+  "vatId": {
+    "title": "ID de IVA",
+    "text": "De acordo com o §27a da lei alemã do IVA:",
+    "id": "DE343019007"
+  },
+  "taxNumber": {
+    "title": "Número fiscal",
+    "text": "Steuer-Nr.: 67/201/26982"
+  },
+  "bankDetails": {
+    "title": "Dados bancários",
+    "bankLabel": "Banco:",
+    "bank": "Kreissparkasse Bersenbrück",
+    "accountNoLabel": "Nº da conta:",
+    "accountNo": "085 4251 14",
+    "bankCodeLabel": "Código do Banco (BLZ):",
+    "bankCode": "265 515 40",
+    "ibanLabel": "IBAN:",
+    "iban": "DE42 2655 1540 0085 4251 14",
+    "bicLabel": "BIC:",
+    "bic": "NOLADE21BEB"
+  },
+  "responsibleContent": {
+    "title": "Responsável pelo Conteúdo",
+    "text": "De acordo com § 55 Abs. 2 RStV:",
+    "name": "Walter Peters",
+    "address": {
+      "street": "Am Fliegerhorst 11",
+      "zipCity": "49610 Quakenbrück",
+      "country": "Alemanha"
+    }
+  },
+  "cookie": {
+    "message": "Não há biscoitos aqui, apenas cookies digitais. Eles nos ajudam a melhorar sua viagem através do nosso site. Continue e você estará dando um sinal de positivo.",
+    "learnMore": "Saiba mais",
+    "accept": "Sim, faça o que quiser.",
+    "reject": "Rejeitar cookies"
+  },
+  "privacy": {
+    "back": "Voltar",
+    "title": "Política de Privacidade",
+    "introduction": {
+      "title": "1. Introdução",
+      "text": "A TechByP (\"nós\", \"nosso\" ou \"nos\") está comprometida em proteger sua privacidade. Esta Política de Privacidade explica como coletamos, usamos, divulgamos e protegemos suas informações quando você visita nosso site."
+    },
+    "dataCollection": {
+      "title": "2. Coleta de dados",
+      "text": "Podemos coletar informações pessoais como seu nome, endereço de e-mail, número de telefone e detalhes da empresa quando você:",
+      "items": [
+        "Entre em contato conosco através de nosso site",
+        "Solicite um orçamento ou informações sobre o produto",
+        "Assine nosso boletim informativo",
+        "Baixe recursos de nosso site"
+      ]
+    },
+    "useOfData": {
+      "title": "3. Uso de dados",
+      "text": "Usamos as informações que coletamos para:",
+      "items": [
+        "Fornecer e manter nossos serviços",
+        "Responder às suas dúvidas e solicitações",
+        "Melhorar nosso site e produtos",
+        "Enviar e-mails periódicos (você pode cancelar a assinatura a qualquer momento)"
+      ]
+    },
+    "dataProtection": {
+      "title": "4. Proteção de Dados",
+      "text": "Implementamos medidas técnicas e organizacionais adequadas para proteger seus dados pessoais contra acesso não autorizado, alteração ou destruição."
+    },
+    "thirdParty": {
+      "title": "5. Serviços de terceiros",
+      "text": "Podemos contratar empresas terceirizadas para facilitar nossos serviços (por exemplo, hospedagem de sites, análises). Esses terceiros têm acesso às suas informações apenas para realizar tarefas específicas em nosso nome."
+    },
+    "cookies": {
+      "title": "6. Cookies e rastreamento",
+      "text": "Usamos cookies para melhorar sua experiência e analisar o tráfego. Esta seção explica quais cookies utilizamos e como você pode gerenciá-los.",
+      "items": [
+        "Cookies necessários: necessários para a funcionalidade básica do site.",
+        "Cookies analíticos: usamos o Google Analytics para coletar estatísticas de uso anônimas e melhorar nossas ofertas."
+      ],
+      "manageText": "Você pode aceitar cookies para melhorar sua experiência ou recusá-los nas configurações do seu navegador. Alguns recursos podem não estar disponíveis se você recusar os cookies."
+    },
+    "rights": {
+      "title": "7. Seus direitos",
+      "text": "Você tem o direito de:",
+      "items": [
+        "Acessar, atualizar ou excluir suas informações",
+        "Opor-se ao nosso processamento de seus dados",
+        "Solicitar restrição de processamento",
+        "Solicitar dados portabilidade"
+      ],
+      "contact": "Para exercer esses direitos, entre em contato conosco pelo e-mail privacidade@techbyp.com."
+    },
+    "changes": {
+      "title": "8. Alterações nesta política",
+      "text": "Poderemos atualizar nossa Política de Privacidade de tempos em tempos. Iremos notificá-lo sobre quaisquer alterações publicando a nova política nesta página."
+    }
+  },
+  "blogEdit": {
+    "chooseFile": "Escolha um arquivo para enviar",
+    "selectArticle": "Selecione um artigo",
+    "wantToCreateArticle": "Crie seu primeiro artigo para começar",
+    "selectFromArticle": "Escolha um artigo na barra lateral ou crie um novo",
+    "author": "Nome do autor",
+    "title": "Título",
+    "excerpt": "Trecho",
+    "content": "Conteúdo",
+    "authorName": "Nome do autor",
+    "authorRole": "Função do autor",
+    "date": "Data",
+    "readTime": "Tempo de leitura",
+    "category": "Categoria",
+    "articleImage": "Imagem do artigo",
+    "authorAvatar": "Avatar do autor",
+    "uploadFile": "Carregar arquivo",
+    "useDefault": "Usar padrão",
+    "orPasteUrl": "Ou colar o URL da imagem diretamente",
+    "cancel": "Cancelar",
+    "saveArticle": "Salvar artigo",
+    "edit": "Editar",
+    "delete": "Excluir",
+    "newArticle": "Novo artigo",
+    "searchArticles": "Pesquisar artigos...",
+    "language": "Idioma",
+    "english": "Inglês",
+    "german": "Alemão",
+    "articles": "Artigos",
+    "allCategories": "Todas as categorias",
+    "sortBy": "Classificar por",
+    "newestFirst": "Mais recente primeiro",
+    "oldestFirst": "Mais antigo primeiro",
+    "titleAtoZ": "Título (A-Z)",
+    "titleZtoA": "Título (Z-A)",
+    "shortestFirst": "Mais curto primeiro",
+    "longestFirst": "Mais longo primeiro",
+    "noArticlesFound": "Nenhum artigo encontrado",
+    "noMatchingArticles": "Nenhum artigo correspondente",
+    "noArticlesAvailable": "Nenhum artigo disponível",
+    "noImage": "Nenhuma imagem",
+    "publishedOn": "Publicado em",
+    "addParagraph": "Adicionar parágrafo",
+    "removeParagraph": "Remover Parágrafo",
+    "markdownSupported": "Usar formatação Markdown",
+    "categories": {
+      "technology": "Tecnologia",
+      "events": "Eventos",
+      "sustainability": "Sustentabilidade",
+      "team": "Equipe",
+      "soil": "Solo",
+      "how-to": "Como fazer",
+      "machine": "Máquina"
+    }
+  },
+  "commentsFunction": {
+    "placeholderName": "Seu nome (ou apenas como você gosta de ser chamado)",
+    "placeholderCompany": "Empresa (opcional, mas não vamos persegui-lo)",
+    "placeholderText": "Diga-nos o que você realmente pensa (sem spoilers)",
+    "rating": "Classificação",
+    "rateStar": "Avalie {{star}} estrela",
+    "submit": "Envie-o para a natureza",
+    "anonymous": "Anônimo",
+    "anonymousInitial": "UM",
+    "fromCompany": "de {{empresa}}",
+    "like": "Curtir este comentário",
+    "unlike": "Curtir este comentário"
+  },
+  "loadingArticle": "Carregando artigo...",
+  "errorLoadingArticle": "Erro ao carregar o artigo",
+  "backToBlog": "Voltar ao blog",
+  "articleNotFound": "Artigo não encontrado",
+  "failedToLoad": "Falha ao carregar o artigo",
+  "checkThisArticle": "Confira este artigo",
+  "backToArticles": "Voltar aos artigos",
+  "share": "Compartilhar",
+  "print": "Imprimir",
+  "twitter": "Twitter",
+  "linkedin": "LinkedIn",
+  "email": "Email",
+  "moreLikeThis": "Mais como este",
+  "comments": "Comentários ({{count}})",
+  "views": "visualizações",
+  "category": "{{categoria}}",
+  "readTime": "{{time}} leitura",
+  "heroEditor": {
+    "fetchError": "Falha ao carregar itens de herói",
+    "createSuccess": "Item criado com sucesso!",
+    "updateSuccess": "Item atualizado com sucesso!",
+    "saveError": "Falha ao salvar o item",
+    "deleteConfirm": "Tem certeza de que deseja excluir este item?",
+    "delete": "Excluir",
+    "cancel": "Cancelar",
+    "deleteSuccess": "Item excluído com sucesso!",
+    "deleteError": "Falha ao excluir item",
+    "createSlide": "Criar novo slide",
+    "editSlide": "Editar slide",
+    "homeScreen": "Tela inicial",
+    "untitledSlide": "Slide sem título",
+    "noSlides": "Nenhum slide encontrado",
+    "selectSlide": "Selecione um slide",
+    "createFirstSlide": "Crie seu primeiro slide para começar",
+    "chooseOrCreate": "Escolha um slide na barra lateral ou crie um novo",
+    "createNewSlide": "Criar novo slide",
+    "addNewSlide": "Adicionar novo slide",
+    "edit": "Editar",
+    "language": "Idioma",
+    "slideType": "Tipo de slide",
+    "event": "Evento",
+    "product": "Produto",
+    "article": "Artigo",
+    "title": "Título",
+    "excerpt": "Trecho",
+    "date": "Data",
+    "datePlaceholder": "por exemplo, 9 a 15 de novembro de 2025",
+    "noDate": "Sem data",
+    "selectBlogPost": "Selecionar postagem do blog",
+    "callToAction": "Chamada para ação",
+    "ctaPlaceholder": "por exemplo, Saiba mais",
+    "backgroundImage": "Imagem de fundo",
+    "required": "Obrigatório",
+    "uploading": "Fazendo upload...",
+    "selectImage": "Selecionar imagem",
+    "uploadingImage": "Fazendo upload da imagem...",
+    "displayOrder": "Exibir ordem",
+    "saving": "Salvando...",
+    "saveSlide": "Salvar slide",
+    "readMore": "Leia mais",
+    "link": "Link do botão"
+  },
+  "editor": {
+    "announcements": "Anúncios",
+    "newAnnouncement": "Novo anúncio",
+    "active": "Ativo",
+    "inactive": "Inativo",
+    "priority": "Prioridade",
+    "delete": "Excluir",
+    "createNew": "Criar novo anúncio",
+    "editAnnouncement": "Editar anúncio",
+    "tag": "Marcação",
+    "tagPlaceholder": "O que é isso",
+    "title": "Título",
+    "titlePlaceholder": "O texto branco",
+    "subtitle": "Subtítulo",
+    "subtitlePlaceholder": "O texto verde menor",
+    "dateInfo": "Informações de data",
+    "dateInfoPlaceholder": "Quando?",
+    "location": "Localização",
+    "locationPlaceholder": "Onde?",
+    "priorityLabel": "(maior mostra primeiro)",
+    "ctaPrimary": "Texto principal do CTA",
+    "ctaPrimaryPlaceholder": "Texto do botão (por exemplo, 'Fechar')",
+    "ctaPrimaryLink": "Link principal do CTA",
+    "ctaPrimaryLinkPlaceholder": "Link opcional (deixe em branco para apenas fechar o modal)",
+    "ctaSecondary": "Texto secundário do CTA",
+    "ctaSecondaryPlaceholder": "Botão opcional",
+    "ctaSecondaryLink": "Link secundário do CTA",
+    "ctaSecondaryLinkPlaceholder": "Link opcional",
+    "description": "Descrição",
+    "image": "Imagem",
+    "hasImage": "Este anúncio já foi publicado uma imagem",
+    "removeImage": "Remover imagem atual",
+    "uploading": "Fazendo upload...",
+    "replaceImage": "Substituir imagem",
+    "selectImage": "Selecionar imagem",
+    "currentImage": "Imagem atual:",
+    "imagePreview": "Visualização da imagem:",
+    "activeAnnouncement": "Ativo Anúncio",
+    "showDelay": "Mostrar atraso (ms)",
+    "new": "Novo",
+    "save": "Salvar anúncio",
+    "saving": "Salvando...",
+    "loadError": "Falha ao carregar anúncios",
+    "imageUploadSuccess": "Imagem enviada com sucesso!",
+    "imageUploadError": "Falha ao carregar a imagem",
+    "imageRemoved": "Imagem removida",
+    "createSuccess": "Anúncio criado com sucesso!",
+    "updateSuccess": "Anúncio atualizado com sucesso!",
+    "createError": "Falha ao criar anúncio",
+    "updateError": "Falha ao atualizar anúncio",
+    "deleteConfirm": "Tem certeza de que deseja excluir este anúncio?",
+    "deleteSuccess": "Anúncio excluído com sucesso!",
+    "deleteError": "Falha ao excluir o anúncio"
+  },
+  "announcement": {
+    "close": "Fechar o anúncio"
+  },
+  "modal": {
+    "invalidEmail": "Agora, agora, esse não é um endereço de e-mail adequado. Tente novamente.",
+    "success": "Acerte! Você faz parte oficialmente do clube TechByP. Bem-vindo a bordo.",
+    "error": "Bem, isso ficou em forma de pêra. Tentar novamente?",
+    "imageAlt": "Junte-se ao TechByP Club",
+    "closeLabel": "Fechar modal",
+    "title": "Junte-se ao TechbyP Club.",
+    "description": "É como uma sociedade secreta, mas sem o aperto de mão secreto – apenas e-mails sobre coisas tecnológicas inteligentes. Prometemos manter o spam ao mínimo, principalmente.",
+    "placeholder": "seu-email@exemplo.com",
+    "button": "Cadastre-se agora",
+    "loading": "Inscrever-se... A parte chata, receio.",
+    "note": "Ao clicar, você concorda em receber e-mails que contenham \"absolutamente brilhante\" ou ocasionalmente \"como é que isso passou despercebido?\""
+  },
+  "footer": {
+    "invalidEmail": "Esse não parece ser um endereço de e-mail adequado, cara.",
+    "success": "Saúde! Você está no clube TechByP agora.",
+    "error": "Algo deu errado. Tentar novamente?",
+    "title": "Quer mais TechByP em sua vida?",
+    "description": "Junte-se ao nosso clube. É como um boletim informativo, mas com 47% mais personalidade (e menos piadas de mau gosto).",
+    "placeholder": "Endereço de e-mail",
+    "button": "Cadastre-se em",
+    "note": "Enviaremos um e-mail para você ocasionalmente. Provavelmente não às 3 da manhã, mas quem sabe?"
+  },
+  "header": {
+    "logoAlt": "Logotipo TechByP",
+    "logoLabel": "Ir para casa",
+    "navigation": {
+      "products": "PRODUTOS",
+      "applications": "APLICAÇÕES",
+      "about": "SOBRE",
+      "insights": "PERCEPÇÕES",
+      "contact": "CONTATO",
+      "downloads": "Transferências"
+    },
+    "mobileMenu": {
+      "open": "Abrir menu",
+      "close": "Fechar menu"
+    },
+    "categories": {
+      "all": "TODOS OS PRODUTOS",
+      "smartsystems": "SISTEMAS INTELIGENTES",
+      "accessory": "COMPLEMENTOS",
+      "manual": "FERRAMENTAS MANUAIS",
+      "Bespoke Machinery": "MÁQUINAS SOB MEDIDA"
+    },
+    "languageSwitcher": {
+      "en": "",
+      "de": "",
+      "es": "",
+      "fr": "",
+      "ro": "",
+      "pt": "",
+      "ru": "",
+      "switchToEnglish": "Mudar para inglês",
+      "switchToGerman": "Mudar para alemão",
+      "switchToSpanish": "Mudar para espanhol",
+      "switchToFrench": "Mudar para francês",
+      "switchToRomanian": "Mudar para romeno",
+      "switchToPortuguese": "Mudar para português",
+      "switchToRussian": "Mudar para russo",
+      "ariaLabel": "Alterar idioma"
+    }
+  },
+  "hero": {
+    "loading": "Carregando conteúdo heróico...",
+    "newsTypes": {
+      "product": "Atualização do produto",
+      "event": "Evento",
+      "announcement": "Anúncio",
+      "blog": "Blog"
+    },
+    "home": {
+      "tagline": "Fabricado na Alemanha desde 1989",
+      "titleLine1": "Confiável,",
+      "titleLine2": "para toda a vida.",
+      "description": "O que fazemos é bastante simples, na verdade. Construímos as coisas de maneira adequada – cuidadosamente projetadas, cuidadosamente projetadas e adaptadas para atender às suas necessidades. E então, nós os tornamos ainda melhores, graças ao que você nos conta. É qualidade, não apenas desde o início, mas durante todo o processo.",
+      "ctaProducts": "Explore os produtos",
+      "ctaDemo": "Assista à demonstração"
+    }
+  },
+  "productShowcase": {
+    "title": "Nossos produtos",
+    "videoTitle": "Veja nossos produtos em ação",
+    "categoryDescriptions": {
+      "bestseller": "Essas são as máquinas que praticamente fazem fila para serem compradas - sólidas, confiáveis ​​e populares por um bom motivo.",
+      "all": "Tudo o que temos, desde o grande e corpulento até o pequeno e satisfatoriamente inteligente.",
+      "smartsystems": "O lado inteligente da amostragem de solo – automática, precisa e extremamente bem-educada.",
+      "accessory": "As partes que mantêm tudo unido – realizadores silenciosos do mundo do suporte.",
+      "manual": "Ferramentas confiáveis ​​e táteis em que você pode confiar - satisfatoriamente práticas e feitas para durar."
+    },
+    "customEquipment": {
+      "title": "Precisa de equipamento personalizado?",
+      "description": "Nossa equipe de engenharia pode projetar e fabricar equipamentos especializados adaptados às suas necessidades específicas.",
+      "viewCatalog": "Ver catálogo completo",
+      "contactEngineering": "Entre em contato com a engenharia",
+      "quickConfigure": "Configuração rápida de todos os produtos"
+    }
+  },
+  "categories": {
+    "all": "TODOS OS PRODUTOS",
+    "manual": "FERRAMENTAS MANUAIS",
+    "smartsystems": "SISTEMAS INTELIGENTES",
+    "accessory": "COMPLEMENTOS",
+    "bespoke machinery": "SOB MEDIDA",
+    "Bespoke Machinery": "SOB MEDIDA"
+  },
+  "productCard": {
+    "readMore": "Leia mais",
+    "showLess": "Mostrar menos",
+    "configure": "Configurar",
+    "quickConfigure": "Configuração rápida",
+    "quote": "Obter cotação",
+    "requestQuote": "Solicitar cotação",
+    "toggleMenu": "Alternar menu de categoria"
+  },
+  "sortDropdown": {
+    "defaultLabel": "Classificar por...",
+    "ariaLabels": {
+      "toggleSort": "Alternar ordem de classificação",
+      "clearSort": "Limpar classificação"
+    },
+    "options": {
+      "price": {
+        "main": "Preço",
+        "description": "não quebre o banco"
+      },
+      "electric": {
+        "main": "Elétrico",
+        "description": "zumbindo com poder"
+      },
+      "hydraulic": {
+        "main": "Hidráulico",
+        "description": "músculo líquido"
+      },
+      "depth": {
+        "main": "Profundidade",
+        "description": "quão profundo estamos indo"
+      },
+      "magazines": {
+        "main": "Revistas",
+        "description": "quanto mais, melhor"
+      }
+    }
+  },
+  "application": {
+    "heading": "Construído para cada missão de solo",
+    "subheading": "Quer se trate de pesquisa agrícola ou construção pesada, nossas ferramentas funcionam com o tipo de precisão que faria até o mais rigoroso engenheiro alemão concordar aprovação.",
+    "applications": {
+      "agriculture": {
+        "title": "Agricultura",
+        "description": "Análise da saúde do solo, mapeamento de nutrientes e otimização do rendimento das culturas para operações agrícolas modernas.",
+        "features": [
+          "Teste de pH do solo",
+          "Análise de nutrientes",
+          "Avaliação de compactação",
+          "Planejamento de irrigação"
+        ]
+      },
+      "geotechnicalSurvey": {
+        "title": "Levantamento geotécnico",
+        "description": "Análise de fundações, estabilidade de taludes e avaliação de canteiros de obras para projetos de engenharia.",
+        "features": [
+          "Capacidade de suporte",
+          "Análise de assentamento",
+          "Estabilidade de taludes",
+          "Projeto de fundação"
+        ]
+      },
+      "environmentalResearch": {
+        "title": "Pesquisa ambiental",
+        "description": "Detecção de contaminação, monitoramento ambiental e avaliação de impacto ecológico.",
+        "features": [
+          "Detecção de contaminação",
+          "Monitoramento de águas subterrâneas",
+          "Impacto ambiental",
+          "Planejamento de remediação"
+        ]
+      },
+      "construction": {
+        "title": "Construção",
+        "description": "Preparação do local, testes de materiais e controle de qualidade para projetos de construção e infraestrutura.",
+        "features": [
+          "Preparação do local",
+          "Teste de materiais",
+          "Controle de qualidade",
+          "Avaliação de segurança"
+        ]
+      }
+    },
+    "customSolutionPrompt": "Precisa de uma solução personalizada?",
+    "contactButton": "Entre em contato com nossos engenheiros"
+  },
+  "partnersHeader": {
+    "title": "Aprovado pelos principais parceiros de pesquisa e indústria",
+    "description": "Universidades e institutos agrícolas alemães confiam na Bodenprobetechnik Peters para tecnologia de amostragem de solo de precisão."
+  },
+  "partners": [
+    "Universidade Técnica de Munique",
+    "Universidade de Göttingen",
+    "Instituto Julius Kühn",
+    "Universidade Humboldt de Berlim",
+    "Instituto Estadual de Agricultura da Baviera",
+    "Universidade RWTH de Aachen"
+  ],
+  "testimonialsHeader": {
+    "title": "O que nossos clientes dizem",
+    "description": "Profissionais da agricultura, geotecnia e consultoria ambiental confiam nos equipamentos da TechbyP."
+  },
+  "testimonials": [
+    {
+      "quote": "Os amostradores de solo da Bodenprobetechnik Peters oferecem precisão e durabilidade incomparáveis ​​em condições de campo. Suas máquinas são vitais para nossa pesquisa sobre a saúde do solo.",
+      "author": "Prof. Dr. Markus Schneider",
+      "position": "Chefe de Ciência do Solo, Universidade de Göttingen",
+      "rating": 5
+    },
+    {
+      "quote": "Contamos com a Bodenprobetechnik Peters para obter equipamentos robustos que funcionam de forma confiável em projetos geotécnicos exigentes em toda a Alemanha.",
+      "author": "Anna Meier",
+      "position": "Engenheira de Projeto Sênior, Geotechnik GmbH",
+      "rating": 5
+    },
+    {
+      "quote": "A excepcional engenharia alemã combinada com um atendimento atencioso ao cliente fazem da Bodenprobetechnik Peters nosso parceiro preferido para tecnologia de amostragem de solo.",
+      "author": "Dr. Thomas Wagner",
+      "position": "Consultor Agrícola",
+      "rating": 5
+    }
+  ],
+  "certifications": [
+    {
+      "abbr": "CE",
+      "text": "Certificado CE",
+      "bgClass": "bg-vermelho-600"
+    },
+    {
+      "abbr": "DE",
+      "text": "Fabricado na Alemanha",
+      "bgClass": "bg-cinza-800"
+    }
+  ],
+  "certifications.title": "Certificações de Qualidade",
+  "certificationsTitle": "Certificações de Qualidade",
+  "about": {
+    "madeInGermany": "Fabricado na Alemanha",
+    "engineeringExcellence": "Excelência em Engenharia.",
+    "introText": "Cada máquina que construímos é moldada pelo feedback real das pessoas que as utilizam. Se algo puder ser mais forte, mais inteligente ou apenas um pouco mais fácil de manusear, estamos nisso. É assim que trabalhamos: práticos, obcecados por detalhes e sempre ouvindo.",
+    "alwaysImproving": "SEMPRE MELHORANDO",
+    "ourMissionTitle": "Nossa Missão",
+    "ourMissionText": "Fornecer ferramentas de amostragem de solo que conquistem a confiança de especialistas agrícolas e pesquisadores – desde campos ondulados até jalecos brancos. Criado com precisão alemã e apoiado por equipes de suporte que realmente atendem o telefone, nos dedicamos a tornar seu trabalho mais fácil, mais preciso e um pouco menos complicado.",
+    "ourJourneyTitle": "Nossa jornada",
+    "milestones": [
+      {
+        "year": "1989",
+        "event": "Nasce a Bodenprobetechnik Nietfeld - fundada por Walter Nietfeld e pronta para se aprofundar."
+      },
+      {
+        "year": "2021",
+        "event": "Walter Peters assume o comando e renomeia a empresa como Bodenprobetechnik Peters GmbH. A mesma missão, novo nome."
+      },
+      {
+        "year": "2022",
+        "event": "É lançado o TechbyP — nossos clientes internacionais já nos conheciam, agora oficializamos."
+      },
+      {
+        "year": "2023",
+        "event": "Uma fábrica novinha em folha surge em Quakenbrück, Alemanha. A precisão agora tem um novo lar."
+      },
+      {
+        "year": "2025",
+        "event": "Nossa rede de distribuição global passa por uma grande atualização. Mais países, mais amostras, mais amor ao solo."
+      }
+    ],
+    "stats": [
+      {
+        "icon": "Globo",
+        "value": "25+",
+        "label": "Países atendidos"
+      },
+      {
+        "icon": "Usuários",
+        "value": "50+",
+        "label": "Parceiros de pesquisa"
+      },
+      {
+        "icon": "Chave inglesa",
+        "value": "35+",
+        "label": "Anos de experiência"
+      },
+      {
+        "icon": "Prêmio",
+        "value": "ISO",
+        "label": "Qualidade Certificada"
+      }
+    ]
+  },
+  "foot": {
+    "alt": {
+      "logo": "TechByP Logo"
+    },
+    "footer": {
+      "tagline": "Equipamento de engenharia alemã que vai fundo – literalmente. Para profissionais do solo que conhecem sua sujeira.",
+      "contact": {
+        "location": "Quakenbrück, Alemanha",
+        "phone": "+49 (0) 54 31 93 644 0",
+        "email": "info@techbyp.com"
+      },
+      "rights": "© {{ano}} TechByP – Bodenprobetechnik Peters. Todos os direitos reservados."
+    },
+    "newsletter": {
+      "title": "Junte-se ao clube",
+      "description": "Junte-se ao nosso clube. É como um boletim informativo, mas com 47% mais personalidade (e menos piadas de mau gosto).",
+      "placeholder": "seu@email.com",
+      "subscribe": "Inscrever-se",
+      "subscribing": "Inscrevendo-se...",
+      "success": "Saúde! Você está no clube TechByP agora.",
+      "note": "Enviaremos um e-mail para você ocasionalmente. Provavelmente não às 3 da manhã, mas quem sabe?",
+      "errorInvalidEmail": "Esse não parece ser um endereço de e-mail adequado.",
+      "errorSubmit": "Algo deu errado. Tentar novamente?"
+    },
+    "errors": {
+      "invalidEmail": "Esse não parece ser um endereço de e-mail adequado.",
+      "generic": "Algo deu errado. Tentar novamente?"
+    },
+    "dirtTools": {
+      "title": "Ferramentas de sujeira",
+      "manualProbes": "Sondas manuais",
+      "smartSystems": "Sistemas inteligentes",
+      "accessories": "Acessórios",
+      "customSolutions": "Soluções personalizadas"
+    },
+    "support": {
+      "title": "Suporte",
+      "downloadCenter": "Centro de download",
+      "userManuals": "Manuais do usuário",
+      "techSupport": "Suporte técnico",
+      "training": "Treinamento e certificação"
+    },
+    "company": {
+      "title": "Empresa",
+      "aboutUs": "Sobre nós",
+      "news": "Notícias e atualizações",
+      "contact": "Contato",
+      "privacyPolicy": "Política de Privacidade",
+      "terms": "Termos de Serviço",
+      "imprint": "Impressão"
+    },
+    "social": {
+      "facebook": "Facebook",
+      "linkedin": "LinkedIn",
+      "youtube": "YouTube",
+      "instagram": "Instagram"
+    }
+  },
+  "product": {
+    "notFound": "Produto não encontrado",
+    "meta": {
+      "title": "{{marca}} | {{product}} - {{category}}",
+      "description": "{{nickname}}: {{herodescription}} Os recursos incluem {{features}}. Perfeito para {{aplicativos}}."
+    },
+    "whatMakesItGreat": "O que o torna excelente",
+    "goodsCurrentlyGracing": "Produtos atualmente enfeitando esta prateleira com sua presença",
+    "articleNo": "Artigo nº",
+    "description": "Descrição",
+    "highlights": "Destaques",
+    "itShinesHere": "Ele brilha aqui",
+    "satisfyingBit": "Esta parte é bastante satisfatória, na verdade",
+    "upClosePersonal": "De perto e pessoal",
+    "specsSmarts": "Especificações e inteligência",
+    "otherCategory": "Outro {{categoria}}",
+    "provenInField": "Comprovado em campo",
+    "engineeredForPros": "Projetado para profissionais",
+    "orderNow": "Faça seu pedido agora",
+    "quickConfigure": "Configuração rápida",
+    "builtTough": "Construído resistente, desenvolvido por um gênio alemão",
+    "worryFree": "1 ano de grandiosidade sem preocupações",
+    "helpFromHumans": "Ajuda de humanos que conhecem suas coisas",
+    "needHelp": "Precisa de ajuda?",
+    "requestConsultation": "Solicitar consulta técnica",
+    "downloadBrochure": "Baixar folheto do produto",
+    "contactSales": "Contate a equipe de vendas",
+    "order": "Pedido",
+    "configure": "Configurar"
+  },
+  "commons": {
+    "close": "Fechar",
+    "previous": "Anterior",
+    "next": "Próximo",
+    "imageCounter": "{{atual}} de {{total}}",
+    "thumbnail": "Miniatura {{número}}"
+  },
+  "warning": {
+    "sixteenExpress": {
+      "noMountingNeeded": "Caramba! O Sixteen Express não precisa de montagem - é perfeito como está!",
+      "hasOwnMounting": "Boas notícias! O Sixteen Express vem com sua própria solução de montagem - é chamado de 'ser brilhante por design'",
+      "noPowerpacksNeeded": "O Sixteen Express é como um bom vinho - não precisa de nenhum pacote de energia extra, já está cheio de buquê",
+      "selfAcknowledging": "Reconhecendo o quê? O Sixteen Express é auto-reconhecido!",
+      "alreadyPerfect1": "Eu digo, o Sixteen Express já é perfeito - não há necessidade de mexer nas configurações!",
+      "alreadyPerfect2": "Por que você gostaria de mudar alguma coisa? É o Expresso dos Dezesseis!",
+      "alreadyPerfect3": "Mexer com perfeição? Que nada Clarkson da sua parte.",
+      "alreadyPerfect4": "O Sixteen Express não precisa de configuração - precisa de apreciação."
+    }
+  },
+  "customerInfo": {
+    "title": "Informações do cliente",
+    "description": "Insira seus dados para concluir a configuração."
+  },
+  "form": {
+    "fullName": "Nome completo",
+    "fullNamePlaceholder": "João Silva",
+    "email": "Email",
+    "emailPlaceholder": "seu@email.com",
+    "additionalNotes": "Notas adicionais (opcional)",
+    "additionalNotesPlaceholder": "Algum requisito especial?"
+  },
+  "summary": {
+    "title": "Sua Seleção",
+    "total": "Total",
+    "pricingNoticeTitle": "Aviso de Preço:",
+    "pricingNoticeText": "Todos os preços estão em Euros (€) e não incluem IVA. Os preços são meramente indicativos e podem variar dependendo da configuração final, opções selecionadas e disponibilidade. O preço final será confirmado no seu orçamento personalizado."
+  },
+  "buttonsConfigurator": {
+    "back": "Voltar",
+    "completeOrder": "Concluir pedido",
+    "processing": "Processando..."
+  },
+  "errorsConfigurator": {
+    "botDetected": "Bot detectado.",
+    "completeRecaptcha": "Preencha o reCAPTCHA.",
+    "submitFailed": "Falha ao enviar sua configuração. Por favor, tente novamente."
+  },
+  "submission": {
+    "successTitle": "Configuração enviada!",
+    "successMessage": "Recebemos sua solicitação e entraremos em contato em breve.",
+    "startNewConfig": "Iniciar nova configuração",
+    "backToHome": "Voltar para casa"
+  },
+  "productNames": {
+    "trailerMount": "Suporte para trailer",
+    "vehicleMount": "Suporte para veículo",
+    "powerPack": "Pacote de energia"
+  },
+  "unknownProduct": "Produto desconhecido",
+  "notSelected": "Não selecionado",
+  "notApplicable": "N/A",
+  "noExtrasSelected": "Nenhum extra selecionado",
+  "extrasStep": {
+    "title": "Selecione extras opcionais",
+    "description": "Aprimore seu {{productName}} com estes acessórios opcionais",
+    "unnamedProduct": "Produto sem nome",
+    "noDescription": "Nenhuma descrição disponível",
+    "priceNotAvailable": "Preço não disponível"
+  },
+  "buttons": {
+    "back": "Voltar",
+    "continue": "Continuar"
+  },
+  "error": {
+    "somethingWentWrong": "Algo deu errado",
+    "tryAgain": "Tente novamente"
+  },
+  "mountingMethod": {
+    "title": "Escolha sua aventura de montagem",
+    "subtitle": "Então, como você planeja fazer seu {{productName}} dançar com a sujeira? Escolha sabiamente.",
+    "trailer": {
+      "alt": "Suporte para trailer",
+      "title": "Trailers especiais",
+      "subtitle": "Transportadores de campo",
+      "description": "O sussurrador de solo nômade - perfeito para passear pelos campos sem se comprometer com um único passeio.",
+      "price": "A partir de 3600 €"
+    },
+    "vehicle": {
+      "alt": "Suporte para veículo",
+      "title": "Suporte para veículo",
+      "subtitle": "Kit de montagem",
+      "description": "O detetive de solo urbano - transforme o seu veículo diário num detetive de sujidade dedicado.",
+      "price": "A partir de 1 665 €"
+    }
+  },
+  "powerOptions": {
+    "title": "Opções de potência",
+    "trailerDescription": "Escolha o conjunto de potência adequado para montagem em reboque.",
+    "vehicleDescription": "Escolha o conjunto de potência adequado para montagem em veículo."
+  },
+  "powerpackWarning": {
+    "title": "Nenhum Power Pack selecionado",
+    "trailerMessage": "Você não selecionou um Power Pack. Os reboques requerem uma fonte de alimentação para funcionar.",
+    "vehicleMessage": "Você não selecionou um pacote de energia. Os veículos normalmente requerem uma fonte de alimentação para funcionar.",
+    "acknowledge": "Entendo os riscos e desejo prosseguir sem fonte de alimentação.",
+    "goBack": "Voltar",
+    "proceed": "Continuar"
+  },
+  "common": {
+    "continue": "Continuar"
+  },
+  "products": {
+    "lay-down-frame": {
+      "name": "Estrutura de Deposição",
+      "nickname": "Estrutura",
+      "price": "€1,200",
+      "description": "Uma estrutura robusta para colocar seu equipamento."
+    },
+    "three-point-hitch": {
+      "name": "Engate de três pontos",
+      "nickname": "Engate",
+      "price": "€1,450",
+      "description": "Engate padrão de três pontos para fácil fixação."
+    },
+    "full-conversion": {
+      "name": "Conversão completa",
+      "nickname": "Conversão",
+      "price": "€2,300",
+      "description": "Kit de conversão completo para máxima flexibilidade."
+    },
+    "specs": {
+      "depth": "Profundidade",
+      "weight": "Peso",
+      "horizons": "Horizontes"
+    }
+  },
+  "productSelection": {
+    "title": "Selecione seu produto",
+    "description": "Dê uma olhada em nossos sistemas inteligentes inteligentes - escolha aquele que torna seu trabalho menos complicado.",
+    "unnamedProduct": "Produto sem nome",
+    "product": "Produto",
+    "priceUnavailable": "Preço não disponível",
+    "bestsellerShort": "MELHOR",
+    "bestseller": "BEST-SELLER",
+    "smartTag": "INTELIGENTE",
+    "smartSystemsTag": "SISTEMAS INTELIGENTES",
+    "noDescription": "Nenhuma descrição disponível"
+  },
+  "vehicleMounting": {
+    "title": "Tipo de montagem em veículo",
+    "description": "Certo, então como exatamente você deseja anexar seu {{productName}}? Pode parecer um pouco chato, mas acredite em mim: se errar, o resto não terá chance.",
+    "mountingLabel": "MONTAGEM"
+  },
+  "progress": {
+    "included": "✅ Incluído",
+    "selected": "✅ Selecionado:",
+    "notSelected": "🔲 Não selecionado",
+    "gear": "⚙️",
+    "car": "🚗",
+    "powerPackSelected": "🔋 Power Pack selecionado",
+    "powerPackRequired": "🔋 Obrigatório",
+    "powerPackOptional": "🔋 Opcional",
+    "extrasSelected": "🎁 {{count}} selecionado",
+    "noExtras": "📦 Sem extras",
+    "done": "Concluído",
+    "detailsProvided": "Detalhes fornecidos",
+    "notCompleted": "🔲 Não concluído"
+  },
+  "configurator": {
+    "productToast": {
+      "close": "Fechar",
+      "desc1": "Certo. O que você está vendo não é apenas um botão que leva você a algum lugar. Esta é a entrada para o configurador – um mecanismo sofisticado projetado para ajudá-lo a montar uma máquina que ganha a vida abrindo caminho.",
+      "desc2": {
+        "part1": "Escolha o seu",
+        "part2": ", decida se ele deve ser arrastado atrás de um veículo ou parafusado em um, pondere sobre a eterna questão da energia externa e enfeite-o com extras opcionais que você quase certamente insistirá que são essenciais."
+      },
+      "desc3": "Em essência, é plug-and-play que combina lama e diesel. Pressione o botão se estiver pronto para iniciar esta nobre busca.",
+      "configure": "Configure o {{productName}}",
+      "machine": "máquina"
+    },
+    "steps": {
+      "product": "Produto",
+      "mounting": "Montagem",
+      "vehicleType": "Tipo de veículo",
+      "power": "Poder",
+      "extras": "Extras",
+      "finish": "Terminar"
+    }
+  },
+  "blog": {
+    "categories": {
+      "all": "Todos"
+    },
+    "sections": {
+      "featuredStory": "História em destaque",
+      "trendingNow": "Tendências agora",
+      "latestArticles": "Últimos artigos"
+    },
+    "buttons": {
+      "digDeeper": "Vá mais fundo",
+      "continueReading": "Continuar lendo",
+      "readMore": "Leia mais",
+      "showLess": "Mostrar menos",
+      "resetFilters": "Redefinir filtros"
+    },
+    "empty": {
+      "noArticles": "Nenhum artigo encontrado",
+      "tryAdjusting": "Tente ajustar sua pesquisa ou filtro para encontrar o que procura.",
+      "emptyResults": "Nenhum resultado encontrado"
+    },
+    "emptyResults": "Nenhum resultado encontrado",
+    "meta": {
+      "title": "Informações e notícias | TECNOLOGIA",
+      "description": "Explore os insights mais recentes, atualizações de produtos e engenharia de bastidores da TECHBYP — onde a amostragem de solo encontra a precisão alemã.",
+      "ogTitle": "Blog TECHBYP – Informações sobre amostragem de solo e muito mais",
+      "ogDescription": "Aprofundamentos técnicos, lançamentos de produtos e histórias de campo - tudo da equipe da TECHBYP."
+    },
+    "headings": {
+      "insightsHub": "Central de insights",
+      "tagline": "Conversa inteligente de pessoas que ganham a vida fabricando máquinas que fazem buracos no chão."
+    },
+    "placeholders": {
+      "search": "Pesquisar artigos..."
+    },
+    "labels": {
+      "featured": "Apresentou",
+      "trending": "Tendências"
+    },
+    "buttons1": {
+      "readMore": "Leia mais",
+      "showLess": "Mostrar menos",
+      "resetFilters": "Redefinir filtros"
+    }
+  },
+  "meta": {
+    "title": "Entre em contato com a TechByP | Especialistas em amostragem de solo",
+    "description": "Entre em contato com a TechByP – seu parceiro confiável para equipamentos de amostragem de solo. Entre em contato para obter dúvidas, suporte ou para se tornar um distribuidor.",
+    "ogTitle": "Entre em contato com a TechByP | Especialistas em amostragem de solo",
+    "ogDescription": "Contate-nos para obter mais informações sobre nossas máquinas de amostragem de solo ambiental e geotécnica, suporte técnico ou oportunidades de parceria.",
+    "ogUrl": "https://www.techbyp.com/contact",
+    "ogImage": "https://www.techbyp.com/assets/og-image.jpg",
+    "twitterTitle": "Contate a TechByP | Especialistas em amostragem de solo",
+    "twitterDescription": "Tem dúvidas sobre nossos equipamentos ou serviços? Entre em contato com as equipes de suporte e vendas da TechByP hoje mesmo."
+  },
+  "contact_page": {
+    "title": "Entre em contato com a TechByP",
+    "description": "Por mais de 30 anos, temos sido o parceiro confiável dos profissionais de amostragem de solo - porque cavar na terra merece equipamentos de primeira linha. Tem dúvidas sobre nossos dispositivos inteligentes para aventuras ambientais ou geotécnicas? Nossa equipe está pronta e esperando para conversar sobre negócios, resolver quebra-cabeças ou apenas conversar sobre como transformar sua próxima amostra de solo em uma obra-prima.",
+    "address": {
+      "title": "Sede",
+      "company": "Bodenprobetechnik Peters GmbH",
+      "street": "Am Fliegerhorst 11",
+      "city": "D-49610 Quakenbrück, Alemanha",
+      "phone": "+49 (0) 54 31 93 644 0",
+      "email": "info@bodenprobetechnik.de"
+    },
+    "hours": {
+      "title": "Horário comercial",
+      "weekdays": "Segunda a quinta",
+      "weekdaysTime": "7h30 - 16h30",
+      "friday": "Sexta-feira",
+      "fridayTime": "7h30 - 14h30",
+      "closed": "Fechado nos finais de semana e feriados alemães"
+    },
+    "phone": {
+      "title": "Suporte por telefone",
+      "description": "Para assistência imediata, ligue para nossa equipe de suporte durante o horário comercial.",
+      "number": "+49 (0) 54 31 93 644 0",
+      "supportExt": "Suporte Técnico: Ramal. 123",
+      "salesExt": "Vendas: Ext. 124"
+    },
+    "email": {
+      "title": "Suporte por e-mail",
+      "description": "Envie-nos um e-mail e responderemos dentro de 24 horas em dias úteis.",
+      "main": "info@bodenprobetechnik.de",
+      "technical": "Técnico",
+      "sales": "Vendas"
+    },
+    "formular": {
+      "serialNumber": "Número de série",
+      "customerNumber": "Número do cliente",
+      "additionalFieldsNote": "Para suporte técnico ou solicitações de peças de reposição, forneça:",
+      "placeholders": {
+        "serialNumber": "Ele mora na placa preta.",
+        "customerNumber": "A fatura contém a resposta.",
+        "name": "A menos que você tenha decidido que o anonimato está na moda",
+        "company": "Ou algo que você inventou",
+        "email": "Idealmente, não da era dial-up",
+        "phone": "Embora iremos ignorá-lo e enviar e-mail em vez disso",
+        "message": "Detalhes suficientes para que não tenhamos que adivinhar descontroladamente"
+      },
+      "title": "Contato Rápido",
+      "name": "Nome Completo",
+      "company": "Empresa",
+      "email": "E-mail",
+      "phone": "Telefone",
+      "subject": "Assunto",
+      "message": "Mensagem",
+      "subjects": {
+        "general": "Consulta Geral",
+        "product": "Informações do produto",
+        "support": "Suporte Técnico",
+        "service": "Solicitação de serviço",
+        "distributor": "Consulta ao Distribuidor",
+        "parts": "Peças de reposição",
+        "other": "Outro"
+      },
+      "consent": "Concordo com o tratamento dos meus dados de acordo com as",
+      "privacyPolicy": "política de Privacidade",
+      "submit": "Enviar mensagem",
+      "sending": "Enviando...",
+      "anotherMessage": "Envie outra mensagem",
+      "success": "Mensagem enviada com sucesso!",
+      "successTitle": "Obrigado pela sua mensagem!",
+      "successMessage": "Recebemos sua consulta e entraremos em contato com você dentro de 24 horas durante os dias úteis.",
+      "errors": {
+        "serialNumberRequired": "O número de série é necessário para suporte técnico ou peças de reposição",
+        "customerNumberRequired": "O número do cliente é necessário para suporte técnico ou peças de reposição",
+        "bot": "Bot detectado.",
+        "recaptcha": "Por favor, preencha o reCAPTCHA.",
+        "consent": "Por favor, concorde com a nossa política de processamento de dados.",
+        "failed": "Falha ao enviar mensagem. Por favor, tente novamente."
+      }
+    },
+    "map": {
+      "title": "Localização TechByP",
+      "visit": "Visite-nos",
+      "description": "Nossa sede em Quakenbrück, Alemanha, é onde projetamos e fabricamos nossos equipamentos de amostragem de solo.",
+      "directions": "Obter direções"
+    },
+    "faq": {
+      "title": "Perguntas frequentes",
+      "shipping": {
+        "question": "Quais são suas opções de envio?",
+        "answer": "Enviamos para todo o mundo via DHL, DPD e outras transportadoras confiáveis. O envio padrão na Alemanha leva de 2 a 3 dias úteis. Os tempos de envio internacional variam de acordo com o destino. Opções de envio rápido estão disponíveis."
+      },
+      "training": {
+        "question": "Você oferece treinamento para seu equipamento?",
+        "answer": "Sim, oferecemos programas de treinamento abrangentes para todos os nossos equipamentos de amostragem de solo. O treinamento pode ser realizado em seu local ou em nossas instalações em Quakenbrück. Entre em contato com nossa equipe de vendas para agendar sessões de treinamento."
+      },
+      "distributor": {
+        "question": "Como posso me tornar um distribuidor?",
+        "answer": "Estamos sempre interessados ​​em parcerias com distribuidores qualificados em todo o mundo. Entre em contato com nosso departamento de vendas com detalhes sobre sua empresa e experiência de mercado para iniciar o processo de inscrição."
+      }
+    }
+  },
+  "orderNow": {
+    "title": "Faça a mágica acontecer.",
+    "placeholderName": "Seu nome, por favor.",
+    "placeholderEmail": "Aquela coisa com um @.",
+    "placeholderMessage": "Use palavras. É tudo muito emocionante.",
+    "close": "Fechar",
+    "submit": "Bum. Feito.",
+    "success": "Mensagem enviada com sucesso!",
+    "fail": "Falha ao enviar mensagem. Por favor, tente novamente.",
+    "botDetected": "Bot detectado.",
+    "completeRecaptcha": "Preencha o reCAPTCHA.",
+    "product": "Produto"
+  },
+  "downloads": {
+    "meta": {
+      "title": "Centro de Recursos | Baixe manuais, folhetos e especificações",
+      "description": "Navegue e baixe manuais, folhetos, especificações técnicas e mais recursos para nossos produtos."
+    },
+    "title": "Centro de recursos",
+    "subtitle": "Baixe manuais, folhetos, especificações técnicas e muito mais",
+    "loading": "Carregando...",
+    "error": {
+      "title": "Erro",
+      "fetchFailed": "Falha ao buscar metadados"
+    },
+    "categories": {
+      "all": "Todos os recursos",
+      "manuals": "Manuais",
+      "brochures": "Brochuras",
+      "techspecs": "Especificações técnicas",
+      "other": "Outros"
+    },
+    "search": {
+      "placeholder": "Pesquisar arquivos..."
+    },
+    "sort": {
+      "label": "Classificar por",
+      "name": "Nome",
+      "date": "Data",
+      "size": "Tamanho"
+    },
+    "download": "Baixar",
+    "close": "Fechar",
+    "empty": {
+      "title": "Nenhum arquivo encontrado",
+      "search": "Tente um termo de pesquisa diferente",
+      "category": "Nenhum arquivo disponível nesta categoria"
+    },
+    "videoNotSupported": "Seu navegador não suporta vídeo HTML5."
+  },
+  "adminDashboard": {
+    "greeting": "Bem vindo de volta!",
+    "user": {
+      "role": {
+        "admin": "Administrador",
+        "editor": "Editor",
+        "viewer": "Visualizador"
+      }
+    },
+    "tabs": {
+      "dashboard": "Painel",
+      "blog": "Postagens de blog",
+      "hero": "Seção Hero",
+      "announcements": "Anúncios"
+    },
+    "stats": {
+      "articles": "Artigos",
+      "announcements": "Anúncios",
+      "comments": "Comentários recentes",
+      "members": "Membros do clube",
+      "activity": "Atividade recente",
+      "fetchError": "Falha ao carregar estatísticas"
+    },
+    "comments": {
+      "count": "comentários",
+      "noComments": "Nenhum comentário ainda",
+      "noContent": "[Sem conteúdo]",
+      "name": "Nome",
+      "company": "Empresa",
+      "save": "Salvar",
+      "cancel": "Cancelar",
+      "edit": "Editar",
+      "delete": "Excluir",
+      "edited": "Editado",
+      "updateSuccess": "Comentário atualizado com sucesso",
+      "updateError": "Falha ao atualizar o comentário",
+      "deleteSuccess": "Comentário excluído com sucesso",
+      "deleteError": "Falha ao excluir comentário"
+    },
+    "members": {
+      "noMembers": "Nenhum membro ainda",
+      "unknownMember": "Membro desconhecido",
+      "joined": "Entrou em",
+      "delete": "Excluir membro"
+    },
+    "activity": {
+      "noActivity": "Nenhuma atividade recente",
+      "refresh": "Atualizar",
+      "fetchError": "Falha ao carregar atividade",
+      "events": {
+        "comment_added": "adicionou um comentário",
+        "comment_edited": "editou um comentário",
+        "comment_deleted": "excluiu um comentário",
+        "content_created": "conteúdo criado",
+        "content_updated": "conteúdo atualizado"
+      },
+      "metadata": {
+        "user": "Usuário",
+        "company": "Empresa",
+        "rating": "Classificação",
+        "currentMessage": "Mensagem atual",
+        "previousMessage": "Mensagem anterior",
+        "type": "Tipo",
+        "title": "Título",
+        "changes": "Alterações",
+        "email": "Email do membro do clube",
+        "deleted by": "Excluído por"
+      }
+    },
+    "common": {
+      "lastUpdated": "Última atualização",
+      "thisWeek": "esta semana",
+      "today": "hoje",
+      "justNow": "agora há pouco",
+      "minutesAgo": "{{count}} minuto(s) atrás",
+      "hoursAgo": "{{count}} hora(s) atrás",
+      "daysAgo": "{{count}} dia(s) atrás",
+      "openMenu": "Abrir menu",
+      "closeMenu": "Fechar menu",
+      "toggleLanguage": "Alternar idioma",
+      "switchToLight": "Mudar para o modo claro",
+      "switchToDark": "Mudar para o modo escuro",
+      "logout": "Sair"
+    },
+    "confirmation": {
+      "deleteComment": {
+        "title": "Excluir comentário",
+        "message": "Você está certeza que deseja excluir este comentário? Esta ação não pode ser desfeita."
+      }
+    },
+    "permissionsError": "Erro ao verificar permissões"
+  },
+  "mp1": {
+    "nickname": "Recuperador de núcleo completo",
+    "specs": [
+      "Profundidade: 0–90 cm, opcional 120 cm (contínuo)",
+      "Semiautomático",
+      "Visibilidade total do núcleo",
+      "Ciclo de amostragem de 16 segundos/núcleo"
+    ],
+    "description": "Núcleos de solo intactos de 0–90 cm, precisão científica, teimosia alemã.",
+    "herodescription": "Não é chamativo. Não grita. Não faz Wi-Fi. Mas o que ele <strong>faz</strong> – melhor do que quase qualquer outra coisa – é fornecer um núcleo de solo <strong>perfeito e ininterrupto</strong>, da superfície até <strong>90 centímetros abaixo</strong>. Sim, toda a história, da crosta ao subsolo, de uma só vez. É como uma <strong>ressonância magnética da Terra</strong>.",
+    "detailedDescription": "<p className='mt-4'><strong>As universidades adoram isso</strong>. E não apenas porque se parece vagamente com um lançador de foguetes. Ele oferece <strong>visibilidade total do perfil do solo</strong> – sem mistura, sem suposições sobre camadas, apenas uma fatia vertical e limpa das entranhas da Terra. <strong>Perfeito para amostragem N-min</strong>, sim, mas também para aqueles que gostam de realmente ver o que está acontecendo lá embaixo.</p><p className='mt-4'>Agora, ele é <strong>alimentado hidraulicamente, semiautomático e muito inteligente</strong>. Ele cavará com polidez milimétrica e, se atingir algo hostil, como uma pedra ou uma antiga moeda romana, simplesmente <strong>parará</strong>. Sem drama. Sem pedaços quebrados.</p><p className='mt-4'>E o melhor de tudo: é <strong>engenharia alemã destilada ao essencial</strong>. Limpo, eficiente, totalmente lógico. Como <strong>Beethoven… se ele fosse um amostrador de solo</strong>.</p>",
+    "price": "A partir de € 14.200",
+    "features": [
+      "Núcleo de solo intacto de comprimento total (0–90 cm) para visibilidade do perfil",
+      "Controle de profundidade com precisão centimétrica",
+      "Detecção de obstáculos com automático parar",
+      "Remoção manual do núcleo para integridade da amostra",
+      "Adapta-se a picapes, reboques e veículos leves",
+      "Atualizável para MP-3.90 ou MP-4.100"
+    ],
+    "applications": [
+      "Amostragem de solo N-min",
+      "Pesquisa acadêmica e universitária",
+      "Monitoramento ambiental",
+      "Morfologia do solo e análise de perfil",
+      "Agricultura de precisão"
+    ],
+    "howToUse": [
+      "Passo 1 – Inserção do impacto: Uma haste ranhurada é cravada no solo usando um martelo hidráulico de alta frequência. Parece agressivo, mas é tudo muito civilizado.",
+      "Etapa 2 – Retração Hidráulica com Rotação: A haste é girada e retraída hidraulicamente, garantindo que o núcleo permaneça intacto. Precisão cirúrgica, menos o bisturi.",
+      "Passo 3 – Revelação do Núcleo: O núcleo ininterrupto do solo é exposto para admiração científica. Todas as camadas visíveis – do húmus ao hardpan.",
+      "Passo 4 – Descarga manual do núcleo: O núcleo é removido manualmente. É um momento científico tranquilo e satisfatório. É como extrair dados da Terra com as mãos."
+    ],
+    "technicalSpecs": {
+      "Sampling Depth": "0–90 cm (contínuo)",
+      "Sample Type": "Núcleo único, perfil completo",
+      "Sampling Cycle": "16 seg/núcleo",
+      "Power Supply": "Hidráulico (135 bar, 20L/min, 12VDC)",
+      "Obstacle Detection": "Sim",
+      "Control Panel": "Digital",
+      "Weight": "185kg",
+      "Mounting": "Pick-ups, reboques, veículos agrícolas leves"
+    },
+    "testimonials": [
+      {
+        "quote": "O MP-1.90 é um verdadeiro burro de carga. Isso nos dá visibilidade total do núcleo, o que é essencial para nossos programas de ensino e trabalho de campo.",
+        "author": "Prof. Klaus Brenner",
+        "company": "Universidade de Göttingen, Departamento de Ciência do Solo",
+        "rating": 5
+      },
+      {
+        "quote": "É lindamente superengenharia, de uma maneira muito alemã. Cada núcleo que extraímos é puro. Os alunos adoram usá-lo.",
+        "author": "Dra. Lucia Romero",
+        "company": "Universidade de Saragoça – Faculdade de Agronomia",
+        "rating": 5
+      }
+    ]
+  },
+  "mp2": {
+    "nickname": "MultiPRO Médio Alcance",
+    "specs": [
+      "Profundidade: 0-60 cm",
+      "Totalmente Automático",
+      "Otimizado para perfil N-min",
+      "Ciclo de amostragem de 18 seg/núcleo"
+    ],
+    "description": "Perfil automático de nitrogênio sem faff.",
+    "herodescription": "Diga olá ao <strong>MP-2.60</strong> — um equipamento maravilhosamente prático para <strong>amostragem de solo N-min</strong>. Desce até 60 cm, consegue o que precisa e segue em frente sem pedir chá ou elogios. Projetado para ser <strong>confiável e não ridículo</strong>, é ideal para quem gosta que as coisas funcionem corretamente na primeira vez.",
+    "detailedDescription": "<p className='mt-4'>Em um mundo de supercomplicação, o <strong>MP-2.60</strong> é refrescantemente simples. Ele foi desenvolvido especificamente para <strong>perfilamento automático de nitrogênio</strong> – sem se preocupar com brocas manuais ou suposições. Ele usa um <strong>martelo hidráulico</strong> de alta frequência para perfurar o solo como uma britadeira suave, depois gira silenciosamente e levanta a haste antes de <strong>colocar educadamente a amostra</strong> em seu recipiente.</p><p className='mt-4'>Ele tem <strong>lógica interna inteligente</strong> para decidir quais pedaços de solo manter e, se desejar, você pode até ativar a <strong>separação de camadas</strong> para amostragem específica do horizonte. As próprias amostras chegam em <strong>recipientes à prova d'água</strong>, e toda a unidade é montada confortavelmente em trailers, picapes ou basicamente qualquer coisa que role e não desmorone.</p><p className='mt-4'>E se suas ambições de pesquisa ultrapassarem o limite de 60 cm, não entre em pânico: o MP-2.60 é totalmente <strong>atualizável para o MP-3.90 ou MP-4.100</strong>.</p>",
+    "price": "A partir de 16.500 €",
+    "features": [
+      "Extração totalmente automática até 60 cm",
+      "Lógica inteligente: descarta ou mantém amostras com base nas suas configurações",
+      "Amostragem orientada por impacto com descarga automática",
+      "Opção de separação de camadas para amostragem específica de horizonte",
+      "Recipientes de amostra à prova d'água",
+      "Profundidade de amostragem e contagem de horizonte personalizáveis",
+      "Detecção de obstáculos e desligamento automático seguro",
+      "Construído para uso real e diário - não apenas para amadores de fim de semana"
+    ],
+    "howToUse": [
+      "Coloca uma haste ranhurada no solo usando um martelo hidráulico de alta frequência - sim, parece tão satisfatório quanto é",
+      "Gira e retrai hidraulicamente a haste sem perturbar suas amostras",
+      "As amostras são descarregadas automaticamente em seus recipientes adequados",
+      "A separação opcional da camada classifica o solo por horizonte durante a extração"
+    ],
+    "applications": [
+      "Perfil Nmin/Nitrato",
+      "Agricultura de precisão",
+      "Monitoramento ambiental do solo",
+      "Amostragem de campo dentro do orçamento e com ambições"
+    ],
+    "technicalSpecs": {
+      "Sampling Depth": "0–60 centímetros",
+      "Sampling Type": "Acionado por impacto, totalmente automático",
+      "Hammer Unit": "Hidráulico, de alta frequência",
+      "Horizons": "1–2 camadas",
+      "Magazines": "3",
+      "Sampling Cycle Time": "18 seg/núcleo",
+      "Mounting Options": "Pickup, trailer ou qualquer coisa vagamente em condições de rodar",
+      "Sample Sorting": "Separação automática específica do horizonte",
+      "Special Features": "Detecção de obstáculos, Recipientes impermeáveis, Teclado digital",
+      "Power Source": "Sistema hidráulico (135 bar, 20 l/min, 12VDC)",
+      "Weight": "200kg"
+    },
+    "testimonials": [
+      {
+        "quote": "Confiável, fácil de usar e fornece exatamente o que precisamos para nosso trabalho com nitrato de solo.",
+        "author": "Prof. Lars Becker",
+        "company": "Soluções AgriData",
+        "rating": 5
+      },
+      {
+        "quote": "Uma ótima opção para qualquer equipe que está começando com amostragem automatizada. Desempenho sólido, baixa manutenção.",
+        "author": "Dra.",
+        "company": "Grupo de Pesquisa do Solo",
+        "rating": 4
+      }
+    ]
+  },
+  "mp3": {
+    "nickname": "Camada Tripla Pro",
+    "specs": [
+      "Profundidade: 0-95cm",
+      "Totalmente Automático",
+      "Separação de 3 camadas",
+      "Ciclo de amostragem de 20 segundos/núcleo"
+    ],
+    "description": "Resistente o suficiente para lidar com o solo, inteligente o suficiente para trabalhar com eficiência.",
+    "herodescription": "O <strong>MP-3.90</strong> é o que acontece quando você pega o <strong>pensamento alemão</strong>, adiciona um pouco de <strong>excesso de engenharia</strong> e depois pede para ele <strong>cavar buracos para a ciência</strong>. Projetado para extrair amostras de solo de até <strong>95 cm</strong> sem sequer um grunhido do operador, ele pode fazer <strong>separação de três camadas</strong>, <strong>descarga automática</strong> e decidir (por conta própria) quando desistir se o solo reagir.",
+    "detailedDescription": "<p className='mt-4'>Agora, <strong>precisão e eficiência</strong> não são apenas palavras da moda aqui: elas são cuidadosamente incorporadas, para que você possa se concentrar nos dados em vez de lutar com sujeira teimosa. Ele lida com solos difíceis com <strong>quase nenhum incômodo por parte do operador</strong>, tornando-o um companheiro bastante confiável para trabalhos científicos sérios ou pesquisas de campo adequadas.</p><p className='mt-4'>Ele se encaixa perfeitamente em picapes, reboques, tratores ou qualquer coisa vagamente em condições de rodar, com <strong>configurações personalizáveis ​​de profundidade e horizonte</strong> para atender a tudo o que você precisa. Além disso, suas amostras acabam sãs e salvas em <strong>recipientes à prova d'água</strong>, o que é um toque legal.</p><p className='mt-4'>E aqui está o chute: ele foi criado para <strong>uso profissional adequado</strong>, e não para um brinquedo de guerreiro de fim de semana. Sólido, confiável e silenciosamente competente – exatamente o que você esperaria da engenharia alemã, na verdade.</p>",
+    "price": "A partir de 23.500€",
+    "features": [
+      "Extração totalmente automática até 95 cm",
+      "Separação opcional de 3 camadas para amostragem específica de horizonte",
+      "Faz 3 amostras consecutivas sem sair do assento",
+      "Montado em picapes, trailers ou qualquer coisa vagamente em condições de rodar",
+      "Descarga automática e classificação de amostras durante a extração",
+      "Profundidade de amostragem personalizável e contagem de horizontes",
+      "Recipientes impermeáveis ​​para armazenamento de amostras",
+      "Desligamento automático quando atinge uma pedra e diz 'não'",
+      "Lógica inteligente: descarta ou mantém amostras com base nas configurações",
+      "Construído para uso sério e contínuo - este não é o seu gadget casual e de vez em quando."
+    ],
+    "howToUse": [
+      "Crava uma haste ranhurada de aparência séria no solo com um martelo hidráulico de alta frequência - pense nisso como um golpe muito preciso",
+      "Gira e retrai hidraulicamente a haste, evitando o tipo de puxão brutal que perturba tanto o solo quanto os engenheiros",
+      "Esvazia automaticamente o sem-fim ao subir - sem escavar, sem mexer, apenas uma gota educada nos recipientes de amostra",
+      "Distribui o material da amostra ordenadamente em recipientes separados, dependendo do horizonte do solo — porque até a sujeira deve saber a que lugar pertence"
+    ],
+    "applications": [
+      "Agricultura de precisão",
+      "Monitoramento ambiental do solo",
+      "Teste de Nmin/Nitrato",
+      "Perfil e pesquisa do solo",
+      "Trabalho de campo onde velocidade, precisão e pausas para o café são importantes"
+    ],
+    "technicalSpecs": {
+      "Sampling Depth": "0–95 centímetros",
+      "Sampling Type": "Acionado por impacto, totalmente automático",
+      "Hammer Unit": "Hidráulico, 2.200 golpes/min",
+      "Horizons": "1–3 camadas (configurável pelo usuário)",
+      "Magazines": "3",
+      "Sampling Cycle Time": "18 seg/núcleo",
+      "Mounting Options": "Pickup, reboque ou veículo leve",
+      "Sample Sorting": "Separação automática específica do horizonte",
+      "Special Features": "Detecção de obstáculos, recipientes à prova d'água, teclado digital",
+      "Penetration Control": "Desligamento automático",
+      "Power Source": "Sistema hidráulico (135 bar, 20 l/min, 12VDC)",
+      "Weight": "200kg"
+    },
+    "testimonials": [
+      {
+        "quote": "Perfeito para nossa pesquisa em zonas úmidas. Funciona excepcionalmente bem em solos ricos em argila onde outras brocas falham.",
+        "author": "Dra. Maria Santos",
+        "company": "Centro de Investigação de Zonas Húmidas",
+        "rating": 5
+      },
+      {
+        "quote": "O design de meio cilindro é brilhante para solos coesos. A qualidade da amostra é consistentemente excelente.",
+        "author": "Roberto Taylor",
+        "company": "Laboratório de Dinâmica do Solo",
+        "rating": 5
+      }
+    ]
+  },
+  "mp4": {
+    "nickname": "UltraDepth MAX",
+    "specs": [
+      "Profundidade: 0-100 cm",
+      "Totalmente Automático",
+      "4 camadas Separação",
+      "Ciclo de amostragem de 22 seg/núcleo"
+    ],
+    "description": "Solo profundo, classificado de forma inteligente. Sem complicações, apenas profundidade.",
+    "herodescription": "Este é o <strong>MP-4.100</strong> — imagine se um martelo hidráulico e um PhD em ciências do solo tivessem um filho. É um <strong>amostrador totalmente automático</strong> que desce <strong>100 cm</strong>, puxa até <strong>quatro camadas</strong> e as classifica como um mordomo com um hobby geológico. É o que você obteria se pedisse à Alemanha para fazer uma toupeira.",
+    "detailedDescription": "<p className='mt-4'>Projetado para quem exige <strong>profundidade e disciplina</strong>, o MP-4.100 penetra direto no solo e faz o trabalho sem resmungos e sem escavação manual. Um <strong>sistema de impacto hidráulico</strong> aciona uma haste ranhurada no solo, onde ela realiza silenciosamente o trabalho de extração de amostras de nível científico. Uma vez retraído, ele <strong>esvazia automaticamente</strong> as mercadorias em seus devidos lugares.</p><p className='mt-4'>Ele tem uma <strong>lógica inteligente</strong> que decide se deve manter ou descartar o material com base em suas configurações, e um <strong>mecanismo de separação de camadas</strong> que é surpreendentemente educado sobre a direção de cada horizonte. Monte-o em uma picape, trailer ou qualquer coisa vagamente em condições de circular e pronto.</p>",
+    "price": "A partir de € 25.500",
+    "features": [
+      "Extração totalmente automática até 100 cm",
+      "Separação opcional de 4 camadas para amostragem específica do horizonte",
+      "Descarga automática e classificação de amostras durante extração",
+      "Lógica inteligente: descarta ou mantém amostras com base em suas configurações",
+      "Profundidade de amostragem personalizável e contagem de horizonte",
+      "Montado em picapes, reboques ou qualquer coisa vagamente em condições de circular",
+      "Detecção de obstáculos e desligamento automático seguro",
+      "Recipientes de amostra à prova d'água",
+      "Teclado digital para ajustes instantâneos",
+      "Construído para uso real e diário - não apenas em dias científicos ocasionais"
+    ],
+    "howToUse": [
+      "Coloca uma haste ranhurada no solo usando um martelo hidráulico de alta frequência - elegantemente brutal",
+      "Gira e retrai hidraulicamente a haste - não puxando, sem drama",
+      "Esvazia automaticamente a broca em recipientes apropriados na subida",
+      "Distribui o material da amostra ordenadamente em recipientes separados, dependendo do horizonte do solo"
+    ],
+    "applications": [
+      "Perfil profundo do solo",
+      "Pesquisa ambiental e agrícola",
+      "Teste de Nmin/Nitrato",
+      "Agricultura de precisão",
+      "Trabalho de campo que exige muita profundidade e fidelidade da amostra"
+    ],
+    "technicalSpecs": {
+      "Sampling Depth": "0–100 centímetros",
+      "Sampling Type": "Acionado por impacto, totalmente automático",
+      "Hammer Unit": "Hidráulico, de alta frequência",
+      "Horizons": "1–4 camadas",
+      "Magazines": "4",
+      "Sampling Cycle Time": "22 seg/núcleo",
+      "Mounting Options": "Picape, reboque ou veículo leve",
+      "Sample Sorting": "Separação automática específica do horizonte",
+      "Special Features": "Detecção de obstáculos, Recipientes impermeáveis, Teclado digital",
+      "Power Source": "Sistema hidráulico (135 bar, 20 l/min, 12VDC)",
+      "Weight": "215kg"
+    },
+    "testimonials": [
+      {
+        "quote": "Ele lida com solos pesados ​​e perfis profundos melhor do que qualquer método manual que tentamos. Verdadeiramente prático e preciso.",
+        "author": "Dr. Félix Hartmann",
+        "company": "Laboratórios GeoCrop",
+        "rating": 5
+      },
+      {
+        "quote": "Confiável e inteligente — a lógica de amostra economiza horas de pós-processamento.",
+        "author": "Dra.Nina Weber",
+        "company": "Análise AgroField",
+        "rating": 5
+      }
+    ]
+  },
+  "dh": {
+    "nickname": "Batedor Hidráulico",
+    "specs": [
+      "Profundidade: 0-30 cm",
+      "Totalmente Automático",
+      "Controle de profundidade independente da suspensão",
+      "Ciclo de amostragem de 5 segundos/núcleo"
+    ],
+    "description": "Eficiente, confiável e silenciosamente confiante. Amostragem de solo, mas com um pouco de força hidráulica por trás dela.",
+    "herodescription": "O <strong>DH-1.30</strong> é um amostrador de solo hidráulico robusto construído para funcionar com confiança silenciosa e potência constante – sem complicações excessivas, apenas resultados sólidos. Perfurando suavemente até <strong>30 centímetros</strong>, ela é movida por um motor hidráulico, para que você obtenha bastante trabalho sem necessidade de eletricidade. Um pouco mais alto que seu primo elétrico, claro, mas não é exibicionista. Apenas trabalho confiável e sólido, dia após dia.",
+    "detailedDescription": "<p className='mt-4'>O <strong>DH-1.30</strong> adota o design sensato de seu <strong>irmão elétrico</strong>, mas troca a bateria por um <strong>motor hidráulico</strong>, ideal se você tiver acesso à energia hidráulica e quiser um pouco mais de <strong>torque</strong>.</p><p className='mt-4' O <strong>controle de profundidade</strong> é nítido e preciso, com <strong>ajustes milimétricos</strong> para lidar com terrenos irregulares como se não fosse nada.</p><p className='mt-4'>A operação é deliciosamente simples: <strong>um botão, duas profundidades predefinidas</strong> — porque a vida é muito curta para controles complicados.</p><p className='mt-4'>Ele pesa <strong>43 kg</strong>, construído <strong>resistente</strong> para lidar com trabalho de campo real, mas <strong>leve o suficiente</strong> para que você não precise de uma empilhadeira ou de um homem forte para movê-lo.</p><p className='mt-4'><strong>Facilmente montado</strong> em quadriciclos, reboques, picapes ou veículos leves, esse dispositivo é feito para <strong>versatilidade</strong>.</p><p className='mt-4'>Para aqueles que preferem a <strong>confiabilidade clássica da energia hidráulica</strong> com <strong>alemão confiável engenharia</strong>, este amostrador é a escolha sensata.</p>",
+    "price": "A partir de 8.950€",
+    "features": [
+      "Acionamento hidráulico para perfuração confiável e potente",
+      "Ajuste de profundidade milimétrico de precisão",
+      "Não é afetado pela suspensão do veículo – sem surpresas no subsolo",
+      "Duas profundidades predefinidas para troca rápida",
+      "Compacto e portátil com 43 kg",
+      "Monta-se facilmente em uma variedade de veículos leves"
+    ],
+    "applications": [
+      "Amostragem de macronutrientes no solo",
+      "Agricultura de precisão (com um pouco do poder da velha escola)",
+      "Pesquisa agrícola e ambiental",
+      "Saúde do solo e monitoramento de nutrientes"
+    ],
+    "howToUse": [
+      "Estacione sua plataforma e posicione o amostrador onde o solo está pedindo.",
+      "Selecione a profundidade preferida (sim, até ao milímetro).",
+      "Aperte o botão e deixe o músculo hidráulico fazer o trabalho pesado.",
+      "Retire o núcleo do solo perfeito e sinta-se satisfeito consigo mesmo."
+    ],
+    "technicalSpecs": {
+      "Sampling Depth": "0–30 centímetros",
+      "Sample Type": "Núcleo único, totalmente automático",
+      "Horizons": "1",
+      "Magazines": "1",
+      "Sampling Cycle Time": "5 segundos por núcleo",
+      "Mounting Options": "Quad, picape, trailer ou veículo leve",
+      "Control": "Painel de botão elétrico",
+      "Power Source": "Motor hidráulico",
+      "Weight": "43kg"
+    },
+    "testimonials": [
+      {
+        "quote": "O acionamento hidráulico do DH-1.30 não compromete a potência ou a precisão. Perfeito para solos mais difíceis e dias de campo mais longos.",
+        "author": "Sven Becker",
+        "company": "Soluções AgriTech",
+        "rating": 5
+      },
+      {
+        "quote": "Montado em nosso trailer, o DH-1.30 lida com tudo com tranquilidade e confiança. O controle de profundidade está sempre correto.",
+        "author": "Maria Schneider",
+        "company": "Grupo de pesquisa em ciências do solo",
+        "rating": 5
+      },
+      {
+        "quote": "Uma máquina robusta e confiável com capacidade suficiente para fazer com que o trabalho de campo pareça menos árduo.",
+        "author": "Tomás Herrera",
+        "company": "Agricultura de Precisão Co.",
+        "rating": 4
+      }
+    ]
+  },
+  "de": {
+    "nickname": "Escoteiro Elétrico",
+    "specs": [
+      "Profundidade: 0-30 cm",
+      "Sistema de perfuração totalmente elétrico",
+      "Controle de profundidade independente da suspensão",
+      "Ciclo de amostragem de 5 segundos/núcleo"
+    ],
+    "description": "Inteligente, silencioso e muito ágil. Fazer com que a amostragem do solo pareça quase fácil.",
+    "herodescription": "O <strong>DE-1.30</strong> é o <strong>amostrador de solo compacto e sensato</strong> que realiza o trabalho silenciosamente - perfurando até <strong>30 centímetros</strong> sem fazer barulho ou precisar fumar um cigarro atrás do outro enquanto ele funciona. É <strong>elétrico</strong>, então <strong>sem fumaça, sem ruído</strong>, apenas amostragem de solo limpa e confiável.",
+    "detailedDescription": "<p className='mt-4'>Com base no confiável <strong>modelo N2012</strong>, o <strong>DE-1.30</strong> usa uma <strong>furadeira elétrica</strong> que é tão precisa que provavelmente poderia enfiar a linha em uma agulha - se a amostragem de solo fosse usada para bordar. <strong>Ajustes milimétricos</strong> significam que você obtém exatamente a profundidade desejada, não importa quão acidentado ou imprevisível seja o terreno. É um pouco como um <strong>mordomo educado</strong> que não decepciona você.</p><p className='mt-4'>A <strong>unidade de controle</strong> é a própria simplicidade: pressione um botão e pronto. <strong>Duas profundidades predefinidas</strong> permitem alternar entre trabalhos de amostragem mais rápido do que você pode dizer <em>'tecnologia inovadora'</em> (viu o que eu fiz lá?). Não se preocupe com menus complicados ou controles enigmáticos.</p><p className='mt-4'>Pesando apenas <strong>45 kg</strong> e alimentado por uma <strong>bateria de 24 V</strong> (vendida separadamente), ele é <strong>leve o suficiente para ser ágil</strong>, mas <strong>resistente o suficiente para lidar com trabalhos de campo no mundo real</strong>. Não há necessidade de chamar um guindaste ou um ex-sargento do exército para movê-lo.</p><p className='mt-4'>O DE-1.30 pode ser facilmente montado em <strong>quadriciclos, reboques e uma variedade de veículos leves</strong>, tornando-o versátil para muitas condições de campo.</p><p className='mt-4'>Então, se você quiser <strong>amostras de solo precisas e confiáveis</strong> sem o drama do motor a gasolina ou o ruído de um pesado furadeira, a DE-1.30 é a sua máquina ideal. É a <strong>engenharia alemã</strong> com um <strong>toque elétrico e silencioso</strong> que simplesmente dá conta do recado.</p>",
+    "price": "A partir de 12.600€",
+    "features": [
+      "Perfuração totalmente elétrica para amostragem limpa e precisa",
+      "Ajuste de profundidade com precisão milimétrica (porque perto o suficiente não é bom o suficiente)",
+      "Independente da suspensão do veículo para evitar acessos de raiva profundos",
+      "Duas predefinições de profundidade de seleção rápida",
+      "Compacto e leve com 47 kg",
+      "Funciona com bateria externa de 24 V (vendida separadamente)"
+    ],
+    "applications": [
+      "Amostragem de macronutrientes no solo",
+      "Agricultura de precisão com um pouco de estilo",
+      "Pesquisa agrícola e ambiental",
+      "Saúde do solo e monitoramento de nutrientes"
+    ],
+    "howToUse": [
+      "Posicione o amostrador onde o solo precisa de uma olhada.",
+      "Escolha sua profundidade. Incrementos milimétricos, porque somos exigentes.",
+      "Pressione o botão e observe a furadeira elétrica fazer seu trabalho educadamente.",
+      "Retire o núcleo do solo e maravilhe-se com a sua terra perfeitamente amostrada."
+    ],
+    "technicalSpecs": {
+      "Sampling Depth": "0–30 centímetros",
+      "Sample Type": "Núcleo único, totalmente automático",
+      "Horizons": "1",
+      "Magazines": "1",
+      "Sampling Cycle Time": "5 seg/núcleo",
+      "Mounting Options": "Quads, picape, trailer ou veículo leve",
+      "Control": "Painel de controle elétrico com botão de pressão",
+      "Operating Voltage": "24 V CC",
+      "Weight": "47kg"
+    },
+    "testimonials": [
+      {
+        "quote": "A precisão e facilidade de uso do DE-1.30 transformaram nossa rotina de amostragem de solo. A furadeira elétrica é silenciosa e extremamente confiável.",
+        "author": "Sven Becker",
+        "company": "Soluções AgriTech",
+        "rating": 5
+      },
+      {
+        "quote": "A montagem do DE-1.30 em nosso quad tornou o trabalho de campo incrivelmente eficiente. Seu controle de profundidade e energia da bateria são perfeitos para amostragem em movimento.",
+        "author": "Maria Schneider",
+        "company": "Grupo de pesquisa em ciências do solo",
+        "rating": 5
+      },
+      {
+        "quote": "Leve mas robusto, o DE-1.30 lida facilmente com condições de solo difíceis. A unidade de controle fácil de usar é uma grande vantagem em locais remotos.",
+        "author": "Tomás Herrera",
+        "company": "Agricultura de Precisão Co.",
+        "rating": 4
+      }
+    ]
+  },
+  "boprob": {
+    "nickname": "O Expresso dos Dezesseis",
+    "specs": [
+      "Profundidade: 10–30 cm",
+      "Totalmente Automático",
+      "Amostragem de reboque durante a condução",
+      "16 amostras em aproximadamente 4 min"
+    ],
+    "description": "Reboque-o, prove-o e continue andando – sem complicações, sem espera.",
+    "herodescription": "Este é o <strong>BOPROB III</strong> – também conhecido, de forma bastante alegre, como <strong>O Expresso dos Dezesseis</strong>. É um trailer que coleta amostras de solo enquanto você dirige. Sim, realmente. Sem parar, sem apertar botões, sem gritar com os estagiários. Basta rebocá-lo atrás de algo com rodas e deixá-lo continuar o trabalho.",
+    "detailedDescription": "<p className='mt-4'>Agora, o <strong>The Sixteen Express</strong> é o que você chamaria de um kit inteligente. É um <strong>amostrador de solo rebocado</strong> projetado para fazer seu trabalho enquanto você se move. O que, francamente, é como tudo deveria funcionar, mas não funciona.</p><p className='mt-4'>A amostragem acontece em um ritmo bastante rápido graças a uma <strong>manivela giratória</strong> que gira 360°, cravando-se no chão como uma britadeira educada e depois ejetando educadamente o núcleo no carregador de amostras.</p><p className='mt-4'>Tudo é vigiado por uma <strong>7 polegadas touchscreen</strong> - um lindo kit - para que você saiba exatamente o que está fazendo a qualquer momento. Há até uma câmera opcional, caso você queira vê-la funcionando ou apenas admirar sua compra.</p><p className='mt-4'>As rodas são grandes e macias - <strong>235/60 R16</strong>, se você gosta desse tipo de coisa - o que significa pressão mínima sobre o solo e sem ficar atolado em um campo lamacento, a menos que você realmente tenha tentado.</p><p className='mt-4'>Ele engata facilmente em <strong>tratores, picapes, quadriciclos – ou qualquer outra coisa com engate de reboque</strong>, na verdade. Sem mexer, sem adaptadores, sem necessidade de heroísmo na oficina. E quando terminar, ele desengata com a mesma facilidade.</p><p className='mt-4'>Se você estiver dirigindo muito rápido - ou muito devagar, talvez porque esteja admirando a paisagem - o sistema simplesmente se recusa a fazer a amostragem. O que é brilhante, porque significa que a máquina é mais inteligente do que o motorista médio.</p>",
+    "price": "€28,500",
+    "features": [
+      "Sistema hidráulico de impacto e rotação",
+      "Manivela giratória de 360° com descarga automática",
+      "Amostras enquanto dirige – sem necessidade de parar",
+      "Tela sensível ao toque de 7 polegadas para controle e monitoramento",
+      "Câmera integrada opcional para feedback visual",
+      "Baixa compactação do solo graças às rodas 235/60 R16",
+      "Não são necessários mods de trator – o trailer é montado rapidamente",
+      "Proteção sensível à velocidade contra uso indevido"
+    ],
+    "applications": [
+      "Amostragem de macronutrientes de alto rendimento",
+      "Agricultura de precisão com uso mínimo de combustível",
+      "Monitoramento da saúde do solo em grandes áreas",
+      "Amostragem de horizonte raso durante o trânsito"
+    ],
+    "howToUse": [
+      "Anexe o trailer a um trator adequado ou veículo com capacidade de reboque - sem necessidade de modificações.",
+      "Defina a profundidade desejada e o intervalo de amostragem na tela sensível ao toque.",
+      "Dirija de 4 a 15 km/h e deixe a máquina amostrar automaticamente.",
+      "Verifique a câmera e a tela conforme necessário ou simplesmente continue cultivando.",
+      "Quando 16 amostras forem coletadas, esvazie e recarregue o magazine."
+    ],
+    "technicalSpecs": {
+      "Sampling Depth": "10–30 centímetros",
+      "Sample Type": "Acionado por impacto, totalmente automático",
+      "Horizons": "1",
+      "Magazines": "16",
+      "Sampling Cycle Time": "8–10 segundos por amostra",
+      "Mounting Options": "Reboque de reboque (cabe em tratores ou qualquer veículo com engate padrão)",
+      "Control": "Tela sensível ao toque de 7 polegadas painel",
+      "Power Source": "Hidráulico",
+      "Wheels": "235/60 R16, baixa compactação do solo",
+      "Weight": "Aprox. 600 kg"
+    },
+    "testimonials": [
+      {
+        "quote": "Concluímos um levantamento de 10 hectares em menos de uma hora. O The Sixteen Express simplesmente funciona. Sem drama, sem parar.",
+        "author": "Lena Hoffmann",
+        "company": "Sistemas TerraCrop",
+        "rating": 5
+      },
+      {
+        "quote": "A tela sensível ao toque é responsiva e a qualidade da amostragem é perfeita. Ele lida perfeitamente com nossos solos argilosos.",
+        "author": "Henrik Voss",
+        "company": "Nordland AgriTech",
+        "rating": 5
+      },
+      {
+        "quote": "Economiza o desgaste do trator e do motorista. Um dos melhores investimentos para amostragem em larga escala que fizemos.",
+        "author": "Jürgen Möller",
+        "company": "FieldScan GmbH",
+        "rating": 5
+      }
+    ]
+  },
+  "laydown": {
+    "nickname": "Kit de montagem",
+    "name": "Estrutura de instalação",
+    "specs": [
+      "É necessário um engate de reboque padrão de 50 mm com um soquete de 12 V de 13 pinos.",
+      "Peso: ≈70kg (DH/DE); ≈80kg (suporte MP)",
+      "EN 10025 Aço S355, revestido a pó, 4 mm de espessura",
+      "Estabilidade de dobragem e engate"
+    ],
+    "description": "Um suporte de montagem prático para o seu amostrador - cabe na traseira da maioria dos veículos civilizados sem transformá-los em camiões Franken.",
+    "herodescription": "<strong>Brilhantemente sensato.</strong> Esta estrutura deitada, kit de montagem com certificação TÜV, é aparafusada ao seu engate de reboque como se ele pertencesse a ele. Suporta nossos amostradores das séries MP, DH e DE.",
+    "detailedDescription": "<p className='mt-4'>Montado na carroceria do caminhão conectado ao local onde fica sua <strong>barra de reboque</strong> - logo abaixo da <strong>tampa do porta-malas</strong> e acima do <strong>tubo de escapamento</strong> - esta estrutura permite que você carregue um amostrador de solo completo com <strong>elegância</strong>. <strong>Dobre-o para funcionar, dobre-o para sair para jantar</strong>. É <strong>robusto</strong>, <strong>testado</strong> e <strong>pintado como um armário de ferramentas alemão</strong>.</p><p className='mt-4'>Os clientes podem escolher seu nível de envolvimento: alguns preferem <strong>instalar a moldura eles mesmos</strong> com a ajuda de nossas <strong>instruções infalíveis</strong>; outros <strong>passam com seus veículos</strong> e nos deixam cuidar da <strong>montagem e da magia hidráulica</strong>; e para aqueles que gostam de <strong>gratificação instantânea</strong>, também oferecemos <strong>equipamentos de campo totalmente equipados</strong>—<strong>pré-montados</strong>, <strong>testados</strong> e geralmente bastante <strong>presunçosos sobre isso</strong>.</p>",
+    "price": "A partir de 2.790€",
+    "features": [
+      "Engate de reboque + Montagem de 13 pinos (sem soldagem, sem trauma)",
+      "Aprovado pela TÜV para uso em estrada e campo",
+      "Aço ENS355 estrutural, revestido a pó",
+      "Hardware de montagem M16 de liberação rápida incluído",
+      "Design dobrável testado para implantação de 10.000 ciclos",
+      "Suporta unidades de energia externas (hidráulicas ou de bateria)"
+    ],
+    "applications": [
+      "Plataformas de amostragem de solo ATV/UTV",
+      "Instalações de utilitários e caminhonetes",
+      "Amostradores hidráulicos da série MP ou elétricos DE/DH",
+      "Uso sazonal ou equipamentos de campo totalmente montados"
+    ],
+    "howToUse": [
+      "O veículo possui bola de reboque ISO 50 mm? Verificar.",
+      "O veículo possui uma tomada de 12 V de 13 pinos (para DE‑1.30)? Verificar.",
+      "Saída hidráulica disponível (135–220bar @60L/min)?",
+      "Dobre, teste a potência e comece a amostragem."
+    ],
+    "technicalSpecs": {
+      "Weight": "70kg (DH/DE); 80 kg (versão MP)",
+      "Material": "Aço ENS355, 4 mm de espessura, pintura a pó RAL9005",
+      "Mount Interface": "Engate de reboque ISO de 50 mm + plugue de 13 pinos DE‑1.30",
+      "Hydraulic Input": "135–220bar; 20–90L/min; Mangueira DN19/¾″, ruptura ≥500bar",
+      "Power Options": "Fonte de alimentação hidráulica externa ou bateria",
+      "Certifications": "TÜV DE‑745‑K‑2024; Compatível com EN12642 + ISO1496‑3",
+      "Corrosion Resistance": "≥1000h de névoa salina neutra (ISO9227)",
+      "Included Hardware": "M16×45‑8.8 + parafusos autotravantes M10, todos banhados",
+      "Cycle Life": "10000 dobras (teste de durabilidade do mecanismo)",
+      "Warranty": "Padrão de 12 meses",
+      "Bracket Compatibility": "Todos os modelos MP (MP‑1.90 a MP‑4.100), DH e DE"
+    },
+    "testimonials": []
+  },
+  "tph": {
+    "name": "Engate de três pontos",
+    "nickname": "Kit de montagem",
+    "specs": [
+      "Compatível com trator Cat‑1 ou Cat‑2 Sistemas de TDF de 3 pontos",
+      "Construção em aço com estrutura em A para serviço pesado",
+      "Proteção contra corrosão em epóxi preto",
+      "Compatível com todas as máquinas de amostragem de solo da série MP, DH e DE"
+    ],
+    "description": "Faz com que seu trator seja uma fera na amostragem de solo, aproveitando a potência da TDF para integração do amostrador hidráulico. Resistente, confiável e prático.",
+    "herodescription": "<strong>Quadro de engate de 3 pontos do trator</strong>: O campeão de peso pesado para tratores Cat-1/2, projetado para montar seu amostrador de solo hidráulico diretamente no sistema de tomada de força do trator com uma plataforma de bomba hidráulica correspondente.",
+    "detailedDescription": "<p className='mt-4'>Imagine a <strong>espinha dorsal de aço</strong> que seu trator nunca imaginou que precisava. Fabricado em <strong>aço espesso com estrutura em A</strong> e revestido com <strong>armadura de epóxi preto</strong>, este suporte é aparafusado perfeitamente nos braços de elevação do seu trator. Ele foi construído para sobreviver à vida na fazenda - incluindo chuva, lama e a estranha birra do trator. O kit vem com <strong>barras de elevação e todos os parafusos de montagem</strong>, portanto, não é necessário improvisar com pregos enferrujados ou fita adesiva.</p><p className='mt-4'>Adequada para <strong>tratores compactos com espaçamento entre braços de elevação de cerca de 50 a 60 polegadas</strong>, esta estrutura suporta a bomba hidráulica alimentada diretamente pelo seu eixo de tomada de força, proporcionando um fluxo hidráulico eficiente para uma amostragem suave do solo. É a atualização que faz com que o seu trator pareça que está pronto para enfrentar as <strong>Olimpíadas de campo</strong>.</p>",
+    "price": "A partir de € 1.650",
+    "features": [
+      "Estrutura em A de aço soldada - resistente o suficiente para o trabalho real",
+      "Montagem da bomba da tomada de força - porque os fechos de correr não são de engenharia",
+      "Acabamento epóxi preto - como tinta, mas mais inteligente",
+      "Vem com parafusos e barras de elevação - não é necessário esfregar",
+      "Compatível com braços de elevação Cat-2/3 (50–60\")",
+      "Funciona com amostradores MP, DH e DE"
+    ],
+    "applications": [
+      "Amostragem hidráulica de solo - corretamente",
+      "Trabalho de campo alimentado por tomada de força com o mínimo de palavrões",
+      "Retrofits de trator que fazem sentido"
+    ],
+    "howToUse": [
+      "Prenda aos braços de elevação - aperte como você quer",
+      "Monte a placa de base da bomba - não rosca cruzada",
+      "Conecte a tomada de força e direcione as mangueiras corretamente",
+      "Instale o amostrador, teste, acene com aprovação"
+    ],
+    "technicalSpecs": {
+      "Type": "Estrutura de engate de 3 pontos do trator Cat-1/2",
+      "Construction": "Estrutura em A de aço soldado para serviços pesados ​​com acabamento em epóxi",
+      "PTO Compatibility": "A tomada de força padrão do trator aciona a bomba hidráulica",
+      "Includes": "Barras de elevação, parafusos de montagem e ferramentas de instalação",
+      "Frame Size": "Adapta-se ao espaçamento do braço de elevação de 50–60\" típico de tratores compactos",
+      "Corrosion Protection": "Revestimento epóxi preto durável",
+      "Weight": "Aprox. 120kg",
+      "Certification": "Robustez de nível comercial para uso agrícola",
+      "Compatibility": "Funciona com todas as máquinas de amostragem de solo da série MP, DH e DE"
+    },
+    "testimonials": [
+      {
+        "quote": "Aparafusado imediatamente, sem surpresas. Usei-o com nosso MP-2.60 – estrutura sólida, tudo encaixado, sem barulho. Compraria novamente.",
+        "author": "J. Bauer",
+        "company": "Bauer Agrar GmbH",
+        "rating": 5
+      },
+      {
+        "quote": "Coloquei-o no trator em menos de uma hora. A bomba PTO funciona suavemente e as montagens do amostrador estão limpas. Simplesmente funciona.",
+        "author": "L. Schneider",
+        "company": "Schneider Feldtechnik",
+        "rating": 5
+      }
+    ]
+  },
+  "fc": {
+    "name": "Conversão completa",
+    "nickname": "Kit de conversão",
+    "specs": [
+      "Compatível com captadores e UTVs",
+      "Estrutura de aço com revestimento em pó personalizada com painéis de ferramentas em alumínio",
+      "Peças OEM removidas e armazenadas; quadro com certificação TÜV",
+      "Suporta todos os amostradores de solo da série MP, DH e DE"
+    ],
+    "description": "Transforma seu veículo utilitário ou picape em uma fera de amostragem de solo prática. Cama retirada, estrutura colocada, ferramentas carregadas.",
+    "herodescription": "O <strong>Kit de conversão completo</strong> substitui a caçamba padrão do caminhão ou plataforma UTV por uma estrutura de aço personalizada e tampas de alumínio - construído especificamente para amostragem de solo com <strong>máquinas da série MP, DH e DE</strong>. Aprovado pela TÜV, legal para estradas e bastante inteligente.",
+    "detailedDescription": "<p className='mt-4'><strong>Se o seu UTV ou picape sonha com grandeza, este é o momento.</strong> Removemos cuidadosamente a base de estoque e a substituímos por uma estrutura de conversão de aço, envolta em painéis de alumínio que gritam 'operador profissional' mais alto do que uma Hilux plana no cascalho.</p><p className='mt-4'><strong>Ele oferece montagem adequada para todas as nossas máquinas, armazenamento integrado para refrigeradores, ferramentas, iluminação - basicamente tudo, menos o embalado almoço.</strong> Certificado pela TÜV, criado para campanhas sérias e estranhamente satisfatório de se ver.</p>",
+    "price": "A partir de 4590€",
+    "features": [
+      "Ajuste universal para captadores e UTVs (Hilux, Gator, Kubota, etc.)",
+      "Estrutura de aço coberta de alumínio: durável e resistente à corrosão",
+      "Suporta armazenamento de ferramentas, iluminação, refrigeradores e sistemas de amostragem",
+      "Certificado pela TÜV e legal para circular na UE",
+      "Totalmente compatível com todas as máquinas MP, DE e DH"
+    ],
+    "applications": [
+      "Conversões de equipamentos de campo permanentes",
+      "Construção de frota para amostragem de solo em grande escala",
+      "Atualizações para veículos de pesquisa agrícola e ambiental"
+    ],
+    "howToUse": [
+      "Selecione sua máquina de amostragem – série MP, DH ou DE. Escolhas sensatas, todas elas.",
+      "Certifique-se de que seu veículo tenha um receptor de engate ou acoplamento de reboque. Caso contrário, um pode ser arranjado. Não somos selvagens.",
+      "Traga-nos o veículo – ou deixe-nos adquirir um modelo adequado.",
+      "Instalamos a estrutura de aço, aparafusamos o amostrador, cuidamos da papelada e enviamos você para a batalha contra o solo."
+    ],
+    "technicalSpecs": {
+      "Compatible Vehicles": "Captadores (Hilux, Ranger, etc.) e UTVs (Gator,RTV, Ranger, etc.)",
+      "Construction": "Estrutura de aço, revestida a pó. Caixas de alumínio.",
+      "Vehicle Requirements": "Receptor de engate padrão ou acoplamento de reboque. Claro.",
+      "Certification": "Aprovado pela TÜV. Naturalmente.",
+      "OEM Parts": "Removido. Armazenado. Rotulado. Muito alemão.",
+      "Sampler Compatibility": "Série MP, DH, DE.",
+      "Frame Weight": "Aprox. 110kg."
+    },
+    "testimonials": [
+      {
+        "quote": "Deixou a Hilux e a pegou uma semana depois, pronta para provar. Construção limpa, tudo se encaixou perfeitamente. Sem complicações.",
+        "author": "T. Klein",
+        "company": "Soluções GeoFarm",
+        "rating": 5
+      },
+      {
+        "quote": "Estrutura sólida, layout inteligente. Operamos duas unidades DH com Rangers convertidos - muito mais fácil do que reboques em campos apertados.",
+        "author": "M. Becker",
+        "company": "AgroTest GmbH",
+        "rating": 5
+      }
+    ]
+  },
+  "trailer": {
+    "name": "Reboques especiais",
+    "nickname": "Transportadores de campo",
+    "specs": [
+      "Galvanizado por imersão a quente – a ferrugem não tem chance.",
+      "Opções com ou sem freio: escolha seu nível de controle",
+      "Largura da pista fixada em 1,35m",
+      "Projetado para caber perfeitamente nos amostradores da série MP, DH e DE"
+    ],
+    "description": "Esses reboques transportam sistemas da série MP, DH/DE sem esforço em qualquer lugar que na verdade não é uma parede.",
+    "herodescription": "<strong>Trailers Especiais – Field Haulers</strong> são <strong>reboques robustos galvanizados por imersão a quente</strong> com <strong>opções com e sem freios</strong>, projetados para transportar seu kit de amostragem de solo - seja ele <strong>MP, DH ou DE</strong> - através de campos e fazendas com <strong>precisão germânica</strong>.<br/>Eles vêm com <strong>armazenamento inteligente para ferramentas, luzes e refrigeradores</strong>—para que você possa trabalhar o dia todo sem a agitação habitual.",
+    "detailedDescription": "<p className='mt-4'>Com uma largura de via fixa de <strong>1,35 m</strong> e <strong>rodas giratórias</strong>, o Field Hauler manobra como um carrinho de compras prático, só que com mais aço e menos pontos fracos.</p><p className='mt-4'>Escolha <strong>modelos com freio</strong> para cargas mais pesadas ou inclinações mais íngremes - até <strong>3.500kg GTW</strong>—para que você possa transportar amostradores de solo sem sonhar com novas pastilhas de freio a cada viagem.</p>",
+    "price": "A partir de € 3.600",
+    "features": [
+      "Carroceria e chassi galvanizados por imersão a quente — longa vida útil, menos reclamações",
+      "Opções com e sem freio — escolha seu estilo de manuseio",
+      "Eixo único com freios a tambor mecânicos para reboque estável",
+      "Amortecedores para aprovação em estrada de 100 km/h - condução suave, sem barulho",
+      "Largura da esteira 1,35 m com rodas giratórias incluídas",
+      "LT285/75 Aros de alumínio R16 ou aço MT215/75 R15 - pise nos campos, não vire",
+      "Roda de suporte incluída para fácil manobra manual",
+      "Construído para transportar amostradores da série MP, DH e DE - não são necessárias instruções IKEA",
+      "Ferramenta integrada, armazenamento leve e refrigerado - trabalhe de maneira mais inteligente, não mais difícil"
+    ],
+    "applications": [
+      "Transporte de campo de kits de amostragem MP, DH e DE",
+      "Transporte de caixas, caixas térmicas e muito mais entre fazendas",
+      "Ambientes de serviços leves, tanto rurais quanto locais de contratação"
+    ],
+    "howToUse": [
+      "Selecione com ou sem freio, dependendo do veículo de reboque e da carga.",
+      "Engatado com acoplamento esférico padrão de 50 mm - não é necessária engenharia exótica.",
+      "Carregue seu amostrador e kit, prenda todas as correias e amarrações.",
+      "Reboque-o em velocidades razoáveis ​​– sem derrapagens ou aventuras indesejadas."
+    ],
+    "technicalSpecs": {
+      "Track Width": "1,35 m",
+      "Load Options": "550 kg (com/sem freio), atualização para serviço pesado para 1.500 kg GTW",
+      "Rims/Tyre Size": "LT285/75R16 em aros de alumínio ou MT215/75R15",
+      "Brakes": "Freios mecânicos a tambor (versão com freio), configuração de eixo único",
+      "Shock Absorbers": "Aprovado para reboque de 100 km/h",
+      "Support Wheel": "Incluído",
+      "Chassis": "Aço galvanizado por imersão a quente, classificação S235",
+      "Body Height": "1,2m",
+      "Trailer Weight": "Aprox. 300kg",
+      "Lighting": "LED 12V, placa de iluminação rodoviária legal",
+      "Warranty": "12 meses de garantia do fabricante"
+    },
+    "testimonials": [
+      {
+        "quote": "Uma máquina robusta e confiável com capacidade suficiente para fazer com que o trabalho de campo pareça menos árduo.",
+        "author": "Tomás Herrera",
+        "company": "Agricultura de Precisão Co.",
+        "rating": 4
+      }
+    ]
+  },
+  "powerpack": {
+    "name": "Pacote de energia",
+    "nickname": "Unidades de acionamento independentes",
+    "specs": [
+      "Alimentação hidráulica ou elétrica para atender às suas necessidades de energia",
+      "Invólucro de aço portátil e durável construído para trabalhos de campo difíceis",
+      "Status da bateria LCD em modelos elétricos – saiba rapidamente sua carga",
+      "Filtragem de retorno e sucção incluída para operação hidráulica limpa"
+    ],
+    "description": "Para aqueles que utilizam unidades MP ou DH sem energia integrada, esses pacotes fornecem energia hidráulica ou elétrica consistente onde quer que seu trabalho o leve.",
+    "herodescription": "Os <strong>Power Packs</strong> são como mordomos confiáveis ​​de amostragem de solo, oferecendo <strong>energia portátil e confiável</strong> para que suas máquinas não tenham acessos de raiva. Se você gosta do <strong>grunhido hidráulico clássico</strong> ou prefere o <strong>charme elétrico silencioso</strong>, esses pacotes protegem você.<br/>Envolvidos em uma <strong>caixa de aço robusta</strong> mais resistente do que um trator comum, com vantagens sensatas como <strong>status da bateria LCD</strong> e <strong>sistemas de filtragem</strong>, eles são o companheiro confiável que você nunca soube que precisava no campo.",
+    "detailedDescription": "<p className='mt-4'>O modelo hidráulico, perfeitamente compatível com as máquinas da <strong>série MP</strong> e da <strong>série DH</strong>, possui um <strong>motor a gasolina de 13 HP</strong> e um <strong>tanque de óleo de 22 L</strong>, fornecendo <strong>135 bar de pressão</strong> a <strong>20 L/min</strong> - isso é um grunhido sério para quando você quer se sentir como um mecânico adequado overlord.</p><p className='mt-4'>O primo elétrico, projetado especificamente para a <strong>série DE</strong>, possui uma <strong>bateria de 24 V / 100 Ah</strong>, uma <strong>armadura de aço inoxidável</strong> e uma <strong>tela LCD</strong> para ficar de olho em seus próprios níveis de potência. Ideal para quem prefere uma abordagem mais silenciosa, limpa e francamente mais educada para amostragem de solo.</p><p className='mt-4'>Ambos os modelos são <strong>portáteis</strong>, <strong>de construção robusta</strong> e vêm com <strong>filtragem de retorno/sucção</strong> para evitar que seu precioso sistema hidráulico engasgue com a sujeira, porque ninguém gosta de desgaste prematuro, não é?</p>",
+    "price": "A partir de 3.450€",
+    "features": [
+      "Alimentação hidráulica ou elétrica para se adequar ao seu fluxo de trabalho",
+      "Invólucro de aço robusto com proteção contra corrosão",
+      "Status da bateria LCD em modelos elétricos",
+      "Filtragem de retorno e sucção para longevidade hidráulica",
+      "Portátil e fácil de montar ou transportar"
+    ],
+    "applications": [
+      "Fonte de energia para amostradores de solo das séries MP e DH",
+      "Operações de campo que requerem energia hidráulica ou elétrica independente",
+      "Locais de amostragem remotos sem fonte de alimentação do veículo"
+    ],
+    "howToUse": [
+      "Escolha hidráulico ou elétrico dependendo de quanto vigor seu amostrador exige (e quão sofisticado você se sente).",
+      "Aparafuse-o com segurança ao seu veículo ou trailer – sem improvisar com fita adesiva, por favor.",
+      "Fique de olho nos níveis de potência via LCD (elétrico) ou medidores de combustível/óleo (hidráulico) – porque as surpresas são para festas de aniversário, não para trabalho de campo.",
+      "Encha o óleo e troque os filtros regularmente - trate-o bem e isso manterá seu amostrador funcionando perfeitamente."
+    ],
+    "technicalSpecs": {
+      "Hydraulic Model": "Motor a gasolina de 13 HP, tanque de óleo de 22 L, pressão de 135 bar, vazão de 20 L/min, sistema elétrico de 12 V",
+      "Electric Model": "Bateria de 24 V/100 Ah, display LCD de status, caixa de aço inoxidável",
+      "Weight": "Aprox. 65 kg (hidráulico), 48 kg (elétrico)",
+      "Dimensions": "50 x 40 x 45 cm (AxLxP)",
+      "Material": "Invólucro de aço com proteção contra corrosão",
+      "Warranty": "12 meses de garantia em componentes elétricos"
+    },
+    "testimonials": [
+      {
+        "quote": "Uma máquina robusta e confiável com capacidade suficiente para fazer com que o trabalho de campo pareça menos árduo.",
+        "author": "Tomás Herrera",
+        "company": "Agricultura de Precisão Co.",
+        "rating": 4
+      }
+    ]
+  },
+  "spareparts": {
+    "name": "Peças sobressalentes recomendadas",
+    "nickname": "Os salva-vidas",
+    "specs": [
+      "Peças sobressalentes aprovadas pela fábrica para todos os modelos",
+      "Componentes críticos para montagens de alto desgaste e de missão crítica",
+      "Embalados individualmente, etiquetados e prontos para serviço de campo",
+      "Apoiado pelos padrões de confiabilidade da TechbyP"
+    ],
+    "description": "Porque nada estraga um bom dia no campo como uma conexão quebrada ou uma vedação com vazamento. Estas são as peças de reposição oficiais recomendadas - escolhidas a dedo para sua máquina MP, DH, DE ou BOPROB III e prontas para livrá-lo de problemas antes que eles comecem.",
+    "herodescription": "Pense neles como o kit de primeiros socorros para seu amostrador de solo. Esteja você em um pântano na Baviera ou em uma bacia de poeira na Bulgária, ter as <strong>peças sobressalentes OEM</strong> certas em mãos transforma um desastre em potencial em um soluço presunçosamente tratado.<br/>Cada kit inclui os suspeitos do costume: <strong>anéis de vedação, acoplamentos hidráulicos, filtros, correias</strong> e as peças que silenciosamente funcionam mais. Nada de improvisar com arame de enfardamento ou peças emprestadas da colheitadeira do seu companheiro.",
+    "detailedDescription": "<p className='mt-4'>Estes são os <strong>kits de peças de reposição recomendados</strong> para os amostradores <strong>série MP</strong>, <strong>série DH</strong>, <strong>série DE</strong> e <strong>BOPROB III</strong>. E não, eles não são opcionais. Eles são o que os engenheiros usam. O que os técnicos de serviço usam. O que você deve ter na caixa de ferramentas se você leva a sério o tempo de atividade.</p><p className='mt-4'>Dentro de cada kit, você encontrará os suspeitos de sempre: <strong>vedações, filtros, conexões hidráulicas, relés e linhas de pressão</strong> - as peças que mantêm o fluido onde ele deveria estar e a corrente fluindo na direção certa. É como carregar uma cueca sobressalente em um voo de longa distância: você espera não precisar delas, mas ficará muito feliz se precisar.</p><p className='mt-4'>As peças são <strong>embaladas e etiquetadas individualmente</strong>, para que você não perca meio dia tentando descobrir se aquela arruela cabe na linha de retorno ou no filtro de óleo. E, claro, todos eles são <strong>certificados de fábrica</strong> e projetados para serem encaixados sem qualquer açougue.</p>",
+    "price": "A partir de € 450",
+    "features": [
+      "Peças de reposição recomendadas para amostradores de solo MP, DH, DE e BOPROB III",
+      "Inclui componentes de desgaste crítico e itens de reparo de emergência",
+      "Aprovado de fábrica para compatibilidade perfeita",
+      "Claramente rotulado e embalado para uso em campo",
+      "Ajuda a reduzir o tempo de inatividade durante campanhas de amostragem críticas"
+    ],
+    "applications": [
+      "Reparos de campo e manutenção preventiva em amostradores de solo BPT",
+      "Mantendo os componentes de alto desgaste dentro condição de pronto para serviço",
+      "Evitando atrasos no projeto devido a peças indisponíveis"
+    ],
+    "howToUse": [
+      "Mantenha um kit por máquina – porque ninguém gosta de canibalizar peças da unidade que você não está usando.",
+      "Substitua os componentes de alto desgaste de acordo com os intervalos de manutenção ou desgaste visível.",
+      "Use apenas os componentes rotulados para os locais pretendidos (adivinhar não é heróico, é caro).",
+      "Reabasteça seu kit após o uso para que você nunca seja pego sem ele duas vezes."
+    ],
+    "technicalSpecs": {
+      "Compatibility": "MP-1.90, MP-2.60, MP-3.90, MP-4.100, MP-1.120, série DH, DE-1.30, BOPROB III",
+      "Included Parts": "Acoplamentos hidráulicos, filtros, anéis de vedação, solenóides, correias, relés, linhas de pressão (varia de acordo com o kit)",
+      "Packaging": "Embalado e etiquetado individualmente",
+      "Shelf Life": "5 anos em condições de armazenamento seco",
+      "Restock Options": "Peças individuais disponíveis mediante solicitação"
+    },
+    "testimonials": [
+      {
+        "quote": "Eu costumava improvisar com peças aleatórias - até que passei duas horas na lama reconstruindo uma válvula com goma de mascar. Nunca mais.",
+        "author": "Elena Mihăilescu",
+        "company": "AgroTest România",
+        "rating": 5
+      }
+    ]
+  },
+  "coolbox": {
+    "name": "Caixa térmica 95L",
+    "nickname": "O Chiller",
+    "specs": [
+      "Compressor de zona dupla refrigerando/congelando até -20°C",
+      "Compartimentos independentes com iluminação LED",
+      "Display digital, carregamento USB e controle de aplicativo",
+      "Funciona com alimentação de 12/24 V DC ou 230 V AC"
+    ],
+    "description": "Porque às vezes suas amostras - ou sua cerveja - merecem algo melhor do que a miséria morna. Com esta fera de 95L, você leva uma tundra ártica portátil para o local de trabalho. Possivelmente um exagero. Mas definitivamente brilhante.",
+    "herodescription": "Você conhece a sensação: você está no meio do caminho de uma montanha, tudo está dentro do prazo e então alguém abre a geladeira para encontrar... <strong>sopa</strong>. Não mais. <strong>O Chiller transforma sorrisos presunçosos em alívio gelado</strong>, literalmente.<br/>Ele <strong>esfria</strong>. Ele <strong>congela</strong>. Ele <strong>brilha</strong>. E sim, ele tem um <strong>aplicativo</strong> – porque seu telefone ainda não é suficientemente presunçoso. Os engenheiros alemães podem chamar isso de <em>Kühlbox</em>. <strong>Chamamos isso de 'trazer a geladeira, porque podemos'.</strong>",
+    "detailedDescription": "<p className='mt-4'>A <strong>Coolbox 95L</strong> é, francamente, <strong>mais capaz do que a maioria dos minibares de hotel</strong>. Compartimentos duplos, cada um configurável como geladeira ou freezer, significam que você pode manter seu kit de amostras de um lado e o almoço do outro, e ainda ter espaço para <strong>satisfação presunçosa</strong>.</p><p className='mt-4'>Ele é alimentado por um <strong>compressor LG de alta eficiência</strong> (que é mais do que o AC do seu carro pode dizer) e esfria até <strong>-20°C</strong> mesmo quando está quente o suficiente para fritar um ovo no rack de teto. Use-o através do painel de controle ou do <strong>aplicativo Alpicool</strong> se você é o tipo de pessoa que controla sua geladeira em uma rede.</p><p className='mt-4'>Para maior autonomia, combine-o com a <strong>bateria opcional</strong> (não incluída), proporcionando <strong>4 a 24 horas</strong> de resfriamento independente. Ou conecte-o ao veículo e <strong>nunca mais se preocupe</strong>. Ele foi construído para aguentar, <strong>embora desaconselhemos isso, obviamente.</strong></p>",
+    "price": "€1000",
+    "features": [
+      "Os compartimentos duplos podem resfriar ou congelar independentemente.",
+      "Display digital com controles de toque e aplicativo móvel",
+      "Iluminação LED integrada e porta de carregamento USB",
+      "Tampas abertas de ambos os lados para máximo potencial de faffing",
+      "Funciona em 12/24 V CC ou 110–240 V CA"
+    ],
+    "applications": [
+      "Transporte de amostras sensíveis à temperatura em locais quentes climas",
+      "Expedições de vários dias sem sacrificar bebidas geladas",
+      "Manter pacotes de gel e amostras dentro de temperaturas compatíveis com laboratório",
+      "Preservação de emergência de cerveja em locais de trabalho remotos"
+    ],
+    "howToUse": [
+      "Conecte ao veículo ou à alimentação CA antes de carregar",
+      "Defina as temperaturas alvo através do painel de controle ou aplicativo",
+      "Use os compartimentos como geladeira, freezer ou freezer-freezer",
+      "Coloque as amostras na vertical e evite sobrecarregar (sim, sabemos que você fará isso de qualquer maneira)",
+      "Limpe regularmente, a menos que esteja conduzindo um estudo de crescimento microbiano"
+    ],
+    "technicalSpecs": {
+      "Capacity": "95 litros",
+      "TemperatureRange": "-20°C a +10°C",
+      "PowerSupply": "12/24 V CC ou 110–240 V CA",
+      "PowerConsumption": "6 A (12 V) / 3 A (24 V) ≈ 0,3 kWh/24h",
+      "ExternalDimensions": "826 × 528 × 465 mm (+ cabo de 25 mm folga)",
+      "InternalConfiguration": "2 compartimentos iluminados por LED com tampas individuais",
+      "Weight": "24 kg (peso seco)"
+    },
+    "testimonials": []
+  },
+  "led": {
+    "name": "Luz de trabalho LED 1700",
+    "nickname": "O sol da meia-noite",
+    "specs": [
+      "Luz de trabalho LED montada em pivô para iluminação de campo próximo",
+      "Saída ofuscante de 1700 lúmens de 4 LEDs",
+      "Caixa de alumínio durável, classificação IP6K9K",
+      "Compatível com sistemas de 12–24 V DC"
+    ],
+    "description": "A escuridão não é desculpa. Com 1700 lúmens embalados em uma unidade compacta e blindada, esta luz de trabalho LED é o que acontece quando você cruza um farol com um pequeno sol. Esteja você no meio da amostra ou no meio de um palavrão, você verá tudo - claramente.",
+    "herodescription": "<strong>Amostragem no escuro? Esqueceu o sol?</strong> Sem problemas. O Midnight Sun oferece uma <strong>iluminação extremamente poderosa</strong> sem o calor, o ruído ou a conta de diesel.<br/>Monte-o, aponte-o, ligue-o e depois pergunte-se como você já viveu sem ele. Não é uma iluminação romântica. É uma <strong>iluminação para realizar o trabalho</strong>.",
+    "detailedDescription": "<p className='mt-4'>A <strong>LED Work Light 1700</strong> é uma <strong>luminária prática e testada em campo</strong>, projetada para cortar a escuridão como uma serra elétrica corta a manteiga. Com uma brutal <strong>saída de 1.700 lúmens</strong>, ela fornece iluminação de campo próximo focada para equipamentos de amostragem, máquinas ou qualquer situação em que 'Acho que vejo algo' não é bom o suficiente.</p><p className='mt-4'>Construída com uma <strong>caixa de alumínio anodizado preto</strong> e atendendo aos <strong>padrões IP6K7 e IP6K9K</strong>, esta unidade evita jatos de água, tempestades de poeira e provavelmente a maioria dos seus erros. Um <strong>suporte giratório</strong> permite uma mira precisa, enquanto a <strong>lente padronizada</strong> mantém o feixe amplo e utilizável.</p><p className='mt-4'>Compatível com sistemas <strong>12–24 V CC</strong>, a luz consome 24 W e vem com extremidades de cabo abertas para fácil integração. A montagem por pessoal qualificado é necessária—<strong>porque derreter fios é menos engraçado na vida real</strong>.</p>",
+    "price": "€67",
+    "features": [
+      "Saída de 1700 lúmens de 4 LEDs de alta intensidade",
+      "Suporte giratório para mira precisa",
+      "Proteção de entrada IP6K9K e IP6K7",
+      "Lente padronizada para propagação em campo próximo",
+      "Carcaça de alumínio compacta e robusta"
+    ],
+    "applications": [
+      "Perfuração noturna e amostragem de solo",
+      "Iluminação de equipamentos em plataformas e reboques",
+      "Zonas de trabalho em túneis, florestas ou no 'meio do nada'",
+      "Iluminação para reparos de emergência"
+    ],
+    "howToUse": [
+      "Monte com segurança usando o suporte de pivô incluído",
+      "Conecte a fonte de alimentação de 12 ou 24 V CC (montagem por pessoal qualificado)",
+      "Aponte o feixe em direção à zona de trabalho",
+      "Evite olhar diretamente para ele, a menos que você goste de arrependimento retinal"
+    ],
+    "technicalSpecs": {
+      "Voltage": "12/24 V CC",
+      "PowerConsumption": "24W",
+      "LuminousFlux": "1700lm",
+      "ColorTemperature": "5700K",
+      "NumberOfLEDs": "4",
+      "LightDistribution": "Iluminação de campo próximo",
+      "Mounting": "Suporte de montagem giratório",
+      "PlugType": "Extremidades abertas do cabo",
+      "CableLength": "800 milímetros",
+      "IngressProtection": "IP6K7/IP6K9K",
+      "Housing": "Alumínio, acabamento preto",
+      "Dimensions": "75 mm (A) × 98 mm (L) × 41 mm (P)",
+      "Diameter": "75mm",
+      "Certification": "Compatível com ECE R10"
+    },
+    "testimonials": []
+  },
+  "camera": {
+    "name": "Câmera externa",
+    "nickname": "A Torre de Vigia",
+    "specs": [
+      "Câmera 5MP 4G para equipamentos de amostragem de solo",
+      "É montada diretamente na estrutura da sua máquina",
+      "Ao vivo feed de vídeo para seu celular ou tablet via aplicativo",
+      "Campo de visão de 75° com visão noturna IR de até 15 m"
+    ],
+    "description": "Por que adivinhar o que está acontecendo atrás da plataforma quando você pode ver isso acontecer em tempo real. O Watchtower é montado em sua máquina e transmite imagens ao vivo diretamente para sua cabine. Sem cabos. Sem pontos cegos. Sem surpresas.",
+    "herodescription": "<strong>Já tentou reverter seu equipamento com um amostrador de 3 toneladas na parte traseira?</strong> Não é o ideal. A Torre de Vigia lhe dá <strong>olhos sobre o que está acontecendo</strong>—no conforto do seu assento de motorista. Monitore cada movimento, golpe e oscilação.<br/>Conecte-se via 4G. Visualize do seu telefone. <strong>Porque estar em dois lugares ao mesmo tempo agora é tecnicamente possível.</strong>",
+    "detailedDescription": "<p className='mt-4'><strong>A Torre de Vigia</strong> é uma <strong>câmera de 5 MP pronta para campo</strong> construída para ser montada diretamente em sua máquina de amostragem de solo. Depois de instalado, ele transmite vídeo ao vivo para seu tablet ou telefone usando 4G, para que você possa ver o que está acontecendo na parte de trás do equipamento sem sair do assento (ou gritar em um campo lamacento).</p><p className='mt-4'>Seu <strong>ângulo de visão de 75°</strong> oferece visibilidade total do cabeçote de amostragem, enquanto a <strong>visão noturna infravermelha</strong> estende essa confiança até o anoitecer. Esteja você verificando o alinhamento, confirmando a queda do núcleo ou apenas admirando suas habilidades de perfuração, tudo é visível em tempo real.</p><p className='mt-4'>O aplicativo é gratuito, a configuração leva alguns minutos e não há necessidade de Wi-Fi local. Com um cartão micro SD opcional (até 128 GB), você pode até <strong>gravar operações para documentação ou treinamento</strong>. A configuração é plug-and-play, com uma ressalva importante: <strong>insira o cartão SIM corretamente ou passe a tarde diagnosticando sua própria impaciência</strong>.</p><p className='mt-4'>É à prova de chuva, à prova de lama e teimosamente confiável - exatamente o que você quer de algo aparafusado a uma máquina vibratória no meio do nada.</p>",
+    "price": "€225",
+    "features": [
+      "Transmissão de vídeo ao vivo pela rede 4G",
+      "Lente de ângulo fixo de 75° com visão noturna",
+      "Montado diretamente em máquinas de amostragem TechByp",
+      "Controle de aplicativo com ajuste de imagem (WDR, BLC, etc.)",
+      "Gravação integrada opcional via micro SD"
+    ],
+    "applications": [
+      "Monitoramento de operações de amostragem de solo de dentro do veículo",
+      "Verificações de alinhamento em tempo real durante a perfuração",
+      "Treinamento do operador e documentação em vídeo",
+      "Evitando perfuração às cegas e surpresas inesperadas"
+    ],
+    "howToUse": [
+      "Monte com segurança na máquina usando o suporte",
+      "Insira o cartão SIM e o cartão SD opcional",
+      "Conecte à fonte de alimentação de 12 V na plataforma",
+      "Inicie o aplicativo para transmitir transmissão ao vivo da câmera",
+      "Limpe ocasionalmente - mas apenas quando desconectado!"
+    ],
+    "technicalSpecs": {
+      "Resolution": "5 deputados",
+      "Transmission": "4G LTE",
+      "IRIllumination": "Sim, até 15 m",
+      "ViewingAngle": "75°",
+      "PanTilt": "Não (lente fixa)",
+      "Audio": "Sim",
+      "ControlViaApp": "Sim (iOS/Android)",
+      "SDCardSlot": "Sim, até 128 GB",
+      "PowerSupply": "12V CC",
+      "HousingType": "Minicâmera, corpo robusto",
+      "Mounting": "Suporte de parafuso/pivô (incluído)",
+      "Dimensions": "80 mm (L) × 45 mm (A) × 80 mm (P)",
+      "IngressProtection": "À prova de intempéries para montagem externa"
+    },
+    "testimonials": []
+  },
+  "probes": {
+    "name": "Sondas, Varetas e Acessórios",
+    "nickname": "O Purista N-min",
+    "specs": [
+      "Construção em aço ferramenta (HRC 52)",
+      "Perfil cônico cônico (40→38 mm / 35→33 mm / 30→28 mm)",
+      "Marcações de profundidade gravadas a laser a cada 10 cm",
+      "Compatível com protocolos de amostragem N-min (VDLUFA, ISO 14255)"
+    ],
+    "description": "O padrão ouro para amostragem manual de N-min: hastes de perfuração cônicas projetadas com precisão, construídas para solos duros e precisão de nível de laboratório.",
+    "herodescription": "Não apenas quaisquer hastes - estes são bisturis de aço ferramenta afiados como navalhas </strong> para o aficionado do solo que exige precisão. Seu design cônico significa menos confusão, menos atrito, e aquelas <strong>marcas de 10 cm gravadas a laser</strong>? Perfeito para saber exatamente a profundidade que você cavou - porque as camadas do solo não gostam de ser perturbadas, e você também não deveria.",
+    "detailedDescription": "<p className='mt-4'>Projetado para quem leva o solo a sério (e para si mesmo, um pouco menos): três tamanhos cônicos lisos — <strong>40→38 mm</strong> para 0-30 cm, <strong>35→33 mm</strong> para 30-60 cm e <strong>30→28 mm</strong> para 60-90 cm — cortam argila e cascalho teimosos como uma faca quente na manteiga, graças a bordas pré-quebradas prontas para fazer o trabalho duro para você.</p><p className='mt-4'>Cada haste apresenta <strong>incrementos de 10 cm gravados a laser</strong> que não desaparecerão mais rápido do que o seu entusiasmo em uma manhã de segunda-feira. Combine-os com alavancas (itens 1030/1031) para facilitar o levantamento e um cinzel (item 1051) para limpar as amostras - porque a amostragem deve parecer um empurrãozinho suave, não uma queda de braço.</p>",
+    "price": "Preço sob consulta",
+    "features": [
+      "Três diâmetros cônicos minimizam o atrito e maximizam a facilidade de amostragem",
+      "Aço ferramenta endurecido HRC 52 para durabilidade e resistência",
+      "Marcações de profundidade gravadas a laser a cada 10 cm para amostragem precisa",
+      "Arestas de corte pré-quebradas para penetração consistente e limpa",
+      "Compatível com alças articuladas e cinzéis para extração eficiente de amostras"
+    ],
+    "applications": [
+      "Perfil de nitrato N-min",
+      "Pesquisa acadêmica e comercial do solo",
+      "Amostragem manual em solos duros, pedregosos ou argilosos"
+    ],
+    "howToUse": [
+      "Escolha o diâmetro da haste com base na profundidade de amostra desejada",
+      "Gire a haste enquanto aplica pressão para baixo; cone faz o trabalho pesado",
+      "Use alças articuladas (itens 1030 ou 1031) para extrair a haste suavemente",
+      "Limpe os resíduos de solo com o cinzel (item 1051) para manter a integridade do sulco entre as amostras"
+    ],
+    "technicalSpecs": {
+      "Material": "Aço ferramenta (HRC 52)",
+      "Taper": "40→38mm / 35→33mm / 30→28mm",
+      "Markings": "Gravado a laser a cada 10 cm",
+      "Compatibility": "Protocolos N-min (VDLUFA, ISO 14255)",
+      "Weight": "Aprox. 2,1 kg por metro (haste de 40 mm de diâmetro)"
+    },
+    "table": [
+      {
+        "emNo": "1001",
+        "articleName": "Barra de mandrilar, comprimento efetivo 1000 mm, comprimento total 1150 mm, ranhura 18 mm, cônica, redonda"
+      },
+      {
+        "emNo": "1001.2",
+        "articleName": "Barra de mandrilar, comprimento útil 1000 mm, comprimento total 1150 mm, ranhura 18 mm, cônica, redonda com marcações em seções de 10 cm e arestas de corte quebradas"
+      },
+      {
+        "emNo": "1003",
+        "articleName": "Barra de mandrilar, comprimento efetivo 1200 mm, comprimento total 1350 mm, ranhura 18 mm, cônica, redonda"
+      },
+      {
+        "emNo": "1005",
+        "articleName": "Barra de mandrilar, comprimento efetivo 1500 mm, comprimento total 1650 mm, ranhura 18 mm, cônica, redonda"
+      },
+      {
+        "emNo": "1030",
+        "articleName": "Botão para levantar e esvaziar a haste de perfuração, comprimento 300 mm"
+      },
+      {
+        "emNo": "1031",
+        "articleName": "Botão para levantar e esvaziar a haste de perfuração, comprimento 600 mm"
+      },
+      {
+        "emNo": "1040",
+        "articleName": "1 conjunto de sondas de amostragem (conjunto de brocas N-min) para três profundidades. Cada broca consiste na sonda de amostragem real, uma extensão e a cabeça de impacto com furo cruzado.\n(0-30 cm Ø 40-38 mm, 30-60 cm Ø 35-33 mm, 60-90 cm Ø 30-28 mm). Todas as peças em aço ferramenta, desenvolvidas para solos duros."
+      },
+      {
+        "emNo": "1041",
+        "articleName": "Sonda, comprimento útil 0-30 cm, diâmetro externo 40-38 mm, cônico"
+      },
+      {
+        "emNo": "1042",
+        "articleName": "Extensão para sonda de 0-30 cm"
+      },
+      {
+        "emNo": "1043",
+        "articleName": "Sonda, comprimento útil 30-60 cm, diâmetro externo 35-33 mm, cônico"
+      },
+      {
+        "emNo": "1044",
+        "articleName": "Extensão para sonda de 30-60 cm"
+      },
+      {
+        "emNo": "1045",
+        "articleName": "Sonda, comprimento útil 60-90 cm, diâmetro externo 30-28 mm, cônico"
+      },
+      {
+        "emNo": "1046",
+        "articleName": "Extensão para sonda de 60-90 cm"
+      },
+      {
+        "emNo": "1049",
+        "articleName": "Cabeça de impacto com furo cruzado"
+      },
+      {
+        "emNo": "1050",
+        "articleName": "Haste indicadora com cabeça de impacto retrátil para coleta de amostras de solo até 2 m de profundidade, Ø 15 mm, ranhura 8x8. Utilizado com haste de perfuração de percussão NL 1000 (Art. No. 1001)."
+      },
+      {
+        "emNo": "1051",
+        "articleName": "Cinzel para decapagem e retirada da amostra de solo, 18 mm, redondo"
+      },
+      {
+        "emNo": "1052",
+        "articleName": "Cinzel para decapagem e retirada da amostra de solo, 15 mm, redondo"
+      },
+      {
+        "emNo": "1053",
+        "articleName": "Cinzel para decapagem e remoção da amostra de solo, 14 mm, quadrado"
+      },
+      {
+        "emNo": "1054",
+        "articleName": "Cinzel para decapagem e remoção da amostra de solo, 8 mm, quadrado"
+      },
+      {
+        "emNo": "1055",
+        "articleName": "Cinzel para decapagem e remoção da amostra de solo, 12 mm, quadrado"
+      },
+      {
+        "emNo": "1060",
+        "articleName": "Combinação de elevação de impacto para hastes de perfuração de impacto e varetas de medição de 2 m de comprimento (martelo quadrado, gancho de tração e anel de tração). Superfície de impacto do martelo 135 x 135 mm, 200 mm de comprimento, peso aprox. 4300g."
+      },
+      {
+        "emNo": "1061",
+        "articleName": "Martelo quadrado completo"
+      },
+      {
+        "emNo": "1064",
+        "articleName": "anel de desenho"
+      },
+      {
+        "emNo": "1065",
+        "articleName": "Puxando gancho"
+      },
+      {
+        "emNo": "1085",
+        "articleName": "Sonda de solo em aço inoxidável para localização de compactação e camadas de solo. Comprimento efetivo 1000 mm com marcações em intervalos de 100 mm, diâmetro de 8 mm."
+      }
+    ],
+    "testimonials": [
+      {
+        "quote": "Usamos essas hastes há 15 anos – ainda a ferramenta mais confiável para trabalhos de N-min. O cone faz toda a diferença no barro.",
+        "author": "Dra. Lena Bauer",
+        "company": "AgroLab Alemanha",
+        "rating": 5
+      }
+    ]
+  },
+  "drillrods": {
+    "name": "Hastes de perfuração Ø22 mm para perfis de solo normais",
+    "nickname": "O abridor profundo",
+    "specs": [
+      "Ranhura de perfuração Ø 22 mm, comprimento total 1100 mm, comprimento útil 1000 mm",
+      "Ranhura de 12 mm para segurar amostras de solo",
+      "Extensões de 1000 mm de comprimento com rosca interna de 5/8” em ambos os lados",
+      "Inclui chaves especiais para aperto"
+    ],
+    "description": "Hastes de perfuração robustas (Ø 22 mm) projetadas para abrir perfis normais de solo até 10 m de profundidade com peças modulares e intercambiáveis ​​para ajuste flexível do comprimento.",
+    "herodescription": "Conheça as <strong>hastes de perfuração modulares</strong> com uma ranhura de perfuração de <strong>22 mm</strong>, construída para lidar com perfis de solo de até <strong>10 metros de profundidade</strong>. Graças aos parafusos de conexão, você pode ajustar o comprimento mais rápido do que dizer 'Bob é seu tio', e as cabeças de impacto cuidam de tudo - desde o toque casual até o soco completo da máquina.",
+    "detailedDescription": "<p className='mt-4'>Cada seção é um sólido <strong>1000 mm de precisão de engenharia</strong>, ostentando uma <strong>ranhura de 12 mm</strong> para manter suas amostras de solo firmemente no lugar enquanto você as puxa das profundezas. As extensões são aparafusadas facilmente com <strong>roscas internas de 5/8\"</strong>, porque às vezes, mais é apenas mais.</p><p className='mt-4'>Aperte com <strong>chaves SW 18</strong> especiais — sem escorregar, sem drama. Para o grand finale, escolha sua arma: um <strong>levantador de macaco com corrente de fixação</strong> ou um <strong>extrator de um braço com braçadeira esférica</strong>, ambos projetados para realizar o trabalho. com segurança e sem suar a camisa.</p>",
+    "price": "Preço sob consulta",
+    "features": [
+      "Ranhura de perfuração de Ø 22 mm com ranhura para amostra de solo de 12 mm",
+      "Design modular com peças intercambiáveis ​​aparafusadas",
+      "1000 mm de comprimento útil por seção de haste",
+      "Cabeças de impacto especiais para martelo manual ou uso de máquina",
+      "Chaves especiais para aperto seguro",
+      "Dispositivos de elevação para fácil extração da haste"
+    ],
+    "applications": [
+      "Abertura de perfis normais de solo até 10 metros de profundidade",
+      "Amostragem manual de solos em solos não rochosos",
+      "Ajuste flexível do comprimento da haste para amostragem de profundidade variável"
+    ],
+    "howToUse": [
+      "Monte hastes e extensões no comprimento necessário usando parafusos de conexão",
+      "Use a cabeça de impacto apropriada com martelo manual ou máquina",
+      "Aperte as seções da haste usando chaves especiais (SW 18)",
+      "Extraia as hastes usando um dispositivo de elevação de macaco com corrente de fixação ou extrator de um braço com braçadeira esférica"
+    ],
+    "technicalSpecs": {
+      "Diameter": "22mm",
+      "Groove width": "12mm",
+      "Rod length": "Total 1100 mm, utilizável 1000 mm",
+      "Extension length": "1000 mm com rosca interna de 5/8”",
+      "Thread size": "Roscas internas e externas de 5/8”",
+      "Recommended tools": "Chaves especiais SW 18",
+      "Lifting devices": "Macaco com barra de elevação e corrente de fixação, extrator de um braço com grampo esférico integrado"
+    },
+    "table": [
+      {
+        "emNo": "1100",
+        "articleName": "Ranhura Ø 22 mm, NL 1000 mm, ranhura 12 mm"
+      },
+      {
+        "emNo": "1101",
+        "articleName": "Extensão com rosca interna 5/8\""
+      },
+      {
+        "emNo": "1102",
+        "articleName": "Parafuso de conexão, rosca externa 5/8\" SW 18"
+      },
+      {
+        "emNo": "1103",
+        "articleName": "Chave especial SW 18"
+      },
+      {
+        "emNo": "1049",
+        "articleName": "Cabeça de impacto para apalpação manual"
+      },
+      {
+        "emNo": "1110",
+        "articleName": "Macaco com barra de elevação (curta)"
+      },
+      {
+        "emNo": "1111",
+        "articleName": "Barra de elevação (longa)"
+      },
+      {
+        "emNo": "1112",
+        "articleName": "Sapo de fixação"
+      },
+      {
+        "emNo": "1113",
+        "articleName": "Corrente de fixação"
+      },
+      {
+        "emNo": "1120",
+        "articleName": "Extrator de um braço com braçadeira esférica integrada"
+      },
+      {
+        "emNo": "1125",
+        "articleName": "Extrator de braço único para sondas e hastes Ø 32-65 mm, tubo de elevação Ø 44 mm x 1500 mm, capacidade de elevação aprox. 4 t"
+      },
+      {
+        "emNo": "1126",
+        "articleName": "Grampo de mandíbula"
+      },
+      {
+        "emNo": "645250",
+        "articleName": "Moldura para livro de campo em madeira, tamanho DIN A4, peso 0,6 kg"
+      },
+      {
+        "emNo": "645242",
+        "articleName": "Moldura para livro de campo em plástico, tamanho DIN A4, peso 0,4 kg"
+      },
+      {
+        "emNo": "645245",
+        "articleName": "Moldura para livro de campo em madeira, tamanho DIN A3, peso 0,9 kg"
+      },
+      {
+        "emNo": "645260",
+        "articleName": "Moldura de livro de campo em plástico, tamanho DIN A3, peso 0,7 kg"
+      }
+    ],
+    "testimonials": []
+  },
+  "hammers": {
+    "name": "Seleção de martelos e acessórios",
+    "nickname": "O martelo certo para cada trabalho",
+    "specs": [
+      "Variedade de martelos com superfícies de impacto de 80 mm Ø a 150 mm quadrados",
+      "Martelos de face macia e de nylon com carcaça de ferro fundido maleável",
+      "Cabos de madeira ou nogueira com vários comprimentos",
+      "Cabeças de martelo e inserções intercambiáveis"
+    ],
+    "description": "Cada martelo é um herói por si só. Escolha aquele que se adapta à sua saga de amostragem de solo e não se esqueça dos companheiros de confiança: nossos acessórios.",
+    "herodescription": "Do <strong>martelo quadrado sólido e prático</strong> ao <strong>toque suave de uma face macia de náilon</strong>, temos as ferramentas para tornar sua amostragem de solo <strong>menos grunhido, mais sutileza</strong>. Escolha com sabedoria: <strong>precisão, potência e conforto</strong> o aguardam.",
+    "detailedDescription": "<p className='mt-4'>Precisa canalizar seu Thor interior com um robusto <strong>martelo quadrado de 4,3 kg</strong> com uma <strong>superfície de impacto de 135x135 mm</strong>? Ou talvez um <strong>martelo leve de náilon</strong> para persuadir o solo com sutileza? De qualquer forma, <strong>seu desejo é uma ordem</strong>.</p><p className='mt-4'>Quer um pouco de estilo DIY? <strong>Troque as cabeças como um chef troca de facas</strong>, escolha entre <strong>cabos de madeira ou nogueira de todos os comprimentos</strong> e finalize com <strong>inserções tão resistentes ou suaves quanto você quiser</strong>. É como um traje personalizado - apenas para o seu martelo.</p>",
+    "price": "Preço sob consulta",
+    "features": [
+      "Martelo quadrado com superfície de impacto de 135x135 mm, 4,3 kg",
+      "Martelo redondo de plástico com superfície de impacto de 150 mm Ø",
+      "Martelos de face macia com carcaça de ferro fundido maleável",
+      "Variantes de martelo de face macia de nylon",
+      "Cabeças e insertos de martelo intercambiáveis",
+      "Cabos de madeira e nogueira de comprimentos variados"
+    ],
+    "applications": [
+      "Amostragem manual de solo que requer força de impacto precisa",
+      "Proteção de estruturas delicadas de solo com martelos de face macia",
+      "Seleção versátil de martelo para diferentes equipamentos de amostragem"
+    ],
+    "howToUse": [
+      "Selecione tipo de martelo de acordo com a dureza do solo e método de amostragem",
+      "Use o comprimento de cabo apropriado para alavancagem e conforto",
+      "Substitua as cabeças ou insertos do martelo conforme necessário para um desempenho ideal",
+      "Mantenha os cabos de madeira e aperte os parafusos regularmente"
+    ],
+    "technicalSpecs": {
+      "Square hammer": "Superfície de impacto 135x135 mm, comprimento da cabeça 200 mm, peso 4,3 kg",
+      "Round plastic hammer": "Superfície de impacto 150 mm Ø, comprimento da cabeça 200 mm, peso 4,3 kg",
+      "Soft-face hammer": "Superfície de impacto 80-125 mm Ø, cabo de madeira, peso 2,9 - 6,7 kg",
+      "Nylon soft-face hammer": "Superfície de impacto 80 mm Ø, cabo de madeira, peso 3,0 - 3,2 kg",
+      "Handles": "Madeira e nogueira, comprimentos de 395 mm a 900 mm",
+      "Inserts": "Superplástico e nylon, vários diâmetros",
+      "Screws": "Parafuso Allen com porca para martelo de face macia tamanhos 80 e 100 mm Ø"
+    },
+    "table": [
+      {
+        "emNo": "1061",
+        "articleName": "Martelo quadrado, superfície de impacto 135x135 mm, comprimento da cabeça: 200 mm, peso 4,3 kg"
+      },
+      {
+        "emNo": "1062",
+        "articleName": "Cabeça de martelo para martelo quadrado (Art. No. 1061)"
+      },
+      {
+        "emNo": "1063",
+        "articleName": "Cabo para martelo quadrado com parafuso"
+      },
+      {
+        "emNo": "1070",
+        "articleName": "Martelo redondo de plástico, superfície de impacto 150 mm Ø, comprimento da cabeça: 200 mm, peso 4,3 kg"
+      },
+      {
+        "emNo": "1071",
+        "articleName": "Cabeça de martelo para martelo redondo de plástico (Art. No. 1070)"
+      },
+      {
+        "emNo": "1072",
+        "articleName": "Cabo de martelo para martelo redondo de plástico (Art. No. 1070)"
+      },
+      {
+        "emNo": "3007.080",
+        "articleName": "Martelo de face macia em superplástico com corpo em ferro fundido maleável e cabo de madeira, superfície de impacto 80 mm Ø, comprimento 490 mm, peso aprox. 2.930 g"
+      },
+      {
+        "emNo": "3007.081",
+        "articleName": "Martelo de face macia em superplástico com corpo em ferro fundido maleável e cabo de madeira, superfície de impacto 80 mm Ø, comprimento 800 mm, peso aprox. 3.240 g"
+      },
+      {
+        "emNo": "3007.100",
+        "articleName": "Martelo de face macia em superplástico com corpo em ferro fundido maleável e cabo de madeira, superfície de impacto 100 mm Ø, comprimento 1000 mm, peso aprox. 5.300 g"
+      },
+      {
+        "emNo": "3007.125",
+        "articleName": "Martelo de face macia em superplástico com corpo em ferro fundido maleável e cabo de madeira, superfície de impacto 125 mm Ø, comprimento 1040 mm, peso aprox. 6.700 g"
+      },
+      {
+        "emNo": "3008.080",
+        "articleName": "Martelo de nylon de face macia com corpo em ferro fundido maleável e cabo de madeira, superfície de impacto 80 mm Ø, comprimento 490 mm, peso aprox. 3.090 g"
+      },
+      {
+        "emNo": "3008.081",
+        "articleName": "Martelo de nylon de face macia com corpo em ferro fundido maleável e cabo de madeira, superfície de impacto 80 mm Ø, comprimento 700 mm, peso aprox. 3.240 g"
+      },
+      {
+        "emNo": "3207.080",
+        "articleName": "Inserto para martelo de face macia, super plástico 80 mm Ø"
+      },
+      {
+        "emNo": "3207.100",
+        "articleName": "Inserto para martelo de face macia, super plástico 100 mm Ø"
+      },
+      {
+        "emNo": "3207.125",
+        "articleName": "Inserto para martelo de face macia, super plástico 125 mm Ø"
+      },
+      {
+        "emNo": "3208.080",
+        "articleName": "Inserto para martelo de face macia, nylon 80 mm Ø"
+      },
+      {
+        "emNo": "3244.080",
+        "articleName": "Cabo de nogueira para martelo 80 mm Ø, comprimento do cabo 395 mm"
+      },
+      {
+        "emNo": "3244.081",
+        "articleName": "Cabo de nogueira para martelo 80 mm Ø, comprimento do cabo 700 mm"
+      },
+      {
+        "emNo": "3244.100",
+        "articleName": "Cabo de nogueira para martelo 100 mm Ø, comprimento do cabo 900 mm"
+      },
+      {
+        "emNo": "3244.125",
+        "articleName": "Cabo de nogueira para martelo 125 mm Ø, comprimento do cabo 900 mm"
+      },
+      {
+        "emNo": "3299.080",
+        "articleName": "Parafuso Allen com porca para martelo de face macia 80 mm Ø"
+      },
+      {
+        "emNo": "3299.100",
+        "articleName": "Parafuso Allen com porca para martelo de face macia 100 mm Ø"
+      }
+    ],
+    "testimonials": []
+  },
+  "goettingerDrills": {
+    "name": "Corers de solo Göttinger",
+    "nickname": "Amostragem de precisão facilitada",
+    "specs": [
+      "Projetado para amostragem Nmin de até 90 cm",
+      "Operação manual - não são necessárias ferramentas extras",
+      "Ranhura de aço especialmente endurecido garante atrito mínimo",
+      "Três diâmetros de broca interligados otimizam a inserção e extração"
+    ],
+    "description": "Quem precisa de uma academia quando você tem os Corers de solo Göttinger? Uma pessoa, uma ferramenta leve de 2,5 kg e você estará pronto para conquistar o solo – sem deixar rastros no campo ou aterrorizar cabos enterrados.",
+    "herodescription": "Da <strong>argila delicada</strong> à <strong>areia levemente compactada</strong>, esses descaroçadores cortam com <strong>mínimo barulho</strong>. Três camadas de perfuração perfeitamente calibradas, <strong>alças almofadadas</strong> e um <strong>perfil fräs</strong> inteligente fazem com que a amostragem pareça menos um trabalho e mais uma magia.",
+    "detailedDescription": "<p className='mt-4'>Operação com uma só mão, <strong>sem maquinaria pesada</strong>, <strong>sem ajudantes extras</strong>, só você e a terra. As brocas Göttinger separam <strong>três camadas de solo</strong> com precisão, fornecendo amostras confiáveis ​​de N-min pesando <strong>500–1000g</strong> de <strong>16 golpes paralelos por seção de profundidade</strong>.</p><p className='mt-4'>Cuidado: estes são campeões em <strong>solos suaves</strong>. <strong>Areia rochosa, seca ou densamente compactada</strong> pode esgotar sua paciência. Mas em condições ideais, é o mais próximo possível de uma <strong>varinha mágica para amostragem de solo</strong>.</p>",
+    "price": "Preço sob consulta",
+    "features": [
+      "Operação por uma única pessoa",
+      "Leve, com apenas ~2,5 kg",
+      "Maior eficiência do que ferramentas manuais convencionais",
+      "Zero danos ao campo – sem esmagamento de culturas",
+      "Seguro para drenos, cabos e linhas subterrâneas",
+      "Funciona mesmo em solos úmidos",
+      "Separação exata de 3 camadas para amostras N-min",
+      "Maior conforto de aderência graças ao acolchoamento reforçado da alça"
+    ],
+    "applications": [
+      "Amostragem manual de solo Nmin em solos leves",
+      "Condições de campo onde máquinas não podem ser usadas",
+      "Separação confiável de camadas para análise precisa"
+    ],
+    "howToUse": [
+      "Insira o núcleo manualmente no solo",
+      "Puxe cuidadosamente para coletar a amostra",
+      "Repita 16 golpes paralelos por seção de profundidade para resultados confiáveis",
+      "Evite solos rochosos ou excessivamente compactados"
+    ],
+    "technicalSpecs": {
+      "0-30 cm corer": "Diâmetro 18 mm, ranhura 14 mm",
+      "30-60 cm corer": "Diâmetro 16 mm, ranhura 12 mm",
+      "60-90 cm corer": "Diâmetro 14 mm, ranhura 10 mm",
+      "Complete set": "Inclui um núcleo para cada seção de profundidade (0-30 cm, 30-60 cm, 60-90 cm)"
+    },
+    "table": [
+      {
+        "emNo": "5001",
+        "articleName": "Núcleo Göttinger (0-30 cm), Ø 18 mm, ranhura 14 mm"
+      },
+      {
+        "emNo": "5002",
+        "articleName": "Göttinger núcleo (30-60 cm), Ø 16 mm, ranhura 12 mm"
+      },
+      {
+        "emNo": "5003",
+        "articleName": "núcleo Göttinger (60-90 cm), Ø 14 mm, ranhura 10 mm"
+      },
+      {
+        "emNo": "5004",
+        "articleName": "Conjunto completo de núcleo Göttinger, incluindo todas as três seções de profundidade"
+      }
+    ],
+    "testimonials": []
+  },
+  "raupe": {
+    "nickname": "O Sussurrador de Sujeira",
+    "specs": [
+      "Profundidade: 0–90 cm (opcional 120 cm)",
+      "Hidráulico e semiautomático",
+      "Amostragem de 3 camadas",
+      "Verificação visual manual para cada testemunho"
+    ],
+    "description": "Terreno acidentado? Declive? Labirinto de milharal? Sem problemas. Este rastreador não reclama – apenas faz amostras.",
+    "herodescription": "O <strong>Nitratraupe</strong> é o tipo de máquina para a qual qualquer entusiasta do solo acenaria com aprovação. Capaz de coletar amostras de solo de <strong>0–90 cm</strong> em <strong>três camadas</strong>, ele navega em terrenos acidentados como uma criança educada, mas implacável, nas trilhas. Semiautomática, assistida hidraulicamente e guiada pelo olhar (porque a máquina respeita a sua inteligência).",
+    "detailedDescription": "<p className='mt-4'><strong>Precisão encontra força bruta</strong> em um pacote surpreendentemente cortês. O <strong>Nitratraupe</strong> corta um <strong>perfil de solo limpo</strong> sem misturar camadas (<strong>não são necessárias brocas rotativas</strong>). <strong>Três camadas — 0–30, 30–60, 60–90 cm</strong> são extraídas com <strong>delicadeza</strong>.</p><p className='mt-4'>Ele funciona com o <strong>motor do veículo transportador</strong>, então <strong>não há acessos de raiva extras do motor de combustão</strong>. A <strong>amostragem manual</strong> permite que você <strong>inspecione visualmente o núcleo</strong>, mantendo <strong>custos e dores de cabeça baixos</strong>.</p><p className='mt-4'>Os trilhos o tornam <strong>estreito o suficiente para ser espremido entre o cultivo de milho</strong> e, com um <strong>controle remoto</strong>, você pode <strong>aumentar, abaixar, girar e amostrar</strong> sem sair da sua zona de conforto. Um <strong>rastreador de amostragem de solo para verdadeiros cavalheiros</strong>.</p>",
+    "price": "A partir de € 20.000",
+    "features": [
+      "Extração hidráulica semiautomática de até 90 cm (opcional 120 cm)",
+      "Amostragem de três camadas para precisão específica do horizonte",
+      "A inspeção manual do núcleo mantém você no comando",
+      "O motor do transportador aciona o sistema hidráulico - sem motores extras",
+      "Controle remoto: levantar, abaixar, girar, amostrar",
+      "Os trilhos são estreitos para passagem entre milho",
+      "Martelo hidráulico de alta frequência (2.400 golpes/min, 40J por golpe)",
+      "Durável e de baixa manutenção",
+      "Serviço rápido de peças de reposição (2h) e reparos no local (12h)"
+    ],
+    "howToUse": [
+      "Conduza o rastreador até o local de amostragem",
+      "Coloque a máquina no chão para obter estabilidade durante o deslocamento, se necessário",
+      "Levante a haste de amostragem na vertical por meio do controle remoto",
+      "Insira hidraulicamente a haste no solo e gire para extrair o núcleo",
+      "Repita para os três camadas: 0–30, 30–60, 60–90 cm",
+      "Remova o núcleo, inspecione visualmente e armazene em recipientes impermeáveis"
+    ],
+    "applications": [
+      "Teste de solo Nmin/nitrato",
+      "Monitoramento ambiental e agrícola do solo",
+      "Perfil e pesquisa do solo",
+      "Trabalho de campo em encostas e terrenos acidentados"
+    ],
+    "technicalSpecs": {
+      "Sampling Depth": "0–90 cm (opcional 120 cm)",
+      "Sampling Type": "Acionado por impacto, semiautomático",
+      "Hammer Unit": "Hidráulico, 2.400 golpes/min, 40 J/sopro",
+      "Horizons": "3 camadas (0–30, 30–60, 60–90 cm)",
+      "Magazines": "3",
+      "Sampling Cycle Time": "20 seg/núcleo",
+      "Carrier Vehicle": "Esteira, esteiras alimentadas por motor",
+      "Track Width": "Máx. 700 mm",
+      "Remote Control": "Operação completa de esteira e unidade de amostragem",
+      "Engine": "Honda, ≥6,5 HP",
+      "Weight": "220kg"
+    },
+    "testimonials": [
+      {
+        "quote": "Lida com encostas lamacentas como um alpinista profissional. Nunca perdemos uma amostra.",
+        "author": "Dra. Anna Fischer",
+        "company": "Laboratório de Pesquisa de Solo",
+        "rating": 5
+      },
+      {
+        "quote": "A separação de 3 camadas é genial. Simples, eficaz e facilita a vida no campo.",
+        "author": "Lars Becker",
+        "company": "AgriSoil GmbH",
+        "rating": 5
+      }
+    ]
+  }
+}

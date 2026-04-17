@@ -423,6 +423,10 @@
        "es": "",
        "fr": "",
         "ro": "",
+        "pt": "",
+        "ru": "",
+      "switchToPortuguese": "Cambiar a portugués",
+      "switchToRussian": "Cambiar a ruso",
       "ariaLabel": "Cambiar idioma"
     }
   },
