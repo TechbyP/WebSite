@@ -1,27 +1,12 @@
 import React, { useState, useEffect, useCallback, useRef } from 'react';
 import { motion, useAnimation, AnimatePresence } from 'framer-motion';
 import { ChevronLeft, ChevronRight, ArrowRight, Play } from 'lucide-react';
-import Hero from '../assets/pictures/hero2.jpg';
-import { db } from '../firebase';
-import { collection, getDocs } from 'firebase/firestore';
+import Hero from '../assets/pictures/hero2.jpg?w=960;1280;1600;1920&format=webp;jpg&as=srcset';
+import HeroFallback from '../assets/pictures/hero2.jpg?w=1600&format=webp';
 import { useTranslation } from 'react-i18next';
+import { fetchHeroItems, type PublicHeroItem } from '../utils/publicApi';
 
-export interface NewsItem {
-    id: string;
-    type: 'announcement' | 'event' | 'product' | 'blog';
-    title_en: string;
-    title_de: string;
-    excerpt_en: string;
-    excerpt_de: string;
-    image: string;
-    date?: string;
-    link_en?: string;
-    link_de?: string;
-    cta_en?: string;
-    cta_de?: string;
-    order: number;
-    isHomeScreen?: boolean;
-}
+type NewsItem = PublicHeroItem;
 
 const TRANSITION_DURATION = 300;
 
@@ -63,13 +48,9 @@ const CombinedHero = () => {
     };
 
     useEffect(() => {
-        const fetchHeroItems = async () => {
+        const loadHeroItems = async () => {
             try {
-                const querySnapshot = await getDocs(collection(db, 'heroItems'));
-                const items: NewsItem[] = [];
-                querySnapshot.forEach((doc) => {
-                    items.push({ id: doc.id, ...doc.data() } as NewsItem);
-                });
+                const items = await fetchHeroItems();
 
                 // Add hardcoded home screen item
                 const homeItem: NewsItem = {
@@ -79,7 +60,7 @@ const CombinedHero = () => {
                     title_de: '',
                     excerpt_en: '',
                     excerpt_de: '',
-                    image: Hero,
+                    image: HeroFallback,
                     date: '',
                     link_en: '',
                     link_de: '',
@@ -101,7 +82,7 @@ const CombinedHero = () => {
                         title_de: '',
                         excerpt_en: '',
                         excerpt_de: '',
-                        image: Hero,
+                        image: HeroFallback,
                         date: '',
                         link_en: '',
                         link_de: '',
@@ -116,7 +97,7 @@ const CombinedHero = () => {
             }
         };
 
-        fetchHeroItems();
+        loadHeroItems();
     }, []);
 
     const handleTouchStart = (e: React.TouchEvent) => {
@@ -128,7 +109,7 @@ const CombinedHero = () => {
     };
 
     const handleTouchEnd = () => {
-        if (!touchStart || !touchEnd || isTransitioning) return;
+        if (newsItems.length <= 1 || !touchStart || !touchEnd || isTransitioning) return;
         const threshold = 50;
         const difference = touchStart - touchEnd;
         if (difference > threshold) {
@@ -141,9 +122,14 @@ const CombinedHero = () => {
     };
 
     useEffect(() => {
-        const img = new Image();
-        img.src = Hero;
-    }, []);
+        if (currentIndex >= newsItems.length) {
+            setCurrentIndex(0);
+        }
+
+        if (newsItems.length <= 1 && isTransitioning) {
+            setIsTransitioning(false);
+        }
+    }, [currentIndex, isTransitioning, newsItems.length]);
 
     useEffect(() => {
         setIsMounted(true);
@@ -159,25 +145,34 @@ const CombinedHero = () => {
     }, [controls]);
 
     const isHomeScreen = newsItems[currentIndex]?.isHomeScreen;
+    const canNavigate = newsItems.length > 1;
+    const currentHeroSrc = isHomeScreen ? HeroFallback : newsItems[currentIndex]?.image || '';
+    const currentHeroSrcSet = isHomeScreen ? Hero : undefined;
 
     const handleNavigation = useCallback((newDirection: number) => {
-        if (isTransitioning || !isMounted || newsItems.length === 0) return;
+        if (!canNavigate || isTransitioning || !isMounted) {
+            if (!canNavigate && isTransitioning) {
+                setIsTransitioning(false);
+            }
+            return;
+        }
+
         setIsTransitioning(true);
         setCurrentIndex((prev) => {
             return newDirection > 0
                 ? (prev === newsItems.length - 1 ? 0 : prev + 1)
                 : (prev === 0 ? newsItems.length - 1 : prev - 1);
         });
-    }, [isTransitioning, newsItems.length, isMounted]);
+    }, [canNavigate, isTransitioning, newsItems.length, isMounted]);
 
     useEffect(() => {
-        if (isHovered || isTransitioning) return;
+        if (!canNavigate || isHovered || isTransitioning) return;
         const delay = isHomeScreen ? 15000 : 12000;
         const timer = setInterval(() => {
             handleNavigation(1);
         }, delay);
         return () => clearInterval(timer);
-    }, [isHovered, isTransitioning, handleNavigation, isHomeScreen]);
+    }, [canNavigate, isHovered, isTransitioning, handleNavigation, isHomeScreen]);
 
     const handleAnimationComplete = useCallback(() => {
         setIsTransitioning(false);
@@ -253,11 +248,13 @@ const CombinedHero = () => {
     const HomeScreenButton = ({
         onClick,
         children,
-        withIcon = true
+        withIcon = true,
+        ariaLabel,
     }: {
         onClick: (e: React.MouseEvent) => void;
         children: React.ReactNode;
         withIcon?: boolean;
+        ariaLabel: string;
     }) => {
         const [isClicked, setIsClicked] = useState(false);
         const buttonRef = useRef<HTMLButtonElement>(null);
@@ -288,7 +285,7 @@ const CombinedHero = () => {
                         : 'border-2 border-white/30 hover:border-white/50 px-6 py-3 sm:px-8 sm:py-4'
                     } text-white rounded-lg font-semibold text-base sm:text-lg transition-all flex items-center justify-center backdrop-blur-sm`}
                 disabled={!isMounted || isTransitioning}
-                aria-label={typeof children === 'string' ? children : 'Button'}
+                aria-label={ariaLabel}
             >
                 {children}
                 {withIcon && <ArrowRight className="ml-2 h-4 w-4 sm:h-5 sm:w-5 group-hover:translate-x-1 transition-transform" />}
@@ -312,46 +309,50 @@ const CombinedHero = () => {
             ref={containerRef}
             aria-live="polite"
             aria-atomic="true"
+            onMouseEnter={() => setIsHovered(true)}
+            onMouseLeave={() => setIsHovered(false)}
             onTouchStart={handleTouchStart}
             onTouchMove={handleTouchMove}
             onTouchEnd={handleTouchEnd}
         >
             {/* Navigation Arrows */}
-            <div className="absolute inset-0 z-30 pointer-events-none flex justify-between">
-                <button
-                    onClick={(e) => {
-                        e.preventDefault();
-                        handleNavigation(-1);
-                    }}
-                    className="w-16 h-full flex items-start md:items-center justify-start px-2
-                md:opacity-0 md:hover:opacity-100 transition-opacity duration-300
-                bg-gradient-to-r from-black/10 to-transparent
-                group pointer-events-auto"
-                    aria-label="Previous slide"
-                    disabled={isTransitioning || !isMounted}
-                >
-                    <div className="mt-4 md:mt-0 p-2 rounded-full bg-black/30 group-hover:bg-black/50 backdrop-blur-sm">
-                        <ChevronLeft className="h-6 w-6 md:h-8 md:w-8 text-white/80 group-hover:text-white" />
-                    </div>
-                </button>
+            {canNavigate && (
+                <div className="absolute inset-0 z-30 pointer-events-none flex justify-between">
+                    <button
+                        onClick={(e) => {
+                            e.preventDefault();
+                            handleNavigation(-1);
+                        }}
+                        className="w-16 h-full flex items-start md:items-center justify-start px-2
+                    md:opacity-0 md:hover:opacity-100 transition-opacity duration-300
+                    bg-gradient-to-r from-black/10 to-transparent
+                    group pointer-events-auto"
+                        aria-label="Previous slide"
+                        disabled={isTransitioning || !isMounted}
+                    >
+                        <div className="mt-4 md:mt-0 p-2 rounded-full bg-black/30 group-hover:bg-black/50 backdrop-blur-sm">
+                            <ChevronLeft className="h-6 w-6 md:h-8 md:w-8 text-white/80 group-hover:text-white" />
+                        </div>
+                    </button>
 
-                <button
-                    onClick={(e) => {
-                        e.preventDefault();
-                        handleNavigation(1);
-                    }}
-                    className="w-16 h-full flex items-start md:items-center justify-end px-2
-                md:opacity-0 md:hover:opacity-100 transition-opacity duration-300
-                bg-gradient-to-l from-black/10 to-transparent
-                group pointer-events-auto"
-                    aria-label="Next slide"
-                    disabled={isTransitioning || !isMounted}
-                >
-                    <div className="mt-4 md:mt-0 p-2 rounded-full bg-black/30 group-hover:bg-black/50 backdrop-blur-sm">
-                        <ChevronRight className="h-6 w-6 md:h-8 md:w-8 text-white/80 group-hover:text-white" />
-                    </div>
-                </button>
-            </div>
+                    <button
+                        onClick={(e) => {
+                            e.preventDefault();
+                            handleNavigation(1);
+                        }}
+                        className="w-16 h-full flex items-start md:items-center justify-end px-2
+                    md:opacity-0 md:hover:opacity-100 transition-opacity duration-300
+                    bg-gradient-to-l from-black/10 to-transparent
+                    group pointer-events-auto"
+                        aria-label="Next slide"
+                        disabled={isTransitioning || !isMounted}
+                    >
+                        <div className="mt-4 md:mt-0 p-2 rounded-full bg-black/30 group-hover:bg-black/50 backdrop-blur-sm">
+                            <ChevronRight className="h-6 w-6 md:h-8 md:w-8 text-white/80 group-hover:text-white" />
+                        </div>
+                    </button>
+                </div>
+            )}
 
             {/* Carousel Items */}
             <AnimatePresence initial={false}>
@@ -368,11 +369,19 @@ const CombinedHero = () => {
                         {/* Background */}
                         <div id="Hero" className="absolute inset-0 bg-black/40 overflow-hidden">
                             <img
-                                src={currentItem.image}
-                                alt="TReliable,for Life."
+                                src={currentHeroSrc}
+                                srcSet={currentHeroSrcSet}
+                                sizes="100vw"
+                                alt=""
+                                aria-hidden="true"
+                                width={1920}
+                                height={1080}
                                 className="w-full h-full object-cover select-none"
                                 style={{ objectPosition: 'center center' }}
                                 draggable={false}
+                                fetchpriority={currentItem?.isHomeScreen ? 'high' : 'auto'}
+                                loading={currentItem?.isHomeScreen ? 'eager' : 'lazy'}
+                                decoding="async"
                             />
                             <div className="absolute inset-0 bg-gradient-to-r from-gray-900/80 via-gray-900/60 to-gray-900/40"></div>
                         </div>
@@ -441,11 +450,19 @@ const CombinedHero = () => {
                                             transition={{ delay: 0.6 }} // buttons animate after text
                                             className="flex flex-col sm:flex-row gap-3 sm:gap-4 items-start sm:items-center"
                                         >
-                                            <HomeScreenButton onClick={() => scrollToSection('products')} withIcon>
+                                            <HomeScreenButton
+                                                onClick={() => scrollToSection('products')}
+                                                withIcon
+                                                ariaLabel={t('hero.home.ctaProducts')}
+                                            >
                                                 {t('hero.home.ctaProducts')}
                                             </HomeScreenButton>
 
-                                            <HomeScreenButton onClick={() => scrollToSection('demo')} withIcon={false}>
+                                            <HomeScreenButton
+                                                onClick={() => scrollToSection('demo')}
+                                                withIcon={false}
+                                                ariaLabel={t('hero.home.ctaDemo')}
+                                            >
                                                 <Play className="mr-2 h-4 w-4 sm:h-5 sm:w-5" />
                                                 {t('hero.home.ctaDemo')}
                                             </HomeScreenButton>

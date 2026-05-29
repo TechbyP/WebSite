@@ -1,13 +1,14 @@
 import { motion } from 'framer-motion';
 import { useConfigurator } from '../contexts/ConfiguratorContext';
 import { FadeInWhenVisible } from '../../animation/FadeInWhenVisible';
-import { products } from '../../../data/products';
 import { handleImageError, defaultHeroImage } from '../../../utils/DefaultPics';
 import { useTranslation } from 'react-i18next';
+import { useProducts } from '../../../data/context/ProductsContext';
 
 export const VehicleMountingStep = () => {
   const { t } = useTranslation();
   const { configuration, setVehicleMountingType, goToStep } = useConfigurator();
+  const { products } = useProducts();
 
   const order = [2000, 2001, 2003]; 
 
@@ -82,7 +83,7 @@ export const VehicleMountingStep = () => {
                   {product.nickname || 'Product'}
                 </h2>
                 <div className="text-xs font-bold text-brandgreen mt-1">
-                  {product.price || 'Price not available'}
+                  {product.price || t('productSelection.priceUnavailable')}
                 </div>
               </div>
             </motion.div>
@@ -142,7 +143,7 @@ export const VehicleMountingStep = () => {
 
                 <div className="pt-4">
                   <div className="text-lg font-bold text-brandgreen">
-                    {product.price || 'Price not available'}
+                    {product.price || t('productSelection.priceUnavailable')}
                   </div>
                 </div>
               </div>

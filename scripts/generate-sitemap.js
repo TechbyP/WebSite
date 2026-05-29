@@ -26,13 +26,14 @@ const deJsonPath = path.join(__dirname, '../src/locales/de.json');
 
 // Global variables
 let db = null;
+let firestoreHelpers = null;
 
 const FIREBASE_TIMEOUT = 10000; // 10 seconds
 
 async function initializeFirebase() {
   try {
     const { initializeApp } = await import('firebase/app');
-    const { getFirestore } = await import('firebase/firestore');
+    const { getFirestore, collection, getDocs, query, orderBy } = await import('firebase/firestore');
 
     const timeoutPromise = new Promise((_, reject) => {
       setTimeout(() => reject(new Error('Firebase initialization timeout')), FIREBASE_TIMEOUT);
@@ -49,6 +50,7 @@ async function initializeFirebase() {
 
     const app = await Promise.race([initializeApp(firebaseConfig), timeoutPromise]);
     const firestoreDb = getFirestore(app);
+    firestoreHelpers = { collection, getDocs, query, orderBy };
     console.log('✅ Firebase initialized successfully');
     return firestoreDb;
   } catch (error) {
@@ -240,6 +242,11 @@ async function fetchBlogArticles() {
   }
 
   try {
+    if (!firestoreHelpers) {
+      return [];
+    }
+
+    const { collection, getDocs, query, orderBy } = firestoreHelpers;
     const articlesCollection = collection(db, 'articles');
     const q = query(articlesCollection, orderBy('date', 'desc'));
     

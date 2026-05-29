@@ -464,7 +464,8 @@
       "all": "Tout ce que nous avons, des gros et robustes aux petits et astucieusement satisfaisants.",
       "smartsystems": "Le côté intelligent de l'échantillonnage des sols — automatique, précis et remarquablement bien élevé.",
       "accessory": "Les bits qui maintiennent tout ensemble — des réalisateurs discrets du monde du soutien.",
-      "manual": "Des outils fiables et tactiles sur lesquels vous pouvez compter — satisfaisants à utiliser et conçus pour durer."
+      "manual": "Des outils fiables et tactiles sur lesquels vous pouvez compter — satisfaisants à utiliser et conçus pour durer.",
+      "Bespoke Machinery": "Des machines sur mesure adaptées à votre flux de travail, à votre terrain et à vos exigences techniques."
     },
     "customEquipment": {
       "title": "Avez-vous besoin d'équipement personnalisé ?",
@@ -796,6 +797,10 @@
     "pricingNoticeTitle": "Avis sur les prix :",
     "pricingNoticeText": "Tous les prix sont en euros (€) et excluent la TVA. Les prix sont à titre indicatif uniquement et peuvent varier selon la configuration finale, les options sélectionnées et la disponibilité. Le prix final sera confirmé dans votre devis personnalisé."
   },
+  "pricing": {
+    "from": "À partir de",
+    "onRequest": "Prix sur demande"
+  },
   "buttonsConfigurator": {
     "back": "Retour",
     "completeOrder": "Commander",
@@ -871,35 +876,6 @@
     "continue": "Continuer"
   },
   "products": {
-    "123": {
-      "name": "Pack d'alimentation standard",
-      "nickname": "SPP",
-      "price": "€1,200"
-    },
-    "124": {
-      "name": "Pack d'alimentation avancé",
-      "nickname": "APP",
-      "price": "€1,800"
-    }
-  },
-  "productSelection": {
-    "title": "Sélectionner votre produit",
-    "description": "Jetez un coup d'œil à nos systèmes intelligents astucieux — choisissez celui qui facilite votre travail.",
-    "unnamedProduct": "Produit sans nom",
-    "product": "Produit",
-    "priceUnavailable": "Prix non disponible",
-    "bestsellerShort": "MEILLEUR",
-    "bestseller": "MEILLEUR VENDEUR",
-    "smartTag": "SMART",
-    "smartSystemsTag": "SYSTÈMES INTELLIGENTS",
-    "noDescription": "Aucune description disponible"
-  },
-  "vehicleMounting": {
-    "title": "Type de montage sur véhicule",
-    "description": "D'accord, comment exactement voulez-vous attacher votre {{productName}} ? Cela peut sembler un peu ennuyeux, mais faites-moi confiance — si vous vous trompez, le reste n'a aucune chance.",
-    "mountingLabel": "MONTAGE"
-  },
-  "products": {
     "lay-down-frame": {
       "name": "Cadre couché",
       "nickname": "Cadre",
@@ -923,6 +899,23 @@
       "weight": "Poids",
       "horizons": "Horizons"
     }
+  },
+  "productSelection": {
+    "title": "Sélectionner votre produit",
+    "description": "Jetez un coup d'œil à nos systèmes intelligents astucieux — choisissez celui qui facilite votre travail.",
+    "unnamedProduct": "Produit sans nom",
+    "product": "Produit",
+    "priceUnavailable": "Prix non disponible",
+    "bestsellerShort": "MEILLEUR",
+    "bestseller": "MEILLEUR VENDEUR",
+    "smartTag": "SMART",
+    "smartSystemsTag": "SYSTÈMES INTELLIGENTS",
+    "noDescription": "Aucune description disponible"
+  },
+  "vehicleMounting": {
+    "title": "Type de montage sur véhicule",
+    "description": "D'accord, comment exactement voulez-vous attacher votre {{productName}} ? Cela peut sembler un peu ennuyeux, mais faites-moi confiance — si vous vous trompez, le reste n'a aucune chance.",
+    "mountingLabel": "MONTAGE"
   },
   "progress": {
     "included": "✅ Inclus",
@@ -1269,7 +1262,6 @@
     "description": "Carottes de sol intactes de 0–90 cm, précision scientifique, obstination allemande.",
     "herodescription": "Ce n'est pas criard. Ça ne crie pas. Ça ne fait pas Wi-Fi. Mais ce qu'il <strong>fait</strong> — mieux que presque rien d'autre — c'est vous donner un <strong>carottier de sol parfait et ininterrompu</strong>, de la surface à <strong>90 centimètres dessous</strong>. Oui, toute l'histoire, de la croûte au sous-sol, en un seul.  C'est comme une <strong>IRM pour la terre</strong>.",
     "detailedDescription": "<p className='mt-4'><strong>Les universités adorent cette chose</strong>. Et ce n'est pas seulement parce qu'il ressemble vaguement à un lanceur de fusée. Il donne <strong>une visibilité complète du profil du sol</strong> — pas de mélange, pas de devinettes de stratification, juste une tranche verticale propre des entrailles de la Terre. <strong>Parfait pour l'échantillonnage N-min</strong>, oui, mais aussi pour ceux qui aiment réellement voir ce qui se passe en bas.</p><p className='mt-4'>Maintenant, c'est <strong>hydrauliquement alimenté, semi-automatique et très intelligent</strong>. Il creusera avec une politesse millimétrique, et s'il rencontre quelque chose d'hostile — comme une roche ou une vieille pièce de monnaie romaine — il <strong>s'arrête simplement</strong>. Pas de drame. Aucun bit cassé.</p><p className='mt-4'>Et le meilleur : c'est l'<strong>ingénierie allemande réduite à l'essentiel</strong>. Propre, efficace, absolument logique. Comme <strong>Beethoven… s'il était un échantillonneur de sol</strong>.</p>",
-    "price": "À partir de 14 200 €",
     "features": [
       "Carottier complet (0–90 cm) intacte pour la visibilité du profil",
       "Contrôle de profondeur précis au centimètre",
@@ -1327,7 +1319,6 @@
     "description": "Profilage automatique de l'azote sans les problèmes.",
     "herodescription": "Rencontrez le <strong>MP-2.60</strong> — une machine merveilleusement pratique pour l'<strong>échantillonnage du sol N-min</strong>. Il descend à 60 cm, obtient ce dont il a besoin et continue sans demander le thé ou les louanges. Conçu pour être <strong>fiable, pas ridicule</strong>, c'est idéal pour quiconque aime que les choses fonctionnent correctement la première fois.",
     "detailedDescription": "<p className='mt-4'>Dans un monde de complication excessive, le <strong>MP-2.60</strong> est rafraîchissamment simple. Il est construit spécifiquement pour le <strong>profilage automatique de l'azote</strong> — sans tous ces problèmes avec des tarières manuelles ou des devinettes. Il utilise un <strong>marteau hydraulique haute fréquence</strong> pour percer le sol comme un petit marteau-piqueur doux, puis tourne tranquillement et soulève la tige avant de <strong>poliment déposer l'échantillon</strong> dans son conteneur.</p><p className='mt-4'>Il a une <strong>logique interne intelligente</strong> pour décider quels bits du sol garder, et si vous le souhaitez, vous pouvez même activer la <strong>séparation des couches</strong> pour l'échantillonnage spécifique à l'horizon. Les échantillons eux-mêmes atterrissent dans des <strong>conteneurs étanches</strong>, et l'unité entière se monte confortablement sur les remorques, les pick-up ou essentiellement n'importe quoi qui roule et ne s'effondre pas.</p><p className='mt-4'>Et si vos ambitions de recherche dépassent sa limite de 60 cm, ne vous inquiétez pas — le MP-2.60 est entièrement <strong>améliorable au MP-3.90 ou MP-4.100</strong>.</p>",
-    "price": "À partir de 16 500 €",
     "features": [
       "Extraction entièrement automatique jusqu'à 60 cm",
       "Logique intelligente : rejette ou garde les échantillons selon vos paramètres",
@@ -1389,7 +1380,6 @@
     "description": "Assez dur pour gérer le sol, assez intelligent pour travailler efficacement.",
     "herodescription": "Le <strong>MP-3.90</strong> est ce qui se passe quand vous prenez la <strong>pensée allemande</strong>, vous versez une partie du <strong>sur-ingéniering</strong>, puis vous lui demandez de <strong>creuser des trous pour la science</strong>. Conçu pour extraire des échantillons de sol jusqu'à <strong>95 cm</strong> sans même une plainte de l'opérateur, il peut faire <strong>la séparation à 3 couches</strong>, <strong>auto-décharge</strong>, et décider (tout seul) quand abandonner si le sol résiste.",
     "detailedDescription": "<p className='mt-4'>Maintenant, la <strong>précision et l'efficacité</strong> ne sont pas juste des mots à la mode ici — elles sont intelligemment intégrées, afin que vous puissiez vous concentrer sur les données plutôt que de combattre une saleté têtue. Il gère les sols difficiles avec <strong>à peine aucun problème de l'opérateur</strong>, ce qui en fait un compagnon plutôt fiable pour un travail scientifique sérieux ou une recherche appropriée sur le terrain.</p><p className='mt-4'>Il se glissera facilement sur les pick-up, les remorques, les tracteurs ou à peu près n'importe quoi qui est vaguement routier, avec des <strong>paramètres de profondeur et d'horizon personnalisables</strong> pour s'adapter à ce dont vous avez besoin. De plus, vos échantillons finissent sûr et sain dans des <strong>conteneurs étanches</strong>, ce qui est un joli toucher.</p><p className='mt-4'>Et voilà le truc — c'est conçu pour une <strong>utilisation professionnelle et appropriée</strong>, pas le jouet d'un guerrier du week-end. Solide, fiable et tranquillement compétent — exactement ce à quoi vous vous attendriez de l'ingénierie allemande, vraiment.</p>",
-    "price": "À partir de 23 500 €",
     "features": [
       "Extraction entièrement automatique jusqu'à 95 cm",
       "Séparation facultative à 3 couches pour l'échantillonnage spécifique à l'horizon",
@@ -1455,7 +1445,6 @@
     "description": "Sol profond, trié intelligemment. Pas de problèmes, juste de la profondeur.",
     "herodescription": "Ceci est le <strong>MP-4.100</strong> — imaginez si un marteau hydraulique et un doctorat en science du sol avaient un enfant. C'est un <strong>échantillonneur entièrement automatique</strong> qui descend jusqu'à <strong>100 cm</strong> complets, tire jusqu'à <strong>quatre couches</strong>, et les trie comme un majordome avec un passe-temps géologique. C'est ce que vous obtenez si vous demandez à l'Allemagne de faire une taupe.",
     "detailedDescription": "<p className='mt-4'>Conçu pour ceux qui exigent la <strong>profondeur et la discipline</strong>, le MP-4.100 descend correctement dans le sol et fait le travail sans se plaindre et sans pelle manuelle. Un <strong>système d'impact hydraulique</strong> alimente une tige rainurée dans le sol, où elle tranquillement se met au travail d'extraction d'échantillons de qualité scientifique. Une fois rétractée, elle <strong>vide automatiquement</strong> les biens dans leurs places appropriées.</p><p className='mt-4'>Il a une <strong>logique intelligente</strong> qui décide de garder ou de rejeter le matériel selon vos paramètres, et un <strong>mécanisme de séparation des couches</strong> qui est surprenamment poli quant à l'endroit où chaque horizon va. Montez-le sur un pick-up, une remorque ou à peu près n'importe quoi qui est vaguement routier et vous y allez.</p>",
-    "price": "À partir de 25 500 €",
     "features": [
       "Extraction entièrement automatique jusqu'à 100 cm",
       "Séparation facultative à 4 couches pour l'échantillonnage spécifique à l'horizon",
@@ -1520,7 +1509,6 @@
     "description": "Efficace, fiable et silencieusement confiant. Échantillonnage des sols, mais avec un peu de muscle hydraulique derrière.",
     "herodescription": "Le <strong>DH-1.30</strong> est un échantillonneur de sol robuste et hydraulique construit pour fonctionner avec une confiance tranquille et une puissance régulière — pas de surcomplication, juste des résultats solides. Forage en douceur jusqu'à <strong>30 centimètres</strong>, il est alimenté par un moteur hydraulique — afin que vous obteniez beaucoup de force, sans électricité nécessaire. Un peu plus bruyant que son cousin électrique, bien sûr, mais ce n'est pas un show-off. Juste un travail fiable et solide, jour après jour.",
     "detailedDescription": "<p className='mt-4'>Le <strong>DH-1.30</strong> reprend la conception sensée de son <strong>homologue électrique</strong> mais échange la batterie pour un <strong>moteur hydraulique</strong> — idéal si vous avez accès à l'alimentation hydraulique et que vous en voulez un peu plus <strong>couple</strong>.</p><p className='mt-4'><strong>Contrôle de la profondeur</strong> est tranchant et précis, avec des <strong>ajustements en millimètres</strong> pour gérer le terrain inégal comme si ce n'était rien.</p><p className='mt-4'>L'opération est délicieusement simple : <strong>un bouton, deux profondeurs prédéfinies</strong> — parce que la vie est trop courte pour les commandes fastidieuses.</p><p className='mt-4'>Il pèse un solide <strong>43 kg</strong>, construit <strong>assez dur</strong> pour gérer le travail sur le terrain réel mais <strong>assez léger</strong> pour que vous n'ayez pas besoin d'un chariot élévateur ou d'un homme fort pour le déplacer.</p><p className='mt-4'><strong>Facilement monté</strong> sur des quads, des remorques, des pick-up ou des véhicules légers, cette chose est faite pour la <strong>polyvalence</strong>.</p><p className='mt-4'>Pour ceux qui préfèrent la <strong>fiabilité classique de la puissance hydraulique</strong> avec l'<strong>ingénierie allemande dépendante</strong>, cet échantillonneur est le choix sensible.</p>",
-    "price": "À partir de 8 950 €",
     "features": [
       "Entraînement hydraulique pour le forage fiable et puissant",
       "Ajustement de profondeur en millimètres précis",
@@ -1584,7 +1572,6 @@
     "description": "Intelligent, silencieux et très nimble. Rendre l'échantillonnage des sols presque sans effort.",
     "herodescription": "Le <strong>DE-1.30</strong> est l'<strong>échantillonneur de sol sensé et compact</strong> qui tranquillement se met au travail — foraging vers le bas jusqu'à <strong>30 centimètres</strong> sans faire de problème ou vous avez besoin de chaîne-fumer pendant qu'il fonctionne. C'est <strong>électrique</strong>, afin <strong>pas de fumées, pas de bruit</strong>, juste un échantillonnage de sol fiable et propre.",
     "detailedDescription": "<p className='mt-4'>S'appuyant sur le modèle de confiance <strong>N2012</strong>, le <strong>DE-1.30</strong> utilise une <strong>foreuse électrique</strong> qui est si précise qu'elle pourrait probablement enfiler une aiguille — si l'échantillonnage des sols était dans la broderie. <strong>Les ajustements en millimètres</strong> signifient que vous obtenez exactement la profondeur que vous voulez, peu importe comment le terrain est bosselé ou imprévisible. C'est un peu comme un <strong>majordome poli</strong> qui ne vous laissera pas tomber.</p><p className='mt-4'>L'<strong>unité de contrôle</strong> est la simplicité elle-même — appuyez sur un bouton et c'est parti. <strong>Deux profondeurs prédéfinies</strong> vous laissent basculer entre les travaux d'échantillonnage plus vite que vous ne pouvez dire <em>'technologie révolutionnaire'</em> (voyez ce que j'ai fait là ?). Pas de bricolage avec des menus compliqués ou des contrôles cryptiques.</p><p className='mt-4'>À seulement <strong>45 kilogrammes</strong> et alimenté par un <strong>pack de batterie 24 V</strong> (vendu séparément), c'est <strong>assez léger pour être nimble</strong> mais <strong>assez dur pour gérer un travail de terrain réel</strong>. Pas besoin d'appeler une grue ou un ancien sergent de l'armée pour le déplacer.</p><p className='mt-4'>Le DE-1.30 peut être facilement monté sur des <strong>quads, des remorques et une variété de véhicules légers</strong>, ce qui le rend polyvalent pour de nombreuses conditions de terrain.</p><p className='mt-4'>Donc, si vous voulez des <strong>échantillons de sol précis et fiables</strong> sans les dramatures du moteur à essence ou le bruit d'une foreuse lourde, le DE-1.30 est votre machine. C'est de l'<strong>ingénierie allemande</strong> avec une <strong>tournure électrique silencieuse</strong> qui fait juste le travail.</p>",
-    "price": "À partir de 12 600 €",
     "features": [
       "Forage entièrement électrique pour un échantillonnage propre et précis",
       "Ajustement de profondeur en millimètres précis (parce que assez proche n'est pas assez bon)",
@@ -1648,7 +1635,6 @@
     "description": "Remorquez-le, échantillonnez-le, puis continuez à avancer — pas de problèmes, pas d'attente.",
     "herodescription": "Ceci est le <strong>BOPROB III</strong> — également connu, plutôt avec jaunisse, comme le <strong>Sixteen Express</strong>. C'est une remorque qui prend des échantillons de sol pendant que vous conduisez. Oui, vraiment. Pas d'arrêt, pas d'appui sur le bouton, pas de crier sur les stagiaires. Remorquez-le derrière quelque chose avec des roues et laissez-le se mettre au travail.",
     "detailedDescription": "<p className='mt-4'>Maintenant, le <strong>Sixteen Express</strong> est ce que vous appelleriez un peu d'ingénierie astucieuse. C'est un <strong>échantillonneur de sol en remorque</strong> conçu pour faire son travail pendant que vous continuez à vous déplacer. Ce qui, franchement, est la façon dont tout devrait fonctionner — mais ça ne le fait pas.</p><p className='mt-4'>L'échantillonnage se déroule à un rythme plutôt rapide grâce à une <strong>manivelle rotative</strong> qui va les 360° complets, poignardant dans le sol comme un petit marteau-piqueur poli, puis poliment éjectant le noyau dans le magazine d'échantillon.</p><p className='mt-4'>Tout est surveillé par un <strong>écran tactile de 7 pouces</strong> — un peu de kit joli — afin que vous sachiez exactement ce qu'il fait à tout moment. Il y a même une caméra optionnelle, au cas où vous voudriez le voir fonctionner, ou juste admirer votre achat.</p><p className='mt-4'>Les roues sont grandes et molles — <strong>235/60 R16</strong>, si vous êtes dans ce genre de choses — ce qui signifie une pression au sol minimale et pas d'être embourbé dans un champ boueux, à moins que vous ayez vraiment essayé.</p><p className='mt-4'>Il se commande facilement aux <strong>tracteurs, camions pick-up, quads — ou à peu près n'importe quoi d'autre avec un crochet de remorquage</strong>, vraiment. Aucun bricolage, pas d'adaptateurs, pas d'héroïsme d'atelier requis. Et une fois que vous avez terminé, il se détache tout aussi facilement.</p><p className='mt-4'>Si vous conduisez trop vite — ou trop lentement, peut-être parce que vous admirez le paysage — le système refuse simplement d'échantillonner. Ce qui est brillant, parce que cela signifie que la machine est plus intelligente que le conducteur moyen.</p>",
-    "price": "28 500 €",
     "features": [
       "Système d'impact et de rotation hydraulique",
       "Manivelle rotative 360° avec auto-décharge",
@@ -1717,7 +1703,6 @@
     "description": "Un support de montage sans chichi pour votre échantillonneur—s'adapte à l'arrière de la plupart des véhicules civilisés sans les transformer en camions Franken.",
     "herodescription": "<strong>Brillamment sensé.</strong> Ce cadre rabattable, kit de montage certifié TÜV, se boulonne à votre attelage de remorquage comme s'il y appartenait. Supporte nos échantillonneurs séries MP, DH et DE.",
     "detailedDescription": "<p className='mt-4'>Monté sur le plateau du camion connecté à cet endroit où vit votre <strong>barre de remorquage</strong>—juste en dessous du <strong>couvercle du coffre</strong> et au-dessus du <strong>drame du tuyau d'échappement</strong>—ce cadre vous permet de transporter un échantillonneur de sol complet avec <strong>élégance</strong>. <strong>Rabattez-le pour opérer, relevez-le pour partir dîner</strong>. Il est <strong>solide</strong>, <strong>testé</strong>, et <strong>peint comme un meuble d'outils allemand</strong>.</p><p className='mt-4'>Les clients peuvent choisir leur niveau d'implication : certains préfèrent <strong>installer le cadre eux-mêmes</strong> avec l'aide de nos <strong>instructions infaillibles</strong> ; d'autres <strong>passent avec leur véhicule</strong> et nous laissent gérer le <strong>montage et la magie hydraulique</strong> ; et pour ceux qui aiment la <strong>gratification instantanée</strong>, nous offrons également des <strong>rigs de terrain entièrement équipés</strong>—<strong>pré-montés</strong>, <strong>testés</strong>, et généralement assez <strong>satisfaits d'eux-mêmes</strong>.</p>",
-    "price": "À partir de 2 790 €",
     "features": [
       "Attelage de remorquage + montage 13 broches (pas de soudure, pas de traumatisme)",
       "Approuvé TÜV pour usage routier et terrain",
@@ -1765,7 +1750,6 @@
     "description": "Transforme votre tracteur en bête d'échantillonnage de sol, utilisant la puissance PTO pour l'intégration d'échantillonneur hydraulique. Dur, fiable, sans chichi.",
     "herodescription": "<strong>Cadre d'attelage trois points du tracteur</strong> : Le champion poids lourd pour tracteurs Cat-1/2, conçu pour monter votre échantillonneur hydraulique directement sur le système PTO du tracteur avec une plateforme de pompe hydraulique correspondante.",
     "detailedDescription": "<p className='mt-4'>Imaginez la <strong>colonne vertébrale en acier</strong> dont votre tracteur n'a jamais su qu'il avait besoin. Façonnée à partir d'<strong>acier A-frame épais</strong> et enveloppée d'<strong>armure époxy noire</strong>, ce montage se boulonne proprement sur les bras de levage de votre tracteur. Il est construit pour survivre à la vie agricole — pluie, boue, et le caprice occasionnel du tracteur inclus. Le kit vient avec <strong>barres de levage et tous les boulons de montage</strong>, donc pas d'improvisation avec des clous rouillés ou du ruban adhésif.</p><p className='mt-4'>Convient pour <strong>tracteurs compacts avec espacement des bras de levage autour de 50 à 60 pouces</strong>, ce cadre supporte la pompe hydraulique directement alimentée par votre arbre PTO, vous donnant un débit hydraulique efficace pour un échantillonnage de sol fluide. C'est la mise à niveau qui fait sentir votre tracteur prêt à affronter les <strong>Olympiades du champ</strong>.</p>",
-    "price": "À partir de 1 650 €",
     "features": [
       "Acier A-frame soudé—assez robuste pour le vrai travail",
       "Support de pompe PTO—parce que les attaches zip ne sont pas de l'ingénierie",
@@ -1823,7 +1807,6 @@
     "description": "Transforme votre véhicule utilitaire ou camionnette en bête d'échantillonnage de sol sans chichi. Plateau retiré, cadre monté, outils chargés.",
     "herodescription": "<strong>Kit de conversion complète</strong> remplace le plateau de camion standard ou la plateforme UTV avec un cadre en acier sur mesure et des couvertures en aluminium—conçu spécifiquement pour l'échantillonnage de sol avec <strong>machines séries MP, DH et DE</strong>. Approuvé TÜV, légal sur route, et plutôt astucieux.",
     "detailedDescription": "<p className='mt-4'><strong>Si votre UTV ou camionnette rêve de grandeur, c'est son moment.</strong> Nous retirons soigneusement le plateau de série et le remplaçons par un cadre de conversion en acier, enveloppé de panneaux en aluminium qui crient 'opérateur professionnel' plus fort qu'un Hilux à fond sur gravier.</p><p className='mt-4'><strong>Il vous donne un montage approprié pour toutes nos machines, stockage intégré pour glacières, outils, éclairage—basiquement tout sauf le déjeuner préparé.</strong> Certifié par TÜV, construit pour des campagnes sérieuses, et étrangement satisfaisant à regarder.</p>",
-    "price": "À partir de 4 590 €",
     "features": [
       "Ajustement universel pour camionnettes et UTV (Hilux, Gator, Kubota, etc.)",
       "Cadre en acier couvert d'aluminium : durable et résistant à la corrosion",
@@ -1878,7 +1861,6 @@
     "description": "Ces remorques transportent les systèmes MP-series, DH/DE sans effort à travers tout ce qui n'est pas un mur.",
     "herodescription": "<strong>Remorques spéciales – Transporteurs de terrain</strong> sont des <strong>remorques robustes, galvanisées à chaud</strong> avec des options <strong>freinées et non freinées</strong>, conçues pour transporter votre kit d'échantillonnage de sol—que ce soit <strong>MP, DH ou DE</strong>—à travers champs et fermes avec <strong>précision germanique</strong>.<br/>Elles viennent avec <strong>un stockage astucieux pour outils, lumières et glacières</strong>—pour que vous puissiez travailler toute la journée sans le tracas habituel.",
     "detailedDescription": "<p className='mt-4'>Avec une largeur de voie fixe de <strong>1,35 m</strong> et des <strong>roues jack-castor</strong>, le Transporteur de terrain manœuvre comme un chariot de courses sensé—mais avec plus d'acier et moins de points faibles.</p><p className='mt-4'>Choisissez les <strong>modèles freinés</strong> pour des charges plus lourdes ou des pentes plus raides—jusqu'à <strong>3 500 kg PTAC</strong>—pour que vous puissiez transporter des échantillonneurs de sol sans rêver de nouveaux plaquettes de frein à chaque voyage.</p>",
-    "price": "À partir de 3 600 €",
     "features": [
       "Carrosserie et châssis galvanisés à chaud—longue durée de vie, moins de plaintes",
       "Options freinées et non freinées—choisissez votre style de maniement",
@@ -1935,7 +1917,6 @@
     "description": "Pour ceux qui font fonctionner des unités MP ou DH sans puissance embarquée, ces blocs délivrent une énergie hydraulique ou électrique constante où que votre travail vous emmène.",
     "herodescription": "<strong>Blocs d'alimentation</strong> sont comme les majordomes fiables de l'échantillonnage de sol—offrant une <strong>puissance portable fiable</strong> pour que vos machines ne fassent pas de crise. Que vous préfériez le <strong>grognement hydraulique classique</strong> ou le <strong>charme électrique silencieux</strong>, ces blocs vous soutiennent.<br/>Enveloppés dans un <strong>boîtier en acier robuste</strong> plus dur que votre tracteur moyen, avec des avantages sensés comme <strong>l'état de la batterie LCD</strong> et <strong>systèmes de filtration</strong>, ils sont le fidèle acolyte que vous ne saviez pas que vous aviez besoin sur le terrain.",
     "detailedDescription": "<p className='mt-4'>Le modèle hydraulique, parfaitement adapté aux machines <strong>séries MP</strong> et <strong>séries DH</strong>, se vante d'un <strong>moteur à essence de 13 CV</strong> et d'un <strong>réservoir d'huile de 22 L</strong>, poussant <strong>135 bar de pression</strong> à <strong>20 L/min</strong>—c'est du grognement sérieux pour quand vous voulez vous sentir comme un véritable seigneur mécanique.</p><p className='mt-4'>Le cousin électrique, conçu spécifiquement pour la <strong>série DE</strong>, arbore une <strong>batterie 24 V / 100 Ah</strong>, une <strong>armure en acier inoxydable</strong>, et un <strong>écran LCD</strong> pour garder un œil sur ses propres niveaux de puissance. Idéal pour ceux qui préfèrent une approche plus silencieuse, plus propre, et franchement plus polie de l'échantillonnage de sol.</p><p className='mt-4'>Les deux modèles sont <strong>portables</strong>, <strong>robustement construits</strong>, et viennent avec <strong>filtration de retour/aspiration</strong> pour empêcher vos hydrauliques précieuses de s'étouffer avec la saleté—parce que personne n'aime l'usure prématurée, n'est-ce pas ?</p>",
-    "price": "À partir de 3 450 €",
     "features": [
       "Alimenté hydrauliquement ou électriquement pour s'adapter à votre flux de travail",
       "Boîtier en acier robuste avec protection contre la corrosion",
@@ -1983,7 +1964,6 @@
     "description": "Parce que rien ne ruine une bonne journée sur le terrain comme un raccord cassé ou un joint qui fuit. Ce sont les pièces de rechange officielles, recommandées—sélectionnées à la main pour votre machine MP, DH, DE ou BOPROB III, et prêtes à vous sortir des ennuis avant qu'ils ne commencent.",
     "herodescription": "Pensez à ces pièces comme à la trousse de premiers secours pour votre échantillonneur de sol. Que vous soyez dans un marais en Bavière ou dans un désert de poussière en Bulgarie, avoir les bonnes <strong>pièces OEM</strong> sous la main transforme un désastre potentiel en hoquet géré avec suffisance.<br/>Chaque kit inclut les suspects habituels—<strong>joints toriques, raccords hydrauliques, filtres, courroies</strong>, et les bits qui travaillent le plus silencieusement. Pas d'improvisation avec du fil de ballage ou des pièces empruntées à la moissonneuse de votre pote.",
     "detailedDescription": "<p className='mt-4'>Ce sont les <strong>kits de pièces de rechange recommandés</strong> pour les échantillonneurs <strong>séries MP</strong>, <strong>séries DH</strong>, <strong>séries DE</strong>, et <strong>BOPROB III</strong>. Et non, ils ne sont pas optionnels. Ce sont ce que les ingénieurs utilisent. Ce que les techniciens de service utilisent. Ce que vous devriez avoir dans la boîte à outils si vous êtes même légèrement sérieux sur la disponibilité.</p><p className='mt-4'>À l'intérieur de chaque kit, vous trouverez les suspects habituels—<strong>joints, filtres, raccords hydrauliques, relais, et lignes de pression</strong>—les bits qui gardent le fluide où il est censé être et le courant circulant dans la bonne direction. C'est comme porter une paire de sous-vêtements de rechange sur un vol long-courrier : vous espérez ne pas en avoir besoin, mais vous serez sacrément content si c'est le cas.</p><p className='mt-4'>Les pièces sont <strong>emballées et étiquetées individuellement</strong>, donc vous ne passez pas une demi-journée à essayer de comprendre si cette rondelle s'adapte à la ligne de retour ou au filtre à huile. Et bien sûr, elles sont toutes <strong>certifiées usine</strong> et conçues pour s'insérer sans aucun massacre.</p>",
-    "price": "À partir de 450 €",
     "features": [
       "Pièces de rechange recommandées pour échantillonneurs de sol MP, DH, DE et BOPROB III",
       "Inclut composants d'usure critiques et articles de réparation d'urgence",
@@ -2030,7 +2010,6 @@
     "description": "Parce que parfois vos échantillons—ou votre bière—méritent mieux que la misère tiède. Avec cette bête de 95L, vous apportez une toundra arctique portable sur le chantier. Possiblement exagéré. Mais définitivement brillant.",
     "herodescription": "Vous connaissez la sensation—vous êtes à mi-chemin d'une montagne, tout est dans les délais, puis quelqu'un ouvre la glacière pour trouver... <strong>de la soupe</strong>. Plus maintenant. <strong>Le Refroidisseur transforme les sourires suffisants en soulagement glacé</strong>, littéralement.<br/>Il <strong>refroidit</strong>. Il <strong>congèle</strong>. Il <strong>brille</strong>. Et oui, il a une <strong>app</strong>—parce que votre téléphone n'est pas assez suffisant déjà. Les ingénieurs allemands pourraient appeler ça une <em>Kühlbox</em>. <strong>Nous appelons ça 'apporter le frigo, parce que nous pouvons.'</strong>",
     "detailedDescription": "<p className='mt-4'>La <strong>Glacière 95L</strong> est, franchement, <strong>plus capable que la plupart des minibars d'hôtel</strong>. Compartiments doubles, chacun configurable comme frigo ou congélateur, signifient que vous pouvez garder votre kit d'échantillons d'un côté et le déjeuner de l'autre—et avoir encore de la place pour <strong>satisfaction suffisante</strong>.</p><p className='mt-4'>Elle est alimentée par un <strong>compresseur LG haute efficacité</strong> (ce qui est plus que ce que la climatisation de votre voiture peut dire), et refroidit jusqu'à <strong>-20°C</strong> même quand il fait assez chaud pour frire un œuf sur le toit. Utilisez-la via le panneau de contrôle ou l'<strong>app Alpicool</strong> si vous êtes le genre de personne qui contrôle son frigo depuis un hamac.</p><p className='mt-4'>Pour une autonomie étendue, associez-la avec la <strong>batterie optionnelle</strong> (non incluse), vous donnant <strong>4 à 24 heures</strong> de refroidissement autonome. Ou branchez-la au véhicule et <strong>ne vous inquiétez plus jamais</strong>. Elle est construite pour encaisser—<strong>bien que nous conseillions contre ça, évidemment.</strong></p>",
-    "price": "1000 €",
     "features": [
       "Compartiments doubles peuvent refroidir ou congeler indépendamment",
       "Affichage numérique avec contrôles tactiles et app mobile",
@@ -2074,7 +2053,6 @@
     "description": "L'obscurité n'est pas une excuse. Avec 1700 lumens emballés dans une unité compacte et blindée, cette lampe de travail LED est ce qui arrive quand vous croisez un phare avec un petit soleil. Que vous soyez au milieu d'un échantillon ou d'un juron, vous verrez tout—clairement.",
     "herodescription": "<strong>Échantillonnage dans le noir ? Oublié le soleil ?</strong> Pas de problème. Le Soleil de Minuit délivre une <strong>illumination sérieusement puissante</strong> sans la chaleur, le bruit, ou la facture diesel.<br/>Montez-la, pointez-la, allumez-la—puis demandez-vous comment vous avez jamais vécu sans. Ce n'est pas un éclairage romantique. C'est un <strong>éclairage pour faire le boulot</strong>.",
     "detailedDescription": "<p className='mt-4'>La <strong>Lampe de travail LED 1700</strong> est un <strong>luminaires testé sur le terrain, sans chichi</strong> conçu pour couper l'obscurité comme une tronçonneuse à travers le beurre. Avec une sortie brutale de <strong>1700 lumens</strong>, elle délivre un éclairage de proximité focalisé pour rigs d'échantillonnage, machinerie, ou toute situation où 'Je pense que je vois quelque chose' n'est pas assez bon.</p><p className='mt-4'>Construite avec un <strong>boîtier en aluminium anodisé noir</strong> et répondant aux normes <strong>IP6K7 et IP6K9K</strong>, cette unité ignore les jets d'eau, les tempêtes de poussière, et probablement la plupart de vos erreurs. Un <strong>support pivotant</strong> permet un ciblage précis, tandis que la <strong>lentille texturée</strong> garde le faisceau large et utilisable.</p><p className='mt-4'>Compatible avec systèmes <strong>12–24 V DC</strong>, la lumière tire 24 W et vient avec des extrémités de câble ouvertes pour une intégration facile. L'assemblage par personnel qualifié est requis—<strong>parce que faire fondre les fils est moins drôle dans la vraie vie</strong>.</p>",
-    "price": "67 €",
     "features": [
       "Sortie de 1700 lumens de 4 LEDs haute intensité",
       "Support pivotant pour ciblage précis",
@@ -2124,7 +2102,6 @@
     "description": "Pourquoi deviner ce qui se passe derrière le rig quand vous pouvez le regarder se produire en temps réel. La Tour de guet se monte sur votre machine et diffuse des images en direct directement dans votre cabine. Pas de câbles. Pas d'angles morts. Pas de surprises.",
     "herodescription": "<strong>Avez-vous déjà essayé de reculer votre rig à l'aveugle avec un échantillonneur de 3 tonnes à l'arrière ?</strong> Pas idéal. La Tour de guet vous donne <strong>des yeux sur la perceuse</strong>—du confort de votre siège de conducteur. Surveillez chaque mouvement, frappe, et oscillation.<br/>Connectez via 4G. Voyez depuis votre téléphone. <strong>Parce qu'être à deux endroits à la fois est maintenant techniquement possible.</strong>",
     "detailedDescription": "<p className='mt-4'><strong>La Tour de guet</strong> est une <strong>caméra 5MP prête pour le terrain</strong> conçue pour se monter directement sur votre machine d'échantillonnage de sol. Une fois installée, elle diffuse une vidéo en direct vers votre tablette ou téléphone en utilisant 4G—pour que vous puissiez voir ce qui se passe à l'arrière du rig sans quitter votre siège (ou crier à travers un champ boueux).</p><p className='mt-4'>Son <strong>angle de vision de 75°</strong> donne une visibilité complète de la tête d'échantillonnage, tandis que la <strong>vision nocturne infrarouge</strong> étend cette confiance bien dans le crépuscule. Que vous vérifiiez l'alignement, confirmiez la chute de carotte, ou admiriez simplement vos compétences de forage, tout est visible en temps réel.</p><p className='mt-4'>L'app est gratuite, la configuration prend des minutes, et il n'y a pas besoin de Wi-Fi local. Avec une carte micro SD optionnelle (jusqu'à 128 GB), vous pouvez même <strong>enregistrer les opérations pour documentation ou formation</strong>. La configuration est plug-and-play, avec une mise en garde importante : <strong>insérez la carte SIM correctement ou passez l'après-midi à diagnostiquer votre propre impatience</strong>.</p><p className='mt-4'>Elle est étanche à la pluie, étanche à la boue, et obstinément fiable—exactement ce que vous voulez de quelque chose boulonné à une machine vibrante au milieu de nulle part.</p>",
-    "price": "225 €",
     "features": [
       "Diffusion vidéo en direct sur réseau 4G",
       "Lentille à angle fixe de 75° avec vision nocturne",
@@ -2174,7 +2151,6 @@
     "description": "L'étalon-or pour l'échantillonnage manuel N-min—barres de forage effilées conçues avec précision, construites pour les sols durs et une précision de laboratoire.",
     "herodescription": "Pas n'importe quelles barres—ce sont des <strong>scalpels en acier outil ultra-tranchants</strong> pour l'amateur de sol qui exige de la précision. Leur conception effilée signifie moins de tracas, moins de friction, et ces <strong>marques de 10 cm gravées au laser</strong> ? Parfaites pour savoir exactement à quelle profondeur vous avez piqué—parce que les couches de sol n'aiment pas être dérangées, et vous non plus.",
     "detailedDescription": "<p className='mt-4'>Conçues pour ceux qui prennent le sol au sérieux (et eux-mêmes, un peu moins) : trois tailles effilées lisses—<strong>40→38 mm</strong> pour 0-30 cm, <strong>35→33 mm</strong> pour 30-60 cm, et <strong>30→28 mm</strong> pour 60-90 cm—tranchent dans l'argile et le gravier obstinés comme un couteau chaud dans du beurre, grâce à des bords pré-cassés prêts à faire le gros du travail.</p><p className='mt-4'>Chaque barre arbore des <strong>incréments de 10 cm gravés au laser</strong> qui ne s'effacent pas plus vite que votre enthousiasme un lundi matin. Associez-les à des bascules (Articles 1030/1031) pour un levage facile, et un ciseau (Article 1051) pour dépouiller les échantillons proprement—parce que l'échantillonnage devrait ressembler à une poussée douce, pas à une lutte de bras.</p>",
-    "price": "Prix sur demande",
     "features": [
       "Trois diamètres effilés minimisent la friction et maximisent la facilité d'échantillonnage",
       "Acier outil trempé HRC 52 pour la durabilité et la résistance",
@@ -2323,7 +2299,6 @@
     "description": "Barres de forage robustes (Ø 22 mm) conçues pour ouvrir des profils de sol normaux jusqu'à 10 m de profondeur avec des pièces modulaires interchangeables pour un ajustement flexible de la longueur.",
     "herodescription": "Rencontrez les <strong>barres de forage modulaires</strong> avec une rainure de forage <strong>22 mm</strong> soignée, construites pour affronter des profils de sol jusqu'à une <strong>10 mètres de profondeur</strong> sérieuse. Grâce aux boulons de connexion, vous pouvez ajuster la longueur plus rapidement que vous ne pouvez dire 'Bob's your uncle,' et les têtes de frappe gèrent tout—du coup occasionnel au plein machine.",
     "detailedDescription": "<p className='mt-4'>Chaque section est une <strong>précision d'ingénierie de 1000 mm solide</strong>, arborant une <strong>rainure de 12 mm</strong> pour garder vos échantillons de sol fermement en place tout en les remontant des profondeurs. Les extensions se vissent facilement avec des <strong>filetages internes 5/8”</strong>—parce que parfois, plus c'est juste plus.</p><p className='mt-4'>Serrez avec des <strong>clés SW 18 spéciales</strong>—pas de glissement, pas de drame. Pour le grand final, choisissez votre arme : un <strong>élévateur à vérin avec chaîne de serrage</strong> ou un <strong>extracteur à un bras avec pince à billes</strong>, tous conçus pour faire le travail en toute sécurité et sans transpirer.</p>",
-    "price": "Prix sur demande",
     "features": [
       "Rainure de forage Ø 22 mm avec rainure d'échantillon de sol de 12 mm",
       "Conception modulaire avec pièces interchangeables boulonnées ensemble",
@@ -2432,7 +2407,6 @@
     "description": "Chaque marteau est un héros à sa façon. Choisissez celui qui convient à votre saga d'échantillonnage des sols et n'oubliez pas les fidèles acolytes—nos accessoires.",
     "herodescription": "Du <strong>marteau carré solide et sans chichi</strong> au <strong>toucher délicat d'un marteau à face douce en nylon</strong>, nous avons les outils pour rendre votre échantillonnage des sols <strong>moins pénible, plus raffiné</strong>. Choisissez judicieusement—<strong>précision, puissance et confort</strong> vous attendent.",
     "detailedDescription": "<p className='mt-4'>Besoin de canaliser votre Thor intérieur avec un imposant <strong>marteau carré de 4,3 kg</strong> arborant une <strong>surface d'impact de 135x135 mm</strong> ? Ou peut-être un <strong>marteau à face douce en nylon léger comme une plume</strong> pour amadouer le sol avec subtilité ? Dans tous les cas, <strong>votre souhait est notre commandement</strong>.</p><p className='mt-4'>Envie d'un peu de flair DIY ? <strong>Échangez les têtes comme un chef change de couteaux</strong>, choisissez parmi <strong>des manches en bois ou en hickory de toutes longueurs</strong>, et couronnez le tout avec <strong>des inserts aussi durs ou doux que vous le souhaitez</strong>. C'est comme un costume sur mesure—mais pour votre marteau.</p>",
-    "price": "Prix sur demande",
     "features": [
       "Marteau carré avec surface d'impact 135x135 mm, 4,3 kg",
       "Marteau rond en plastique avec surface d'impact 150 mm Ø",
@@ -2565,7 +2539,6 @@
     "description": "Qui a besoin d'un abonnement à la salle de sport quand on a les carottes de sol Göttinger ? Une personne, un outil léger de 2,5 kg, et vous êtes prêt à conquérir le sol—sans laisser de trace sur le champ ou terroriser les câbles enterrés.",
     "herodescription": "De l'<strong>argile délicate</strong> au <strong>sable légèrement compacté</strong>, ces carottes coupent avec <strong>un minimum d'agitation</strong>. Trois couches de forage parfaitement calibrées, <strong>poignées amorties</strong>, et un profil <strong>fräs</strong> astucieux rendent l'échantillonnage moins comme du travail et plus comme de la magie.",
     "detailedDescription": "<p className='mt-4'>Opération à une main, <strong>pas de machinerie lourde</strong>, <strong>pas d'aides supplémentaires</strong>, juste vous et la terre. Les forets Göttinger séparent <strong>trois couches de sol</strong> avec précision, vous donnant des échantillons N-min fiables pesant <strong>500–1000g</strong> de <strong>16 frappes parallèles par section de profondeur</strong>.</p><p className='mt-4'>Attention : ce sont des champions des <strong>sols doux</strong>. Le <strong>sable rocheux, sec comme les os, ou serré</strong> pourrait pousser leur patience. Mais dans des conditions idéales, c'est aussi proche que vous le pouvez d'une <strong>baguette magique d'échantillonnage de sol</strong>.</p>",
-    "price": "Prix sur demande",
     "features": [
       "Opération à une personne",
       "Léger à seulement ~2,5 kg",
@@ -2624,7 +2597,6 @@
     "description": "Terrain accidenté ? Pente ? Labyrinthe de maïs ? Pas de problème. Ce crawler ne se plaint pas—il échantillonne simplement.",
     "herodescription": "Le <strong>Nitratraupe</strong> est le genre de machine que tout passionné de sol approuverait d'un hochement de tête. Capable d'<strong>échantillonnage de sol de 0–90 cm</strong> sur <strong>trois couches</strong>, il navigue sur un terrain accidenté comme un enfant poli mais implacable sur chenilles. Semi-automatique, assisté hydrauliquement, et guidé par vos yeux (parce que la machine respecte votre intelligence).",
     "detailedDescription": "<p className='mt-4'><strong>La précision rencontre la force brute</strong> dans un emballage étonnamment courtois. Le <strong>Nitratraupe</strong> coupe un <strong>profil de sol propre</strong> sans mélanger les couches (<strong>pas de forets rotatifs requis</strong>). <strong>Trois couches—0–30, 30–60, 60–90 cm</strong> sont extraites avec <strong>finesse</strong>.</p><p className='mt-4'>Il fonctionne avec le <strong>moteur du véhicule porteur</strong>, donc <strong>pas de crises de moteur à combustion supplémentaires</strong>. L'<strong>échantillonnage manuel</strong> vous permet d'<strong>inspecter visuellement la carotte</strong>, gardant les <strong>coûts et les maux de tête bas</strong>.</p><p className='mt-4'>Les chenilles le rendent <strong>assez étroit pour se faufiler entre le maïs en croissance</strong>, et avec une <strong>télécommande</strong>, vous pouvez <strong>lever, abaisser, tourner et échantillonner</strong> sans quitter votre zone de confort. Un <strong>vrai crawler d'échantillonnage de sol de gentleman</strong>.</p>",
-    "price": "À partir de 20 000 €",
     "features": [
       "Extraction hydraulique semi-automatique jusqu'à 90 cm (optionnel 120 cm)",
       "Échantillonnage en trois couches pour une précision spécifique à l'horizon",

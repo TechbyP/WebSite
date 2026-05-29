@@ -1,5 +1,6 @@
 @import url('https://fonts.adobe.com/fonts/gin');
 
+
 /* Tailwind directives */
 @tailwind base;
 @tailwind components;
@@ -8,8 +9,8 @@
 html,
 body {
   width: 100%;
-  font-family: 'Gin', sans-serif;
-  font-display: swap;
+  
+  font-family: 'Gin',  sans-serif;
 }
 
 @keyframes pulse-scale {

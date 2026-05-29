@@ -1,16 +1,17 @@
 import React, { useState } from 'react';
 import { Phone, Mail, MapPin, Facebook, Instagram, Linkedin, Youtube } from 'lucide-react';
 import { useNavigate } from 'react-router-dom';
-import logo from '../assets/pictures/Logo-Symbol.png';
+import logo from '../assets/pictures/Logo-Symbol.png?w=32;48;64;96&format=webp;png&as=srcset';
+import logoFallback from '../assets/pictures/Logo-Symbol.png?w=64&format=png';
 import { toast } from 'sonner';
-import { addDoc, collection } from 'firebase/firestore';
-import { db } from '../firebase.js';
 import { useTranslation } from 'react-i18next';
+import { submitNewsletterSignup } from '../utils/publicApi';
 
 const Footer = () => {
   const { t } = useTranslation();
   const navigate = useNavigate();
   const [email, setEmail] = useState('');
+  const [honeypot, setHoneypot] = useState('');
   const [isLoading, setIsLoading] = useState(false);
 
   const goToId = (id: string) => {
@@ -27,14 +28,11 @@ const Footer = () => {
     }
     setIsLoading(true);
     try {
-      await addDoc(collection(db, 'club_members'), {
-        email: email,
-        timestamp: new Date(),
-        source: 'footer_signup',
-      });
+      await submitNewsletterSignup({ email, source: 'footer_signup', honeypot });
       toast.dismiss();
       toast.success(t('foot.newsletter.success'));
       setEmail('');
+      setHoneypot('');
     } catch {
       toast.error(t('foot.errors.generic'));
     } finally {
@@ -51,8 +49,16 @@ const Footer = () => {
           <div>
             <div className="flex items-center mb-4 cursor-pointer" onClick={() => goToId('Hero')}>
               <span className="ml-2 text-4xl font-black uppercase flex items-center">
-                <img sizes="(max-width: 768px) 50vw, 25vw"
-                  srcSet={logo} alt={t('foot.alt.logo')} className="h-[1.25em] w-auto mr-2" />
+                <img
+                  sizes="44px"
+                  src={logoFallback}
+                  srcSet={logo}
+                  alt={t('foot.alt.logo')}
+                  width={700}
+                  height={724}
+                  className="h-[1.25em] w-auto mr-2"
+                  decoding="async"
+                />
                 TechByP
               </span>
             </div>
@@ -81,6 +87,15 @@ const Footer = () => {
               <h3 className="text-lg font-black mb-3 text-white">{t('foot.newsletter.title')}</h3>
               <p className="text-gray-400 mb-3 text-sm">{t('foot.newsletter.description')}</p>
               <form onSubmit={handleSubmit} className="flex flex-col space-y-3">
+                <input
+                  type="text"
+                  value={honeypot}
+                  onChange={(event) => setHoneypot(event.target.value)}
+                  autoComplete="off"
+                  tabIndex={-1}
+                  className="hidden"
+                  aria-hidden="true"
+                />
                 <input
                   type="email"
                   value={email}

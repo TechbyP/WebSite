@@ -1,6 +1,6 @@
 import { createContext, useContext, useState, ReactNode } from 'react';
 import { useTranslation } from 'react-i18next';
-import { Product } from '../../../data/products';
+import type { Product } from '../../../data/types/products';
 import { ProductConfiguration, ConfiguratorStep } from '../types/configurator';
 
 interface ConfiguratorContextType {

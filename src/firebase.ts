@@ -4,7 +4,7 @@ import { getFirestore } from 'firebase/firestore';
 import { getStorage } from 'firebase/storage';
 import { getDatabase, ref, push } from "firebase/database";
 import { getAuth } from 'firebase/auth';
-import { getAnalytics, logEvent } from 'firebase/analytics';
+import type { Analytics } from 'firebase/analytics';
 
 const firebaseConfig = {
   apiKey: import.meta.env.VITE_FIREBASE_API_KEY,
@@ -26,4 +26,20 @@ const database = getDatabase(app);
 export { db, storage, database, ref, push };
 export const firestore = getFirestore(app);
 export const auth = getAuth(app);
-export const analytics = getAnalytics(app);
+
+let analyticsPromise: Promise<Analytics | null> | null = null;
+
+export const getClientAnalytics = async (): Promise<Analytics | null> => {
+  if (typeof window === 'undefined' || !firebaseConfig.measurementId) {
+    return null;
+  }
+
+  analyticsPromise ??= import('firebase/analytics')
+    .then(async ({ getAnalytics, isSupported }) => {
+      const supported = await isSupported();
+      return supported ? getAnalytics(app) : null;
+    })
+    .catch(() => null);
+
+  return analyticsPromise;
+};

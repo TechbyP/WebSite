@@ -419,11 +419,11 @@
     "languageSwitcher": {
       "en": "",
       "de": "",
-       "es": "",
-       "fr": "",
-       "ro": "",
-       "pt": "",
-       "ru": "",
+      "es": "",
+      "fr": "",
+      "ro": "",
+      "pt": "",
+      "ru": "",
       "switchToPortuguese": "Zu Portugiesisch wechseln",
       "switchToRussian": "Zu Russisch wechseln",
       "ariaLabel": "Sprache ändern"
@@ -454,7 +454,8 @@
       "all": "Alles, was wir haben, vom großen Kraftprotz bis zum cleveren Kleinod.",
       "smartsystems": "Die schlaue Seite der Bodenprobennahme – automatisch, präzise und bemerkenswert wohlerzogen.",
       "accessory": "Die Teile, die alles zusammenhalten – die stillen Helden im Hintergrund.",
-      "manual": "Verlässliche, haptische Werkzeuge, auf die Sie sich verlassen können – schön handfest und gebaut für die Ewigkeit."
+      "manual": "Verlässliche, haptische Werkzeuge, auf die Sie sich verlassen können – schön handfest und gebaut für die Ewigkeit.",
+      "Bespoke Machinery": "Maßgeschneiderte Maschinen, abgestimmt auf Ihren Arbeitsablauf, Ihr Gelände und Ihre technischen Anforderungen."
     },
     "customEquipment": {
       "title": "Brauchen Sie Sonderanfertigungen?",
@@ -785,6 +786,10 @@
     "pricingNoticeTitle": "Preishinweis:",
     "pricingNoticeText": "Alle Preise in Euro (€) zzgl. MwSt. Preise sind nur Richtwerte und können je nach finaler Konfiguration, gewählten Optionen und Verfügbarkeit variieren. Der endgültige Preis wird in Ihrem persönlichen Angebot bestätigt."
   },
+  "pricing": {
+    "from": "Ab",
+    "onRequest": "Preis auf Anfrage"
+  },
   "buttonsConfigurator": {
     "back": "Zurück",
     "completeOrder": "Bestellung abschließen",
@@ -859,35 +864,6 @@
     "continue": "Weiter"
   },
   "products": {
-    "123": {
-      "name": "Standard-Stromversorgung",
-      "nickname": "SSV",
-      "price": "1.200 €"
-    },
-    "124": {
-      "name": "Erweiterte Stromversorgung",
-      "nickname": "ESV",
-      "price": "1.800 €"
-    }
-  },
-  "productSelection": {
-    "title": "Produkt auswählen",
-    "description": "Werfen Sie einen Blick auf unsere cleveren Smart Systems – wählen Sie dasjenige, das Ihre Arbeit erleichtert.",
-    "unnamedProduct": "Unbenanntes Produkt",
-    "product": "Produkt",
-    "priceUnavailable": "Preis nicht verfügbar",
-    "bestsellerShort": "BEST",
-    "bestseller": "BESTSELLER",
-    "smartTag": "SMART",
-    "smartSystemsTag": "SMART SYSTEMS",
-    "noDescription": "Keine Beschreibung verfügbar"
-  },
-  "vehicleMounting": {
-    "title": "Fahrzeugmontage-Typ",
-    "description": "Wie genau soll Ihr {{productName}} montiert werden? Es mag langweilig erscheinen, aber glauben Sie mir – wenn dieser Schritt schiefgeht, steht der Rest auf wackeligen Beinen.",
-    "mountingLabel": "MONTAGE"
-  },
-  "products": {
     "lay-down-frame": {
       "name": "Ablage-Rahmen",
       "nickname": "Rahmen",
@@ -906,6 +882,23 @@
       "price": "2.300 €",
       "description": "Kompletter Umbausatz für maximale Flexibilität."
     }
+  },
+  "productSelection": {
+    "title": "Produkt auswählen",
+    "description": "Werfen Sie einen Blick auf unsere cleveren Smart Systems – wählen Sie dasjenige, das Ihre Arbeit erleichtert.",
+    "unnamedProduct": "Unbenanntes Produkt",
+    "product": "Produkt",
+    "priceUnavailable": "Preis nicht verfügbar",
+    "bestsellerShort": "BEST",
+    "bestseller": "BESTSELLER",
+    "smartTag": "SMART",
+    "smartSystemsTag": "SMART SYSTEMS",
+    "noDescription": "Keine Beschreibung verfügbar"
+  },
+  "vehicleMounting": {
+    "title": "Fahrzeugmontage-Typ",
+    "description": "Wie genau soll Ihr {{productName}} montiert werden? Es mag langweilig erscheinen, aber glauben Sie mir – wenn dieser Schritt schiefgeht, steht der Rest auf wackeligen Beinen.",
+    "mountingLabel": "MONTAGE"
   },
   "progress": {
     "included": "✅ Inbegriffen",
@@ -1242,7 +1235,6 @@
     "description": "Intakte Bodenkerne von 0–90 cm, wissenschaftliche Präzision, deutsche Zähigkeit.",
     "herodescription": "Es ist nicht auffällig. Es schreit nicht. Es hat kein WLAN. Aber was es <strong>tut</strong> – besser als fast alles andere – ist, dir einen <strong>perfekten, ununterbrochenen Boden-Kern</strong> zu liefern, von der Oberfläche bis <strong>90 Zentimeter tief</strong>. Ja, die ganze Geschichte, von Kruste bis Unterboden, alles in einem Zug. Es ist wie ein <strong>MRT fürs Erdreich</strong>.",
     "detailedDescription": "<p className='mt-4'><strong>Universitäten lieben das Ding.</strong> Und nicht nur, weil es ein bisschen wie ein Raketenwerfer aussieht. Es gibt <strong>volle Sicht auf das Bodenprofil</strong> – kein Vermischen, kein Raten bei den Schichten, sondern ein sauberer, vertikaler Schnitt durch die Erdinnereien. <strong>Perfekt für Nmin-Proben</strong>, klar, aber auch für alle, die wirklich sehen wollen, was da unten passiert.</p><p className='mt-4'>Das Ganze ist <strong>hydraulisch angetrieben, halbautomatisch und ziemlich clever</strong>. Es gräbt mit millimetergenauer Höflichkeit, und wenn es auf etwas Unfreundliches trifft – wie einen Stein oder eine alte römische Münze – <strong>stoppt</strong> es einfach. Kein Drama. Keine kaputten Teile.</p><p className='mt-4'>Und das Beste: Es ist <strong>deutsche Ingenieurskunst auf den Punkt gebracht</strong>. Sauber, effizient, absolut logisch. Wie <strong>Beethoven … wenn er Bodenprobennehmer wäre</strong>.</p>",
-    "price": "Ab 14.200 €",
     "features": [
       "Intakter Bodenkerne 0–90 cm (optional 120 cm) für die Profilübersicht",
       "Zentimetergenaue Tiefensteuerung",
@@ -1300,7 +1292,6 @@
     "description": "Automatisches Stickstoffprofilieren ohne Schnickschnack.",
     "herodescription": "Lerne den <strong>MP-2.60</strong> kennen – ein wunderbar praktisches Gerät für <strong>Nmin-Bodenproben</strong>. Er geht bis 60 cm tief, holt sich, was er braucht, und macht ohne Nachfragen weiter. Entwickelt, um <strong>zuverlässig, nicht absurd</strong> zu sein – ideal für alle, die es beim ersten Mal richtig haben wollen.",
     "detailedDescription": "<p className='mt-4'>In einer Welt voller Überkomplexität ist der <strong>MP-2.60</strong> erfrischend unkompliziert. Er ist speziell für <strong>automatisches Stickstoffprofilieren</strong> gebaut – kein Gefummel mit manuellen Bohrern oder Raten. Mit einem hochfrequenten <strong>hydraulischen Hammer</strong> durchdringt er den Boden wie ein sanfter Presslufthammer, dreht und hebt die Sonde, bevor er die Probe <strong>höflich in den Behälter ablegt</strong>.</p><p className='mt-4'>Er hat eine <strong>clevere interne Logik</strong>, die entscheidet, welche Bodenstücke behalten werden, und wer will, kann die <strong>Schichttrennung</strong> aktivieren für horizon-spezifische Proben. Die Proben landen in <strong>wasserdichten Behältern</strong>, und das ganze Gerät montiert sich bequem auf Anhängern, Pick-ups oder quasi allem, was fährt und nicht auseinanderfällt.</p><p className='mt-4'>Und falls dein Forschungsdrang die 60-cm-Grenze sprengt, keine Panik – der MP-2.60 ist voll <strong>upgradefähig auf MP-3.90 oder MP-4.100</strong>.</p>",
-    "price": "Ab 16.500 €",
     "features": [
       "Vollautomatische Probenentnahme bis 60 cm",
       "Cleveres System: verwirft oder behält Proben je nach Einstellung",
@@ -1362,7 +1353,6 @@
     "description": "Robust genug für den Boden, smart genug für effizientes Arbeiten.",
     "herodescription": "Der <strong>MP-3.90</strong> ist das Ergebnis aus <strong>deutschem Denken</strong>, einer Prise <strong>Übertechnik</strong> und der Aufgabe, <strong>wissenschaftlich Löcher zu graben</strong>. Er entnimmt Bodenproben bis zu <strong>95 cm</strong> Tiefe ohne Murren vom Bediener, kann <strong>3-Schichten trennen</strong>, <strong>automatisch entleeren</strong> und entscheidet selbstständig, wann er bei hartnäckigem Boden aufgibt.",
     "detailedDescription": "<p class='mt-4'>Hier steckt <strong>Präzision und Effizienz</strong> nicht nur im Namen – das Gerät arbeitet so, dass Sie sich ganz auf die Daten konzentrieren können statt auf den Boden zu kämpfen. Es meistert harten Boden <strong>mit minimaler Bedienung</strong> und ist ein verlässlicher Partner für wissenschaftliche oder professionelle Feldarbeit.</p><p class='mt-4'>Passt auf Pickups, Anhänger, Traktoren oder fast jedes Straßentaugliche Fahrzeug und bietet <strong>anpassbare Tiefen- und Horizont-Einstellungen</strong>. Ihre Proben landen sicher in <strong>wasserdichten Behältern</strong>, was praktisch ist.</p><p class='mt-4'>Das Gerät ist für <strong>professionellen Dauereinsatz</strong> gebaut – kein Spielzeug, sondern solide deutsche Ingenieurskunst.</p>",
-    "price": "Ab 23.500 €",
     "features": [
       "Vollautomatische Entnahme bis 95 cm",
       "Optionale 3-Schichten-Trennung für horizont-spezifische Proben",
@@ -1428,7 +1418,6 @@
     "description": "Tiefer Boden, clever sortiert. Kein Schnickschnack, nur Tiefe.",
     "herodescription": "Das ist der <strong>MP-4.100</strong> — stellen Sie sich vor, ein Hydraulikhämmer und ein Bodenwissenschaftler hätten ein Kind. Vollautomatisch, geht bis <strong>100 cm</strong> tief, entnimmt bis zu <strong>vier Schichten</strong> und sortiert sie wie ein Butler mit geologischer Leidenschaft. Genau das, was man bekommt, wenn man Deutschland bittet, einen Maulwurf zu bauen.",
     "detailedDescription": "<p class='mt-4'>Für alle, die <strong>Tiefe und Disziplin</strong> verlangen, arbeitet der MP-4.100 präzise und ohne Murren. Ein <strong>hydraulischer Schlagmechanismus</strong> treibt eine gezahnte Sonde in den Boden, die Proben entnimmt und automatisch in passende Behälter leert.</p><p class='mt-4'>Mit <strong>intelligenter Logik</strong>, die entscheidet, welche Proben behalten oder verworfen werden, und einem <strong>Schichtentrenner</strong>, der jede Bodenlage respektiert. Montierbar auf Pickup, Anhänger oder fast jedes straßentaugliche Fahrzeug.</p>",
-    "price": "Ab 25.500 €",
     "features": [
       "Vollautomatische Entnahme bis 100 cm",
       "Optionale 4-Schichten-Trennung für horizont-spezifische Proben",
@@ -1493,7 +1482,6 @@
     "description": "Effizient, zuverlässig und unaufdringlich stark. Bodenproben mit hydraulischer Power.",
     "herodescription": "Der <strong>DH-1.30</strong> ist ein robuster hydraulischer Bodenprobenehmer, der mit ruhiger Kraft arbeitet – keine Spielerei, sondern solide Ergebnisse. Bohrt bis zu <strong>30 cm</strong> tief, angetrieben von einem Hydraulikmotor, also viel Power, ohne Elektronik. Etwas lauter als sein elektrischer Kollege, aber kein Angeber. Einfach nur zuverlässig, Tag für Tag.",
     "detailedDescription": "<p class='mt-4'>Der <strong>DH-1.30</strong> kombiniert das durchdachte Design seines <strong>elektrischen Bruders</strong> mit einem <strong>hydraulischen Motor</strong> – ideal, wenn Sie Hydraulikleistung zur Verfügung haben und mehr Drehmoment brauchen.</p><p class='mt-4'>Die <strong>Tiefensteuerung</strong> ist präzise bis auf den Millimeter und gleicht unebenen Boden spielend aus.</p><p class='mt-4'>Bedienung ist kinderleicht: <strong>Ein Knopf, zwei voreingestellte Tiefen</strong> – wer will schon komplizierte Steuerungen?</p><p class='mt-4'>Mit 43 kg ist das Gerät robust, aber leicht genug, um ohne Gabelstapler bewegt zu werden.</p><p class='mt-4'>Montierbar auf Quads, Anhängern, Pickups oder leichten Fahrzeugen – vielseitig und praktisch.</p><p class='mt-4'>Wer klassische Hydraulik und deutsche Ingenieurskunst schätzt, trifft hier eine gute Wahl.</p>",
-    "price": "Ab 8.950 €",
     "features": [
       "Hydraulisch angetrieben, kein Akku oder Kabel",
       "Vollautomatische Entnahme bis 30 cm",
@@ -1555,7 +1543,6 @@
     "description": "Klug, leise und flink – Bodenproben nehmen, als wär’s ein Spaziergang.",
     "herodescription": "<strong>DE-1.30</strong> ist der <strong>vernünftige, kompakte Bodenprobennehmer</strong>, der still und leise bis zu <strong>30 Zentimeter</strong> runterbohrt – ohne viel Tamtam und ohne dass du dir währenddessen eine Zigarette anmachen musst. Voll <strong>elektrisch</strong>, also <strong>kein Gestank, kein Lärm</strong>, nur saubere, zuverlässige Bodenproben.",
     "detailedDescription": "<p className='mt-4'>Aufbauend auf dem bewährten <strong>N2012-Modell</strong> nutzt der <strong>DE-1.30</strong> eine so präzise <strong>Elektrobohrung</strong>, dass man fast meinen könnte, er könnte eine Nadel einfädeln – wenn Bodenproben sowas täten. <strong>Millimetergenaue</strong> Tiefeneinstellung sorgt für exakt die Tiefe, die du willst, egal wie holprig der Boden. Ein bisschen wie ein <strong>höflicher Butler</strong>, der dich nie im Stich lässt.</p><p className='mt-4'>Das <strong>Bedienfeld</strong> ist kinderleicht – Knopf drücken, los geht’s. <strong>Zwei voreingestellte Tiefen</strong> lassen dich schneller wechseln, als du „bodenbrechende Technologie“ sagen kannst (na, gesehen?). Kein Wirrwarr mit Menüs oder kryptischen Steuerungen.</p><p className='mt-4'>Mit gerade mal <strong>45 Kilo</strong> und einem <strong>24-V-Akku-Pack</strong> (separat erhältlich) ist er <strong>leicht und wendig</strong>, aber robust genug für den echten Feldalltag. Kein Kran oder Ex-Soldat nötig, um ihn zu bewegen.</p><p className='mt-4'>Der DE-1.30 lässt sich problemlos an <strong>Quads, Anhängern und diversen Leichtfahrzeugen</strong> montieren – super vielseitig.</p><p className='mt-4'>Wenn du präzise, verlässliche Bodenproben willst, ohne den Krach und Gestank eines Benziners, dann ist der DE-1.30 dein Gerät. <strong>Deutsche Ingenieurskunst</strong> mit einem <strong>leisen, elektrischen Twist</strong>, der einfach macht, was er soll.</p>",
-    "price": "Ab 12.600 €",
     "features": [
       "Voll elektrische Bohrung für saubere, präzise Proben",
       "Millimetergenaue Tiefenverstellung (weil fast reicht nicht)",
@@ -1619,7 +1606,6 @@
     "description": "Anhängen, beproben, weiterfahren – kein Stress, kein Warten.",
     "herodescription": "Das ist der <strong>BOPROB III</strong> – oder auch charmant <strong>Der Sechzehn-Express</strong> genannt. Ein Anhänger, der während der Fahrt Bodenproben nimmt. Wirklich. Kein Anhalten, kein Knöpfchendrücken, keine Schreierei am Praktikanten. Einfach anhängen und den Job machen lassen.",
     "detailedDescription": "<p className='mt-4'>Der <strong>Sechzehn-Express</strong> ist ein cleveres Gerät. Ein <strong>Anhänger-Bodenprobennehmer</strong>, der arbeitet, während du fährst. So sollte alles funktionieren – tut es aber nicht.</p><p className='mt-4'>Die Probenahme läuft flott dank einer <strong>360°-Drehkurbel</strong>, die wie ein höflicher Presslufthammer den Boden ansticht und den Kern in das Magazin auswirft.</p><p className='mt-4'>Alles wird von einem <strong>7-Zoll-Touchscreen</strong> überwacht – ein feines Teil –, damit du jederzeit weißt, was läuft. Optional gibt’s sogar eine Kamera, falls du zuschauen willst oder einfach dein neues Spielzeug bewundern möchtest.</p><p className='mt-4'>Große, weiche Reifen (<strong>235/60 R16</strong>, für Kenner) sorgen für minimalen Bodendruck – schlammiges Gelände? Nur, wenn du es drauf anlegst.</p><p className='mt-4'>Anhängen lässt sich der Anhänger spielend leicht an <strong>Traktoren, Pickups, Quads oder was immer eine Anhängerkupplung hat</strong>. Kein Gefummel, keine Adapter, keine Werkstatt-Heldenaktionen. Und nach getaner Arbeit einfach abkoppeln.</p><p className='mt-4'>Fährst du zu schnell oder zu langsam (weil du die Landschaft genießt), macht die Maschine einfach nicht mit. Schlauer als mancher Fahrer.</p>",
-    "price": "Ab 28.500 €",
     "features": [
       "Hydraulischer Hammerschlag und Drehmechanismus",
       "360° Drehkurbel mit Automatik-Auswurf",
@@ -1688,7 +1674,6 @@
     "description": "Ein unaufgeregter Montagebügel für deinen Sampler – passt an die meisten zivilisierten Fahrzeuge, ohne Theater.",
     "herodescription": "Das <strong>Montagekit</strong> ist die unscheinbare, aber unverzichtbare Halterung, die deinen Sampler zuverlässig an <strong>50 mm Anhängerkupplungen</strong> mit Standard <strong>13-poligem 12-V-Stecker</strong> befestigt. Stabile, pulverbeschichtete Konstruktion aus <strong>4 mm starkem EN 10025 S355 Stahl</strong> hält alles fest, ohne zu klappern oder sich zu verbiegen – auch bei holprigem Gelände.</p><p className='mt-4'>Passt perfekt zu <strong>DE-1.30, DH-Serie und MP-Halterungen</strong>. Klappbar für einfaches An- und Abkuppeln.</p>",
     "detailedDescription": "<p className='mt-4'>Der <strong>Montagebügel</strong> macht das Anbringen deines Samplers an das Zugfahrzeug zum Kinderspiel. Kein Gefrickel mit Sonderadaptern oder Spezialwerkzeug. Einfach montieren, zuschrauben, fertig.</p><p className='mt-4'>Dank pulverbeschichteter Oberfläche trotzt er Regen, Schlamm und Rost. Das Material ist robust genug, um auch mal ein paar Schläge oder Stöße im Feld abzubekommen, ohne die Struktur zu verlieren.</p><p className='mt-4'>Ein weiterer Vorteil ist die klappbare Konstruktion, die das An- und Abkuppeln extrem erleichtert – ideal, wenn du den Sampler öfter wechselst oder transportierst.</p><p className='mt-4'>Der Bügel ist kompatibel mit <strong>Standard-Anhängerkupplungen (50 mm, 13-polig 12V)</strong>, wie man sie in ganz Europa kennt. So bleibt dein Equipment flexibel und sicher.</p>",
-    "price": "AB 2.790 €",
     "features": [
       "Standard 50 mm Anhängerkupplung kompatibel",
       "Pulverbeschichteter EN 10025 S355 Stahl, 4 mm stark",
@@ -1744,7 +1729,6 @@
     "description": "Verwandelt Ihren Traktor in eine Bodenprobennahmebestie, indem er die Zapfwelle für den hydraulischen Probenehmer nutzt. Robust, zuverlässig, ohne Schnickschnack.",
     "herodescription": "<strong>Dreipunktaufhängung für Traktoren</strong>: Der Schwergewichts-Champion für Kat-1/2 Traktoren, entwickelt um Ihren hydraulischen Bodenprobenehmer direkt an das Krafthebersystem anzuschließen – inklusive Hydraulikpumpen-Plattform.",
     "detailedDescription": "<p className='mt-4'>Stellen Sie sich das <strong>stählerne Rückgrat</strong> vor, das Ihr Traktor nie kannte. Aus <strong>dickem A-Rahmen-Stahl</strong> gefertigt und in <strong>schwarzer Epoxid-Beschichtung</strong> gehüllt, wird diese Halterung sicher an den Hubarmen befestigt. Gebaut um das Farmleben zu überstehen – Regen, Schlamm und gelegentliche Traktor-Wutanfälle inklusive. Das Kit enthält <strong>Hubstangen und alle Befestigungsschrauben</strong>, also kein Improvisieren mit rostigen Nägeln oder Klebeband.</p><p className='mt-4'>Geeignet für <strong>Kompakttraktoren mit Hubarmabständen von etwa 50 bis 60 Zoll</strong>, unterstützt dieser Rahmen die Hydraulikpumpe, die direkt von der Zapfwelle angetrieben wird – für effizienten Hydraulikfluss und reibungslose Bodenprobennahme. Das Upgrade, das Ihren Traktor bereit macht für die <strong>Feldolympiade</strong>.</p>",
-    "price": "Ab €1.650",
     "features": [
       "Geschweißter A-Rahmen-Stahl – stabil genug für echte Arbeit",
       "Zapfwellenpumpenhalterung – weil Kabelbinder keine Ingenieurskunst sind",
@@ -1802,7 +1786,6 @@
     "description": "Verwandelt Ihr Nutzfahrzeug oder Pickup in eine ernsthafte Bodenprobennahmebestie. Ladefläche ab, Rahmen drauf, Werkzeuge verstaut.",
     "herodescription": "<strong>Vollumbausatz</strong> ersetzt die standardmäßige Ladefläche oder UTV-Plattform durch einen maßgefertigten Stahlrahmen mit Aluminium-Abdeckungen – speziell für die Bodenprobennahme mit <strong>MP-, DH- und DE-Geräten</strong> entwickelt. TÜV-geprüft, straßenzugelassen und ziemlich clever.",
     "detailedDescription": "<p className='mt-4'><strong>Wenn Ihr UTV oder Pickup von Größe träumt, ist dies sein Moment.</strong> Wir entfernen sorgfältig die Original-Ladefläche und ersetzen sie durch einen Stahl-Umbaurahmen, verkleidet mit Aluminium-Paneelen, die 'professioneller Betreiber' lauter schreien als ein voll aufgedrehter Hilux auf Schotter.</p><p className='mt-4'><strong>Er bietet ordentliche Halterungen für alle unsere Geräte, integrierte Aufbewahrung für Kühler, Werkzeuge, Beleuchtung – im Grunde alles außer dem Pausenbrot.</strong> TÜV-zertifiziert, gebaut für ernsthafte Kampagnen und seltsam befriedigend anzusehen.</p>",
-    "price": "Ab €4.590",
     "features": [
       "Universelle Passform für Pickups und UTVs (Hilux, Gator, Kubota usw.)",
       "Aluminiumverkleideter Stahlrahmen: langlebig und korrosionsbeständig",
@@ -1857,7 +1840,6 @@
     "description": "Diese Anhänger transportieren MP-, DH/DE-Systeme mühelos über alles, was nicht gerade eine Wand ist.",
     "herodescription": "<strong>Spezialanhänger – Feldtransporter</strong> sind <strong>robuste, feuerverzinkte Anhänger</strong> mit <strong>gebremsten und ungebremsten Optionen</strong>, entwickelt um Ihr Bodenprobennahme-Equipment – sei es <strong>MP, DH oder DE</strong> – mit <strong>deutscher Präzision</strong> über Felder und Höfe zu bewegen.<br/>Sie bieten <strong>durchdachte Aufbewahrung für Werkzeuge, Lampen und Kühler</strong> – damit Sie den ganzen Tag arbeiten können ohne das übliche Chaos.",
     "detailedDescription": "<p className='mt-4'>Mit einer festen <strong>Spurweite von 1,35 m</strong> und <strong>Lenkrollen</strong> manövriert der Feldtransporter wie ein vernünftiger Einkaufswagen – nur mit mehr Stahl und weniger Schwachstellen.</p><p className='mt-4'>Wählen Sie <strong>gebremste Modelle</strong> für schwerere Lasten oder steilere Hänge – bis zu <strong>3.500 kg Gesamtgewicht</strong> – damit Sie Bodenprobenehmer transportieren können ohne ständig an neue Bremsbeläge denken zu müssen.</p>",
-    "price": "Ab €3.600",
     "features": [
       "Feuerverzinkter Aufbau und Chassis – lange Lebensdauer, weniger Beschwerden",
       "Gebremste und ungebremste Optionen – wählen Sie Ihren Fahrstil",
@@ -1914,7 +1896,6 @@
     "description": "Für alle, die MP- oder DH-Einheiten ohne Bordhydraulik betreiben – diese Einheiten liefern zuverlässige hydraulische oder elektrische Energie, wohin Ihre Arbeit Sie auch führt.",
     "herodescription": "<strong>Power-Pack</strong> sind wie die zuverlässigen Butler der Bodenprobennahme – sie bieten <strong>verlässliche, tragbare Energie</strong>, damit Ihre Geräte keinen Wutanfall bekommen. Ob Sie den <strong>klassischen hydraulischen Antrieb</strong> bevorzugen oder den <strong>flüsterleisen elektrischen Charme</strong>, diese Einheiten haben Sie im Rücken.<br/>Eingepackt in ein <strong>robustes Stahlgehäuse</strong>, härter als Ihr durchschnittlicher Traktor, mit praktischen Extras wie <strong>LCD-Batteriestatus</strong> und <strong>Filtersystemen</strong> – der treue Begleiter, von dem Sie nicht wussten, dass Sie ihn im Feld brauchen.",
     "detailedDescription": "<p className='mt-4'>Das hydraulische Modell, perfekt abgestimmt auf <strong>MP-</strong> und <strong>DH-Serie</strong>, bietet einen <strong>13 PS Benzinmotor</strong> und einen <strong>22 L Öltank</strong>, der <strong>135 bar Druck</strong> bei <strong>20 L/min</strong> liefert – das ist echte Kraft für wenn Sie sich wie ein mechanischer Overlord fühlen wollen.</p><p className='mt-4'>Der elektrische Verwandte, speziell für die <strong>DE-Serie</strong> entwickelt, hat eine <strong>24 V / 100 Ah Batterie</strong>, ein <strong>rostfreies Stahlgehäuse</strong> und ein <strong>LCD-Display</strong> um den Energiezustand im Auge zu behalten. Ideal für alle, die einen leiseren, saubereren und höflicheren Ansatz bei der Bodenprobennahme bevorzugen.</p><p className='mt-4'>Beide Modelle sind <strong>tragbar</strong>, <strong>robust gebaut</strong> und haben <strong>Rücklauf-/Saugfiltration</strong> um Ihre wertvolle Hydraulik vor Dreck zu schützen – weil niemand vorzeitigen Verschleiß mag, oder?</p>",
-    "price": "Ab €3.450",
     "features": [
       "Bordhydraulik oder elektrisch betrieben für Ihren Arbeitsablauf",
       "Robustes Stahlgehäuse mit Korrosionsschutz",
@@ -1962,7 +1943,6 @@
     "description": "Weil nichts einen guten Tag im Feld so ruiniert wie ein undichtes Bauteil oder ein gerissener Riemen. Dies sind die offiziellen, empfohlenen Ersatzteile – handverlesen für Ihre MP-, DH-, DE- oder BOPROB III-Maschine und bereit, Sie aus der Patsche zu helfen, bevor es losgeht.",
     "herodescription": "Betrachten Sie diese als den Erste-Hilfe-Kasten für Ihren Bodenprobenehmer. Ob Sie in einem bayerischen Moor oder einer bulgarischen Staubschüssel unterwegs sind – die richtigen <strong>Original-Ersatzteile</strong> zur Hand zu haben verwandelt ein potenzielles Desaster in ein lässig gemeistertes Ärgernis.<br/>Jedes Kit enthält die üblichen Verdächtigen – <strong>O-Ringe, Hydraulikkupplungen, Filter, Riemen</strong> und die Teile, die still und leise die meiste Arbeit leisten. Kein Improvisieren mit Draht oder geborgten Teilen vom Kumpel sein Mähdrescher.",
     "detailedDescription": "<p className='mt-4'>Dies sind die <strong>empfohlenen Ersatzteil-Kits</strong> für die <strong>MP-Serie</strong>, <strong>DH-Serie</strong>, <strong>DE-Serie</strong> und <strong>BOPROB III</strong> Probenehmer. Und nein, sie sind nicht optional. Sie sind, was die Ingenieure verwenden. Was die Servicetechniker verwenden. Was Sie im Werkzeugkasten haben sollten, wenn Sie es auch nur halbwegs ernst meinen mit der Betriebsbereitschaft.</p><p className='mt-4'>In jedem Kit finden Sie die üblichen Verdächtigen – <strong>Dichtungen, Filter, Hydraulikanschlüsse, Relais und Druckleitungen</strong> – die Teile, die die Flüssigkeit dort halten, wo sie sein soll, und den Strom in die richtige Richtung fließen lassen. Es ist wie eine Ersatzunterhose auf einem Langstreckenflug: Sie hoffen, sie nicht zu brauchen, aber Sie sind verdammt froh, wenn Sie sie haben.</p><p className='mt-4'>Teile sind <strong>einzeln verpackt und beschriftet</strong>, damit Sie nicht einen halben Tag damit verbringen, herauszufinden, ob diese Unterlegscheibe an die Rücklaufleitung oder den Ölfilter passt. Und natürlich sind sie alle <strong>werksgeprüft</strong> und dafür gemacht, einfach einzubauen zu sein – ohne Bastelei.</p>",
-    "price": "Ab €450",
     "features": [
       "Empfohlene Ersatzteile für MP-, DH-, DE- und BOPROB III-Bodenprobenehmer",
       "Enthält kritische Verschleißteile und Notfallreparaturkomponenten",
@@ -2009,7 +1989,6 @@
     "description": "Weil Ihre Proben – oder Ihr Bier – manchmal mehr verdienen als lauwarmes Elend. Mit diesem 95L-Monster bringen Sie eine portable arktische Tundra zur Baustelle. Vielleicht übertrieben. Aber definitiv brillant.",
     "herodescription": "Sie kennen das Gefühl – Sie sind halb den Berg hoch, alles läuft nach Plan, und dann öffnet jemand den Kühler und findet... <strong>Suppe</strong>. Nicht mehr. <strong>Der Kühler verwandelt selbstgefälliges Grinsen in eisige Erleichterung</strong>, buchstäblich.<br/>Er <strong>kühlt</strong>. Er <strong>friert ein</strong>. Er <strong>leuchtet</strong>. Und ja, er hat eine <strong>App</strong> – weil Ihr Telefon noch nicht genug kann. Deutsche Ingenieure nennen dies vielleicht eine <em>Kühlbox</em>. <strong>Wir nennen es 'den Kühlschrank mitbringen, weil wir es können.'</strong>",
     "detailedDescription": "<p className='mt-4'>Die <strong>Kühlbox 95L</strong> ist ehrlich gesagt <strong>leistungsfähiger als die meisten Hotel-Minibars</strong>. Zwei Fächer, jeweils als Kühl- oder Gefrierfach konfigurierbar, bedeuten, dass Sie Ihre Proben auf der einen und Ihr Mittagessen auf der anderen Seite lagern können – und trotzdem Platz für <strong>selbstgefällige Zufriedenheit</strong> haben.</p><p className='mt-4'>Angetrieben von einem <strong>hocheffizienten LG-Kompressor</strong> (was mehr ist, als die Klimaanlage Ihres Autos von sich behaupten kann), kühlt sie bis auf <strong>-20°C</strong> – selbst wenn es heiß genug ist, um ein Ei auf dem Dachgepäckträger zu braten. Bedienung über das Bedienfeld oder die <strong>Alpicool-App</strong>, falls Sie der Typ sind, der seinen Kühlschrank aus der Hängematte steuert.</p><p className='mt-4'>Für längere Autonomie kombinieren Sie sie mit der <strong>optionalen Batterie</strong> (nicht im Lieferumfang) für <strong>4 bis 24 Stunden</strong> unabhängige Kühlung. Oder schließen Sie sie ans Fahrzeug an und <strong>machen Sie sich nie wieder Sorgen</strong>. Gebaut um was auszuhalten – <strong>auch wenn wir davon abraten, das auszuprobieren.</strong></p>",
-    "price": "€1.000",
     "features": [
       "Dual-Fach kann unabhängig kühlen oder einfrieren",
       "Digitales Display mit Touchsteuerung und mobiler App",
@@ -2053,7 +2032,6 @@
     "description": "Dunkelheit ist keine Ausrede. Mit 1700 Lumen in einer kompakten, gepanzerten Einheit ist diese LED-Arbeitsleuchte das Ergebnis einer Kreuzung aus Stirnlampe und kleiner Sonne.",
     "herodescription": "<strong>Probennahme im Dunkeln? Die Sonne vergessen?</strong> Kein Problem. Die Mitternachtssonne liefert <strong>ernsthaft starkes Licht</strong> ohne Hitze, Lärm oder Dieselrechnung.<br/>Montieren, ausrichten, einschalten – dann fragen Sie sich, wie Sie je ohne leben konnten. Es ist keine romantische Beleuchtung. Es ist <strong>mach-den-Job-Beleuchtung</strong>.",
     "detailedDescription": "<p className='mt-4'>Die <strong>LED-Arbeitsleuchte 1700</strong> ist eine <strong>felderprobte, no-nonsense Leuchte</strong>, entwickelt um Dunkelheit zu durchschneiden wie eine Kettensäge Butter. Mit brutalen <strong>1700 Lumen</strong> liefert sie fokussierte Nahfeldbeleuchtung für Probennahme-Rigs, Maschinen oder jede Situation, in der 'Ich glaube ich sehe was' nicht gut genug ist.</p><p className='mt-4'>Mit einem <strong>schwarz eloxierten Aluminiumgehäuse</strong> und den Standards <strong>IP6K7 und IP6K9K</strong> widersteht diese Einheit Wasserstrahlen, Staubstürmen und wahrscheinlich den meisten Ihrer Fehler. Ein <strong>schwenkbarer Halter</strong> ermöglicht präzises Ausrichten, während die <strong>gemusterte Linse</strong> den Strahl breit und nutzbar hält.</p><p className='mt-4'>Kompatibel mit <strong>12–24 V DC</strong> Systemen, zieht die Leuchte 24 W und kommt mit offenen Kabelenden für einfache Integration. Montage durch qualifiziertes Personal erforderlich – <strong>weil schmelzende Kabel im echten Leben weniger lustig sind</strong>.</p>",
-    "price": "€67",
     "features": [
       "1700 Lumen Ausgangsleistung von 4 Hochleistungs-LEDs",
       "Schwenkbarer Halter für präzises Ausrichten",
@@ -2103,7 +2081,6 @@
     "description": "Warum raten, was hinter dem Rig passiert, wenn Sie es in Echtzeit beobachten können? Der Wachturm montiert an Ihrer Maschine und streamt Live-Bilder direkt in Ihr Fahrerhaus. Keine Kabel. Keine toten Winkel. Keine Überraschungen.",
     "herodescription": "<strong>Schon mal versucht, Ihr Rig blind rückwärts mit einem 3-Tonnen-Probenehmer hinten zu bewegen?</strong> Nicht ideal. Der Wachturm gibt Ihnen <strong>Augen am Bohrgerät</strong> – vom Komfort Ihres Fahrersitzes aus. Beobachten Sie jede Bewegung, jeden Schlag, jedes Wackeln.<br/>Verbinden Sie sich via 4G. Sehen Sie von Ihrem Handy aus. <strong>Weil an zwei Orten gleichzeitig zu sein jetzt technisch möglich ist.</strong>",
     "detailedDescription": "<p className='mt-4'><strong>Der Wachturm</strong> ist eine <strong>feldfeste 5MP Kamera</strong>, entwickelt zur direkten Montage an Ihrem Bodenprobennahme-Gerät. Einmal installiert, streamt sie Live-Video auf Ihr Tablet oder Handy über 4G – sodass Sie sehen können, was hinten am Rig passiert, ohne Ihren Sitz zu verlassen (oder über ein schlammiges Feld zu brüllen).</p><p className='mt-4'>Ihr <strong>75° Blickwinkel</strong> gibt volle Sicht auf den Probenehmerkopf, während <strong>Infrarot-Nachtsicht</strong> dieses Vertrauen bis in die Dämmerung erweitert. Ob Sie die Ausrichtung prüfen, den Kernabwurf bestätigen oder einfach nur Ihre Bohrkünste bewundern – alles in Echtzeit sichtbar.</p><p className='mt-4'>Die App ist kostenlos, der Setup dauert Minuten und es wird kein lokales Wi-Fi benötigt. Mit optionaler microSD-Karte (bis 128 GB) können Sie sogar <strong>Operationen zur Dokumentation oder Schulung aufzeichnen</strong>. Installation ist Plug-and-Play, mit einer wichtigen Einschränkung: <strong>Setzen Sie die SIM-Karte richtig ein oder verbringen Sie den Nachmittag mit der Diagnose Ihrer eigenen Ungeduld</strong>.</p><p className='mt-4'>Regen- und schlammfest und hartnäckig zuverlässig – genau das, was Sie von etwas wollen, das an einer vibrierenden Maschine mitten im Nirgendwo montiert ist.</p>",
-    "price": "€225",
     "features": [
       "Live-Videostreaming über 4G-Netzwerk",
       "75° Festbrennweiten-Objektiv mit Nachtsicht",
@@ -2153,7 +2130,6 @@
     "description": "Der Goldstandard für manuelle N-min Probennahme – präzisionsgefertigte, konische Bohrgestänge für harte Böden und Laborgenauigkeit.",
     "herodescription": "Nicht irgendwelche Stangen – dies sind <strong>rasierklingenscharfe, werkzeugstählerne Skalpelle</strong> für den Bodenliebhaber, der Präzision verlangt. Ihr konisches Design bedeutet weniger Ärger, weniger Reibung und diese <strong>laserätierten 10 cm Markierungen</strong>? Perfekt um genau zu wissen, wie tief Sie gestochert haben – weil Bodenschichten nicht gestört werden wollen und Sie auch nicht.",
     "detailedDescription": "<p className='mt-4'>Entworfen für diejenigen, die Boden ernst nehmen (und sich selbst ein bisschen weniger): drei schlanke konische Größen – <strong>40→38 mm</strong> für 0-30 cm, <strong>35→33 mm</strong> für 30-60 cm und <strong>30→28 mm</strong> für 60-90 cm – schneiden sich durch hartnäckigen Lehm und Kies wie ein heißes Messer durch Butter, dank vorgebrochener Kanten, die bereit sind, die harte Arbeit für Sie zu erledigen.</p><p className='mt-4'>Jede Stange hat <strong>laserätzte 10 cm Markierungen</strong>, die nicht schneller verblassen als Ihre Begeisterung an einem Montagmorgen. Kombinieren Sie sie mit Umschaltgriffen (Art. 1030/1031) für einfaches Heben und einem Meißel (Art. 1051) um Proben sauber zu entnehmen – weil Probennahme sich wie ein sanfter Stups anfühlen sollte, nicht wie ein Armdrücken.</p>",
-    "price": "Preis auf Anfrage",
     "features": [
       "Drei konische Durchmesser minimieren Reibung und maximieren Probennahme-Leichtigkeit",
       "HRC 52 gehärteter Werkzeugstahl für Haltbarkeit und Stärke",
@@ -2302,7 +2278,6 @@
     "description": "Robuste Bohrstangen (Ø 22 mm) zum Öffnen normaler Bodenprofile bis 10 m Tiefe mit modularen, austauschbaren Teilen für flexible Längenanpassung.",
     "herodescription": "Treffen Sie die <strong>modularen Bohrstangen</strong> mit einer ordentlichen <strong>22 mm Bohrnut</strong>, gebaut um Bodenprofile bis zu ernsthaften <strong>10 Metern Tiefe</strong> zu bewältigen. Dank Verbindungsbolzen können Sie die Länge schneller anpassen als Sie 'Bob's your uncle' sagen können, und die Schlagköpfe handhaben alles – vom leichten Klopfer bis zum vollen Maschinenschlag.",
     "detailedDescription": "<p className='mt-4'>Jeder Abschnitt ist solide <strong>1000 mm Ingenieurspräzision</strong>, mit einer <strong>12 mm Nut</strong> um Ihre Bodenproben sicher zu halten während Sie sie aus der Tiefe ziehen. Verlängerungen schrauben sich einfach mit <strong>5/8” Innengewinden</strong> auf – weil manchmal mehr einfach mehr ist.</p><p className='mt-4'>Festziehen mit speziellen <strong>SW 18 Schlüsseln</strong> – kein Rutschen, kein Drama. Für den großen Finale wählen Sie Ihre Waffe: ein <strong>Wagenheber mit Spannkette</strong> oder ein <strong>Einarm-Zieher mit Kugelklemme</strong>, beide designed um den Job sicher und ohne Schweißausbruch zu erledigen.</p>",
-    "price": "Preis auf Anfrage",
     "features": [
       "Ø 22 mm Bohrnut mit 12 mm Bodenproben-Nut",
       "Modulares Design mit austauschbaren, verschraubten Teilen",
@@ -2411,7 +2386,6 @@
     "description": "Jeder Hammer ist auf seine Weise ein Held. Wählen Sie den, der zu Ihrer Bodenprobennahme-Geschichte passt und vergessen Sie nicht die treuen Begleiter – unser Zubehör.",
     "herodescription": "Vom <strong>soliden, no-nonsense Vierkanthammer</strong> bis zur <strong>sanften Berührung eines Nylon-Weichkopfes</strong> – wir haben die Werkzeuge, um Ihre Bodenprobennahme <strong>weniger Kraftakt, mehr Finesse</strong> zu machen. Wählen Sie weise – <strong>Präzision, Kraft und Komfort</strong> warten.",
     "detailedDescription": "<p className='mt-4'>Müssen Sie Ihren inneren Thor mit einem wuchtigen <strong>4,3 kg Vierkanthammer</strong> mit <strong>135x135 mm Schlagfläche</strong> kanalisieren? Oder bevorzugen Sie einen <strong>federleichten Nylon-Weichkopfhammer</strong> um den Boden mit Feingefühl zu bearbeiten? Wie auch immer, <strong>Ihr Wunsch ist unser Befehl</strong>.</p><p className='mt-4'>Lust auf etwas DIY-Flair? <strong>Tauschen Sie Köpfe wie ein Koch seine Messer</strong>, wählen Sie aus <strong>Holz- oder Hickory-Stielen in allen Längen</strong> und krönen Sie das Ganze mit <strong>Einsätzen so hart oder sanft wie Sie möchten</strong>. Wie ein Maßanzug – nur für Ihren Hammer.</p>",
-    "price": "Preis auf Anfrage",
     "features": [
       "Vierkanthammer mit 135x135 mm Schlagfläche, 4,3 kg",
       "Runder Kunststoffhammer mit 150 mm Ø Schlagfläche",
@@ -2544,7 +2518,6 @@
     "description": "Wer braucht schon ein Fitnessstudio, wenn man die Göttinger Bohrstöcke hat? Eine Person, ein leichtes Werkzeug von 2,5 kg, und schon ist man bereit, den Boden zu erobern – ohne Spuren auf dem Feld oder Schaden an unterirdischen Kabeln zu hinterlassen.",
     "herodescription": "Von <strong>zartem Lehm</strong> bis <strong>leicht verdichtetem Sand</strong> schneiden diese Bohrstöcke mit <strong>minimalem Aufwand</strong>. Drei perfekt kalibrierte Bohrschichten, <strong>gepolsterte Griffe</strong> und ein cleveres <strong>Fräsprofil</strong> machen die Probennahme weniger zu Arbeit und mehr zu Zauberei.",
     "detailedDescription": "<p className='mt-4'>Einhandbetrieb, <strong>keine schweren Maschinen</strong>, <strong>keine Helfer nötig</strong>, nur Sie und der Boden. Die Göttinger Bohrstöcke trennen <strong>drei Bodenschichten</strong> präzise und liefern zuverlässige Nmin-Proben mit <strong>500–1000 g</strong> Material aus <strong>16 parallelen Einstichen pro Tiefenabschnitt</strong>.</p><p className='mt-4'>Achtung: Diese Werkzeuge sind Champions für <strong>leichte Böden</strong>. <strong>Steinige, ausgetrocknete oder stark verdichtete Sandböden</strong> können ihre Geduld auf die Probe stellen. Unter idealen Bedingungen ist dies jedoch so nah an einem <strong>Zauberstab für Probennahmen</strong>, wie man es bekommt.</p>",
-    "price": "Preis auf Anfrage",
     "features": [
       "Probeentnahme durch nur eine Person",
       "Gesamtgewicht nur etwa 2,5 kg",
@@ -2603,7 +2576,6 @@
     "description": "Unwegsames Gelände? Steigung? Maislabyrinth? Kein Problem. Diese Raupe beschwert sich nicht – sie beprobt einfach.",
     "herodescription": "Die <strong>Nitratraupe</strong> ist eine Maschine, die jedem Bodenliebhaber anerkennend zunicken lässt. Sie kann <strong>0–90 cm Bodenproben</strong> über <strong>drei Schichten</strong> entnehmen und meistert unwegsames Gelände wie ein höflicher, aber unermüdlicher Kleinkind-Panzer. Halbautomatisch, hydraulisch unterstützt und von Ihren Augen gesteuert (weil die Maschine Ihren Verstand respektiert).",
     "detailedDescription": "<p className='mt-4'><strong>Präzision trifft rohe Kraft</strong> in überraschend höflicher Verpackung. Die <strong>Nitratraupe</strong> erstellt ein <strong>sauberes Bodenprofil</strong> ohne Schichtvermischung (<strong>keine Drehbohrer nötig</strong>). <strong>Drei Schichten—0–30, 30–60, 60–90 cm</strong> werden mit <strong>Finesse</strong> entnommen.</p><p className='mt-4'>Sie nutzt den <strong>Motor des Trägerfahrzeugs</strong>, also <strong>keine zusätzlichen Verbrennungsmotor-Kapriolen</strong>. <strong>Manuelles Beproben</strong> erlaubt die <strong>visuelle Kontrolle des Kerns</strong> und hält <strong>Kosten und Ärger niedrig</strong>.</p><p className='mt-4'>Die Raupen machen sie <strong>schmal genug, um zwischen wachsenden Maispflanzen hindurchzufahren</strong>, und mit der <strong>Handhebel-Steuerung</strong> können Sie <strong>heben, senken, drehen und beproben</strong>, ohne Ihren Komfortbereich zu verlassen. Ein <strong>wahrhaft gentlemanartiger Bodenbeprobungs-Crawler</strong>.</p>",
-    "price": "Ab 20.000 €",
     "features": [
       "Hydraulische, halbautomatische Entnahme bis 90 cm (optional 120 cm)",
       "3-Schichten-Beprobung für präzise Horizontentnahme",

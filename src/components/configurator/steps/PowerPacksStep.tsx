@@ -1,11 +1,11 @@
 import { motion } from 'framer-motion';
 import { useConfigurator } from '../contexts/ConfiguratorContext';
 import { FadeInWhenVisible } from '../../animation/FadeInWhenVisible';
-import { products, initializeProducts } from '../../../data/products';
-import { useState, useEffect } from 'react';
+import { useState } from 'react';
 import { Dialog } from '@headlessui/react';
 import { useTranslation } from 'react-i18next';
 import { useTheme } from '../../../utils/context/theme-context'; // ✅ theme context import
+import { useProducts } from '../../../data/context/ProductsContext';
 
 export const PowerPacksStep = () => {
   const {
@@ -16,16 +16,7 @@ export const PowerPacksStep = () => {
 
   const { t } = useTranslation();
   const { theme } = useTheme(); // ✅ access current theme
-
-  const [ready, setReady] = useState(false);
-
-  useEffect(() => {
-    initializeProducts(t);
-    setReady(false);
-    setTimeout(() => {
-      setReady(true);
-    }, 0);
-  }, [t]);
+  const { products } = useProducts();
 
   const [showPowerpackWarning, setShowPowerpackWarning] = useState(false);
   const [acknowledgedWarning, setAcknowledgedWarning] = useState(false);
@@ -68,10 +59,6 @@ export const PowerPacksStep = () => {
       setPowerpackType(productId);
     }
   };
-
-  if (!ready) {
-    return <div className="text-gray-800 dark:text-gray-200">{t('product.notFound')}</div>;
-  }
 
   return (
     <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -206,10 +193,7 @@ export const PowerPacksStep = () => {
                   {t(`products.${product.id}.nickname`, product.nickname || 'Product')}
                 </h2>
                 <div className="text-xs font-bold text-brandgreen mt-1">
-                  {t(
-                    `products.${product.id}.price`,
-                    product.price || 'Price not available'
-                  )}
+                  {product.price || t('extrasStep.priceNotAvailable')}
                 </div>
               </div>
             </motion.div>
@@ -275,10 +259,7 @@ export const PowerPacksStep = () => {
                   )}
                 </h2>
                 <div className="text-base font-bold text-brandgreen mt-auto">
-                  {t(
-                    `products.${product.id}.price`,
-                    product.price || 'Price not available'
-                  )}
+                  {product.price || t('extrasStep.priceNotAvailable')}
                 </div>
               </div>
             </motion.div>

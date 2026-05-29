@@ -6,7 +6,7 @@ export default {
   theme: {
     extend: {
       fontFamily: {
-        sans: ['Gin', 'ui-sans-serif', 'system-ui', 'sans-serif'],
+        sans: ['Gin', 'Oswald', 'ui-sans-serif', 'system-ui', 'sans-serif'],
       },
       colors: {
         brandblue: '#034f8b',

@@ -1,10 +1,10 @@
 import React, { useEffect, useState, useCallback, useMemo } from 'react';
 import { useNavigate, useLocation } from 'react-router-dom';
-import { motion, useAnimation, AnimatePresence } from 'framer-motion';
+import { motion, AnimatePresence } from 'framer-motion';
 import { useInView } from 'react-intersection-observer';
 import { ArrowRight } from 'lucide-react';
 import { useTranslation } from 'react-i18next';
-import { products } from '../data/products';
+import type { Product } from '../data/types/products';
 import OrderNow from '../components/OrderNow';
 import Sort from '../utils/ProductSorting';
 import { getProductMediaFallbacks } from '../utils/DefaultPics';
@@ -12,8 +12,9 @@ import { useHeader } from './Header';
 import VideoSection from '../utils/VideoSection';
 import { showProductToast } from '../components/configurator/utils/ShowToastContent';
 import posterImage from '../assets/pictures/hero.jpg';
-import { initializeProducts } from '../data/products';
 import { useTheme } from '../utils/context/theme-context'; // Import the theme context
+import { useProducts } from '../data/context/ProductsContext';
+import { FadeInWhenVisible } from '../components/animation/FadeInWhenVisible';
 
 // Custom hook for media queries
 const useMediaQuery = (query: string) => {
@@ -39,6 +40,7 @@ const ProductShowcase = () => {
   const { t } = useTranslation();
   const navigate = useNavigate();
   const location = useLocation();
+  const { products } = useProducts();
   const [selectedCategory, setSelectedCategory] = useState("all");
   const [showOrderModal, setShowOrderModal] = useState(false);
   const [selectedProductId, setSelectedProductId] = useState<number | null>(null);
@@ -49,15 +51,6 @@ const ProductShowcase = () => {
     triggerOnce: false,
   });
   const { theme } = useTheme(); // Get current theme
-  const [ready, setReady] = useState(false);
-
-  useEffect(() => {
-    initializeProducts(t);
-    setReady(false); // reset before init
-    setTimeout(() => {
-      setReady(true); // trigger re-render *after* initialization
-    }, 0);
-  }, [t]);
 
   // Parse URL parameters
   useEffect(() => {
@@ -75,7 +68,7 @@ const ProductShowcase = () => {
       : selectedCategory === "bestseller"
         ? products.filter((product) => product.bestseller)
         : products.filter(
-          (product) => product.category.toLowerCase() === selectedCategory.toLowerCase()
+          (product) => product.category?.toLowerCase() === selectedCategory.toLowerCase()
         );
 
     if (sortOption) {
@@ -93,16 +86,18 @@ const ProductShowcase = () => {
       if (['price', 'depth', 'weight', 'magazines', 'date', 'samplingCycleTime'].includes(key)) {
         // First filter to only products that have this property and it's not undefined
         filtered = filtered.filter(product =>
-          key in product && product[key as keyof typeof product] !== undefined
+          key === 'price'
+            ? product.priceValue !== undefined && product.priceValue !== null
+            : key in product && product[key as keyof typeof product] !== undefined
         );
 
         // Then sort the remaining products
         filtered = [...filtered].sort((a, b) => {
           const aValue = key === 'price'
-            ? parsePrice(a.price)
+            ? a.priceValue ?? 0
             : (a[key as keyof typeof a] as number) ?? 0;
           const bValue = key === 'price'
-            ? parsePrice(b.price)
+            ? b.priceValue ?? 0
             : (b[key as keyof typeof b] as number) ?? 0;
           return order === 'asc' ? aValue - bValue : bValue - aValue;
         });
@@ -111,12 +106,6 @@ const ProductShowcase = () => {
 
     return filtered;
   }, [selectedCategory, sortOption, products]);
-
-  // Helper function to parse price strings into numbers
-  function parsePrice(priceStr: string) {
-    const numericStr = priceStr.replace(/[^\d,.-]/g, '').replace(',', '');
-    return parseFloat(numericStr) || 0;
-  }
 
   const handleProductClick = useCallback((productId: number) => {
     navigate(`/product/${productId}`);
@@ -133,22 +122,20 @@ const ProductShowcase = () => {
     setSelectedCategory(category);
   }, [navigate, location.pathname]);
   
-  if (!ready) {
-    return <div className="dark:text-gray-300">{t('product.notFound')}</div>;
-  }
-  
   return (
     <section className="py-12 dark:bg-gray-900" ref={productsRef}>
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="text-center mb-5">
-          <h2 id="products" className="text-3xl md:text-4xl font-black leading-tight text-black dark:text-white mt-6 uppercase">
-            {t('productShowcase.title')}
-          </h2>
-          <FadeInWhenVisible>
-            <p className="text-center text-brandblue dark:text-brandgreen max-w-4xl mx-auto mb-2 text-1xl md:text-base font-black">
-              {t(`productShowcase.categoryDescriptions.${selectedCategory}`)}
-            </p>
-          </FadeInWhenVisible>
+          <div className="mt-6 flex flex-col items-center justify-center gap-2">
+            <h2 id="products" className="text-3xl md:text-4xl font-black leading-tight text-black dark:text-white uppercase">
+              {t('productShowcase.title')}
+            </h2>
+            <FadeInWhenVisible as="div" className="max-w-4xl">
+              <span className="block text-brandblue dark:text-brandgreen text-base md:text-lg font-black leading-tight text-center">
+                {t(`productShowcase.categoryDescriptions.${selectedCategory}`)}
+              </span>
+            </FadeInWhenVisible>
+          </div>
         </div>
 
         {productsInView && (
@@ -171,7 +158,7 @@ const ProductShowcase = () => {
                   <motion.button
                     key={category}
                     onClick={() => handleCategoryClick(category)}
-                    className={`px-4 mb-5 py-2 rounded-md text-sm font-black transition-colors ${selectedCategory === category
+                    className={`px-4 py-2 rounded-md text-sm font-black transition-colors ${selectedCategory === category
                       ? 'bg-brandgreen text-white'
                       : 'border border-gray-200 dark:border-gray-700 hover:border-gray-300 dark:hover:border-gray-600 text-gray-600 dark:text-gray-300 hover:text-brandgreen dark:hover:text-brandgreen'
                       }`}
@@ -183,7 +170,7 @@ const ProductShowcase = () => {
                 ))}
               </div>
 
-              <div className="flex items-center">
+              <div className="flex items-center md:self-start">
                 <Sort sortOption={sortOption} setSortOption={setSortOption} />
               </div>
             </div>
@@ -228,7 +215,7 @@ const ProductShowcase = () => {
                   </button>
                 </div>
                 <button
-                  onClick={() => showProductToast(products)}
+                  onClick={() => navigate('/configurator')}
                   className="border border-gray-300 dark:border-gray-600 hover:border-brandblue dark:hover:border-brandgreen text-gray-700 dark:text-gray-300 hover:text-brandblue dark:hover:text-brandgreen px-8 py-3 rounded-lg font-semibold transition-colors w-full sm:w-[calc(26rem+1rem)] flex items-center justify-center"
                 >
                   <svg
@@ -284,7 +271,7 @@ const ProductShowcase = () => {
               </svg>
             </button>
             <OrderNow
-              productId={selectedProductId}
+              productId={String(selectedProductId)}
               productName={products.find(p => p.id === selectedProductId)?.name || `Product ${selectedProductId}`}
               onClose={() => {
                 setShowOrderModal(false);
@@ -296,6 +283,7 @@ const ProductShowcase = () => {
       )}
       <VideoSection
         videoId='ZXNVBRUQ6cU'
+        posterSrc={posterImage}
         posterSizes="(max-width: 768px) 50vw, 25vw"
         posterSrcSet={posterImage}
         title={t('productShowcase.videoTitle')}
@@ -304,33 +292,8 @@ const ProductShowcase = () => {
   );
 };
 
-// Memoized Components
-const FadeInWhenVisible = React.memo(({ children }: { children: React.ReactNode }) => {
-  const controls = useAnimation();
-  const [ref, inView] = useInView({ triggerOnce: true, threshold: 0.01 });
-
-  useEffect(() => {
-    if (inView) controls.start('visible');
-  }, [controls, inView]);
-
-  return (
-    <motion.div
-      ref={ref}
-      initial="hidden"
-      animate={controls}
-      transition={{ duration: 0.6, ease: 'easeOut' }}
-      variants={{
-        hidden: { opacity: 0, y: 20 },
-        visible: { opacity: 1, y: 0 }
-      }}
-    >
-      {children}
-    </motion.div>
-  );
-});
-
 interface ProductCardProps {
-  product: any;
+  product: Product;
   handleProductClick: (id: number) => void;
   setSelectedProductId: (id: number) => void;
   setShowOrderModal: (show: boolean) => void;
@@ -343,12 +306,13 @@ const ProductCard = React.forwardRef<HTMLDivElement, ProductCardProps>(
     const { heroImage, icon: IconComponent } = getProductMediaFallbacks(product);
     const [expanded, setExpanded] = useState(false);
     const isMobile = useMediaQuery('(max-width: 768px)');
-    const { theme } = useTheme(); // Get current theme
-
     // Generate translation key from product name (e.g., "MP-2.60" -> "mp260")
     const productKey = useMemo(() => {
-      return product.name.toLowerCase().replace(/[.-]/g, '');
+      return (product.name || 'product').toLowerCase().replace(/[.-]/g, '');
     }, [product.name]);
+    const categoryLabelKey = (product.category || 'all').toLowerCase();
+    const description = product.description || '';
+    const specs = product.specs || [];
 
     const handleButtonClick = useCallback(
       (e: React.MouseEvent) => {
@@ -398,7 +362,7 @@ const ProductCard = React.forwardRef<HTMLDivElement, ProductCardProps>(
                 <span className="inline-flex items-center px-2 py-0.5 text-xs font-medium text-brandblue dark:text-brandgreen bg-blue-100 dark:bg-gray-700 rounded-full">
                   {IconComponent && <IconComponent className="h-3 w-3 mr-0.5" />}
                   <span className="text-xs">
-                    {t(`categories.${product.category.toLowerCase()}`)}
+                    {t(`categories.${categoryLabelKey}`)}
                   </span>
                 </span>
               </div>
@@ -429,9 +393,9 @@ const ProductCard = React.forwardRef<HTMLDivElement, ProductCardProps>(
                     setExpanded(!expanded);
                   }}
                 >
-                  {t(`products.${productKey}.description`, { defaultValue: product.description })}
+                  {t(`products.${productKey}.description`, { defaultValue: description })}
                 </p>
-                {product.description.length > 106 && (
+                {description.length > 106 && (
                   <button
                     className="text-xs text-brandblue dark:text-brandgreen mt-1"
                     onClick={(e) => {
@@ -446,7 +410,7 @@ const ProductCard = React.forwardRef<HTMLDivElement, ProductCardProps>(
 
               {/* Key specs (always visible) */}
               <div className="mt-2 space-y-1">
-                {product.specs.slice(0, 2).map((spec: string, index: number) => (
+                {specs.slice(0, 2).map((spec: string, index: number) => (
                   <div key={index} className="flex items-center text-xs text-gray-600 dark:text-gray-300">
                     <div className="w-[4px] h-[4px] bg-brandblue dark:bg-brandgreen rounded-full mr-1 flex-shrink-0"></div>
                     <span className="line-clamp-1">
@@ -528,7 +492,7 @@ const ProductCard = React.forwardRef<HTMLDivElement, ProductCardProps>(
             <span className="inline-flex items-center px-3 py-1 text-xs font-medium text-brandblue dark:text-brandgreen bg-blue-100 dark:bg-gray-700 rounded-full">
               {IconComponent && <IconComponent className="h-4 w-4 mr-1" />}
               <span>
-                {t(`categories.${product.category.toLowerCase()}`)}
+                {t(`categories.${categoryLabelKey}`)}
               </span>
             </span>
           </div>
@@ -549,10 +513,10 @@ const ProductCard = React.forwardRef<HTMLDivElement, ProductCardProps>(
 
           <div className="flex-grow flex flex-col justify-center mt-4">
             <p className="text-gray-600 dark:text-gray-300 text-sm mb-4">
-              {t(`products.${productKey}.description`, { defaultValue: product.description })}
+              {t(`products.${productKey}.description`, { defaultValue: description })}
             </p>
             <div className="space-y-2">
-              {Array.isArray(product.specs) && product.specs.map((spec: string, index: number) => (
+              {specs.map((spec: string, index: number) => (
                 <div key={index} className="flex items-center text-sm text-gray-600 dark:text-gray-300">
                   <div className="w-[6px] h-[6px] bg-brandblue dark:bg-brandgreen rounded-full mr-2 flex-shrink-0"></div>
                   {t(`products.${productKey}.specs.${index}`, { defaultValue: spec })}
@@ -564,7 +528,10 @@ const ProductCard = React.forwardRef<HTMLDivElement, ProductCardProps>(
           {/* Quick Configure button */}
           {product.category === "SmartSystems" && (
             <button
-              onClick={() => showProductToast(product)}
+              onClick={(event) => {
+                event.stopPropagation();
+                showProductToast(product);
+              }}
               className="w-full bg-white dark:bg-gray-700 border border-brandgreen text-brandgreen dark:text-brandgreen hover:bg-brandgreen hover:text-white dark:hover:text-white px-3 py-2 rounded-lg text-sm font-bold transition-colors flex items-center justify-center group mt-4"
             >
               <svg

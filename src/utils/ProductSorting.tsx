@@ -128,7 +128,7 @@ export default function CustomSortDropdown({ sortOption, setSortOption, closeMen
             <button
                 onClick={toggleSortOrder}
                 disabled={!sortOption}
-                className={`p-2 rounded-md transition-colors ${
+                className={`inline-flex h-[38px] w-[38px] items-center justify-center rounded-md transition-colors ${
                     !sortOption
                         ? 'text-gray-400 bg-gray-100 dark:bg-gray-700 cursor-not-allowed border border-gray-200 dark:border-gray-600'
                         : 'text-gray-700 dark:text-gray-300 border border-gray-300 dark:border-gray-600 hover:bg-brandgreen dark:hover:bg-brandgreen hover:text-white'
@@ -143,7 +143,7 @@ export default function CustomSortDropdown({ sortOption, setSortOption, closeMen
             <button
                 onClick={clearSort}
                 disabled={!sortOption}
-                className={`p-2 rounded-md transition-colors ${
+                className={`inline-flex h-[38px] w-[38px] items-center justify-center rounded-md transition-colors ${
                     !sortOption
                         ? 'text-gray-400 bg-gray-100 dark:bg-gray-700 cursor-not-allowed border border-gray-200 dark:border-gray-600'
                         : 'text-gray-700 dark:text-gray-300 border border-gray-300 dark:border-gray-600 hover:bg-brandorange dark:hover:bg-brandorange hover:text-white'

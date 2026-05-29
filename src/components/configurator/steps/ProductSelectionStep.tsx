@@ -1,10 +1,9 @@
 import { motion } from 'framer-motion';
 import { Product } from '../../../data/types/products';
-import { initializeProducts } from '../../../data/products';
 import { useConfigurator } from '../contexts/ConfiguratorContext';
 import { FadeInWhenVisible } from '../../animation/FadeInWhenVisible';
 import { ErrorBoundary } from 'react-error-boundary';
-import { useEffect, useState } from 'react';
+import { useEffect } from 'react';
 import { handleImageError, defaultHeroImage } from '../../../utils/DefaultPics';
 import { useTranslation } from 'react-i18next';
 import { useTheme } from '../../../utils/context/theme-context';
@@ -33,15 +32,6 @@ export const ProductSelectionStep = ({ products }: ProductSelectionStepProps) =>
   const { configuration, setProduct } = useConfigurator();
   const { t } = useTranslation();
   const { theme } = useTheme();
-  const [ready, setReady] = useState(false);
-
-  useEffect(() => {
-    initializeProducts(t);
-    setReady(false);
-    setTimeout(() => {
-      setReady(true);
-    }, 0);
-  }, [t]);
 
   const smartSystemProducts = products.filter((product) => product.category === 'SmartSystems');
 
@@ -51,10 +41,6 @@ export const ProductSelectionStep = ({ products }: ProductSelectionStepProps) =>
       element?.scrollIntoView({ behavior: 'smooth', block: 'center' });
     }
   }, [configuration.product]);
-
-  if (!ready) {
-    return <div>{t('product.notFound')}</div>;
-  }
 
   return (
     <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">

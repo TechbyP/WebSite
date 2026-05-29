@@ -420,11 +420,11 @@
     "languageSwitcher": {
       "en": "",
       "de": "",
-       "es": "",
-       "fr": "",
-        "ro": "",
-        "pt": "",
-        "ru": "",
+      "es": "",
+      "fr": "",
+      "ro": "",
+      "pt": "",
+      "ru": "",
       "switchToPortuguese": "Cambiar a portugués",
       "switchToRussian": "Cambiar a ruso",
       "ariaLabel": "Cambiar idioma"
@@ -455,7 +455,8 @@
       "all": "Todo lo que tenemos, desde lo grande y robusto hasta lo pequeño y satisfactoriamente ingenioso.",
       "smartsystems": "El lado inteligente del muestreo de suelos — automático, preciso y notablemente bien educado.",
       "accessory": "Las piezas que mantienen todo unido — logros silenciosos del mundo del soporte.",
-      "manual": "Herramientas confiables y táctiles en las que puedes confiar — satisfactoriamente manuales y construidas para durar."
+      "manual": "Herramientas confiables y táctiles en las que puedes confiar — satisfactoriamente manuales y construidas para durar.",
+      "Bespoke Machinery": "Maquinaria a medida adaptada a tu flujo de trabajo, al terreno y a tus requisitos técnicos."
     },
     "customEquipment": {
       "title": "¿Necesitas equipo a medida?",
@@ -786,6 +787,10 @@
     "pricingNoticeTitle": "Aviso de precios:",
     "pricingNoticeText": "Todos los precios están en euros (€) y excluyen IVA. Los precios son indicativos y pueden variar según la configuración final, opciones seleccionadas y disponibilidad. El precio final se confirmará en tu presupuesto personalizado."
   },
+  "pricing": {
+    "from": "Desde",
+    "onRequest": "Precio bajo solicitud"
+  },
   "buttonsConfigurator": {
     "back": "Atrás",
     "completeOrder": "Completar pedido",
@@ -843,10 +848,6 @@
       "price": "Desde €1 665"
     }
   },
-  "buttons": {
-    "back": "Atrás",
-    "continue": "Continuar"
-  },
   "powerOptions": {
     "title": "Opciones de energía",
     "trailerDescription": "Elige el paquete de energía adecuado para montaje en remolque.",
@@ -861,43 +862,6 @@
     "proceed": "Proceder"
   },
   "common": {
-    "continue": "Continuar"
-  },
-  "products": {
-    "123": {
-      "name": "Paquete de energía estándar",
-      "nickname": "SPP",
-      "price": "€1,200"
-    },
-    "124": {
-      "name": "Paquete de energía avanzado",
-      "nickname": "APP",
-      "price": "€1,800"
-    }
-  },
-  "productSelection": {
-    "title": "Selecciona tu producto",
-    "description": "Echa un vistazo a nuestros ingeniosos Sistemas Inteligentes — elige el que hace tu trabajo menos complicado.",
-    "unnamedProduct": "Producto sin nombre",
-    "product": "Producto",
-    "priceUnavailable": "Precio no disponible",
-    "bestsellerShort": "MEJOR",
-    "bestseller": "LO MÁS VENDIDO",
-    "smartTag": "INTELIGENTE",
-    "smartSystemsTag": "SISTEMAS INTELIGENTES",
-    "noDescription": "No hay descripción disponible"
-  },
-  "error": {
-    "somethingWentWrong": "Algo salió mal",
-    "tryAgain": "Inténtalo de nuevo"
-  },
-  "vehicleMounting": {
-    "title": "Tipo de montaje de vehículo",
-    "description": "Bien, ¿exactamente cómo quieres adjuntar tu {{productName}}? Puede parecer un poco aburrido, pero créeme — haz esto mal, y el resto no tiene oportunidad.",
-    "mountingLabel": "MONTAJE"
-  },
-  "buttons": {
-    "back": "Atrás",
     "continue": "Continuar"
   },
   "products": {
@@ -919,6 +883,23 @@
       "price": "€2,300",
       "description": "Kit de conversión completo para máxima flexibilidad."
     }
+  },
+  "productSelection": {
+    "title": "Selecciona tu producto",
+    "description": "Echa un vistazo a nuestros ingeniosos Sistemas Inteligentes — elige el que hace tu trabajo menos complicado.",
+    "unnamedProduct": "Producto sin nombre",
+    "product": "Producto",
+    "priceUnavailable": "Precio no disponible",
+    "bestsellerShort": "MEJOR",
+    "bestseller": "LO MÁS VENDIDO",
+    "smartTag": "INTELIGENTE",
+    "smartSystemsTag": "SISTEMAS INTELIGENTES",
+    "noDescription": "No hay descripción disponible"
+  },
+  "vehicleMounting": {
+    "title": "Tipo de montaje de vehículo",
+    "description": "Bien, ¿exactamente cómo quieres adjuntar tu {{productName}}? Puede parecer un poco aburrido, pero créeme — haz esto mal, y el resto no tiene oportunidad.",
+    "mountingLabel": "MONTAJE"
   },
   "progress": {
     "included": "✅ Incluido",
@@ -1260,7 +1241,6 @@
     "description": "Núcleos de suelo intactos de 0–90 cm, precisión científica, terquedad alemana.",
     "herodescription": "No es llamativo. No grita. No hace Wi-Fi. Pero lo que <strong>hace</strong> —mejor que casi cualquier otra cosa— es darte un <strong>núcleo de suelo perfecto e ininterrumpido</strong>, desde la superficie hasta <strong>90 centímetros bajo tierra</strong>. Sí, toda la historia, desde la costra hasta el subsuelo, todo de una vez. Es como una <strong>resonancia magnética para la tierra</strong>.",
     "detailedDescription": "<p className='mt-4'><strong>Las universidades aman esta cosa</strong>. Y no solo porque se parece vagamente a un lanzacohetes. Da <strong>visibilidad completa del perfil del suelo</strong> —sin mezclas, sin suposiciones de capas, solo una rebanada vertical limpia de las entrañas de la Tierra. <strong>Perfecto para muestreo N-min</strong>, sí, pero también para aquellos que quieren ver realmente qué está pasando ahí abajo.</p><p className='mt-4'>Ahora, es <strong>impulsado hidráulicamente, semiautomático y muy inteligente</strong>. Cavará con cortesía milimétrica, y si golpea algo poco amistoso —como una roca o una antigua moneda romana— simplemente <strong>se detiene</strong>. Sin drama. Sin piezas rotas.</p><p className='mt-4'>Y lo mejor de todo: es <strong>ingeniería alemana destilada a lo esencial</strong>. Limpio, eficiente, completamente lógico. Como <strong>Beethoven… si fuera un muestreador de suelos</strong>.</p>",
-    "price": "Desde €14,200",
     "features": [
       "Núcleo de suelo intacto de longitud completa (0–90 cm) para visibilidad de perfil",
       "Control de profundidad preciso al centímetro",
@@ -1318,7 +1298,6 @@
     "description": "Perfilado de nitrógeno automático sin complicaciones.",
     "herodescription": "Di hola al <strong>MP-2.60</strong> — una pieza maravillosamente práctica de maquinaria para <strong>muestreo de suelo N-min</strong>. Baja hasta 60 cm, obtiene lo que necesita y continúa sin pedir té o alabanzas. Diseñado para ser <strong>confiable, no ridículo</strong>, es ideal para cualquiera que le guste que las cosas funcionen correctamente la primera vez.",
     "detailedDescription": "<p className='mt-4'>En un mundo de sobrecomplicación, el <strong>MP-2.60</strong> es refrescantemente sencillo. Está construido específicamente para <strong>perfilado de nitrógeno automático</strong> —nada de faffing con barrenos manuales o suposiciones. Usa un <strong>martillo hidráulico de alta frecuencia</strong> para perforar el suelo como un martillo jack suave, luego rota y levanta la varilla en silencio antes de <strong>dejar caer educadamente la muestra</strong> en su contenedor.</p><p className='mt-4'>Tiene <strong>lógica interna inteligente</strong> para decidir qué partes del suelo mantener, y si lo deseas, incluso puedes habilitar <strong>separación de capas</strong> para muestreo específico de horizontes. Las muestras mismas aterrizan en <strong>contenedores impermeables</strong>, y toda la unidad se monta cómodamente en remolques, camionetas o básicamente cualquier cosa que ruede y no se desarme.</p><p className='mt-4'>Y si tus ambiciones de investigación superan su límite de 60 cm, no entres en pánico — el MP-2.60 es completamente <strong>actualizable al MP-3.90 o MP-4.100</strong>.</p>",
-    "price": "Desde €16,500",
     "features": [
       "Extracción totalmente automática hasta 60 cm",
       "Lógica inteligente: descarta o mantiene muestras basadas en tus configuraciones",
@@ -1380,7 +1359,6 @@
     "description": "Lo suficientemente resistente para manejar el suelo, lo suficientemente inteligente para trabajar eficientemente.",
     "herodescription": "El <strong>MP-3.90</strong> es lo que sucede cuando tomas el <strong>pensamiento alemán</strong>, espolvoreas algo de <strong>sobreingeniería</strong>, y luego le pides que <strong>cave agujeros para la ciencia</strong>. Diseñado para extraer muestras de suelo hasta <strong>95 cm</strong> sin un gruñido del operador, puede hacer <strong>separación de 3 capas</strong>, <strong>descarga automática</strong>, y decidir (todo por sí solo) cuándo rendirse si el suelo contraataca.",
     "detailedDescription": "<p className='mt-4'>Ahora, <strong>precisión y eficiencia</strong> no son solo palabras de moda aquí —están pensadas y construidas, para que puedas concentrarte en los datos en lugar de luchar con tierra terca. Maneja suelos duros con <strong>a penas faff del operador</strong>, haciendo de él un compañero bastante confiable para trabajo científico serio o investigación de campo adecuada.</p><p className='mt-4'>Se acoplará perfectamente a camionetas, remolques, tractores o básicamente cualquier cosa vagamente apta para la carretera, con <strong>configuraciones de profundidad y horizontes personalizables</strong> para adaptarse a lo que necesites. Además, tus muestras terminan seguras y sound en <strong>contenedores impermeables</strong>, que es un toque agradable.</p><p className='mt-4'>Y aquí está el kicker —está construido para <strong>uso profesional adecuado</strong>, no para un juguete de guerrero de fin de semana. Sólido, confiable y silenciosamente competente —exactamente lo que esperarías de la ingeniería alemana, realmente.</p>",
-    "price": "Desde €23,500",
     "features": [
       "Extracción totalmente automática hasta 95 cm",
       "Separación opcional de 3 capas para muestreo específico de horizontes",
@@ -1446,7 +1424,6 @@
     "description": "Suelo profundo, clasificado inteligentemente. Sin faff, solo profundidad.",
     "herodescription": "Este es el <strong>MP-4.100</strong> — imagina si un martillo hidráulico y un PhD en ciencia del suelo tuvieran un hijo. Es un <strong>muestreador totalmente automático</strong> que baja un completo <strong>100 cm</strong>, saca hasta <strong>cuatro capas</strong>, y las clasifica como un mayordomo con un hobby geológico. Es lo que obtendrías si le pidieras a Alemania que haga un topo.",
     "detailedDescription": "<p className='mt-4'>Diseñado para aquellos que demandan <strong>profundidad y disciplina</strong>, el MP-4.100 se mete directamente en el suelo y hace el trabajo sin gruñir y sin escopir manual. Un <strong>sistema de impacto hidráulico</strong> impulsa una varilla ranurada en el suelo, donde silenciosamente se pone a trabajar extrayendo muestras de grado científico. Una vez retraída, <strong>vacía automáticamente</strong> los bienes en sus lugares apropiados.</p><p className='mt-4'>Tiene <strong>lógica inteligente</strong> que decide si mantener o tirar material basado en tus configuraciones, y un <strong>mecanismo de separación de capas</strong> que es sorprendentemente educado sobre dónde va cada horizonte. Móntalo en una camioneta, remolque o cualquier cosa vagamente apta para la carretera y listo.</p>",
-    "price": "Desde €25,500",
     "features": [
       "Extracción totalmente automática hasta 100 cm",
       "Separación opcional de 4 capas para muestreo específico de horizontes",
@@ -1511,7 +1488,6 @@
     "description": "Eficiente, confiable y silenciosamente confiado. Muestreo de suelo, pero con un poco de músculo hidráulico detrás.",
     "herodescription": "El <strong>DH-1.30</strong> es un muestreador de suelo hidráulico robusto construido para rendir con confianza silenciosa y poder constante —sin sobrecomplicación, solo resultados sólidos. Perfora suavemente hasta <strong>30 centímetros</strong>, impulsado por un motor hidráulico —así que obtienes mucho empuje, no se necesitan eléctricos. Un poco más ruidoso que su primo eléctrico, seguro, pero no es un presumido. Solo trabajo sólido y confiable, día tras día.",
     "detailedDescription": "<p className='mt-4'>El <strong>DH-1.30</strong> toma el diseño sensato de su <strong>hermano eléctrico</strong> pero cambia la batería por un <strong>motor hidráulico</strong> — ideal si tienes acceso a poder hidráulico y quieres un poco más de <strong>torque</strong>.</p><p className='mt-4'><strong>Control de profundidad</strong> es agudo y preciso, con <strong>ajustes milimétricos</strong> para manejar terreno irregular como si nada.</p><p className='mt-4'>La operación es deliciosamente sencilla: <strong>un botón, dos profundidades preestablecidas</strong> — porque la vida es demasiado corta para controles faffosos.</p><p className='mt-4'>Pesa un resistente <strong>43 kg</strong>, construido <strong>lo suficientemente resistente</strong> para manejar trabajo de campo real pero <strong>lo suficientemente ligero</strong> como para que no necesites un montacargas o un hombre fuerte para moverlo.</p><p className='mt-4'><strong>Fácilmente montado</strong> en quads, remolques, camionetas o vehículos ligeros, esta cosa está hecha para <strong>versatilidad</strong>.</p><p className='mt-4'>Para aquellos que prefieren la <strong>confiabilidad clásica del poder hidráulico</strong> con <strong>ingeniería alemana confiable</strong>, este muestreador es la elección sensata.</p>",
-    "price": "Desde €8,950",
     "features": [
       "Impulsión hidráulica para perforación confiable y poderosa",
       "Ajuste de profundidad preciso al milímetro",
@@ -1575,7 +1551,6 @@
     "description": "Inteligente, silencioso y muy ágil. Haciendo que el muestreo de suelo parezca casi sin esfuerzo.",
     "herodescription": "El <strong>DE-1.30</strong> es el <strong>muestreador de suelo sensato y compacto</strong> que silenciosamente se pone a trabajar —perforando hasta <strong>30 centímetros</strong> sin hacer faff o necesitar que fumes en cadena mientras trabaja. Es <strong>eléctrico</strong>, así que <strong>sin humos, sin ruido</strong>, solo muestreo de suelo limpio y confiable.",
     "detailedDescription": "<p className='mt-4'>Construyendo sobre el confiable <strong>modelo N2012</strong>, el <strong>DE-1.30</strong> usa un <strong>taladro eléctrico</strong> tan preciso que probablemente podría enhebrar una aguja —si el muestreo de suelo estuviera en bordado. <strong>Ajustes milimétricos</strong> significan que obtienes exactamente la profundidad que quieres, no importa cuán accidentado o impredecible sea el terreno. Es un poco como un <strong>mayordomo educado</strong> que no te fallará.</p><p className='mt-4'>La <strong>unidad de control</strong> es simplicidad misma —presiona un botón y listo. <strong>Dos profundidades preestablecidas</strong> te permiten cambiar entre trabajos de muestreo más rápido que decir <em>'tecnología revolucionaria'</em> (¿ves lo que hice ahí?). Nada de faffing con menús complicados o controles crípticos.</p><p className='mt-4'>A solo <strong>45 kilogramos</strong> y impulsado por un <strong>paquete de baterías de 24 V</strong> (vendido por separado), es <strong>lo suficientemente ligero para ser ágil</strong> pero <strong>lo suficientemente resistente</strong> para manejar trabajo de campo del mundo real. No necesitas llamar a una grúa o a un sargento ex-ejército para moverlo.</p><p className='mt-4'>El DE-1.30 puede montarse fácilmente en <strong>quads, remolques y una variedad de vehículos ligeros</strong>, haciéndolo versátil para muchas condiciones de campo.</p><p className='mt-4'>Así que, si quieres <strong>muestras de suelo precisas y confiables</strong> sin el drama del motor de gasolina o el ruido de un taladro pesado, el DE-1.30 es tu máquina. Es <strong>ingeniería alemana</strong> con un <strong>giro eléctrico silencioso</strong> que simplemente hace el trabajo.</p>",
-    "price": "Desde €12,600",
     "features": [
       "Perforación totalmente eléctrica para muestreo limpio y preciso",
       "Ajuste de profundidad preciso al milímetro (porque lo suficientemente cerca no es lo suficientemente bueno)",
@@ -1639,7 +1614,6 @@
     "description": "Remolcalo, muestrealo, luego sigue moviéndote —sin faff, sin esperar.",
     "herodescription": "Este es el <strong>BOPROB III</strong> —también conocido, bastante alegremente, como el <strong>El Expreso Dieciséis</strong>. Es un remolque que toma muestras de suelo mientras conduces. Sí, realmente. Sin parar, sin presionar botones, sin gritar a los internos. Solo remólcalo detrás de algo con ruedas y deja que haga su trabajo.",
     "detailedDescription": "<p className='mt-4'>Ahora, el <strong>El Expreso Dieciséis</strong> es lo que llamarías un kit ingenioso. Es un <strong>muestreador de suelo detrás de remolque</strong> diseñado para hacer su trabajo mientras sigues moviéndote. Lo cual, francamente, es como todo debería funcionar —pero no lo hace.</p><p className='mt-4'>El muestreo sucede a un ritmo bastante brisk gracias a un <strong>mango giratorio</strong> que va los 360°, apuñalando en el suelo como un pequeño martillo jack educado, luego expulsando educadamente el núcleo en la revista de muestras.</p><p className='mt-4'>Todo es vigilado por una <strong>pantalla táctil de 7 pulgadas</strong> —hermosa pieza de kit— para que sepas exactamente qué está haciendo en cualquier momento. Hay incluso una cámara opcional, en caso de que quieras ver trabajar, o solo admirar tu compra.</p><p className='mt-4'>Las ruedas son grandes y suaves —<strong>235/60 R16</strong>, si estás en eso— lo que significa presión mínima en el suelo y no atascarse en un campo embarrado, a menos que realmente lo hayas intentado.</p><p className='mt-4'>Se engancha fácilmente a <strong>tractores, camionetas, quads —o cualquier otra cosa con un enganche de remolque</strong>, realmente. Sin faffing, sin adaptadores, sin heroicidades de taller requeridas. Y una vez que termines, se desengancha igual de fácilmente.</p><p className='mt-4'>Si conduces demasiado rápido —o demasiado lento, quizás porque estás admirando el paisaje— el sistema simplemente se niega a muestrear. Lo cual es brillante, porque significa que la máquina es más inteligente que el conductor promedio.</p>",
-    "price": "€28,500",
     "features": [
       "Sistema de impacto y rotación hidráulico",
       "Mango giratorio de 360° con descarga automática",
@@ -1708,7 +1682,6 @@
     "description": "Un soporte de montaje sin tonterías para tu muestreador —se adapta al extremo trasero de la mayoría de los vehículos civilizados sin convertirlos en camiones Franken.",
     "herodescription": "<strong>Brillantemente sensato.</strong> Este marco de acostar, kit de montaje certificado TÜV, se atornilla a tu enganche de remolque como si perteneciera ahí. Soporta nuestros muestreadores de series MP, DH y DE.",
     "detailedDescription": "<p className='mt-4'>Montado en la cama del camión conectado a ese lugar donde vive tu <strong>barra de remolque</strong> —justo debajo de la <strong>tapa del maletero</strong> y por encima del <strong>drama del tubo de escape</strong>— este marco te permite llevar un muestreador de suelo completo con <strong>elegancia</strong>. <strong>Pliega hacia abajo para operar, pliega hacia arriba para conducir a cenar</strong>. Es <strong>resistente</strong>, <strong>probado</strong>, y <strong>pintado como un gabinete de herramientas alemán</strong>.</p><p className='mt-4'>Los clientes pueden elegir su nivel de involucramiento: algunos prefieren <strong>instalar el marco ellos mismos</strong> con la ayuda de nuestras <strong>instrucciones a prueba de tontos</strong>; otros <strong>pasan con su vehículo</strong> y nos dejan manejar el <strong>montaje y la hechicería hidráulica</strong>; y para aquellos que disfrutan de la <strong>gratificación instantánea</strong>, también ofrecemos <strong>rigs de campo completamente equipados</strong> —<strong>pre-montados</strong>, <strong>probados</strong>, y generalmente bastante <strong>presumidos al respecto</strong>.</p>",
-    "price": "Desde €2 790",
     "features": [
       "Montaje de enganche de remolque + 13 pines (sin soldadura, sin trauma)",
       "Aprobado TÜV para uso en carretera y campo",
@@ -1756,7 +1729,6 @@
     "description": "Hace que tu tractor sea una bestia de muestreo de suelo, aprovechando el poder PTO para integración de muestreador hidráulico. Resistente, confiable, sin tonterías.",
     "herodescription": "<strong>Marco de enganche de tres puntos de tractor</strong>: El campeón de peso pesado para tractores Cat‑1/2, diseñado para montar tu muestreador de suelo hidráulico directamente en el sistema PTO del tractor con una plataforma de bomba hidráulica a juego.",
     "detailedDescription": "<p className='mt-4'>Imagina la <strong>columna vertebral de acero</strong> que tu tractor nunca supo que necesitaba. Forjada de <strong>acero A-frame grueso</strong> y envuelta en <strong>armadura de epoxi negro</strong>, este montaje se atornilla limpiamente a los brazos de elevación de tu tractor. Está construido para sobrevivir a la vida de granja —lluvia, barro y el ocasional berrinche de tractor incluido. El kit viene con <strong>barras de elevación y todos los tornillos de montaje</strong>, así que nada de improvisar con clavos oxidados o cinta adhesiva.</p><p className='mt-4'>Adecuado para <strong>tractores compactos con espaciado de brazos de elevación alrededor de 50 a 60 pulgadas</strong>, este marco soporta la bomba hidráulica directamente impulsada por tu eje PTO, dándote flujo hidráulico eficiente para muestreo de suelo suave. Es la actualización que hace que tu tractor se sienta listo para tomar el <strong>Olimpo de campo</strong>.</p>",
-    "price": "Desde €1.650",
     "features": [
       "Acero A-frame soldado —lo suficientemente resistente para trabajo real",
       "Montaje de bomba PTO —porque las bridas no son ingeniería",
@@ -1814,7 +1786,6 @@
     "description": "Convierte tu vehículo utilitario o pickup en una bestia de muestreo de suelo sin tonterías. Cama fuera, marco puesto, herramientas cargadas.",
     "herodescription": "<strong>Kit de conversión completa</strong> reemplaza la cama de camión estándar o plataforma UTV con un marco de acero personalizado y cubiertas de aluminio —construido a propósito para muestreo de suelos con <strong>máquinas de series MP, DH y DE</strong>. Aprobado TÜV, legal en carretera, y bastante ingenioso.",
     "detailedDescription": "<p className='mt-4'><strong>Si tu UTV o pickup sueña con grandeza, este es su momento.</strong> Removemos cuidadosamente la cama stock y las reemplazamos con un marco de conversión de acero, envuelto en paneles de aluminio que gritan 'operador profesional' más fuerte que un Hilux a todo gas en grava.</p><p className='mt-4'><strong>Te da montaje adecuado para todas nuestras máquinas, almacenamiento integrado para enfriadores, herramientas, iluminación —básicamente todo menos el almuerzo empacado.</strong> Certificado por TÜV, construido para campañas serias, y curiosamente satisfactorio de mirar.</p>",
-    "price": "Desde €4590",
     "features": [
       "Ajuste universal para pickups y UTVs (Hilux, Gator, Kubota, etc.)",
       "Marco de acero cubierto de aluminio: duradero y resistente a la corrosión",
@@ -1869,7 +1840,6 @@
     "description": "Estos remolques transportan sistemas MP-series, DH/DE sin esfuerzo a través de cualquier cosa que no sea realmente una pared.",
     "herodescription": "<strong>Remolques especiales – Transportadores de campo</strong> son <strong>remolques resistentes, galvanizados en caliente</strong> con opciones <strong>con frenos y sin frenos</strong>, diseñados para llevar tu kit de muestreo de suelo —sea <strong>MP, DH o DE</strong>— a través de campos y granjas con <strong>precisión germánica</strong>.<br/>Vienen con <strong>almacenamiento ingenioso para herramientas, luces y enfriadores</strong> —para que puedas trabajar todo el día sin el faff usual.",
     "detailedDescription": "<p className='mt-4'>Con un <strong>ancho de vía fijo de 1.35 m</strong> y <strong>ruedas jack-castor</strong>, el Transportador de campo maniobra como un carrito de compras sensato —solo con más acero y menos puntos débiles.</p><p className='mt-4'>Elige <strong>modelos con frenos</strong> para cargas más pesadas o pendientes más empinadas —hasta <strong>3,500 kg GTW</strong>— para que puedas remolcar muestreadores de suelo sin soñar con nuevas pastillas de freno cada viaje.</p>",
-    "price": "Desde €3 600",
     "features": [
       "Cuerpo y chasis galvanizado en caliente —vida larga, menos quejas",
       "Opciones con frenos y sin frenos —elige tu estilo de manejo",
@@ -1926,7 +1896,6 @@
     "description": "Para aquellos que corren unidades MP o DH sin poder a bordo, estos paquetes entregan energía hidráulica o eléctrica consistente donde sea que tu trabajo te lleve.",
     "herodescription": "<strong>Paquetes de energía</strong> son como los mayordomos confiables del muestreo de suelo —ofreciendo <strong>poder portátil confiable</strong> para que tus máquinas no tengan un berrinche. Ya sea que te guste el <strong>gruñido hidráulico clásico</strong> o prefieras el <strong>encanto eléctrico susurro-silencioso</strong>, estos paquetes te cubren.<br/>Envueltos en una <strong>carcasa de acero resistente</strong> más dura que tu tractor promedio, con perks sensatos como <strong>estado de batería LCD</strong> y <strong>sistemas de filtración</strong>, son el sidekick confiable que nunca supiste que necesitabas en el campo.",
     "detailedDescription": "<p className='mt-4'>El modelo hidráulico, perfectamente matched a <strong>series MP</strong> y <strong>series DH</strong> máquinas, presume un <strong>motor de gasolina de 13 HP</strong> y un <strong>tanque de aceite de 22 L</strong>, empujando <strong>135 bar de presión</strong> a <strong>20 L/min</strong> —eso es empuje serio para cuando quieres sentirte como un overlord mecánico adecuado.</p><p className='mt-4'>El primo eléctrico, diseñado específicamente para la <strong>serie DE</strong>, luce una <strong>batería de 24 V / 100 Ah</strong>, una <strong>armadura de acero inoxidable</strong>, y una <strong>pantalla LCD</strong> para mantener un ojo en sus propios niveles de poder. Ideal para aquellos que prefieren un enfoque más silencioso, limpio y francamente más educado al muestreo de suelo.</p><p className='mt-4'>Ambos modelos son <strong>portátiles</strong>, <strong>construidos resistentes</strong>, y vienen con <strong>filtración de retorno/succión</strong> para mantener tus hidráulicos preciosos de ahogarse en tierra —porque a nadie le gusta el desgaste prematuro, ¿verdad?</p>",
-    "price": "Desde €3,450",
     "features": [
       "Impulsado hidráulico o eléctrico para adaptarse a tu flujo de trabajo",
       "Carcasa de acero resistente con protección contra corrosión",
@@ -1974,7 +1943,6 @@
     "description": "Porque nada arruina un buen día en el campo como un ajuste roto o un sello con fugas. Estos son los repuestos oficiales recomendados —seleccionados a mano para tu máquina MP, DH, DE o BOPROB III, y listos para sacarte de problemas antes de que comience.",
     "herodescription": "Piensa en estos como el kit de primeros auxilios para tu muestreador de suelo. Ya sea que estés en un pantano en Baviera o un bowl de polvo en Bulgaria, tener los <strong>repuestos OEM correctos</strong> a mano convierte un desastre potencial en un hipo manejado smugly.<br/>Cada kit incluye los sospechosos usuales —<strong>O-rings, acoplamientos hidráulicos, filtros, correas</strong>, y las piezas que trabajan silenciosamente más duro. Nada de improvisar con alambre de heno o partes prestadas del combine de tu amigo.",
     "detailedDescription": "<p className='mt-4'>Estos son los <strong>kits de repuestos recomendados</strong> para los <strong>muestreadores de series MP</strong>, <strong>DH</strong>, <strong>DE</strong>, y <strong>BOPROB III</strong>. Y no, no son opcionales. Son lo que usan los ingenieros. Lo que usan los técnicos de servicio. Lo que deberías tener en la caja de herramientas si estás siquiera ligeramente serio sobre el tiempo de actividad.</p><p className='mt-4'>Dentro de cada kit, encontrarás los sospechosos usuales —<strong>sellos, filtros, ajustes hidráulicos, relés y líneas de presión</strong>— las piezas que mantienen el fluido donde se supone que esté y la corriente fluyendo en la dirección correcta. Es como llevar un par de calzoncillos de repuesto en un vuelo de larga distancia: esperas no necesitarlos, pero estarás jodidamente contento si lo haces.</p><p className='mt-4'>Las partes están <strong>empaquetadas y etiquetadas individualmente</strong>, para que no pases medio día averiguando si esa arandela encaja en la línea de retorno o el filtro de aceite. Y por supuesto, todas están <strong>certificadas por fábrica</strong> y diseñadas para encajar directamente sin carnicería.</p>",
-    "price": "Desde €450",
     "features": [
       "Repuestos recomendados para muestreadores de suelo MP, DH, DE y BOPROB III",
       "Incluye componentes de desgaste críticos e ítems de reparación de emergencia",
@@ -2021,7 +1989,6 @@
     "description": "Porque a veces tus muestras —o tu cerveza— merecen algo mejor que miseria tibia. Con esta bestia de 95L, estás trayendo una tundra ártica portátil al sitio de trabajo. Posiblemente excesivo. Pero definitivamente brillante.",
     "herodescription": "Conoces la sensación —estás a mitad de una montaña, todo está en horario, y luego alguien abre el enfriador para encontrar... <strong>sopa</strong>. No más. <strong>El enfriador convierte sonrisas presumidas en alivio helado</strong>, literalmente.<br/> <strong>Enfría</strong>. <strong>Congela</strong>. <strong>Brilla</strong>. Y sí, tiene una <strong>app</strong> —porque tu teléfono no es lo suficientemente presumido ya. Los ingenieros alemanes podrían llamar a esto un <em>Kühlbox</em>. <strong>Nosotros lo llamamos 'traer el frigorífico, porque podemos.'</strong>",
     "detailedDescription": "<p className='mt-4'>El <strong>Enfriador 95L</strong> es, francamente, <strong>más capaz que la mayoría de los minibares de hotel</strong>. Dos compartimentos, cada uno configurable como frigorífico o congelador, significan que puedes mantener tu kit de muestras en un lado y almuerzo en el otro —y aún tener espacio para <strong>satisfacción presumida</strong>.</p><p className='mt-4'>Está impulsado por un <strong>compresor LG de alta eficiencia</strong> (que es más de lo que puede decir el AC de tu coche), y enfría hasta <strong>-20°C</strong> incluso cuando hace suficiente calor para freír un huevo en el portaequipajes. Úsalo vía el panel de control o la <strong>app Alpicool</strong> si eres el tipo de persona que controla su frigorífico desde una hamaca.</p><p className='mt-4'>Para autonomía extendida, párealo con la <strong>batería opcional</strong> (no incluida), dándote <strong>4 a 24 horas</strong> de enfriamiento standalone. O enchúfalo al vehículo y <strong>nunca te preocupes de nuevo</strong>. Está construido para tomar una paliza —<strong>aunque aconsejamos en contra de eso, obviamente.</strong></p>",
-    "price": "€1000",
     "features": [
       "Dos compartimentos pueden enfriar o congelar independientemente",
       "Pantalla digital con controles táctiles y app móvil",
@@ -2065,7 +2032,6 @@
     "description": "La oscuridad no es excusa. Con 1700 lúmenes empaquetados en una unidad compacta y blindada, esta luz de trabajo LED es lo que sucede cuando cruzas una linterna con un pequeño sol. Ya sea a mitad de muestra o a mitad de maldición, verás todo —claramente.",
     "herodescription": "<strong>¿Muestreo en la oscuridad? ¿Olvidaste el sol?</strong> Sin problema. El sol de medianoche entrega <strong>iluminación seriamente poderosa</strong> sin el calor, el ruido o la factura de diésel.<br/>Móntalo, apúntalo, enciéndelo —luego pregúntate cómo viviste sin él. No es iluminación romántica. Es <strong>iluminación get-the-job-done</strong>.",
     "detailedDescription": "<p className='mt-4'>La <strong>Luz de trabajo LED 1700</strong> es un <strong>luminario probado en campo, sin tonterías</strong> diseñado para cortar la oscuridad como una sierra cadena a través de mantequilla. Con una brutal <strong>salida de 1700 lúmenes</strong>, entrega iluminación enfocada de campo cercano para rigs de muestreo, maquinaria o cualquier situación donde 'creo que veo algo' no es lo suficientemente bueno.</p><p className='mt-4'>Construida con una <strong>carcasa de aluminio anodizado negro</strong> y cumpliendo estándares <strong>IP6K7 e IP6K9K</strong>, esta unidad se encoge de hombros ante chorros de agua, tormentas de polvo y probablemente la mayoría de tus errores. Un <strong>soporte pivotante</strong> permite apuntado preciso, mientras que la <strong>lente patronada</strong> mantiene el haz ancho y usable.</p><p className='mt-4'>Compatible con <strong>sistemas 12–24 V DC</strong>, la luz dibuja 24 W y viene con extremos de cable abiertos para integración fácil. Ensamblaje por personal calificado es requerido —<strong>porque derretir cables es menos gracioso en la vida real</strong>.</p>",
-    "price": "€67",
     "features": [
       "Salida de 1700 lúmenes de 4 LEDs de alta intensidad",
       "Soporte pivotante para apuntado preciso",
@@ -2115,7 +2081,6 @@
     "description": "Por qué adivinar qué está pasando detrás del rig cuando puedes verlo en tiempo real. La atalaya se monta en tu máquina y transmite footage en vivo directamente a tu cabina. Sin cables. Sin puntos ciegos. Sin sorpresas.",
     "herodescription": "<strong>¿Alguna vez intentaste invertir tu rig a ciegas con un muestreador de 3 toneladas en la parte trasera?</strong> No ideal. La atalaya te da <strong>ojos en el taladro</strong> —desde la comodidad de tu asiento de conductor. Monitorea cada movimiento, golpe y tambaleo.<br/>Conecta vía 4G. Ve desde tu teléfono. <strong>Porque estar en dos lugares a la vez es ahora técnicamente posible.</strong>",
     "detailedDescription": "<p className='mt-4'><strong>La atalaya</strong> es una <strong>cámara de 5MP lista para campo</strong> construida para montarse directamente en tu máquina de muestreo de suelo. Una vez instalada, transmite video en vivo a tu tablet o teléfono usando 4G —para que puedas ver qué está pasando en la parte trasera del rig sin dejar tu asiento (o gritar a través de un campo embarrado).</p><p className='mt-4'>Su <strong>ángulo de visión de 75°</strong> da visibilidad completa de la cabeza de muestreo, mientras que la <strong>visión nocturna infrarroja</strong> extiende esa confianza bien en el crepúsculo. Ya sea verificando alineación, confirmando caída de núcleo o solo admirando tus habilidades de perforación, todo es visible en tiempo real.</p><p className='mt-4'>La app es gratuita, la configuración toma minutos, y no hay necesidad de Wi-Fi local. Con una tarjeta micro SD opcional (hasta 128 GB), incluso puedes <strong>grabar operaciones para documentación o entrenamiento</strong>. La configuración es plug-and-play, con una advertencia importante: <strong>inserta la tarjeta SIM correctamente o pasa la tarde diagnosticando tu propia impaciencia</strong>.</p><p className='mt-4'>Es a prueba de lluvia, a prueba de barro y tercamente confiable —exactamente lo que quieres de algo atornillado a una máquina vibrante en medio de la nada.</p>",
-    "price": "€225",
     "features": [
       "Transmisión de video en vivo sobre red 4G",
       "Lente de ángulo fijo de 75° con visión nocturna",
@@ -2165,7 +2130,6 @@
     "description": "El estándar de oro para muestreo manual N-min —varillas de taladro cónicas de precisión diseñadas para suelos duros y precisión de grado laboratorio.",
     "herodescription": "No cualquier varilla —estas son <strong>bisturís de acero para herramientas afilados como navajas</strong> para el aficionado al suelo que demanda precisión. Su diseño cónico significa menos faff, menos fricción, y esas <strong>marcas de 10 cm grabadas con láser</strong>? Perfectas para saber exactamente cuán profundo has pinchado —porque las capas de suelo no les gusta ser molestadas, y a ti tampoco debería gustarte.",
     "detailedDescription": "<p className='mt-4'>Diseñadas para aquellos que toman el suelo en serio (y a sí mismos, un poco menos): tres tamaños cónicos elegantes —<strong>40→38 mm</strong> para 0-30 cm, <strong>35→33 mm</strong> para 30-60 cm, y <strong>30→28 mm</strong> para 60-90 cm— cortan a través de arcilla terca y grava como un cuchillo caliente a través de mantequilla, gracias a bordes de corte pre-rotos listos para hacer el trabajo duro por ti.</p><p className='mt-4'>Cada varilla luce <strong>incrementos de 10 cm grabados con láser</strong> que no se desvanecen más rápido que tu entusiasmo un lunes por la mañana. Pégalas con toggles (Ítems 1030/1031) para levantamiento fácil, y un cincel (Ítem 1051) para limpiar muestras —porque el muestreo debería sentirse como un empujón suave, no un forcejeo de brazos.</p>",
-    "price": "Precio bajo solicitud",
     "features": [
       "Tres diámetros cónicos minimizan fricción y maximizan facilidad de muestreo",
       "Acero para herramientas endurecido HRC 52 para durabilidad y fuerza",
@@ -2314,7 +2278,6 @@
     "description": "Varillas de taladro robustas (Ø 22 mm) diseñadas para abrir perfiles de suelo normales hasta 10 m de profundidad con partes modulares e intercambiables para ajuste flexible de longitud.",
     "herodescription": "Conoce las <strong>varillas de taladro modulares</strong> con una <strong>ranura de taladro de 22 mm</strong>, construidas para tackling perfiles de suelo hasta una seria <strong>10 metros de profundidad</strong>. Gracias a los pernos de conexión, puedes ajustar la longitud más rápido que decir 'Bob's your uncle,' y las cabezas de golpeo manejan todo —desde el toque casual hasta el puñetazo completo de la máquina.",
     "detailedDescription": "<p className='mt-4'>Cada sección es un sólido <strong>1000 mm de precisión de ingeniería</strong>, luciendo una <strong>ranura de 12 mm</strong> para mantener firmemente tus muestras de suelo mientras las sacas de las profundidades. Las extensiones se atornillan fácilmente con <strong>roscas internas de 5/8”</strong> —porque a veces, más es solo más.</p><p className='mt-4'>Aprieta con <strong>llaves SW 18 especiales</strong> —sin resbalones, sin drama. Para el gran final, elige tu arma: un <strong>levantador jack con cadena de clamp</strong> o un <strong>tirador de un brazo con clamp de bola</strong>, ambos diseñados para hacer el trabajo de manera segura y sin romper un sudor.</p>",
-    "price": "Precio bajo solicitud",
     "features": [
       "Ranura de taladro Ø 22 mm con ranura de muestra de suelo de 12 mm",
       "Diseño modular con partes intercambiables atornilladas juntas",
@@ -2423,7 +2386,6 @@
     "description": "Cada martillo es un héroe en su propio derecho. Elige el que se ajuste a tu saga de muestreo de suelo y no olvides los sidekicks confiables —nuestros accesorios.",
     "herodescription": "Desde el <strong>martillo cuadrado sólido y sin tonterías</strong> hasta el <strong>toque suave de un nailon de cara suave</strong>, tenemos las herramientas para hacer tu muestreo de suelo <strong>menos gruñido, más finesse</strong>. Elige sabiamente —<strong>precisión, poder y comodidad</strong> esperan.",
     "detailedDescription": "<p className='mt-4'>¿Necesitas canalizar tu Thor interior con un heft <strong>martillo cuadrado de 4.3 kg</strong> presumiendo una <strong>superficie de impacto de 135x135 mm</strong>? ¿O quizás un <strong>martillo de cara suave de nailon ligero</strong> para coaccionar el suelo con sutileza? De cualquier manera, <strong>tu deseo es nuestra orden</strong>.</p><p className='mt-4'>¿Fancy un poco de flair DIY? <strong>Cambia cabezas como un chef cambia cuchillos</strong>, elige de <strong>mangos de madera o hickory de todas las longitudes</strong>, y remátalo con <strong>insertos tan duros o suaves como te guste</strong>. Es como un traje a medida —solo para tu martillo.</p>",
-    "price": "Precio bajo solicitud",
     "features": [
       "Martillo cuadrado con superficie de impacto 135x135 mm, 4.3 kg",
       "Martillo plástico redondo con superficie de impacto 150 mm Ø",
@@ -2556,7 +2518,6 @@
     "description": "¿Quién necesita membresía de gimnasio cuando tienes los Corers de suelo Göttinger? Una persona, una herramienta ligera de 2.5 kg, y estás listo para conquistar el suelo —sin dejar rastro en el campo o aterrorizar cables enterrados.",
     "herodescription": "Desde la <strong>arcilla delicada</strong> hasta la <strong>arena ligeramente compactada</strong>, estos corers cortan con <strong>mínimo faff</strong>. Tres capas de taladro perfectamente calibradas, <strong>mangos acolchados</strong>, y un <strong>perfil fräs ingenioso</strong> hacen que el muestreo se sienta menos como trabajo y más como hechicería.",
     "detailedDescription": "<p className='mt-4'>Operación de una sola mano, <strong>sin maquinaria pesada</strong>, <strong>sin ayudantes extra</strong>, solo tú y la tierra. Los taladros Göttinger separan <strong>tres capas de suelo</strong> con precisión, dándote muestras N-min confiables pesando <strong>500–1000g</strong> de <strong>16 golpes paralelos por sección de profundidad</strong>.</p><p className='mt-4'>Precaución: estos son campeones de <strong>suelos suaves</strong>. <strong>Rocosos, secos como hueso o arena fuertemente compactada</strong> podrían empujar su paciencia. Pero en condiciones ideales, es lo más cerca que llegarás de una <strong>varita mágica de muestreo de suelo</strong>.</p>",
-    "price": "Precio bajo solicitud",
     "features": [
       "Operación de una sola persona",
       "Ligero a solo ~2.5 kg",
@@ -2615,7 +2576,6 @@
     "description": "¿Terreno áspero? ¿Pendiente? ¿Laberinto de maíz? Sin problema. Esta oruga no se queja —solo muestrea.",
     "herodescription": "La <strong>Nitratraupe</strong> es el tipo de máquina que cualquier entusiasta del suelo asentiría aprobatoriamente. Capaz de <strong>muestreo de suelo 0–90 cm</strong> a través de <strong>tres capas</strong>, navega terreno áspero como un toddler educado pero implacable en pistas. Semiautomática, asistida hidráulicamente y guiada por tus ojos (porque la máquina respeta tu inteligencia).",
     "detailedDescription": "<p className='mt-4'><strong>Precisión se encuentra con fuerza bruta</strong> en un paquete sorprendentemente cortés. La <strong>Nitratraupe</strong> corta un <strong>perfil de suelo limpio</strong> sin mezclar capas (<strong>no se requieren taladros rotatorios</strong>). <strong>Tres capas —0–30, 30–60, 60–90 cm</strong> se extraen con <strong>finesse</strong>.</p><p className='mt-4'>Corre del <strong>motor del vehículo portador</strong>, así que <strong>sin berrinches de motor de combustión extra</strong>. <strong>Muestreo manual</strong> te permite <strong>inspeccionar visualmente el núcleo</strong>, manteniendo <strong>costos y dolores de cabeza bajos</strong>.</p><p className='mt-4'>Las pistas la hacen <strong>lo suficientemente estrecha para apretarse entre maíz creciendo</strong>, y con un <strong>control remoto</strong>, puedes <strong>elevar, bajar, girar y muestrear</strong> sin dejar tu zona de confort. Un <strong>verdadero crawler de muestreo de suelo de caballero</strong>.</p>",
-    "price": "Desde €20,000",
     "features": [
       "Extracción hidráulica semiautomática hasta 90 cm (opcional 120 cm)",
       "Muestreo de tres capas para precisión específica de horizontes",

@@ -3,8 +3,8 @@ import { useNavigate } from 'react-router-dom';
 import Cookies from 'js-cookie';
 import { X, Cookie } from 'lucide-react';
 import { useTranslation } from 'react-i18next';
+import { COOKIE_CONSENT_NAME, setAnalyticsConsent } from '../utils/analytics';
 
-const COOKIE_CONSENT_NAME = 'cookie_consent';
 type ConsentValue = 'accepted' | 'rejected';
 
 const CookieBanner = () => {
@@ -19,34 +19,13 @@ const CookieBanner = () => {
   }, []);
 
   const acceptCookies = () => {
-    Cookies.set(COOKIE_CONSENT_NAME, 'accepted', { expires: 365 });
+    setAnalyticsConsent('accepted');
     setIsVisible(false);
-    loadGoogleAnalytics();
   };
 
   const rejectCookies = () => {
-    Cookies.set(COOKIE_CONSENT_NAME, 'rejected', { expires: 365 });
+    setAnalyticsConsent('rejected');
     setIsVisible(false);
-  };
-
-  const loadGoogleAnalytics = () => {
-    if ((window as any).gtag) return;
-    const GA_KEY = import.meta.env.VITE_GA_KEY;
-    if (!GA_KEY) return console.warn('Google Analytics key missing');
-
-    const script1 = document.createElement('script');
-    script1.async = true;
-    script1.src = `https://www.googletagmanager.com/gtag/js?id=${GA_KEY}`;
-    document.head.appendChild(script1);
-
-    const script2 = document.createElement('script');
-    script2.innerHTML = `
-      window.dataLayer = window.dataLayer || [];
-      function gtag(){dataLayer.push(arguments);}
-      gtag('js', new Date());
-      gtag('config', '${GA_KEY}');
-    `;
-    document.head.appendChild(script2);
   };
 
   if (!isVisible) return null;
@@ -79,6 +58,7 @@ const CookieBanner = () => {
             onClick={rejectCookies}
             className="text-gray-300 hover:text-white p-1"
             title={t('cookie.reject')}
+            aria-label={t('cookie.reject')}
           >
             <X className="h-4 w-4" />
           </button>

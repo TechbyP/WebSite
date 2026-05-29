@@ -5,11 +5,26 @@ import trailerImg from '../../../assets/Trailers/1.jpg';
 import vehicleImg from '../../../assets/Frames/Full-Conversion/2.jpg';
 import { useTranslation } from 'react-i18next';
 import { useTheme } from '../../../utils/context/theme-context';
+import i18n from '../../../i18n';
+import { getLowestPriceDisplay, getPriceDisplay } from '../../../data/prices';
 
 export const MountingMethodStep = () => {
   const { t } = useTranslation();
   const { configuration, setMountingMethod, goToStep } = useConfigurator();
   const { theme, toggleTheme } = useTheme();
+  const language = i18n.resolvedLanguage || i18n.language || 'en';
+  const mountingOptions = [
+    { type: 'trailer', img: trailerImg },
+    { type: 'vehicle', img: vehicleImg },
+  ] as const;
+
+  const getMountingPrice = (type: 'trailer' | 'vehicle') => {
+    if (type === 'trailer') {
+      return getPriceDisplay('trailer', language, t);
+    }
+
+    return getLowestPriceDisplay(['laydown', 'tph', 'fc'], language, t);
+  };
 
   return (
     <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -31,7 +46,7 @@ export const MountingMethodStep = () => {
 
       {/* Mobile version */}
       <div className="md:hidden space-y-4 max-w-[800px] mx-auto px-4">
-        {[{ type: 'trailer', img: trailerImg }, { type: 'vehicle', img: vehicleImg }].map((item) => (
+        {mountingOptions.map((item) => (
           <motion.div
             key={item.type}
             whileTap={{ scale: 0.98 }}
@@ -60,7 +75,7 @@ export const MountingMethodStep = () => {
                 {t(`mountingMethod.${item.type}.subtitle`)}
               </h2>
               <div className="text-xs font-bold text-brandgreen dark:text-brandgreen mt-1">
-                {t(`mountingMethod.${item.type}.price`)}
+                {getMountingPrice(item.type)}
               </div>
             </div>
           </motion.div>
@@ -69,7 +84,7 @@ export const MountingMethodStep = () => {
 
       {/* Desktop version */}
       <div className="hidden md:grid max-w-[800px] mx-auto grid-cols-1 md:grid-cols-2 gap-6 px-4 sm:px-6 lg:px-8">
-        {[{ type: 'trailer', img: trailerImg }, { type: 'vehicle', img: vehicleImg }].map((item) => (
+        {mountingOptions.map((item) => (
           <motion.div
             key={item.type}
             whileHover={{ scale: 1.03 }}
@@ -100,7 +115,7 @@ export const MountingMethodStep = () => {
                 {t(`mountingMethod.${item.type}.description`)}
               </p>
               <div className="text-lg font-bold text-brandgreen dark:text-brandgreen">
-                {t(`mountingMethod.${item.type}.price`)}
+                {getMountingPrice(item.type)}
               </div>
             </div>
           </motion.div>

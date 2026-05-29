@@ -1,34 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
-import { db } from '../firebase';
-import { collection, getDocs, query, where, orderBy } from 'firebase/firestore';
 import { useTranslation } from 'react-i18next';
-
-interface AnnouncementContent {
-  tag: string;
-  title: string;
-  subtitle: string;
-  description: string;
-  dateInfo: string;
-  location: string;
-  ctaPrimary: string;
-  ctaSecondary: string;
-}
-
-interface AnnouncementData {
-  id: string;
-  content: {
-    en: AnnouncementContent;
-    de: AnnouncementContent;
-  };
-  ctaPrimaryLink?: string;
-  ctaSecondaryLink: string;
-  imageUrl: string;
-  isActive: boolean;
-  showDelay: number;
-  priority: number;
-  createdAt: Date;
-}
+import { fetchAnnouncements, type PublicAnnouncementData as AnnouncementData } from './publicApi';
 
 const Announcement = () => {
   const { t, i18n } = useTranslation();
@@ -39,19 +12,7 @@ const Announcement = () => {
   useEffect(() => {
     const fetchActiveAnnouncements = async () => {
       try {
-        const q = query(
-          collection(db, 'announcements'),
-          where('isActive', '==', true),
-          orderBy('priority', 'desc'),
-          orderBy('createdAt', 'desc')
-        );
-
-        const querySnapshot = await getDocs(q);
-        const activeAnnouncements: AnnouncementData[] = [];
-
-        querySnapshot.forEach((doc) => {
-          activeAnnouncements.push({ ...doc.data(), id: doc.id } as AnnouncementData);
-        });
+        const activeAnnouncements = await fetchAnnouncements();
 
         if (activeAnnouncements.length > 0) {
           // Find the first announcement that hasn't been dismissed

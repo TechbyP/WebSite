@@ -6,14 +6,10 @@ import './index.css';
 import { HelmetProvider } from 'react-helmet-async';
 import './i18n.ts'
 
-const theme = 'dark'; // or get from config / state
-
-document.documentElement.classList.add(theme);
-
 createRoot(document.getElementById('root')!).render(
   <StrictMode>
     <HelmetProvider>
-      <BrowserRouter>
+      <BrowserRouter future={{ v7_startTransition: true, v7_relativeSplatPath: true }}>
         <App />
       </BrowserRouter>
     </HelmetProvider>

@@ -1,29 +1,47 @@
-import i18n from 'i18next';
+import i18n, { type BackendModule } from 'i18next';
 import { initReactI18next } from 'react-i18next';
 import LanguageDetector from 'i18next-browser-languagedetector';
 
-import en from './locales/en.json';
-import de from './locales/de.json';
-import es from './locales/es.json';
-import fr from './locales/fr.json';
-import ro from './locales/ro.json';
-import pt from './locales/pt.json';
-import ru from './locales/ru.json';
+const localeLoaders = {
+  en: () => import('./locales/en.json'),
+  de: () => import('./locales/de.json'),
+  es: () => import('./locales/es.json'),
+  fr: () => import('./locales/fr.json'),
+  ro: () => import('./locales/ro.json'),
+  pt: () => import('./locales/pt.json'),
+  ru: () => import('./locales/ru.json'),
+} as const;
+
+type SupportedLocale = keyof typeof localeLoaders;
+
+const localeBackend: BackendModule = {
+  type: 'backend',
+  init: () => undefined,
+  read: (language, _namespace, callback) => {
+    const normalizedLanguage = language.toLowerCase().split('-')[0] as SupportedLocale;
+    const loadLocale = localeLoaders[normalizedLanguage] ?? localeLoaders.en;
+
+    loadLocale()
+      .then((module) => {
+        callback(null, module.default);
+      })
+      .catch((error) => {
+        callback(error, null);
+      });
+  },
+};
 
 i18n
+  .use(localeBackend)
   .use(LanguageDetector) // Detects language from browser or localStorage
   .use(initReactI18next) // Passes i18n instance to react-i18next
   .init({
-    resources: {
-      en: { translation: en },
-      de: { translation: de },
-      es: { translation: es },
-      fr: { translation: fr },
-      ro: { translation: ro },
-      pt: { translation: pt },
-      ru: { translation: ru },
-    },
     fallbackLng: 'en', // Default language
+    supportedLngs: Object.keys(localeLoaders),
+    load: 'languageOnly',
+    ns: ['translation'],
+    defaultNS: 'translation',
+    partialBundledLanguages: true,
     interpolation: {
       escapeValue: false, // React already escapes
     },

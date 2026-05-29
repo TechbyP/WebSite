@@ -464,7 +464,8 @@
       "all": "Everything we've got, from the big and burly to the small and satisfyingly clever.",
       "smartsystems": "The brainy side of soil sampling—automatic, precise, and remarkably well-mannered.",
       "accessory": "The bits that hold everything together—quiet achievers of the support world.",
-      "manual": "Reliable, tactile tools you can trust—satisfyingly hands-on and built to last."
+      "manual": "Reliable, tactile tools you can trust—satisfyingly hands-on and built to last.",
+      "Bespoke Machinery": "Custom-built machinery tailored to your workflow, terrain, and technical requirements."
     },
     "customEquipment": {
       "title": "Need Custom Equipment?",
@@ -796,6 +797,10 @@
     "pricingNoticeTitle": "Pricing Notice:",
     "pricingNoticeText": "All prices are in Euros (€) and exclude VAT. Prices are indicative only and may vary depending on final configuration, selected options, and availability. Final pricing will be confirmed in your personalized quote."
   },
+  "pricing": {
+    "from": "From",
+    "onRequest": "Price on request"
+  },
   "buttonsConfigurator": {
     "back": "Back",
     "completeOrder": "Complete Order",
@@ -854,10 +859,6 @@
       "price": "From €1 665"
     }
   },
-  "buttons": {
-    "back": "Back",
-    "continue": "Continue"
-  },
   "powerOptions": {
     "title": "Power Options",
     "trailerDescription": "Choose the power pack suitable for trailer mounting.",
@@ -872,43 +873,6 @@
     "proceed": "Proceed"
   },
   "common": {
-    "continue": "Continue"
-  },
-  "products": {
-    "123": {
-      "name": "Standard Power Pack",
-      "nickname": "SPP",
-      "price": "€1,200"
-    },
-    "124": {
-      "name": "Advanced Power Pack",
-      "nickname": "APP",
-      "price": "€1,800"
-    }
-  },
-  "productSelection": {
-    "title": "Select Your Product",
-    "description": "Have a gander at our clever Smart Systems — pick the one that makes your job less faff.",
-    "unnamedProduct": "Unnamed Product",
-    "product": "Product",
-    "priceUnavailable": "Price not available",
-    "bestsellerShort": "BEST",
-    "bestseller": "BESTSELLER",
-    "smartTag": "SMART",
-    "smartSystemsTag": "SMART SYSTEMS",
-    "noDescription": "No description available"
-  },
-  "error": {
-    "somethingWentWrong": "Something went wrong",
-    "tryAgain": "Try again"
-  },
-  "vehicleMounting": {
-    "title": "Vehicle Mounting Type",
-    "description": "Right, so how exactly do you want to attach your {{productName}}? It may seem a bit dull, but trust me—get this bit wrong, and the rest doesn't stand a chance.",
-    "mountingLabel": "MOUNTING"
-  },
-  "buttons": {
-    "back": "Back",
     "continue": "Continue"
   },
   "products": {
@@ -935,6 +899,23 @@
       "weight": "Weight",
       "horizons": "Horizons"
     }
+  },
+  "productSelection": {
+    "title": "Select Your Product",
+    "description": "Have a gander at our clever Smart Systems — pick the one that makes your job less faff.",
+    "unnamedProduct": "Unnamed Product",
+    "product": "Product",
+    "priceUnavailable": "Price not available",
+    "bestsellerShort": "BEST",
+    "bestseller": "BESTSELLER",
+    "smartTag": "SMART",
+    "smartSystemsTag": "SMART SYSTEMS",
+    "noDescription": "No description available"
+  },
+  "vehicleMounting": {
+    "title": "Vehicle Mounting Type",
+    "description": "Right, so how exactly do you want to attach your {{productName}}? It may seem a bit dull, but trust me—get this bit wrong, and the rest doesn't stand a chance.",
+    "mountingLabel": "MOUNTING"
   },
   "progress": {
     "included": "✅ Included",
@@ -1281,7 +1262,6 @@
     "description": "Intact 0–90 cm soil cores, scientific precision, German stubbornness.",
     "herodescription": "It's not flashy. It doesn't shout. It doesn't do Wi-Fi. But what it <strong>does</strong> do—better than almost anything else—is give you a <strong>perfect, uninterrupted soil core</strong>, from surface to <strong>90 centimetres below</strong>. Yes, the whole story, from crust to subsoil, all in one go. It's like an <strong>MRI for the earth</strong>.",
     "detailedDescription": "<p className='mt-4'><strong>Universities love this thing</strong>. And not just because it looks vaguely like a rocket launcher. It gives <strong>full visibility of the soil profile</strong>—no mixing, no layering guesswork, just a clean, vertical slice of the Earth's innards. <strong>Perfect for N-min sampling</strong>, yes, but also for those who like to actually see what's going on down there.</p><p className='mt-4'>Now, it's <strong>hydraulically powered, semi-automatic, and very clever</strong>. It'll dig with millimetric politeness, and if it hits something unfriendly—like a rock or an old Roman coin—it simply <strong>stops</strong>. No drama. No broken bits.</p><p className='mt-4'>And best of all: it's <strong>German engineering distilled to the essentials</strong>. Clean, efficient, utterly logical. Like <strong>Beethoven… if he were a soil sampler</strong>.</p>",
-    "price": "From €14,200",
     "features": [
       "Full-length (0–90 cm) intact soil core for profile visibility",
       "Centimetre-precise depth control",
@@ -1339,7 +1319,6 @@
     "description": "Automatic nitrogen profiling without the faff.",
     "herodescription": "Say hello to the <strong>MP-2.60</strong> — a wonderfully practical piece of machinery for <strong>N-min soil sampling</strong>. It goes down to 60 cm, gets what it needs, and carries on without asking for tea or praise. Designed to be <strong>reliable, not ridiculous</strong>, it's ideal for anyone who likes things to work properly the first time.",
     "detailedDescription": "<p className='mt-4'>In a world of overcomplication, the <strong>MP-2.60</strong> is refreshingly straightforward. It's built specifically for <strong>automatic nitrogen profiling</strong>—none of that faffing about with manual augers or guesswork. It uses a high-frequency <strong>hydraulic hammer</strong> to punch through soil like a gentle jackhammer, then quietly rotates and lifts the rod before <strong>politely dropping the sample</strong> into its container.</p><p className='mt-4'>It has <strong>smart internal logic</strong> to decide which bits of soil to keep, and if you fancy it, you can even enable <strong>layer separation</strong> for horizon-specific sampling. The samples themselves land in <strong>waterproof containers</strong>, and the whole unit mounts comfortably on trailers, pickups, or basically anything that rolls and doesn't fall apart.</p><p className='mt-4'>And should your research ambitions outgrow its 60 cm limit, don't panic — the MP-2.60 is fully <strong>upgradeable to the MP-3.90 or MP-4.100</strong>.</p>",
-    "price": "From €16,500",
     "features": [
       "Fully automatic extraction to 60 cm",
       "Smart logic: discards or keeps samples based on your settings",
@@ -1401,7 +1380,6 @@
     "description": "Tough enough to handle the soil, smart enough to work efficiently.",
     "herodescription": "The <strong>MP-3.90</strong> is what happens when you take <strong>German thinking</strong>, sprinkle in some <strong>overengineering</strong>, and then ask it to <strong>dig holes for science</strong>. Designed to extract soil samples down to <strong>95 cm</strong> without so much as a grunt from the operator, it can do <strong>3-layer separation</strong>, <strong>auto-discharge</strong>, and decide (all on its own) when to give up if the soil fights back.",
     "detailedDescription": "<p className='mt-4'>Now, <strong>precision and efficiency</strong> aren't just buzzwords here—they're thoughtfully built in, so you can concentrate on the data rather than wrestling with stubborn dirt. It manages tough soil with <strong>barely any fuss from the operator</strong>, making it a rather dependable companion for serious scientific work or proper field research.</p><p className='mt-4'>It'll slot neatly onto pickups, trailers, tractors, or just about anything vaguely roadworthy, with <strong>customisable depth and horizon settings</strong> to suit whatever you need. Plus, your samples end up safe and sound in <strong>waterproof containers</strong>, which is a nice touch.</p><p className='mt-4'>And here's the kicker—it's built for <strong>proper, professional use</strong>, not some weekend warrior's toy. Solid, reliable, and quietly competent—exactly what you'd expect from German engineering, really.</p>",
-    "price": "From €23,500",
     "features": [
       "Fully automatic extraction down to 95 cm",
       "Optional 3-layer separation for horizon-specific sampling",
@@ -1467,7 +1445,6 @@
     "description": "Deep soil, sorted smartly. No fuss, just depth.",
     "herodescription": "This is the <strong>MP-4.100</strong> — imagine if a hydraulic hammer and a PhD in soil science had a child. It's a <strong>fully automatic sampler</strong> that goes down a full <strong>100 cm</strong>, pulls out up to <strong>four layers</strong>, and sorts them like a butler with a geological hobby. It's what you'd get if you asked Germany to make a mole.",
     "detailedDescription": "<p className='mt-4'>Designed for those who demand <strong>depth and discipline</strong>, the MP-4.100 gets right into the soil and does the job with no grumbling and no manual scooping. A <strong>hydraulic impact system</strong> powers a grooved rod into the ground, where it quietly gets on with the job of extracting science-grade samples. Once retracted, it <strong>automatically empties</strong> the goods into their proper places.</p><p className='mt-4'>It's got <strong>smart logic</strong> that decides whether to keep or toss material based on your settings, and a <strong>layer separation mechanism</strong> that's surprisingly polite about where each horizon goes. Mount it on a pickup, trailer, or anything vaguely roadworthy and off you go.</p>",
-    "price": "From €25,500",
     "features": [
       "Fully automatic extraction to 100 cm",
       "Optional 4-layer separation for horizon-specific sampling",
@@ -1532,7 +1509,6 @@
     "description": "Efficient, dependable, and quietly confident. Soil sampling, but with a bit of hydraulic muscle behind it.",
     "herodescription": "The <strong>DH-1.30</strong> is a robust, hydraulic soil sampler built to perform with quiet confidence and steady power—no overcomplication, just solid results. Drilling smoothly up to <strong>30 centimetres</strong>, it's powered by a hydraulic engine—so you get plenty of grunt, no electrics needed. A little louder than its electric cousin, sure, but it's no show-off. Just reliable, solid work, day in, day out.",
     "detailedDescription": "<p className='mt-4'>The <strong>DH-1.30</strong> takes the sensible design of its <strong>electric sibling</strong> but swaps out the battery for a <strong>hydraulic engine</strong> — ideal if you've got access to hydraulic power and want a bit more <strong>torque</strong>.</p><p className='mt-4'><strong>Depth control</strong> is sharp and precise, with <strong>millimetre adjustments</strong> to handle uneven ground as if it's nothing.</p><p className='mt-4'>Operation is delightfully straightforward: <strong>one button, two preset depths</strong> — because life's too short for fiddly controls.</p><p className='mt-4'>It weighs a sturdy <strong>43 kg</strong>, built <strong>tough enough</strong> to handle real fieldwork but <strong>light enough</strong> that you won't need a forklift or a strongman to move it.</p><p className='mt-4'><strong>Easily mounted</strong> on quads, trailers, pickups, or light-duty vehicles, this thing is made for <strong>versatility</strong>.</p><p className='mt-4'>For those who prefer the <strong>classic reliability of hydraulic power</strong> with <strong>dependable German engineering</strong>, this sampler is the sensible choice.</p>",
-    "price": "From €8,950",
     "features": [
       "Hydraulic drive for dependable, powerful drilling",
       "Precision millimetre depth adjustment",
@@ -1596,7 +1572,6 @@
     "description": "Smart, silent, and very nimble. Making soil sampling look almost effortless.",
     "herodescription": "The <strong>DE-1.30</strong> is the <strong>sensible, compact soil sampler</strong> that quietly gets on with the job—drilling down up to <strong>30 centimetres</strong> without making a fuss or needing you to chain-smoke while it works. It's <strong>electric</strong>, so <strong>no fumes, no noise</strong>, just clean, reliable soil sampling.",
     "detailedDescription": "<p className='mt-4'>Building on the trusty <strong>N2012 model</strong>, the <strong>DE-1.30</strong> uses an <strong>electric drill</strong> that's so precise it could probably thread a needle—if soil sampling were into embroidery. <strong>Millimetre adjustments</strong> mean you get exactly the depth you want, no matter how bumpy or unpredictable the terrain. It's a bit like a <strong>polite butler</strong> who won't let you down.</p><p className='mt-4'>The <strong>control unit</strong> is simplicity itself—press a button and off it goes. <strong>Two preset depths</strong> let you switch between sampling jobs faster than you can say <em>'groundbreaking technology'</em> (see what I did there?). No faffing about with complicated menus or cryptic controls.</p><p className='mt-4'>At just <strong>45 kilograms</strong> and powered by a <strong>24 V battery pack</strong> (sold separately), it's <strong>light enough to be nimble</strong> but <strong>tough enough to handle real-world fieldwork</strong>. No need to call in a crane or an ex-army sergeant to move it.</p><p className='mt-4'>The DE-1.30 can be easily mounted on <strong>quads, trailers, and a variety of light vehicles</strong>, making it versatile for many field conditions.</p><p className='mt-4'>So, if you want <strong>precise, dependable soil samples</strong> without the petrol engine drama or the noise of a heavy drill, the DE-1.30 is your go-to machine. It's <strong>German engineering</strong> with a <strong>quiet, electric twist</strong> that just gets the job done.</p>",
-    "price": "From €12,600",
     "features": [
       "Fully electric drilling for clean, precise sampling",
       "Millimeter-precise depth adjustment (because close enough isn't good enough)",
@@ -1660,7 +1635,6 @@
     "description": "Tow it, sample it, then keep on moving—no fuss, no waiting.",
     "herodescription": "This is the <strong>BOPROB III</strong>—also known, rather jauntily, as the <strong>The Sixteen Express</strong>. It's a trailer that takes soil samples while you drive. Yes, really. No stopping, no button-mashing, no shouting at interns. Just tow it behind something with wheels and let it get on with the job.",
     "detailedDescription": "<p className='mt-4'>Now, the <strong>The Sixteen Express</strong> is what you'd call a clever bit of kit. It's a <strong>tow-behind soil sampler</strong> designed to do its work while you keep moving. Which, frankly, is how everything should work—but doesn't.</p><p className='mt-4'>Sampling happens at a rather brisk pace thanks to a <strong>rotating crank</strong> that goes the full 360°, stabbing into the ground like a polite little jackhammer, then politely ejecting the core into the sample magazine.</p><p className='mt-4'>Everything is watched over by a <strong>7-inch touchscreen</strong>—lovely bit of kit—so you know exactly what it's doing at any time. There's even an optional camera, in case you want to see it work, or just admire your purchase.</p><p className='mt-4'>The wheels are large and soft—<strong>235/60 R16</strong>, if you're into that sort of thing—which means minimal ground pressure and no getting bogged down in a muddy field, unless you've really tried.</p><p className='mt-4'>It hitches easily to <strong>tractors, pickups, quads—or anything else with a tow hitch</strong>, really. No fiddling, no adapters, no workshop heroics required. And once you're done, it unhitches just as easily.</p><p className='mt-4'>If you're driving too fast—or too slowly, perhaps because you're admiring the scenery—the system simply refuses to sample. Which is brilliant, because it means the machine is smarter than the average driver.</p>",
-    "price": "€28,500",
     "features": [
       "Hydraulic impact and rotation system",
       "360° rotating crank with auto-discharge",
@@ -1729,7 +1703,6 @@
     "description": "A no‑nonsense mounting bracket for your sampler—fits the back end of most civilized vehicles without turning them into Franken-trucks.",
     "herodescription": "<strong>Brilliantly sensible.</strong> This lay-down frame, TÜV-certified Mount Kit bolts to your tow hitch like it belongs there. Supports our MP, DH, and DE series samplers.",
     "detailedDescription": "<p className='mt-4'>Mounted on the truck bed connected to that place where your <strong>tow bar lives</strong>—just below the <strong>boot lid</strong> and above the <strong>exhaust pipe drama</strong>—this frame lets you carry a full soil sampler with <strong>elegance</strong>. <strong>Fold it down to operate, fold it up to drive off to dinner</strong>. It's <strong>sturdy</strong>, <strong>tested</strong>, and <strong>painted like a German tool cabinet</strong>.</p><p className='mt-4'>Clients can choose their level of involvement: some prefer to <strong>install the frame themselves</strong> with the help of our <strong>foolproof instructions</strong>; others <strong>drop by with their vehicle</strong> and let us handle the <strong>mounting and hydraulic wizardry</strong>; and for those who enjoy <strong>instant gratification</strong>, we also offer <strong>fully kitted-out field rigs</strong>—<strong>pre-mounted</strong>, <strong>tested</strong>, and generally quite <strong>smug about it</strong>.</p>",
-    "price": "From €2 790",
     "features": [
       "Tow‑hitch + 13‑pin mounting (no welding, no trauma)",
       "TÜV‑approved for road and field use",
@@ -1777,7 +1750,6 @@
     "description": "Makes your tractor be a soil-sampling beast, harnessing PTO power for hydraulic sampler integration. Tough, reliable, no-nonsense.",
     "herodescription": "<strong>Tractor 3‑Point Hitch Frame</strong>: The heavyweight champion for Cat‑1/2 tractors, designed to mount your hydraulic soil sampler straight onto the tractor's PTO system with a hydraulic pump platform to match.",
     "detailedDescription": "<p className='mt-4'>Imagine the <strong>steel backbone</strong> your tractor never knew it needed. Crafted from <strong>thick A‑frame steel</strong> and cloaked in <strong>black epoxy armor</strong>, this mount bolts cleanly onto your tractor's lift arms. It's built to survive farm life — rain, mud, and the odd tractor tantrum included. The kit comes with <strong>lift bars and all mounting bolts</strong>, so no improvising with rusty nails or duct tape.</p><p className='mt-4'>Suitable for <strong>compact tractors with lift arm spacing around 50 to 60 inches</strong>, this frame supports the hydraulic pump directly powered by your PTO shaft, giving you efficient hydraulic flow for smooth soil sampling. It's the upgrade that makes your tractor feel like it's ready to take on the <strong>field Olympics</strong>.</p>",
-    "price": "From €1.650",
     "features": [
       "Welded A‑frame steel—sturdy enough for actual work",
       "PTO pump mount—because zip ties aren't engineering",
@@ -1835,7 +1807,6 @@
     "description": "Turns your utility vehicle or pickup into a no-nonsense soil sampling beast. Bed off, frame on, tools loaded.",
     "herodescription": "<strong>Full Conversion Kit</strong> replaces the standard truck bed or UTV platform with a custom steel frame and aluminium covers—purpose-built for soil sampling with <strong>MP-series, DH, and DE machines</strong>. TÜV-approved, road-legal, and rather clever.",
     "detailedDescription": "<p className='mt-4'><strong>If your UTV or pickup dreams of greatness, this is its moment.</strong> We carefully remove the stock bed and replace them with a steel conversion frame, wrapped in aluminium panels that scream 'professional operator' louder than a flat-out Hilux on gravel.</p><p className='mt-4'><strong>It gives you proper mounting for all our machines, integrated storage for coolers, tools, lighting—basically everything but the packed lunch.</strong> Certified by TÜV, built for serious campaigns, and oddly satisfying to look at.</p>",
-    "price": "From €4590",
     "features": [
       "Universal fit for pickups and UTVs (Hilux, Gator, Kubota, etc.)",
       "Aluminium-covered steel frame: durable and corrosion-resistant",
@@ -1890,7 +1861,6 @@
     "description": "These trailers transport MP-series, DH/DE systems effortlessly across anything that isn't actually a wall.",
     "herodescription": "<strong>Special Trailers – Field Haulers</strong> are <strong>rugged, hot-dip galvanised trailers</strong> with both <strong>braked and non-braked options</strong>, designed to carry your soil sampling kit—be it <strong>MP, DH, or DE</strong>—through fields and farms with <strong>Germanic precision</strong>.<br/>They come with <strong>clever storage for tools, lights, and coolers</strong>—so you can work all day without the usual fuss.",
     "detailedDescription": "<p className='mt-4'>With a fixed <strong>1.35 m track width</strong> and <strong>jack-castor wheels</strong>, the Field Hauler maneuvers like a sensible shopping trolley—only with more steel and fewer weak points.</p><p className='mt-4'>Choose <strong>braked models</strong> for heavier loads or steeper inclines—up to <strong>3,500 kg GTW</strong>—so you can haul soil samplers without dreaming of new brake pads every trip.</p>",
-    "price": "From €3 600",
     "features": [
       "Hot-dip galvanised body and chassis—long life, fewer complaints",
       "Braked and non-braked options—pick your handling style",
@@ -1947,7 +1917,6 @@
     "description": "For those running MP or DH units without onboard power, these packs deliver consistent hydraulic or electric energy wherever your work takes you.",
     "herodescription": "<strong>Power Packs</strong> are like the dependable butlers of soil sampling—offering <strong>reliable, portable power</strong> so your machines don't throw a tantrum. Whether you fancy the <strong>classic hydraulic grunt</strong> or prefer the <strong>whisper-quiet electric charm</strong>, these packs have your back.<br/>Wrapped in a <strong>rugged steel casing</strong> tougher than your average tractor, with sensible perks like <strong>LCD battery status</strong> and <strong>filtration systems</strong>, they're the trusty sidekick you never knew you needed out in the field.",
     "detailedDescription": "<p className='mt-4'>The hydraulic model, perfectly matched to <strong>MP-series</strong> and <strong>DH-series</strong> machines, boasts a <strong>13 HP gasoline engine</strong> and a <strong>22 L oil tank</strong>, pushing out <strong>135 bar pressure</strong> at <strong>20 L/min</strong>—that's serious grunt for when you want to feel like a proper mechanical overlord.</p><p className='mt-4'>The electric cousin, designed specifically for the <strong>DE-series</strong>, sports a <strong>24 V / 100 Ah battery</strong>, a <strong>stainless steel suit of armour</strong>, and an <strong>LCD screen</strong> to keep an eye on its own power levels. Ideal for those who prefer a quieter, cleaner, and frankly more polite approach to soil sampling.</p><p className='mt-4'>Both models are <strong>portable</strong>, <strong>ruggedly built</strong>, and come with <strong>return/suction filtration</strong> to keep your precious hydraulics from choking on dirt—because nobody likes premature wear, do they?</p>",
-    "price": "From €3,450",
     "features": [
       "Hydraulic or electric powered to suit your workflow",
       "Rugged steel casing with corrosion protection",
@@ -1995,7 +1964,6 @@
     "description": "Because nothing ruins a good day in the field like a broken fitting or a leaky seal. These are the official, recommended spare parts—hand-picked for your MP, DH, DE or BOPROB III machine, and ready to get you out of trouble before it starts.",
     "herodescription": "Think of these as the first-aid kit for your soil sampler. Whether you're out in a bog in Bavaria or a dust bowl in Bulgaria, having the right <strong>OEM spare parts</strong> on hand turns a potential disaster into a smugly handled hiccup.<br/>Each kit includes the usual suspects—<strong>O-rings, hydraulic couplings, filters, belts</strong>, and the bits that quietly work the hardest. No improvising with baling wire or borrowed parts from your mate's combine.",
     "detailedDescription": "<p className='mt-4'>These are the <strong>recommended spare parts kits</strong> for the <strong>MP-series</strong>, <strong>DH-series</strong>, <strong>DE-series</strong>, and <strong>BOPROB III</strong> samplers. And no, they're not optional. They're what the engineers use. What the service techs use. What you should have in the toolbox if you're even slightly serious about uptime.</p><p className='mt-4'>Inside each kit, you'll find the usual suspects—<strong>seals, filters, hydraulic fittings, relays, and pressure lines</strong>—the bits that keep the fluid where it's supposed to be and the current flowing in the right direction. It's like carrying a spare pair of underpants on a long-haul flight: you hope you won't need them, but you'll be damn glad if you do.</p><p className='mt-4'>Parts are <strong>individually packaged and labelled</strong>, so you don't spend half a day figuring out if that washer fits the return line or the oil filter. And of course, they're all <strong>factory-certified</strong> and designed to slot right in without any butchery.</p>",
-    "price": "From €450",
     "features": [
       "Recommended spare parts for MP, DH, DE and BOPROB III soil samplers",
       "Includes critical wear components and emergency repair items",
@@ -2042,7 +2010,6 @@
     "description": "Because sometimes your samples—or your beer—deserve better than lukewarm misery. With this 95L beast, you're bringing a portable arctic tundra to the job site. Possibly overkill. But definitely brilliant.",
     "herodescription": "You know the feeling—you're halfway up a mountain, everything's on schedule, and then someone opens the cooler to find... <strong>soup</strong>. Not anymore. <strong>The Chiller turns smug grins into icy relief</strong>, literally.<br/>It <strong>cools</strong>. It <strong>freezes</strong>. It <strong>glows</strong>. And yes, it has an <strong>app</strong>—because your phone isn't smug enough already. German engineers might call this a <em>Kühlbox</em>. <strong>We call it 'bringing the fridge, because we can.'</strong>",
     "detailedDescription": "<p className='mt-4'>The <strong>Coolbox 95L</strong> is, frankly, <strong>more capable than most hotel minibars</strong>. Dual compartments, each configurable as fridge or freezer, mean you can keep your sample kit on one side and lunch on the other—and still have room for <strong>smug satisfaction</strong>.</p><p className='mt-4'>It's powered by a <strong>high-efficiency LG compressor</strong> (which is more than your car's AC can say), and chills down to <strong>-20°C</strong> even when it's hot enough to fry an egg on the roof rack. Use it via the control panel or the <strong>Alpicool app</strong> if you're the sort of person who controls their fridge from a hammock.</p><p className='mt-4'>For extended autonomy, pair it with the <strong>optional battery</strong> (not included), giving you <strong>4 to 24 hours</strong> of standalone cooling. Or plug it into the vehicle and <strong>never worry again</strong>. It's built to take a beating—<strong>though we advise against that, obviously.</strong></p>",
-    "price": "€1000",
     "features": [
       "Dual compartments can cool or freeze independently",
       "Digital display with touch controls and mobile app",
@@ -2086,7 +2053,6 @@
     "description": "Darkness is no excuse. With 1700 lumens packed into a compact, armored unit, this LED work light is what happens when you cross a headlamp with a small sun. Whether you're mid-sample or mid-swear word, you'll see everything—clearly.",
     "herodescription": "<strong>Sampling in the dark? Forgot the sun?</strong> No problem. The Midnight Sun delivers <strong>seriously powerful illumination</strong> without the heat, the noise, or the diesel bill.<br/>Mount it, point it, fire it up—then wonder how you ever lived without it. It's not romantic lighting. It's <strong>get-the-job-done lighting</strong>.",
     "detailedDescription": "<p className='mt-4'>The <strong>LED Work Light 1700</strong> is a <strong>field-tested, no-nonsense luminaire</strong> designed to cut through darkness like a chainsaw through butter. With a brutal <strong>1700 lumen output</strong>, it delivers focused near-field lighting for sampling rigs, machinery, or any situation where 'I think I see something' isn't good enough.</p><p className='mt-4'>Built with a <strong>black anodized aluminum housing</strong> and meeting <strong>IP6K7 and IP6K9K standards</strong>, this unit shrugs off water jets, dust storms, and probably most of your mistakes. A <strong>pivoting bracket</strong> allows precise aiming, while the <strong>patterned lens</strong> keeps the beam wide and usable.</p><p className='mt-4'>Compatible with <strong>12–24 V DC</strong> systems, the light draws 24 W and comes with open cable ends for easy integration. Assembly by qualified personnel is required—<strong>because melting wires is less funny in real life</strong>.</p>",
-    "price": "€67",
     "features": [
       "1700 lumen output from 4 high-intensity LEDs",
       "Pivoting bracket for precise aiming",
@@ -2136,7 +2102,6 @@
     "description": "Why guess what's going on behind the rig when you can watch it happen in real time. The Watchtower mounts to your machine and streams live footage straight to your cab. No cables. No blind spots. No surprises.",
     "herodescription": "<strong>Ever tried reversing your rig blind with a 3-ton sampler on the back?</strong> Not ideal. The Watchtower gives you <strong>eyes on the drill</strong>—from the comfort of your driver's seat. Monitor every move, strike, and wobble.<br/>Connect via 4G. View from your phone. <strong>Because being in two places at once is now technically possible.</strong>",
     "detailedDescription": "<p className='mt-4'><strong>The Watchtower</strong> is a <strong>field-ready 5MP camera</strong> built for mounting directly to your soil sampling machine. Once installed, it streams live video to your tablet or phone using 4G—so you can see what's happening at the back of the rig without leaving your seat (or shouting across a muddy field).</p><p className='mt-4'>Its <strong>75° viewing angle</strong> gives full visibility of the sampling head, while <strong>infrared night vision</strong> extends that confidence well into the dusk. Whether you're checking alignment, confirming core drop, or just admiring your drilling skills, it's all visible in real time.</p><p className='mt-4'>The app is free, the setup takes minutes, and there's no need for local Wi-Fi. With an optional micro SD card (up to 128 GB), you can even <strong>record operations for documentation or training</strong>. Setup is plug-and-play, with one important caveat: <strong>insert the SIM card properly or spend the afternoon diagnosing your own impatience</strong>.</p><p className='mt-4'>It's rainproof, mud-proof, and stubbornly reliable—exactly what you want from something bolted to a vibrating machine in the middle of nowhere.</p>",
-    "price": "€225",
     "features": [
       "Live video streaming over 4G network",
       "75° fixed-angle lens with night vision",
@@ -2186,7 +2151,6 @@
     "description": "The gold standard for manual N-min sampling—precision-engineered, tapered drill rods built for hard soils and lab-grade accuracy.",
     "herodescription": "Not just any rods—these are <strong>razor-sharp, tool steel scalpels</strong> for the soil aficionado who demands precision. Their tapered design means less fuss, less friction, and those <strong>laser-etched 10 cm marks</strong>? Perfect for knowing exactly how deep you've poked—because soil layers don't like to be disturbed, and neither should you.",
     "detailedDescription": "<p className='mt-4'>Designed for those who take soil seriously (and themselves, a little less): three slick tapered sizes—<strong>40→38 mm</strong> for 0-30 cm, <strong>35→33 mm</strong> for 30-60 cm, and <strong>30→28 mm</strong> for 60-90 cm—cut through stubborn clay and gravel like a hot knife through butter, thanks to pre-broken edges ready to do the hard work for you.</p><p className='mt-4'>Each rod sports <strong>laser-etched 10 cm increments</strong> that won't fade faster than your enthusiasm on a Monday morning. Pair them with toggles (Items 1030/1031) for easy lifting, and a chisel (Item 1051) to strip samples clean—because sampling should feel like a gentle nudge, not an arm wrestle.</p>",
-    "price": "Price on request",
     "features": [
       "Three tapered diameters minimize friction and maximize sampling ease",
       "HRC 52 hardened tool steel for durability and strength",
@@ -2335,7 +2299,6 @@
     "description": "Robust drill rods (Ø 22 mm) designed to open normal soil profiles up to 10 m depth with modular, interchangeable parts for flexible length adjustment.",
     "herodescription": "Meet the <strong>modular drill rods</strong> with a neat <strong>22 mm drilling groove</strong>, built to tackle soil profiles up to a serious <strong>10 meters deep</strong>. Thanks to connecting bolts, you can adjust the length faster than you can say 'Bob's your uncle,' and the striking heads handle everything—from the casual tap to the full machine punch.",
     "detailedDescription": "<p className='mt-4'>Each section is a solid <strong>1000 mm of engineering precision</strong>, sporting a <strong>12 mm groove</strong> to keep your soil samples firmly in place while you pull them up from the depths. Extensions screw on easily with <strong>5/8” internal threads</strong>—because sometimes, more is just more.</p><p className='mt-4'>Tighten with special <strong>SW 18 wrenches</strong>—no slipping, no drama. For the grand finale, pick your weapon: a <strong>jack lifter with clamping chain</strong> or a <strong>one-arm puller with a ball clamp</strong>, both designed to get the job done safely and without breaking a sweat.</p>",
-    "price": "Price on request",
     "features": [
       "Ø 22 mm drilling groove with 12 mm soil sample groove",
       "Modular design with interchangeable parts bolted together",
@@ -2444,7 +2407,6 @@
     "description": "Every hammer's a hero in its own right. Pick the one that fits your soil-sampling saga and don't forget the trusty sidekicks—our accessories.",
     "herodescription": "From the <strong>solid, no-nonsense square hammer</strong> to the <strong>gentle touch of a nylon soft-face</strong>, we've got the tools to make your soil sampling <strong>less grunt, more finesse</strong>. Choose wisely—<strong>precision, power, and comfort</strong> await.",
     "detailedDescription": "<p className='mt-4'>Need to channel your inner Thor with a hefty <strong>4.3 kg square hammer</strong> boasting a <strong>135x135 mm impact surface</strong>? Or perhaps a <strong>featherlight nylon soft-face hammer</strong> to coax the soil with subtlety? Either way, <strong>your wish is our command</strong>.</p><p className='mt-4'>Fancy a bit of DIY flair? <strong>Swap heads like a chef changes knives</strong>, pick from <strong>wooden or hickory handles of all lengths</strong>, and top it off with <strong>inserts as tough or gentle as you like</strong>. It's like a bespoke suit—only for your hammer.</p>",
-    "price": "Price on request",
     "features": [
       "Square hammer with 135x135 mm impact surface, 4.3 kg",
       "Round plastic hammer with 150 mm Ø impact surface",
@@ -2577,7 +2539,6 @@
     "description": "Who needs a gym membership when you have the Göttinger Soil Corers? One person, a light 2.5 kg tool, and you’re ready to conquer the soil—without leaving a trace on the field or terrorizing any buried cables.",
     "herodescription": "From the <strong>delicate clay</strong> to <strong>lightly compacted sand</strong>, these corers slice through with <strong>minimal fuss</strong>. Three perfectly calibrated drill layers, <strong>cushioned handles</strong>, and a clever <strong>fräs profile</strong> make sampling feel less like work and more like wizardry.",
     "detailedDescription": "<p className='mt-4'>Single-handed operation, <strong>no heavy machinery</strong>, <strong>no extra helpers</strong>, just you and the earth. The Göttinger drills separate <strong>three soil layers</strong> with precision, giving you reliable N-min samples weighing <strong>500–1000g</strong> from <strong>16 parallel strikes per depth section</strong>.</p><p className='mt-4'>Caution: these are champions of <strong>gentle soils</strong>. <strong>Rocky, bone-dry, or tightly packed sand</strong> might push their patience. But in ideal conditions, it’s as close as you’ll get to a <strong>soil-sampling magic wand</strong>.</p>",
-    "price": "Price on request",
     "features": [
       "Single-person operation",
       "Lightweight at just ~2.5 kg",
@@ -2636,7 +2597,6 @@
     "description": "Rough terrain? Slope? Cornfield maze? No problem. This crawler doesn’t complain—it just samples.",
     "herodescription": "The <strong>Nitratraupe</strong> is the sort of machine any soil enthusiast would nod at approvingly. Capable of <strong>0–90 cm soil sampling</strong> across <strong>three layers</strong>, it navigates rough terrain like a polite but relentless toddler on tracks. Semi-automatic, hydraulically assisted, and guided by your eyes (because the machine respects your intelligence).",
     "detailedDescription": "<p className='mt-4'><strong>Precision meets brute force</strong> in a surprisingly courteous package. The <strong>Nitratraupe</strong> cuts a <strong>clean soil profile</strong> without mixing layers (<strong>no rotary drills required</strong>). <strong>Three layers—0–30, 30–60, 60–90 cm</strong> are extracted with <strong>finesse</strong>.</p><p className='mt-4'>It runs off the <strong>carrier vehicle's engine</strong>, so <strong>no extra combustion motor tantrums</strong>. <strong>Manual sampling</strong> lets you <strong>visually inspect the core</strong>, keeping <strong>costs and headaches low</strong>.</p><p className='mt-4'>Tracks make it <strong>narrow enough to squeeze between growing corn</strong>, and with a <strong>remote control</strong>, you can <strong>raise, lower, spin, and sample</strong> without leaving your comfort zone. A <strong>true gentleman’s soil-sampling crawler</strong>.</p>",
-    "price": "From €20,000",
     "features": [
       "Hydraulic semi-automatic extraction down to 90 cm (optional 120 cm)",
       "Three-layer sampling for horizon-specific precision",

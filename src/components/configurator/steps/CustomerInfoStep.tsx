@@ -2,15 +2,18 @@ import { motion } from 'framer-motion';
 import { useConfigurator } from '../contexts/ConfiguratorContext';
 import { FadeInWhenVisible } from '../../animation/FadeInWhenVisible';
 import emailjs from '@emailjs/browser';
-import { products } from '../../../data/products';
 import { useNavigate } from 'react-router-dom';
 import { useState, useRef, useEffect } from 'react';
 import ReCAPTCHA from 'react-google-recaptcha';
 import { useTranslation } from 'react-i18next';
+import i18n from '../../../i18n';
+import { formatEuroAmount } from '../../../data/prices';
+import { useProducts } from '../../../data/context/ProductsContext';
 
 export const CustomerInfoStep = () => {
   const { t } = useTranslation();
   const { configuration, setCustomerInfo, goToStep, resetConfigurator } = useConfigurator();
+  const { products } = useProducts();
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [submitError, setSubmitError] = useState<string | null>(null);
   const [submitSuccess, setSubmitSuccess] = useState(false);
@@ -135,7 +138,7 @@ export const CustomerInfoStep = () => {
       }
     }
 
-    return `€${total.toLocaleString('de-DE')}`;
+    return formatEuroAmount(total, i18n.resolvedLanguage || i18n.language || 'en');
   };
 
   const handleInputChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {

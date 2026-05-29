@@ -1,7 +1,6 @@
 import { motion } from 'framer-motion';
 import { X } from 'lucide-react';
-import { Product } from '../../../data/products';
-import { useConfigurator } from '../contexts/ConfiguratorContext';
+import type { Product } from '../../../data/types/products';
 import { useNavigate } from 'react-router-dom';
 import { toast } from 'sonner';
 import {
@@ -12,14 +11,12 @@ import {
 import { useTranslation } from 'react-i18next';
 
 const ProductToastContent = ({ product, t }: { product: Product; t: any }) => {
-  const { startWithProduct } = useConfigurator();
   const navigate = useNavigate();
   const { t: translate } = useTranslation();
 
   const handleConfigure = () => {
-    startWithProduct(product.id);
     toast.dismiss(t.id);
-    navigate('/configurator');
+    navigate(`/configurator?productId=${product.id}`);
   };
 
   return (

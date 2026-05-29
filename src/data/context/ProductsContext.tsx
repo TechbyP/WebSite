@@ -1,7 +1,11 @@
 // ProductsContext.tsx
-import { createContext, useContext, useEffect, useState } from 'react';
+import { createContext, useContext, useMemo } from 'react';
 import { Product } from '../types/products';
-import { initializeProducts, getProductsByCategory, getProductById } from '../products';
+import {
+  createProducts,
+  getProductsByCategory as filterProductsByCategory,
+  getProductById as findProductById,
+} from '../products';
 import { useTranslation } from 'react-i18next';
 
 const ProductsContext = createContext<{
@@ -17,22 +21,22 @@ const ProductsContext = createContext<{
 });
 
 export const ProductsProvider = ({ children }: { children: React.ReactNode }) => {
-  const { t } = useTranslation();
-  const [products, setProducts] = useState<Product[]>([]);
-  const [initialized, setInitialized] = useState(false);
-  
-  useEffect(() => {
-    initializeProducts(t);
-    setProducts(products); // This will use the exported products array
-    setInitialized(true);
-  }, [t]);
+  const { t, i18n } = useTranslation();
 
-  const value = {
-    products,
-    getProductsByCategory,
-    getProductById,
-    initialized
-  };
+  const products = useMemo(
+    () => createProducts(t),
+    [t, i18n.language, i18n.resolvedLanguage]
+  );
+
+  const value = useMemo(
+    () => ({
+      products,
+      getProductsByCategory: (category: string) => filterProductsByCategory(products, category),
+      getProductById: (id: number) => findProductById(products, id),
+      initialized: true,
+    }),
+    [products]
+  );
 
   return (
     <ProductsContext.Provider value={value}>

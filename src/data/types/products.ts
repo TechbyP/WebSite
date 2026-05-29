@@ -28,7 +28,7 @@ export interface Product {
     company: string;
     rating: number;
   }[];
-  priceValue?: number;
+  priceValue?: number | null;
   electric?: boolean;
   manual?: boolean;
   hydraulic?: boolean;

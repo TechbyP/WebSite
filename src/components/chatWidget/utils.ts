@@ -1,4 +1,3 @@
-import { products } from '../../data/products';
 import { manualData } from '../../data/mpManual';
 import { Product } from './types';
 import { ChatMessage } from './types';
@@ -80,12 +79,12 @@ export const getProductSummary = (products: Product[], t: any): string => {
     if (p.weight) keySpecs.push(`${t('products.specs.weight')}: ${p.weight}kg`);
     if (p.horizons) keySpecs.push(`${t('products.specs.horizons')}: ${p.horizons}`);
     
-    return `${p.name} (${p.nickname}) - ${p.price} - ${keySpecs.join(', ')}`;
+    return `${p.name ?? ''} (${p.nickname ?? ''}) - ${p.price ?? ''} - ${keySpecs.join(', ')}`;
   }).join('\n');
 };
 
 /** 🧠 Main system prompt for Groq - UPDATED for concise responses */
-export const getSystemMessage = (pathname: string, t: any): ChatMessage => {
+export const getSystemMessage = (pathname: string, products: Product[], t: any): ChatMessage => {
   const slug = pathname?.split('/').pop() ?? '';
   const productManual = getManualSection(slug, t);
 

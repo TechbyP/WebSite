@@ -1,7 +1,6 @@
 import { useState, useEffect } from 'react';
 import { useParams, useNavigate } from 'react-router-dom';
-import { ArrowLeft, Star, ChevronLeft, ChevronRight, ShoppingCart, FileText, Users, Award } from 'lucide-react';
-import { getProductById, getProductsByCategory } from '../data/products';
+import { ChevronLeft, ChevronRight, ShoppingCart, FileText, Users, Award } from 'lucide-react';
 import OrderNow from '../components/OrderNow';
 import {
   getProductMediaFallbacks,
@@ -16,31 +15,17 @@ import { showProductToast } from '../components/configurator/utils/ShowToastCont
 import { Helmet } from 'react-helmet-async';
 import { useTranslation } from 'react-i18next';
 import parseHtmlText from '../utils/parseText'
-import { initializeProducts } from '../data/products';
 import i18n from '../i18n';
-import { useTheme } from '../utils/context/theme-context';
+import { useProducts } from '../data/context/ProductsContext';
+import { loadProductGallery } from '../data/productGalleryLoaders';
 
 const ProductDetail = () => {
   const { t } = useTranslation();
   const { id } = useParams();
   const navigate = useNavigate();
-  const { theme } = useTheme();
-  const product = getProductById(parseInt(id || '1'));
-
-  const [ready, setReady] = useState(false);
-
-  useEffect(() => {
-    initializeProducts(t);
-    setReady(false); // reset before init
-    setTimeout(() => {
-      setReady(true); // trigger re-render *after* initialization
-    }, 0);
-  }, [t]);
-
-
-  if (!product) {
-    return <div className="dark:text-white">{t('product.notFound')}</div>;
-  }
+  const { getProductById, getProductsByCategory } = useProducts();
+  const productId = Number.parseInt(id || '1', 10);
+  const product = Number.isNaN(productId) ? undefined : getProductById(productId);
   const keyTranslationsDe = {
     "Sampling Depth": "Probentiefe",
     "Sampling Depth Example": "0–60 cm",
@@ -143,35 +128,66 @@ const ProductDetail = () => {
     "ViewingAngle": "Угол обзора"
   };
 
-
-  const {
-    heroImage,
-    gallery,
-    heroVideo,
-    icon: IconComponent
-  } = getProductMediaFallbacks(product);
-
   const [currentImageIndex, setCurrentImageIndex] = useState(0);
   const [showOrderModal, setShowOrderModal] = useState(false);
   const [showImageToast, setShowImageToast] = useState(false);
   const [selectedProductId, setSelectedProductId] = useState<string | null>(null);
+  const [gallery, setGallery] = useState<string[]>([]);
   const currentLanguage = i18n.language; // Get current language
+
+  useEffect(() => {
+    window.scrollTo(0, 0);
+  }, [id]);
+
+  useEffect(() => {
+    const fallbackGallery = product?.image ? [product.image] : [defaultHeroImage];
+
+    setCurrentImageIndex(0);
+    setGallery(fallbackGallery);
+
+    if (!product) {
+      return;
+    }
+
+    let cancelled = false;
+
+    void loadProductGallery(product.id)
+      .then((loadedGallery) => {
+        if (cancelled || !loadedGallery?.length) {
+          return;
+        }
+
+        setGallery(loadedGallery);
+      })
+      .catch(() => {
+        if (!cancelled) {
+          setGallery(fallbackGallery);
+        }
+      });
+
+    return () => {
+      cancelled = true;
+    };
+  }, [product]);
+
+  if (!product) {
+    return <div className="dark:text-white">{t('product.notFound')}</div>;
+  }
+
+  const relatedProducts = getProductsByCategory(product.category || '').filter((entry) => entry.id !== product.id);
+
+
+  const {
+    heroImage,
+    heroVideo,
+    icon: IconComponent
+  } = getProductMediaFallbacks(product);
   const scrollToSection = (id: string) => {
     const section = document.getElementById(id);
     if (section) {
       window.scrollTo({ top: section.offsetTop - 20, behavior: 'smooth' });
     }
   };
-
-  useEffect(() => {
-    window.scrollTo(0, 0);
-  }, [id]);
-
-  if (!ready) {
-    return <div className="dark:text-white">{t('product.notFound')}</div>;
-  }
-
-  const relatedProducts = getProductsByCategory(product.category).filter(p => p.id !== product.id);
 
   const nextImage = () => {
     setCurrentImageIndex((prev) => (prev + 1) % gallery.length);
@@ -226,9 +242,9 @@ const ProductDetail = () => {
           <h1 className="text-4xl md:text-6xl lg:text-8xl font-black mb-6 leading-tight uppercase tracking-tight">
             {product.name}
           </h1>
-          <p className="text-xl md:text-xl text-white mb-8 leading-relaxed max-w-2xl">
+          <div className="text-xl md:text-xl text-white mb-8 leading-relaxed max-w-2xl">
             {parseHtmlText(t(product.herodescription))}
-          </p>
+          </div>
           <div className="flex items-center justify-start space-x-2 mb-8">
             <span className="text-3xl font-black uppercase text-brandgreen">{product.price}</span>
           </div>

@@ -1,7 +1,7 @@
 // product_default.ts
 import { Wrench, ShoppingCart, FileText, Users, Award } from 'lucide-react';
 import type { LucideIcon } from 'lucide-react';
-import { Product } from '../data/products';
+import type { Product } from '../data/types/products';
 
 // Import your images (adjust paths based on your actual file structure)
 import defaultHeroImage from '../assets/pictures/Logo-Symbol.png';

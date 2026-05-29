@@ -8,34 +8,15 @@ import { ChatInput } from './ChatInput';
 import { Props, ChatMessage } from './types';
 import { introMessages, getSystemMessage } from './utils';
 import { useTranslation } from 'react-i18next';
-// Constants for API configuration
-const API_CONFIGS = [
-  {
-    name: 'Groq Llama On Demand',
-    key: import.meta.env.VITE_GROQ_API_KEY_1,
-    model: 'meta-llama/llama-4-scout-17b-16e-instruct',
-    endpoint: 'https://api.groq.com/openai/v1/chat/completions',
-  },
-  {
-    name: 'Groq Llama On Demand 2',
-    key: import.meta.env.VITE_GROQ_API_KEY_2,
-    model: 'meta-llama/llama-4-scout-17b-16e-instruct',
-    endpoint: 'https://api.groq.com/openai/v1/chat/completions',
-  },
-  {
-    name: 'Together AI',
-    key: import.meta.env.VITE_TOGETHER_API_KEY_3,
-    model: 'together-gpt-3.5-turbo',
-    endpoint: 'https://api.together.xyz/v1',
-  },
-] as const;
+import { useProducts } from '../../data/context/ProductsContext';
+
+const CHAT_API_ENDPOINT = '/api/chat';
 
 export const ChatWidget = React.memo(({ open, setOpen }: Props) => {
   // State management
   const [input, setInput] = useState('');
   const [chat, setChat] = useState<ChatMessage[]>([]);
   const [loading, setLoading] = useState(false);
-  const [keyIndex, setKeyIndex] = useState(0);
   const [isFullscreen, setIsFullscreen] = useState(false);
   const [keyboardHeight, setKeyboardHeight] = useState(0);
   const [viewportHeight, setViewportHeight] = useState(window.innerHeight);
@@ -44,6 +25,7 @@ export const ChatWidget = React.memo(({ open, setOpen }: Props) => {
   // const [isHidden, setIsHidden] = useState(false);
   const [showFlap, setShowFlap] = useState(false);
 const { t } = useTranslation();
+  const { products } = useProducts();
   // Refs
   const messagesEndRef = useRef<HTMLDivElement>(null);
   const inputRef = useRef<HTMLInputElement>(null);
@@ -57,8 +39,8 @@ const { t } = useTranslation();
   // Memoized values
   const isMobile = useMemo(() => window.innerWidth <= 768, []);
 const systemMessage = useMemo(
-  () => getSystemMessage(location.pathname, t),
-  [location.pathname, t] // add `t` to dependency array
+  () => getSystemMessage(location.pathname, products, t),
+  [location.pathname, products, t]
 );
 
 
@@ -196,48 +178,26 @@ const systemMessage = useMemo(
     setChat(updatedChat);
     setInput('');
 
-    let attempts = 0;
-    let success = false;
-    let botMessage: ChatMessage | null = null;
+    try {
+      const response = await fetch(CHAT_API_ENDPOINT, {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify({
+          messages: [systemMessage, ...updatedChat],
+        }),
+      });
 
-    while (attempts < API_CONFIGS.length && !success) {
-      const { key, model, endpoint } = API_CONFIGS[keyIndex];
-
-      try {
-        const response = await fetch(endpoint, {
-          method: 'POST',
-          headers: {
-            'Content-Type': 'application/json',
-            Authorization: `Bearer ${key}`,
-          },
-          body: JSON.stringify({
-            model,
-            messages: [systemMessage, ...updatedChat],
-          }),
-        });
-
-        if (!response.ok) {
-          if (response.status === 429 || response.status === 403) {
-            setKeyIndex(prev => (prev + 1) % API_CONFIGS.length);
-            attempts++;
-            continue;
-          }
-          throw new Error(`API error: ${response.status}`);
-        }
-
-        const data = await response.json();
-        botMessage = data.choices?.[0]?.message ?? { role: 'assistant', content: 'No response' };
-        success = true;
-      } catch (error) {
-        console.error('API call failed:', error);
-        setKeyIndex(prev => (prev + 1) % API_CONFIGS.length);
-        attempts++;
+      if (!response.ok) {
+        throw new Error(`Chat request failed: ${response.status}`);
       }
-    }
 
-    if (success && botMessage) {
-      setChat(prev => [...prev, botMessage!]);
-    } else {
+      const data = await response.json();
+      const botMessage = data.message ?? { role: 'assistant', content: 'No response' };
+      setChat(prev => [...prev, botMessage]);
+    } catch (error) {
+      console.error('Chat request failed:', error);
       setChat(prev => [...prev, {
         role: 'assistant',
         content: 'Sorry, I could not get a response right now. Please try again later.'
@@ -246,7 +206,7 @@ const systemMessage = useMemo(
 
     setLoading(false);
     inputRef.current?.focus();
-  }, [input, chat, keyIndex, systemMessage]);
+  }, [input, chat, systemMessage]);
 
   const toggleChat = () => {
     setOpen(!open);
@@ -268,7 +228,7 @@ const systemMessage = useMemo(
 
   // Chat container styling
   const chatContainerClasses = useMemo(() => `
-    fixed z-50 transition-all duration-300 ease-in-out
+    fixed z-[60] transition-all duration-300 ease-in-out
     ${open ? 'opacity-100 scale-100' : 'opacity-0 scale-95 pointer-events-none'}
     ${isMobile
       ? isFullscreen
@@ -287,7 +247,7 @@ const systemMessage = useMemo(
         {/* Main Button */}
         {showMainButton && (
           <motion.div
-            className={`fixed z-40 ${isMobile ? 'bottom-16 right-4' : 'bottom-10 right-6'}`}
+            className={`fixed z-[60] ${isMobile ? 'bottom-16 right-4' : 'bottom-10 right-6'}`}
             variants={buttonVariants}
             initial="hidden"
             animate="visible"
@@ -329,7 +289,7 @@ srcSet={logo}
         {/* Flap (small side tab) */}
         {showFlapButton && (
           <motion.div
-            className="fixed bottom-16 right-0 z-50 flex items-center bg-white/60 text-white rounded-l-full px-3 py-2 cursor-pointer shadow-lg"
+            className="fixed bottom-16 right-0 z-[60] flex items-center bg-white/60 text-white rounded-l-full px-3 py-2 cursor-pointer shadow-lg"
             variants={flapVariants}
             initial="hidden"
             animate="visible"

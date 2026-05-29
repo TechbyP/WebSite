@@ -2,7 +2,51 @@ import React from 'react';
 import ReactMarkdown from 'react-markdown';
 import rehypeRaw from 'rehype-raw';
 import remarkGfm from 'remark-gfm';
-import sanitizeHtml from 'sanitize-html';
+import DOMPurify from 'isomorphic-dompurify';
+
+const ARTICLE_ALLOWED_TAGS = [
+  'a', 'abbr', 'b', 'blockquote', 'br', 'code', 'div', 'em', 'figcaption', 'figure',
+  'h1', 'h2', 'h3', 'h4', 'h5', 'h6', 'hr', 'i', 'img', 'li', 'ol', 'p', 'pre',
+  's', 'span', 'strong', 'sub', 'sup', 'table', 'tbody', 'td', 'th', 'thead', 'tr', 'ul'
+];
+
+const ARTICLE_ALLOWED_ATTRIBUTES = [
+  'alt', 'class', 'height', 'href', 'loading', 'rel', 'src', 'target', 'title', 'width'
+];
+
+const sanitizeArticleHtml = (html: string) =>
+  DOMPurify.sanitize(
+    html
+      .replace(/<p>(?:\s|&nbsp;|<br\s*\/?>)*<\/p>/gi, '')
+      .replace(/<div>(?:\s|&nbsp;|<br\s*\/?>)*<\/div>/gi, ''),
+    {
+      ALLOWED_TAGS: ARTICLE_ALLOWED_TAGS,
+      ALLOWED_ATTR: ARTICLE_ALLOWED_ATTRIBUTES,
+    }
+  ).trim();
+
+const isEmptyContentBlock = (text: string) => {
+  if (!text) {
+    return true;
+  }
+
+  const trimmed = text.trim();
+
+  if (!trimmed) {
+    return true;
+  }
+
+  if (!/<[a-z][\s\S]*>/i.test(trimmed)) {
+    return false;
+  }
+
+  const sanitized = sanitizeArticleHtml(trimmed)
+    .replace(/&nbsp;/gi, ' ')
+    .replace(/<[^>]+>/g, '')
+    .trim();
+
+  return sanitized.length === 0;
+};
 
 /**
  * Formats bytes to human-readable format
@@ -87,29 +131,24 @@ export const formatContentForDisplay = (
     ];
   }
 
-  const contentArray = Array.isArray(content) ? content : [content];
+  const contentArray = (Array.isArray(content) ? content : [content]).filter(
+    (text): text is string => !isEmptyContentBlock(text)
+  );
 
   return contentArray.map((text, index) => {
-    if (!text || text.trim() === '' || text.trim() === '<p></p>' || text.trim() === '<p><br></p>') {
-      return <div key={`spacer-${index}`} className="spacing-paragraph" />;
-    }
-
     const isHtml = /<[a-z][\s\S]*>/i.test(text);
 
-    // For HTML content
     if (isHtml) {
-      const sanitizedHtml = sanitizeHtml(text, {
-        allowedTags: sanitizeHtml.defaults.allowedTags.concat(['img']),
-        allowedAttributes: {
-          ...sanitizeHtml.defaults.allowedAttributes,
-          img: ['src', 'alt', 'title', 'width', 'height', 'class']
-        }
-      });
+      const sanitizedHtml = sanitizeArticleHtml(text);
+
+      if (!sanitizedHtml) {
+        return null;
+      }
 
       return (
         <div
           key={`html-${index}`}
-          className={`mb-4 prose max-w-none text-gray-900 dark:text-gray-100 ${
+          className={`prose max-w-none text-gray-900 dark:text-gray-100 ${
             index === 0 ? 'first-paragraph-with-dropcap' : ''
           }`}
           dangerouslySetInnerHTML={{ __html: sanitizedHtml }}
@@ -121,7 +160,7 @@ export const formatContentForDisplay = (
     return (
       <div
         key={`markdown-${index}`}
-        className={`mb-4 prose max-w-none text-gray-900 dark:text-gray-100 ${
+        className={`prose max-w-none text-gray-900 dark:text-gray-100 ${
           index === 0 ? 'first-paragraph-with-dropcap' : ''
         }`}
       >
@@ -130,7 +169,7 @@ export const formatContentForDisplay = (
         </ReactMarkdown>
       </div>
     );
-  });
+  }).filter((element): element is JSX.Element => element !== null);
 };
 
 export const formatDate = (dateString: string): string => {

@@ -1,24 +1,19 @@
 import { useState, useEffect, useMemo } from 'react';
-import { useParams, useNavigate } from 'react-router-dom';
+import { Link, useParams, useNavigate } from 'react-router-dom';
 import { ArrowLeft, Share2, Clock, MessageSquare, Printer, Eye } from 'lucide-react';
 import { useTranslation } from 'react-i18next';
 import Comments from '../utils/Comments';
-import { collection, query, where, onSnapshot, doc, getDoc, updateDoc, increment, getDocs } from 'firebase/firestore';
-import { db } from '../firebase';
 import { Helmet } from 'react-helmet-async';
 import { motion } from 'framer-motion';
-import sanitizeHtml from 'sanitize-html';
-import type { Article } from '../admin/blog/types/articles';
 import { formatContentForDisplay, generateExcerpt } from '../admin/formatting';
-import ReactMarkdown from 'react-markdown';
-import remarkGfm from 'remark-gfm';
+import { fetchArticleById, optimizeRemoteImageUrl, trackArticleView, type PublicBlogArticle } from '../utils/publicApi';
 
 const ArticleDetail = () => {
   const { t, i18n } = useTranslation();
-  const currentLanguage = i18n.language;
+  const currentLanguage = (i18n.resolvedLanguage || i18n.language || 'en').toLowerCase().split('-')[0];
   const { id } = useParams();
   const navigate = useNavigate();
-  const [article, setArticle] = useState<Article | null>(null);
+  const [article, setArticle] = useState<PublicBlogArticle | null>(null);
   const [showShareOptions, setShowShareOptions] = useState(false);
   const [showComments, setShowComments] = useState(false);
   const [isScrolled, setIsScrolled] = useState(false);
@@ -30,9 +25,6 @@ const ArticleDetail = () => {
   const currentContent = article?.content?.[currentLanguage] || article?.content?.en || { title: '', content: [], excerpt: '' };
   const currentTitle = currentContent.title || article?.title?.[currentLanguage] || article?.title?.en || '';
 
-  const optimizeImageUrl = (url: string) =>
-    url?.startsWith('http') ? `https://images.weserv.nl/?url=${encodeURIComponent(url)}&w=1200&q=80` : url || '';
-
   useEffect(() => {
     if (!id) return;
 
@@ -40,29 +32,22 @@ const ArticleDetail = () => {
       try {
         setIsLoading(true);
         setError(null);
+        const articleData = await fetchArticleById(id);
 
-        const articleRef = doc(db, 'articles', id);
-        const articleSnap = await getDoc(articleRef);
+        setViews(articleData.views || 0);
+        setCommentsCount(articleData.commentsCount || 0);
+        setArticle({
+          ...articleData,
+          image: optimizeRemoteImageUrl(articleData.image, 1280),
+        });
 
-        if (!articleSnap.exists()) throw new Error(t('articleNotFound'));
-
-        const articleData = articleSnap.data() as Article;
-
-        await updateDoc(articleRef, { views: increment(1) }).catch(() => { });
-        const updatedSnap = await getDoc(articleRef);
-        setViews(updatedSnap.data()?.views || 0);
-
-        const relatedQuery = query(collection(db, 'articles'), where('category', '==', articleData.category));
-        const relatedSnapshot = await getDocs(relatedQuery);
-        const relatedArticles = relatedSnapshot.docs
-          .filter(doc => doc.id !== id)
-          .slice(0, 3)
-          .map(doc => {
-            const data = doc.data() as Article;
-            return { id: doc.id, title: data.title, content: data.content, image: data.image, readTime: data.readTime };
-          });
-
-        setArticle({ ...articleData, id: articleSnap.id, relatedArticles, image: optimizeImageUrl(articleData.image) });
+        void trackArticleView(id)
+          .then((result) => {
+            if (typeof result.views === 'number') {
+              setViews(result.views);
+            }
+          })
+          .catch(() => undefined);
       } catch (err) {
         console.error('Error fetching article:', err);
         setError(err instanceof Error ? err.message : t('failedToLoad'));
@@ -72,14 +57,7 @@ const ArticleDetail = () => {
     };
 
     fetchArticle();
-  }, [id, t, currentLanguage]);
-
-  useEffect(() => {
-    if (!id) return;
-    const q = query(collection(db, 'comments'), where('productId', '==', id));
-    const unsubscribe = onSnapshot(q, snapshot => setCommentsCount(snapshot.size));
-    return () => unsubscribe();
-  }, [id]);
+  }, [id, t]);
 
   useEffect(() => {
     const handleScroll = () => setIsScrolled(window.scrollY > 50);
@@ -110,70 +88,10 @@ const ArticleDetail = () => {
 
   const handlePrint = () => window.print();
 
-const renderedContent = useMemo(() => {
-  if (!currentContent?.content) return null;
-
-  // Check if content is HTML (from RichTextEditor)
-  if (typeof currentContent.content === 'string' && currentContent.content.startsWith('<')) {
-    return (
-      <div className="prose max-w-none text-gray-900 dark:text-gray-100 dark:prose-invert">
-        <div
-          className="first-paragraph-with-dropcap"
-          dangerouslySetInnerHTML={{
-            __html: sanitizeHtml(currentContent.content, {
-              allowedTags: sanitizeHtml.defaults.allowedTags.concat(['img']),
-              allowedAttributes: {
-                ...sanitizeHtml.defaults.allowedAttributes,
-                img: ['src', 'alt', 'title', 'width', 'height', 'class']
-              }
-            })
-          }}
-        />
-      </div>
-    );
-  }
-
-  // Handle array content (markdown or plain text)
-  const contentArray = Array.isArray(currentContent.content)
-    ? currentContent.content
-    : [currentContent.content];
-
-  return (
-    <div className="prose max-w-none text-gray-900 dark:text-gray-100 dark:prose-invert">
-      {contentArray.map((paragraph, index) => (
-        <div key={index} className={index === 0 ? "first-paragraph-with-dropcap" : ""}>
-          <ReactMarkdown
-            remarkPlugins={[remarkGfm]}
-            components={{
-              strong: ({ node, ...props }) => <strong className="font-bold" {...props} />,
-              p: ({ node, ...props }) => <p className="mb-4" {...props} />,
-              a: ({ node, ...props }) => <a className="text-blue-600 dark:text-blue-400 hover:underline" {...props} />,
-              h1: ({ node, ...props }) => <h1 className="text-3xl font-bold mt-8 mb-4 dark:text-gray-100" {...props} />,
-              h2: ({ node, ...props }) => <h2 className="text-2xl font-bold mt-6 mb-3 dark:text-gray-100" {...props} />,
-              h3: ({ node, ...props }) => <h3 className="text-xl font-bold mt-4 mb-2 dark:text-gray-100" {...props} />,
-              blockquote: ({ node, ...props }) => <blockquote className="border-l-4 border-gray-300 dark:border-gray-600 pl-4 italic text-gray-600 dark:text-gray-400 my-4" {...props} />,
-              code: ({ node, inline, className, children, ...props }) =>
-                inline ? (
-                  <code className="bg-gray-100 dark:bg-gray-700 px-1 py-0.5 rounded text-sm font-mono" {...props}>
-                    {children}
-                  </code>
-                ) : (
-                  <pre className="bg-gray-100 dark:bg-gray-800 rounded p-4 overflow-x-auto my-4 text-sm font-mono" {...props}>
-                    <code>{children}</code>
-                  </pre>
-                ),
-              table: ({ node, ...props }) => <table className="table-auto border-collapse border border-gray-300 dark:border-gray-600 w-full my-4" {...props} />,
-              th: ({ node, ...props }) => <th className="border border-gray-300 dark:border-gray-600 px-2 py-1 bg-gray-200 dark:bg-gray-700 text-left" {...props} />,
-              td: ({ node, ...props }) => <td className="border border-gray-300 dark:border-gray-600 px-2 py-1" {...props} />,
-            }}
-          >
-            {paragraph}
-          </ReactMarkdown>
-        </div>
-      ))}
-    </div>
+  const renderedContent = useMemo(
+    () => formatContentForDisplay(currentContent.content),
+    [currentContent.content]
   );
-}, [currentContent.content]);
 
 
   if (isLoading) return (
@@ -209,7 +127,7 @@ const renderedContent = useMemo(() => {
   );
 
   return (
-    <div className="min-h-screen bg-gray-50 dark:bg-gray-900">
+    <div className="min-h-screen bg-[#f8fafc] dark:bg-gray-900">
       <Helmet>
         <title>{`${currentTitle} | TECHBYP Blog`}</title>
         <meta name="description" content={currentContent.excerpt || generateExcerpt(currentContent.content)} />
@@ -221,10 +139,10 @@ const renderedContent = useMemo(() => {
       </Helmet>
 
       <header
-        className={`sticky top-0 z-10 bg-white/80 dark:bg-gray-800/80 backdrop-blur-md border-b border-gray-200 dark:border-gray-700 transition-all duration-300 ${isScrolled ? 'py-2' : 'py-4'}`}
+        className={`sticky top-0 z-10 border-b border-slate-200/80 bg-white/90 backdrop-blur-md transition-all duration-300 dark:border-gray-800 dark:bg-gray-950/85 ${isScrolled ? 'py-2' : 'py-4'}`}
       >
         <div className="max-w-7xl mx-auto px-4 flex justify-between items-center">
-          <button onClick={() => navigate(-1)} className="flex items-center text-gray-700 dark:text-gray-200 hover:text-gray-900 dark:hover:text-white transition-colors">
+          <button onClick={() => navigate(-1)} className="inline-flex items-center rounded-full border border-slate-200 bg-white px-4 py-2 text-sm font-black uppercase tracking-wide text-slate-700 transition hover:border-slate-300 hover:text-slate-950 dark:border-gray-700 dark:bg-gray-900 dark:text-gray-200 dark:hover:border-gray-600 dark:hover:text-white">
             <ArrowLeft className="h-5 w-5 mr-2" />
             {t('backToArticles')}
           </button>
@@ -232,7 +150,7 @@ const renderedContent = useMemo(() => {
             <div className="relative">
               <button
                 onClick={() => setShowShareOptions(!showShareOptions)}
-                className="p-2 rounded-full text-gray-500 dark:text-gray-300 hover:text-gray-700 dark:hover:text-gray-100 transition-colors"
+                className="rounded-full border border-slate-200 bg-white p-2 text-slate-500 transition hover:border-slate-300 hover:text-slate-700 dark:border-gray-700 dark:bg-gray-900 dark:text-gray-300 dark:hover:border-gray-600 dark:hover:text-gray-100"
                 aria-label={t('share')}
               >
                 <Share2 className="h-5 w-5" />
@@ -242,7 +160,7 @@ const renderedContent = useMemo(() => {
                   initial={{ opacity: 0, y: 10 }}
                   animate={{ opacity: 1, y: 0 }}
                   exit={{ opacity: 0, y: 10 }}
-                  className="absolute right-0 mt-2 w-48 bg-white dark:bg-gray-800 rounded-lg shadow-xl border border-gray-200 dark:border-gray-700 z-20"
+                  className="absolute right-0 z-20 mt-2 w-48 rounded-2xl border border-slate-200 bg-white shadow-xl dark:border-gray-700 dark:bg-gray-800"
                 >
                   {['twitter', 'linkedin', 'email'].map(platform => (
                     <button
@@ -256,123 +174,152 @@ const renderedContent = useMemo(() => {
                 </motion.div>
               )}
             </div>
-            <button onClick={handlePrint} className="p-2 rounded-full text-gray-500 dark:text-gray-300 hover:text-gray-700 dark:hover:text-gray-100 transition-colors" aria-label={t('print')}>
+            <button onClick={handlePrint} className="rounded-full border border-slate-200 bg-white p-2 text-slate-500 transition hover:border-slate-300 hover:text-slate-700 dark:border-gray-700 dark:bg-gray-900 dark:text-gray-300 dark:hover:border-gray-600 dark:hover:text-gray-100" aria-label={t('print')}>
               <Printer className="h-5 w-5" />
             </button>
           </div>
         </div>
       </header>
 
-     <main className="max-w-4xl mx-auto px-4 py-8 text-gray-900 dark:text-gray-100">
-  <div className="mb-12">
-    <div className="flex items-center space-x-3 mb-6">
-      <span className="text-sm font-medium text-blue-600 bg-blue-100 dark:bg-blue-900 dark:text-blue-300 px-3 py-1 rounded-full uppercase">
-        {t('category', { category: article.category })}
-      </span>
-      <span className="text-sm text-gray-500 dark:text-gray-400 flex items-center">
-        <Clock className="h-4 w-4 mr-1" />
-        {t('readTime', { time: article.readTime })}
-      </span>
-    </div>
+      <main className="mx-auto max-w-5xl px-4 py-8 text-gray-900 dark:text-gray-100 sm:px-6 lg:px-8">
+        <section className="overflow-hidden rounded-[2rem] border border-slate-200 bg-white shadow-sm dark:border-gray-800 dark:bg-gray-950/80">
+          <div className="grid gap-0 lg:grid-cols-[minmax(0,1.05fr)_minmax(0,0.95fr)]">
+            <div className="relative min-h-[320px] overflow-hidden lg:min-h-[520px]">
+              <img
+                sizes="(max-width: 1024px) 100vw, 55vw"
+                srcSet={article.image}
+                alt={currentTitle}
+                className="h-full w-full object-cover"
+                loading="eager"
+              />
+              <div className="absolute inset-0 bg-gradient-to-t from-slate-950/75 via-slate-950/20 to-transparent dark:from-black/80 dark:via-black/35 dark:to-transparent"></div>
+            </div>
 
-    <h1 className="text-4xl md:text-5xl font-bold uppercase mb-6">
-      {currentTitle}
-    </h1>
+            <div className="flex flex-col justify-between p-6 sm:p-8 lg:p-10">
+              <div>
+                <div className="mb-5 flex flex-wrap items-center gap-3 text-xs font-black uppercase tracking-[0.18em] text-slate-500 dark:text-gray-400">
+                  <span className="rounded-full bg-slate-100 px-3 py-1 text-brandblue dark:bg-gray-800 dark:text-blue-300">
+                    {t('category', { category: article.category })}
+                  </span>
+                  <span>{article.date}</span>
+                  <span className="inline-flex items-center gap-1">
+                    <Clock className="h-4 w-4" />
+                    {t('readTime', { time: article.readTime })}
+                  </span>
+                </div>
 
-    <div className="flex items-center justify-between mb-8">
-      <div className="flex items-center space-x-4">
-        <img
-          sizes="(max-width: 768px) 50vw, 25vw"
-          srcSet={article.author.avatar}
-          alt={article.author.name}
-          className="w-12 h-12 rounded-full object-cover"
-        />
-        <div>
-          <p className="font-black">{article.author.name}</p>
-          <p className="text-sm text-gray-600 dark:text-gray-400">{article.author.role}</p>
-        </div>
-      </div>
-      <p className="text-sm text-gray-500 dark:text-gray-400">{article.date}</p>
-    </div>
+                <h1 className="text-4xl font-black uppercase leading-tight text-slate-950 dark:text-gray-100 md:text-5xl">
+                  {currentTitle}
+                </h1>
 
-    <div className="relative rounded-xl overflow-hidden mb-8 h-96">
-      <img
-        sizes="(max-width: 768px) 50vw, 25vw"
-        srcSet={article.image}
-        alt={currentTitle}
-        className="w-full h-full object-cover"
-        loading="eager"
-      />
-      <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-black/30 to-transparent dark:from-black/80 dark:via-black/50 dark:to-transparent"></div>
-    </div>
-  </div>
+                {currentContent.excerpt && (
+                  <p className="mt-5 text-base font-black leading-7 text-slate-600 dark:text-gray-300">
+                    {currentContent.excerpt}
+                  </p>
+                )}
+              </div>
 
-  {renderedContent}
+              <div className="mt-8 flex items-center justify-between gap-4 border-t border-slate-200 pt-6 dark:border-gray-800">
+                <div className="flex min-w-0 items-center gap-4">
+                  <img
+                    sizes="64px"
+                    srcSet={article.author.avatar}
+                    alt={article.author.name}
+                    className="h-12 w-12 rounded-full object-cover ring-2 ring-slate-100 dark:ring-gray-800"
+                  />
+                  <div className="min-w-0">
+                    <p className="truncate text-lg font-black text-slate-950 dark:text-gray-100">{article.author.name}</p>
+                    <p className="truncate text-sm font-black uppercase tracking-wide text-slate-400 dark:text-gray-500">{article.author.role}</p>
+                  </div>
+                </div>
 
-  <div className="flex justify-between items-center border-t border-b border-gray-200 dark:border-gray-700 py-4 mb-8">
-    <button
-      onClick={() => setShowComments(!showComments)}
-      className="flex items-center space-x-2 text-gray-600 dark:text-gray-400 hover:text-gray-900 dark:hover:text-white transition-colors"
-    >
-      <MessageSquare className="h-6 w-6" />
-      <span>{t('comments', { count: commentsCount })}</span>
-    </button>
-    <div className="flex items-center space-x-2 text-gray-600 dark:text-gray-400">
-      <Eye className="h-5 w-5" />
-      <span>{views.toLocaleString()} {t('views')}</span>
-    </div>
-  </div>
+                <div className="flex items-center gap-4 text-sm font-black text-slate-500 dark:text-gray-400">
+                  <span className="inline-flex items-center gap-1.5">
+                    <Eye className="h-4 w-4" />
+                    {views.toLocaleString()} {t('views')}
+                  </span>
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
 
-  {showComments && (
-    <div className="mb-16">
-      <Comments
-        productId={article.id}
-        onCommentsUpdate={(count) => setCommentsCount(count)}
-        commentType="blog"
-      />
-    </div>
-  )}
+        <section className="mt-8 rounded-[2rem] border border-slate-200 bg-white p-6 shadow-sm dark:border-gray-800 dark:bg-gray-950/80 sm:p-8 lg:p-10">
+          <div className="prose prose-slate max-w-none dark:prose-invert">{renderedContent}</div>
 
-  {article.relatedArticles?.length > 0 && (
-    <div className="mb-16">
-      <h3 className="text-2xl font-bold mb-6">{t('moreLikeThis')}</h3>
-      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-        {article.relatedArticles.map((related) => {
-          const relatedContent = related.content?.[currentLanguage] || related.content?.en || {};
-          const relatedTitle = relatedContent.title || related.title?.[currentLanguage] || related.title?.en || '';
-
-          return (
-            <motion.article
-              key={related.id}
-              whileHover={{ y: -5 }}
-              onClick={() => navigate(`/blog/${related.id}`)}
-              className="cursor-pointer bg-white dark:bg-gray-800 rounded-xl shadow-md hover:shadow-lg overflow-hidden transition-shadow"
+          <div className="mt-10 flex flex-wrap items-center justify-between gap-4 border-t border-b border-slate-200 py-4 dark:border-gray-800">
+            <button
+              onClick={() => setShowComments(!showComments)}
+              className="inline-flex items-center gap-2 rounded-full border border-slate-200 bg-slate-50 px-4 py-2 text-sm font-black uppercase tracking-wide text-slate-700 transition hover:border-slate-300 hover:bg-slate-100 dark:border-gray-700 dark:bg-gray-900 dark:text-gray-200 dark:hover:border-gray-600 dark:hover:bg-gray-800"
             >
-              <div className="relative h-40">
-                <img
-                  sizes="(max-width: 768px) 50vw, 25vw"
-                  srcSet={optimizeImageUrl(related.image)}
-                  alt={relatedTitle}
-                  className="w-full h-full object-cover"
-                  loading="lazy"
-                />
-              </div>
-              <div className="p-4">
-                <h4 className="font-bold mb-2 line-clamp-2 text-gray-900 dark:text-gray-100">
-                  {relatedTitle}
-                </h4>
-                <p className="text-sm text-gray-500 dark:text-gray-400 flex items-center">
-                  <Clock className="h-3 w-3 mr-1" />
-                  {t('readTime', { time: related.readTime })}
-                </p>
-              </div>
-            </motion.article>
-          );
-        })}
-      </div>
-    </div>
-  )}
-</main>
+              <MessageSquare className="h-4 w-4" />
+              <span>{t('comments', { count: commentsCount })}</span>
+            </button>
+
+            <div className="text-sm font-black uppercase tracking-wide text-slate-400 dark:text-gray-500">
+              {t('moreLikeThis')}
+            </div>
+          </div>
+
+          {showComments && (
+            <div className="mt-8">
+              <Comments
+                productId={article.id}
+                onCommentsUpdate={(count) => setCommentsCount(count)}
+                commentType="blog"
+              />
+            </div>
+          )}
+        </section>
+
+        {article.relatedArticles?.length > 0 && (
+          <section className="mt-8 mb-8">
+            <h3 className="mb-6 text-2xl font-black uppercase tracking-tight text-slate-950 dark:text-gray-100">
+              {t('moreLikeThis')}
+            </h3>
+
+            <div className="grid grid-cols-1 gap-6 md:grid-cols-2 lg:grid-cols-3">
+              {article.relatedArticles.map((related) => {
+                const relatedContent = related.content?.[currentLanguage] || related.content?.en || {};
+                const relatedTitle = relatedContent.title || related.title?.[currentLanguage] || related.title?.en || '';
+
+                return (
+                  <motion.article
+                    key={related.id}
+                    whileHover={{ y: -4 }}
+                    className="h-full rounded-[1.75rem] border border-slate-200 bg-white shadow-sm transition hover:shadow-xl dark:border-gray-800 dark:bg-gray-950/80"
+                  >
+                    <Link to={`/blog/${related.id}`} className="group flex h-full flex-col overflow-hidden rounded-[1.75rem]">
+                      <div className="relative h-48 overflow-hidden">
+                        <img
+                          sizes="(max-width: 768px) 100vw, 33vw"
+                          srcSet={optimizeImageUrl(related.image)}
+                          alt={relatedTitle}
+                          className="h-full w-full object-cover transition duration-500 group-hover:scale-105"
+                          loading="lazy"
+                        />
+                      </div>
+
+                      <div className="flex flex-1 flex-col p-5">
+                        <h4 className="line-clamp-2 text-xl font-black text-slate-950 transition-colors group-hover:text-brandblue dark:text-gray-100 dark:group-hover:text-blue-300">
+                          {relatedTitle}
+                        </h4>
+
+                        <div className="mt-auto pt-5 text-sm font-black uppercase tracking-wide text-slate-500 dark:text-gray-400">
+                          <span className="inline-flex items-center gap-1.5">
+                            <Clock className="h-4 w-4" />
+                            {t('readTime', { time: related.readTime })}
+                          </span>
+                        </div>
+                      </div>
+                    </Link>
+                  </motion.article>
+                );
+              })}
+            </div>
+          </section>
+        )}
+      </main>
 
     </div>
   );

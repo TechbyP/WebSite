@@ -246,7 +246,7 @@
   },
   "commentsFunction": {
     "placeholderName": "Numele tău (sau cum vrei să fii numit)",
-    "placeholderCompany": "Companie (opțional)",
+    "placeholderCompany": "Companie (opțional, dar nu vă urmărim)",
     "placeholderText": "Spune-ne părerea ta (fără spoilere)",
     "rating": "Evaluare",
     "rateStar": "Evaluează cu {{star}} stea",
@@ -386,11 +386,11 @@
     "description": "E ca o societate secretă, dar fără strângere de mână — doar emailuri despre chestii tehnice interesante. Promitem să nu exagerăm cu spam-ul.",
     "placeholder": "email@exemplu.com",
     "button": "Abonează-te",
-    "loading": "Se abonează...",
+    "loading": "Se procesează abonarea ta chiar acum...",
     "note": "Prin click accepți să primești emailuri care conțin fie 'briliante', fie ocazional 'cum a trecut asta?'."
   },
   "footer": {
-    "invalidEmail": "Adresa de email nu pare validă.",
+    "invalidEmail": "Adresa de email introdusă nu pare validă. Verifică și încearcă din nou.",
     "success": "Super! Ești abonat la TechByP.",
     "error": "Ceva nu a mers bine. Încearcă din nou.",
     "title": "Vrei mai mult TechByP în viața ta?",
@@ -455,7 +455,8 @@
       "all": "Tot ce oferim, de la cele mari și robuste până la cele mici și ingenioase.",
       "smartsystems": "Partea inteligentă a prelevării de sol — automată, precisă și extrem de bine proiectată.",
       "accessory": "Accesoriile care țin totul laolaltă — ajutoare utile pentru funcționare.",
-      "manual": "Unelte manuale de încredere — practice, robuste și durabile."
+      "manual": "Unelte manuale de încredere — practice, robuste și durabile.",
+      "Bespoke Machinery": "Utilaje personalizate, adaptate fluxului tău de lucru, terenului și cerințelor tehnice."
     },
     "customEquipment": {
       "title": "Ai nevoie de echipament personalizat?",
@@ -623,7 +624,7 @@
     "introText": "Fiecare mașină pe care o construim este modelată de feedback-ul din teren al celor care o folosesc. Dacă ceva poate fi făcut mai rezistent, mai inteligent sau mai ușor de utilizat, noi ne ocupăm.",
     "alwaysImproving": "ÎNTOTDEAUNA ÎMBUNĂTĂȚIM",
     "ourMissionTitle": "Misiunea noastră",
-    "ourMissionText": "Să furnizăm unelte de prelevare a solului care câștigă încrederea experților agricoli și a cercetătorilor — din câmpuri până la laboratoare.",
+    "ourMissionText": "Să oferim unelte de prelevare a solului care câștigă încrederea experților agricoli și a cercetătorilor deopotrivă — de pe câmpuri întinse până în laboratoare. Construite cu precizie germană și susținute de echipe de suport care chiar răspund la telefon, ele sunt menite să vă facă munca mai ușoară, mai exactă și puțin mai puțin complicată.",
     "ourJourneyTitle": "Călătoria noastră",
     "milestones": [
       {
@@ -735,7 +736,7 @@
       "description": "{{nickname}}: {{herodescription}} Funcții includ {{features}}. Perfect pentru {{applications}}."
     },
     "whatMakesItGreat": "De ce e extraordinar",
-    "goodsCurrentlyGracing": "Produse disponibile pe raft",
+    "goodsCurrentlyGracing": "Produse care onorează momentan acest raft cu prezența lor",
     "articleNo": "Nr. articol",
     "description": "Descriere",
     "highlights": "Caracteristici principale",
@@ -770,7 +771,7 @@
       "noMountingNeeded": "Oh! Expresul cu Șaisprezece Probe nu necesită montare - e gata de folosit!",
       "hasOwnMounting": "Veste bună! Expresul cu Șaisprezece Probe vine cu propriul sistem de montare.",
       "noPowerpacksNeeded": "Expresul cu Șaisprezece Probe nu are nevoie de pachete de alimentare suplimentare.",
-      "selfAcknowledging": "Se recunoaște singur!",
+      "selfAcknowledging": "Ce să mai confirmi? Expresul cu Șaisprezece Probe se recunoaște singur!",
       "alreadyPerfect1": "Spun că Expresul cu Șaisprezece Probe e deja perfect — nu e nevoie să modifici nimic!",
       "alreadyPerfect2": "De ce ai schimba ceva? Este Expresul cu Șaisprezece Probe!",
       "alreadyPerfect3": "Să modifici perfecțiunea? Nu este necesar.",
@@ -794,6 +795,10 @@
     "total": "Total",
     "pricingNoticeTitle": "Notă privind prețul:",
     "pricingNoticeText": "Toate prețurile sunt în Euro (€) și nu includ TVA. Prețurile sunt orientative și pot varia în funcție de configurație, opțiuni și disponibilitate."
+  },
+  "pricing": {
+    "from": "De la",
+    "onRequest": "Preț la cerere"
   },
   "buttonsConfigurator": {
     "back": "Înapoi",
@@ -931,10 +936,10 @@
   "configurator": {
     "productToast": {
       "close": "Închide",
-      "desc1": "Intrarea în configurator — asamblează mașina ta de prelevare.",
+      "desc1": "Bine. Ceea ce privești nu este doar un buton care te duce undeva. Este intrarea în configurator — un mecanism sofisticat conceput să te ajute să asamblezi o mașină care își câștigă existența înțepând pământul.",
       "desc2": {
         "part1": "Alege-ți",
-        "part2": ", decide dacă vrei să fie tras sau montat, gândește la alimentarea externă și adaugă opțiuni adiționale."
+        "part2": ", decide dacă o vrei tractată sau montată, reflectează la eterna întrebare a alimentării externe și echipeaz-o cu opționale pe care, aproape sigur, le vei declara absolut esențiale."
       },
       "desc3": "Practic, e plug-and-play cu noroi și motorină. Apasă butonul dacă ești gata să începi această nobilă misiune.",
       "configure": "Configurează {{productName}}",
@@ -1050,7 +1055,7 @@
         "name": "Dacă nu doriți să fiți anonim",
         "company": "Sau compania dvs.",
         "email": "adresa@ta.ro",
-        "phone": "Telefon",
+        "phone": "Deși, probabil, te vom contacta tot prin email",
         "message": "Detalii suficiente pentru a nu trebui să ghicim"
       },
       "title": "Contact rapid",
@@ -1096,15 +1101,15 @@
       "title": "Întrebări frecvente",
       "shipping": {
         "question": "Care sunt opțiunile de livrare?",
-        "answer": "Livrăm la nivel mondial; durata variază după destinație."
+        "answer": "Livrăm la nivel mondial prin DHL, DPD și alți curieri de încredere. Livrările standard în Germania durează 2-3 zile lucrătoare. Timpul de livrare internațional variază în funcție de destinație, iar opțiunile de expediere rapidă sunt disponibile."
       },
       "training": {
         "question": "Oferiți instruire pentru echipamente?",
-        "answer": "Da — oferim instruire la sediu sau la locația ta."
+        "answer": "Da, oferim programe complete de instruire pentru toate echipamentele noastre de prelevare a solului. Instruirea poate avea loc la locația dvs. sau la sediul nostru din Quakenbrück. Contactați echipa noastră de vânzări pentru programare."
       },
       "distributor": {
         "question": "Cum pot deveni distribuitor?",
-        "answer": "Contactează-vă departamentul de vânzări pentru detalii despre parteneriat."
+        "answer": "Suntem interesați de parteneriate cu distribuitori calificați. Contactați departamentul nostru de vânzări și trimiteți detalii despre compania și experiența dvs., iar vom discuta opțiunile de colaborare."
       }
     }
   },
@@ -1259,9 +1264,8 @@
       "Ciclu de prelevare 16 s/nucleu"
     ],
     "description": "Nucleu intact 0–90 cm, precizie științifică, robustețe germană.",
-    "herodescription": "Nu e spectaculos. Nu strigă. Nu face Wi-Fi. Dar oferă un nucleu perfect, neîntrerupt, de la suprafață până la 90 cm.",
-    "detailedDescription": "Universitățile adoră acest echipament. Oferă vizibilitate completă a profilului de sol — fără amestecare, fără estimări ale stratificării, doar o secțiune curată, verticală.",
-    "price": "De la €14,200",
+    "herodescription": "Nu este spectaculos. Nu țipă. Nu are Wi‑Fi. Dar ceea ce <strong>face</strong>, mai bine decât aproape orice altceva, este să îți ofere un <strong>nucleu de sol perfect, neîntrerupt</strong>, de la suprafață până la <strong>90 de centimetri adâncime</strong>. Da, toată povestea, de la crustă până la subsol, dintr-o singură trecere. Este ca un <strong>RMN pentru pământ</strong>.",
+    "detailedDescription": "<p className='mt-4'><strong>Universitățile adoră acest echipament</strong>. Și nu doar pentru că arată vag ca un lansator de rachete. Oferă <strong>vizibilitate completă asupra profilului de sol</strong> — fără amestecare, fără presupuneri despre stratificare, doar o secțiune verticală curată din interiorul pământului. <strong>Perfect pentru prelevări N-min</strong>, dar și pentru cei care vor să vadă exact ce se întâmplă în subteran.</p><p className='mt-4'>Este <strong>acționat hidraulic, semi-automat și surprinzător de inteligent</strong>. Lucrează cu politețe milimetrică, iar dacă lovește ceva neprietenos — cum ar fi o piatră sau o monedă romană uitată — pur și simplu <strong>se oprește</strong>. Fără dramă. Fără piese rupte.</p><p className='mt-4'>Și, cel mai bine, este <strong>esența ingineriei germane redusă la esențial</strong>: curat, eficient, perfect logic. Ca <strong>Beethoven… dacă ar fi fost un prelevator de sol</strong>.</p>",
     "features": [
       "Nucleu de sol intact de lungime completă (0–90 cm) pentru vizibilitatea profilului",
       "Control al adâncimii cu precizie în centimetri",
@@ -1317,9 +1321,8 @@
       "Ciclu de prelevare 18 s/nucleu"
     ],
     "description": "Extracție automată la 60 cm, optimizat pentru profilarea N-min.",
-    "herodescription": "MP-2.60 este un echipament practic pentru profilarea N-min — funcțional, fiabil și eficient.",
-    "detailedDescription": "Simplu și fiabil, proiectat pentru profilarea automată a azotului până la 60 cm. Opțional se poate activa separarea stratelor.",
-    "price": "De la €16,500",
+    "herodescription": "Faceți cunoștință cu <strong>MP-2.60</strong> — un utilaj minunat de practic pentru <strong>prelevarea N-min</strong>. Coboară până la 60 cm, ia ce are nevoie și își vede de treabă fără să ceară ceai sau aplauze. Conceput să fie <strong>fiabil, nu ridicol</strong>, este ideal pentru oricine preferă ca lucrurile să funcționeze corect din prima.",
+    "detailedDescription": "<p className='mt-4'>Într-o lume complicată inutil, <strong>MP-2.60</strong> este reconfortant de direct. A fost conceput special pentru <strong>profilarea automată a azotului</strong> — fără burghie manuale și fără ghicit. Folosește un <strong>ciocan hidraulic de înaltă frecvență</strong> pentru a pătrunde în sol, apoi rotește și retrage tija înainte de a <strong>depune politicos proba</strong> în recipientul ei.</p><p className='mt-4'>Are <strong>logică internă inteligentă</strong> pentru a decide ce porțiuni de sol păstrează, iar dacă ai nevoie poți activa și <strong>separarea pe straturi</strong> pentru prelevare specifică orizontului. Probele ajung în <strong>recipiente etanșe</strong>, iar întregul ansamblu se montează ușor pe remorci, pickup-uri sau aproape orice altceva care se deplasează.</p><p className='mt-4'>Iar dacă 60 cm nu mai sunt suficienți, nu e nicio tragedie — MP-2.60 este complet <strong>upgradabil la MP-3.90 sau MP-4.100</strong>.</p>",
     "features": [
       "Extracție complet automată până la 60 cm",
       "Logică inteligentă: aruncă sau păstrează probele pe baza setărilor dvs.",
@@ -1345,7 +1348,7 @@
       "Sampling Cycle Time": "18 sec/nucleu",
       "Mounting Options": "Pick-up, remorcă, vehicul ușor",
       "Sample Sorting": "Automat, pe orizonturi",
-      "Special Features": "Detecție obstacole, oprire automată",
+      "Special Features": "Detecție a obstacolelor și oprire automată de siguranță",
       "Power Source": "Hidraulic (135 bar, 20 L/min, 12VDC)",
       "Weight": "200 kg"
     },
@@ -1379,9 +1382,8 @@
       "Ciclu de prelevare 20 s/nucleu"
     ],
     "description": "Extracție 0–95 cm, 3 straturi, complet automat.",
-    "herodescription": "MP-3.90 combină gândirea germană cu robustețea — proiectat pentru prelevare de profunzime.",
-    "detailedDescription": "Precizie și eficiență integrate, montabil pe pickup, remorcă sau vehicul ușor.",
-    "price": "De la €23,500",
+    "herodescription": "<strong>MP-3.90</strong> este ceea ce se întâmplă când iei <strong>gândirea germană</strong>, adaugi puțină <strong>supra-inginerie</strong> și apoi îi ceri să <strong>sape găuri pentru știință</strong>. Conceput să extragă probe până la <strong>95 cm</strong> fără ca operatorul să depună mare efort, poate face <strong>separare în 3 straturi</strong>, <strong>descărcare automată</strong> și știe singur când să renunțe dacă solul se împotrivește.",
+    "detailedDescription": "<p className='mt-4'>Aici <strong>precizia și eficiența</strong> nu sunt simple cuvinte de marketing, ci elemente integrate cu grijă, astfel încât să te poți concentra pe date, nu pe lupta cu pământul încăpățânat. Lucrează în sol dificil cu <strong>foarte puțin efort din partea operatorului</strong>, ceea ce îl face un partener de încredere pentru cercetare serioasă și misiuni de teren adevărate.</p><p className='mt-4'>Se montează curat pe pickup-uri, remorci, tractoare sau aproape orice vehicul potrivit, iar <strong>setările de adâncime și orizont pot fi personalizate</strong> în funcție de nevoie. În plus, probele ajung în <strong>containere etanșe</strong>, ceea ce este un avantaj serios.</p><p className='mt-4'>Iar partea importantă este aceasta: este construit pentru <strong>uz profesional real</strong>, nu pentru joaca de weekend. Solid, fiabil și discret competent — exact ce te-ai aștepta de la ingineria germană.</p>",
     "features": [
       "Extracție complet automată până la 95 cm",
       "Separație opțională în 3 straturi pentru prelevare specifică orizontului",
@@ -1445,9 +1447,8 @@
       "Ciclu de prelevare 22 s/nucleu"
     ],
     "description": "Extracție până la 100 cm, 4 straturi, complet automat.",
-    "herodescription": "MP-4.100 este un sampler automat pentru profunzimi mari, precis și robust.",
+    "herodescription": "Acesta este <strong>MP-4.100</strong> — imaginează-ți că un ciocan hidraulic și un doctorat în știința solului au avut un copil. Este un <strong>prelevator complet automat</strong> care coboară până la <strong>100 cm</strong>, extrage până la <strong>patru straturi</strong> și le sortează cu precizia unui majordom pasionat de geologie. Cam asta obții când rogi Germania să construiască o cârtiță.",
     "detailedDescription": "<p className='mt-4'>Proiectat pentru cei care cer <strong>adâncime și disciplină</strong>, MP-4.100 intră adânc în sol și își face treaba fără efort și fără intervenții manuale. Un <strong>sistem hidraulic cu impact</strong> împinge tija canelată în pământ și extrage probe de calitate științifică. La retragere, sistemul <strong>descarcă automat</strong> materialul în compartimentele potrivite.</p><p className='mt-4'>Dispune de <strong>logică inteligentă</strong> care decide ce material păstrează sau elimină în funcție de setări și de un <strong>mecanism de separare pe straturi</strong> care sortează corect fiecare orizont. Se montează pe pickup, remorcă sau orice vehicul practicabil.</p>",
-    "price": "De la €25,500",
     "features": [
       "Extracție complet automată până la 100 cm",
       "Separație opțională în 4 straturi pentru prelevare specifică orizontului",
@@ -1510,9 +1511,8 @@
       "Ciclu de prelevare 5 s/nucleu"
     ],
     "description": "Adâncime 0–30 cm, sistem de foraj electric sau hidraulic, control precis.",
-    "herodescription": "DH-1.30 este un sampler hidraulic robust, ideal pentru soluri dificile — puternic și fiabil.",
-    "detailedDescription": "Schimbă motorul pe hidraulic pentru mai mult cuplu; control precis la milimetru pentru adâncime.",
-    "price": "De la €8,950",
+    "herodescription": "<strong>DH-1.30</strong> este un prelevator de sol hidraulic robust, construit să lucreze cu încredere liniștită și putere constantă — fără complicații inutile, doar rezultate solide. Forează lin până la <strong>30 de centimetri</strong> și este acționat de un motor hidraulic, așa că ai suficient cuplu și nu ai nevoie de electrice. Este puțin mai zgomotos decât fratele său electric, desigur, dar nu este genul care se laudă. Doar muncă serioasă, zi după zi.",
+    "detailedDescription": "<p className='mt-4'><strong>DH-1.30</strong> preia designul rațional al <strong>fratelui său electric</strong>, dar înlocuiește bateria cu un <strong>motor hidraulic</strong> — ideal dacă ai deja acces la putere hidraulică și vrei un plus de <strong>cuplu</strong>.</p><p className='mt-4'><strong>Controlul adâncimii</strong> este remarcabil de precis, cu <strong>ajustări la milimetru</strong> care fac față terenului denivelat ca și cum nu ar fi nimic special.</p><p className='mt-4'>Operarea rămâne simplă și elegantă: <strong>un buton și două adâncimi presetate</strong>, pentru că viața este prea scurtă pentru meniuri și comenzi complicate.</p><p className='mt-4'>La <strong>43 kg</strong>, este suficient de <strong>solid</strong> pentru munca serioasă de teren, dar încă destul de <strong>ușor</strong> încât să nu ai nevoie de utilaje speciale pentru a-l muta.</p><p className='mt-4'><strong>Se montează ușor</strong> pe quad-uri, remorci, pickup-uri sau alte vehicule ușoare, iar asta îl face perfect pentru <strong>versatilitate</strong>.</p><p className='mt-4'>Pentru cei care preferă <strong>fiabilitatea clasică a hidraulicii</strong> combinată cu <strong>inginerie germană de încredere</strong>, acesta este utilajul logic.</p>",
     "features": [
       "Acționare hidraulică pentru foraj fiabil și puternic",
       "Ajustare precisă a adâncimii în milimetri",
@@ -1574,9 +1574,8 @@
       "Ciclu de prelevare 5 s/nucleu"
     ],
     "description": "Sistem de foraj electric, silențios și foarte precis.",
-    "herodescription": "DE-1.30 este un sampler electric compact — silențios și fiabil pentru prelevarea la 30 cm.",
-    "detailedDescription": "<p className='mt-4'>Bazat pe modelul de încredere <strong>N2012</strong>, <strong>DE-1.30</strong> folosește un <strong>burghiu electric</strong> extrem de precis. <strong>Ajustările la milimetru</strong> permit setarea exactă a adâncimii, indiferent de denivelările terenului.</p><p className='mt-4'><strong>Unitatea de control</strong> este simplă: apeși un buton și începe lucrul. <strong>Două adâncimi presetate</strong> permit comutarea rapidă între tipurile de prelevare, fără meniuri complicate.</p><p className='mt-4'>La doar <strong>45 kg</strong> și alimentat de un <strong>pachet de baterii 24 V</strong> (vândut separat), este suficient de ușor pentru mobilitate și suficient de robust pentru lucru real pe teren.</p><p className='mt-4'>DE-1.30 se montează ușor pe <strong>quad-uri, remorci și vehicule ușoare</strong>, fiind versatil pentru diverse condiții de lucru.</p><p className='mt-4'>Dacă dorești <strong>probe precise și fiabile</strong> fără zgomotul și complicațiile unui motor termic, DE-1.30 este alegerea potrivită.</p>",
-    "price": "De la €12,600",
+    "herodescription": "<strong>DE-1.30</strong> este <strong>prelevatorul de sol compact și rațional</strong> care își face treaba fără zgomot inutil — forează până la <strong>30 de centimetri</strong> fără agitație și fără să umple locul de fum. Este <strong>electric</strong>, deci <strong>fără gaze, fără zgomot</strong>, doar prelevare curată și fiabilă.",
+    "detailedDescription": "<p className='mt-4'>Bazat pe modelul de încredere <strong>N2012</strong>, <strong>DE-1.30</strong> folosește un <strong>burghiu electric</strong> atât de precis încât aproape ar putea înfila un ac — dacă prelevarea solului s-ar ocupa de broderie. <strong>Ajustările la milimetru</strong> permit setarea exactă a adâncimii, indiferent de denivelările terenului. E un pic ca un <strong>majordom politicos</strong> care nu te lasă la greu.</p><p className='mt-4'><strong>Unitatea de control</strong> este simplitatea însăși — apeși un buton și pleacă la lucru. <strong>Două adâncimi presetate</strong> permit comutarea rapidă între tipurile de prelevare, fără meniuri complicate sau comenzi criptice. Poți spune chiar <em>„tehnologie revoluționară”</em> fără să pari dramatic.</p><p className='mt-4'>La doar <strong>45 kg</strong> și alimentat de un <strong>pachet de baterii 24 V</strong> (vândut separat), este <strong>suficient de ușor ca să fie agil</strong>, dar și <strong>suficient de robust pentru lucru real pe teren</strong>. Nu ai nevoie de macara și nici de un sergent pensionat ca să-l muți.</p><p className='mt-4'>DE-1.30 se montează ușor pe <strong>quad-uri, remorci și o varietate de vehicule ușoare</strong>, ceea ce îl face versatil pentru multe condiții de lucru.</p><p className='mt-4'>Dacă dorești <strong>probe precise și fiabile</strong> fără drama motorului termic sau zgomotul unui burghiu greu, DE-1.30 este utilajul potrivit. Este <strong>inginerie germană</strong> cu o <strong>notă electrică și discretă</strong> care pur și simplu își face treaba.</p>",
     "features": [
       "Foraj complet electric pentru prelevare curată și precisă",
       "Ajustare precisă a adâncimii în milimetri (pentru că aproape nu este suficient de bine)",
@@ -1638,9 +1637,8 @@
       "16 probe în ~4 min"
     ],
     "description": "Remorcă care prelevează 16 probe în mișcare — fără oprire.",
-    "herodescription": "BOPROB III, numit Expresul cu Șaisprezece Probe, ia probe în timp ce te deplasezi — fără opriri.",
-    "detailedDescription": "<p className='mt-4'>Sixteen Express este un echipament ingenios de tip remorcă, conceput pentru a preleva probe în timp ce te deplasezi. Mecanismul rotativ la 360° pătrunde în sol, extrage carotele și le depozitează în reviste de probe.</p><p className='mt-4'>Controlul se face printr-un ecran tactil de 7 inch, iar opțional se poate monta o cameră pentru monitorizare. Roțile mari (235/60 R16) reduc presiunea asupra solului, iar prinderea la remorcă este compatibilă cu tractoare, pick-up-uri și ATV-uri.</p><p className='mt-4'>Sistemul previne eșantionarea la viteze nepotrivite, asigurând consistența datelor.</p>",
-    "price": "28.500 €",
+    "herodescription": "Acesta este <strong>BOPROB III</strong> — cunoscut, destul de degajat, și sub numele de <strong>Expresul cu Șaisprezece Probe</strong>. Este o remorcă care prelevează probe de sol în timp ce conduci. Da, pe bune. Fără opriri, fără apăsat butoane obsesiv și fără strigat la colegi. Doar îl tractezi în spatele unui vehicul și îl lași să-și facă treaba.",
+    "detailedDescription": "<p className='mt-4'>Acum, <strong>Expresul cu Șaisprezece Probe</strong> este genul de echipament pe care îl poți numi, pe bună dreptate, ingenios. Este un <strong>prelevator de sol tractat</strong>, conceput să lucreze în timp ce tu continui să te deplasezi. Și, sincer, așa ar trebui să funcționeze toate lucrurile.</p><p className='mt-4'>Prelevarea are loc într-un ritm surprinzător de alert datorită unei <strong>manivele rotative</strong> care face 360°, intră în sol ca un mic ciocan politicos și apoi evacuează proba în magazia de eșantioane.</p><p className='mt-4'>Totul este supravegheat de un <strong>ecran tactil de 7 inch</strong>, astfel încât să știi în orice moment ce face utilajul. Există chiar și o cameră opțională, dacă vrei să-i urmărești munca sau pur și simplu să-ți admiri achiziția.</p><p className='mt-4'>Roțile mari și moi — <strong>235/60 R16</strong>, dacă îți place genul acesta de detaliu — reduc presiunea asupra solului și îl ajută să nu se afunde prin câmpuri noroioase decât dacă ai încercat cu adevărat.</p><p className='mt-4'>Se cuplează ușor la <strong>tractoare, pickup-uri, quad-uri sau aproape orice altceva cu cârlig de remorcare</strong>, fără adaptoare și fără improvizații.</p><p className='mt-4'>Iar dacă mergi prea repede sau prea încet, sistemul refuză pur și simplu să preleveze. Ceea ce e excelent, fiindcă înseamnă că utilajul este mai inteligent decât șoferul mediu.</p>",
     "features": [
       "Sistem hidraulic de impact și rotație",
       "Manivelă rotativă 360° cu descărcare automată",
@@ -1710,9 +1708,8 @@
       "Stabilitate pliabilă și de cârlig"
     ],
     "description": "Un suport simplu și robust pentru montarea sampler-ului—se potrivește pe majoritatea vehiculelor.",
-    "herodescription": "Acest cadru Lay-down, certificat TÜV, se montează la cârligul remorcii și susține versiunile MP, DH și DE ale samplerelor.",
-    "detailedDescription": "<p className='mt-4'>Se montează pe șasiul vehiculului, permițând transportul și utilizarea sampler-ului cu ușurință. Se pliază pentru deplasare și se desface pentru operare. Este robust, testat și finisat profesional.</p>",
-    "price": "De la €2 790",
+    "herodescription": "<strong>Remarcabil de bine gândit.</strong> Acest cadru rabatabil, certificat TÜV, se fixează la cârligul remorcii exact cum ar trebui. Susține samplerele din seriile MP, DH și DE.",
+    "detailedDescription": "<p className='mt-4'>Montat în spatele vehiculului, acolo unde se află <strong>cârligul de remorcare</strong> — chiar sub <strong>capacul portbagajului</strong> și deasupra <strong>dramei evacuării</strong> — acest cadru îți permite să transporți un prelevator complet cu <strong>eleganță</strong>. <strong>Îl cobori pentru operare, îl ridici la loc când pleci la drum</strong>. Este <strong>solid</strong>, <strong>testat</strong> și <strong>finisat ca o unealtă germană serioasă</strong>.</p><p className='mt-4'>Clienții își pot alege nivelul de implicare: unii preferă să <strong>instaleze cadrul singuri</strong> cu ajutorul <strong>instrucțiunilor noastre clare</strong>, alții <strong>vin cu vehiculul la noi</strong> și ne lasă să ne ocupăm de <strong>montaj și magia hidraulică</strong>, iar pentru cei care apreciază <strong>satisfacția instantă</strong> oferim și <strong>platforme complet echipate</strong> — <strong>premontate</strong>, <strong>testate</strong> și, sincer, <strong>destul de mândre de ele însele</strong>.</p>",
     "features": [
       "Cârlig remorcă + montare 13 pini (fără sudură, fără traumă)",
       "Aprobat TÜV pentru utilizare rutieră și pe teren",
@@ -1758,9 +1755,8 @@
       "Compatibil cu toate utilajele de prelevare MP, DH și DE"
     ],
     "description": "Transformă tractorul într-un campion al prelevării de probe—folosind puterea PTO pentru integrarea hidraulică.",
-    "herodescription": "Cadru pentru montare pe 3 puncte destinat tractoarelor Cat‑1/2, proiectat pentru a monta sampler-ul hidraulic și pompa hidraulică aferentă.",
-    "detailedDescription": "<p className='mt-4'>Cadru robust din oțel A‑frame, finisaj epoxidic negru, proiectat pentru viața de fermă—include bare de ridicare și șuruburi de montaj.</p>",
-    "price": "De la €1 650",
+    "herodescription": "<strong>Cadru de prindere în 3 puncte pentru tractor</strong>: campionul greilor pentru tractoarele Cat‑1/2, proiectat să monteze prelevatorul hidraulic direct pe sistemul PTO al tractorului, cu platforma pentru pompă inclusă.",
+    "detailedDescription": "<p className='mt-4'>Imaginează-ți <strong>coloana vertebrală de oțel</strong> pe care tractorul tău nici nu știa că o dorește. Construit din <strong>oțel gros tip A‑frame</strong> și protejat cu o <strong>armură epoxidică neagră</strong>, acest suport se fixează curat pe brațele de ridicare ale tractorului. Este făcut să reziste la viața de fermă — ploaie, noroi și capriciile tractorului incluse. Kitul vine cu <strong>bare de ridicare și toate șuruburile de montaj</strong>, deci nu e nevoie de improvizații.</p><p className='mt-4'>Este potrivit pentru <strong>tractoare compacte cu distanța între brațe de aproximativ 50-60 de inch</strong> și susține pompa hidraulică alimentată direct de priza PTO, oferind debit eficient pentru o prelevare lină și controlată. Este genul de upgrade care face tractorul să pară pregătit pentru <strong>olimpiada câmpului</strong>.</p>",
     "features": [
       "Cadru A-frame sudat din oțel — suficient de robust pentru muncă reală",
       "Montare pompă PTO — pentru că legăturile nu sunt inginerie",
@@ -1816,9 +1812,8 @@
       "Susține toate sampler-ele de sol serie MP, DH și DE"
     ],
     "description": "Transformă vehiculul utilitar sau pickup-ul într-o mașină de prelevare a probelor.",
-    "herodescription": "Kitul de conversie înlocuiește rama sau platforma cu una specială din oțel și panouri din aluminiu, aprobat TÜV și legal pentru drum.",
-    "detailedDescription": "<p className='mt-4'>Înlocuiește cu grijă lada standard cu o ramă din oțel și carcase din aluminiu, oferind montaj adecvat pentru mașinile noastre și spațiu pentru scule și echipament.</p>",
-    "price": "De la €4 590",
+    "herodescription": "<strong>Kitul de conversie completă</strong> înlocuiește benea standard a pickup-ului sau platforma UTV cu un cadru special din oțel și panouri din aluminiu — construit special pentru prelevare de sol cu <strong>utilajele din seriile MP, DH și DE</strong>. Aprobat TÜV, legal pe drum și destul de ingenios.",
+    "detailedDescription": "<p className='mt-4'><strong>Dacă UTV-ul sau pickup-ul tău visează la măreție, acesta este momentul lui.</strong> Îndepărtăm atent benea standard și o înlocuim cu un cadru de conversie din oțel, îmbrăcat în panouri de aluminiu care transmit profesionalism mai clar decât un Hilux turat pe pietriș.</p><p className='mt-4'><strong>Îți oferă montaj corect pentru toate utilajele noastre, depozitare integrată pentru răcitoare, scule și iluminare — practic totul în afară de pachetul de prânz.</strong> Certificat TÜV, construit pentru campanii serioase și surprinzător de plăcut la privit.</p>",
     "features": [
       "Potrivire universală pentru pickup-uri și UTV-uri (Hilux, Gator, Kubota, etc.)",
       "Cadru din oțel acoperit cu aluminiu: durabil și rezistent la coroziune",
@@ -1871,9 +1866,8 @@
       "Proiectat să se potrivească perfect sistemelor serie MP, DH/DE"
     ],
     "description": "Remorci robuste care transportă sistemele MP și DH/DE cu ușurință.",
-    "herodescription": "Remorci galvanizate la cald, cu opțiuni frânate și nefrânate, proiectate pentru a transporta kiturile de prelevare pe teren cu precizie germană.",
-    "detailedDescription": "<p className='mt-4'>Cu ampatament fix de 1.35 m și roți cu pivot, remorca manevrează ușor terenul și suportă sarcini considerabile, în funcție de versiune.</p>",
-    "price": "De la €3 600",
+    "herodescription": "<strong>Remorcile speciale – Field Haulers</strong> sunt <strong>remorci robuste, galvanizate la cald</strong>, disponibile în variante <strong>frânate și nefrânate</strong>, concepute pentru a transporta kitul tău de prelevare — fie el <strong>MP, DH sau DE</strong> — prin câmpuri și ferme cu <strong>precizie tipic germană</strong>.<br/>Au și <strong>spații de depozitare inteligente pentru scule, lumini și răcitoare</strong>, ca să poți lucra toată ziua fără agitația obișnuită.",
+    "detailedDescription": "<p className='mt-4'>Cu o <strong>lățime fixă a ecartamentului de 1,35 m</strong> și <strong>roți pivotante tip jack-castor</strong>, Field Hauler se manevrează ca un cărucior de cumpărături bine gândit — doar că are mai mult oțel și mult mai puține puncte slabe.</p><p className='mt-4'>Poți alege <strong>modelele frânate</strong> pentru sarcini mai grele sau pante mai serioase — până la <strong>3.500 kg GTW</strong> — astfel încât să transporți utilajele de prelevare fără să visezi la plăcuțe de frână noi după fiecare drum.</p>",
     "features": [
       "Caroserie și șasiu galvanizate la cald—durată lungă de viață, mai puține reclamații",
       "Opțiuni frânate și nefrânate—alegeți stilul de manevrare",
@@ -1900,7 +1894,7 @@
       "Track Width": "1.35 m",
       "Load Options": "550 kg (standard), upgrade opțional până la 1 500 kg GTW",
       "Rims/Tyre Size": "LT285/75 R16 sau MT215/75 R15",
-      "Brakes": "Frâne mecanice (versiunea frânată)",
+      "Brakes": "Frâne mecanice cu tambur pe versiunea frânată",
       "Shock Absorbers": "Aprobat pentru tractare la 100 km/h",
       "Support Wheel": "Include roată de sprijin",
       "Chassis": "Oțel galvanizat la cald, S235",
@@ -1927,10 +1921,9 @@
       "Indicator LCD al bateriei pe modelele electrice—cunoașteți încărcarea dintr-o privire",
       "Filtrare de retur și aspirație inclusă pentru operare hidraulică curată"
     ],
-    "description": "Pachete de alimentare portabile pentru utilaje MP sau DH fără putere integrată.",
-    "herodescription": "Powerpack-urile oferă putere portabilă fiabilă: opțiuni hidraulice sau electrice, carcasă robustă, afișaj LCD pentru stare baterie și sisteme de filtrare.",
-    "detailedDescription": "<p className='mt-4'>Modelul hidraulic are motor pe benzină 13 CP și rezervor ulei 22 L, oferind 135 bar la 20 L/min. Modelul electric are baterie 24 V / 100 Ah și afișaj LCD.</p>",
-    "price": "De la €3 450",
+    "description": "Pachete de alimentare portabile pentru utilajele MP și DH atunci când vehiculul nu oferă puterea necesară, disponibile în variante hidraulice sau electrice.",
+    "herodescription": "<strong>Power Pack-urile</strong> sunt ca majordomii de încredere ai prelevării de sol — oferă <strong>putere portabilă și fiabilă</strong> ca utilajele tale să nu facă nazuri. Fie că preferi <strong>forța clasică a hidraulicii</strong>, fie <strong>discreția electrică aproape tăcută</strong>, aceste unități te acoperă.<br/>Închise într-o <strong>carcasă robustă din oțel</strong>, cu avantaje sensibile precum <strong>afișaj LCD pentru baterie</strong> și <strong>sisteme de filtrare</strong>, sunt genul de ajutor de care îți dai seama că aveai nevoie abia când ajungi pe teren.",
+    "detailedDescription": "<p className='mt-4'>Modelul hidraulic, potrivit perfect pentru utilajele din seriile <strong>MP</strong> și <strong>DH</strong>, vine cu un <strong>motor pe benzină de 13 CP</strong> și un <strong>rezervor de ulei de 22 L</strong>, livrând <strong>135 bar presiune</strong> la <strong>20 L/min</strong> — suficientă forță pentru când vrei să simți că ai control mecanic serios în teren.</p><p className='mt-4'>Varianta electrică, gândită special pentru seria <strong>DE</strong>, folosește o <strong>baterie de 24 V / 100 Ah</strong>, o <strong>carcasă de protecție din oțel inoxidabil</strong> și un <strong>ecran LCD</strong> care îți arată clar starea de încărcare. Este ideală pentru cei care preferă o abordare mai silențioasă, mai curată și, sincer, mai politicoasă.</p><p className='mt-4'>Ambele modele sunt <strong>portabile</strong>, <strong>construite solid</strong> și echipate cu <strong>filtrare pe retur și aspirație</strong>, astfel încât sistemul hidraulic să rămână curat și să nu se uzeze prematur.</p>",
     "features": [
       "Alimentare hidraulică sau electrică, adaptată fluxului tău de lucru",
       "Carcasă robustă din oțel cu protecție împotriva coroziunii",
@@ -1950,8 +1943,8 @@
       "Completează uleiul și schimbă filtrele regulat — îngrijește-l bine și va menține prelevatorul funcționând impecabil."
     ],
     "technicalSpecs": {
-      "Hydraulic Model": "Motor 13 HP, rezervor 22 L, 135 bar, 20 L/min",
-      "Electric Model": "Baterie 24 V / 100 Ah, afișaj LCD",
+      "Hydraulic Model": "Motor pe benzină de 13 HP, rezervor de 22 L, 135 bar și 20 L/min",
+      "Electric Model": "Baterie de 24 V / 100 Ah cu afișaj LCD integrat",
       "Weight": "Aprox. 65 kg (hidraulic), 48 kg (electric)",
       "Dimensions": "50 x 40 x 45 cm",
       "Material": "Carcasă metalică cu protecție anticorozivă",
@@ -1975,10 +1968,9 @@
       "Ambalate individual, etichetate și gata pentru service pe teren",
       "Susținute de standardele de fiabilitate TechbyP"
     ],
-    "description": "Piese de schimb oficiale pentru MP, DH, DE și BOPROB III—pentru a evita întreruperile neașteptate în lucru.",
-    "herodescription": "Seturile de piese sunt trusa de prim-ajutor pentru sampler—O-ringuri, cuplaje hidraulice, filtre și alte componente esențiale, gata să rezolve probleme pe teren.",
-    "detailedDescription": "<p className='mt-4'>Seturile includ garnituri, filtre, cuplaje și piese certificate de uzină, ambalate și etichetate pentru utilizare rapidă.</p>",
-    "price": "De la €450",
+    "description": "Piese de schimb oficiale pentru utilajele MP, DH, DE și BOPROB III, astfel încât să nu transformi o defecțiune banală într-o zi pierdută pe teren.",
+    "herodescription": "Gândește-te la ele ca la trusa de prim-ajutor pentru prelevatorul tău. Fie că lucrezi într-o mlaștină din Bavaria sau într-un câmp prăfos din Bulgaria, să ai la îndemână <strong>piese de schimb OEM</strong> transformă un posibil dezastru într-un incident gestionat calm și competent.<br/>Fiecare kit include suspecții obișnuiți — <strong>O-ringuri, cuplaje hidraulice, filtre, curele</strong> și piesele care muncesc cel mai mult în tăcere. Fără improvizații cu sârmă și fără împrumuturi de la utilajul vecinului.",
+    "detailedDescription": "<p className='mt-4'>Acestea sunt <strong>kiturile recomandate de piese de schimb</strong> pentru prelevatoarele din <strong>seria MP</strong>, <strong>seria DH</strong>, <strong>seria DE</strong> și pentru <strong>BOPROB III</strong>. Și nu, nu sunt opționale. Sunt exact piesele pe care inginerii și tehnicienii de service preferă să le aibă la îndemână dacă țin cât de cât la disponibilitatea utilajului.</p><p className='mt-4'>În interior găsești suspecții obișnuiți — <strong>garnituri, filtre, cuplaje hidraulice, relee și linii de presiune</strong> — adică acele componente care păstrează lichidul acolo unde trebuie și curentul în direcția corectă.</p><p className='mt-4'>Piesele sunt <strong>ambalate și etichetate individual</strong>, ca să nu pierzi jumătate de zi încercând să ghicești dacă o şaibă se potrivește pe retur sau la filtrul de ulei. Și, desigur, toate sunt <strong>certificate de producător</strong> și făcute să intre direct la locul lor, fără improvizații.</p>",
     "features": [
       "Piese de schimb recomandate pentru sampler-e de sol MP, DH, DE și BOPROB III",
       "Include componente critice de uzură și articole de reparație de urgență",
@@ -2022,10 +2014,9 @@
       "Extensii de 1000 mm lungime cu filet intern 5/8” pe ambele părți",
       "Include chei speciale pentru strângere"
     ],
-    "description": "Tije robuste Ø22 mm pentru deschidere profile până la 10 m, cu părți modulare.",
-    "herodescription": "Tije modulare, secțiuni de 1 m, cu canelură de 12 mm pentru păstrarea probei și conectare prin filete robuste.",
-    "detailedDescription": "<p className='mt-4'>Fiecare secțiune de 1000 mm oferă precizie, cu filet 5/8” pentru extensii și opțiuni de ridicare sigure.</p>",
-    "price": "Preț la cerere",
+    "description": "Tije robuste de foraj Ø22 mm pentru deschiderea profilelor până la 10 metri, cu construcție modulară și prindere sigură a probelor.",
+    "herodescription": "Fă cunoștință cu <strong>tijele modulare de foraj</strong> cu o elegantă <strong>canelură de 22 mm</strong>, construite pentru profile de sol de până la <strong>10 metri adâncime</strong>. Datorită bolțurilor de conectare, lungimea se ajustează rapid, iar capetele de lovire fac față de la lovituri ușoare până la utilizarea cu utilaje.",
+    "detailedDescription": "<p className='mt-4'>Fiecare secțiune oferă <strong>1000 mm de precizie inginerească</strong> și o <strong>canelură de 12 mm</strong> care păstrează proba de sol la locul ei în timp ce o extragi de la adâncime. Extensiile se montează ușor prin <strong>filete interne de 5/8”</strong>, astfel încât poți merge mai adânc fără complicații.</p><p className='mt-4'>Strângerea se face cu <strong>chei speciale SW 18</strong>, fără alunecări și fără dramă. Pentru extracție poți alege între un <strong>cric cu lanț de prindere</strong> și un <strong>extractor cu un braț și clemă cu bilă</strong>, ambele gândite pentru lucru sigur și eficient.</p>",
     "features": [
       "Canelură de foraj Ø 22 mm cu canelură de probă de sol de 12 mm",
       "Design modular cu părți interschimbabile fixate cu șuruburi",
@@ -2132,9 +2123,8 @@
       "Capete de ciocan și inserții interschimbabile"
     ],
     "description": "Alege ciocanul potrivit pentru solul tău — de la capete dure la față moale din nylon.",
-    "herodescription": "De la ciocanul pătrat masiv la cel cu față moale din nylon, avem instrumentele pentru precizie și confort.",
-    "detailedDescription": "<p className='mt-4'>Specificații pentru diverse capete și mânere, inclusiv opțiuni din lemn și hickory.</p>",
-    "price": "Preț la cerere",
+    "herodescription": "De la <strong>ciocanul pătrat solid, fără prostii</strong> la <strong>atingerea blândă a unui ciocan cu față moale din nylon</strong>, avem uneltele pentru ca prelevarea ta să însemne <strong>mai puțină forță brută și mai multă finețe</strong>. Alege cu grijă — <strong>precizie, putere și confort</strong> te așteaptă.",
+    "detailedDescription": "<p className='mt-4'>Ai nevoie să-ți canalizezi puțin zeul tunetului cu un <strong>ciocan pătrat de 4,3 kg</strong>, cu o <strong>suprafață de impact de 135x135 mm</strong>? Sau poate preferi un <strong>ciocan cu față moale din nylon, ușor ca o pană</strong>, pentru situațiile care cer mai mult tact? Oricum ar fi, <strong>dorința ta este porunca noastră</strong>.</p><p className='mt-4'>Vrei și puțină flexibilitate? <strong>Schimbă capetele ca un bucătar care își schimbă cuțitele</strong>, alege dintre <strong>mânere din lemn sau hickory în toate lungimile utile</strong> și completează totul cu <strong>inserții atât de dure sau de blânde pe cât ai nevoie</strong>. E ca un costum făcut la comandă — doar că pentru ciocanul tău.</p>",
     "features": [
       "Ciocan pătrat cu suprafață de impact 135x135 mm, 4.3 kg",
       "Ciocan rotund din plastic cu suprafață de impact 150 mm Ø",
@@ -2264,10 +2254,9 @@
       "Canelură din oțel special călită asigură frecare minimă",
       "Trei diametre de foraj interconectate optimizează inserția și extracția"
     ],
-    "description": "Carote de mână ușoare pentru prelevare precisă în soluri fine.",
-    "herodescription": "Core-uri eficiente pentru lut și nisip slab compactat; manevrare ușoară și separare în 3 straturi.",
-    "detailedDescription": "<p className='mt-4'>Core-uri ușoare, operare cu o singură mână, set complet pentru 0-90 cm.</p>",
-    "price": "Preț la cerere",
+    "description": "Carotiere manuale ușoare, concepute pentru prelevare precisă în soluri fine, fără utilaje grele, fără ajutor suplimentar și fără să deranjeze inutil terenul.",
+    "herodescription": "De la <strong>argilă delicată</strong> până la <strong>nisip ușor compactat</strong>, aceste carotiere taie curat cu <strong>efort minim</strong>. Trei straturi perfect calibrate, <strong>mânere amortizate</strong> și un inteligent <strong>profil fräs</strong> fac ca prelevarea să pară mai degrabă o tehnică bine stăpânită decât muncă brută.",
+    "detailedDescription": "<p className='mt-4'>Le poți utiliza singur, <strong>fără utilaje grele</strong>, <strong>fără ajutoare suplimentare</strong>, doar tu și solul. Carotierele Göttinger separă <strong>trei straturi de sol</strong> cu precizie și oferă probe N-min fiabile, de <strong>500-1000 g</strong>, obținute din <strong>16 lovituri paralele pentru fiecare secțiune de adâncime</strong>.</p><p className='mt-4'>Atenție însă: sunt campioane ale <strong>solurilor blânde</strong>. <strong>Terenul pietros, foarte uscat sau nisipul strâns compactat</strong> le poate testa limitele. În condiții potrivite, însă, sunt cât se poate de aproape de <strong>o baghetă magică pentru prelevarea solului</strong>.</p>",
     "features": [
       "Operație cu o singură persoană",
       "Ușor, doar ~2.5 kg",
@@ -2324,9 +2313,8 @@
       "Verificare vizuală manuală pentru fiecare nucleu"
     ],
     "description": "Crawler pentru teren dificil — prelevează cu încredere pe pante și în culturi.",
-    "herodescription": "Nitratraupe prelevează pe 3 straturi până la 90 cm, manevrabil pe teren accidentat și control prin telecomandă.",
-    "detailedDescription": "<p className='mt-4'>Precizie și robustețe; funcționare semi-automată cu unitate de ridicare și eșantionare.</p>",
-    "price": "De la €20 000",
+    "herodescription": "<strong>Nitratraupe</strong> este genul de utilaj pe care orice pasionat de sol l-ar aproba din cap. Poate preleva <strong>0-90 cm de sol</strong> în <strong>trei straturi</strong>, se deplasează pe teren dificil ca un mic vehicul încăpățânat pe șenile și combină asistența hidraulică cu controlul vizual al operatorului.",
+    "detailedDescription": "<p className='mt-4'><strong>Precizia întâlnește forța brută</strong> într-un pachet surprinzător de manierat. <strong>Nitratraupe</strong> taie un <strong>profil de sol curat</strong> fără să amestece straturile, <strong>fără să fie nevoie de burghie rotative</strong>. <strong>Trei straturi — 0-30, 30-60 și 60-90 cm</strong> sunt extrase cu <strong>finețe</strong>.</p><p className='mt-4'>Funcționează cu <strong>motorul vehiculului purtător</strong>, așa că <strong>nu ai de suportat încă un motor termic care face scene</strong>. <strong>Prelevarea manuală</strong> îți permite să <strong>inspectezi vizual nucleul</strong>, astfel încât <strong>costurile și durerile de cap rămân mici</strong>.</p><p className='mt-4'>Șenilele îl fac <strong>suficient de îngust pentru a trece printre porumbul în creștere</strong>, iar cu <strong>telecomanda</strong> poți <strong>ridica, coborî, roti și preleva</strong> fără să părăsești poziția de lucru. Un <strong>adevărat crawler gentleman pentru prelevarea solului</strong>.</p>",
     "features": [
       "Extracție hidraulică semi-automată până la 90 cm (opțional 120 cm)",
       "Eșantionare în trei straturi pentru precizie specifică orizontului",
@@ -2388,7 +2376,8 @@
       "all": "Tot ce oferim, de la cele mari și robuste până la cele mici și ingenioase.",
       "smartsystems": "Partea inteligentă a prelevării de sol — automată, precisă și foarte bine proiectată.",
       "accessory": "Accesoriile care țin totul laolaltă — ajutoare utile pentru funcționare.",
-      "manual": "Unelte manuale de încredere — practice, robuste și durabile."
+      "manual": "Unelte manuale de încredere — practice, robuste și durabile.",
+      "Bespoke Machinery": "Utilaje personalizate, adaptate fluxului tău de lucru, terenului și cerințelor tehnice."
     },
     "customEquipment": {
       "title": "Ai nevoie de echipament personalizat?",
@@ -2407,10 +2396,9 @@
       "Afișaj digital, încărcare USB și control prin aplicație",
       "Funcționează pe putere 12/24 V DC sau 230 V AC"
     ],
-    "description": "Răcitoare portabilă de 95L pentru probe și provizii pe teren.",
-    "herodescription": "Coolbox 95L păstrează probele reci până la -20°C, are compresor eficient și compartimente configurabile, ideal pentru misiuni pe teren.",
-    "detailedDescription": "<p className='mt-4'>Dual compartimente configurabile ca frigider sau congelator, compresor eficient și control prin panou sau aplicație.</p>",
-    "price": "€1000",
+    "description": "Pentru că uneori probele tale, sau chiar băutura de după teren, merită mai mult decât o căldură călâie. Cu acest monstru de 95 L aduci un mic climat arctic direct la locul de lucru.",
+    "herodescription": "Știi momentul acela când cineva deschide lada frigorifică și găsește... <strong>supă</strong>? Nu și acum. <strong>Răcitorul transformă satisfacția autosuficientă în ușurare cu gheață</strong>, la propriu.<br/><strong>Răcește</strong>. <strong>Congelează</strong>. <strong>Luminează</strong>. Și da, are și <strong>aplicație</strong> — pentru că telefonul tău aparent nu controla încă destule lucruri. Inginerii germani ar putea să-i spună <em>Kühlbox</em>. <strong>Noi îi spunem frigiderul adus pe teren, pentru că putem.</strong>",
+    "detailedDescription": "<p className='mt-4'><strong>Coolbox 95L</strong> este, sincer, <strong>mai capabilă decât multe minibaruri de hotel</strong>. Cele două compartimente pot fi configurate fiecare ca frigider sau congelator, astfel încât poți păstra kitul de probe într-o parte și prânzul în cealaltă — și tot să mai rămână loc pentru <strong>un strop de satisfacție mulțumită de sine</strong>.</p><p className='mt-4'>Este alimentată de un <strong>compresor LG de înaltă eficiență</strong> și răcește până la <strong>-20°C</strong>, chiar și atunci când afară este destul de cald încât să prăjești un ou pe plafonul mașinii. O poți controla din panoul frontal sau din <strong>aplicația Alpicool</strong>, dacă ești genul de persoană care își reglează frigiderul din hamac.</p><p className='mt-4'>Pentru autonomie extinsă o poți combina cu <strong>bateria opțională</strong> (nu este inclusă), care îți oferă <strong>4 până la 24 de ore</strong> de răcire autonomă. Sau o alimentezi de la vehicul și <strong>aproape uiți să-ți mai faci griji vreodată</strong>. Este construită să suporte abuz serios în teren — <strong>deși, evident, nu recomandăm să testezi asta intenționat</strong>.</p>",
     "features": [
       "Compartimentele duble pot răci sau congela independent",
       "Afișaj digital cu controale tactile și aplicație mobilă",
@@ -2436,7 +2424,7 @@
       "TemperatureRange": "-20°C până la +10°C",
       "PowerSupply": "12/24 V DC sau 110–240 V AC",
       "PowerConsumption": "6 A (12 V) / 3 A (24 V)",
-      "ExternalDimensions": "826 × 528 × 465 mm",
+      "ExternalDimensions": "826 × 528 × 465 mm, dimensiuni exterioare",
       "InternalConfiguration": "2 compartimente iluminate cu LED",
       "Weight": "24 kg"
     },
@@ -2451,10 +2439,9 @@
       "Carcasă din aluminiu durabilă, clasificată IP6K9K",
       "Compatibil cu sisteme 12–24 V DC"
     ],
-    "description": "Lumină de lucru compactă, 1700 lumeni, robustă pentru utilizare pe teren.",
-    "herodescription": "Lumină de lucru pentru teren, oferă iluminare puternică fără căldură, ideală pentru operare în întuneric.",
-    "detailedDescription": "<p className='mt-4'>Carcasă din aluminiu, grad IP6K7/IP6K9K, bracket pivotant pentru orientare precisă.</p>",
-    "price": "€67",
+    "description": "Întunericul nu este o scuză. Cu 1700 de lumeni într-o unitate compactă și blindată, această lumină de lucru LED îți arată clar ceea ce ai de făcut, fie că prelevezi, repari sau lucrezi târziu.",
+    "herodescription": "<strong>Prelevezi pe întuneric? Ai uitat soarele?</strong> Nicio problemă. Soarele de la miezul nopții oferă <strong>iluminare cu adevărat puternică</strong> fără căldură, zgomot sau factura la motorină.<br/>Monteaz-o, orienteaz-o și pornește-o — apoi întreabă-te cum ai lucrat înainte fără ea. Nu este lumină romantică. Este <strong>lumină pentru făcut treaba</strong>.",
+    "detailedDescription": "<p className='mt-4'><strong>LED Work Light 1700</strong> este o <strong>lampă de lucru testată în teren, fără prostii</strong>, construită să taie întunericul fără compromisuri. Cu o ieșire de <strong>1700 de lumeni</strong>, oferă iluminare focalizată pentru utilaje de prelevare, mașini sau orice situație în care „cred că văd ceva” nu este suficient.</p><p className='mt-4'>Construită cu o <strong>carcasă din aluminiu anodizat negru</strong> și conformă cu <strong>standardele IP6K7 și IP6K9K</strong>, unitatea rezistă la apă, praf și probabil la multe dintre greșelile obișnuite din teren. <strong>Suportul pivotant</strong> permite orientare precisă, iar <strong>lentila modelată</strong> păstrează fasciculul lat și util.</p><p className='mt-4'>Este compatibilă cu sisteme de <strong>12-24 V DC</strong>, consumă 24 W și vine cu capete de cablu deschise pentru integrare ușoară. Montajul trebuie făcut de personal calificat — <strong>pentru că firele topite sunt mai puțin amuzante în viața reală</strong>.</p>",
     "features": [
       "Ieșire de 1700 lumeni de la 4 LED-uri de înaltă intensitate",
       "Suport pivotant pentru orientare precisă",
@@ -2501,10 +2488,9 @@
       "Flux video live către mobil sau tabletă prin aplicație",
       "Câmp vizual de 75° cu vedere nocturnă IR până la 15 m"
     ],
-    "description": "Cameră de monitorizare externă care transmite imaginea în timp real către cabina operatorului.",
-    "herodescription": "Camerele urmăresc <strong>capul de prelevare</strong> și transmit <strong>video live prin 4G</strong>, oferind <strong>vizibilitate în timp real</strong> și funcții de înregistrare opționale.",
-    "detailedDescription": "<p className='mt-4'>Cameră 5 MP pentru montare externă, transmisie 4G, vizualizare prin aplicație și slot microSD pentru înregistrări.</p>",
-    "price": "€225",
+    "description": "Cameră externă pregătită pentru teren, care transmite imagine live către tabletă sau telefon, astfel încât să vezi exact ce se întâmplă în spatele utilajului.",
+    "herodescription": "<strong>Ai încercat vreodată să dai cu spatele fără vizibilitate, cu un prelevator de 3 tone în spate?</strong> Nu este ideal. Turnul de veghe îți oferă <strong>ochi asupra capului de foraj</strong> din confortul scaunului șoferului. Urmărești fiecare mișcare, lovitură și balans.<br/>Te conectezi prin 4G. Vezi de pe telefon. <strong>Pentru că a fi în două locuri deodată este acum, tehnic vorbind, posibil.</strong>",
+    "detailedDescription": "<p className='mt-4'><strong>Turnul de veghe</strong> este o <strong>cameră de 5 MP pregătită pentru teren</strong>, construită pentru montaj direct pe utilajul de prelevare. După instalare, transmite video live către tabletă sau telefon prin 4G, astfel încât să vezi ce se întâmplă la capul utilajului fără să cobori din cabină.</p><p className='mt-4'>Unghiul de vizualizare de <strong>75°</strong> oferă o imagine clară a zonei de lucru, iar <strong>vederea nocturnă în infraroșu</strong> păstrează aceeași siguranță și după lăsarea serii. Poți verifica alinierea, confirma căderea probei sau pur și simplu supraveghea procesul în timp real.</p><p className='mt-4'>Aplicația este gratuită, instalarea durează doar câteva minute și nu ai nevoie de Wi‑Fi local. Cu un card microSD opțional de până la 128 GB poți chiar <strong>înregistra operațiunile pentru documentare sau instruire</strong>. Pe scurt: plug-and-play, cu o singură condiție importantă: <strong>introdu corect cartela SIM sau vei petrece după-amiaza diagnosticându-ți propria nerăbdare</strong>.</p>",
     "features": [
       "Transmisie video live prin rețea 4G",
       "Lentilă cu unghi fix de 75° cu vedere nocturnă",
@@ -2552,9 +2538,8 @@
       "Compatibil cu protocoale de eșantionare N-min (VDLUFA, ISO 14255)"
     ],
     "description": "Sonde pentru prelevare manuală N-min — proiectate pentru precizie în soluri dificile.",
-    "herodescription": "Sonde din oțel pentru <strong>prelevare precisă</strong>, cu <strong>marcaje laser la fiecare 10 cm</strong> pentru determinarea exactă a adâncimii.",
-    "detailedDescription": "<p className='mt-4'>Gama include 3 dimensiuni conice pentru diverse adâncimi, cu marcaje laser pentru repetabilitate și accesorii de ridicare.</p>",
-    "price": "Preț la cerere",
+    "herodescription": "Nu sunt niște tije oarecare — sunt <strong>scalpele din oțel pentru scule, ascuțite ca briciul</strong> pentru pasionatul de sol care cere precizie. Designul lor conic înseamnă mai puțină bătaie de cap, mai puțină frecare, iar acele <strong>marcaje laser la fiecare 10 cm</strong>? Exact ce trebuie ca să știi cât de adânc ai intrat — pentru că straturile de sol nu apreciază să fie deranjate, și nici tu.",
+    "detailedDescription": "<p className='mt-4'>Concepute pentru cei care iau solul în serios, dar pe ei înșiși ceva mai puțin: trei dimensiuni conice — <strong>40→38 mm</strong> pentru 0-30 cm, <strong>35→33 mm</strong> pentru 30-60 cm și <strong>30→28 mm</strong> pentru 60-90 cm — taie prin argilă și pietriș încăpățânat cu mult mai puțin efort decât te-ai aștepta, datorită muchiilor pregătite să facă ele munca grea.</p><p className='mt-4'>Fiecare tijă poartă <strong>marcaje laser la fiecare 10 cm</strong> care nu dispar mai repede decât entuziasmul de luni dimineață. Le poți combina cu mânerele de ridicare și cu dalta dedicată pentru a scoate proba curat și eficient, astfel încât prelevarea să semene mai mult cu o mișcare controlată decât cu o luptă de brațe.</p>",
     "features": [
       "Trei diametre conice minimizează frecarea și maximizează ușurința eșantionării",
       "Oțel scule călită HRC 52 pentru durabilitate și rezistență",

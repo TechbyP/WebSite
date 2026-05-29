@@ -1,10 +1,12 @@
 import React, { createContext, useContext, useState, useRef, useEffect } from 'react';
-import techbypLogo from '../assets/pictures/techbyp.png';
+import techbypLogo from '../assets/pictures/techbyp.png?w=96;160;240&format=webp;png&as=srcset';
+import techbypLogoFallback from '../assets/pictures/techbyp.png?w=160&format=png';
 import { Menu, X, ChevronDown, Download, Globe, Sun, Moon } from 'lucide-react';
 import { useNavigate, useLocation } from 'react-router-dom';
 import { useTranslation, i18n } from 'react-i18next';
 import { useTheme } from '../utils/context/theme-context';
-import techbypLogoDark from '../assets/pictures/techbypLogoDark.png'
+import techbypLogoDark from '../assets/pictures/techbypLogoDark.png?w=96;160;240&format=webp;png&as=srcset';
+import techbypLogoDarkFallback from '../assets/pictures/techbypLogoDark.png?w=160&format=png';
 
 
 
@@ -243,12 +245,16 @@ const languageOptions = [
                 className="cursor-pointer flex-shrink-0 min-w-[120px] md:min-w-[160px]"
               >
                 <img
-                  sizes="(max-width: 768px) 50vw, 25vw"
-                  src={theme === 'light' ? techbypLogo : techbypLogoDark}
+                  sizes="(max-width: 768px) 94px, 165px"
+                  src={theme === 'light' ? techbypLogoFallback : techbypLogoDarkFallback}
+                  srcSet={theme === 'light' ? techbypLogo : techbypLogoDark}
                   alt={t('header.logoAlt')}
+                  width={200}
+                  height={68}
                   className="h-8 md:h-14 object-contain transition duration-300 ease-in-out hover:scale-105"
                   draggable={false}
                   loading="eager"
+                  decoding="async"
                 />
 
               </div>
@@ -363,7 +369,7 @@ const languageOptions = [
               <div className={`${viewportSize === 'lg' ? 'md:hidden' : 'lg:hidden'} flex items-center`}>
                 <button
                   onClick={() => setMenuOpen(!menuOpen)}
-                  className="text-gray-700 dark:text-gray-300 hover:text-brandgreen dark:hover:text-brandgreen min-w-[44px] min-h-[44px] p-2 pl-48 rounded focus:outline-brandgreen focus:outline-2 focus:outline-offset-2"
+                  className="flex min-h-[44px] min-w-[44px] items-center justify-center rounded p-2 text-gray-700 transition-colors hover:text-brandgreen focus:outline-brandgreen focus:outline-2 focus:outline-offset-2 dark:text-gray-300 dark:hover:text-brandgreen"
                   aria-label={menuOpen ? t('header.mobileMenu.close') : t('header.mobileMenu.open')}
                   aria-expanded={menuOpen}
                   aria-controls="mobile-menu"
@@ -456,13 +462,14 @@ const languageOptions = [
                         changeLanguage(e.target.value);
                         setMenuOpen(false);
                       }}
+                      aria-label={t('header.languageSwitcher.ariaLabel')}
                       className="w-full px-4 py-3 text-lg font-black text-gray-700 dark:text-gray-300 bg-white dark:bg-gray-800 border border-gray-300 dark:border-gray-600 rounded-lg focus:outline-none focus:ring-2 focus:ring-brandgreen transition-colors"
                     >
-                      <option value="en">🇬🇧 English</option>
-                      <option value="de">🇩🇪 Deutsch</option>
-                      <option value="es">🇪🇸 Español</option>
-                      <option value="fr">🇫🇷 Français</option>
-                      <option value="ro">🇷🇴 Română</option>
+                      {languageOptions.map((language) => (
+                        <option key={language.code} value={language.code}>
+                          {`${language.flag} ${language.name}`}
+                        </option>
+                      ))}
                     </select>
                   </div>
 

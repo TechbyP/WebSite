@@ -2,17 +2,18 @@ import React, { useState, useEffect } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import { X } from 'lucide-react';
 import { toast } from 'sonner';
-import { addDoc, collection } from 'firebase/firestore';
-import { db } from '../firebase';
 import newsletter from '../assets/pictures/newsletter.jpg';
 import { useTranslation } from 'react-i18next';
+import { submitNewsletterSignup } from '../utils/publicApi';
 
 const TechByPClubModal = () => {
   const { t } = useTranslation();
 
   const [modalEmail, setModalEmail] = useState('');
+  const [modalHoneypot, setModalHoneypot] = useState('');
   const [modalIsLoading, setModalIsLoading] = useState(false);
   const [footerEmail, setFooterEmail] = useState('');
+  const [footerHoneypot, setFooterHoneypot] = useState('');
   const [footerIsLoading, setFooterIsLoading] = useState(false);
   const [isOpen, setIsOpen] = useState(false);
 
@@ -34,16 +35,17 @@ const TechByPClubModal = () => {
     }
     setModalIsLoading(true);
     try {
-      await addDoc(collection(db, 'club_members'), {
+      await submitNewsletterSignup({
         email: modalEmail,
-        timestamp: new Date(),
         source: 'modal_signup',
+        honeypot: modalHoneypot,
       });
       toast.dismiss();
       toast.success(t('modal.success'));
       localStorage.setItem('techbyp_modal_seen', new Date().toISOString());
       setIsOpen(false);
       setModalEmail('');
+      setModalHoneypot('');
     } catch {
       toast.error(t('modal.error'));
     } finally {
@@ -59,14 +61,15 @@ const TechByPClubModal = () => {
     }
     setFooterIsLoading(true);
     try {
-      await addDoc(collection(db, 'club_members'), {
+      await submitNewsletterSignup({
         email: footerEmail,
-        timestamp: new Date(),
         source: 'footer_signup',
+        honeypot: footerHoneypot,
       });
       toast.dismiss();
       toast.success(t('footer.success'));
       setFooterEmail('');
+      setFooterHoneypot('');
     } catch {
       toast.error(t('footer.error'));
     } finally {
@@ -120,6 +123,15 @@ srcSet={newsletter}
                 </div>
 
                 <form onSubmit={handleSubmitModal} className="space-y-4">
+                  <input
+                    type="text"
+                    value={modalHoneypot}
+                    onChange={(event) => setModalHoneypot(event.target.value)}
+                    autoComplete="off"
+                    tabIndex={-1}
+                    className="hidden"
+                    aria-hidden="true"
+                  />
                   <input
                     type="email"
                     value={modalEmail}

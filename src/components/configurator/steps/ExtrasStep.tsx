@@ -1,7 +1,7 @@
 import { motion } from 'framer-motion';
 import { useConfigurator } from '../contexts/ConfiguratorContext';
 import { FadeInWhenVisible } from '../../animation/FadeInWhenVisible';
-import { Product } from '../../../data/products';
+import type { Product } from '../../../data/types/products';
 import { ErrorBoundary } from 'react-error-boundary';
 import { handleImageError, defaultHeroImage } from '../../../utils/DefaultPics';
 import { useTranslation } from 'react-i18next';
