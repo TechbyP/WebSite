@@ -10,13 +10,40 @@ import { introMessages, getSystemMessage } from './utils';
 import { useTranslation } from 'react-i18next';
 import { useProducts } from '../../data/context/ProductsContext';
 
-const CHAT_API_ENDPOINT = '/api/chat';
+type ProviderConfig = {
+  name: string;
+  key: string;
+  model: string;
+  endpoint: string;
+};
+
+const API_CONFIGS: ProviderConfig[] = [
+  {
+    name: 'Groq Llama On Demand',
+    key: import.meta.env.VITE_GROQ_API_KEY_1 ?? '',
+    model: 'meta-llama/llama-4-scout-17b-16e-instruct',
+    endpoint: 'https://api.groq.com/openai/v1/chat/completions',
+  },
+  {
+    name: 'Groq Llama On Demand 2',
+    key: import.meta.env.VITE_GROQ_API_KEY_2 ?? '',
+    model: 'meta-llama/llama-4-scout-17b-16e-instruct',
+    endpoint: 'https://api.groq.com/openai/v1/chat/completions',
+  },
+  {
+    name: 'Together AI',
+    key: import.meta.env.VITE_TOGETHER_API_KEY_3 ?? '',
+    model: 'meta-llama/Llama-3.3-70B-Instruct-Turbo-Free',
+    endpoint: 'https://api.together.xyz/v1/chat/completions',
+  },
+].filter((config) => config.key);
 
 export const ChatWidget = React.memo(({ open, setOpen }: Props) => {
   // State management
   const [input, setInput] = useState('');
   const [chat, setChat] = useState<ChatMessage[]>([]);
   const [loading, setLoading] = useState(false);
+  const [keyIndex, setKeyIndex] = useState(0);
   const [isFullscreen, setIsFullscreen] = useState(false);
   const [keyboardHeight, setKeyboardHeight] = useState(0);
   const [viewportHeight, setViewportHeight] = useState(window.innerHeight);
@@ -178,26 +205,63 @@ const systemMessage = useMemo(
     setChat(updatedChat);
     setInput('');
 
-    try {
-      const response = await fetch(CHAT_API_ENDPOINT, {
-        method: 'POST',
-        headers: {
-          'Content-Type': 'application/json',
-        },
-        body: JSON.stringify({
-          messages: [systemMessage, ...updatedChat],
-        }),
-      });
+    if (API_CONFIGS.length === 0) {
+      setChat(prev => [...prev, {
+        role: 'assistant',
+        content: 'Sorry, the chat is not configured right now. Please try again later.'
+      }]);
+      setLoading(false);
+      inputRef.current?.focus();
+      return;
+    }
 
-      if (!response.ok) {
-        throw new Error(`Chat request failed: ${response.status}`);
+    let attempts = 0;
+    let botMessage: ChatMessage | null = null;
+
+    while (attempts < API_CONFIGS.length && !botMessage) {
+      const currentIndex = (keyIndex + attempts) % API_CONFIGS.length;
+      const { name, key, model, endpoint } = API_CONFIGS[currentIndex];
+
+      try {
+        const response = await fetch(endpoint, {
+          method: 'POST',
+          headers: {
+            'Content-Type': 'application/json',
+            Authorization: `Bearer ${key}`,
+          },
+          body: JSON.stringify({
+            model,
+            messages: [systemMessage, ...updatedChat],
+          }),
+        });
+
+        if (!response.ok) {
+          if (response.status === 429 || response.status === 403) {
+            attempts += 1;
+            continue;
+          }
+
+          throw new Error(`${name} responded with ${response.status}`);
+        }
+
+        const data = await response.json() as {
+          choices?: Array<{ message?: ChatMessage }>;
+        };
+
+        botMessage = data.choices?.[0]?.message ?? {
+          role: 'assistant',
+          content: 'No response'
+        };
+        setKeyIndex((currentIndex + 1) % API_CONFIGS.length);
+      } catch (error) {
+        console.error('Chat request failed:', error);
+        attempts += 1;
       }
+    }
 
-      const data = await response.json();
-      const botMessage = data.message ?? { role: 'assistant', content: 'No response' };
-      setChat(prev => [...prev, botMessage]);
-    } catch (error) {
-      console.error('Chat request failed:', error);
+    if (botMessage) {
+      setChat(prev => [...prev, botMessage as ChatMessage]);
+    } else {
       setChat(prev => [...prev, {
         role: 'assistant',
         content: 'Sorry, I could not get a response right now. Please try again later.'
@@ -206,7 +270,7 @@ const systemMessage = useMemo(
 
     setLoading(false);
     inputRef.current?.focus();
-  }, [input, chat, systemMessage]);
+  }, [input, chat, keyIndex, systemMessage]);
 
   const toggleChat = () => {
     setOpen(!open);

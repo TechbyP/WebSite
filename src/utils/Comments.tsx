@@ -5,7 +5,6 @@ import {
   where,
   addDoc,
   getDocs,
-  orderBy,
   serverTimestamp,
   updateDoc,
   doc,
@@ -32,6 +31,24 @@ interface CommentsProps {
   commentType?: 'product' | 'blog';
 }
 
+const getTimestampValue = (value: Comment['timestamp']) => {
+  if (value && typeof value === 'object') {
+    if ('toMillis' in value && typeof value.toMillis === 'function') {
+      return value.toMillis();
+    }
+
+    if ('seconds' in value && typeof value.seconds === 'number') {
+      return value.seconds * 1000;
+    }
+  }
+
+  if (value instanceof Date) {
+    return value.getTime();
+  }
+
+  return 0;
+};
+
 const Comments = ({
   productId,
   onCommentsUpdate,
@@ -53,19 +70,28 @@ const Comments = ({
   }, [productId]);
 
   const fetchComments = async () => {
-    const q = query(
-      collection(db, 'comments'),
-      where('productId', '==', productId),
-      orderBy('timestamp', 'desc')
-    );
-    const snapshot = await getDocs(q);
-    const fetched = snapshot.docs.map((doc) => ({
-      id: doc.id,
-      ...doc.data(),
-    })) as Comment[];
-    setComments(fetched);
+    try {
+      const q = query(
+        collection(db, 'comments'),
+        where('productId', '==', productId)
+      );
+      const snapshot = await getDocs(q);
+      const fetched = snapshot.docs
+        .map((doc) => ({
+          id: doc.id,
+          ...doc.data(),
+        }) as Comment)
+        .sort((left, right) => getTimestampValue(right.timestamp) - getTimestampValue(left.timestamp));
 
-    if (onCommentsUpdate) onCommentsUpdate(fetched.length);
+      setComments(fetched);
+
+      if (onCommentsUpdate) onCommentsUpdate(fetched.length);
+    } catch (error) {
+      console.error('Unable to load comments:', error);
+      setComments([]);
+
+      if (onCommentsUpdate) onCommentsUpdate(0);
+    }
   };
 
   const handleSubmit = async (e: React.FormEvent) => {
