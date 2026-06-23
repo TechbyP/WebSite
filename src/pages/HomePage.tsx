@@ -3,6 +3,32 @@ import { Helmet } from 'react-helmet-async';
 import { Suspense, lazy } from 'react';
 import Announcement from '../utils/Announcement';
 import CombinedHero from './HeroNews';
+import { buildCanonicalUrl, toAbsoluteUrl } from '../utils/seo';
+
+const organizationSchema = {
+  '@context': 'https://schema.org',
+  '@type': 'Organization',
+  name: 'TechByP',
+  url: buildCanonicalUrl('/'),
+  logo: toAbsoluteUrl('/Logo-Symbol.png'),
+  description: 'German-engineered soil sampling systems and accessories for professional field work.',
+  contactPoint: [
+    {
+      '@type': 'ContactPoint',
+      contactType: 'sales',
+      url: buildCanonicalUrl('/contact'),
+      availableLanguage: ['en', 'de', 'es', 'fr', 'ro', 'pt', 'ru'],
+    },
+  ],
+};
+
+const webSiteSchema = {
+  '@context': 'https://schema.org',
+  '@type': 'WebSite',
+  name: 'TechByP',
+  url: buildCanonicalUrl('/'),
+  inLanguage: ['en', 'de', 'es', 'fr', 'ro', 'pt', 'ru'],
+};
 
 // Lazy-load non-critical sections
 const ProductShowcase = lazy(() => import('./ProductShowcase'));
@@ -25,7 +51,11 @@ export default function HomePage() {
           property="og:description"
           content="Explore TECHBYP’s German‑engineered soil sampling equipment—manual, machine‑driven, bespoke systems designed for accurate, reproducible sampling."
         />
+        <meta property="og:url" content={buildCanonicalUrl('/')} />
         <meta name="robots" content="index, follow" />
+        <link rel="canonical" href={buildCanonicalUrl('/')} />
+        <script type="application/ld+json">{JSON.stringify(organizationSchema)}</script>
+        <script type="application/ld+json">{JSON.stringify(webSiteSchema)}</script>
       </Helmet>
 
       {/* Above-the-fold content */}

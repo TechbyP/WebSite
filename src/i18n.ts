@@ -46,7 +46,8 @@ i18n
       escapeValue: false, // React already escapes
     },
     detection: {
-      order: ['localStorage', 'navigator'], // Language detection priority
+      order: ['querystring', 'localStorage', 'navigator'], // Language detection priority
+      lookupQuerystring: 'lng',
       caches: ['localStorage'],
     },
   });

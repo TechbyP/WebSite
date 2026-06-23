@@ -2,7 +2,9 @@ import React from 'react';
 import { ArrowLeft } from 'lucide-react';
 import { useNavigate } from 'react-router-dom';
 import { useTranslation } from 'react-i18next';
+import { Helmet } from 'react-helmet-async';
 import { useTheme } from '../utils/context/theme-context.js'; // import your hook
+import { buildCanonicalUrl } from '../utils/seo';
 
 const PrivacyPolicy = () => {
   const navigate = useNavigate();
@@ -15,6 +17,16 @@ const PrivacyPolicy = () => {
         ${theme === 'dark' ? 'bg-gray-900 text-gray-100' : 'bg-gray-50 text-gray-900'}
       `}
     >
+      <Helmet>
+        <title>{t('privacy.title')} | TechByP</title>
+        <meta
+          name="description"
+          content="TechByP privacy policy, including data handling, cookies, and user rights information."
+        />
+        <meta name="robots" content="index, follow" />
+        <link rel="canonical" href={buildCanonicalUrl('/privacy')} />
+      </Helmet>
+
       <button 
         onClick={() => navigate(-1)}
         className={`flex items-center mb-6 ${

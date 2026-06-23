@@ -1,0 +1,1079 @@
+{
+  "version": "1.0",
+  "updatedAt": "2026-06-23T06:59:45.364Z",
+  "source": "prebuild-script",
+  "canonical": "https://www.techbyp.com/content/products.json",
+  "items": [
+    {
+      "id": "1000",
+      "name": "MP-190",
+      "description": "Intact 0–90 cm soil cores, scientific precision, German stubbornness.",
+      "localizations": {
+        "de": {
+          "name": "MP-1.90",
+          "description": "Intakte Bodenkerne von 0–90 cm, wissenschaftliche Präzision, deutsche Zähigkeit."
+        },
+        "en": {
+          "name": "MP-1.90",
+          "description": "Intact 0–90 cm soil cores, scientific precision, German stubbornness."
+        },
+        "es": {
+          "name": "MP-1.90",
+          "description": "Núcleos de suelo intactos de 0–90 cm, precisión científica, terquedad alemana."
+        },
+        "fr": {
+          "name": "MP-1.90",
+          "description": "Carottes de sol intactes de 0–90 cm, précision scientifique, obstination allemande."
+        },
+        "pt": {
+          "name": "MP-1.90",
+          "description": "Núcleos de solo intactos de 0–90 cm, precisão científica, teimosia alemã."
+        },
+        "ro": {
+          "name": "MP-1.90",
+          "description": "Nucleu intact 0–90 cm, precizie științifică, robustețe germană."
+        },
+        "ru": {
+          "name": "MP-1.90",
+          "description": "Неповрежденные керны почвы толщиной 0–90 см, научная точность, немецкое упорство."
+        }
+      },
+      "available_locales": [
+        "de",
+        "en",
+        "es",
+        "fr",
+        "pt",
+        "ro",
+        "ru"
+      ],
+      "url": "https://www.techbyp.com/product/1000",
+      "image": "https://www.techbyp.com/assets/MP190_Hero.jpg",
+      "category": "sampling-equipment",
+      "product_type": "smart-system",
+      "has_video": false,
+      "video_url": null,
+      "last_updated": "2026-06-23T06:59:45.364Z"
+    },
+    {
+      "id": "1001",
+      "name": "MP-260",
+      "description": "Automatic nitrogen profiling without the faff.",
+      "localizations": {
+        "de": {
+          "name": "MP-2.60",
+          "description": "Automatisches Stickstoffprofilieren ohne Schnickschnack."
+        },
+        "en": {
+          "name": "MP-2.60",
+          "description": "Automatic nitrogen profiling without the faff."
+        },
+        "es": {
+          "name": "MP-2.60",
+          "description": "Perfilado de nitrógeno automático sin complicaciones."
+        },
+        "fr": {
+          "name": "MP-2.60",
+          "description": "Profilage automatique de l'azote sans les problèmes."
+        },
+        "pt": {
+          "name": "MP-2.60",
+          "description": "Perfil automático de nitrogênio sem faff."
+        },
+        "ro": {
+          "name": "MP-2.60",
+          "description": "Extracție automată la 60 cm, optimizat pentru profilarea N-min."
+        },
+        "ru": {
+          "name": "MP-2.60",
+          "description": "Автоматическое профилирование азота без фаффа."
+        }
+      },
+      "available_locales": [
+        "de",
+        "en",
+        "es",
+        "fr",
+        "pt",
+        "ro",
+        "ru"
+      ],
+      "url": "https://www.techbyp.com/product/1001",
+      "image": "https://www.techbyp.com/assets/MP260_Hero.jpg",
+      "category": "sampling-equipment",
+      "product_type": "smart-system",
+      "has_video": true,
+      "video_url": "https://www.youtube.com/watch?v=40DoQB6vey0",
+      "last_updated": "2026-06-23T06:59:45.364Z"
+    },
+    {
+      "id": "1002",
+      "name": "MP-390",
+      "description": "Tough enough to handle the soil, smart enough to work efficiently.",
+      "localizations": {
+        "de": {
+          "name": "MP-3.90",
+          "description": "Robust genug für den Boden, smart genug für effizientes Arbeiten."
+        },
+        "en": {
+          "name": "MP-3.90",
+          "description": "Tough enough to handle the soil, smart enough to work efficiently."
+        },
+        "es": {
+          "name": "MP-3.90",
+          "description": "Lo suficientemente resistente para manejar el suelo, lo suficientemente inteligente para trabajar eficientemente."
+        },
+        "fr": {
+          "name": "MP-3.90",
+          "description": "Assez dur pour gérer le sol, assez intelligent pour travailler efficacement."
+        },
+        "pt": {
+          "name": "MP-3.90",
+          "description": "Resistente o suficiente para lidar com o solo, inteligente o suficiente para trabalhar com eficiência."
+        },
+        "ro": {
+          "name": "MP-3.90",
+          "description": "Extracție 0–95 cm, 3 straturi, complet automat."
+        },
+        "ru": {
+          "name": "MP-3.90",
+          "description": "Достаточно прочный для работы с почвой, достаточно умный для эффективной работы."
+        }
+      },
+      "available_locales": [
+        "de",
+        "en",
+        "es",
+        "fr",
+        "pt",
+        "ro",
+        "ru"
+      ],
+      "url": "https://www.techbyp.com/product/1002",
+      "image": "https://www.techbyp.com/assets/MP390_Hero.jpg",
+      "category": "sampling-equipment",
+      "product_type": "smart-system",
+      "has_video": true,
+      "video_url": "https://www.youtube.com/watch?v=40DoQB6vey0",
+      "last_updated": "2026-06-23T06:59:45.364Z"
+    },
+    {
+      "id": "1003",
+      "name": "MP-4100",
+      "description": "Deep soil, sorted smartly. No fuss, just depth.",
+      "localizations": {
+        "de": {
+          "name": "MP-4.100",
+          "description": "Tiefer Boden, clever sortiert. Kein Schnickschnack, nur Tiefe."
+        },
+        "en": {
+          "name": "MP-4.100",
+          "description": "Deep soil, sorted smartly. No fuss, just depth."
+        },
+        "es": {
+          "name": "MP-4.100",
+          "description": "Suelo profundo, clasificado inteligentemente. Sin faff, solo profundidad."
+        },
+        "fr": {
+          "name": "MP-4.100",
+          "description": "Sol profond, trié intelligemment. Pas de problèmes, juste de la profondeur."
+        },
+        "pt": {
+          "name": "MP-4.100",
+          "description": "Solo profundo, classificado de forma inteligente. Sem complicações, apenas profundidade."
+        },
+        "ro": {
+          "name": "MP-4.100",
+          "description": "Extracție până la 100 cm, 4 straturi, complet automat."
+        },
+        "ru": {
+          "name": "MP-4.100",
+          "description": "Глубокий грунт, тщательно отсортированный. Никакой суеты, только глубина."
+        }
+      },
+      "available_locales": [
+        "de",
+        "en",
+        "es",
+        "fr",
+        "pt",
+        "ro",
+        "ru"
+      ],
+      "url": "https://www.techbyp.com/product/1003",
+      "image": "https://www.techbyp.com/assets/MP4100_Hero.jpg",
+      "category": "sampling-equipment",
+      "product_type": "smart-system",
+      "has_video": false,
+      "video_url": null,
+      "last_updated": "2026-06-23T06:59:45.364Z"
+    },
+    {
+      "id": "1004",
+      "name": "DH-130",
+      "description": "Efficient, dependable, and quietly confident. Soil sampling, but with a bit of hydraulic muscle behind it.",
+      "localizations": {
+        "de": {
+          "name": "DH-1.30",
+          "description": "Effizient, zuverlässig und unaufdringlich stark. Bodenproben mit hydraulischer Power."
+        },
+        "en": {
+          "name": "DH-1.30",
+          "description": "Efficient, dependable, and quietly confident. Soil sampling, but with a bit of hydraulic muscle behind it."
+        },
+        "es": {
+          "name": "DH-1.30",
+          "description": "Eficiente, confiable y silenciosamente confiado. Muestreo de suelo, pero con un poco de músculo hidráulico detrás."
+        },
+        "fr": {
+          "name": "DH-1.30",
+          "description": "Efficace, fiable et silencieusement confiant. Échantillonnage des sols, mais avec un peu de muscle hydraulique derrière."
+        },
+        "pt": {
+          "name": "DH-1.30",
+          "description": "Eficiente, confiável e silenciosamente confiante. Amostragem de solo, mas com um pouco de força hidráulica por trás dela."
+        },
+        "ro": {
+          "name": "DH-1.30",
+          "description": "Adâncime 0–30 cm, sistem de foraj electric sau hidraulic, control precis."
+        },
+        "ru": {
+          "name": "DH-1.30",
+          "description": "Эффективный, надежный и бесшумный. Отбор проб почвы, но за этим стоит немного гидравлической мускулатуры."
+        }
+      },
+      "available_locales": [
+        "de",
+        "en",
+        "es",
+        "fr",
+        "pt",
+        "ro",
+        "ru"
+      ],
+      "url": "https://www.techbyp.com/product/1004",
+      "image": "https://www.techbyp.com/assets/DH130_Hero.jpg",
+      "category": "sampling-equipment",
+      "product_type": "equipment",
+      "has_video": true,
+      "video_url": "https://www.youtube.com/watch?v=Lg1I2b6iUTA",
+      "last_updated": "2026-06-23T06:59:45.364Z"
+    },
+    {
+      "id": "1005",
+      "name": "DE-130",
+      "description": "Smart, silent, and very nimble. Making soil sampling look almost effortless.",
+      "localizations": {
+        "de": {
+          "name": "DE-1.30",
+          "description": "Klug, leise und flink – Bodenproben nehmen, als wär’s ein Spaziergang."
+        },
+        "en": {
+          "name": "DE-1.30",
+          "description": "Smart, silent, and very nimble. Making soil sampling look almost effortless."
+        },
+        "es": {
+          "name": "DE-1.30",
+          "description": "Inteligente, silencioso y muy ágil. Haciendo que el muestreo de suelo parezca casi sin esfuerzo."
+        },
+        "fr": {
+          "name": "DE-1.30",
+          "description": "Intelligent, silencieux et très nimble. Rendre l'échantillonnage des sols presque sans effort."
+        },
+        "pt": {
+          "name": "DE-1.30",
+          "description": "Inteligente, silencioso e muito ágil. Fazer com que a amostragem do solo pareça quase fácil."
+        },
+        "ro": {
+          "name": "DE-1.30",
+          "description": "Sistem de foraj electric, silențios și foarte precis."
+        },
+        "ru": {
+          "name": "DE-1.30",
+          "description": "Умный, бесшумный и очень маневренный. Сделать отбор проб почвы практически не составит труда."
+        }
+      },
+      "available_locales": [
+        "de",
+        "en",
+        "es",
+        "fr",
+        "pt",
+        "ro",
+        "ru"
+      ],
+      "url": "https://www.techbyp.com/product/1005",
+      "image": "https://www.techbyp.com/assets/DE130_Hero.jpg",
+      "category": "sampling-equipment",
+      "product_type": "equipment",
+      "has_video": true,
+      "video_url": "https://www.youtube.com/watch?v=m6BqgLotHT8",
+      "last_updated": "2026-06-23T06:59:45.364Z"
+    },
+    {
+      "id": "1006",
+      "name": "BOPROB III",
+      "description": "Tow it, sample it, then keep on moving—no fuss, no waiting.",
+      "localizations": {
+        "de": {
+          "name": "BOPROB III",
+          "description": "Anhängen, beproben, weiterfahren – kein Stress, kein Warten."
+        },
+        "en": {
+          "name": "BOPROB III",
+          "description": "Tow it, sample it, then keep on moving—no fuss, no waiting."
+        },
+        "es": {
+          "name": "BOPROB III",
+          "description": "Remolcalo, muestrealo, luego sigue moviéndote —sin faff, sin esperar."
+        },
+        "fr": {
+          "name": "BOPROB III",
+          "description": "Remorquez-le, échantillonnez-le, puis continuez à avancer — pas de problèmes, pas d'attente."
+        },
+        "pt": {
+          "name": "BOPROB III",
+          "description": "Reboque-o, prove-o e continue andando – sem complicações, sem espera."
+        },
+        "ro": {
+          "name": "BOPROB III",
+          "description": "Remorcă care prelevează 16 probe în mișcare — fără oprire."
+        },
+        "ru": {
+          "name": "BOPROB III",
+          "description": "Буксируйте, отбирайте пробы и продолжайте движение — никакой суеты и ожидания."
+        }
+      },
+      "available_locales": [
+        "de",
+        "en",
+        "es",
+        "fr",
+        "pt",
+        "ro",
+        "ru"
+      ],
+      "url": "https://www.techbyp.com/product/1006",
+      "image": "https://www.techbyp.com/assets/BOPROB_Hero.jpg",
+      "category": "sampling-equipment",
+      "product_type": "equipment",
+      "has_video": false,
+      "video_url": null,
+      "last_updated": "2026-06-23T06:59:45.364Z"
+    },
+    {
+      "id": "2000",
+      "name": "Lay-down Frame",
+      "description": "A no‑nonsense mounting bracket for your sampler—fits the back end of most civilized vehicles without turning them into Franken-trucks.",
+      "localizations": {
+        "de": {
+          "name": "Lay-Down",
+          "description": "Ein unaufgeregter Montagebügel für deinen Sampler – passt an die meisten zivilisierten Fahrzeuge, ohne Theater."
+        },
+        "en": {
+          "name": "Lay-down Frame",
+          "description": "A no‑nonsense mounting bracket for your sampler—fits the back end of most civilized vehicles without turning them into Franken-trucks."
+        },
+        "es": {
+          "name": "Marco de acostar",
+          "description": "Un soporte de montaje sin tonterías para tu muestreador —se adapta al extremo trasero de la mayoría de los vehículos civilizados sin convertirlos en camiones Franken."
+        },
+        "fr": {
+          "name": "Cadre rabattable",
+          "description": "Un support de montage sans chichi pour votre échantillonneur—s'adapte à l'arrière de la plupart des véhicules civilisés sans les transformer en camions Franken."
+        },
+        "pt": {
+          "name": "Estrutura de instalação",
+          "description": "Um suporte de montagem prático para o seu amostrador - cabe na traseira da maioria dos veículos civilizados sem transformá-los em camiões Franken."
+        },
+        "ro": {
+          "name": "Cadru rabatabil",
+          "description": "Un suport simplu și robust pentru montarea sampler-ului—se potrivește pe majoritatea vehiculelor."
+        },
+        "ru": {
+          "name": "Монтажная рама",
+          "description": "Серьезный монтажный кронштейн для вашего пробоотборника — подходит для задней части большинства цивилизованных транспортных средств, не превращая их в Франкен-грузовики."
+        }
+      },
+      "available_locales": [
+        "de",
+        "en",
+        "es",
+        "fr",
+        "pt",
+        "ro",
+        "ru"
+      ],
+      "url": "https://www.techbyp.com/product/2000",
+      "image": "https://www.techbyp.com/assets/LayDown_Hero.jpg",
+      "category": "sampling-equipment",
+      "product_type": "equipment",
+      "has_video": false,
+      "video_url": null,
+      "last_updated": "2026-06-23T06:59:45.364Z"
+    },
+    {
+      "id": "2001",
+      "name": "ThreePoint Hitch",
+      "description": "Makes your tractor be a soil-sampling beast, harnessing PTO power for hydraulic sampler integration. Tough, reliable, no-nonsense.",
+      "localizations": {
+        "de": {
+          "name": "Dreipunkt-Bock",
+          "description": "Verwandelt Ihren Traktor in eine Bodenprobennahmebestie, indem er die Zapfwelle für den hydraulischen Probenehmer nutzt. Robust, zuverlässig, ohne Schnickschnack."
+        },
+        "en": {
+          "name": "Three‑Point Hitch",
+          "description": "Makes your tractor be a soil-sampling beast, harnessing PTO power for hydraulic sampler integration. Tough, reliable, no-nonsense."
+        },
+        "es": {
+          "name": "Enganche de tres puntos",
+          "description": "Hace que tu tractor sea una bestia de muestreo de suelo, aprovechando el poder PTO para integración de muestreador hidráulico. Resistente, confiable, sin tonterías."
+        },
+        "fr": {
+          "name": "Attelage trois points",
+          "description": "Transforme votre tracteur en bête d'échantillonnage de sol, utilisant la puissance PTO pour l'intégration d'échantillonneur hydraulique. Dur, fiable, sans chichi."
+        },
+        "pt": {
+          "name": "Engate de três pontos",
+          "description": "Faz com que seu trator seja uma fera na amostragem de solo, aproveitando a potência da TDF para integração do amostrador hidráulico. Resistente, confiável e prático."
+        },
+        "ro": {
+          "name": "Cuplare în trei puncte",
+          "description": "Transformă tractorul într-un campion al prelevării de probe—folosind puterea PTO pentru integrarea hidraulică."
+        },
+        "ru": {
+          "name": "Трехточечная сцепка",
+          "description": "Делает ваш трактор зверь для отбора проб почвы, использующий мощность ВОМ для интеграции гидравлического пробоотборника. Прочный, надежный, без излишеств."
+        }
+      },
+      "available_locales": [
+        "de",
+        "en",
+        "es",
+        "fr",
+        "pt",
+        "ro",
+        "ru"
+      ],
+      "url": "https://www.techbyp.com/product/2001",
+      "image": "https://www.techbyp.com/assets/ThreePointHitch_Hero.jpg",
+      "category": "sampling-equipment",
+      "product_type": "equipment",
+      "has_video": false,
+      "video_url": null,
+      "last_updated": "2026-06-23T06:59:45.364Z"
+    },
+    {
+      "id": "2003",
+      "name": "Full Conversion",
+      "description": "Turns your utility vehicle or pickup into a no-nonsense soil sampling beast. Bed off, frame on, tools loaded.",
+      "localizations": {
+        "de": {
+          "name": "komplett-umbau",
+          "description": "Verwandelt Ihr Nutzfahrzeug oder Pickup in eine ernsthafte Bodenprobennahmebestie. Ladefläche ab, Rahmen drauf, Werkzeuge verstaut."
+        },
+        "en": {
+          "name": "Full Conversion",
+          "description": "Turns your utility vehicle or pickup into a no-nonsense soil sampling beast. Bed off, frame on, tools loaded."
+        },
+        "es": {
+          "name": "Conversión completa",
+          "description": "Convierte tu vehículo utilitario o pickup en una bestia de muestreo de suelo sin tonterías. Cama fuera, marco puesto, herramientas cargadas."
+        },
+        "fr": {
+          "name": "Conversion complète",
+          "description": "Transforme votre véhicule utilitaire ou camionnette en bête d'échantillonnage de sol sans chichi. Plateau retiré, cadre monté, outils chargés."
+        },
+        "pt": {
+          "name": "Conversão completa",
+          "description": "Transforma seu veículo utilitário ou picape em uma fera de amostragem de solo prática. Cama retirada, estrutura colocada, ferramentas carregadas."
+        },
+        "ro": {
+          "name": "Conversie completă",
+          "description": "Transformă vehiculul utilitar sau pickup-ul într-o mașină de prelevare a probelor."
+        },
+        "ru": {
+          "name": "Полная модернизация",
+          "description": "Превращает ваш внедорожник или пикап в серьезный зверь для отбора проб почвы. Платформа снята, рама включена, инструменты загружены."
+        }
+      },
+      "available_locales": [
+        "de",
+        "en",
+        "es",
+        "fr",
+        "pt",
+        "ro",
+        "ru"
+      ],
+      "url": "https://www.techbyp.com/product/2003",
+      "image": "https://www.techbyp.com/assets/FullConversion_Hero.jpg",
+      "category": "sampling-equipment",
+      "product_type": "equipment",
+      "has_video": false,
+      "video_url": null,
+      "last_updated": "2026-06-23T06:59:45.364Z"
+    },
+    {
+      "id": "2004",
+      "name": "Special Trailers",
+      "description": "These trailers transport MP-series, DH/DE systems effortlessly across anything that isn't actually a wall.",
+      "localizations": {
+        "de": {
+          "name": "Anhänger-Spezial",
+          "description": "Diese Anhänger transportieren MP-, DH/DE-Systeme mühelos über alles, was nicht gerade eine Wand ist."
+        },
+        "en": {
+          "name": "Special Trailers",
+          "description": "These trailers transport MP-series, DH/DE systems effortlessly across anything that isn't actually a wall."
+        },
+        "es": {
+          "name": "Remolques especiales",
+          "description": "Estos remolques transportan sistemas MP-series, DH/DE sin esfuerzo a través de cualquier cosa que no sea realmente una pared."
+        },
+        "fr": {
+          "name": "Remorques spéciales",
+          "description": "Ces remorques transportent les systèmes MP-series, DH/DE sans effort à travers tout ce qui n'est pas un mur."
+        },
+        "pt": {
+          "name": "Reboques especiais",
+          "description": "Esses reboques transportam sistemas da série MP, DH/DE sem esforço em qualquer lugar que na verdade não é uma parede."
+        },
+        "ro": {
+          "name": "Remorci speciale",
+          "description": "Remorci robuste care transportă sistemele MP și DH/DE cu ușurință."
+        },
+        "ru": {
+          "name": "Специальные прицепы",
+          "description": "Эти прицепы легко перевозят системы серий MP, DH/DE через все, что на самом деле не является стеной."
+        }
+      },
+      "available_locales": [
+        "de",
+        "en",
+        "es",
+        "fr",
+        "pt",
+        "ro",
+        "ru"
+      ],
+      "url": "https://www.techbyp.com/product/2004",
+      "image": "https://www.techbyp.com/assets/Trailer_Hero.jpg",
+      "category": "sampling-equipment",
+      "product_type": "equipment",
+      "has_video": false,
+      "video_url": null,
+      "last_updated": "2026-06-23T06:59:45.364Z"
+    },
+    {
+      "id": "3000",
+      "name": "Power Pack",
+      "description": "For those running MP or DH units without onboard power, these packs deliver consistent hydraulic or electric energy wherever your work takes you.",
+      "localizations": {
+        "de": {
+          "name": "Power Pack",
+          "description": "Für alle, die MP- oder DH-Einheiten ohne Bordhydraulik betreiben – diese Einheiten liefern zuverlässige hydraulische oder elektrische Energie, wohin Ihre Arbeit Sie auch führt."
+        },
+        "en": {
+          "name": "Power Pack",
+          "description": "For those running MP or DH units without onboard power, these packs deliver consistent hydraulic or electric energy wherever your work takes you."
+        },
+        "es": {
+          "name": "Paquete de energía",
+          "description": "Para aquellos que corren unidades MP o DH sin poder a bordo, estos paquetes entregan energía hidráulica o eléctrica consistente donde sea que tu trabajo te lleve."
+        },
+        "fr": {
+          "name": "Bloc d'alimentation",
+          "description": "Pour ceux qui font fonctionner des unités MP ou DH sans puissance embarquée, ces blocs délivrent une énergie hydraulique ou électrique constante où que votre travail vous emmène."
+        },
+        "pt": {
+          "name": "Pacote de energia",
+          "description": "Para aqueles que utilizam unidades MP ou DH sem energia integrada, esses pacotes fornecem energia hidráulica ou elétrica consistente onde quer que seu trabalho o leve."
+        },
+        "ro": {
+          "name": "Pachet de alimentare",
+          "description": "Pachete de alimentare portabile pentru utilajele MP și DH atunci când vehiculul nu oferă puterea necesară, disponibile în variante hidraulice sau electrice."
+        },
+        "ru": {
+          "name": "Блок питания",
+          "description": "Для тех, кто использует агрегаты MP или DH без бортового питания, эти блоки обеспечивают постоянную гидравлическую или электрическую энергию, где бы вы ни работали берет тебя."
+        }
+      },
+      "available_locales": [
+        "de",
+        "en",
+        "es",
+        "fr",
+        "pt",
+        "ro",
+        "ru"
+      ],
+      "url": "https://www.techbyp.com/product/3000",
+      "image": "https://www.techbyp.com/assets/PowerPack_Hero.jpg",
+      "category": "sampling-equipment",
+      "product_type": "equipment",
+      "has_video": false,
+      "video_url": null,
+      "last_updated": "2026-06-23T06:59:45.364Z"
+    },
+    {
+      "id": "3001",
+      "name": "Recommended Spare Parts",
+      "description": "Because nothing ruins a good day in the field like a broken fitting or a leaky seal. These are the official, recommended spare parts—hand-picked for your MP, DH, DE or BOPROB III machine, and ready to get you out of trouble before it starts.",
+      "localizations": {
+        "de": {
+          "name": "Ersatzteile Empfohlen",
+          "description": "Weil nichts einen guten Tag im Feld so ruiniert wie ein undichtes Bauteil oder ein gerissener Riemen. Dies sind die offiziellen, empfohlenen Ersatzteile – handverlesen für Ihre MP-, DH-, DE- oder BOPROB III-Maschine und bereit, Sie aus der Patsche zu helfen, bevor es losgeht."
+        },
+        "en": {
+          "name": "Recommended Spare Parts",
+          "description": "Because nothing ruins a good day in the field like a broken fitting or a leaky seal. These are the official, recommended spare parts—hand-picked for your MP, DH, DE or BOPROB III machine, and ready to get you out of trouble before it starts."
+        },
+        "es": {
+          "name": "Repuestos recomendados",
+          "description": "Porque nada arruina un buen día en el campo como un ajuste roto o un sello con fugas. Estos son los repuestos oficiales recomendados —seleccionados a mano para tu máquina MP, DH, DE o BOPROB III, y listos para sacarte de problemas antes de que comience."
+        },
+        "fr": {
+          "name": "Pièces de rechange recommandées",
+          "description": "Parce que rien ne ruine une bonne journée sur le terrain comme un raccord cassé ou un joint qui fuit. Ce sont les pièces de rechange officielles, recommandées—sélectionnées à la main pour votre machine MP, DH, DE ou BOPROB III, et prêtes à vous sortir des ennuis avant qu'ils ne commencent."
+        },
+        "pt": {
+          "name": "Peças sobressalentes recomendadas",
+          "description": "Porque nada estraga um bom dia no campo como uma conexão quebrada ou uma vedação com vazamento. Estas são as peças de reposição oficiais recomendadas - escolhidas a dedo para sua máquina MP, DH, DE ou BOPROB III e prontas para livrá-lo de problemas antes que eles comecem."
+        },
+        "ro": {
+          "name": "Piese de schimb recomandate",
+          "description": "Piese de schimb oficiale pentru utilajele MP, DH, DE și BOPROB III, astfel încât să nu transformi o defecțiune banală într-o zi pierdută pe teren."
+        },
+        "ru": {
+          "name": "Рекомендуемые запасные части",
+          "description": "Потому что ничто так не портит хороший день в полевых условиях, как сломанный фитинг или неплотное уплотнение. Это официальные рекомендованные запасные части, подобранные вручную для вашей машины MP, DH, DE или BPROB III и готовые помочь вам избежать неприятностей еще до их начала."
+        }
+      },
+      "available_locales": [
+        "de",
+        "en",
+        "es",
+        "fr",
+        "pt",
+        "ro",
+        "ru"
+      ],
+      "url": "https://www.techbyp.com/product/3001",
+      "image": "https://www.techbyp.com/assets/SpareParts_Hero.jpg",
+      "category": "sampling-equipment",
+      "product_type": "equipment",
+      "has_video": false,
+      "video_url": null,
+      "last_updated": "2026-06-23T06:59:45.364Z"
+    },
+    {
+      "id": "3002",
+      "name": "Coolbox 95L",
+      "description": "Because sometimes your samples—or your beer—deserve better than lukewarm misery. With this 95L beast, you're bringing a portable arctic tundra to the job site. Possibly overkill. But definitely brilliant.",
+      "localizations": {
+        "de": {
+          "name": "Kühlbox 95L",
+          "description": "Weil Ihre Proben – oder Ihr Bier – manchmal mehr verdienen als lauwarmes Elend. Mit diesem 95L-Monster bringen Sie eine portable arktische Tundra zur Baustelle. Vielleicht übertrieben. Aber definitiv brillant."
+        },
+        "en": {
+          "name": "Coolbox 95L",
+          "description": "Because sometimes your samples—or your beer—deserve better than lukewarm misery. With this 95L beast, you're bringing a portable arctic tundra to the job site. Possibly overkill. But definitely brilliant."
+        },
+        "es": {
+          "name": "Enfriador 95L",
+          "description": "Porque a veces tus muestras —o tu cerveza— merecen algo mejor que miseria tibia. Con esta bestia de 95L, estás trayendo una tundra ártica portátil al sitio de trabajo. Posiblemente excesivo. Pero definitivamente brillante."
+        },
+        "fr": {
+          "name": "Glacière 95L",
+          "description": "Parce que parfois vos échantillons—ou votre bière—méritent mieux que la misère tiède. Avec cette bête de 95L, vous apportez une toundra arctique portable sur le chantier. Possiblement exagéré. Mais définitivement brillant."
+        },
+        "pt": {
+          "name": "Caixa térmica 95L",
+          "description": "Porque às vezes suas amostras - ou sua cerveja - merecem algo melhor do que a miséria morna. Com esta fera de 95L, você leva uma tundra ártica portátil para o local de trabalho. Possivelmente um exagero. Mas definitivamente brilhante."
+        },
+        "ro": {
+          "name": "Ladă frigorifică 95L",
+          "description": "Pentru că uneori probele tale, sau chiar băutura de după teren, merită mai mult decât o căldură călâie. Cu acest monstru de 95 L aduci un mic climat arctic direct la locul de lucru."
+        },
+        "ru": {
+          "name": "Холодильник 95л",
+          "description": "Потому что иногда ваши образцы — или ваше пиво — заслуживают большего, чем теплые страдания. С этим зверем объемом 95 л вы доставите на стройплощадку портативную арктическую тундру. Возможно, перебор. Но определенно гениально."
+        }
+      },
+      "available_locales": [
+        "de",
+        "en",
+        "es",
+        "fr",
+        "pt",
+        "ro",
+        "ru"
+      ],
+      "url": "https://www.techbyp.com/product/3002",
+      "image": "https://www.techbyp.com/assets/CoolBox_Hero.jpg",
+      "category": "sampling-equipment",
+      "product_type": "equipment",
+      "has_video": false,
+      "video_url": null,
+      "last_updated": "2026-06-23T06:59:45.364Z"
+    },
+    {
+      "id": "3003",
+      "name": "LED Work Light 1700",
+      "description": "Darkness is no excuse. With 1700 lumens packed into a compact, armored unit, this LED work light is what happens when you cross a headlamp with a small sun. Whether you're mid-sample or mid-swear word, you'll see everything—clearly.",
+      "localizations": {
+        "de": {
+          "name": "LED-Arbeitsleuchte 1700",
+          "description": "Dunkelheit ist keine Ausrede. Mit 1700 Lumen in einer kompakten, gepanzerten Einheit ist diese LED-Arbeitsleuchte das Ergebnis einer Kreuzung aus Stirnlampe und kleiner Sonne."
+        },
+        "en": {
+          "name": "LED Work Light 1700",
+          "description": "Darkness is no excuse. With 1700 lumens packed into a compact, armored unit, this LED work light is what happens when you cross a headlamp with a small sun. Whether you're mid-sample or mid-swear word, you'll see everything—clearly."
+        },
+        "es": {
+          "name": "Luz de trabajo LED 1700",
+          "description": "La oscuridad no es excusa. Con 1700 lúmenes empaquetados en una unidad compacta y blindada, esta luz de trabajo LED es lo que sucede cuando cruzas una linterna con un pequeño sol. Ya sea a mitad de muestra o a mitad de maldición, verás todo —claramente."
+        },
+        "fr": {
+          "name": "Lampe de travail LED 1700",
+          "description": "L'obscurité n'est pas une excuse. Avec 1700 lumens emballés dans une unité compacte et blindée, cette lampe de travail LED est ce qui arrive quand vous croisez un phare avec un petit soleil. Que vous soyez au milieu d'un échantillon ou d'un juron, vous verrez tout—clairement."
+        },
+        "pt": {
+          "name": "Luz de trabalho LED 1700",
+          "description": "A escuridão não é desculpa. Com 1700 lúmens embalados em uma unidade compacta e blindada, esta luz de trabalho LED é o que acontece quando você cruza um farol com um pequeno sol. Esteja você no meio da amostra ou no meio de um palavrão, você verá tudo - claramente."
+        },
+        "ro": {
+          "name": "Lumină LED 1700",
+          "description": "Întunericul nu este o scuză. Cu 1700 de lumeni într-o unitate compactă și blindată, această lumină de lucru LED îți arată clar ceea ce ai de făcut, fie că prelevezi, repari sau lucrezi târziu."
+        },
+        "ru": {
+          "name": "Светодиодный рабочий фонарь 1700",
+          "description": "Темнота не оправдание. Этот светодиодный рабочий фонарь мощностью 1700 люмен, помещенный в компактный бронированный блок, — это то, что происходит, когда вы пересекаете налобный фонарь с маленьким солнцем. Независимо от того, произносите ли вы среднее слово или среднее ругательство, вы увидите все четко."
+        }
+      },
+      "available_locales": [
+        "de",
+        "en",
+        "es",
+        "fr",
+        "pt",
+        "ro",
+        "ru"
+      ],
+      "url": "https://www.techbyp.com/product/3003",
+      "image": "https://www.techbyp.com/assets/LED_Hero.jpg",
+      "category": "sampling-equipment",
+      "product_type": "equipment",
+      "has_video": false,
+      "video_url": null,
+      "last_updated": "2026-06-23T06:59:45.364Z"
+    },
+    {
+      "id": "3004",
+      "name": "External Camera",
+      "description": "Why guess what's going on behind the rig when you can watch it happen in real time. The Watchtower mounts to your machine and streams live footage straight to your cab. No cables. No blind spots. No surprises.",
+      "localizations": {
+        "de": {
+          "name": "Externe Kamera",
+          "description": "Warum raten, was hinter dem Rig passiert, wenn Sie es in Echtzeit beobachten können? Der Wachturm montiert an Ihrer Maschine und streamt Live-Bilder direkt in Ihr Fahrerhaus. Keine Kabel. Keine toten Winkel. Keine Überraschungen."
+        },
+        "en": {
+          "name": "External Camera",
+          "description": "Why guess what's going on behind the rig when you can watch it happen in real time. The Watchtower mounts to your machine and streams live footage straight to your cab. No cables. No blind spots. No surprises."
+        },
+        "es": {
+          "name": "Cámara externa",
+          "description": "Por qué adivinar qué está pasando detrás del rig cuando puedes verlo en tiempo real. La atalaya se monta en tu máquina y transmite footage en vivo directamente a tu cabina. Sin cables. Sin puntos ciegos. Sin sorpresas."
+        },
+        "fr": {
+          "name": "Caméra externe",
+          "description": "Pourquoi deviner ce qui se passe derrière le rig quand vous pouvez le regarder se produire en temps réel. La Tour de guet se monte sur votre machine et diffuse des images en direct directement dans votre cabine. Pas de câbles. Pas d'angles morts. Pas de surprises."
+        },
+        "pt": {
+          "name": "Câmera externa",
+          "description": "Por que adivinhar o que está acontecendo atrás da plataforma quando você pode ver isso acontecer em tempo real. O Watchtower é montado em sua máquina e transmite imagens ao vivo diretamente para sua cabine. Sem cabos. Sem pontos cegos. Sem surpresas."
+        },
+        "ro": {
+          "name": "Cameră externă",
+          "description": "Cameră externă pregătită pentru teren, care transmite imagine live către tabletă sau telefon, astfel încât să vezi exact ce se întâmplă în spatele utilajului."
+        },
+        "ru": {
+          "name": "Внешняя камера",
+          "description": "Зачем гадать, что происходит за буровой установкой, если вы можете наблюдать за этим в реальном времени. Watchtower крепится к вашей машине и транслирует прямые трансляции прямо в вашу кабину. Никаких кабелей. Никаких слепых зон. Никаких сюрпризов."
+        }
+      },
+      "available_locales": [
+        "de",
+        "en",
+        "es",
+        "fr",
+        "pt",
+        "ro",
+        "ru"
+      ],
+      "url": "https://www.techbyp.com/product/3004",
+      "image": "https://www.techbyp.com/assets/ExternalCamera_Hero.jpg",
+      "category": "sampling-equipment",
+      "product_type": "equipment",
+      "has_video": false,
+      "video_url": null,
+      "last_updated": "2026-06-23T06:59:45.364Z"
+    },
+    {
+      "id": "4000",
+      "name": "Probes Dipsticks and Accessories",
+      "description": "The gold standard for manual N-min sampling—precision-engineered, tapered drill rods built for hard soils and lab-grade accuracy.",
+      "localizations": {
+        "de": {
+          "name": "Sonden, Peilstäbe und Zubehör",
+          "description": "Der Goldstandard für manuelle N-min Probennahme – präzisionsgefertigte, konische Bohrgestänge für harte Böden und Laborgenauigkeit."
+        },
+        "en": {
+          "name": "Probes, Dipsticks and Accessories",
+          "description": "The gold standard for manual N-min sampling—precision-engineered, tapered drill rods built for hard soils and lab-grade accuracy."
+        },
+        "es": {
+          "name": "Sondas, varillas y accesorios",
+          "description": "El estándar de oro para muestreo manual N-min —varillas de taladro cónicas de precisión diseñadas para suelos duros y precisión de grado laboratorio."
+        },
+        "fr": {
+          "name": "Sondes, Jauges et Accessoires",
+          "description": "L'étalon-or pour l'échantillonnage manuel N-min—barres de forage effilées conçues avec précision, construites pour les sols durs et une précision de laboratoire."
+        },
+        "pt": {
+          "name": "Sondas, Varetas e Acessórios",
+          "description": "O padrão ouro para amostragem manual de N-min: hastes de perfuração cônicas projetadas com precisão, construídas para solos duros e precisão de nível de laboratório."
+        },
+        "ro": {
+          "name": "Sonde și accesorii",
+          "description": "Sonde pentru prelevare manuală N-min — proiectate pentru precizie în soluri dificile."
+        },
+        "ru": {
+          "name": "Датчики, измерительные щупы и аксессуары",
+          "description": "Золотой стандарт для ручного отбора проб N-мин — прецизионное коническое сверло стержни, созданные для твердых почв и обладающие лабораторной точностью."
+        }
+      },
+      "available_locales": [
+        "de",
+        "en",
+        "es",
+        "fr",
+        "pt",
+        "ro",
+        "ru"
+      ],
+      "url": "https://www.techbyp.com/product/4000",
+      "image": "https://www.techbyp.com/assets/Probes_Hero.jpg",
+      "category": "accessory",
+      "product_type": "equipment",
+      "has_video": false,
+      "video_url": null,
+      "last_updated": "2026-06-23T06:59:45.364Z"
+    },
+    {
+      "id": "4001",
+      "name": "Drill Rods 22 mm for Normal Soil Profiles",
+      "description": "Robust drill rods (Ø 22 mm) designed to open normal soil profiles up to 10 m depth with modular, interchangeable parts for flexible length adjustment.",
+      "localizations": {
+        "de": {
+          "name": "Bohrstangen Ø22 mm für normale Bodenprofile",
+          "description": "Robuste Bohrstangen (Ø 22 mm) zum Öffnen normaler Bodenprofile bis 10 m Tiefe mit modularen, austauschbaren Teilen für flexible Längenanpassung."
+        },
+        "en": {
+          "name": "Drill Rods Ø22 mm for Normal Soil Profiles",
+          "description": "Robust drill rods (Ø 22 mm) designed to open normal soil profiles up to 10 m depth with modular, interchangeable parts for flexible length adjustment."
+        },
+        "es": {
+          "name": "Varillas de taladro Ø22 mm para perfiles de suelo normales",
+          "description": "Varillas de taladro robustas (Ø 22 mm) diseñadas para abrir perfiles de suelo normales hasta 10 m de profundidad con partes modulares e intercambiables para ajuste flexible de longitud."
+        },
+        "fr": {
+          "name": "Barres de forage Ø22 mm pour profils de sol normaux",
+          "description": "Barres de forage robustes (Ø 22 mm) conçues pour ouvrir des profils de sol normaux jusqu'à 10 m de profondeur avec des pièces modulaires interchangeables pour un ajustement flexible de la longueur."
+        },
+        "pt": {
+          "name": "Hastes de perfuração Ø22 mm para perfis de solo normais",
+          "description": "Hastes de perfuração robustas (Ø 22 mm) projetadas para abrir perfis normais de solo até 10 m de profundidade com peças modulares e intercambiáveis ​​para ajuste flexível do comprimento."
+        },
+        "ro": {
+          "name": "Tije de foraj Ø22 mm pentru profile normale",
+          "description": "Tije robuste de foraj Ø22 mm pentru deschiderea profilelor până la 10 metri, cu construcție modulară și prindere sigură a probelor."
+        },
+        "ru": {
+          "name": "Буровые штанги Ø22 мм для нормальных профилей почвы",
+          "description": "Прочная дрель стержни (Ø 22 мм), предназначенные для вскрытия обычных профилей грунта на глубине до 10 м, с модульными взаимозаменяемыми деталями для гибкой регулировки длины."
+        }
+      },
+      "available_locales": [
+        "de",
+        "en",
+        "es",
+        "fr",
+        "pt",
+        "ro",
+        "ru"
+      ],
+      "url": "https://www.techbyp.com/product/4001",
+      "image": "https://www.techbyp.com/assets/ManualDrills_Hero.jpg",
+      "category": "sampling-equipment",
+      "product_type": "equipment",
+      "has_video": false,
+      "video_url": null,
+      "last_updated": "2026-06-23T06:59:45.364Z"
+    },
+    {
+      "id": "4003",
+      "name": "Hammer Selection  Accessories",
+      "description": "Every hammer's a hero in its own right. Pick the one that fits your soil-sampling saga and don't forget the trusty sidekicks—our accessories.",
+      "localizations": {
+        "de": {
+          "name": "Hammer-auswahl & Zubehör",
+          "description": "Jeder Hammer ist auf seine Weise ein Held. Wählen Sie den, der zu Ihrer Bodenprobennahme-Geschichte passt und vergessen Sie nicht die treuen Begleiter – unser Zubehör."
+        },
+        "en": {
+          "name": "Hammer Selection & Accessories",
+          "description": "Every hammer's a hero in its own right. Pick the one that fits your soil-sampling saga and don't forget the trusty sidekicks—our accessories."
+        },
+        "es": {
+          "name": "Selección de martillos y accesorios",
+          "description": "Cada martillo es un héroe en su propio derecho. Elige el que se ajuste a tu saga de muestreo de suelo y no olvides los sidekicks confiables —nuestros accesorios."
+        },
+        "fr": {
+          "name": "Sélection de marteaux et accessoires",
+          "description": "Chaque marteau est un héros à sa façon. Choisissez celui qui convient à votre saga d'échantillonnage des sols et n'oubliez pas les fidèles acolytes—nos accessoires."
+        },
+        "pt": {
+          "name": "Seleção de martelos e acessórios",
+          "description": "Cada martelo é um herói por si só. Escolha aquele que se adapta à sua saga de amostragem de solo e não se esqueça dos companheiros de confiança: nossos acessórios."
+        },
+        "ro": {
+          "name": "Ciocane și accesorii",
+          "description": "Alege ciocanul potrivit pentru solul tău — de la capete dure la față moale din nylon."
+        },
+        "ru": {
+          "name": "Выбор молотков и аксессуаров",
+          "description": "Каждый молоток сам по себе герой. Выберите тот, который подходит для вашей саги по отбору проб почвы, и не забудьте о верных помощниках — наших аксессуарах."
+        }
+      },
+      "available_locales": [
+        "de",
+        "en",
+        "es",
+        "fr",
+        "pt",
+        "ro",
+        "ru"
+      ],
+      "url": "https://www.techbyp.com/product/4003",
+      "image": "https://www.techbyp.com/assets/Hammers_Hero.jpg",
+      "category": "sampling-equipment",
+      "product_type": "equipment",
+      "has_video": false,
+      "video_url": null,
+      "last_updated": "2026-06-23T06:59:45.364Z"
+    },
+    {
+      "id": "4004",
+      "name": "Gttinger Soil Corers",
+      "description": "Who needs a gym membership when you have the Göttinger Soil Corers? One person, a light 2.5 kg tool, and you’re ready to conquer the soil—without leaving a trace on the field or terrorizing any buried cables.",
+      "localizations": {
+        "de": {
+          "name": "Göttinger Bohrstöcke",
+          "description": "Wer braucht schon ein Fitnessstudio, wenn man die Göttinger Bohrstöcke hat? Eine Person, ein leichtes Werkzeug von 2,5 kg, und schon ist man bereit, den Boden zu erobern – ohne Spuren auf dem Feld oder Schaden an unterirdischen Kabeln zu hinterlassen."
+        },
+        "en": {
+          "name": "Göttinger Soil Corers",
+          "description": "Who needs a gym membership when you have the Göttinger Soil Corers? One person, a light 2.5 kg tool, and you’re ready to conquer the soil—without leaving a trace on the field or terrorizing any buried cables."
+        },
+        "es": {
+          "name": "Corers de suelo Göttinger",
+          "description": "¿Quién necesita membresía de gimnasio cuando tienes los Corers de suelo Göttinger? Una persona, una herramienta ligera de 2.5 kg, y estás listo para conquistar el suelo —sin dejar rastro en el campo o aterrorizar cables enterrados."
+        },
+        "fr": {
+          "name": "Carottes de sol Göttinger",
+          "description": "Qui a besoin d'un abonnement à la salle de sport quand on a les carottes de sol Göttinger ? Une personne, un outil léger de 2,5 kg, et vous êtes prêt à conquérir le sol—sans laisser de trace sur le champ ou terroriser les câbles enterrés."
+        },
+        "pt": {
+          "name": "Corers de solo Göttinger",
+          "description": "Quem precisa de uma academia quando você tem os Corers de solo Göttinger? Uma pessoa, uma ferramenta leve de 2,5 kg e você estará pronto para conquistar o solo – sem deixar rastros no campo ou aterrorizar cabos enterrados."
+        },
+        "ro": {
+          "name": "Carotiere de sol Göttinger",
+          "description": "Carotiere manuale ușoare, concepute pentru prelevare precisă în soluri fine, fără utilaje grele, fără ajutor suplimentar și fără să deranjeze inutil terenul."
+        },
+        "ru": {
+          "name": "Геттингерские грунтовые керны",
+          "description": "Кому нужен абонемент в спортзал, если у вас есть Göttinger Soil Corers? Один человек, легкий инструмент весом 2,5 кг, и вы готовы покорять почву, не оставляя следов на поле и не терроризируя закопанные кабели."
+        }
+      },
+      "available_locales": [
+        "de",
+        "en",
+        "es",
+        "fr",
+        "pt",
+        "ro",
+        "ru"
+      ],
+      "url": "https://www.techbyp.com/product/4004",
+      "image": "https://www.techbyp.com/assets/Göttinger_Hero.jpg",
+      "category": "sampling-equipment",
+      "product_type": "equipment",
+      "has_video": false,
+      "video_url": null,
+      "last_updated": "2026-06-23T06:59:45.364Z"
+    },
+    {
+      "id": "5000",
+      "name": "Nitratraupe",
+      "description": "Rough terrain? Slope? Cornfield maze? No problem. This crawler doesn’t complain—it just samples.",
+      "localizations": {
+        "de": {
+          "name": "Nitratraupe",
+          "description": "Unwegsames Gelände? Steigung? Maislabyrinth? Kein Problem. Diese Raupe beschwert sich nicht – sie beprobt einfach."
+        },
+        "en": {
+          "name": "Nitratraupe",
+          "description": "Rough terrain? Slope? Cornfield maze? No problem. This crawler doesn’t complain—it just samples."
+        },
+        "es": {
+          "name": "Nitratraupe",
+          "description": "¿Terreno áspero? ¿Pendiente? ¿Laberinto de maíz? Sin problema. Esta oruga no se queja —solo muestrea."
+        },
+        "fr": {
+          "name": "Nitratraupe",
+          "description": "Terrain accidenté ? Pente ? Labyrinthe de maïs ? Pas de problème. Ce crawler ne se plaint pas—il échantillonne simplement."
+        },
+        "pt": {
+          "name": "Nitratraupe",
+          "description": "Terreno acidentado? Declive? Labirinto de milharal? Sem problemas. Este rastreador não reclama – apenas faz amostras."
+        },
+        "ro": {
+          "name": "Nitratraupe",
+          "description": "Crawler pentru teren dificil — prelevează cu încredere pe pante și în culturi."
+        },
+        "ru": {
+          "name": "Nitratraupe",
+          "description": "Пересеченная местность? Склон? Лабиринт кукурузного поля? Без проблем. Этот сканер не жалуется — он просто пробует."
+        }
+      },
+      "available_locales": [
+        "de",
+        "en",
+        "es",
+        "fr",
+        "pt",
+        "ro",
+        "ru"
+      ],
+      "url": "https://www.techbyp.com/product/5000",
+      "image": "https://www.techbyp.com/assets/Raupen_Hero.jpg",
+      "category": "sampling-equipment",
+      "product_type": "equipment",
+      "has_video": true,
+      "video_url": "https://www.youtube.com/watch?v=AkAbm-EYoo0",
+      "last_updated": "2026-06-23T06:59:45.364Z"
+    }
+  ]
+}

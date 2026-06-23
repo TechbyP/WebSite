@@ -6,6 +6,7 @@ import blog from '../assets/pictures/blog.jpg';
 import { Helmet } from 'react-helmet-async';
 import { useTranslation } from 'react-i18next';
 import { fetchArticles, optimizeRemoteImageUrl, type PublicBlogArticle as BlogArticle } from '../utils/publicApi';
+import { buildCanonicalUrl } from '../utils/seo';
 
 const humanizeCategory = (value: string) =>
   value
@@ -193,6 +194,8 @@ const BlogList = () => {
       <Helmet>
         <title>{t('blog.meta.title')}</title>
         <meta name="description" content={t('blog.meta.description')} />
+        <meta property="og:url" content={buildCanonicalUrl('/blog')} />
+        <link rel="canonical" href={buildCanonicalUrl('/blog')} />
       </Helmet>
 
       <header className="bg-[#f8fafc] px-4 pt-4 text-white sm:px-6 lg:px-8 dark:bg-gray-900">

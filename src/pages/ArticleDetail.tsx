@@ -7,11 +7,13 @@ import { Helmet } from 'react-helmet-async';
 import { motion } from 'framer-motion';
 import { formatContentForDisplay, generateExcerpt } from '../admin/formatting';
 import { fetchArticleById, optimizeRemoteImageUrl, trackArticleView, type PublicBlogArticle } from '../utils/publicApi';
+import { buildCanonicalUrl, normalizeResourceId, toAbsoluteUrl } from '../utils/seo';
 
 const ArticleDetail = () => {
   const { t, i18n } = useTranslation();
   const currentLanguage = (i18n.resolvedLanguage || i18n.language || 'en').toLowerCase().split('-')[0];
   const { id } = useParams();
+  const normalizedArticleId = normalizeResourceId(id);
   const navigate = useNavigate();
   const [article, setArticle] = useState<PublicBlogArticle | null>(null);
   const [showShareOptions, setShowShareOptions] = useState(false);
@@ -24,15 +26,63 @@ const ArticleDetail = () => {
 
   const currentContent = article?.content?.[currentLanguage] || article?.content?.en || { title: '', content: [], excerpt: '' };
   const currentTitle = currentContent.title || article?.title?.[currentLanguage] || article?.title?.en || '';
+  const articleUrl = buildCanonicalUrl(`/blog/${normalizedArticleId}`);
+  const articleSchema = article ? {
+    '@context': 'https://schema.org',
+    '@type': 'Article',
+    headline: currentTitle,
+    description: currentContent.excerpt || generateExcerpt(currentContent.content),
+    image: [toAbsoluteUrl(article.image)],
+    datePublished: article.date,
+    dateModified: article.date,
+    author: {
+      '@type': 'Person',
+      name: article.author?.name || 'TechByP',
+    },
+    publisher: {
+      '@type': 'Organization',
+      name: 'TechByP',
+      logo: {
+        '@type': 'ImageObject',
+        url: toAbsoluteUrl('/Logo-Symbol.png'),
+      },
+    },
+    mainEntityOfPage: articleUrl,
+  } : null;
+
+  const breadcrumbSchema = {
+    '@context': 'https://schema.org',
+    '@type': 'BreadcrumbList',
+    itemListElement: [
+      {
+        '@type': 'ListItem',
+        position: 1,
+        name: 'Home',
+        item: buildCanonicalUrl('/'),
+      },
+      {
+        '@type': 'ListItem',
+        position: 2,
+        name: 'Blog',
+        item: buildCanonicalUrl('/blog'),
+      },
+      {
+        '@type': 'ListItem',
+        position: 3,
+        name: currentTitle || 'Article',
+        item: articleUrl,
+      },
+    ],
+  };
 
   useEffect(() => {
-    if (!id) return;
+    if (!normalizedArticleId) return;
 
     const fetchArticle = async () => {
       try {
         setIsLoading(true);
         setError(null);
-        const articleData = await fetchArticleById(id);
+        const articleData = await fetchArticleById(normalizedArticleId);
 
         setViews(articleData.views || 0);
         setCommentsCount(articleData.commentsCount || 0);
@@ -41,7 +91,7 @@ const ArticleDetail = () => {
           image: optimizeRemoteImageUrl(articleData.image, 1280),
         });
 
-        void trackArticleView(id)
+        void trackArticleView(normalizedArticleId)
           .then((result) => {
             if (typeof result.views === 'number') {
               setViews(result.views);
@@ -57,7 +107,7 @@ const ArticleDetail = () => {
     };
 
     fetchArticle();
-  }, [id, t]);
+  }, [normalizedArticleId, t]);
 
   useEffect(() => {
     const handleScroll = () => setIsScrolled(window.scrollY > 50);
@@ -133,9 +183,11 @@ const ArticleDetail = () => {
         <meta name="description" content={currentContent.excerpt || generateExcerpt(currentContent.content)} />
         <meta property="og:title" content={currentTitle} />
         <meta property="og:image" content={article.image} />
-        <meta property="og:url" content={window.location.href} />
+        <meta property="og:url" content={articleUrl} />
         <meta property="og:type" content="article" />
-        <link rel="canonical" href={window.location.href} />
+        <link rel="canonical" href={articleUrl} />
+        {articleSchema ? <script type="application/ld+json">{JSON.stringify(articleSchema)}</script> : null}
+        <script type="application/ld+json">{JSON.stringify(breadcrumbSchema)}</script>
       </Helmet>
 
       <header

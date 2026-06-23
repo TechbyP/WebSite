@@ -5,11 +5,13 @@ import {
     ArrowDown, ArrowUp, BookOpen, FileSpreadsheet, FileArchive
 } from 'lucide-react';
 import { useHeader } from './Header';
+import { buildCanonicalUrl } from '../utils/seo';
 import { useLocation } from 'react-router-dom';
 import { XMarkIcon } from '@heroicons/react/24/outline';
 import { Helmet } from 'react-helmet-async';
 import SiteImage from '../assets/pictures/techbyp.png';
 import { useTranslation } from 'react-i18next';
+import { trackAiConversion } from '../utils/publicApi';
 
 // Category definitions
 const CATEGORIES = {
@@ -125,6 +127,7 @@ const FileDownloadPage = () => {
                 <meta property="og:type" content="website" />
                 <meta property="og:url" content="https://www.techbyp.com/downloads" />
                 <meta property="og:image" content={SiteImage} />
+                <link rel="canonical" href={buildCanonicalUrl('/downloads')} />
             </Helmet>
 
             <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -236,6 +239,7 @@ const FileDownloadPage = () => {
                                         document.body.appendChild(link);
                                         link.click();
                                         document.body.removeChild(link);
+                                        trackAiConversion('download_file', file.name);
                                     }}
                                     className="inline-flex items-center px-3 py-2 rounded-md text-sm font-medium text-white bg-brandblue hover:bg-brandgreen"
                                     >

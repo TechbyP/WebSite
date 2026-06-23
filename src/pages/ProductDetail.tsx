@@ -18,13 +18,15 @@ import parseHtmlText from '../utils/parseText'
 import i18n from '../i18n';
 import { useProducts } from '../data/context/ProductsContext';
 import { loadProductGallery } from '../data/productGalleryLoaders';
+import { buildCanonicalUrl, normalizeResourceId, toAbsoluteUrl } from '../utils/seo';
 
 const ProductDetail = () => {
   const { t } = useTranslation();
   const { id } = useParams();
   const navigate = useNavigate();
   const { getProductById, getProductsByCategory } = useProducts();
-  const productId = Number.parseInt(id || '1', 10);
+  const normalizedId = normalizeResourceId(id);
+  const productId = Number.parseInt(normalizedId || '1', 10);
   const product = Number.isNaN(productId) ? undefined : getProductById(productId);
   const keyTranslationsDe = {
     "Sampling Depth": "Probentiefe",
@@ -182,6 +184,60 @@ const ProductDetail = () => {
     heroVideo,
     icon: IconComponent
   } = getProductMediaFallbacks(product);
+  const productUrl = buildCanonicalUrl(`/product/${product.id}`);
+  const primaryImage = gallery[0] || heroImage;
+  const primaryImageUrl = toAbsoluteUrl(primaryImage.split(',')[0]?.trim().split(' ')[0] || '');
+  const productSchema = {
+    '@context': 'https://schema.org',
+    '@type': 'Product',
+    name: product.name,
+    description: t(product.herodescription),
+    category: getCategoryLabel(product.category),
+    image: [primaryImageUrl],
+    brand: {
+      '@type': 'Brand',
+      name: 'TechByP',
+    },
+    sku: String(product.id),
+    offers: {
+      '@type': 'Offer',
+      priceCurrency: 'EUR',
+      price: product.priceValue,
+      availability: 'https://schema.org/InStock',
+      url: productUrl,
+    },
+    additionalProperty: product.features.slice(0, 8).map((feature, index) => ({
+      '@type': 'PropertyValue',
+      name: `Feature ${index + 1}`,
+      value: feature,
+    })),
+  };
+
+  const breadcrumbSchema = {
+    '@context': 'https://schema.org',
+    '@type': 'BreadcrumbList',
+    itemListElement: [
+      {
+        '@type': 'ListItem',
+        position: 1,
+        name: 'Home',
+        item: buildCanonicalUrl('/'),
+      },
+      {
+        '@type': 'ListItem',
+        position: 2,
+        name: 'Products',
+        item: buildCanonicalUrl('/?id=products'),
+      },
+      {
+        '@type': 'ListItem',
+        position: 3,
+        name: product.name,
+        item: productUrl,
+      },
+    ],
+  };
+
   const scrollToSection = (id: string) => {
     const section = document.getElementById(id);
     if (section) {
@@ -212,6 +268,10 @@ const ProductDetail = () => {
         />
         <meta name="keywords" content={product.features.join(', ')} />
         <meta name="robots" content="index, follow" />
+        <meta property="og:url" content={productUrl} />
+        <link rel="canonical" href={productUrl} />
+        <script type="application/ld+json">{JSON.stringify(productSchema)}</script>
+        <script type="application/ld+json">{JSON.stringify(breadcrumbSchema)}</script>
       </Helmet>
 
       <section className="relative h-screen flex items-center justify-center overflow-hidden">

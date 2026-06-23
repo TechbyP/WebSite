@@ -14,6 +14,34 @@ const BUILD_DATE = new Date().toISOString();
 const DEFAULT_IMAGE = `${DOMAIN}/assets/default-product-image.jpg`;
 const LICENSE_URL = `${DOMAIN}/license`;
 const COMPANY_LOCATION = 'Germany';
+const DEFAULT_LOCALE = 'en';
+const LOCALE_QUERY_PARAM = 'lng';
+
+function buildLocalizedPath(pathname, localeCode) {
+  const url = new URL(pathname, DOMAIN);
+
+  if (localeCode === DEFAULT_LOCALE) {
+    url.searchParams.delete(LOCALE_QUERY_PARAM);
+  } else {
+    url.searchParams.set(LOCALE_QUERY_PARAM, localeCode);
+  }
+
+  return `${url.pathname}${url.search}${url.hash}`;
+}
+
+function buildAlternateLinks(pathname, localeCodes) {
+  const links = localeCodes.map((localeCode) => ({
+    lang: localeCode,
+    url: buildLocalizedPath(pathname, localeCode),
+  }));
+
+  links.push({
+    lang: 'x-default',
+    url: buildLocalizedPath(pathname, DEFAULT_LOCALE),
+  });
+
+  return links;
+}
 
 // Get current directory path
 const __filename = fileURLToPath(import.meta.url);
@@ -21,8 +49,12 @@ const __dirname = path.dirname(__filename);
 
 // Path configuration
 const productsPath = path.join(__dirname, '../src/data/products.tsx');
-const enJsonPath = path.join(__dirname, '../src/locales/en.json');
-const deJsonPath = path.join(__dirname, '../src/locales/de.json');
+const localesDirPath = path.join(__dirname, '../src/locales');
+const publicContentPath = path.join(__dirname, '../public/content');
+const productsFeedPath = path.join(publicContentPath, 'products.json');
+const blogIndexFeedPath = path.join(publicContentPath, 'blog-index.json');
+const faqFeedPath = path.join(publicContentPath, 'faq.json');
+const aiManifestFeedPath = path.join(publicContentPath, 'ai-manifest.json');
 
 // Global variables
 let db = null;
@@ -61,22 +93,34 @@ async function initializeFirebase() {
 
 function loadTranslations() {
   try {
-    const enContent = fs.readFileSync(enJsonPath, 'utf-8');
-    const deContent = fs.readFileSync(deJsonPath, 'utf-8');
-    return {
-      en: JSON.parse(enContent),
-      de: JSON.parse(deContent)
-    };
+    const localeFiles = fs
+      .readdirSync(localesDirPath)
+      .filter((fileName) => fileName.endsWith('.json'));
+
+    if (localeFiles.length === 0) {
+      throw new Error('No locale files found.');
+    }
+
+    const translations = {};
+
+    localeFiles.forEach((fileName) => {
+      const localeCode = path.basename(fileName, '.json');
+      const localePath = path.join(localesDirPath, fileName);
+      const localeContent = fs.readFileSync(localePath, 'utf-8');
+      translations[localeCode] = JSON.parse(localeContent);
+    });
+
+    return translations;
   } catch (err) {
     console.error('Error parsing translation files:', err);
     throw err;
   }
 }
 
-function extractTranslation(translations, key) {
+function extractTranslation(translations, key, localeCode = 'en') {
   if (!key) return '';
   const translationPath = key.split('.');
-  let result = translations.en;
+  let result = translations[localeCode] || translations.en;
   for (const part of translationPath) {
     result = result?.[part];
     if (!result) break;
@@ -84,7 +128,31 @@ function extractTranslation(translations, key) {
   return result || '';
 }
 
+function stripHtml(value = '') {
+  if (!value || typeof value !== 'string') {
+    return '';
+  }
+
+  return value
+    .replace(/<[^>]+>/g, ' ')
+    .replace(/\s+/g, ' ')
+    .trim();
+}
+
+function normalizeTextContent(value) {
+  if (Array.isArray(value)) {
+    return value.filter((item) => typeof item === 'string').join(' ');
+  }
+
+  if (typeof value === 'string') {
+    return value;
+  }
+
+  return '';
+}
+
 function extractProducts(translations) {
+  const localeCodes = Object.keys(translations);
   const content = fs.readFileSync(productsPath, 'utf-8');
   
   // Find the products array
@@ -178,6 +246,20 @@ function extractProducts(translations) {
       const description = extractTranslation(translations, descKey);
       const shortDescription =  description || '';
 
+      const localizations = {};
+
+      localeCodes.forEach((localeCode) => {
+        const localizedName = directName || extractTranslation(translations, nameKey, localeCode);
+        const localizedDescription = stripHtml(extractTranslation(translations, descKey, localeCode));
+
+        if (localizedName || localizedDescription) {
+          localizations[localeCode] = {
+            name: localizedName || '',
+            description: localizedDescription || '',
+          };
+        }
+      });
+
       // Clean name for slug
       const cleanName = name.replace(/[^\w\s-]/g, '').trim();
 
@@ -189,6 +271,8 @@ function extractProducts(translations) {
         id,
         name: cleanName,
         description: shortDescription,
+        localizations,
+        available_locales: Object.keys(localizations),
         imagePath: image ? image.replace(/["'`]/g, '').split('?')[0] : null,
         videoId: heroVideo || null,
         lastmod: BUILD_DATE,
@@ -317,9 +401,160 @@ async function fetchBlogArticles() {
   }
 }
 
+function buildFaqItems(translations) {
+  const localeCodes = Object.keys(translations);
+  const englishFaq = translations.en?.contact_page?.faq || {};
+
+  return Object.entries(englishFaq)
+    .filter(([key, value]) => key !== 'title' && value && typeof value === 'object')
+    .map(([key, value]) => {
+      const englishValue = value || {};
+      const localizations = {};
+
+      localeCodes.forEach((localeCode) => {
+        const localizedEntry = translations[localeCode]?.contact_page?.faq?.[key];
+        const localizedQuestion = localizedEntry?.question || '';
+        const localizedAnswer = localizedEntry?.answer || '';
+
+        if (localizedQuestion || localizedAnswer) {
+          localizations[localeCode] = {
+            question: localizedQuestion,
+            answer: localizedAnswer,
+          };
+        }
+      });
+
+      const germanValue = localizations.de || {};
+
+      return {
+        id: key,
+        question: englishValue.question || '',
+        answer: englishValue.answer || '',
+        question_de: germanValue.question || '',
+        answer_de: germanValue.answer || '',
+        localizations,
+        available_locales: Object.keys(localizations),
+        source_url: `${DOMAIN}/contact`,
+      };
+    });
+}
+
+function generateGaioFeeds(translations, products, blogArticles) {
+  fs.mkdirSync(publicContentPath, { recursive: true });
+
+  const productsFeed = {
+    version: '1.0',
+    updatedAt: BUILD_DATE,
+    source: 'prebuild-script',
+    canonical: `${DOMAIN}/content/products.json`,
+    items: products.map((product) => ({
+      id: String(product.id),
+      name: product.name,
+      description: product.description,
+      localizations: product.localizations || {},
+      available_locales: product.available_locales || [],
+      url: `${DOMAIN}/product/${product.id}`,
+      image: product.imageUrl,
+      category: product.isAccessory ? 'accessory' : 'sampling-equipment',
+      product_type: product.isSmartSystem ? 'smart-system' : 'equipment',
+      has_video: Boolean(product.videoId),
+      video_url: product.videoId
+        ? (product.videoId.length === 11 && !product.videoId.includes('/')
+          ? `https://www.youtube.com/watch?v=${product.videoId}`
+          : `${DOMAIN}/videos/${product.videoId.replace(/\.\w+$/, '')}.mp4`)
+        : null,
+      last_updated: product.lastmod,
+    })),
+  };
+
+  const blogIndexFeed = {
+    version: '1.0',
+    updatedAt: BUILD_DATE,
+    source: 'prebuild-script',
+    canonical: `${DOMAIN}/content/blog-index.json`,
+    items: blogArticles.map((article) => {
+      const titleEn = article.content?.en?.title || '';
+      const titleDe = article.content?.de?.title || '';
+      const excerptEn = article.content?.en?.excerpt || stripHtml(normalizeTextContent(article.content?.en?.content)).slice(0, 320);
+      const excerptDe = article.content?.de?.excerpt || stripHtml(normalizeTextContent(article.content?.de?.content)).slice(0, 320);
+      const articleLocales = Object.keys(article.content || {});
+      const localizations = {};
+
+      articleLocales.forEach((localeCode) => {
+        const localizedContent = article.content?.[localeCode] || {};
+        const localizedTitle = localizedContent.title || article.title?.[localeCode] || '';
+        const localizedSummary = localizedContent.excerpt || stripHtml(normalizeTextContent(localizedContent.content)).slice(0, 320);
+
+        if (localizedTitle || localizedSummary) {
+          localizations[localeCode] = {
+            title: localizedTitle,
+            summary: localizedSummary,
+          };
+        }
+      });
+
+      return {
+        id: String(article.id),
+        url: `${DOMAIN}/blog/${article.id}`,
+        category: article.category || 'technology',
+        published_at: article.date || BUILD_DATE,
+        read_time: article.readTime || '',
+        image: article.image || '',
+        author: {
+          name: article.author?.name || 'TechByP',
+          role: article.author?.role || '',
+        },
+        title: {
+          en: titleEn,
+          de: titleDe,
+        },
+        summary: {
+          en: excerptEn,
+          de: excerptDe,
+        },
+        localizations,
+        available_locales: Object.keys(localizations),
+      };
+    }),
+  };
+
+  const faqFeed = {
+    version: '1.0',
+    updatedAt: BUILD_DATE,
+    source: 'translations-multilingual',
+    canonical: `${DOMAIN}/content/faq.json`,
+    locales: Object.keys(translations),
+    items: buildFaqItems(translations),
+  };
+
+  const aiManifest = {
+    version: '1.0',
+    updatedAt: BUILD_DATE,
+    site: DOMAIN,
+    feeds: {
+      products: '/content/products.json',
+      blogIndex: '/content/blog-index.json',
+      faq: '/content/faq.json',
+      announcements: '/content/announcements.json',
+      heroItems: '/content/hero-items.json',
+    },
+    llms: '/llms.txt',
+    policy: '/ai.txt',
+    telemetry: '/api/ai-signals',
+  };
+
+  fs.writeFileSync(productsFeedPath, JSON.stringify(productsFeed, null, 2));
+  fs.writeFileSync(blogIndexFeedPath, JSON.stringify(blogIndexFeed, null, 2));
+  fs.writeFileSync(faqFeedPath, JSON.stringify(faqFeed, null, 2));
+  fs.writeFileSync(aiManifestFeedPath, JSON.stringify(aiManifest, null, 2));
+
+  console.log(`✅ GAIO feeds generated:\n- ${productsFeed.items.length} products\n- ${blogIndexFeed.items.length} blog entries\n- ${faqFeed.items.length} FAQ entries`);
+}
+
 async function generateSitemap() {
   try {
     const translations = loadTranslations();
+    const localeCodes = Object.keys(translations);
     const products = extractProducts(translations);
     
     console.log('⏳ Starting blog article fetch...');
@@ -331,7 +566,7 @@ async function generateSitemap() {
         image: true, 
         video: true,
         news: false,
-        xhtml: false,
+        xhtml: true,
         mobile: false
       }
     });
@@ -340,28 +575,29 @@ async function generateSitemap() {
     const staticRoutes = [
       { url: '/', changefreq: 'daily', priority: 1.0, lastmod: BUILD_DATE },
       { url: '/configurator', changefreq: 'weekly', priority: 0.9, lastmod: BUILD_DATE },
-      { url: '/products', changefreq: 'monthly', priority: 0.8, lastmod: BUILD_DATE },
       { url: '/blog', changefreq: 'weekly', priority: 0.7, lastmod: BUILD_DATE },
+      { url: '/downloads', changefreq: 'weekly', priority: 0.7, lastmod: BUILD_DATE },
       { url: '/contact', changefreq: 'yearly', priority: 0.3, lastmod: BUILD_DATE },
+      { url: '/privacy', changefreq: 'yearly', priority: 0.2, lastmod: BUILD_DATE },
+      { url: '/imprint', changefreq: 'yearly', priority: 0.2, lastmod: BUILD_DATE },
       { url: '/terms', changefreq: 'yearly', priority: 0.1, lastmod: BUILD_DATE }
     ];
 
-    staticRoutes.forEach(route => stream.write(route));
+    staticRoutes.forEach((route) => {
+      stream.write({
+        ...route,
+        links: buildAlternateLinks(route.url, localeCodes),
+      });
+    });
 
     // Process products
     products.forEach(product => {
-      const slug = product.name.toLowerCase()
-        .replace(/\s+/g, '-')
-        .replace(/[^\w-]+/g, '')
-        .replace(/--+/g, '-')
-        .replace(/^-+/, '')
-        .replace(/-+$/, '');
-
       const entry = {
-        url: `/product/${slug}-${product.id}`,
+        url: `/product/${product.id}`,
         changefreq: product.changefreq,
         priority: product.priority,
         lastmod: product.lastmod,
+        links: buildAlternateLinks(`/product/${product.id}`, localeCodes),
         img: [{
           url: product.imageUrl,
           caption: `${product.name}: ${product.description.substring(0, 120)}...`,
@@ -401,18 +637,13 @@ async function generateSitemap() {
     // Process blog articles
     blogArticles.forEach(article => {
       const title = article.content.en.title || article.content.de.title || 'Untitled';
-      const slug = title.toLowerCase()
-        .replace(/\s+/g, '-')
-        .replace(/[^\w-]+/g, '')
-        .replace(/--+/g, '-')
-        .replace(/^-+/, '')
-        .replace(/-+$/, '');
 
       const entry = {
-        url: `/blog/${slug}-${article.id}`,
+        url: `/blog/${article.id}`,
         changefreq: 'monthly',
         priority: 0.6,
         lastmod: article.date,
+        links: buildAlternateLinks(`/blog/${article.id}`, localeCodes),
         img: article.image ? [{
           url: article.image,
           caption: `${title}: ${article.content.en.excerpt || article.content.de.excerpt || ''}`.substring(0, 120),
@@ -432,6 +663,7 @@ async function generateSitemap() {
       .replace(/<\/url>\s*<\/url>/g, '</url>');
 
     fs.writeFileSync(path.join(__dirname, '../public/sitemap.xml'), sitemap);
+    generateGaioFeeds(translations, products, blogArticles);
 
     console.log(`✅ Sitemap generated with:
 - ${staticRoutes.length} static URLs

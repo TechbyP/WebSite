@@ -3,12 +3,18 @@ import { motion } from "framer-motion";
 import { Compass, AlertTriangle } from "lucide-react";
 import { Link } from "react-router-dom";
 import { useTranslation } from "react-i18next";
+import { Helmet } from 'react-helmet-async';
 
 const NotFound = () => {
   const { t } = useTranslation();
 
   return (
     <section className="py-24 bg-gray-50 dark:bg-gray-900 flex items-center justify-center min-h-screen transition-colors duration-300">
+      <Helmet>
+        <title>404 | TechByP</title>
+        <meta name="robots" content="noindex, nofollow" />
+      </Helmet>
+
       <motion.div
         initial={{ opacity: 0, y: 40 }}
         animate={{ opacity: 1, y: 0 }}

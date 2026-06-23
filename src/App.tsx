@@ -1,5 +1,5 @@
 import React, { Suspense, lazy, useEffect, useState } from 'react';
-import { Routes, Route, useLocation, Outlet } from 'react-router-dom';
+import { Routes, Route, useLocation, Outlet, Navigate } from 'react-router-dom';
 import { HeaderProvider } from './pages/Header';
 import CookieBanner from './components/CookieBanner';
 import Footer from './pages/Footer.js';
@@ -13,6 +13,8 @@ import {
   hasAnalyticsConsent,
   trackPageView,
 } from './utils/analytics';
+import { trackAiReferralIfPresent } from './utils/publicApi';
+import LocaleAlternates from './components/seo/LocaleAlternates';
 
 const HomePageRoute = lazy(() => import('./pages/HomePageRoute'));
 const ProductDetailRoute = lazy(() => import('./pages/ProductDetailRoute'));
@@ -67,6 +69,10 @@ function App() {
   useEffect(() => {
     trackPageView(`${location.pathname}${location.search}`, document.title);
   }, [location.pathname, location.search]);
+
+  useEffect(() => {
+    trackAiReferralIfPresent();
+  }, []);
 
   useEffect(() => {
     if (shouldLoadChatWidget) {
@@ -255,6 +261,7 @@ function App() {
             <ThemeProvider>
               <HeaderProvider>
                 <div className="min-h-screen bg-white dark:bg-gray-900 flex transition-colors duration-500">
+                  <LocaleAlternates />
                   <main className="flex-grow transition-all duration-500 ease-in-out no-horizontal-overflow w-full max-w-[100vw]">
                     <Outlet />
                     <Footer />
@@ -271,6 +278,7 @@ function App() {
           }
         >
           <Route path="/" element={<Suspense fallback={<RouteFallback />}><HomePageRoute /></Suspense>} />
+          <Route path="/products" element={<Navigate to="/?id=products" replace />} />
           <Route path="/product/:id" element={<Suspense fallback={<RouteFallback />}><ProductDetailRoute /></Suspense>} />
           <Route path="/order/:id" element={<Suspense fallback={<RouteFallback />}><OrderNowPage /></Suspense>} />
           <Route path="/contact" element={<Suspense fallback={<RouteFallback />}><ContactPage /></Suspense>} />

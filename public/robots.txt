@@ -1,6 +1,10 @@
 User-agent: *
 Allow: /
 Sitemap: https://www.techbyp.com/sitemap.xml
+# AI discovery
+# https://www.techbyp.com/llms.txt
+# https://www.techbyp.com/ai.txt
+# https://www.techbyp.com/content/ai-manifest.json
 Disallow: /admin
 Disallow: /private
 Disallow: /api

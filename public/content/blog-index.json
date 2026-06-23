@@ -1,0 +1,144 @@
+{
+  "version": "1.0",
+  "updatedAt": "2026-06-23T06:59:45.364Z",
+  "source": "prebuild-script",
+  "canonical": "https://www.techbyp.com/content/blog-index.json",
+  "items": [
+    {
+      "id": "1754566994714",
+      "url": "https://www.techbyp.com/blog/1754566994714",
+      "category": "events",
+      "published_at": "August 7, 2025",
+      "read_time": "3 min",
+      "image": "https://i.ibb.co/CsT2rDCq/e72e58e1b177.png",
+      "author": {
+        "name": "David Alex",
+        "role": "Tech Storyteller"
+      },
+      "title": {
+        "en": "TechByp Is Heading to Agritechnica 2025 — And Yes, We've Packed the Tea",
+        "de": "TechByp fährt zur Agritechnica 2025 – und ja, wir haben den Tee eingepackt"
+      },
+      "summary": {
+        "en": "Now, I'm not usually one to leap about like a child in a sweetshop, but I have to admit, the excitement bubbling inside me over Agritechnica 2025 is positively infectious. This colossal agricultural machinery bonanza lands in Hanover this November, sprawling like a mechanical city across acres, and yes, TechByp will be there—quietly confident, yet ready to show off some serious soil-sampling wizardry in Hall 21, Stand E06.",
+        "de": "Normalerweise bin ich nicht der Typ, der wie ein Kind im Süßwarenladen herumhüpft, aber ich muss zugeben, die Aufregung, die in mir wegen der Agritechnica 2025 brodelt, ist geradezu ansteckend. Dieses kolossale Landmaschinen-Spektakel "
+      },
+      "localizations": {
+        "en": {
+          "title": "TechByp Is Heading to Agritechnica 2025 — And Yes, We've Packed the Tea",
+          "summary": "Now, I'm not usually one to leap about like a child in a sweetshop, but I have to admit, the excitement bubbling inside me over Agritechnica 2025 is positively infectious. This colossal agricultural machinery bonanza lands in Hanover this November, sprawling like a mechanical city across acres, and yes, TechByp will be there—quietly confident, yet ready to show off some serious soil-sampling wizardry in Hall 21, Stand E06."
+        },
+        "de": {
+          "title": "TechByp fährt zur Agritechnica 2025 – und ja, wir haben den Tee eingepackt",
+          "summary": "Normalerweise bin ich nicht der Typ, der wie ein Kind im Süßwarenladen herumhüpft, aber ich muss zugeben, die Aufregung, die in mir wegen der Agritechnica 2025 brodelt, ist geradezu ansteckend. Dieses kolossale Landmaschinen-Spektakel "
+        }
+      },
+      "available_locales": [
+        "en",
+        "de"
+      ]
+    },
+    {
+      "id": "1754570796792",
+      "url": "https://www.techbyp.com/blog/1754570796792",
+      "category": "technology",
+      "published_at": "August 7, 2025",
+      "read_time": "3 min",
+      "image": "https://images.unsplash.com/photo-1492496913980-501348b61469?q=80&w=687&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+      "author": {
+        "name": "David Alex",
+        "role": "Tech Storyteller"
+      },
+      "title": {
+        "en": "How to Take a Great Soil Sample (and 5 Ways to Ruin It)",
+        "de": "So entnehmen Sie eine perfekte Bodenprobe (und 5 Wege, sie zu ruinieren)"
+      },
+      "summary": {
+        "en": "Taking a proper soil sample is a bit like cooking a steak—easy to start, surprisingly hard to do well, and very easy to ruin. At TechByP, we’ve seen it all: cores dropped, cross-contaminated, overcompacted, and occasionally mistaken for artistic installations. So what actually makes a good soil sample? Hint: it’s not luck, and it’s certainly not brute force.",
+        "de": "Eine ordentliche Bodenprobe zu entnehmen ist ein bisschen wie ein Steak zu braten – leicht anzufangen, überraschend schwer richtig zu machen und sehr einfach zu ruinieren. Bei TechByP haben wir schon alles gesehen: Probenkerne fallen gelassen, über Kreuz verunreinigt, überverdichtet – und gelegentlich für künstlerische Installationen gehalten."
+      },
+      "localizations": {
+        "en": {
+          "title": "How to Take a Great Soil Sample (and 5 Ways to Ruin It)",
+          "summary": "Taking a proper soil sample is a bit like cooking a steak—easy to start, surprisingly hard to do well, and very easy to ruin. At TechByP, we’ve seen it all: cores dropped, cross-contaminated, overcompacted, and occasionally mistaken for artistic installations. So what actually makes a good soil sample? Hint: it’s not luck, and it’s certainly not brute force."
+        },
+        "de": {
+          "title": "So entnehmen Sie eine perfekte Bodenprobe (und 5 Wege, sie zu ruinieren)",
+          "summary": "Eine ordentliche Bodenprobe zu entnehmen ist ein bisschen wie ein Steak zu braten – leicht anzufangen, überraschend schwer richtig zu machen und sehr einfach zu ruinieren. Bei TechByP haben wir schon alles gesehen: Probenkerne fallen gelassen, über Kreuz verunreinigt, überverdichtet – und gelegentlich für künstlerische Installationen gehalten."
+        }
+      },
+      "available_locales": [
+        "en",
+        "de"
+      ]
+    },
+    {
+      "id": "1756118985991",
+      "url": "https://www.techbyp.com/blog/1756118985991",
+      "category": "technology",
+      "published_at": "2025-08-25T04:58:33.970Z",
+      "read_time": "3 min",
+      "image": "https://i.ibb.co/Rkw1N0Mv/5777d60432b6.jpg",
+      "author": {
+        "name": "Matthias Peters",
+        "role": "Director of Deep Thoughts & Deeper Holes"
+      },
+      "title": {
+        "en": "🚀 New partnership, new power in the ground!",
+        "de": "🚀 Neue Partnerschaft, neue Power im Boden!"
+      },
+      "summary": {
+        "en": "Soil Sampling Technology Peters is now an official FarmBlick system partner! And that means for you: Even more precise soil samples. Even smarter processes. Even higher yields from every hectare.\n",
+        "de": "Bodenprobentechnik Peters ist jetzt offizieller FarmBlick-Systempartner!\nUnd das heißt für euch: Noch präzisere Bodenproben. Noch smartere Prozesse. Noch mehr Ertrag aus jedem Hektar.\n"
+      },
+      "localizations": {
+        "en": {
+          "title": "🚀 New partnership, new power in the ground!",
+          "summary": "Soil Sampling Technology Peters is now an official FarmBlick system partner! And that means for you: Even more precise soil samples. Even smarter processes. Even higher yields from every hectare.\n"
+        },
+        "de": {
+          "title": "🚀 Neue Partnerschaft, neue Power im Boden!",
+          "summary": "Bodenprobentechnik Peters ist jetzt offizieller FarmBlick-Systempartner!\nUnd das heißt für euch: Noch präzisere Bodenproben. Noch smartere Prozesse. Noch mehr Ertrag aus jedem Hektar.\n"
+        }
+      },
+      "available_locales": [
+        "en",
+        "de"
+      ]
+    },
+    {
+      "id": "1756097687562",
+      "url": "https://www.techbyp.com/blog/1756097687562",
+      "category": "soil",
+      "published_at": "2025-08-25T04:49:54.872Z",
+      "read_time": "2 min",
+      "image": "https://i.ibb.co/WRXSpGP/e2b2b6acc27c.jpg",
+      "author": {
+        "name": "Matthias Peters",
+        "role": "Director of Deep Thoughts & Deeper Holes"
+      },
+      "title": {
+        "en": "Why Nmin Soil Sampling After Rapeseed Is Essential!",
+        "de": "Warum Nmin-Proben nach Raps unverzichtbar sind!"
+      },
+      "summary": {
+        "en": "Harvest’s done – but the soil still has a story to tell! Especially after rapeseed, there's a high risk of leftover nitrogen in the soil. Without targeted Nmin sampling, you’re facing:",
+        "de": "Die Ernte ist durch – doch der Boden spricht noch! Gerade nach Raps ist die Gefahr groß, dass hohe Stickstoffmengen im Boden verbleiben. Ohne gezielte Nmin-Proben riskieren wir:"
+      },
+      "localizations": {
+        "en": {
+          "title": "Why Nmin Soil Sampling After Rapeseed Is Essential!",
+          "summary": "Harvest’s done – but the soil still has a story to tell! Especially after rapeseed, there's a high risk of leftover nitrogen in the soil. Without targeted Nmin sampling, you’re facing:"
+        },
+        "de": {
+          "title": "Warum Nmin-Proben nach Raps unverzichtbar sind!",
+          "summary": "Die Ernte ist durch – doch der Boden spricht noch! Gerade nach Raps ist die Gefahr groß, dass hohe Stickstoffmengen im Boden verbleiben. Ohne gezielte Nmin-Proben riskieren wir:"
+        }
+      },
+      "available_locales": [
+        "en",
+        "de"
+      ]
+    }
+  ]
+}

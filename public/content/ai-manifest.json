@@ -1,0 +1,15 @@
+{
+  "version": "1.0",
+  "updatedAt": "2026-06-23T06:59:45.364Z",
+  "site": "https://www.techbyp.com",
+  "feeds": {
+    "products": "/content/products.json",
+    "blogIndex": "/content/blog-index.json",
+    "faq": "/content/faq.json",
+    "announcements": "/content/announcements.json",
+    "heroItems": "/content/hero-items.json"
+  },
+  "llms": "/llms.txt",
+  "policy": "/ai.txt",
+  "telemetry": "/api/ai-signals"
+}

@@ -1,6 +1,21 @@
 import type { Article, ArticleContent } from '../admin/blog/types/articles';
 import { resolveApiUrl } from './api';
 
+type AiSignalType = 'ai_referral' | 'feed_read' | 'ai_conversion';
+
+type AiSignalPayload = {
+  type: AiSignalType;
+  source?: string;
+  referrer?: string;
+  landingPath?: string;
+  feedPath?: string;
+  conversionType?: string;
+  conversionValue?: string;
+  utm_source?: string;
+  utm_medium?: string;
+  utm_campaign?: string;
+};
+
 export interface PublicAnnouncementContent {
   tag: string;
   title: string;
@@ -58,6 +73,21 @@ type StaticBlogCache = {
   articles?: PublicBlogArticle[];
 };
 
+const AI_REFERRAL_SESSION_KEY = 'ai_referral_tracked_v1';
+const FEED_SIGNAL_CACHE = new Set<string>();
+const AI_REFERRER_PATTERNS = [
+  'chat.openai.com',
+  'chatgpt.com',
+  'claude.ai',
+  'perplexity.ai',
+  'gemini.google.com',
+  'copilot.microsoft.com',
+  'you.com',
+  'phind.com',
+  'poe.com',
+  'meta.ai',
+];
+
 const optimizeRemoteImageUrl = (url: string, width = 1200) => {
   if (!url?.startsWith('http')) {
     return url || '';
@@ -90,10 +120,120 @@ const parseJsonResponse = async <T>(response: Response, path: string): Promise<T
   }
 };
 
+const postAiSignal = async (payload: AiSignalPayload) => {
+  const path = resolveApiUrl('/api/ai-signals');
+
+  try {
+    await fetch(path, {
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/json',
+      },
+      body: JSON.stringify(payload),
+      keepalive: true,
+    });
+  } catch {
+    // Silent fail by design: telemetry should never impact page behavior.
+  }
+};
+
+const normalizeSignalPath = (path: string) => {
+  if (!path.startsWith('/')) {
+    return path;
+  }
+
+  return path.split('?')[0];
+};
+
+const getUtmParams = () => {
+  if (typeof window === 'undefined') {
+    return {
+      utm_source: '',
+      utm_medium: '',
+      utm_campaign: '',
+    };
+  }
+
+  const urlSearchParams = new URLSearchParams(window.location.search);
+  return {
+    utm_source: urlSearchParams.get('utm_source') || '',
+    utm_medium: urlSearchParams.get('utm_medium') || '',
+    utm_campaign: urlSearchParams.get('utm_campaign') || '',
+  };
+};
+
+const trackFeedRead = (path: string) => {
+  if (typeof window === 'undefined') {
+    return;
+  }
+
+  const normalizedPath = normalizeSignalPath(path);
+
+  if (!normalizedPath.startsWith('/content/')) {
+    return;
+  }
+
+  if (FEED_SIGNAL_CACHE.has(normalizedPath)) {
+    return;
+  }
+
+  FEED_SIGNAL_CACHE.add(normalizedPath);
+  const utm = getUtmParams();
+  void postAiSignal({
+    type: 'feed_read',
+    feedPath: normalizedPath,
+    landingPath: `${window.location.pathname}${window.location.search}`,
+    ...utm,
+  });
+};
+
+export const trackAiReferralIfPresent = () => {
+  if (typeof window === 'undefined' || typeof document === 'undefined') {
+    return;
+  }
+
+  if (window.sessionStorage.getItem(AI_REFERRAL_SESSION_KEY) === '1') {
+    return;
+  }
+
+  const referrer = document.referrer;
+
+  if (!referrer) {
+    return;
+  }
+
+  let hostname = '';
+
+  try {
+    hostname = new URL(referrer).hostname.toLowerCase();
+  } catch {
+    return;
+  }
+
+  const matchedSource = AI_REFERRER_PATTERNS.find(
+    (candidate) => hostname === candidate || hostname.endsWith(`.${candidate}`)
+  );
+
+  if (!matchedSource) {
+    return;
+  }
+
+  window.sessionStorage.setItem(AI_REFERRAL_SESSION_KEY, '1');
+  const utm = getUtmParams();
+  void postAiSignal({
+    type: 'ai_referral',
+    source: matchedSource,
+    referrer,
+    landingPath: `${window.location.pathname}${window.location.search}`,
+    ...utm,
+  });
+};
+
 const fetchJson = async <T>(path: string): Promise<T> => {
   const response = await fetch(path);
-
-  return parseJsonResponse<T>(response, path);
+  const parsedResponse = await parseJsonResponse<T>(response, path);
+  trackFeedRead(path);
+  return parsedResponse;
 };
 
 const withFallback = async <T>(primary: () => Promise<T>, fallback: () => Promise<T>): Promise<T> => {
@@ -182,4 +322,23 @@ export const submitNewsletterSignup = async ({
   });
 
   return parseJsonResponse<{ ok: boolean }>(response, path);
+};
+
+export const trackAiConversion = (conversionType: string, conversionValue = '') => {
+  if (typeof window === 'undefined') {
+    return;
+  }
+
+  if (!conversionType || window.sessionStorage.getItem(AI_REFERRAL_SESSION_KEY) !== '1') {
+    return;
+  }
+
+  const utm = getUtmParams();
+  void postAiSignal({
+    type: 'ai_conversion',
+    conversionType,
+    conversionValue,
+    landingPath: `${window.location.pathname}${window.location.search}`,
+    ...utm,
+  });
 };

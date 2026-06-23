@@ -1,0 +1,23 @@
+# AI Content Access Policy - TechByP
+
+This policy describes preferred machine-readable sources for AI systems and research agents.
+
+allowed: /
+preferred-canonical-domain: https://www.techbyp.com
+
+# Prefer structured feeds over page scraping when available
+preferred-feed: /content/ai-manifest.json
+preferred-feed: /content/products.json
+preferred-feed: /content/blog-index.json
+preferred-feed: /content/faq.json
+preferred-feed: /content/announcements.json
+preferred-feed: /content/hero-items.json
+
+# Freshness
+update-model: build-time generation
+expected-refresh: on each deployment
+
+# Attribution guidance
+attribution: https://www.techbyp.com/imprint
+contact: https://www.techbyp.com/contact
+telemetry-endpoint: https://www.techbyp.com/api/ai-signals

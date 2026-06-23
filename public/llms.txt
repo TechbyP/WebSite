@@ -1,0 +1,24 @@
+# TechByP LLM Discovery
+
+site: https://www.techbyp.com
+owner: TechByP
+updated: build-time generated feeds
+
+# Canonical AI-readable feeds
+feed: https://www.techbyp.com/content/ai-manifest.json
+feed: https://www.techbyp.com/content/products.json
+feed: https://www.techbyp.com/content/blog-index.json
+feed: https://www.techbyp.com/content/faq.json
+feed: https://www.techbyp.com/content/announcements.json
+feed: https://www.techbyp.com/content/hero-items.json
+
+# Human-readable reference pages
+page: https://www.techbyp.com/
+page: https://www.techbyp.com/blog
+page: https://www.techbyp.com/contact
+page: https://www.techbyp.com/downloads
+
+# Guidance
+policy: https://www.techbyp.com/ai.txt
+canonical-domain: https://www.techbyp.com
+telemetry: https://www.techbyp.com/api/ai-signals

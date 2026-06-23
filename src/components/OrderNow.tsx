@@ -4,6 +4,7 @@ import ReCAPTCHA from 'react-google-recaptcha';
 import emailjs from '@emailjs/browser';
 import { useTranslation } from 'react-i18next';
 import { useTheme } from '../utils/context/theme-context';
+import { trackAiConversion } from '../utils/publicApi';
 
 interface OrderNowProps {
   onClose: () => void;
@@ -89,6 +90,7 @@ const OrderNow = ({ onClose, productId, productName }: OrderNowProps) => {
       );
 
       setStatus(t('orderNow.success'));
+      trackAiConversion('order_submit', productName || productId);
       setForm({ name: '', email: '', message: '', honeypot: '' });
       setRecaptchaToken(null);
       recaptchaRef.current?.reset();

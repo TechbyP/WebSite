@@ -21,11 +21,13 @@ import {
     FiX,
     FiChevronDown,
     FiChevronUp,
-    FiExternalLink
+    FiExternalLink,
+    FiBarChart2
 } from 'react-icons/fi';
 import BlogPostEditor from '../blog/BlogPostEditor';
 import HeroPageEditor from '../hero/HeroPageEditor';
 import AnnouncementEditor from '../announcement/AnnouncementEditor';
+import AiSignalsPanel from './AiSignalsPanel';
 import Logo from '../../assets/pictures/techbyp.png';
 import TechBypLogoDark from '../../assets/pictures/techbypLogoDark.png'
 import logo_small from '../../assets/pictures/Logo-Symbol.png';
@@ -351,6 +353,8 @@ const AdminDashboard = () => {
                 return <HeroPageEditor />;
             case 'announcements':
                 return <AnnouncementEditor />;
+            case 'aiSignals':
+                return <AiSignalsPanel isDarkMode={isDarkMode} />;
             case 'dashboard':
             default:
                 return (
@@ -671,6 +675,13 @@ const AdminDashboard = () => {
                                     onClick={() => setActiveTab('announcements')}
                                     isDarkMode={isDarkMode}
                                 />
+                                <NavItem
+                                    icon={<FiBarChart2 className="w-5 h-5" />}
+                                    label="AI Signals"
+                                    active={activeTab === 'aiSignals'}
+                                    onClick={() => setActiveTab('aiSignals')}
+                                    isDarkMode={isDarkMode}
+                                />
                             </ul>
                         </nav>
 
@@ -728,6 +739,7 @@ const AdminDashboard = () => {
                                 {activeTab === 'blog' && t('adminDashboard.tabs.blog')}
                                 {activeTab === 'hero' && t('adminDashboard.tabs.hero')}
                                 {activeTab === 'announcements' && t('adminDashboard.tabs.announcements')}
+                                {activeTab === 'aiSignals' && 'AI Signals'}
                             </h1>
 
                             <div className="flex items-center space-x-4">

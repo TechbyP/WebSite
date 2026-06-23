@@ -1,6 +1,7 @@
 import express from 'express';
 import cors from 'cors';
 import { existsSync, readFileSync } from 'node:fs';
+import { createHash } from 'node:crypto';
 import path from 'node:path';
 import { fileURLToPath } from 'node:url';
 import { cert, getApps, initializeApp as initializeAdminApp } from 'firebase-admin/app';
@@ -53,13 +54,36 @@ const PORT = Number(process.env.PORT ?? 3001);
 const MAX_REQUESTS_PER_MINUTE = Number(process.env.CHAT_RATE_LIMIT_PER_MINUTE ?? 10);
 const MAX_VIOLATIONS_PER_HOUR = Number(process.env.CHAT_MAX_VIOLATIONS_PER_HOUR ?? 20);
 const MAX_NEWSLETTER_REQUESTS_PER_HOUR = Number(process.env.NEWSLETTER_RATE_LIMIT_PER_HOUR ?? 5);
+const MAX_AI_SIGNALS_PER_HOUR = Number(process.env.AI_SIGNALS_RATE_LIMIT_PER_HOUR ?? 120);
 const PUBLIC_DATA_CACHE_MS = Number(process.env.PUBLIC_DATA_CACHE_MS ?? 5 * 60_000);
 const WINDOW_MS = 60_000;
 const VIOLATION_WINDOW_MS = 60 * 60_000;
 const NEWSLETTER_WINDOW_MS = 60 * 60_000;
+const AI_SIGNAL_WINDOW_MS = 60 * 60_000;
 const ARTICLE_VIEW_WINDOW_MS = 60 * 60_000;
+const EDGE_FEED_LOG_WINDOW_MS = 2 * 60_000;
 const SERVICE_ACCOUNT_PATH = path.join(APP_ROOT, 'serviceAccountKey.json');
 const PUBLIC_CONTENT_DIR = path.join(APP_ROOT, 'public', 'content');
+const AI_FEED_LOGGABLE_PATHS = new Set([
+  '/content/ai-manifest.json',
+  '/content/products.json',
+  '/content/blog-index.json',
+  '/content/faq.json',
+  '/content/announcements.json',
+  '/content/hero-items.json',
+]);
+const AI_BOT_USER_AGENT_PATTERNS = [
+  'gptbot',
+  'chatgpt-user',
+  'claudebot',
+  'perplexitybot',
+  'cohere-ai',
+  'bytespider',
+  'meta-externalagent',
+  'google-extended',
+  'ccbot',
+  'youbot',
+];
 
 type StaticBlogCache = {
   articles?: Record<string, unknown>[];
@@ -68,8 +92,10 @@ type StaticBlogCache = {
 const requestBuckets = new Map<string, number[]>();
 const abuseBuckets = new Map<string, number[]>();
 const newsletterBuckets = new Map<string, number[]>();
+const aiSignalBuckets = new Map<string, number[]>();
 const publicCache = new Map<string, CacheEntry<unknown>>();
 const articleViewBuckets = new Map<string, number>();
+const edgeFeedSignalBuckets = new Map<string, number>();
 let providerIndex = 0;
 
 let adminDb: ReturnType<typeof getAdminFirestore> | null = null;
@@ -121,6 +147,29 @@ const providers: ProviderConfig[] = [
 app.disable('x-powered-by');
 app.use(cors());
 app.use(express.json({ limit: '100kb' }));
+app.use((request, _response, next) => {
+  const userAgent = sanitizeOptionalString(request.get('user-agent') ?? '', 240);
+  const clientId = getClientId(request);
+
+  if (shouldLogEdgeFeedSignal(request, clientId, userAgent)) {
+    const signalPayload = {
+      type: 'feed_access_edge',
+      source: 'edge-proxy',
+      referrer: sanitizeOptionalString(request.get('referer') ?? '', 500),
+      landingPath: sanitizeOptionalString(request.originalUrl, 300),
+      feedPath: sanitizeOptionalString(request.path, 300),
+      userAgent,
+      clientHash: hashClientId(clientId),
+      timestamp: new Date().toISOString(),
+      receivedAt: new Date(),
+      ...getUtmFromRequest(request),
+    };
+
+    void persistAiSignal(signalPayload);
+  }
+
+  next();
+});
 
 const toSerializable = (value: unknown): unknown => {
   if (value instanceof Timestamp) {
@@ -212,6 +261,75 @@ const getClientId = (request: express.Request) => {
   return firstForwarded?.trim() || request.ip || request.socket.remoteAddress || 'unknown';
 };
 
+const hashClientId = (clientId: string) => createHash('sha256').update(clientId).digest('hex');
+
+const sanitizeOptionalString = (value: unknown, maxLength = 500) => {
+  if (typeof value !== 'string') {
+    return '';
+  }
+
+  const trimmed = value.trim();
+  return trimmed.slice(0, maxLength);
+};
+
+const isAiBotUserAgent = (userAgent: string) => {
+  const normalizedUserAgent = userAgent.toLowerCase();
+  return AI_BOT_USER_AGENT_PATTERNS.some((pattern) => normalizedUserAgent.includes(pattern));
+};
+
+const getUtmFromRequest = (request: express.Request) => ({
+  utm_source: sanitizeOptionalString(request.query.utm_source, 120),
+  utm_medium: sanitizeOptionalString(request.query.utm_medium, 120),
+  utm_campaign: sanitizeOptionalString(request.query.utm_campaign, 180),
+});
+
+const shouldLogEdgeFeedSignal = (request: express.Request, clientId: string, userAgent: string) => {
+  if (!AI_FEED_LOGGABLE_PATHS.has(request.path)) {
+    return false;
+  }
+
+  if (!isAiBotUserAgent(userAgent)) {
+    return false;
+  }
+
+  const dedupeKey = `${request.path}:${hashClientId(clientId)}`;
+  const lastLoggedAt = edgeFeedSignalBuckets.get(dedupeKey);
+
+  if (lastLoggedAt && Date.now() - lastLoggedAt < EDGE_FEED_LOG_WINDOW_MS) {
+    return false;
+  }
+
+  edgeFeedSignalBuckets.set(dedupeKey, Date.now());
+  return true;
+};
+
+const persistAiSignal = async (payload: Record<string, unknown>) => {
+  if (!adminDb) {
+    console.info(
+      JSON.stringify({
+        scope: 'ai-signals',
+        ...payload,
+      })
+    );
+    return false;
+  }
+
+  try {
+    await adminDb.collection('ai_signals').add(payload);
+    return true;
+  } catch (error) {
+    console.error(
+      JSON.stringify({
+        scope: 'ai-signals',
+        clientHash: payload.clientHash,
+        error: error instanceof Error ? error.message : 'Unknown error',
+        timestamp: new Date().toISOString(),
+      })
+    );
+    return false;
+  }
+};
+
 const logAbuseEvent = (clientId: string, reason: string, metadata: Record<string, unknown> = {}) => {
   const violationTimestamps = pruneBucket(abuseBuckets, clientId, VIOLATION_WINDOW_MS);
   violationTimestamps.push(Date.now());
@@ -295,6 +413,22 @@ const enforceNewsletterRateLimit = (clientId: string) => {
 
   requestTimestamps.push(Date.now());
   newsletterBuckets.set(clientId, requestTimestamps);
+  return true;
+};
+
+const enforceAiSignalRateLimit = (clientId: string) => {
+  const signalTimestamps = pruneBucket(aiSignalBuckets, clientId, AI_SIGNAL_WINDOW_MS);
+
+  if (signalTimestamps.length >= MAX_AI_SIGNALS_PER_HOUR) {
+    logAbuseEvent(clientId, 'ai_signal_rate_limit_exceeded', {
+      requestCount: signalTimestamps.length,
+      limit: MAX_AI_SIGNALS_PER_HOUR,
+    });
+    return false;
+  }
+
+  signalTimestamps.push(Date.now());
+  aiSignalBuckets.set(clientId, signalTimestamps);
   return true;
 };
 
@@ -645,6 +779,64 @@ app.post('/api/newsletter-signup', async (request, response) => {
     );
     response.status(502).json({ error: 'Unable to save newsletter signup.' });
   }
+});
+
+app.post('/api/ai-signals', async (request, response) => {
+  const clientId = getClientId(request);
+
+  if (!enforceAiSignalRateLimit(clientId)) {
+    response.status(202).json({ ok: true, throttled: true });
+    return;
+  }
+
+  const {
+    type,
+    source,
+    referrer,
+    landingPath,
+    feedPath,
+    conversionType,
+    conversionValue,
+    utm_source,
+    utm_medium,
+    utm_campaign,
+  } = request.body as {
+    type?: unknown;
+    source?: unknown;
+    referrer?: unknown;
+    landingPath?: unknown;
+    feedPath?: unknown;
+    conversionType?: unknown;
+    conversionValue?: unknown;
+    utm_source?: unknown;
+    utm_medium?: unknown;
+    utm_campaign?: unknown;
+  };
+
+  if (type !== 'ai_referral' && type !== 'feed_read' && type !== 'ai_conversion') {
+    response.status(400).json({ error: 'Invalid signal type.' });
+    return;
+  }
+
+  const signalPayload = {
+    type,
+    source: sanitizeOptionalString(source, 120),
+    referrer: sanitizeOptionalString(referrer, 500),
+    landingPath: sanitizeOptionalString(landingPath, 300),
+    feedPath: sanitizeOptionalString(feedPath, 300),
+    conversionType: sanitizeOptionalString(conversionType, 120),
+    conversionValue: sanitizeOptionalString(conversionValue, 180),
+    userAgent: sanitizeOptionalString(request.get('user-agent') ?? '', 240),
+    utm_source: sanitizeOptionalString(utm_source, 120),
+    utm_medium: sanitizeOptionalString(utm_medium, 120),
+    utm_campaign: sanitizeOptionalString(utm_campaign, 180),
+    clientHash: hashClientId(clientId),
+    timestamp: new Date().toISOString(),
+    receivedAt: new Date(),
+  };
+
+  const stored = await persistAiSignal(signalPayload);
+  response.status(202).json({ ok: true, stored });
 });
 
 app.post('/api/chat', async (request, response) => {

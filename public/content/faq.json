@@ -1,0 +1,158 @@
+{
+  "version": "1.0",
+  "updatedAt": "2026-06-23T06:59:45.364Z",
+  "source": "translations-multilingual",
+  "canonical": "https://www.techbyp.com/content/faq.json",
+  "locales": [
+    "de",
+    "en",
+    "es",
+    "fr",
+    "pt",
+    "ro",
+    "ru"
+  ],
+  "items": [
+    {
+      "id": "shipping",
+      "question": "What are your shipping options?",
+      "answer": "We ship worldwide via DHL, DPD, and other trusted carriers. Standard shipping within Germany takes 2-3 business days. International shipping times vary by destination. Expedited shipping options are available.",
+      "question_de": "Welche Versandoptionen gibt es?",
+      "answer_de": "Wir versenden weltweit über DHL, DPD und andere zuverlässige Anbieter. Standardversand innerhalb Deutschlands dauert 2-3 Werktage. Internationale Lieferzeiten variieren je nach Zielort. Expressversand ist verfügbar.",
+      "localizations": {
+        "de": {
+          "question": "Welche Versandoptionen gibt es?",
+          "answer": "Wir versenden weltweit über DHL, DPD und andere zuverlässige Anbieter. Standardversand innerhalb Deutschlands dauert 2-3 Werktage. Internationale Lieferzeiten variieren je nach Zielort. Expressversand ist verfügbar."
+        },
+        "en": {
+          "question": "What are your shipping options?",
+          "answer": "We ship worldwide via DHL, DPD, and other trusted carriers. Standard shipping within Germany takes 2-3 business days. International shipping times vary by destination. Expedited shipping options are available."
+        },
+        "es": {
+          "question": "¿Cuáles son tus opciones de envío?",
+          "answer": "Enviamos a todo el mundo vía DHL, DPD y otros transportistas confiables. El envío estándar dentro de Alemania toma 2-3 días laborables. Los tiempos de envío internacional varían según el destino. Hay opciones de envío acelerado disponibles."
+        },
+        "fr": {
+          "question": "Quelles sont vos options d'expédition ?",
+          "answer": "Nous expédions dans le monde entier via DHL, DPD et autres transporteurs de confiance. L'expédition standard en Allemagne prend 2 à 3 jours ouvrables. Les délais d'expédition internationaux varient selon la destination. Les options d'expédition accélérée sont disponibles."
+        },
+        "pt": {
+          "question": "Quais são suas opções de envio?",
+          "answer": "Enviamos para todo o mundo via DHL, DPD e outras transportadoras confiáveis. O envio padrão na Alemanha leva de 2 a 3 dias úteis. Os tempos de envio internacional variam de acordo com o destino. Opções de envio rápido estão disponíveis."
+        },
+        "ro": {
+          "question": "Care sunt opțiunile de livrare?",
+          "answer": "Livrăm la nivel mondial prin DHL, DPD și alți curieri de încredere. Livrările standard în Germania durează 2-3 zile lucrătoare. Timpul de livrare internațional variază în funcție de destinație, iar opțiunile de expediere rapidă sunt disponibile."
+        },
+        "ru": {
+          "question": "Какие у вас варианты доставки?",
+          "answer": "Мы осуществляем доставку по всему миру через DHL, DPD и других надежных перевозчиков. Стандартная доставка по Германии занимает 2-3 рабочих дня. Время международной доставки зависит от пункта назначения. Возможны варианты ускоренной доставки."
+        }
+      },
+      "available_locales": [
+        "de",
+        "en",
+        "es",
+        "fr",
+        "pt",
+        "ro",
+        "ru"
+      ],
+      "source_url": "https://www.techbyp.com/contact"
+    },
+    {
+      "id": "training",
+      "question": "Do you offer training for your equipment?",
+      "answer": "Yes, we provide comprehensive training programs for all our soil sampling equipment. Training can be conducted at your location or at our facility in Quakenbrück. Contact our sales team to arrange training sessions.",
+      "question_de": "Bieten Sie Schulungen für Ihre Geräte an?",
+      "answer_de": "Ja, wir bieten umfassende Schulungen für alle unsere Bodenprobengeräte an. Die Schulung kann bei Ihnen vor Ort oder in unserem Werk in Quakenbrück stattfinden. Kontaktieren Sie unser Vertriebsteam, um Schulungstermine zu vereinbaren.",
+      "localizations": {
+        "de": {
+          "question": "Bieten Sie Schulungen für Ihre Geräte an?",
+          "answer": "Ja, wir bieten umfassende Schulungen für alle unsere Bodenprobengeräte an. Die Schulung kann bei Ihnen vor Ort oder in unserem Werk in Quakenbrück stattfinden. Kontaktieren Sie unser Vertriebsteam, um Schulungstermine zu vereinbaren."
+        },
+        "en": {
+          "question": "Do you offer training for your equipment?",
+          "answer": "Yes, we provide comprehensive training programs for all our soil sampling equipment. Training can be conducted at your location or at our facility in Quakenbrück. Contact our sales team to arrange training sessions."
+        },
+        "es": {
+          "question": "¿Ofreces entrenamiento para tu equipo?",
+          "answer": "Sí, proporcionamos programas de entrenamiento completos para todo nuestro equipo de muestreo de suelos. El entrenamiento puede realizarse en tu ubicación o en nuestra instalación en Quakenbrück. Contacta a nuestro equipo de ventas para arreglar sesiones de entrenamiento."
+        },
+        "fr": {
+          "question": "Offrez-vous une formation pour votre équipement ?",
+          "answer": "Oui, nous proposons des programmes de formation complets pour tous nos équipements d'échantillonnage des sols. La formation peut être dispensée à votre emplacement ou à nos installations à Quakenbrück. Contactez notre équipe de vente pour organiser des séances de formation."
+        },
+        "pt": {
+          "question": "Você oferece treinamento para seu equipamento?",
+          "answer": "Sim, oferecemos programas de treinamento abrangentes para todos os nossos equipamentos de amostragem de solo. O treinamento pode ser realizado em seu local ou em nossas instalações em Quakenbrück. Entre em contato com nossa equipe de vendas para agendar sessões de treinamento."
+        },
+        "ro": {
+          "question": "Oferiți instruire pentru echipamente?",
+          "answer": "Da, oferim programe complete de instruire pentru toate echipamentele noastre de prelevare a solului. Instruirea poate avea loc la locația dvs. sau la sediul nostru din Quakenbrück. Contactați echipa noastră de vânzări pentru programare."
+        },
+        "ru": {
+          "question": "Предлагаете ли вы обучение работе с вашим оборудованием?",
+          "answer": "Да, мы предоставляем комплексные программы обучения для всего нашего оборудования для отбора проб почвы. Обучение может проводиться у вас или на нашем предприятии в Квакенбрюке. Свяжитесь с нашим отделом продаж, чтобы организовать обучение."
+        }
+      },
+      "available_locales": [
+        "de",
+        "en",
+        "es",
+        "fr",
+        "pt",
+        "ro",
+        "ru"
+      ],
+      "source_url": "https://www.techbyp.com/contact"
+    },
+    {
+      "id": "distributor",
+      "question": "How can I become a distributor?",
+      "answer": "We're always interested in partnering with qualified distributors worldwide. Please contact our sales department with details about your company and market experience to begin the application process.",
+      "question_de": "Wie kann ich Distributor werden?",
+      "answer_de": "Wir sind stets an qualifizierten Vertriebspartnern weltweit interessiert. Bitte kontaktieren Sie unseren Vertrieb mit Informationen über Ihr Unternehmen und Ihre Markterfahrung, um den Bewerbungsprozess zu starten.",
+      "localizations": {
+        "de": {
+          "question": "Wie kann ich Distributor werden?",
+          "answer": "Wir sind stets an qualifizierten Vertriebspartnern weltweit interessiert. Bitte kontaktieren Sie unseren Vertrieb mit Informationen über Ihr Unternehmen und Ihre Markterfahrung, um den Bewerbungsprozess zu starten."
+        },
+        "en": {
+          "question": "How can I become a distributor?",
+          "answer": "We're always interested in partnering with qualified distributors worldwide. Please contact our sales department with details about your company and market experience to begin the application process."
+        },
+        "es": {
+          "question": "¿Cómo puedo convertirme en distribuidor?",
+          "answer": "Siempre estamos interesados en asociarnos con distribuidores calificados en todo el mundo. Por favor, contacta a nuestro departamento de ventas con detalles sobre tu empresa y experiencia en el mercado para comenzar el proceso de solicitud."
+        },
+        "fr": {
+          "question": "Comment puis-je devenir distributeur ?",
+          "answer": "Nous sommes toujours intéressés par les partenariats avec des distributeurs qualifiés dans le monde entier. Veuillez contacter notre département commercial avec les détails de votre entreprise et votre expérience du marché pour commencer le processus de candidature."
+        },
+        "pt": {
+          "question": "Como posso me tornar um distribuidor?",
+          "answer": "Estamos sempre interessados ​​em parcerias com distribuidores qualificados em todo o mundo. Entre em contato com nosso departamento de vendas com detalhes sobre sua empresa e experiência de mercado para iniciar o processo de inscrição."
+        },
+        "ro": {
+          "question": "Cum pot deveni distribuitor?",
+          "answer": "Suntem interesați de parteneriate cu distribuitori calificați. Contactați departamentul nostru de vânzări și trimiteți detalii despre compania și experiența dvs., iar vom discuta opțiunile de colaborare."
+        },
+        "ru": {
+          "question": "Как я могу стать дистрибьютором?",
+          "answer": "Мы всегда заинтересованы в партнерстве с квалифицированными дистрибьюторами по всему миру. Пожалуйста, свяжитесь с нашим отделом продаж и сообщите подробную информацию о вашей компании и опыте работы на рынке, чтобы начать процесс подачи заявки."
+        }
+      },
+      "available_locales": [
+        "de",
+        "en",
+        "es",
+        "fr",
+        "pt",
+        "ro",
+        "ru"
+      ],
+      "source_url": "https://www.techbyp.com/contact"
+    }
+  ]
+}

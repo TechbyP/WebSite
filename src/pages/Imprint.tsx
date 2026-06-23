@@ -2,7 +2,9 @@ import React from 'react';
 import { ArrowLeft } from 'lucide-react';
 import { useNavigate } from 'react-router-dom';
 import { useTranslation } from 'react-i18next';
+import { Helmet } from 'react-helmet-async';
 import { useTheme } from '../utils/context/theme-context.js'; // import your hook
+import { buildCanonicalUrl } from '../utils/seo';
 
 const Imprint = () => {
   const navigate = useNavigate();
@@ -15,6 +17,16 @@ const Imprint = () => {
         ${theme === 'dark' ? 'bg-gray-900 text-gray-100' : 'bg-gray-50 text-gray-900'}
       `}
     >
+      <Helmet>
+        <title>{t('imprint')} | TechByP</title>
+        <meta
+          name="description"
+          content="TechByP legal imprint with company registration, contact details, and responsible content information."
+        />
+        <meta name="robots" content="index, follow" />
+        <link rel="canonical" href={buildCanonicalUrl('/imprint')} />
+      </Helmet>
+
       <button 
         onClick={() => navigate(-1)}
         className={`flex items-center mb-6 ${

@@ -1,8 +1,11 @@
 import { useEffect, useRef } from 'react';
 import { useLocation } from 'react-router-dom';
+import { Helmet } from 'react-helmet-async';
+import { useTranslation } from 'react-i18next';
 import { Configurator } from '../components/configurator/Configurator';
 import { ConfiguratorProvider, useConfigurator } from '../components/configurator/contexts/ConfiguratorContext';
 import { ProductsProvider, useProducts } from '../data/context/ProductsContext';
+import { buildCanonicalUrl } from '../utils/seo';
 
 function ConfiguratorRouteInitializer() {
   const location = useLocation();
@@ -43,9 +46,26 @@ function ConfiguratorPageContent() {
 }
 
 export default function ConfiguratorPage() {
+  const { t } = useTranslation();
+
+  const title = `${t('navbar.menu.configurator')} | TECHBYP`;
+  const description = t('configurator.productToast.desc1');
+
   return (
-    <ProductsProvider>
-      <ConfiguratorPageContent />
-    </ProductsProvider>
+    <>
+      <Helmet>
+        <title>{title}</title>
+        <meta name="description" content={description} />
+        <meta name="robots" content="index, follow" />
+        <meta property="og:title" content={title} />
+        <meta property="og:description" content={description} />
+        <meta property="og:url" content={buildCanonicalUrl('/configurator')} />
+        <meta property="og:type" content="website" />
+        <link rel="canonical" href={buildCanonicalUrl('/configurator')} />
+      </Helmet>
+      <ProductsProvider>
+        <ConfiguratorPageContent />
+      </ProductsProvider>
+    </>
   );
 }
