@@ -540,7 +540,7 @@ function generateGaioFeeds(translations, products, blogArticles) {
     },
     llms: '/llms.txt',
     policy: '/ai.txt',
-    telemetry: '/api/ai-signals',
+    telemetry: 'firestore:ai_signals',
   };
 
   fs.writeFileSync(productsFeedPath, JSON.stringify(productsFeed, null, 2));

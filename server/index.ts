@@ -5,6 +5,7 @@ import { createHash } from 'node:crypto';
 import path from 'node:path';
 import { fileURLToPath } from 'node:url';
 import { cert, getApps, initializeApp as initializeAdminApp } from 'firebase-admin/app';
+import { getAuth as getAdminAuth } from 'firebase-admin/auth';
 import { FieldValue, getFirestore as getAdminFirestore, Timestamp } from 'firebase-admin/firestore';
 
 type ChatRole = 'system' | 'user' | 'assistant';
@@ -62,6 +63,7 @@ const NEWSLETTER_WINDOW_MS = 60 * 60_000;
 const AI_SIGNAL_WINDOW_MS = 60 * 60_000;
 const ARTICLE_VIEW_WINDOW_MS = 60 * 60_000;
 const EDGE_FEED_LOG_WINDOW_MS = 2 * 60_000;
+const MAX_ADMIN_AI_SIGNAL_ROWS = 500;
 const SERVICE_ACCOUNT_PATH = path.join(APP_ROOT, 'serviceAccountKey.json');
 const PUBLIC_CONTENT_DIR = path.join(APP_ROOT, 'public', 'content');
 const AI_FEED_LOGGABLE_PATHS = new Set([
@@ -358,6 +360,42 @@ const requireAdminDb = (response: express.Response) => {
   return null;
 };
 
+const getBearerToken = (request: express.Request) => {
+  const authorizationHeader = request.get('authorization') ?? '';
+
+  if (!authorizationHeader.toLowerCase().startsWith('bearer ')) {
+    return '';
+  }
+
+  return authorizationHeader.slice(7).trim();
+};
+
+const verifyFirebaseUser = async (request: express.Request, response: express.Response) => {
+  const token = getBearerToken(request);
+
+  if (!token) {
+    response.status(401).json({ error: 'Missing authentication token.' });
+    return null;
+  }
+
+  try {
+    return await getAdminAuth().verifyIdToken(token);
+  } catch {
+    response.status(401).json({ error: 'Invalid authentication token.' });
+    return null;
+  }
+};
+
+const parsePositiveInteger = (value: unknown, fallbackValue: number, maxValue: number) => {
+  const parsedValue = Number.parseInt(String(value ?? ''), 10);
+
+  if (!Number.isFinite(parsedValue) || parsedValue <= 0) {
+    return fallbackValue;
+  }
+
+  return Math.min(parsedValue, maxValue);
+};
+
 const validateMessages = (messages: unknown): messages is ChatMessage[] => {
   if (!Array.isArray(messages) || messages.length === 0 || messages.length > 25) {
     return false;
@@ -489,6 +527,62 @@ const markArticleView = (clientId: string, articleId: string) => {
 
 app.get('/api/health', (_request, response) => {
   response.json({ ok: true, providers: providers.length });
+});
+
+app.get('/api/admin/ai-signals', async (request, response) => {
+  const firestore = requireAdminDb(response);
+
+  if (!firestore) {
+    return;
+  }
+
+  const decodedToken = await verifyFirebaseUser(request, response);
+
+  if (!decodedToken) {
+    return;
+  }
+
+  const rowLimit = parsePositiveInteger(request.query.limit, 300, MAX_ADMIN_AI_SIGNAL_ROWS);
+
+  try {
+    let snapshot;
+
+    try {
+      snapshot = await firestore
+        .collection('ai_signals')
+        .orderBy('receivedAt', 'desc')
+        .limit(rowLimit)
+        .get();
+    } catch {
+      snapshot = await firestore
+        .collection('ai_signals')
+        .orderBy('timestamp', 'desc')
+        .limit(rowLimit)
+        .get();
+    }
+
+    const signals = snapshot.docs.map((documentSnapshot) => ({
+      id: documentSnapshot.id,
+      ...toSerializable(documentSnapshot.data()),
+    }));
+
+    response.json({
+      ok: true,
+      count: signals.length,
+      requestedBy: decodedToken.uid,
+      signals,
+    });
+  } catch (error) {
+    console.error(
+      JSON.stringify({
+        scope: 'admin-ai-signals-read',
+        uid: decodedToken.uid,
+        error: error instanceof Error ? error.message : 'Unknown error',
+        timestamp: new Date().toISOString(),
+      })
+    );
+    response.status(502).json({ error: 'Unable to load AI telemetry signals.' });
+  }
 });
 
 app.get('/data/announcements', async (_request, response) => {

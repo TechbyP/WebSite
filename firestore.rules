@@ -1,0 +1,144 @@
+rules_version = '2';
+service cloud.firestore {
+  match /databases/{database}/documents {
+    function isSignedIn() {
+      return request.auth != null;
+    }
+
+    function hasAdminClaim() {
+      return isSignedIn() && request.auth.token.admin == true;
+    }
+
+    function hasEditorRole() {
+      return isSignedIn()
+        && request.auth.token.email is string
+        && exists(/databases/$(database)/documents/users/$(request.auth.token.email))
+        && get(/databases/$(database)/documents/users/$(request.auth.token.email)).data.role in ['admin', 'editor'];
+    }
+
+    function isAdminUser() {
+      return hasAdminClaim() || hasEditorRole();
+    }
+
+    function validEmail(value) {
+      return value is string
+        && value.size() >= 5
+        && value.size() <= 320
+        && value.matches('^[^\\s@]+@[^\\s@]+\\.[^\\s@]+$');
+    }
+
+    match /articles/{articleId} {
+      allow read: if true;
+      allow create, delete: if isSignedIn();
+      allow update: if isSignedIn() || isPublicViewIncrement();
+
+      function isPublicViewIncrement() {
+        return request.resource.data.diff(resource.data).changedKeys().hasOnly(['views'])
+          && request.resource.data.views is int
+          && (
+            (resource.data.views is int && request.resource.data.views == resource.data.views + 1)
+            || (!(resource.data.views is int) && request.resource.data.views == 1)
+          );
+      }
+    }
+
+    match /announcements/{docId} {
+      allow read: if true;
+      allow create, update, delete: if isSignedIn();
+    }
+
+    match /heroItems/{docId} {
+      allow read: if true;
+      allow create, update, delete: if isSignedIn();
+    }
+
+    match /comments/{commentId} {
+      allow read: if true;
+      allow create: if validPublicComment();
+      allow update: if isSignedIn() || validPublicLikeToggle();
+      allow delete: if isSignedIn();
+
+      function validPublicComment() {
+        return request.resource.data.keys().hasAll(['productId', 'text', 'name', 'rating', 'likes', 'timestamp'])
+          && request.resource.data.keys().hasOnly(['productId', 'text', 'name', 'company', 'rating', 'likes', 'timestamp'])
+          && request.resource.data.productId is string
+          && request.resource.data.productId.size() > 0
+          && request.resource.data.text is string
+          && request.resource.data.text.size() > 0
+          && request.resource.data.text.size() <= 3000
+          && request.resource.data.name is string
+          && request.resource.data.name.size() > 0
+          && request.resource.data.name.size() <= 120
+          && (!('company' in request.resource.data)
+            || (request.resource.data.company is string && request.resource.data.company.size() <= 180))
+          && request.resource.data.rating is int
+          && request.resource.data.rating >= 1
+          && request.resource.data.rating <= 5
+          && request.resource.data.likes is int
+          && request.resource.data.likes == 0;
+      }
+
+      function validPublicLikeToggle() {
+        return request.resource.data.diff(resource.data).changedKeys().hasOnly(['likes'])
+          && request.resource.data.likes is int
+          && resource.data.likes is int
+          && (
+            request.resource.data.likes == resource.data.likes + 1
+            || request.resource.data.likes == resource.data.likes - 1
+          );
+      }
+    }
+
+    match /club_members/{memberId} {
+      allow read, delete: if isSignedIn();
+      allow create, update: if validNewsletterSignup();
+
+      function validNewsletterSignup() {
+        return request.resource.data.keys().hasAll(['email', 'source', 'timestamp', 'updatedAt'])
+          && request.resource.data.keys().hasOnly(['email', 'source', 'timestamp', 'updatedAt'])
+          && validEmail(request.resource.data.email)
+          && request.resource.data.source is string
+          && request.resource.data.source.size() > 0
+          && request.resource.data.source.size() <= 120;
+      }
+    }
+
+    match /ai_signals/{signalId} {
+      allow read: if isSignedIn();
+      allow create: if validAiSignal();
+      allow update, delete: if false;
+
+      function validAiSignal() {
+        return request.resource.data.type is string
+          && request.resource.data.type.size() > 0
+          && request.resource.data.type.size() <= 64;
+      }
+    }
+
+    match /analytics/{eventId} {
+      allow read: if isSignedIn();
+      allow create: if isSignedIn();
+      allow update, delete: if false;
+    }
+
+    match /users/{userId} {
+      allow read: if isAdminUser() || (isSignedIn() && request.auth.token.email == userId);
+      allow create, update, delete: if isAdminUser();
+    }
+
+    match /chatSessions/{sessionId} {
+      allow read, delete: if isAdminUser();
+      allow create, update: if true;
+    }
+
+    match /chatAnalytics/{eventId} {
+      allow read: if isAdminUser();
+      allow create: if true;
+      allow update, delete: if false;
+    }
+
+    match /{document=**} {
+      allow read, write: if false;
+    }
+  }
+}

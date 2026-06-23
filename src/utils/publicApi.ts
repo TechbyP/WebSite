@@ -1,4 +1,15 @@
 import type { Article, ArticleContent } from '../admin/blog/types/articles';
+import {
+  addDoc,
+  collection,
+  doc,
+  getDoc,
+  increment,
+  serverTimestamp,
+  setDoc,
+  updateDoc,
+} from 'firebase/firestore';
+import { db } from '../firebase';
 import { resolveApiUrl } from './api';
 
 type AiSignalType = 'ai_referral' | 'feed_read' | 'ai_conversion';
@@ -74,6 +85,8 @@ type StaticBlogCache = {
 };
 
 const AI_REFERRAL_SESSION_KEY = 'ai_referral_tracked_v1';
+const ARTICLE_VIEW_CACHE_KEY_PREFIX = 'article_view_tracked_v1:';
+const ARTICLE_VIEW_WINDOW_MS = 60 * 60 * 1000;
 const FEED_SIGNAL_CACHE = new Set<string>();
 const AI_REFERRER_PATTERNS = [
   'chat.openai.com',
@@ -87,6 +100,52 @@ const AI_REFERRER_PATTERNS = [
   'poe.com',
   'meta.ai',
 ];
+
+const sanitizeText = (value: unknown, maxLength: number) => {
+  if (typeof value !== 'string') {
+    return '';
+  }
+
+  return value.trim().slice(0, maxLength);
+};
+
+const toClubMemberDocumentId = (email: string) => email.toLowerCase().replace(/[^a-z0-9_-]/g, '_').slice(0, 120);
+
+const getArticleViewCacheKey = (articleId: string) => `${ARTICLE_VIEW_CACHE_KEY_PREFIX}${articleId}`;
+
+const hasRecentArticleView = (articleId: string) => {
+  if (typeof window === 'undefined') {
+    return false;
+  }
+
+  const cachedValue = window.localStorage.getItem(getArticleViewCacheKey(articleId));
+
+  if (!cachedValue) {
+    return false;
+  }
+
+  const trackedAt = Number(cachedValue);
+
+  if (!Number.isFinite(trackedAt)) {
+    window.localStorage.removeItem(getArticleViewCacheKey(articleId));
+    return false;
+  }
+
+  if (Date.now() - trackedAt >= ARTICLE_VIEW_WINDOW_MS) {
+    window.localStorage.removeItem(getArticleViewCacheKey(articleId));
+    return false;
+  }
+
+  return true;
+};
+
+const markArticleView = (articleId: string) => {
+  if (typeof window === 'undefined') {
+    return;
+  }
+
+  window.localStorage.setItem(getArticleViewCacheKey(articleId), String(Date.now()));
+};
 
 const optimizeRemoteImageUrl = (url: string, width = 1200) => {
   if (!url?.startsWith('http')) {
@@ -121,16 +180,22 @@ const parseJsonResponse = async <T>(response: Response, path: string): Promise<T
 };
 
 const postAiSignal = async (payload: AiSignalPayload) => {
-  const path = resolveApiUrl('/api/ai-signals');
-
   try {
-    await fetch(path, {
-      method: 'POST',
-      headers: {
-        'Content-Type': 'application/json',
-      },
-      body: JSON.stringify(payload),
-      keepalive: true,
+    await addDoc(collection(db, 'ai_signals'), {
+      type: payload.type,
+      source: sanitizeText(payload.source, 120),
+      referrer: sanitizeText(payload.referrer, 500),
+      landingPath: sanitizeText(payload.landingPath, 300),
+      feedPath: sanitizeText(payload.feedPath, 300),
+      conversionType: sanitizeText(payload.conversionType, 120),
+      conversionValue: sanitizeText(payload.conversionValue, 180),
+      utm_source: sanitizeText(payload.utm_source, 120),
+      utm_medium: sanitizeText(payload.utm_medium, 120),
+      utm_campaign: sanitizeText(payload.utm_campaign, 180),
+      userAgent: typeof navigator !== 'undefined' ? sanitizeText(navigator.userAgent, 240) : '',
+      timestamp: new Date().toISOString(),
+      receivedAt: serverTimestamp(),
+      sourceType: 'client-direct',
     });
   } catch {
     // Silent fail by design: telemetry should never impact page behavior.
@@ -291,13 +356,32 @@ export const fetchArticleById = async (articleId: string) => {
 export { optimizeRemoteImageUrl };
 
 export const trackArticleView = async (articleId: string) => {
+  if (!articleId) {
+    return { ok: true, throttled: true };
+  }
+
+  if (hasRecentArticleView(articleId)) {
+    return { ok: true, throttled: true };
+  }
+
   try {
-    const path = resolveApiUrl(`/api/articles/${articleId}/view`);
-    const response = await fetch(path, {
-      method: 'POST',
+    const articleRef = doc(db, 'articles', articleId);
+    const articleSnapshot = await getDoc(articleRef).catch(() => null);
+    const currentViews = articleSnapshot && articleSnapshot.exists()
+      ? Number(articleSnapshot.data().views ?? 0)
+      : undefined;
+
+    await updateDoc(articleRef, {
+      views: increment(1),
     });
 
-    return parseJsonResponse<{ ok: boolean; throttled?: boolean; views?: number }>(response, path);
+    markArticleView(articleId);
+
+    if (typeof currentViews === 'number' && Number.isFinite(currentViews)) {
+      return { ok: true, views: currentViews + 1 };
+    }
+
+    return { ok: true };
   } catch {
     return { ok: true, throttled: true };
   }
@@ -312,16 +396,27 @@ export const submitNewsletterSignup = async ({
   source: string;
   honeypot?: string;
 }) => {
-  const path = resolveApiUrl('/api/newsletter-signup');
-  const response = await fetch(path, {
-    method: 'POST',
-    headers: {
-      'Content-Type': 'application/json',
-    },
-    body: JSON.stringify({ email, source, honeypot }),
-  });
+  const normalizedEmail = email.trim().toLowerCase();
+  const normalizedSource = source?.trim() ? source.trim() : 'website';
+  const honeypotValue = typeof honeypot === 'string' ? honeypot.trim() : '';
 
-  return parseJsonResponse<{ ok: boolean }>(response, path);
+  if (honeypotValue) {
+    throw new Error('Invalid signup payload.');
+  }
+
+  if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(normalizedEmail)) {
+    throw new Error('A valid email address is required.');
+  }
+
+  const memberDocRef = doc(db, 'club_members', toClubMemberDocumentId(normalizedEmail));
+  await setDoc(memberDocRef, {
+    email: normalizedEmail,
+    source: normalizedSource,
+    timestamp: serverTimestamp(),
+    updatedAt: serverTimestamp(),
+  }, { merge: true });
+
+  return { ok: true };
 };
 
 export const trackAiConversion = (conversionType: string, conversionValue = '') => {

@@ -21,4 +21,4 @@ page: https://www.techbyp.com/downloads
 # Guidance
 policy: https://www.techbyp.com/ai.txt
 canonical-domain: https://www.techbyp.com
-telemetry: https://www.techbyp.com/api/ai-signals
+telemetry: firestore:ai_signals

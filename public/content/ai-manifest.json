@@ -1,6 +1,6 @@
 {
   "version": "1.0",
-  "updatedAt": "2026-06-23T06:59:45.364Z",
+  "updatedAt": "2026-06-23T10:05:11.405Z",
   "site": "https://www.techbyp.com",
   "feeds": {
     "products": "/content/products.json",
@@ -11,5 +11,5 @@
   },
   "llms": "/llms.txt",
   "policy": "/ai.txt",
-  "telemetry": "/api/ai-signals"
+  "telemetry": "firestore:ai_signals"
 }

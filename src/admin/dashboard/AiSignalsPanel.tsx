@@ -1,5 +1,5 @@
 import { useCallback, useEffect, useMemo, useState } from 'react';
-import { collection, getDocs, limit, orderBy, query, Timestamp } from 'firebase/firestore';
+import { collection, getDocs, limit, orderBy, query } from 'firebase/firestore';
 import { FiExternalLink, FiRefreshCw } from 'react-icons/fi';
 import { toast } from 'react-toastify';
 import { db } from '../../firebase';
@@ -30,11 +30,19 @@ type AggregateItem = {
 
 const MAX_SIGNAL_ROWS = 300;
 
-const toDate = (value: unknown): Date | null => {
-  if (value instanceof Timestamp) {
-    return value.toDate();
+const toErrorMessage = (error: unknown) => {
+  if (error instanceof Error) {
+    return error.message;
   }
 
+  if (typeof error === 'string') {
+    return error;
+  }
+
+  return 'Unknown error';
+};
+
+const toDate = (value: unknown): Date | null => {
   if (value instanceof Date) {
     return value;
   }
@@ -115,13 +123,13 @@ export default function AiSignalsPanel({ isDarkMode }: { isDarkMode: boolean }) 
   const [signals, setSignals] = useState<AiSignal[]>([]);
   const [isLoading, setIsLoading] = useState(true);
 
-  const mapSnapshot = useCallback((snapshot: Awaited<ReturnType<typeof getDocs>>) => {
-    return snapshot.docs.map((documentSnapshot) => {
-      const data = documentSnapshot.data() as Record<string, unknown>;
+  const mapSignalsPayload = useCallback((rows: unknown[]) => {
+    return rows.map((entry, index) => {
+      const data = (entry && typeof entry === 'object' ? entry : {}) as Record<string, unknown>;
       const timestamp = toDate(data.receivedAt) ?? toDate(data.timestamp);
 
       return {
-        id: documentSnapshot.id,
+        id: sanitizeText(data.id) || `row-${index}`,
         type: sanitizeText(data.type),
         source: sanitizeText(data.source),
         referrer: sanitizeText(data.referrer),
@@ -138,30 +146,49 @@ export default function AiSignalsPanel({ isDarkMode }: { isDarkMode: boolean }) 
     });
   }, []);
 
+  const loadSignalsFromFirestore = useCallback(async () => {
+    const collectionRef = collection(db, 'ai_signals');
+
+    try {
+      const recentSnapshot = await getDocs(
+        query(collectionRef, orderBy('receivedAt', 'desc'), limit(MAX_SIGNAL_ROWS))
+      );
+      setSignals(mapSignalsPayload(recentSnapshot.docs.map((documentSnapshot) => ({
+        id: documentSnapshot.id,
+        ...documentSnapshot.data(),
+      }))));
+      return;
+    } catch (receivedAtError) {
+      try {
+        const fallbackSnapshot = await getDocs(
+          query(collectionRef, orderBy('timestamp', 'desc'), limit(MAX_SIGNAL_ROWS))
+        );
+        setSignals(mapSignalsPayload(fallbackSnapshot.docs.map((documentSnapshot) => ({
+          id: documentSnapshot.id,
+          ...documentSnapshot.data(),
+        }))));
+      } catch (timestampError) {
+        throw new Error(
+          `Firestore read failed. receivedAt query: ${toErrorMessage(receivedAtError)}; timestamp query: ${toErrorMessage(timestampError)}`
+        );
+      }
+    }
+  }, [mapSignalsPayload]);
+
   const fetchAiSignals = useCallback(async () => {
     setIsLoading(true);
 
     try {
-      const collectionRef = collection(db, 'ai_signals');
-
-      try {
-        const recentSnapshot = await getDocs(
-          query(collectionRef, orderBy('receivedAt', 'desc'), limit(MAX_SIGNAL_ROWS))
-        );
-        setSignals(mapSnapshot(recentSnapshot));
-      } catch {
-        const fallbackSnapshot = await getDocs(
-          query(collectionRef, orderBy('timestamp', 'desc'), limit(MAX_SIGNAL_ROWS))
-        );
-        setSignals(mapSnapshot(fallbackSnapshot));
+      await loadSignalsFromFirestore();
+    } catch (firestoreError) {
+      if (import.meta.env.DEV) {
+        console.error('Error fetching ai signals from Firestore:', toErrorMessage(firestoreError));
       }
-    } catch (error) {
-      console.error('Error fetching ai signals:', error);
-      toast.error('Failed to load AI telemetry signals.');
+      toast.error('Failed to load AI telemetry signals. Check Firestore permissions.');
     } finally {
       setIsLoading(false);
     }
-  }, [mapSnapshot]);
+  }, [loadSignalsFromFirestore]);
 
   useEffect(() => {
     void fetchAiSignals();

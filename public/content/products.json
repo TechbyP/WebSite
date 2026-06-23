@@ -1,6 +1,6 @@
 {
   "version": "1.0",
-  "updatedAt": "2026-06-23T06:59:45.364Z",
+  "updatedAt": "2026-06-23T10:05:11.405Z",
   "source": "prebuild-script",
   "canonical": "https://www.techbyp.com/content/products.json",
   "items": [
@@ -53,7 +53,7 @@
       "product_type": "smart-system",
       "has_video": false,
       "video_url": null,
-      "last_updated": "2026-06-23T06:59:45.364Z"
+      "last_updated": "2026-06-23T10:05:11.405Z"
     },
     {
       "id": "1001",
@@ -104,7 +104,7 @@
       "product_type": "smart-system",
       "has_video": true,
       "video_url": "https://www.youtube.com/watch?v=40DoQB6vey0",
-      "last_updated": "2026-06-23T06:59:45.364Z"
+      "last_updated": "2026-06-23T10:05:11.405Z"
     },
     {
       "id": "1002",
@@ -155,7 +155,7 @@
       "product_type": "smart-system",
       "has_video": true,
       "video_url": "https://www.youtube.com/watch?v=40DoQB6vey0",
-      "last_updated": "2026-06-23T06:59:45.364Z"
+      "last_updated": "2026-06-23T10:05:11.405Z"
     },
     {
       "id": "1003",
@@ -206,7 +206,7 @@
       "product_type": "smart-system",
       "has_video": false,
       "video_url": null,
-      "last_updated": "2026-06-23T06:59:45.364Z"
+      "last_updated": "2026-06-23T10:05:11.405Z"
     },
     {
       "id": "1004",
@@ -257,7 +257,7 @@
       "product_type": "equipment",
       "has_video": true,
       "video_url": "https://www.youtube.com/watch?v=Lg1I2b6iUTA",
-      "last_updated": "2026-06-23T06:59:45.364Z"
+      "last_updated": "2026-06-23T10:05:11.405Z"
     },
     {
       "id": "1005",
@@ -308,7 +308,7 @@
       "product_type": "equipment",
       "has_video": true,
       "video_url": "https://www.youtube.com/watch?v=m6BqgLotHT8",
-      "last_updated": "2026-06-23T06:59:45.364Z"
+      "last_updated": "2026-06-23T10:05:11.405Z"
     },
     {
       "id": "1006",
@@ -359,7 +359,7 @@
       "product_type": "equipment",
       "has_video": false,
       "video_url": null,
-      "last_updated": "2026-06-23T06:59:45.364Z"
+      "last_updated": "2026-06-23T10:05:11.405Z"
     },
     {
       "id": "2000",
@@ -410,7 +410,7 @@
       "product_type": "equipment",
       "has_video": false,
       "video_url": null,
-      "last_updated": "2026-06-23T06:59:45.364Z"
+      "last_updated": "2026-06-23T10:05:11.405Z"
     },
     {
       "id": "2001",
@@ -461,7 +461,7 @@
       "product_type": "equipment",
       "has_video": false,
       "video_url": null,
-      "last_updated": "2026-06-23T06:59:45.364Z"
+      "last_updated": "2026-06-23T10:05:11.405Z"
     },
     {
       "id": "2003",
@@ -512,7 +512,7 @@
       "product_type": "equipment",
       "has_video": false,
       "video_url": null,
-      "last_updated": "2026-06-23T06:59:45.364Z"
+      "last_updated": "2026-06-23T10:05:11.405Z"
     },
     {
       "id": "2004",
@@ -563,7 +563,7 @@
       "product_type": "equipment",
       "has_video": false,
       "video_url": null,
-      "last_updated": "2026-06-23T06:59:45.364Z"
+      "last_updated": "2026-06-23T10:05:11.405Z"
     },
     {
       "id": "3000",
@@ -614,7 +614,7 @@
       "product_type": "equipment",
       "has_video": false,
       "video_url": null,
-      "last_updated": "2026-06-23T06:59:45.364Z"
+      "last_updated": "2026-06-23T10:05:11.405Z"
     },
     {
       "id": "3001",
@@ -665,7 +665,7 @@
       "product_type": "equipment",
       "has_video": false,
       "video_url": null,
-      "last_updated": "2026-06-23T06:59:45.364Z"
+      "last_updated": "2026-06-23T10:05:11.405Z"
     },
     {
       "id": "3002",
@@ -716,7 +716,7 @@
       "product_type": "equipment",
       "has_video": false,
       "video_url": null,
-      "last_updated": "2026-06-23T06:59:45.364Z"
+      "last_updated": "2026-06-23T10:05:11.405Z"
     },
     {
       "id": "3003",
@@ -767,7 +767,7 @@
       "product_type": "equipment",
       "has_video": false,
       "video_url": null,
-      "last_updated": "2026-06-23T06:59:45.364Z"
+      "last_updated": "2026-06-23T10:05:11.405Z"
     },
     {
       "id": "3004",
@@ -818,7 +818,7 @@
       "product_type": "equipment",
       "has_video": false,
       "video_url": null,
-      "last_updated": "2026-06-23T06:59:45.364Z"
+      "last_updated": "2026-06-23T10:05:11.405Z"
     },
     {
       "id": "4000",
@@ -869,7 +869,7 @@
       "product_type": "equipment",
       "has_video": false,
       "video_url": null,
-      "last_updated": "2026-06-23T06:59:45.364Z"
+      "last_updated": "2026-06-23T10:05:11.405Z"
     },
     {
       "id": "4001",
@@ -920,7 +920,7 @@
       "product_type": "equipment",
       "has_video": false,
       "video_url": null,
-      "last_updated": "2026-06-23T06:59:45.364Z"
+      "last_updated": "2026-06-23T10:05:11.405Z"
     },
     {
       "id": "4003",
@@ -971,7 +971,7 @@
       "product_type": "equipment",
       "has_video": false,
       "video_url": null,
-      "last_updated": "2026-06-23T06:59:45.364Z"
+      "last_updated": "2026-06-23T10:05:11.405Z"
     },
     {
       "id": "4004",
@@ -1022,7 +1022,7 @@
       "product_type": "equipment",
       "has_video": false,
       "video_url": null,
-      "last_updated": "2026-06-23T06:59:45.364Z"
+      "last_updated": "2026-06-23T10:05:11.405Z"
     },
     {
       "id": "5000",
@@ -1073,7 +1073,7 @@
       "product_type": "equipment",
       "has_video": true,
       "video_url": "https://www.youtube.com/watch?v=AkAbm-EYoo0",
-      "last_updated": "2026-06-23T06:59:45.364Z"
+      "last_updated": "2026-06-23T10:05:11.405Z"
     }
   ]
 }

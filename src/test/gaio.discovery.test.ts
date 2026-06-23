@@ -8,11 +8,11 @@ const readPublicFile = (relativePath: string) => {
 };
 
 describe('GAIO discovery files', () => {
-  it('publishes ai-manifest feed map and telemetry endpoint', () => {
+  it('publishes ai-manifest feed map and telemetry metadata', () => {
     const manifest = JSON.parse(readPublicFile(path.join('content', 'ai-manifest.json')));
 
     expect(manifest.site).toBe('https://www.techbyp.com');
-    expect(manifest.telemetry).toBe('/api/ai-signals');
+    expect(manifest.telemetry).toBe('firestore:ai_signals');
     expect(manifest.feeds).toMatchObject({
       products: '/content/products.json',
       blogIndex: '/content/blog-index.json',
@@ -27,10 +27,12 @@ describe('GAIO discovery files', () => {
     const aiPolicy = readPublicFile('ai.txt');
 
     expect(llms).toContain('https://www.techbyp.com/content/ai-manifest.json');
-    expect(llms).toContain('https://www.techbyp.com/api/ai-signals');
+    expect(llms).toContain('telemetry: firestore:ai_signals');
+    expect(llms).not.toContain('/api/');
 
     expect(aiPolicy).toContain('preferred-feed: /content/ai-manifest.json');
-    expect(aiPolicy).toContain('telemetry-endpoint: https://www.techbyp.com/api/ai-signals');
+    expect(aiPolicy).toContain('telemetry: firestore:ai_signals');
+    expect(aiPolicy).not.toContain('/api/');
   });
 
   it('publishes hreflang alternate links in sitemap output', () => {

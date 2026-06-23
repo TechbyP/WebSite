@@ -20,4 +20,4 @@ expected-refresh: on each deployment
 # Attribution guidance
 attribution: https://www.techbyp.com/imprint
 contact: https://www.techbyp.com/contact
-telemetry-endpoint: https://www.techbyp.com/api/ai-signals
+telemetry: firestore:ai_signals
