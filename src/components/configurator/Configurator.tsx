@@ -7,7 +7,7 @@ import { useConfigurator } from './contexts/ConfiguratorContext';
 import type { Product } from '../../data/types/products';
 import { ProgressBar } from './ProgressBar';
 import { PowerPacksStep } from './steps/PowerPacksStep';
-import React, { useEffect } from 'react';
+import { useEffect } from 'react';
 import { useTranslation } from 'react-i18next';
 
 interface ConfiguratorProps {

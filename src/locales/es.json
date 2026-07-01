@@ -837,15 +837,13 @@
       "alt": "Montaje de remolque",
       "title": "Remolques especiales",
       "subtitle": "Transportadores de campo",
-      "description": "El susurrador nómada de suelos — perfecto para galopar por los campos sin comprometerse con un solo paseo.",
-      "price": "Desde €3 600"
+      "description": "El susurrador nómada de suelos — perfecto para galopar por los campos sin comprometerse con un solo paseo."
     },
     "vehicle": {
       "alt": "Montaje de vehículo",
       "title": "Montaje de vehículo",
       "subtitle": "Kit de montaje",
-      "description": "El sabueso urbano de suelos — convierte tu vehículo cotidiano en un detective dedicado de la tierra.",
-      "price": "Desde €1 665"
+      "description": "El sabueso urbano de suelos — convierte tu vehículo cotidiano en un detective dedicado de la tierra."
     }
   },
   "powerOptions": {
@@ -868,19 +866,16 @@
     "lay-down-frame": {
       "name": "Marco de acostar",
       "nickname": "Marco",
-      "price": "€1,200",
       "description": "Un marco resistente para acostar tu equipo."
     },
     "three-point-hitch": {
       "name": "Enganche de tres puntos",
       "nickname": "Enganche",
-      "price": "€1,450",
       "description": "Enganche de tres puntos estándar para un adjunte fácil."
     },
     "full-conversion": {
       "name": "Conversión completa",
       "nickname": "Conversión",
-      "price": "€2,300",
       "description": "Kit de conversión completo para máxima flexibilidad."
     }
   },

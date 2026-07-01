@@ -848,15 +848,13 @@
       "alt": "Trailer Mount",
       "title": "Special Trailers",
       "subtitle": "Field Haulers",
-      "description": "The nomadic soil whisperer—perfect for gallivanting across fields without committing to a single ride.",
-      "price": "From €3 600"
+      "description": "The nomadic soil whisperer—perfect for gallivanting across fields without committing to a single ride."
     },
     "vehicle": {
       "alt": "Vehicle Mount",
       "title": "Vehicle Mount",
       "subtitle": "Mount Kit",
-      "description": "The urban soil sleuth—turn your everyday vehicle into a dedicated dirt detective.",
-      "price": "From €1 665"
+      "description": "The urban soil sleuth—turn your everyday vehicle into a dedicated dirt detective."
     }
   },
   "powerOptions": {
@@ -879,19 +877,16 @@
     "lay-down-frame": {
       "name": "Lay-down Frame",
       "nickname": "Frame",
-      "price": "€1,200",
       "description": "A sturdy frame for laying down your equipment."
     },
     "three-point-hitch": {
       "name": "Three-Point Hitch",
       "nickname": "Hitch",
-      "price": "€1,450",
       "description": "Standard three-point hitch for easy attachment."
     },
     "full-conversion": {
       "name": "Full Conversion",
       "nickname": "Conversion",
-      "price": "€2,300",
       "description": "Complete conversion kit for maximum flexibility."
     },
     "specs": {

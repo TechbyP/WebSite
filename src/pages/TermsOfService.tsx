@@ -1,4 +1,3 @@
-import React from 'react';
 import { ArrowLeft } from 'lucide-react';
 import { useNavigate } from 'react-router-dom';
 import { useTranslation } from 'react-i18next';
@@ -10,6 +9,7 @@ const TermsOfService = () => {
   const navigate = useNavigate();
   const { t } = useTranslation();
   const { theme } = useTheme();
+  const sectionTwoList = t('termsOfService.sections.2.list', { returnObjects: true }) as string[];
 
   return (
     <div
@@ -53,7 +53,7 @@ const TermsOfService = () => {
           <h2 className="text-2xl font-semibold mb-4">{t('termsOfService.sections.2.title')}</h2>
           <p className="mb-4">{t('termsOfService.sections.2.text')}</p>
           <ul className="list-disc pl-6 mb-4">
-            {t('termsOfService.sections.2.list', { returnObjects: true }).map((item, idx) => (
+            {sectionTwoList.map((item: string, idx: number) => (
               <li key={idx} className="mb-2">{item}</li>
             ))}
           </ul>

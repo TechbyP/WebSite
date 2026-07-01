@@ -1,4 +1,3 @@
-import React from 'react';
 import { useTranslation } from 'react-i18next';
 import { Award, Globe, Users, Wrench } from 'lucide-react';
 import { motion } from 'framer-motion';
@@ -10,11 +9,11 @@ const About = () => {
   const { theme } = useTheme();
 
   // Get milestones and stats from translation files
-  const milestones = t('about.milestones', { returnObjects: true });
-  const stats = t('about.stats', { returnObjects: true });
+  const milestones = t('about.milestones', { returnObjects: true }) as Array<{ year: string; event: string }>;
+  const stats = t('about.stats', { returnObjects: true }) as Array<{ icon: string; value: string; label: string }>;
 
   // Helper function to get theme classes
-  const getThemeClasses = (lightClass, darkClass) => {
+  const getThemeClasses = (lightClass: string, darkClass: string): string => {
     return theme === 'dark' ? darkClass : lightClass;
   };
 

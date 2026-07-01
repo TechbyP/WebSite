@@ -1,4 +1,3 @@
-import React from 'react';
 import { ArrowLeft } from 'lucide-react';
 import { useNavigate } from 'react-router-dom';
 import { useTranslation } from 'react-i18next';
@@ -10,6 +9,10 @@ const PrivacyPolicy = () => {
   const navigate = useNavigate();
   const { t } = useTranslation();
   const { theme } = useTheme();
+  const dataCollectionItems = t('privacy.dataCollection.items', { returnObjects: true }) as string[];
+  const useOfDataItems = t('privacy.useOfData.items', { returnObjects: true }) as string[];
+  const cookieItems = t('privacy.cookies.items', { returnObjects: true }) as string[];
+  const rightsItems = t('privacy.rights.items', { returnObjects: true }) as string[];
 
   return (
     <div
@@ -50,7 +53,7 @@ const PrivacyPolicy = () => {
           <h2 className="text-2xl font-semibold mb-4">{t('privacy.dataCollection.title')}</h2>
           <p className="mb-4">{t('privacy.dataCollection.text')}</p>
           <ul className="list-disc pl-6 mb-4">
-            {t('privacy.dataCollection.items', { returnObjects: true }).map((item: string, i: number) => (
+            {dataCollectionItems.map((item: string, i: number) => (
               <li key={i} className="mb-2">{item}</li>
             ))}
           </ul>
@@ -60,7 +63,7 @@ const PrivacyPolicy = () => {
           <h2 className="text-2xl font-semibold mb-4">{t('privacy.useOfData.title')}</h2>
           <p className="mb-4">{t('privacy.useOfData.text')}</p>
           <ul className="list-disc pl-6 mb-4">
-            {t('privacy.useOfData.items', { returnObjects: true }).map((item: string, i: number) => (
+            {useOfDataItems.map((item: string, i: number) => (
               <li key={i} className="mb-2">{item}</li>
             ))}
           </ul>
@@ -80,7 +83,7 @@ const PrivacyPolicy = () => {
           <h2 className="text-2xl font-semibold mb-4">{t('privacy.cookies.title')}</h2>
           <p className="mb-4">{t('privacy.cookies.text')}</p>
           <ul className="list-disc pl-6 mb-4">
-            {t('privacy.cookies.items', { returnObjects: true }).map((item: string, i: number) => (
+            {cookieItems.map((item: string, i: number) => (
               <li key={i} className="mb-2">{item}</li>
             ))}
           </ul>
@@ -91,7 +94,7 @@ const PrivacyPolicy = () => {
           <h2 className="text-2xl font-semibold mb-4">{t('privacy.rights.title')}</h2>
           <p className="mb-4">{t('privacy.rights.text')}</p>
           <ul className="list-disc pl-6 mb-4">
-            {t('privacy.rights.items', { returnObjects: true }).map((item: string, i: number) => (
+            {rightsItems.map((item: string, i: number) => (
               <li key={i} className="mb-2">{item}</li>
             ))}
           </ul>

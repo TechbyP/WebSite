@@ -5,7 +5,6 @@ import type { Product } from '../../../data/types/products';
 import { ErrorBoundary } from 'react-error-boundary';
 import { handleImageError, defaultHeroImage } from '../../../utils/DefaultPics';
 import { useTranslation } from 'react-i18next';
-import { useState, useEffect } from 'react';
 
 function ErrorFallback({ error, resetErrorBoundary }: { error: Error; resetErrorBoundary: () => void }) {
   const { t } = useTranslation();
@@ -34,17 +33,6 @@ export const ExtrasStep = ({ products = [] }: ExtrasStepProps) => {
   const extraProducts = products.filter(
     (p) => p.categoryName?.toLowerCase() === 'extras'
   );
-
-  // Dark mode state
-  const [darkMode, setDarkMode] = useState(false);
-
-  useEffect(() => {
-    if (darkMode) {
-      document.documentElement.classList.add('dark');
-    } else {
-      document.documentElement.classList.remove('dark');
-    }
-  }, [darkMode]);
 
   return (
     <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">

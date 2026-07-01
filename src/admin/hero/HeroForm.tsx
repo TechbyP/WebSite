@@ -1,9 +1,11 @@
 import { useState, useEffect } from 'react';
-import { NewsItem } from '../../components/HeroNews';
+import type { PublicHeroItem } from '../../utils/publicApi';
 import { db } from '../../firebase';
 import { collection, getDocs } from 'firebase/firestore';
 import { useTranslation } from 'react-i18next';
 import { useTheme } from '../../utils/context/theme-context';
+
+type NewsItem = PublicHeroItem;
 
 interface Article {
   id: string;
@@ -29,7 +31,7 @@ const HeroForm = ({ item, onSave, onCancel, isLoading, onImageUpload }: HeroForm
   const [isUploading, setIsUploading] = useState(false);
   const [articles, setArticles] = useState<Article[]>([]);
   const [selectedArticle, setSelectedArticle] = useState<Article | null>(null);
-  const [selectedLanguage, setSelectedLanguage] = useState<'en' | 'de'>('en');
+  const [selectedLanguage] = useState<'en' | 'de'>('en');
 
   useEffect(() => {
     setFormData(item);
@@ -54,11 +56,12 @@ const HeroForm = ({ item, onSave, onCancel, isLoading, onImageUpload }: HeroForm
 
   const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement | HTMLSelectElement>) => {
     const { name, value } = e.target;
-    setFormData(prev => ({ ...prev, [name]: value }));
-  };
+    if (name === 'order') {
+      setFormData(prev => ({ ...prev, order: Number(value) }));
+      return;
+    }
 
-  const handleLanguageChange = (lang: 'en' | 'de') => {
-    setSelectedLanguage(lang);
+    setFormData(prev => ({ ...prev, [name]: value }));
   };
 
   const handleImageChange = async (e: React.ChangeEvent<HTMLInputElement>) => {
@@ -89,7 +92,10 @@ const HeroForm = ({ item, onSave, onCancel, isLoading, onImageUpload }: HeroForm
     onSave(formData);
   };
 
-  const isHomeScreen = formData.type === 'announcement' && !formData.title;
+  const isHomeScreen =
+    formData.type === 'announcement' &&
+    !formData.title_en?.trim() &&
+    !formData.title_de?.trim();
 
   // Theme-based classes
   const bgClass = theme === 'dark' ? 'bg-gray-800' : 'bg-white';
@@ -112,7 +118,7 @@ const HeroForm = ({ item, onSave, onCancel, isLoading, onImageUpload }: HeroForm
         >
           <option value="event">{t('heroEditor.event')}</option>
           <option value="product">{t('heroEditor.product')}</option>
-          <option value="article">{t('heroEditor.article')}</option>
+          <option value="blog">{t('heroEditor.article')}</option>
           <option value="announcement">{t('heroEditor.homeScreen')}</option>
         </select>
       </div>
@@ -204,8 +210,10 @@ const HeroForm = ({ item, onSave, onCancel, isLoading, onImageUpload }: HeroForm
                   setSelectedArticle(article);
                   setFormData(prev => ({
                     ...prev,
-                    link: `/blog/${article.id}`,
-                    cta: prev.cta?.trim() ? prev.cta : t('heroEditor.readMore'),
+                    link_en: `/blog/${article.id}`,
+                    link_de: `/blog/${article.id}`,
+                    cta_en: prev.cta_en?.trim() ? prev.cta_en : t('heroEditor.readMore', { lng: 'en' }),
+                    cta_de: prev.cta_de?.trim() ? prev.cta_de : t('heroEditor.readMore', { lng: 'de' }),
                   }));
                 }
               }}

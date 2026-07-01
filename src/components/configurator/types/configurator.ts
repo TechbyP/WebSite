@@ -1,3 +1,5 @@
+import type { Product } from '../../../data/types/products';
+
 export interface ProductConfiguration {
   product: Product | null;
   mountingMethod: 'trailer' | 'vehicle' | null;
@@ -18,7 +20,8 @@ export type ConfiguratorStep =
   | 'product-selection'
   | 'mounting-method'
   | 'vehicle-mounting'
-  | 'powerpacks'          
+  | 'powerpacks'
   | 'extras'
   | 'customer-info'
+  | 'summary';
 

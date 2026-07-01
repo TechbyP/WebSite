@@ -1,6 +1,5 @@
 
 import { Wrench, Target, Gauge, Drill, Zap } from 'lucide-react';
-import type { TFunction } from 'i18next';
 import { Product } from './types/products';
 import i18n from '../i18n';
 import { getPriceDisplay, getPriceValue, type PriceKey } from './prices';
@@ -48,7 +47,7 @@ import Probes_Hero from '../assets/Probes/Hero.jpg?w=150;480;768;1280&format=web
 
 import Raupen_Hero from '../assets/Nitratraupe/hero.jpg?w=150;480;768;1280&format=webp;jpg&quality=72&as=srcset';
 
-export const createProducts = (t: TFunction): Product[] => {
+export const createProducts = (t: any): Product[] => {
   const language = i18n.resolvedLanguage || i18n.language || 'en';
   const resolvePrice = (priceKey: PriceKey) => ({
     priceValue: getPriceValue(priceKey),
@@ -256,7 +255,7 @@ export const createProducts = (t: TFunction): Product[] => {
       category: "SmartSystems",
       bestseller: true,
       image: BOPROB_Hero,
-      heroVideo: "",
+      heroVideo: "VKJGuOLXzIQ",
       specs: t('boprob.specs', { returnObjects: true }) || [],
       icon: Target,
       ...resolvePrice('boprob'),
@@ -609,11 +608,11 @@ export const createProducts = (t: TFunction): Product[] => {
       description: t('hammers.description'),
       herodescription: t('hammers.herodescription'),
       detailedDescription: t('hammers.detailedDescription'),
-      features: t('hammers.features', { returnObjects: true }) || [],
-      applications: t('hammers.applications', { returnObjects: true }) || [],
-      howToUse: t('hammers.howToUse', { returnObjects: true }) || [],
-      technicalSpecs: t('hammers.technicalSpecs', { returnObjects: true }) || [],
-      table: t('hammers.table', { returnObjects: true }) || [],
+      features: (t('hammers.features', { returnObjects: true }) as string[]) || [],
+      applications: (t('hammers.applications', { returnObjects: true }) as string[]) || [],
+      howToUse: (t('hammers.howToUse', { returnObjects: true }) as string[]) || [],
+      technicalSpecs: (t('hammers.technicalSpecs', { returnObjects: true }) as Product['technicalSpecs']) || {},
+      table: (t('hammers.table', { returnObjects: true }) as { emNo: string; articleName: string }[]) || [],
       gallery: [Hammers_Hero],
       testimonials: []
     },

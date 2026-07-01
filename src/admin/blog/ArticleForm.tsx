@@ -1,9 +1,8 @@
 import { useState, useEffect } from 'react';
-import { Article } from './types/articles';
+import { Article, ArticleContent } from './types/articles';
 import { useTranslation } from 'react-i18next';
 import RichTextEditor from './RichTextEditor';
 import AvatarImage from '../../assets/pictures/Logo-Symbol.png';
-import { useTheme } from '../../utils/context/theme-context';
 
 interface ArticleFormProps {
   article: Partial<Article>;
@@ -27,7 +26,6 @@ const ArticleForm = ({
   onLanguageChange,
 }: ArticleFormProps) => {
   const { t } = useTranslation();
-  const { theme } = useTheme();
   const [formData, setFormData] = useState<Partial<Article>>(article);
   const [imageFile, setImageFile] = useState<File | null>(null);
   const [avatarFile, setAvatarFile] = useState<File | null>(null);
@@ -40,27 +38,40 @@ const ArticleForm = ({
     setAvatarUrl(article.author?.avatar || '');
   }, [article]);
 
-  const handleInputChange = (field: keyof Article['content'], value: string) => {
+  const emptyContent: ArticleContent = { title: '', content: [''], excerpt: '' };
+
+  const getSafeContent = (content?: Article['content']): Article['content'] => ({
+    en: content?.en || emptyContent,
+    de: content?.de || emptyContent,
+  });
+
+  const getSafeAuthor = (author?: Article['author']): Article['author'] => ({
+    name: author?.name || '',
+    role: author?.role || '',
+    avatar: author?.avatar || '',
+  });
+
+  const handleInputChange = (field: 'title' | 'excerpt', value: string) => {
     setFormData(prev => ({
       ...prev,
       content: {
-        ...prev.content,
+        ...getSafeContent(prev.content),
         [language]: {
-          ...prev.content?.[language],
+          ...getSafeContent(prev.content)[language],
           [field]: value,
         },
       },
     }));
   };
 
-  const handleContentChange = (content: string[]) => {
+  const handleContentChange = (content: string) => {
     setFormData(prev => ({
       ...prev,
       content: {
-        ...prev.content,
+        ...getSafeContent(prev.content),
         [language]: {
-          ...prev.content?.[language],
-          content: content,
+          ...getSafeContent(prev.content)[language],
+          content: content ? [content] : [''],
         },
       },
     }));
@@ -86,7 +97,7 @@ const ArticleForm = ({
         setFormData(prev => ({
           ...prev,
           author: {
-            ...prev.author,
+            ...getSafeAuthor(prev.author),
             avatar: url,
           },
         }));
@@ -180,7 +191,7 @@ const ArticleForm = ({
         <div>
           <label className={labelClass}>{t('blogEdit.content')}</label>
           <RichTextEditor
-            content={formData.content?.[language]?.content || ['']}
+            content={formData.content?.[language]?.content?.join('\n') || ''}
             onChange={handleContentChange}
             onImageUpload={onImageUpload}
             language={language}
@@ -195,7 +206,7 @@ const ArticleForm = ({
               type="text"
               value={formData.author?.name || ''}
               onChange={(e) =>
-                setFormData(prev => ({ ...prev, author: { ...prev.author, name: e.target.value } }))
+                setFormData(prev => ({ ...prev, author: { ...getSafeAuthor(prev.author), name: e.target.value } }))
               }
               className={inputClass}
               required
@@ -208,7 +219,7 @@ const ArticleForm = ({
               type="text"
               value={formData.author?.role || ''}
               onChange={(e) =>
-                setFormData(prev => ({ ...prev, author: { ...prev.author, role: e.target.value } }))
+                setFormData(prev => ({ ...prev, author: { ...getSafeAuthor(prev.author), role: e.target.value } }))
               }
               className={inputClass}
               required
@@ -296,7 +307,7 @@ const ArticleForm = ({
                 type="button"
                 onClick={() => {
                   setAvatarUrl(AvatarImage);
-                  setFormData(prev => ({ ...prev, author: { ...prev.author, avatar: AvatarImage } }));
+                  setFormData(prev => ({ ...prev, author: { ...getSafeAuthor(prev.author), avatar: AvatarImage } }));
                 }}
                 className="px-4 py-2 bg-gray-200 dark:bg-gray-700 dark:text-gray-200 rounded-lg hover:bg-gray-300"
               >

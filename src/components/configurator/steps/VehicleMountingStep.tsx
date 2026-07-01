@@ -5,6 +5,18 @@ import { handleImageError, defaultHeroImage } from '../../../utils/DefaultPics';
 import { useTranslation } from 'react-i18next';
 import { useProducts } from '../../../data/context/ProductsContext';
 
+const getMountingTypeById = (id: number): 'lay-down' | 'three-point' | 'full-conversion' => {
+  switch (id) {
+    case 2000:
+      return 'lay-down';
+    case 2001:
+      return 'three-point';
+    case 2003:
+    default:
+      return 'full-conversion';
+  }
+};
+
 export const VehicleMountingStep = () => {
   const { t } = useTranslation();
   const { configuration, setVehicleMountingType, goToStep } = useConfigurator();
@@ -32,7 +44,7 @@ export const VehicleMountingStep = () => {
       {/* Mobile version */}
       <div className="md:hidden space-y-3">
         {mountingProducts.map((product) => {
-          const selected = configuration.vehicleMountingType === product.id;
+          const selected = configuration.vehicleMountingType === getMountingTypeById(product.id);
 
           return (
             <motion.div
@@ -48,13 +60,13 @@ export const VehicleMountingStep = () => {
                   ? 'ring-2 ring-brandgreen'
                   : 'border border-gray-200 dark:border-gray-700 hover:border-gray-300 dark:hover:border-gray-600'
                 }`}
-              onClick={() => setVehicleMountingType(product.id)}
+              onClick={() => setVehicleMountingType(getMountingTypeById(product.id))}
             >
               <div className="relative overflow-hidden h-full w-24 flex-shrink-0">
                 <img
                   sizes="(max-width: 768px) 50vw, 25vw"
                   srcSet={product.image || defaultHeroImage}
-                  alt={product.name}
+                  alt={product.name || t('vehicleMounting.mountingLabel')}
                   className="w-full h-full object-right object-cover"
                   loading="lazy"
                   onError={(e) => handleImageError(e, defaultHeroImage)}
@@ -77,7 +89,7 @@ export const VehicleMountingStep = () => {
                   </span>
                 </div>
                 <h3 className="text-sm font-black text-gray-900 dark:text-gray-100 uppercase truncate">
-                  {product.name}
+                  {product.name || t('vehicleMounting.mountingLabel')}
                 </h3>
                 <h2 className="text-xs font-bold text-gray-900 dark:text-gray-200 uppercase truncate">
                   {product.nickname || 'Product'}
@@ -94,7 +106,7 @@ export const VehicleMountingStep = () => {
       {/* Desktop version */}
       <div className="hidden md:grid max-w-[1280px] mx-auto grid-cols-1 md:grid-cols-3 gap-6 px-4 sm:px-6 lg:px-8">
         {mountingProducts.map((product) => {
-          const selected = configuration.vehicleMountingType === product.id;
+          const selected = configuration.vehicleMountingType === getMountingTypeById(product.id);
 
           return (
             <motion.div
@@ -109,13 +121,13 @@ export const VehicleMountingStep = () => {
                   : 'border-gray-200 dark:border-gray-700 hover:border-gray-300 dark:hover:border-gray-600'}
                 flex flex-col h-full
               `}
-              onClick={() => setVehicleMountingType(product.id)}
+              onClick={() => setVehicleMountingType(getMountingTypeById(product.id))}
             >
               <div className="relative overflow-hidden h-48">
                 <img
                   sizes="(max-width: 768px) 50vw, 25vw"
                   srcSet={product.image}
-                  alt={product.name}
+                  alt={product.name || t('vehicleMounting.mountingLabel')}
                   className="w-full h-full object-right object-cover group-hover:scale-110 transition-transform duration-300"
                   loading="lazy"
                 />
@@ -123,7 +135,7 @@ export const VehicleMountingStep = () => {
               <div className="flex flex-col flex-grow px-6 pt-6 pb-4">
                 <div>
                   <h3 className="text-2xl font-black text-gray-900 dark:text-gray-100 uppercase">
-                    {product.name}
+                    {product.name || t('vehicleMounting.mountingLabel')}
                   </h3>
                 </div>
 

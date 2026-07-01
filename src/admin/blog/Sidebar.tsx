@@ -2,7 +2,6 @@ import { useState } from 'react';
 import { Article } from './types/articles';
 import { useTranslation } from 'react-i18next';
 import { FiSearch, FiPlus, FiCalendar } from 'react-icons/fi';
-import { useTheme } from '../../utils/context/theme-context';
 
 interface SidebarProps {
   articles: Array<Article & { displayTitle: string }>;
@@ -37,7 +36,6 @@ const Sidebar = ({
 }: SidebarProps) => {
   const { t } = useTranslation();
   const [isMenuOpen, setIsMenuOpen] = useState(false);
-  const { theme } = useTheme();
 
   return (
     <div className="lg:col-span-1 p-5 rounded-2xl shadow-sm border h-fit sticky top-6 bg-white dark:bg-gray-800 border-gray-100 dark:border-gray-700">

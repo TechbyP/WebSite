@@ -4,7 +4,6 @@ import { FadeInWhenVisible } from '../../animation/FadeInWhenVisible';
 import { useState } from 'react';
 import { Dialog } from '@headlessui/react';
 import { useTranslation } from 'react-i18next';
-import { useTheme } from '../../../utils/context/theme-context'; // ✅ theme context import
 import { useProducts } from '../../../data/context/ProductsContext';
 
 export const PowerPacksStep = () => {
@@ -15,7 +14,6 @@ export const PowerPacksStep = () => {
   } = useConfigurator();
 
   const { t } = useTranslation();
-  const { theme } = useTheme(); // ✅ access current theme
   const { products } = useProducts();
 
   const [showPowerpackWarning, setShowPowerpackWarning] = useState(false);
@@ -23,8 +21,8 @@ export const PowerPacksStep = () => {
 
   const order = ['Power Pack'];
 
-  const normalizeName = (name: string) =>
-    name.toLowerCase().replace(/-/g, '-').replace(/\s+/g, ' ').trim();
+  const normalizeName = (name?: string) =>
+    (name || '').toLowerCase().replace(/\s+/g, ' ').trim();
 
   const normalizedOrder = order.map(normalizeName);
 
@@ -164,7 +162,7 @@ export const PowerPacksStep = () => {
                 <img
                   sizes="(max-width: 768px) 50vw, 25vw"
                   srcSet={product.image}
-                  alt={t(`products.${product.id}.name`, product.name)}
+                  alt={t(`products.${product.id}.name`, { defaultValue: product.name || 'Product' })}
                   className="w-full h-full object-cover"
                   loading="lazy"
                 />
@@ -187,10 +185,10 @@ export const PowerPacksStep = () => {
               </div>
               <div className="flex flex-col px-4 py-2 overflow-hidden">
                 <h3 className="text-sm font-black text-gray-900 dark:text-gray-100 uppercase truncate">
-                  {t(`products.${product.id}.name`, product.name)}
+                  {t(`products.${product.id}.name`, { defaultValue: product.name || 'Product' })}
                 </h3>
                 <h2 className="text-xs font-bold text-gray-900 dark:text-gray-300 uppercase truncate">
-                  {t(`products.${product.id}.nickname`, product.nickname || 'Product')}
+                  {t(`products.${product.id}.nickname`, { defaultValue: product.nickname || 'Product' })}
                 </h2>
                 <div className="text-xs font-bold text-brandgreen mt-1">
                   {product.price || t('extrasStep.priceNotAvailable')}
@@ -227,7 +225,7 @@ export const PowerPacksStep = () => {
                 <img
                   sizes="(max-width: 768px) 50vw, 25vw"
                   srcSet={product.image}
-                  alt={t(`products.${product.id}.name`, product.name)}
+                  alt={t(`products.${product.id}.name`, { defaultValue: product.name || 'Product' })}
                   className="w-full h-full object-right object-cover group-hover:scale-110 transition-transform duration-300"
                   loading="lazy"
                 />
@@ -250,12 +248,12 @@ export const PowerPacksStep = () => {
               </div>
               <div className="p-6 flex flex-col grow">
                 <h3 className="text-2xl font-black text-gray-900 dark:text-gray-100 uppercase">
-                  {t(`products.${product.id}.name`, product.name)}
+                  {t(`products.${product.id}.name`, { defaultValue: product.name || 'Product' })}
                 </h3>
                 <h2 className="text-sm text-gray-900 dark:text-gray-300 mb-2 mt-1">
                   {t(
                     `products.${product.id}.nickname`,
-                    product.description || 'Product'
+                    { defaultValue: product.description || 'Product' }
                   )}
                 </h2>
                 <div className="text-base font-bold text-brandgreen mt-auto">

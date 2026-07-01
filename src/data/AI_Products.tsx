@@ -1,4 +1,4 @@
-import { Wrench, Target, Gauge, Drill, Zap, Settings, Hammer } from 'lucide-react';
+import { Wrench, Target, Gauge, Drill, Zap } from 'lucide-react';
 
 export interface Product {
   id: number;
@@ -21,7 +21,7 @@ export interface Product {
   howToUse?: string[]; // Optional field for usage instructions
   applications: string[];
   technicalSpecs: {
-    [key: string]: string;
+    [key: string]: string | JSX.Element;
   };
   gallery: string[];
   testimonials: {
@@ -32,7 +32,7 @@ export interface Product {
 
   }[];
   // New sorting properties:
-  priceValue?: number;        // Numeric value for sorting by price
+  priceValue?: number | null; // Numeric value for sorting by price
   electric?: boolean;         // Is it electric-powered?
   manual?: boolean;           // Is it manual operation?
   hydraulic?: boolean;        // Is it hydraulic-powered?
@@ -43,7 +43,7 @@ export interface Product {
   horizons?: number;          // Number of horizons
   magazines?: number;         // Number of magazines
   samplingCycleTime?: number; // Sampling cycle time in seconds
-  table?: string[];
+  table?: Array<{ emNo: string; articleName: string }>;
   warranty?: string;
   dimensions?: string;
   material?: string
@@ -738,7 +738,7 @@ export const products: Product[] = [
     category: "SmartSystems",
     bestseller: true,
     image: "",
-    heroVideo: "",
+    heroVideo: "VKJGuOLXzIQ",
     specs: [
       "Depth: 10–30 cm",
       "Fully Automatic",

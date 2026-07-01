@@ -1,5 +1,5 @@
 import { useState, useEffect } from 'react';
-import { NewsItem } from '../../components/HeroNews';
+import type { PublicHeroItem } from '../../utils/publicApi';
 import { db } from '../../firebase';
 import { collection, getDocs, doc, setDoc, deleteDoc, query, orderBy } from 'firebase/firestore';
 import { toast, ToastContainer } from 'react-toastify';
@@ -7,6 +7,8 @@ import 'react-toastify/dist/ReactToastify.css';
 import HeroForm from './HeroForm';
 import { useTranslation } from 'react-i18next';
 import { useTheme } from '../../utils/context/theme-context';
+
+type NewsItem = PublicHeroItem;
 
 const IMGBB_API_KEY = import.meta.env.VITE_IMGBB_KEY;
 
@@ -22,7 +24,7 @@ const HeroPageEditor = () => {
   const [error, setError] = useState<string | null>(null);
 
   const defaultItem: Partial<NewsItem> = {
-    type: '',
+    type: 'event',
     title_en: '',
     title_de: '',
     excerpt_en: '',

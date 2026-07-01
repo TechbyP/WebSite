@@ -1,14 +1,26 @@
-import React from "react";
 import { motion } from "framer-motion";
 import { Star, Quote } from "lucide-react";
 import { useTranslation } from "react-i18next";
 
+type Testimonial = {
+  rating: number;
+  quote: string;
+  author: string;
+  position: string;
+};
+
+type Certification = {
+  bgClass: string;
+  abbr: string;
+  text: string;
+};
+
 const Trust = () => {
   const { t } = useTranslation();
 
-  const partners = t('partners', { returnObjects: true });
-  const testimonials = t('testimonials', { returnObjects: true });
-  const certifications = t('certifications', { returnObjects: true });
+  const partners = t('partners', { returnObjects: true }) as string[];
+  const testimonials = t('testimonials', { returnObjects: true }) as Testimonial[];
+  const certifications = t('certifications', { returnObjects: true }) as Certification[];
 
   return (
     <section className="py-16 sm:py-20 bg-gray-50 dark:bg-gray-900 overflow-hidden transition-colors duration-300">

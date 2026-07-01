@@ -3,6 +3,19 @@ import { useConfigurator } from './contexts/ConfiguratorContext';
 import { useMediaQuery } from 'react-responsive';
 import { ConfiguratorStep } from './types/configurator';
 import { useTranslation } from 'react-i18next';
+import { useProducts } from '../../data/context/ProductsContext';
+
+const getVehicleMountingId = (type: 'lay-down' | 'three-point' | 'full-conversion') => {
+  switch (type) {
+    case 'lay-down':
+      return 2000;
+    case 'three-point':
+      return 2001;
+    case 'full-conversion':
+    default:
+      return 2003;
+  }
+};
 
 interface ProgressBarProps {
   steps: {
@@ -16,8 +29,8 @@ interface ProgressBarProps {
 export const ProgressBar = ({ steps, currentStepIndex }: ProgressBarProps) => {
   const { t } = useTranslation();
   const { configuration, goToStep } = useConfigurator();
+  const { products } = useProducts();
   const isMobile = useMediaQuery({ maxWidth: 767 });
-  const isTablet = useMediaQuery({ minWidth: 768, maxWidth: 1023 });
 
   const isSixteenExpress = configuration.product?.productKey === 'sixteen_express';
 
@@ -52,7 +65,7 @@ export const ProgressBar = ({ steps, currentStepIndex }: ProgressBarProps) => {
     switch (stepId) {
       case 'product-selection':
         return configuration.product
-          ? `${t('progress.selected')} ${configuration.product.name.slice(0, isMobile ? 12 : 20)}`
+          ? `${t('progress.selected')} ${(configuration.product.name || t('productSelection.unnamedProduct')).slice(0, isMobile ? 12 : 20)}`
           : t('progress.notSelected');
       case 'mounting-method':
         return configuration.mountingMethod
@@ -60,7 +73,8 @@ export const ProgressBar = ({ steps, currentStepIndex }: ProgressBarProps) => {
           : t('progress.notSelected');
       case 'vehicle-mounting':
         if (configuration.vehicleMountingType) {
-          const mountingProduct = configuration.products?.find(p => p.id === configuration.vehicleMountingType);
+          const mountingId = getVehicleMountingId(configuration.vehicleMountingType);
+          const mountingProduct = products.find(p => p.id === mountingId);
           return `${t('progress.car')} ${mountingProduct?.name || configuration.vehicleMountingType}`;
         }
         return t('progress.notSelected');

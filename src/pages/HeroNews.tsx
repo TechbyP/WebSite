@@ -7,6 +7,11 @@ import { useTranslation } from 'react-i18next';
 import { fetchHeroItems, type PublicHeroItem } from '../utils/publicApi';
 
 type NewsItem = PublicHeroItem;
+type LocalizedContentField = 'title' | 'excerpt' | 'link' | 'cta';
+type HeroActionItem = NewsItem & {
+    link?: string;
+    cta?: string;
+};
 
 const TRANSITION_DURATION = 300;
 
@@ -24,9 +29,22 @@ const CombinedHero = () => {
     const controls = useAnimation();
     const containerRef = useRef<HTMLDivElement>(null);
 
-    const getLocalizedContent = (item: NewsItem, field: string) => {
-        const localizedField = `${field}_${currentLanguage}` as keyof NewsItem;
-        return item[localizedField] || item[field as keyof NewsItem] || '';
+    const getLocalizedContent = (item: NewsItem, field: LocalizedContentField): string => {
+        const isGerman = currentLanguage.toLowerCase().startsWith('de');
+
+        if (field === 'title') {
+            return (isGerman ? item.title_de : item.title_en) || item.title_en || item.title_de || '';
+        }
+
+        if (field === 'excerpt') {
+            return (isGerman ? item.excerpt_de : item.excerpt_en) || item.excerpt_en || item.excerpt_de || '';
+        }
+
+        if (field === 'link') {
+            return (isGerman ? item.link_de : item.link_en) || item.link_en || item.link_de || '';
+        }
+
+        return (isGerman ? item.cta_de : item.cta_en) || item.cta_en || item.cta_de || '';
     };
     const formatTitle = (title: string) => {
         if (!title) return '';
@@ -202,7 +220,7 @@ const CombinedHero = () => {
         blog: t('hero.newsTypes.blog')
     };
 
-    const SafeButton = ({ item }: { item: NewsItem }) => {
+    const SafeButton = ({ item }: { item: HeroActionItem }) => {
         const [isClicked, setIsClicked] = useState(false);
         const buttonRef = useRef<HTMLAnchorElement>(null);
 
@@ -210,16 +228,17 @@ const CombinedHero = () => {
             e.preventDefault();
             e.stopPropagation();
             if (!isTransitioning && !isClicked && item.link && isMounted) {
+                const targetLink = item.link;
                 setIsClicked(true);
                 if (buttonRef.current) {
                     buttonRef.current.getBoundingClientRect();
                 }
                 setTimeout(() => {
                     if (!isMounted) return;
-                    if (item.link.startsWith('http')) {
-                        window.open(item.link, '_blank');
+                    if (targetLink.startsWith('http')) {
+                        window.open(targetLink, '_blank');
                     } else {
-                        window.location.href = item.link;
+                        window.location.href = targetLink;
                     }
                     setIsClicked(false);
                 }, TRANSITION_DURATION + 100);
@@ -379,7 +398,7 @@ const CombinedHero = () => {
                                 className="w-full h-full object-cover select-none"
                                 style={{ objectPosition: 'center center' }}
                                 draggable={false}
-                                fetchpriority={currentItem?.isHomeScreen ? 'high' : 'auto'}
+                                fetchPriority={currentItem?.isHomeScreen ? 'high' : 'auto'}
                                 loading={currentItem?.isHomeScreen ? 'eager' : 'lazy'}
                                 decoding="async"
                             />

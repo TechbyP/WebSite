@@ -1,5 +1,5 @@
-import React, { useState, useEffect } from 'react';
-import { Article, Author, RelatedArticle } from './types/article';
+import { useState, useEffect } from 'react';
+import { Author, RelatedArticle } from './types/articles';
 import { db } from '../../firebase';
 import { collection, getDocs, doc, setDoc, deleteDoc, query, orderBy } from 'firebase/firestore';
 import AvatarImage from '../../assets/pictures/Logo-Symbol.png';
@@ -286,7 +286,6 @@ const BlogPostEditor = () => {
               onAvatarUpload={uploadImage}
               language={language}
               onLanguageChange={setLanguage}
-              theme={theme}
             />
           ) : selectedArticle ? (
             <ArticleView
@@ -295,7 +294,6 @@ const BlogPostEditor = () => {
               onDelete={() => deleteArticle(selectedArticle.id)}
               isLoading={isLoading}
               language={language}
-              theme={theme}
             />
           ) : (
             <div className="p-10 rounded-2xl shadow-lg text-center bg-white/70 dark:bg-gray-800/70 backdrop-blur-lg border border-gray-200 dark:border-gray-700">

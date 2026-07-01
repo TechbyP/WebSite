@@ -848,15 +848,13 @@
       "alt": "Montage sur remorque",
       "title": "Remorques spéciales",
       "subtitle": "Transporteurs de terrain",
-      "description": "Le chuchoteur de sol nomade — parfait pour galoper à travers les champs sans s'engager sur un seul trajet.",
-      "price": "À partir de 3 600 €"
+      "description": "Le chuchoteur de sol nomade — parfait pour galoper à travers les champs sans s'engager sur un seul trajet."
     },
     "vehicle": {
       "alt": "Montage sur véhicule",
       "title": "Montage sur véhicule",
       "subtitle": "Kit de montage",
-      "description": "Le détective urbain du sol — transformez votre véhicule quotidien en détective de saleté dédié.",
-      "price": "À partir de 1 665 €"
+      "description": "Le détective urbain du sol — transformez votre véhicule quotidien en détective de saleté dédié."
     }
   },
   "powerOptions": {
@@ -879,19 +877,16 @@
     "lay-down-frame": {
       "name": "Cadre couché",
       "nickname": "Cadre",
-      "price": "€1,200",
       "description": "Un cadre robuste pour coucher votre équipement."
     },
     "three-point-hitch": {
       "name": "Attelage trois points",
       "nickname": "Attelage",
-      "price": "€1,450",
       "description": "Attelage trois points standard pour un attachement facile."
     },
     "full-conversion": {
       "name": "Conversion complète",
       "nickname": "Conversion",
-      "price": "€2,300",
       "description": "Kit de conversion complet pour une flexibilité maximale."
     },
     "specs": {

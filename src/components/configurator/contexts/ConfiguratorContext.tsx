@@ -82,7 +82,12 @@ const setProduct = (product: Product) => {
 };
 
 
-const startWithProduct = (productId: number) => {
+const startWithProduct = (productId?: number) => {
+  if (typeof productId !== 'number') {
+    resetConfigurator();
+    return;
+  }
+
   const product = products.find((p) => p.id === productId);
   if (product) {
     const isExpress = product.productKey === 'sixteen_express';

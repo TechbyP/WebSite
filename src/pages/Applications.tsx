@@ -1,4 +1,3 @@
-import React from 'react';
 import { motion } from 'framer-motion';
 import { Wheat, Building, Microscope, Hammer } from 'lucide-react';
 import { useNavigate } from 'react-router-dom';
@@ -10,30 +9,35 @@ const Applications = () => {
   const { t } = useTranslation();
   const { theme } = useTheme();
 
-  const applications = [
+  const applications: Array<{
+    icon: JSX.Element;
+    title: string;
+    description: string;
+    features: string[];
+  }> = [
     {
       icon: <Wheat className="h-8 w-8" />,
       title: t('application.applications.agriculture.title'),
       description: t('application.applications.agriculture.description'),
-      features: t('application.applications.agriculture.features', { returnObjects: true }),
+      features: (t('application.applications.agriculture.features', { returnObjects: true }) as unknown as string[]) || [],
     },
     {
       icon: <Building className="h-8 w-8" />,
       title: t('application.applications.geotechnicalSurvey.title'),
       description: t('application.applications.geotechnicalSurvey.description'),
-      features: t('application.applications.geotechnicalSurvey.features', { returnObjects: true }),
+      features: (t('application.applications.geotechnicalSurvey.features', { returnObjects: true }) as unknown as string[]) || [],
     },
     {
       icon: <Microscope className="h-8 w-8" />,
       title: t('application.applications.environmentalResearch.title'),
       description: t('application.applications.environmentalResearch.description'),
-      features: t('application.applications.environmentalResearch.features', { returnObjects: true }),
+      features: (t('application.applications.environmentalResearch.features', { returnObjects: true }) as unknown as string[]) || [],
     },
     {
       icon: <Hammer className="h-8 w-8" />,
       title: t('application.applications.construction.title'),
       description: t('application.applications.construction.description'),
-      features: t('application.applications.construction.features', { returnObjects: true }),
+      features: (t('application.applications.construction.features', { returnObjects: true }) as unknown as string[]) || [],
     },
   ];
 
@@ -51,7 +55,7 @@ const Applications = () => {
   };
 
   // Helper function to get theme classes
-  const getThemeClass = (lightClass, darkClass) => {
+  const getThemeClass = (lightClass: string, darkClass: string) => {
     return theme === 'dark' ? darkClass : lightClass;
   };
 

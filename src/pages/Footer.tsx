@@ -1,8 +1,8 @@
 import React, { useState } from 'react';
 import { Phone, Mail, MapPin, Facebook, Instagram, Linkedin, Youtube } from 'lucide-react';
 import { useNavigate } from 'react-router-dom';
-import logo from '../assets/pictures/Logo-Symbol.png?w=32;48;64;96&format=webp;png&as=srcset';
-import logoFallback from '../assets/pictures/Logo-Symbol.png?w=64&format=png';
+import logo from '../assets/pictures/Logo-Symbol.png';
+import logoFallback from '../assets/pictures/Logo-Symbol.png';
 import { toast } from 'sonner';
 import { useTranslation } from 'react-i18next';
 import { submitNewsletterSignup } from '../utils/publicApi';

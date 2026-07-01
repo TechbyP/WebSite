@@ -184,6 +184,15 @@ const ProductDetail = () => {
     heroVideo,
     icon: IconComponent
   } = getProductMediaFallbacks(product);
+  const productCategory = product.category || '';
+  const productFeatures = product.features || [];
+  const productApplications = product.applications || [];
+  const productHowToUse = product.howToUse || [];
+  const productTechnicalSpecs = product.technicalSpecs || {};
+  const heroDescription =
+    typeof product.herodescription === 'string' ? parseHtmlText(product.herodescription) : product.herodescription;
+  const detailedDescription =
+    typeof product.detailedDescription === 'string' ? parseHtmlText(product.detailedDescription) : product.detailedDescription;
   const productUrl = buildCanonicalUrl(`/product/${product.id}`);
   const primaryImage = gallery[0] || heroImage;
   const primaryImageUrl = toAbsoluteUrl(primaryImage.split(',')[0]?.trim().split(' ')[0] || '');
@@ -191,8 +200,8 @@ const ProductDetail = () => {
     '@context': 'https://schema.org',
     '@type': 'Product',
     name: product.name,
-    description: t(product.herodescription),
-    category: getCategoryLabel(product.category),
+    description: typeof product.herodescription === 'string' ? product.herodescription : (product.description || ''),
+    category: getCategoryLabel(productCategory),
     image: [primaryImageUrl],
     brand: {
       '@type': 'Brand',
@@ -206,7 +215,7 @@ const ProductDetail = () => {
       availability: 'https://schema.org/InStock',
       url: productUrl,
     },
-    additionalProperty: product.features.slice(0, 8).map((feature, index) => ({
+    additionalProperty: productFeatures.slice(0, 8).map((feature, index) => ({
       '@type': 'PropertyValue',
       name: `Feature ${index + 1}`,
       value: feature,
@@ -256,17 +265,17 @@ const ProductDetail = () => {
   return (
     <div className="min-h-screen bg-white dark:bg-gray-900 transition-colors duration-200">
       <Helmet>
-        <title>{t('product.meta.title', { brand: 'TECHBYP', product: product.name, category: getCategoryLabel(product.category) })}</title>
+        <title>{t('product.meta.title', { brand: 'TECHBYP', product: product.name, category: getCategoryLabel(productCategory) })}</title>
         <meta
           name="description"
           content={t('product.meta.description', {
             nickname: product.nickname,
-            herodescription: product.herodescription,
-            features: product.features.slice(0, 3).join(', '),
-            applications: product.applications.join(', ')
+            herodescription: typeof product.herodescription === 'string' ? product.herodescription : (product.description || ''),
+            features: productFeatures.slice(0, 3).join(', '),
+            applications: productApplications.join(', ')
           })}
         />
-        <meta name="keywords" content={product.features.join(', ')} />
+        <meta name="keywords" content={productFeatures.join(', ')} />
         <meta name="robots" content="index, follow" />
         <meta property="og:url" content={productUrl} />
         <link rel="canonical" href={productUrl} />
@@ -293,7 +302,7 @@ const ProductDetail = () => {
           <div className="mb-6">
             <span className="inline-flex items-center px-4 py-2 text-sm font-medium text-blue-400 bg-blue-400/10 rounded-full backdrop-blur-sm">
               <IconComponent className="h-4 w-4 mr-2" />
-              <span>{getCategoryLabel(product.category)}</span>
+              <span>{getCategoryLabel(productCategory)}</span>
             </span>
           </div>
           <h2 className="text-xl md:text-1xl lg:text-2xl font-black mb-4 leading-tight uppercase">
@@ -303,7 +312,7 @@ const ProductDetail = () => {
             {product.name}
           </h1>
           <div className="text-xl md:text-xl text-white mb-8 leading-relaxed max-w-2xl">
-            {parseHtmlText(t(product.herodescription))}
+            {heroDescription}
           </div>
           <div className="flex items-center justify-start space-x-2 mb-8">
             <span className="text-3xl font-black uppercase text-brandgreen">{product.price}</span>
@@ -329,7 +338,7 @@ const ProductDetail = () => {
             <div className="mb-12">
               <h2 className="text-5xl font-black uppercase text-gray-900 dark:text-white mb-6">{t('product.whatMakesItGreat')}</h2>
               <div className="text-gray-600 dark:text-gray-300 text-lg leading-relaxed mb-8">
-                {parseHtmlText(t(product.detailedDescription))}
+                {detailedDescription}
               </div>
 
               {product.table && product.table.length > 0 && (
@@ -367,7 +376,7 @@ const ProductDetail = () => {
               <div className="mb-8">
                 <h3 className="text-xl font-semibold text-gray-900 dark:text-white mb-4">{t('product.highlights')}</h3>
                 <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
-                  {product.features.map((feature, index) => (
+                  {productFeatures.map((feature, index) => (
                     <div key={index} className="flex items-start space-x-3">
                       <div className="w-2 h-2 bg-brandblue rounded-full mt-2 flex-shrink-0"></div>
                       <span className="text-gray-700 dark:text-gray-300">{feature}</span>
@@ -379,7 +388,7 @@ const ProductDetail = () => {
               <div className="mb-8">
                 <h3 className="text-xl font-semibold text-gray-900 dark:text-white mb-4">{t('product.itShinesHere')}</h3>
                 <div className="flex flex-wrap gap-2">
-                  {product.applications.map((application, index) => (
+                  {productApplications.map((application, index) => (
                     <span
                       key={index}
                       className="px-3 py-1 bg-orange-200 dark:bg-orange-300 text-gray-700 dark:text-gray-800 text-sm font-black rounded-full"
@@ -390,11 +399,11 @@ const ProductDetail = () => {
                 </div>
               </div>
 
-              {product.howToUse?.length > 0 && (
+              {productHowToUse.length > 0 && (
                 <div className="mb-8">
                   <h3 className="text-xl font-semibold text-gray-900 dark:text-white mb-4">{t('product.satisfyingBit')}</h3>
                   <div className="grid grid-cols-1 gap-4">
-                    {product.howToUse.map((howToUse, index) => (
+                    {productHowToUse.map((howToUse, index) => (
                       <div key={index} className="flex items-start space-x-2">
                         <span className="text-brandblue font-semibold">{index + 1}.</span>
                         <span className="text-gray-700 dark:text-gray-300">{howToUse}</span>
@@ -512,7 +521,7 @@ const ProductDetail = () => {
                   <h3 className="text-xl font-semibold text-black dark:text-white mb-4">{t('product.specsSmarts')}</h3>
                   <div className="bg-gray-50 dark:bg-gray-800 rounded-lg p-6">
                     <div className="grid grid-cols-1 md:grid-cols-1 gap-4">
-                      {Object.entries(product.technicalSpecs).map(([key, value]) => (
+                      {Object.entries(productTechnicalSpecs).map(([key, value]) => (
                         <div key={key} className="flex justify-between py-2 border-b border-gray-200 dark:border-gray-700 last:border-b-0">
                           <span className="font-black uppercase text-brandblue dark:text-blue-400">
                             {currentLanguage === 'de'
@@ -566,7 +575,7 @@ const ProductDetail = () => {
 
             <div className="mb-12">
               <h2 className="text-2xl font-black uppercase text-gray-900 dark:text-white mb-6">{t('product.provenInField')}</h2>
-              <Comments productId={product.id} />
+              <Comments productId={String(product.id)} />
             </div>
           </div>
 

@@ -332,8 +332,7 @@ const ArticleDetail = () => {
 
             <div className="grid grid-cols-1 gap-6 md:grid-cols-2 lg:grid-cols-3">
               {article.relatedArticles.map((related) => {
-                const relatedContent = related.content?.[currentLanguage] || related.content?.en || {};
-                const relatedTitle = relatedContent.title || related.title?.[currentLanguage] || related.title?.en || '';
+                const relatedTitle = typeof related.title === 'string' ? related.title : (typeof related.title === 'object' && related.title ? (related.title[currentLanguage as keyof typeof related.title] || (related.title as Record<string, string>).en) : '') || '';
 
                 return (
                   <motion.article
@@ -345,7 +344,7 @@ const ArticleDetail = () => {
                       <div className="relative h-48 overflow-hidden">
                         <img
                           sizes="(max-width: 768px) 100vw, 33vw"
-                          srcSet={optimizeImageUrl(related.image)}
+                          srcSet={optimizeRemoteImageUrl(related.image)}
                           alt={relatedTitle}
                           className="h-full w-full object-cover transition duration-500 group-hover:scale-105"
                           loading="lazy"

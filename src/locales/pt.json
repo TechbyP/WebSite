@@ -848,15 +848,13 @@
       "alt": "Suporte para trailer",
       "title": "Trailers especiais",
       "subtitle": "Transportadores de campo",
-      "description": "O sussurrador de solo nômade - perfeito para passear pelos campos sem se comprometer com um único passeio.",
-      "price": "A partir de 3600 €"
+      "description": "O sussurrador de solo nômade - perfeito para passear pelos campos sem se comprometer com um único passeio."
     },
     "vehicle": {
       "alt": "Suporte para veículo",
       "title": "Suporte para veículo",
       "subtitle": "Kit de montagem",
-      "description": "O detetive de solo urbano - transforme o seu veículo diário num detetive de sujidade dedicado.",
-      "price": "A partir de 1 665 €"
+      "description": "O detetive de solo urbano - transforme o seu veículo diário num detetive de sujidade dedicado."
     }
   },
   "powerOptions": {
@@ -879,19 +877,16 @@
     "lay-down-frame": {
       "name": "Estrutura de Deposição",
       "nickname": "Estrutura",
-      "price": "€1,200",
       "description": "Uma estrutura robusta para colocar seu equipamento."
     },
     "three-point-hitch": {
       "name": "Engate de três pontos",
       "nickname": "Engate",
-      "price": "€1,450",
       "description": "Engate padrão de três pontos para fácil fixação."
     },
     "full-conversion": {
       "name": "Conversão completa",
       "nickname": "Conversão",
-      "price": "€2,300",
       "description": "Kit de conversão completo para máxima flexibilidade."
     },
     "specs": {

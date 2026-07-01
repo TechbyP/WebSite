@@ -1,4 +1,4 @@
-import { useEffect, useCallback } from 'react';
+import { useCallback } from 'react';
 import { db } from '../../../firebase';
 import { addDoc, serverTimestamp, collection, query, where, getDocs } from 'firebase/firestore';
 
@@ -26,7 +26,7 @@ export const useAnalytics = () => {
         userId,
       };
 
-      if (process.env.NODE_ENV === 'development') {
+      if (import.meta.env.DEV) {
         console.log(`[Analytics] ${eventName}`, eventData);
         return;
       }

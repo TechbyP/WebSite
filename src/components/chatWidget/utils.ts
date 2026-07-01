@@ -1,6 +1,6 @@
 import { manualData } from '../../data/mpManual';
-import { Product } from './types';
 import { ChatMessage } from './types';
+import type { Product } from '../../data/types/products';
 
 
 /** ✳️ Assistant welcome lines - Updated for brevity */

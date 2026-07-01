@@ -5,7 +5,6 @@ import Link from '@tiptap/extension-link'
 import { Bold, Italic, List, ListOrdered, Link as LinkIcon, Image as ImageIcon } from 'lucide-react'
 import { useState, useEffect } from 'react'
 import Paragraph from '@tiptap/extension-paragraph'
-import { useTheme } from '../../utils/context/theme-context'
 
 interface RichTextEditorProps {
   content: string
@@ -15,7 +14,6 @@ interface RichTextEditorProps {
 }
 
 const RichTextEditor = ({ content, onChange, onImageUpload, language }: RichTextEditorProps) => {
-  const { theme } = useTheme()
   const [isLinkModalOpen, setIsLinkModalOpen] = useState(false)
   const [linkUrl, setLinkUrl] = useState('')
   const [isImageModalOpen, setIsImageModalOpen] = useState(false)
@@ -34,7 +32,7 @@ const RichTextEditor = ({ content, onChange, onImageUpload, language }: RichText
 
   useEffect(() => {
     if (editor && content !== editor.getHTML()) {
-      editor.commands.setContent(content || '', false)
+      editor.commands.setContent(content || '', { emitUpdate: false })
     }
   }, [content, editor])
 

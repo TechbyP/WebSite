@@ -1,7 +1,6 @@
 import { Article } from './types/articles';
 import { useTranslation } from 'react-i18next';
 import { formatContentForDisplay } from '../formatting';
-import { useTheme } from '../../utils/context/theme-context';
 
 interface ArticleViewProps {
   article: Article;
@@ -13,7 +12,6 @@ interface ArticleViewProps {
 
 const ArticleView = ({ article, onEdit, onDelete, isLoading, language }: ArticleViewProps) => {
   const { t } = useTranslation();
-  const { theme } = useTheme();
   const currentContent = article.content[language] || article.content.en;
 
   return (

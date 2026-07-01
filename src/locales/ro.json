@@ -847,15 +847,13 @@
       "alt": "Montare remorcă",
       "title": "Remorcă specială",
       "subtitle": "Transport pentru câmp",
-      "description": "Remorcă robustă pentru transportul echipamentului de prelevare a solului.",
-      "price": "De la €3,600"
+      "description": "Remorcă robustă pentru transportul echipamentului de prelevare a solului."
     },
     "vehicle": {
       "alt": "Montare pe vehicul",
       "title": "Montare pe vehicul",
       "subtitle": "Kit de montare",
-      "description": "Detectivul urban al solului — transformă vehiculul tău de zi cu zi într-un instrument dedicat pentru prelevare.",
-      "price": "De la €1 665"
+      "description": "Detectivul urban al solului — transformă vehiculul tău de zi cu zi într-un instrument dedicat pentru prelevare."
     }
   },
   "powerOptions": {
@@ -878,19 +876,16 @@
     "lay-down-frame": {
       "name": "Cadru Lay-down",
       "nickname": "Cadru",
-      "price": "€1.200",
       "description": "Un cadru robust pentru a susține echipamentul."
     },
     "three-point-hitch": {
       "name": "Cârlig trei puncte",
       "nickname": "Cârlig",
-      "price": "€1.450",
       "description": "Cârlig standard trei puncte pentru atașare ușoară."
     },
     "full-conversion": {
       "name": "Conversie completă",
       "nickname": "Conversie",
-      "price": "€2.300",
       "description": "Kit complet de conversie pentru flexibilitate maximă."
     },
     "specs": {

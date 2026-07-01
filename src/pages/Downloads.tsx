@@ -1,4 +1,4 @@
-import React, { useState, useEffect, useMemo } from 'react';
+import { useState, useEffect, useMemo } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import {
     Download, FileText, Image, Video, File, Search,
@@ -21,6 +21,60 @@ const CATEGORIES = {
     other: { icon: <FileArchive className="h-5 w-5" />, color: 'bg-gray-100 text-gray-800 dark:bg-gray-700 dark:text-gray-300' }
 };
 
+type CategoryKey = keyof typeof CATEGORIES;
+type SelectedCategory = CategoryKey | 'all';
+type SortKey = 'name' | 'date' | 'size';
+type PreviewType = 'pdf' | 'video' | 'image' | null;
+
+type BackendFileMetadata = {
+    id: string | number;
+    name: string;
+    type: string;
+    category?: string;
+    size: string;
+    date: string;
+    url?: string;
+    previewUrl?: string;
+    previewPath?: string;
+    downloadUrl?: string;
+};
+
+type DownloadFile = {
+    id: string | number;
+    name: string;
+    type: string;
+    category: CategoryKey;
+    size: string;
+    date: string;
+    url?: string;
+    previewUrl?: string;
+    downloadUrl?: string;
+};
+
+type SortConfig = {
+    key: SortKey;
+    direction: 'asc' | 'desc';
+};
+
+const normalizeFileType = (type: string) => type.trim().toLowerCase().replace(/^\./, '');
+
+const parseSizeToBytes = (size: string) => {
+    const match = size.trim().match(/^(\d+(?:\.\d+)?)\s*(B|KB|MB|GB|TB)$/i);
+    if (!match) return 0;
+
+    const value = Number(match[1]);
+    const unit = match[2].toUpperCase();
+    const multipliers: Record<string, number> = {
+        B: 1,
+        KB: 1024,
+        MB: 1024 ** 2,
+        GB: 1024 ** 3,
+        TB: 1024 ** 4,
+    };
+
+    return value * (multipliers[unit] ?? 1);
+};
+
 // File type icons
 const FILE_ICONS = {
     pdf: <FileText className="h-5 w-5" />,
@@ -40,14 +94,14 @@ const FileDownloadPage = () => {
     const { isVisible, height } = useHeader();
     const location = useLocation();
 
-    const [files, setFiles] = useState([]);
+    const [files, setFiles] = useState<DownloadFile[]>([]);
     const [loading, setLoading] = useState(true);
-    const [error, setError] = useState(null);
+    const [error, setError] = useState<string | null>(null);
     const [searchTerm, setSearchTerm] = useState('');
-    const [sortConfig, setSortConfig] = useState({ key: 'date', direction: 'desc' });
-    const [selectedCategory, setSelectedCategory] = useState('all');
-    const [selectedFile, setSelectedFile] = useState(null);
-    const [previewType, setPreviewType] = useState(null);
+    const [sortConfig, setSortConfig] = useState<SortConfig>({ key: 'date', direction: 'desc' });
+    const [selectedCategory, setSelectedCategory] = useState<SelectedCategory>('all');
+    const [selectedFile, setSelectedFile] = useState<DownloadFile | null>(null);
+    const [previewType, setPreviewType] = useState<PreviewType>(null);
 
     useEffect(() => {
         fetch('/file-metadata.json')
@@ -55,44 +109,55 @@ const FileDownloadPage = () => {
                 if (!res.ok) throw new Error(t('downloads.error.fetchFailed'));
                 return res.json();
             })
-            .then(data => {
-                const mappedData = data.map(file => ({
+            .then((data: BackendFileMetadata[]) => {
+                const mappedData: DownloadFile[] = data.map((file) => ({
                     ...file,
+                    type: normalizeFileType(file.type),
                     category: mapBackendCategory(file.category),
-                    previewUrl: file.previewPath || file.previewUrl
+                    previewUrl: file.previewPath ?? file.previewUrl
                 }));
                 setFiles(mappedData);
             })
-            .catch(err => setError(err.message))
+            .catch((err: Error) => setError(err.message))
             .finally(() => setLoading(false));
     }, [t]);
 
     useEffect(() => {
         const params = new URLSearchParams(location.search);
         const category = params.get('category');
-        if (category && Object.keys(CATEGORIES).includes(category)) {
-            setSelectedCategory(category);
+        if (category && category in CATEGORIES) {
+            setSelectedCategory(category as CategoryKey);
         }
     }, [location.search]);
 
     const sortedFiles = useMemo(() => {
         let filtered = [...files];
-        if (selectedCategory !== 'all') filtered = filtered.filter(f => f.category?.toLowerCase() === selectedCategory);
-        if (searchTerm) filtered = filtered.filter(f => f.name.toLowerCase().includes(searchTerm.toLowerCase()));
+        if (selectedCategory !== 'all') filtered = filtered.filter((f) => f.category === selectedCategory);
+        if (searchTerm) filtered = filtered.filter((f) => f.name.toLowerCase().includes(searchTerm.toLowerCase()));
         filtered.sort((a, b) => {
-            if (a[sortConfig.key] < b[sortConfig.key]) return sortConfig.direction === 'asc' ? -1 : 1;
-            if (a[sortConfig.key] > b[sortConfig.key]) return sortConfig.direction === 'asc' ? 1 : -1;
+            let compareValue = 0;
+
+            if (sortConfig.key === 'name') {
+                compareValue = a.name.localeCompare(b.name, undefined, { sensitivity: 'base' });
+            } else if (sortConfig.key === 'date') {
+                compareValue = new Date(a.date).getTime() - new Date(b.date).getTime();
+            } else {
+                compareValue = parseSizeToBytes(a.size) - parseSizeToBytes(b.size);
+            }
+
+            if (compareValue < 0) return sortConfig.direction === 'asc' ? -1 : 1;
+            if (compareValue > 0) return sortConfig.direction === 'asc' ? 1 : -1;
             return 0;
         });
         return filtered;
     }, [files, searchTerm, sortConfig, selectedCategory]);
 
-    const requestSort = (key) => setSortConfig(prev => ({ key, direction: prev.key === key && prev.direction === 'asc' ? 'desc' : 'asc' }));
+    const requestSort = (key: SortKey) => setSortConfig(prev => ({ key, direction: prev.key === key && prev.direction === 'asc' ? 'desc' : 'asc' }));
 
-    const getFileIcon = (type) => FILE_ICONS[type.toLowerCase()] || FILE_ICONS.default;
-    const formatDate = (str) => new Date(str).toLocaleDateString(undefined, { year: 'numeric', month: 'short', day: 'numeric' });
+    const getFileIcon = (type: string) => FILE_ICONS[normalizeFileType(type) as keyof typeof FILE_ICONS] || FILE_ICONS.default;
+    const formatDate = (str: string) => new Date(str).toLocaleDateString(undefined, { year: 'numeric', month: 'short', day: 'numeric' });
 
-    const mapBackendCategory = (cat) => {
+    const mapBackendCategory = (cat?: string): CategoryKey => {
         if (!cat) return 'other';
         const lowerCat = cat.toLowerCase();
         switch (true) {
@@ -103,15 +168,21 @@ const FileDownloadPage = () => {
         }
     };
 
-    const handlePreviewClick = (file) => {
+    const handlePreviewClick = (file: DownloadFile) => {
         if (!file.previewUrl) return;
         const imageTypes = ['jpg','jpeg','png','gif'];
         const videoTypes = ['mp4','mov','avi'];
-        if (file.type === 'pdf') setPreviewType('pdf');
-        else if (videoTypes.includes(file.type)) setPreviewType('video');
-        else if (imageTypes.includes(file.type)) setPreviewType('image');
+        const normalizedType = normalizeFileType(file.type);
+        if (normalizedType === 'pdf') setPreviewType('pdf');
+        else if (videoTypes.includes(normalizedType)) setPreviewType('video');
+        else if (imageTypes.includes(normalizedType)) setPreviewType('image');
         else return;
         setSelectedFile(file);
+    };
+
+    const closePreview = () => {
+        setSelectedFile(null);
+        setPreviewType(null);
     };
 
     if (loading) return <div className="text-center py-12 dark:text-gray-200">{t('downloads.loading')}</div>;
@@ -151,7 +222,7 @@ const FileDownloadPage = () => {
                     >
                         {t('downloads.categories.all')}
                     </button>
-                    {Object.keys(CATEGORIES).map((key) => (
+                    {(Object.keys(CATEGORIES) as CategoryKey[]).map((key) => (
                         <button
                             key={key}
                             onClick={() => setSelectedCategory(key)}
@@ -186,7 +257,7 @@ const FileDownloadPage = () => {
                         {/* Sort buttons */}
                         <div className="flex flex-wrap items-center space-x-2">
                             <span className="text-sm font-medium text-gray-600 dark:text-gray-300">{t('downloads.sort.label')}:</span>
-                            {['name','date','size'].map((key) => (
+                            {(['name','date','size'] as SortKey[]).map((key) => (
                                 <button
                                     key={key}
                                     onClick={() => requestSort(key)}
@@ -234,7 +305,7 @@ const FileDownloadPage = () => {
                                 <div className="flex justify-end">
                                     <button onClick={() => {
                                         const link = document.createElement('a');
-                                        link.href = file.url || `/files/${file.name}`;
+                                        link.href = file.downloadUrl || file.url || `/files/${file.name}`;
                                         link.download = file.name;
                                         document.body.appendChild(link);
                                         link.click();
@@ -273,7 +344,7 @@ const FileDownloadPage = () => {
                             animate={{ opacity: 1 }}
                             exit={{ opacity: 0 }}
                             className="fixed inset-0 z-40 bg-gray-500 bg-opacity-75 dark:bg-gray-900 dark:bg-opacity-80 transition-opacity"
-                            onClick={() => setSelectedFile(null)}
+                            onClick={closePreview}
                             key="backdrop"
                         />
                         <motion.div
@@ -298,12 +369,12 @@ const FileDownloadPage = () => {
                                         </div>
 
                                         <div className="flex space-x-2">
-                                            <a href={selectedFile.downloadUrl || selectedFile.previewUrl} download={selectedFile.name}
+                                            <a href={selectedFile.downloadUrl || selectedFile.url || selectedFile.previewUrl || `/files/${selectedFile.name}`} download={selectedFile.name}
                                                 className="inline-flex items-center px-3 py-1 border border-gray-300 dark:border-gray-600 shadow-sm text-sm font-medium rounded-md text-gray-700 dark:text-gray-200 bg-white dark:bg-gray-700 hover:bg-gray-50 dark:hover:bg-gray-600 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-brandgreen"
                                             >
                                                 {t('downloads.download')}
                                             </a>
-                                            <button type="button" className="p-1 text-gray-400 dark:text-gray-300 hover:text-gray-500 dark:hover:text-gray-100 focus:outline-none" onClick={() => setSelectedFile(null)}>
+                                            <button type="button" className="p-1 text-gray-400 dark:text-gray-300 hover:text-gray-500 dark:hover:text-gray-100 focus:outline-none" onClick={closePreview}>
                                                 <span className="sr-only">{t('downloads.close')}</span>
                                                 <XMarkIcon className="h-6 w-6" />
                                             </button>

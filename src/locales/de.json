@@ -836,15 +836,13 @@
       "alt": "Anhängermontage",
       "title": "Spezialanhänger",
       "subtitle": "Feldfahrzeuge",
-      "description": "Der nomadische Bodenflüsterer – perfekt für Feldarbeit ohne festes Fahrzeug.",
-      "price": "Ab 3.600 €"
+      "description": "Der nomadische Bodenflüsterer – perfekt für Feldarbeit ohne festes Fahrzeug."
     },
     "vehicle": {
       "alt": "Fahrzeugmontage",
       "title": "Fahrzeugmontage",
       "subtitle": "Montagesatz",
-      "description": "Der urbane Bodendetektiv – verwandeln Sie Ihr Fahrzeug in ein professionelles Probengerät.",
-      "price": "Ab 1.665 €"
+      "description": "Der urbane Bodendetektiv – verwandeln Sie Ihr Fahrzeug in ein professionelles Probengerät."
     }
   },
   "powerOptions": {
@@ -867,19 +865,16 @@
     "lay-down-frame": {
       "name": "Ablage-Rahmen",
       "nickname": "Rahmen",
-      "price": "1.200 €",
       "description": "Ein stabiler Rahmen zur Ablage Ihrer Ausrüstung."
     },
     "three-point-hitch": {
       "name": "Dreipunkt-Bock",
       "nickname": "Aufhängung",
-      "price": "1.450 €",
       "description": "Standard-Dreipunktaufhängung für einfache Montage."
     },
     "full-conversion": {
       "name": "Vollumrüstung",
       "nickname": "Umbau",
-      "price": "2.300 €",
       "description": "Kompletter Umbausatz für maximale Flexibilität."
     }
   },

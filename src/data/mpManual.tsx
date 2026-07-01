@@ -317,12 +317,13 @@ Our experience has shown that in the period in which 1 boring rod wears out, app
 8. Remove the lock nut on which the scraper is suspended and pull the scraper downwards out of the hub(not present on the MP - 1.90 / 1.120)
 9. Dismantling the broaching hub: Remove the circlip and press the hub out of the bearing(not present on the MP - 1.90 / 1.120)`,
 
-    "VIII.3.3. Fitting the wearing parts": {
-      "VIII.3.3.1. Mounting the broaching hub": `- Clean and grease the bearing seat of the flange bearing.
+    "VIII.3.3. Fitting the wearing parts": `VIII.3.3.1. Mounting the broaching hub
+- Clean and grease the bearing seat of the flange bearing.
 - Grease the bearing seat of the new broaching hub and then press the broaching hub into the new bearing(not for MP1.90 / 1.120).
-- Insert guide bushing from above and secure from below with circlip(only For MP - 1.90[/1.120]).`,
+- Insert guide bushing from above and secure from below with circlip(only For MP - 1.90[/1.120]).
 
-      "VIII.3.3.2. Assembly of the clearing device(not for MP - 1.90 / 1.120) and the boring bar": `- Insert the new scraper into the scraper hub. Caution: When installing before storing the machine, the scraper unit must be lubricated!
+VIII.3.3.2. Assembly of the clearing device(not for MP - 1.90 / 1.120) and the boring bar
+- Insert the new scraper into the scraper hub. Caution: When installing before storing the machine, the scraper unit must be lubricated!
 - Screw a new M8 lock nut onto the threaded spindle of the scraper.
 - CAUTION: Don't tighten this lock nut under any circumstances!
 There must be a clearance of 2 mm between the nut and the top of the broaching hub so that the broaching tool can oscillate freely. This compensates for wear and ensures that the boring bar groove is cleared cleanly.
@@ -330,10 +331,10 @@ There must be a clearance of 2 mm between the nut and the top of the broaching h
 Fit the first and second circlip or clamping ring for the scraper. Please also grease well!
 - Grease the boring bar head including the slotted hole, locking bolt and the impact tappet.
 - Insert the boring bar with the clearing unit into the magazine from above. Then lift the loose impact ram, if present, together with the boring bar vertically up to the guide hub. Now secure the boring bar with the locking bolt and the self - locking nut M16.
-IMPORTANT: The upper insertion end of the boring bar, the slotted hole and the locking bolt should be well greased. There is a grease nipple on the hydraulic hammer for lubrication without disassembly, once a week`,
+IMPORTANT: The upper insertion end of the boring bar, the slotted hole and the locking bolt should be well greased. There is a grease nipple on the hydraulic hammer for lubrication without disassembly, once a week
 
-      "VIII.3.3.3. Mounting the bearing seat of the broaching hub": `- First, slide the clearing unit on the boring bar down onto the magazine and screw it on with four screws.`
-    },
+VIII.3.3.3. Mounting the bearing seat of the broaching hub
+- First, slide the clearing unit on the boring bar down onto the magazine and screw it on with four screws.`,
 
     "VIII.3.4. Chain tensioning and maintenance": `The lifting carriage(incl. hammer mechanism, calibration motor and boring bar) is moved up and down by a duplex chain. This circulating chain runs over a sprocket shaft at the top of the head housing and over the drive shaft at the bottom. The sprocket shaft at the top is for deflecting and tensioning the chain.
 If the chain is to be tensioned, proceed as follows:

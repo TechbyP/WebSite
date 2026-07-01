@@ -9,7 +9,7 @@ interface FadeInWhenVisibleProps {
   xOffset?: number;
   className?: string;
   once?: boolean;
-  as?: keyof JSX.IntrinsicElements;
+  as?: string;
 }
 
 export const FadeInWhenVisible = forwardRef<HTMLDivElement, FadeInWhenVisibleProps>(
@@ -26,10 +26,8 @@ export const FadeInWhenVisible = forwardRef<HTMLDivElement, FadeInWhenVisiblePro
     },
     ref
   ) => {
-    const MotionComponent = motion[as] || motion.div;
-
     return (
-      <MotionComponent
+      <motion.div
         ref={ref}
         className={className}
         initial="hidden"
@@ -54,7 +52,7 @@ export const FadeInWhenVisible = forwardRef<HTMLDivElement, FadeInWhenVisiblePro
         }}
       >
         {children}
-      </MotionComponent>
+      </motion.div>
     );
   }
 );

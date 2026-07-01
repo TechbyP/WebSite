@@ -1,5 +1,5 @@
 import React, { useState, useRef, useEffect, useCallback, useMemo } from 'react';
-import { useNavigate, useLocation } from 'react-router-dom';
+import { useLocation } from 'react-router-dom';
 import { motion, AnimatePresence } from 'framer-motion';
 import logo from '../../assets/pictures/Logo-Symbol.png';
 import { ChatHeader } from './ChatHeader';
@@ -48,7 +48,6 @@ export const ChatWidget = React.memo(({ open, setOpen }: Props) => {
   const [keyboardHeight, setKeyboardHeight] = useState(0);
   const [viewportHeight, setViewportHeight] = useState(window.innerHeight);
   const [isScrolling, setIsScrolling] = useState(false);
-  const [lastScrollPos, setLastScrollPos] = useState(0);
   // const [isHidden, setIsHidden] = useState(false);
   const [showFlap, setShowFlap] = useState(false);
 const { t } = useTranslation();
@@ -60,7 +59,6 @@ const { t } = useTranslation();
   const scrollTimeoutRef = useRef<NodeJS.Timeout>();
 
   // Hooks
-  const navigate = useNavigate();
   const location = useLocation();
 
   // Memoized values
@@ -122,8 +120,6 @@ const systemMessage = useMemo(
     if (!isMobile) return;
 
     const handleScroll = () => {
-      const currentScrollPos = window.pageYOffset;
-      
       if (scrollTimeoutRef.current) {
         clearTimeout(scrollTimeoutRef.current);
       }
@@ -134,8 +130,6 @@ const systemMessage = useMemo(
       scrollTimeoutRef.current = setTimeout(() => {
         setIsScrolling(false);
       }, 500);
-      
-      setLastScrollPos(currentScrollPos);
     };
 
     window.addEventListener('scroll', handleScroll);
@@ -287,6 +281,12 @@ const systemMessage = useMemo(
     }
   };
 
+  const toggleFullscreen = () => {
+    if (isMobile) {
+      setIsFullscreen((prev) => !prev);
+    }
+  };
+
   const showMainButton = !open && !showFlap;
   const showFlapButton = !open && showFlap;
 
@@ -387,6 +387,7 @@ srcSet={logo} alt="Chat" className="w-6 h-6" />
         <ChatHeader
           isMobile={isMobile}
           isFullscreen={isFullscreen}
+          toggleFullscreen={toggleFullscreen}
           onClose={handleCloseChat}
         />
 

@@ -4,14 +4,12 @@ import { FadeInWhenVisible } from '../../animation/FadeInWhenVisible';
 import trailerImg from '../../../assets/Trailers/1.jpg';
 import vehicleImg from '../../../assets/Frames/Full-Conversion/2.jpg';
 import { useTranslation } from 'react-i18next';
-import { useTheme } from '../../../utils/context/theme-context';
 import i18n from '../../../i18n';
 import { getLowestPriceDisplay, getPriceDisplay } from '../../../data/prices';
 
 export const MountingMethodStep = () => {
   const { t } = useTranslation();
   const { configuration, setMountingMethod, goToStep } = useConfigurator();
-  const { theme, toggleTheme } = useTheme();
   const language = i18n.resolvedLanguage || i18n.language || 'en';
   const mountingOptions = [
     { type: 'trailer', img: trailerImg },
@@ -125,7 +123,7 @@ export const MountingMethodStep = () => {
       {/* Navigation */}
       <div className="mt-6 md:mt-12 flex justify-between">
         <button
-          onClick={() => goToStep('previous-step')}
+          onClick={() => goToStep('product-selection')}
           className="px-4 py-2 md:px-6 md:py-3 border border-gray-300 dark:border-gray-600 rounded-lg text-sm md:text-base text-gray-700 dark:text-gray-200 hover:bg-gray-50 dark:hover:bg-gray-700 transition-colors font-semibold"
         >
           ← {t('buttons.back')}

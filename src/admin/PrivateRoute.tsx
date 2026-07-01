@@ -1,10 +1,19 @@
 // src/components/PrivateRoute.js
-import React from 'react';
+import { ReactNode } from 'react';
 import { Navigate } from 'react-router-dom';
 import { useAuth } from '../admin/dashboard/hooks/AuthContext';
 
-export default function PrivateRoute({ children }) {
-  const { user, loading } = useAuth();
+interface PrivateRouteProps {
+  children: ReactNode;
+}
+
+interface AuthContextType {
+  user: unknown;
+  loading: boolean;
+}
+
+export default function PrivateRoute({ children }: PrivateRouteProps) {
+  const { user, loading } = useAuth() as AuthContextType;
 
   if (loading) return <div>Loading...</div>; // or spinner
 

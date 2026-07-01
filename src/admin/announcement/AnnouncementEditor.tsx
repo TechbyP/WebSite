@@ -1,7 +1,7 @@
 import { useState, useEffect } from 'react';
 import { motion } from 'framer-motion';
 import { db } from '../../firebase';
-import { doc, setDoc, getDoc, collection, getDocs, deleteDoc } from 'firebase/firestore';
+import { doc, setDoc, collection, getDocs, deleteDoc } from 'firebase/firestore';
 import { toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 import { useTranslation } from 'react-i18next';
@@ -64,7 +64,7 @@ const normalizeAnnouncementData = (data: any): AnnouncementData => {
 };
 
 const AnnouncementEditor = () => {
-  const { t, i18n } = useTranslation();
+  const { t } = useTranslation();
   const [announcements, setAnnouncements] = useState<AnnouncementData[]>([]);
   const [currentAnnouncement, setCurrentAnnouncement] = useState<AnnouncementData>({
     id: '',
@@ -444,7 +444,7 @@ const AnnouncementEditor = () => {
                   type={field.includes('Link') ? 'url' : 'text'}
                   id={field}
                   name={field}
-                  value={currentAnnouncement[field as keyof AnnouncementData] || currentAnnouncement.content[currentLanguage][field as keyof AnnouncementContent]}
+                  value={(field.includes('Link') ? currentAnnouncement[field as keyof AnnouncementData] : currentAnnouncement.content[currentLanguage][field as keyof AnnouncementContent]) as string || ''}
                   onChange={field.includes('Link') ? handleCommonChange : handleContentChange}
                   className="w-full p-3 border-2 border-gray-200 dark:border-gray-700 rounded-lg bg-white dark:bg-gray-800 text-gray-900 dark:text-gray-100 focus:ring-2 focus:ring-brandblue focus:border-transparent"
                   placeholder={t(`editor.${field}Placeholder`)}

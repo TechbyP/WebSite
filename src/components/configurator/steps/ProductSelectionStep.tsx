@@ -6,7 +6,6 @@ import { ErrorBoundary } from 'react-error-boundary';
 import { useEffect } from 'react';
 import { handleImageError, defaultHeroImage } from '../../../utils/DefaultPics';
 import { useTranslation } from 'react-i18next';
-import { useTheme } from '../../../utils/context/theme-context';
 
 function ErrorFallback({ error, resetErrorBoundary }: { error: Error; resetErrorBoundary: () => void }) {
   const { t } = useTranslation();
@@ -31,7 +30,6 @@ interface ProductSelectionStepProps {
 export const ProductSelectionStep = ({ products }: ProductSelectionStepProps) => {
   const { configuration, setProduct } = useConfigurator();
   const { t } = useTranslation();
-  const { theme } = useTheme();
 
   const smartSystemProducts = products.filter((product) => product.category === 'SmartSystems');
 

@@ -10,6 +10,14 @@ import i18n from '../../../i18n';
 import { formatEuroAmount } from '../../../data/prices';
 import { useProducts } from '../../../data/context/ProductsContext';
 
+const vehicleMountingTypeToId = {
+  'lay-down': 2000,
+  'three-point': 2001,
+  'full-conversion': 2003,
+} as const;
+
+const toSlug = (value?: string) => (value || '').toLowerCase().replace(/\s+/g, '-');
+
 export const CustomerInfoStep = () => {
   const { t } = useTranslation();
   const { configuration, setCustomerInfo, goToStep, resetConfigurator } = useConfigurator();
@@ -22,6 +30,12 @@ export const CustomerInfoStep = () => {
   const recaptchaRef = useRef<ReCAPTCHA>(null);
   const navigate = useNavigate();
   const successRef = useRef<HTMLDivElement>(null);
+
+  const getVehicleMountProduct = () => {
+    if (!configuration.vehicleMountingType) return undefined;
+    const mountId = vehicleMountingTypeToId[configuration.vehicleMountingType];
+    return products.find(p => p.id === mountId && p.category === 'accessory');
+  };
 
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
@@ -44,11 +58,13 @@ export const CustomerInfoStep = () => {
         let extraProduct = products.find(p => p.id.toString() === extraId);
         if (!extraProduct) {
           extraProduct = products.find(p =>
-            p.name.toLowerCase().replace(/\s+/g, '-') === extraId
+            toSlug(p.name) === extraId
           );
         }
         return extraProduct ? extraProduct.name : formatProductName(extraId);
       });
+
+      const selectedMountProduct = getVehicleMountProduct();
 
       const templateParams = {
         customer_name: configuration.customerInfo.name,
@@ -57,7 +73,7 @@ export const CustomerInfoStep = () => {
         product_name: configuration.product?.name || t('unknownProduct'),
         product_nickname: configuration.product?.nickname || '',
         mounting_method: configuration.mountingMethod || t('notSelected'),
-        vehicle_mounting_type: configuration.vehicleMountingType || t('notApplicable'),
+        vehicle_mounting_type: selectedMountProduct?.name || configuration.vehicleMountingType || t('notApplicable'),
         selected_extras: extrasNames.length > 0
           ? extrasNames.join(', ')
           : t('noExtrasSelected'),
@@ -111,10 +127,18 @@ export const CustomerInfoStep = () => {
     }
 
     configuration.extras.forEach(extra => {
-      const extraProduct = products.find(p =>
-        p.name.toLowerCase().replace(/\s+/g, '-') === extra &&
+      let extraProduct = products.find(p =>
+        p.id.toString() === extra &&
         p.category === 'accessory'
       );
+
+      if (!extraProduct) {
+        extraProduct = products.find(p =>
+          toSlug(p.name) === extra &&
+          p.category === 'accessory'
+        );
+      }
+
       if (extraProduct && extraProduct.priceValue) {
         total += extraProduct.priceValue;
       }
@@ -129,10 +153,7 @@ export const CustomerInfoStep = () => {
         total += trailer.priceValue;
       }
     } else if (configuration.vehicleMountingType) {
-      const mountType = products.find(p =>
-        p.id === configuration.vehicleMountingType &&
-        p.category === 'accessory'
-      );
+      const mountType = getVehicleMountProduct();
       if (mountType && mountType.priceValue) {
         total += mountType.priceValue;
       }
@@ -164,7 +185,7 @@ export const CustomerInfoStep = () => {
     if (configuration.mountingMethod === 'trailer') {
       selectedProducts.push({ name: t('productNames.trailerMount'), type: 'mounting' });
     } else if (configuration.vehicleMountingType) {
-      const mountProduct = products.find(p => p.id === configuration.vehicleMountingType);
+      const mountProduct = getVehicleMountProduct();
       selectedProducts.push({
         name: mountProduct?.name || t('productNames.vehicleMount'),
         type: 'mounting',
@@ -185,7 +206,7 @@ export const CustomerInfoStep = () => {
       let extraProduct = products.find(p => p.id.toString() === extraId);
       if (!extraProduct) {
         extraProduct = products.find(p =>
-          p.name.toLowerCase().replace(/\s+/g, '-') === extraId
+          toSlug(p.name) === extraId
         );
       }
       selectedProducts.push({
@@ -325,7 +346,7 @@ export const CustomerInfoStep = () => {
                   {item.type === 'mounting' && (
                     configuration.mountingMethod === 'trailer'
                       ? products.find(p => p.category === 'accessory' && p.type === 'Trailer')?.price || '–'
-                      : products.find(p => p.id === configuration.vehicleMountingType)?.price || '–'
+                      : getVehicleMountProduct()?.price || '–'
                   )}
                   {item.type === 'powerpack' && products.find(p =>
                     p.id.toString() === configuration.powerpackType &&

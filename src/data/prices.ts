@@ -16,7 +16,7 @@ export const priceCatalog = {
   laydown: { amount: 2873.7, mode: 'from' },
   tph: { amount: 1699.5, mode: 'from' },
   fc: { amount: 14821.7, mode: 'from' },
-  trailer: { amount: 3862.5, mode: 'from' },
+  trailer: { amount: 5499, mode: 'from' },
   powerpack: { amount: 1998, mode: 'from' },
   spareparts: { amount: 25.24, mode: 'from' },
   coolbox: { amount: 1030, mode: 'fixed' },

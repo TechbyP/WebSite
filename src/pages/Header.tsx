@@ -3,7 +3,7 @@ import techbypLogo from '../assets/pictures/techbyp.png?w=96;160;240&format=webp
 import techbypLogoFallback from '../assets/pictures/techbyp.png?w=160&format=png';
 import { Menu, X, ChevronDown, Download, Globe, Sun, Moon } from 'lucide-react';
 import { useNavigate, useLocation } from 'react-router-dom';
-import { useTranslation, i18n } from 'react-i18next';
+import { useTranslation} from 'react-i18next';
 import { useTheme } from '../utils/context/theme-context';
 import techbypLogoDark from '../assets/pictures/techbypLogoDark.png?w=96;160;240&format=webp;png&as=srcset';
 import techbypLogoDarkFallback from '../assets/pictures/techbypLogoDark.png?w=160&format=png';
@@ -21,11 +21,6 @@ interface HeaderContextProps {
 const HeaderContext = createContext<HeaderContextProps>({ isVisible: true, height: 0 });
 export const useHeader = () => useContext(HeaderContext);
 
-interface Category {
-  value: string;
-  label: string;
-}
-
 export const HeaderProvider: React.FC<{ children: React.ReactNode }> = ({ children }) => {
   const { t, i18n } = useTranslation();
   const { theme, toggleTheme } = useTheme();
@@ -35,7 +30,6 @@ export const HeaderProvider: React.FC<{ children: React.ReactNode }> = ({ childr
   const ref = useRef<HTMLElement>(null);
   const lastScroll = useRef(0);
   const [menuOpen, setMenuOpen] = useState(false);
-  const [productsOpen, setProductsOpen] = useState(false);
   const [languageDropdownOpen, setLanguageDropdownOpen] = useState(false);
   const navigate = useNavigate();
   const { pathname } = useLocation();
@@ -66,15 +60,6 @@ export const HeaderProvider: React.FC<{ children: React.ReactNode }> = ({ childr
     window.addEventListener('resize', handleResize);
     return () => window.removeEventListener('resize', handleResize);
   }, []);
-
-  const categoryLabels: Record<string, string> = {
-    all: t('header.categories.all'),
-    smartsystems: t('header.categories.smartsystems'),
-    accessory: t('header.categories.accessory'),
-    manual: t('header.categories.manual'),
-  };
-
-  const categories: Category[] = Object.entries(categoryLabels).map(([value, label]) => ({ value, label }));
 
   // Measure header height dynamically with resize observer
   useEffect(() => {
@@ -160,7 +145,6 @@ export const HeaderProvider: React.FC<{ children: React.ReactNode }> = ({ childr
   }, []);
 
   const goToId = (id: string) => {
-    setProductsOpen(false);
     setMenuOpen(false);
     if (pathname === '/') scrollTo(id);
     else navigate(`/?id=${id}`, { state: { scrollToId: id } });

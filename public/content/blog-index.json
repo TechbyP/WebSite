@@ -1,6 +1,6 @@
 {
   "version": "1.0",
-  "updatedAt": "2026-06-23T10:05:11.405Z",
+  "updatedAt": "2026-07-01T05:45:12.453Z",
   "source": "prebuild-script",
   "canonical": "https://www.techbyp.com/content/blog-index.json",
   "items": [
@@ -92,18 +92,18 @@
         "de": "Bodenprobentechnik Peters ist jetzt offizieller FarmBlick-Systempartner!\nUnd das heißt für euch: Noch präzisere Bodenproben. Noch smartere Prozesse. Noch mehr Ertrag aus jedem Hektar.\n"
       },
       "localizations": {
-        "de": {
-          "title": "🚀 Neue Partnerschaft, neue Power im Boden!",
-          "summary": "Bodenprobentechnik Peters ist jetzt offizieller FarmBlick-Systempartner!\nUnd das heißt für euch: Noch präzisere Bodenproben. Noch smartere Prozesse. Noch mehr Ertrag aus jedem Hektar.\n"
-        },
         "en": {
           "title": "🚀 New partnership, new power in the ground!",
           "summary": "Soil Sampling Technology Peters is now an official FarmBlick system partner! And that means for you: Even more precise soil samples. Even smarter processes. Even higher yields from every hectare.\n"
+        },
+        "de": {
+          "title": "🚀 Neue Partnerschaft, neue Power im Boden!",
+          "summary": "Bodenprobentechnik Peters ist jetzt offizieller FarmBlick-Systempartner!\nUnd das heißt für euch: Noch präzisere Bodenproben. Noch smartere Prozesse. Noch mehr Ertrag aus jedem Hektar.\n"
         }
       },
       "available_locales": [
-        "de",
-        "en"
+        "en",
+        "de"
       ]
     },
     {
@@ -126,18 +126,18 @@
         "de": "Die Ernte ist durch – doch der Boden spricht noch! Gerade nach Raps ist die Gefahr groß, dass hohe Stickstoffmengen im Boden verbleiben. Ohne gezielte Nmin-Proben riskieren wir:"
       },
       "localizations": {
-        "en": {
-          "title": "Why Nmin Soil Sampling After Rapeseed Is Essential!",
-          "summary": "Harvest’s done – but the soil still has a story to tell! Especially after rapeseed, there's a high risk of leftover nitrogen in the soil. Without targeted Nmin sampling, you’re facing:"
-        },
         "de": {
           "title": "Warum Nmin-Proben nach Raps unverzichtbar sind!",
           "summary": "Die Ernte ist durch – doch der Boden spricht noch! Gerade nach Raps ist die Gefahr groß, dass hohe Stickstoffmengen im Boden verbleiben. Ohne gezielte Nmin-Proben riskieren wir:"
+        },
+        "en": {
+          "title": "Why Nmin Soil Sampling After Rapeseed Is Essential!",
+          "summary": "Harvest’s done – but the soil still has a story to tell! Especially after rapeseed, there's a high risk of leftover nitrogen in the soil. Without targeted Nmin sampling, you’re facing:"
         }
       },
       "available_locales": [
-        "en",
-        "de"
+        "de",
+        "en"
       ]
     }
   ]

@@ -16,7 +16,7 @@ interface Props {
 }
 
 // Enhanced link processing that works with ReactMarkdown components
-const CustomLink = ({ href, children }: { href?: string; children: React.ReactNode }) => {
+const CustomLink = ({ href, children }: { href?: string; children?: React.ReactNode }) => {
   if (href?.startsWith('/')) {
     return (
       <a
