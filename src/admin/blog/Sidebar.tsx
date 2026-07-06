@@ -173,6 +173,21 @@ const Sidebar = ({
                   <h3 className="font-semibold line-clamp-2 text-gray-900 dark:text-gray-100 group-hover:text-brandblue">
                     {article.displayTitle}
                   </h3>
+                  <div className="mt-1 flex flex-wrap items-center gap-1">
+                    <span className="text-[10px] uppercase font-black tracking-wide px-2 py-0.5 rounded-full bg-blue-100 text-blue-700 dark:bg-blue-900/40 dark:text-blue-300">
+                      {t(`blog.categories.${article.category}`, { defaultValue: t(`blogEdit.categories.${article.category}`) })}
+                    </span>
+                    {article.featured && (
+                      <span className="text-[10px] uppercase font-black tracking-wide px-2 py-0.5 rounded-full bg-brandblue/10 text-brandblue dark:bg-blue-900/40 dark:text-blue-200">
+                        {t('blog.labels.featured')}
+                      </span>
+                    )}
+                    {article.trending && (
+                      <span className="text-[10px] uppercase font-black tracking-wide px-2 py-0.5 rounded-full bg-brandgreen/15 text-brandgreen dark:bg-green-900/40 dark:text-green-200">
+                        {t('blog.labels.trending')}
+                      </span>
+                    )}
+                  </div>
                   <div className="flex items-center gap-1 mt-1 text-sm text-gray-500 dark:text-gray-400">
                     <FiCalendar size={12} />
                     {new Date(article.date).toLocaleDateString()}

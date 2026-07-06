@@ -143,6 +143,24 @@ const ArticleDetail = () => {
     [currentContent.content]
   );
 
+  const formattedArticleDate = useMemo(() => {
+    if (!article?.date) {
+      return '';
+    }
+
+    const parsedDate = new Date(article.date);
+
+    if (Number.isNaN(parsedDate.getTime())) {
+      return article.date;
+    }
+
+    return new Intl.DateTimeFormat(currentLanguage, {
+      day: '2-digit',
+      month: 'long',
+      year: 'numeric',
+    }).format(parsedDate);
+  }, [article?.date, currentLanguage]);
+
 
   if (isLoading) return (
     <div className="min-h-screen flex items-center justify-center bg-gray-50 dark:bg-gray-900">
@@ -253,7 +271,7 @@ const ArticleDetail = () => {
                   <span className="rounded-full bg-slate-100 px-3 py-1 text-brandblue dark:bg-gray-800 dark:text-blue-300">
                     {t('category', { category: article.category })}
                   </span>
-                  <span>{article.date}</span>
+                  <span>{formattedArticleDate}</span>
                   <span className="inline-flex items-center gap-1">
                     <Clock className="h-4 w-4" />
                     {t('readTime', { time: article.readTime })}

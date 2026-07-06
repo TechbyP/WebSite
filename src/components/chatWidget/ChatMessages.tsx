@@ -4,6 +4,7 @@ import ReactMarkdown from 'react-markdown';
 import remarkGfm from 'remark-gfm';
 import { ChatMessage } from './types';
 import { ProductButton } from '../../utils/ProductButton';
+import { useTranslation } from 'react-i18next';
 
 interface Props {
   messages: ChatMessage[];
@@ -70,6 +71,8 @@ export const ChatMessages = React.memo(({
   viewportHeight,
   messagesEndRef
 }: Props) => {
+  const { t } = useTranslation();
+
   return (
     <div
       className="flex-1 overflow-y-auto flex flex-col p-4 bg-gray-50 dark:bg-gray-900"
@@ -139,7 +142,7 @@ export const ChatMessages = React.memo(({
               <div className="w-2 h-2 bg-brandblue dark:bg-blue-400 rounded-full animate-bounce" style={{ animationDelay: '150ms' }} />
               <div className="w-2 h-2 bg-brandblue dark:bg-blue-400 rounded-full animate-bounce" style={{ animationDelay: '300ms' }} />
             </div>
-            <span>Assistant is typing...</span>
+            <span>{t('chatWidget.typing')}</span>
           </motion.div>
         )}
       </div>

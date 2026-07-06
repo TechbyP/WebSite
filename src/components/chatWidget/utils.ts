@@ -3,12 +3,20 @@ import { ChatMessage } from './types';
 import type { Product } from '../../data/types/products';
 
 
-/** ✳️ Assistant welcome lines - Updated for brevity */
-export const introMessages = [
-  "**Hello!** I'm *TechByp Assistant*—ready to discuss soil sampling machines.",
-  "*TechByp Assistant* here! Shall we **dive into soil samplers**?",
-  "**Hi!** *TechByp Assistant* at your service. What can I help with today?",
-  "**Good to see you!** I'm your *TechByp Assistant*. Let's **talk machinery**.",
+/** ✳️ Assistant welcome lines, localized via i18n */
+export const getIntroMessages = (t: any): string[] => [
+  t('chatWidget.introMessages.0', {
+    defaultValue: "**Hello!** I'm *TechByp Assistant*—ready to discuss soil sampling machines.",
+  }),
+  t('chatWidget.introMessages.1', {
+    defaultValue: "*TechByp Assistant* here! Shall we **dive into soil samplers**?",
+  }),
+  t('chatWidget.introMessages.2', {
+    defaultValue: "**Hi!** *TechByp Assistant* at your service. What can I help with today?",
+  }),
+  t('chatWidget.introMessages.3', {
+    defaultValue: "**Good to see you!** I'm your *TechByp Assistant*. Let's **talk machinery**.",
+  }),
 ];
 
 /** 🔧 Extract key information from manual for concise responses */

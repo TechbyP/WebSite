@@ -31,6 +31,8 @@ interface FixedArticle {
   readTime: string;
   category: string;
   image: string;
+  featured?: boolean;
+  trending?: boolean;
   relatedArticles: RelatedArticle[];
 }
 
@@ -59,6 +61,8 @@ const BlogPostEditor = () => {
     readTime: '3 min',
     category: 'technology',
     image: '',
+    featured: false,
+    trending: false,
     relatedArticles: []
   };
 
@@ -96,6 +100,8 @@ const BlogPostEditor = () => {
             readTime: data.readTime || defaultArticle.readTime,
             category: data.category || defaultArticle.category,
             image: data.image || defaultArticle.image,
+            featured: Boolean(data.featured),
+            trending: Boolean(data.trending),
             relatedArticles: data.relatedArticles || []
           } as FixedArticle;
 
@@ -196,6 +202,8 @@ const BlogPostEditor = () => {
         readTime: article.readTime || defaultArticle.readTime,
         category: article.category || defaultArticle.category,
         image: article.image || defaultArticle.image,
+        featured: Boolean(article.featured),
+        trending: Boolean(article.trending),
         relatedArticles: article.relatedArticles || []
       } as FixedArticle;
 
@@ -286,6 +294,7 @@ const BlogPostEditor = () => {
               onAvatarUpload={uploadImage}
               language={language}
               onLanguageChange={setLanguage}
+              availableArticles={articles}
             />
           ) : selectedArticle ? (
             <ArticleView
@@ -319,7 +328,11 @@ const BlogPostEditor = () => {
         <Sidebar
           articles={filteredArticles.map(a => ({
             ...a,
-            displayTitle: a.content?.[language]?.title || 'Untitled'
+            displayTitle:
+              a.content?.[language]?.title ||
+              a.content?.en?.title ||
+              a.content?.de?.title ||
+              'Untitled'
           }))}
           selectedArticleId={selectedArticle?.id || null}
           onSelectArticle={selectArticle}

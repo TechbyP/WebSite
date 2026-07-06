@@ -559,6 +559,39 @@
     "customSolutionPrompt": "Brauchen Sie eine individuelle Lösung?",
     "contactButton": "Unsere Ingenieure kontaktieren"
   },
+  "awards": {
+    "heading": "Ausgezeichnet, anscheinend",
+    "subheading": "Wir haben ein paar Preise mit nach Hause genommen, höflich gelächelt und danach nur ein kleines bisschen zu hart gefeiert.",
+    "body1": "Wir haben ziemlich viele Auszeichnungen für unsere Maschinen gewonnen, und darauf sind wir sehr stolz. Sogar den Business Innovator Award (was auch immer das genau heißen soll) haben wir eingesammelt - bei einer sehr vernünftigen Veranstaltung voller kluger Leute, unterbrochen von einem leicht überdrehten Team aus Norddeutschland, das mit alarmierender Präzision Löcher in den Boden macht.",
+    "body2": "Es war ein großartiger Abend: tolle Gespräche, viele gute Ideen und genau die Art von Rückenwind, die unsere Ingenieursrunden am Montag etwas lauter macht - im besten Sinne. Alles in allem sind wir aber am meisten stolz auf das, was unsere Kunden über uns sagen...",
+    "imageAlt": "Das TechByP-Team beim DUP Unternehmer Award 2026"
+  },
+  "chatWidget": {
+    "title": "TechByP Assistent",
+    "placeholderMobile": "Nachricht eingeben...",
+    "placeholderDesktop": "Fragen Sie nach Maschinen...",
+    "send": "Senden",
+    "typing": "Assistent schreibt...",
+    "aria": {
+      "minimize": "Chat minimieren",
+      "maximize": "Chat maximieren",
+      "close": "Chat schließen",
+      "input": "Nachricht eingeben",
+      "send": "Nachricht senden",
+      "chatLogo": "Chat"
+    },
+    "errors": {
+      "notConfigured": "Entschuldigung, der Chat ist derzeit nicht konfiguriert. Bitte versuchen Sie es später erneut.",
+      "noResponse": "Keine Antwort",
+      "requestFailed": "Entschuldigung, ich konnte gerade keine Antwort erhalten. Bitte versuchen Sie es später erneut."
+    },
+    "introMessages": [
+      "**Hallo!** Ich bin der *TechByp Assistant* - bereit, ueber Bodenprobenmaschinen zu sprechen.",
+      "*TechByp Assistant* hier! Sollen wir **in Bodenprobennehmer eintauchen**?",
+      "**Hi!** *TechByp Assistant* zu Ihren Diensten. Wobei kann ich heute helfen?",
+      "**Schoen, Sie zu sehen!** Ich bin Ihr *TechByp Assistant*. Lassen Sie uns **ueber Maschinen sprechen**."
+    ]
+  },
   "partnersHeader": {
     "title": "Vertrauen führender Forschungs- & Industriepartner",
     "description": "Deutsche Universitäten und Landwirtschaftsinstitute vertrauen auf Bodenprobetechnik Peters für präzise Bodenprobentechnik."

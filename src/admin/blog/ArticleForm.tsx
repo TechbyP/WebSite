@@ -13,6 +13,7 @@ interface ArticleFormProps {
   onAvatarUpload: (file: File) => Promise<string>;
   language: 'en' | 'de';
   onLanguageChange: (lang: 'en' | 'de') => void;
+  availableArticles: Article[];
 }
 
 const ArticleForm = ({
@@ -24,6 +25,7 @@ const ArticleForm = ({
   onAvatarUpload,
   language,
   onLanguageChange,
+  availableArticles,
 }: ArticleFormProps) => {
   const { t } = useTranslation();
   const [formData, setFormData] = useState<Partial<Article>>(article);
@@ -112,12 +114,63 @@ const ArticleForm = ({
     onSave(formData);
   };
 
+  const toggleRelatedArticle = (relatedId: string) => {
+    setFormData((prev) => {
+      const currentRelated = prev.relatedArticles || [];
+      const alreadySelected = currentRelated.some((entry) => entry.id === relatedId);
+
+      if (alreadySelected) {
+        return {
+          ...prev,
+          relatedArticles: currentRelated.filter((entry) => entry.id !== relatedId),
+        };
+      }
+
+      const relatedArticle = availableArticles.find((entry) => entry.id === relatedId);
+      if (!relatedArticle) {
+        return prev;
+      }
+
+      const relatedTitle =
+        relatedArticle.content?.[language]?.title?.trim() ||
+        relatedArticle.content?.en?.title?.trim() ||
+        relatedArticle.content?.de?.title?.trim() ||
+        'Untitled';
+
+      return {
+        ...prev,
+        relatedArticles: [
+          ...currentRelated,
+          {
+            id: relatedArticle.id,
+            title: relatedTitle,
+            readTime: relatedArticle.readTime || '',
+            image: relatedArticle.image || '',
+          },
+        ],
+      };
+    });
+  };
+
   const inputClass =
     'w-full px-4 py-2 rounded-xl border bg-white/80 dark:bg-gray-800/80 ' +
     'border-gray-300 dark:border-gray-700 text-gray-900 dark:text-gray-100 ' +
     'focus:outline-none focus:ring-2 focus:ring-blue-500 transition';
 
   const labelClass = 'block text-sm font-medium text-gray-700 dark:text-gray-300 mb-1';
+
+  const previewContent = formData.content?.[language] || emptyContent;
+  const previewTitle = previewContent.title?.trim() || 'Untitled';
+  const previewExcerpt = previewContent.excerpt?.trim() || 'No excerpt yet.';
+  const previewImage = imageUrl || formData.image || '';
+  const previewAuthor = getSafeAuthor(formData.author);
+  const previewCategory = formData.category || 'technology';
+  const previewReadTime = formData.readTime?.trim() || '3 min';
+  const previewDate = formData.date ? new Date(formData.date) : null;
+  const previewDateLabel =
+    previewDate && !Number.isNaN(previewDate.getTime())
+      ? new Intl.DateTimeFormat(language, { day: '2-digit', month: 'short', year: 'numeric' }).format(previewDate)
+      : '--';
 
   return (
     <div className="bg-white/70 dark:bg-gray-900/70 backdrop-blur-lg p-8 rounded-2xl shadow-xl border border-gray-200 dark:border-gray-800">
@@ -250,6 +303,72 @@ const ArticleForm = ({
               required
             />
           </div>
+
+          <div>
+            <label className={labelClass}>Homepage Placement</label>
+            <div className="space-y-2 rounded-xl border border-gray-300 bg-gray-50/70 p-3 dark:border-gray-700 dark:bg-gray-800/70">
+              <label className="flex items-center gap-2 text-sm text-gray-700 dark:text-gray-200">
+                <input
+                  type="checkbox"
+                  checked={Boolean(formData.featured)}
+                  onChange={(e) =>
+                    setFormData((prev) => ({
+                      ...prev,
+                      featured: e.target.checked,
+                      trending: e.target.checked ? false : Boolean(prev.trending),
+                    }))
+                  }
+                />
+                {t('blog.labels.featured')}
+              </label>
+              <label className="flex items-center gap-2 text-sm text-gray-700 dark:text-gray-200">
+                <input
+                  type="checkbox"
+                  checked={Boolean(formData.trending)}
+                  onChange={(e) =>
+                    setFormData((prev) => ({
+                      ...prev,
+                      trending: e.target.checked,
+                      featured: e.target.checked ? false : Boolean(prev.featured),
+                    }))
+                  }
+                />
+                {t('blog.labels.trending')}
+              </label>
+            </div>
+          </div>
+        </div>
+
+        <div>
+          <label className={labelClass}>{t('moreLikeThis')}</label>
+          <div className="max-h-52 overflow-y-auto rounded-xl border border-gray-300 bg-gray-50/70 p-3 space-y-2 dark:border-gray-700 dark:bg-gray-800/70">
+            {availableArticles
+              .filter((entry) => entry.id !== article.id)
+              .map((entry) => {
+                const relatedTitle =
+                  entry.content?.[language]?.title?.trim() ||
+                  entry.content?.en?.title?.trim() ||
+                  entry.content?.de?.title?.trim() ||
+                  'Untitled';
+
+                const isChecked = Boolean(formData.relatedArticles?.some((rel) => rel.id === entry.id));
+
+                return (
+                  <label key={entry.id} className="flex items-center gap-2 text-sm text-gray-700 dark:text-gray-200">
+                    <input
+                      type="checkbox"
+                      checked={isChecked}
+                      onChange={() => toggleRelatedArticle(entry.id)}
+                    />
+                    <span className="line-clamp-1">{relatedTitle}</span>
+                  </label>
+                );
+              })}
+
+            {availableArticles.filter((entry) => entry.id !== article.id).length === 0 && (
+              <p className="text-sm text-gray-500 dark:text-gray-400">No other articles available yet.</p>
+            )}
+          </div>
         </div>
 
         {/* Image Upload */}
@@ -318,6 +437,71 @@ const ArticleForm = ({
               <img srcSet={avatarUrl} alt="Author avatar" className="w-16 h-16 rounded-full object-cover shadow" />
             )}
           </div>
+        </div>
+
+        <div className="rounded-2xl border border-gray-300 bg-gray-50/70 p-4 dark:border-gray-700 dark:bg-gray-800/70">
+          <p className="mb-3 text-sm font-semibold text-gray-700 dark:text-gray-300">
+            Live Blog Preview ({language.toUpperCase()})
+          </p>
+
+          <article className="overflow-hidden rounded-2xl border border-gray-200 bg-white shadow-sm dark:border-gray-700 dark:bg-gray-900">
+            <div className="relative h-44 w-full bg-gray-200 dark:bg-gray-700">
+              {previewImage ? (
+                <img
+                  sizes="(max-width: 768px) 100vw, 50vw"
+                  srcSet={previewImage}
+                  alt={previewTitle}
+                  className="h-full w-full object-cover"
+                />
+              ) : (
+                <div className="flex h-full items-center justify-center text-sm font-medium text-gray-500 dark:text-gray-400">
+                  {t('blogEdit.noImage')}
+                </div>
+              )}
+            </div>
+
+            <div className="p-4">
+              <div className="mb-3 flex flex-wrap items-center gap-2">
+                <span className="rounded-full bg-blue-100 px-2 py-1 text-[10px] font-black uppercase tracking-wide text-blue-700 dark:bg-blue-900/40 dark:text-blue-300">
+                  {t(`blog.categories.${previewCategory}`, { defaultValue: t(`blogEdit.categories.${previewCategory}`) })}
+                </span>
+                {formData.featured && (
+                  <span className="rounded-full bg-brandblue/10 px-2 py-1 text-[10px] font-black uppercase tracking-wide text-brandblue dark:bg-blue-900/40 dark:text-blue-200">
+                    {t('blog.labels.featured')}
+                  </span>
+                )}
+                {formData.trending && (
+                  <span className="rounded-full bg-brandgreen/15 px-2 py-1 text-[10px] font-black uppercase tracking-wide text-brandgreen dark:bg-green-900/40 dark:text-green-200">
+                    {t('blog.labels.trending')}
+                  </span>
+                )}
+              </div>
+
+              <h3 className="line-clamp-2 text-lg font-black text-gray-900 dark:text-gray-100">{previewTitle}</h3>
+              <p className="mt-2 line-clamp-3 text-sm text-gray-600 dark:text-gray-300">{previewExcerpt}</p>
+
+              <div className="mt-4 flex items-center gap-3 text-xs font-semibold uppercase tracking-wide text-gray-500 dark:text-gray-400">
+                <span>{previewDateLabel}</span>
+                <span>•</span>
+                <span>{previewReadTime}</span>
+              </div>
+
+              <div className="mt-4 flex items-center gap-3">
+                {(avatarUrl || previewAuthor.avatar) && (
+                  <img
+                    sizes="64px"
+                    srcSet={avatarUrl || previewAuthor.avatar}
+                    alt={previewAuthor.name || 'Author'}
+                    className="h-9 w-9 rounded-full object-cover"
+                  />
+                )}
+                <div className="min-w-0">
+                  <p className="truncate text-sm font-semibold text-gray-900 dark:text-gray-100">{previewAuthor.name || 'TechByP'}</p>
+                  <p className="truncate text-xs text-gray-500 dark:text-gray-400">{previewAuthor.role || '-'}</p>
+                </div>
+              </div>
+            </div>
+          </article>
         </div>
 
         {/* Actions */}

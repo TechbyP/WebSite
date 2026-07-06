@@ -569,6 +569,39 @@
     "customSolutionPrompt": "Need a custom solution?",
     "contactButton": "Contact our engineers"
   },
+  "awards": {
+    "heading": "Awarded, Apparently",
+    "subheading": "We took home some awards, smiled politely, and only celebrated a little too hard afterward.",
+    "body1": "We've won loads of awards for our machines, and we're very proud of them. We even picked up the Business Innovator Award (whatever that means) at an awards ceremony with a very sensible gathering of clever people, interrupted by one slightly overexcited team from northern Germany who build things that stab the ground with alarming precision.",
+    "body2": "We had a brilliant time, met fantastic people, and came home with a trophy, a few new ideas, and exactly the sort of confidence that makes Monday engineering meetings louder in the best possible way. On the whole though, we're most proud of what our customers say...",
+    "imageAlt": "TechByP team at the DUP Unternehmer Award 2026"
+  },
+  "chatWidget": {
+    "title": "TechByP Assistant",
+    "placeholderMobile": "Type your message...",
+    "placeholderDesktop": "Ask about machines...",
+    "send": "Send",
+    "typing": "Assistant is typing...",
+    "aria": {
+      "minimize": "Minimize chat",
+      "maximize": "Maximize chat",
+      "close": "Close chat",
+      "input": "Type your message",
+      "send": "Send message",
+      "chatLogo": "Chat"
+    },
+    "errors": {
+      "notConfigured": "Sorry, the chat is not configured right now. Please try again later.",
+      "noResponse": "No response",
+      "requestFailed": "Sorry, I could not get a response right now. Please try again later."
+    },
+    "introMessages": [
+      "**Hello!** I'm *TechByp Assistant* - ready to discuss soil sampling machines.",
+      "*TechByp Assistant* here! Shall we **dive into soil samplers**?",
+      "**Hi!** *TechByp Assistant* at your service. What can I help with today?",
+      "**Good to see you!** I'm your *TechByp Assistant*. Let's **talk machinery**."
+    ]
+  },
   "partnersHeader": {
     "title": "Trusted by Leading Research & Industry Partners",
     "description": "German universities and agricultural institutes rely on Bodenprobetechnik Peters for precision soil sampling technology."

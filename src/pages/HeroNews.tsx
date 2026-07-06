@@ -14,6 +14,24 @@ type HeroActionItem = NewsItem & {
 };
 
 const TRANSITION_DURATION = 300;
+const HERO_AUTO_ADVANCE_MS = 5000;
+
+const createFallbackHomeItem = (): NewsItem => ({
+    id: 'home-screen-fallback',
+    type: 'announcement',
+    title_en: '',
+    title_de: '',
+    excerpt_en: '',
+    excerpt_de: '',
+    image: HeroFallback,
+    date: '',
+    link_en: '',
+    link_de: '',
+    cta_en: '',
+    cta_de: '',
+    order: 0,
+    isHomeScreen: true,
+});
 
 const CombinedHero = () => {
     const { t, i18n } = useTranslation();
@@ -70,46 +88,24 @@ const CombinedHero = () => {
             try {
                 const items = await fetchHeroItems();
 
-                // Add hardcoded home screen item
-                const homeItem: NewsItem = {
-                    id: 'home-screen',
-                    type: 'announcement',
-                    title_en: '',
-                    title_de: '',
-                    excerpt_en: '',
-                    excerpt_de: '',
-                    image: HeroFallback,
-                    date: '',
-                    link_en: '',
-                    link_de: '',
-                    cta_en: '',
-                    cta_de: '',
-                    order: 0,
-                    isHomeScreen: true
-                };
+                const sortedItems = [...items].sort((a, b) => (a.order || 0) - (b.order || 0));
+                const hasHomeItem = sortedItems.some((entry) => entry.isHomeScreen);
 
-                items.sort((a, b) => (a.order || 0) - (b.order || 0));
-                setNewsItems([homeItem, ...items]);
+                if (sortedItems.length === 0) {
+                    setNewsItems([createFallbackHomeItem()]);
+                    return;
+                }
+
+                if (hasHomeItem) {
+                    setNewsItems(sortedItems);
+                    return;
+                }
+
+                // Keep admin-defined order priority, but include the default home slide right after the first item.
+                setNewsItems([sortedItems[0], createFallbackHomeItem(), ...sortedItems.slice(1)]);
             } catch (error) {
                 console.error("Error fetching hero items:", error);
-                setNewsItems([
-                    {
-                        id: 'home-screen',
-                        type: 'announcement',
-                        title_en: '',
-                        title_de: '',
-                        excerpt_en: '',
-                        excerpt_de: '',
-                        image: HeroFallback,
-                        date: '',
-                        link_en: '',
-                        link_de: '',
-                        cta_en: '',
-                        cta_de: '',
-                        order: 0,
-                        isHomeScreen: true
-                    }
-                ]);
+                setNewsItems([createFallbackHomeItem()]);
             } finally {
                 setIsLoading(false);
             }
@@ -164,8 +160,8 @@ const CombinedHero = () => {
 
     const isHomeScreen = newsItems[currentIndex]?.isHomeScreen;
     const canNavigate = newsItems.length > 1;
-    const currentHeroSrc = isHomeScreen ? HeroFallback : newsItems[currentIndex]?.image || '';
-    const currentHeroSrcSet = isHomeScreen ? Hero : undefined;
+    const currentHeroSrc = newsItems[currentIndex]?.image || HeroFallback;
+    const currentHeroSrcSet = currentHeroSrc === HeroFallback ? Hero : undefined;
 
     const handleNavigation = useCallback((newDirection: number) => {
         if (!canNavigate || isTransitioning || !isMounted) {
@@ -185,12 +181,11 @@ const CombinedHero = () => {
 
     useEffect(() => {
         if (!canNavigate || isHovered || isTransitioning) return;
-        const delay = isHomeScreen ? 15000 : 12000;
         const timer = setInterval(() => {
             handleNavigation(1);
-        }, delay);
+        }, HERO_AUTO_ADVANCE_MS);
         return () => clearInterval(timer);
-    }, [canNavigate, isHovered, isTransitioning, handleNavigation, isHomeScreen]);
+    }, [canNavigate, isHovered, isTransitioning, handleNavigation]);
 
     const handleAnimationComplete = useCallback(() => {
         setIsTransitioning(false);
@@ -250,9 +245,9 @@ const CombinedHero = () => {
         return (
             <motion.a
                 ref={buttonRef}
-                initial={{ opacity: 0 }}
-                animate={{ opacity: isMounted ? 1 : 0 }}
-                transition={{ delay: 1.1 }}
+                initial={false}
+                animate={{ opacity: 1 }}
+                transition={{ duration: 0.2 }}
                 href={item.link}
                 onClick={handleClick}
                 className={`inline-flex items-center bg-brandgreen/50 border-2 border-white/50 hover:border-white/80 hover:bg-brandgreen text-white px-6 py-3 sm:px-8 sm:py-4 rounded-lg font-semibold text-base sm:text-lg transition-all group backdrop-blur-sm ${isTransitioning || isClicked || !isMounted ? 'pointer-events-none opacity-70' : ''}`}
@@ -398,7 +393,6 @@ const CombinedHero = () => {
                                 className="w-full h-full object-cover select-none"
                                 style={{ objectPosition: 'center center' }}
                                 draggable={false}
-                                fetchPriority={currentItem?.isHomeScreen ? 'high' : 'auto'}
                                 loading={currentItem?.isHomeScreen ? 'eager' : 'lazy'}
                                 decoding="async"
                             />

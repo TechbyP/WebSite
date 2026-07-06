@@ -569,6 +569,39 @@
     "customSolutionPrompt": "Precisa de uma solução personalizada?",
     "contactButton": "Entre em contato com nossos engenheiros"
   },
+  "awards": {
+    "heading": "Premiados, ao que parece",
+    "subheading": "Levamos alguns prêmios para casa, sorrimos educadamente e depois comemoramos só um pouquinho além da conta.",
+    "body1": "Já ganhamos vários prêmios pelas nossas máquinas, e temos muito orgulho disso. Até levamos o Business Innovator Award (seja lá o que isso signifique) em uma cerimônia bastante sensata, cheia de gente brilhante, interrompida por uma equipe levemente empolgada demais do norte da Alemanha que constrói coisas que perfuram o solo com precisão alarmante.",
+    "body2": "Foi uma noite excelente, conhecemos pessoas fantásticas e voltamos com um troféu, novas ideias e exatamente aquele tipo de confiança que deixa as reuniões de engenharia de segunda-feira um pouco mais barulhentas, no melhor sentido. No fim das contas, porém, do que mais nos orgulhamos é do que nossos clientes dizem sobre nós...",
+    "imageAlt": "Equipe TechByP no DUP Unternehmer Award 2026"
+  },
+  "chatWidget": {
+    "title": "Assistente TechByP",
+    "placeholderMobile": "Escreva sua mensagem...",
+    "placeholderDesktop": "Pergunte sobre máquinas...",
+    "send": "Enviar",
+    "typing": "O assistente está a escrever...",
+    "aria": {
+      "minimize": "Minimizar chat",
+      "maximize": "Maximizar chat",
+      "close": "Fechar chat",
+      "input": "Escreva sua mensagem",
+      "send": "Enviar mensagem",
+      "chatLogo": "Chat"
+    },
+    "errors": {
+      "notConfigured": "Desculpe, o chat não está configurado no momento. Tente novamente mais tarde.",
+      "noResponse": "Sem resposta",
+      "requestFailed": "Desculpe, não consegui obter uma resposta agora. Tente novamente mais tarde."
+    },
+    "introMessages": [
+      "**Ola!** Sou o *TechByp Assistant*, pronto para falar sobre maquinas de amostragem de solo.",
+      "*TechByp Assistant* aqui! Vamos **mergulhar nos amostradores de solo**?",
+      "**Oi!** *TechByp Assistant* ao seu servico. Como posso ajudar hoje?",
+      "**Bom te ver!** Sou seu *TechByp Assistant*. Vamos **falar de maquinaria**."
+    ]
+  },
   "partnersHeader": {
     "title": "Aprovado pelos principais parceiros de pesquisa e indústria",
     "description": "Universidades e institutos agrícolas alemães confiam na Bodenprobetechnik Peters para tecnologia de amostragem de solo de precisão."

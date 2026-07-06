@@ -1,6 +1,6 @@
 {
   "version": "1.0",
-  "updatedAt": "2026-07-01T05:45:12.453Z",
+  "updatedAt": "2026-07-06T11:43:30.112Z",
   "source": "prebuild-script",
   "canonical": "https://www.techbyp.com/content/blog-index.json",
   "items": [
@@ -24,18 +24,18 @@
         "de": "Normalerweise bin ich nicht der Typ, der wie ein Kind im Süßwarenladen herumhüpft, aber ich muss zugeben, die Aufregung, die in mir wegen der Agritechnica 2025 brodelt, ist geradezu ansteckend. Dieses kolossale Landmaschinen-Spektakel "
       },
       "localizations": {
-        "en": {
-          "title": "TechByp Is Heading to Agritechnica 2025 — And Yes, We've Packed the Tea",
-          "summary": "Now, I'm not usually one to leap about like a child in a sweetshop, but I have to admit, the excitement bubbling inside me over Agritechnica 2025 is positively infectious. This colossal agricultural machinery bonanza lands in Hanover this November, sprawling like a mechanical city across acres, and yes, TechByp will be there—quietly confident, yet ready to show off some serious soil-sampling wizardry in Hall 21, Stand E06."
-        },
         "de": {
           "title": "TechByp fährt zur Agritechnica 2025 – und ja, wir haben den Tee eingepackt",
           "summary": "Normalerweise bin ich nicht der Typ, der wie ein Kind im Süßwarenladen herumhüpft, aber ich muss zugeben, die Aufregung, die in mir wegen der Agritechnica 2025 brodelt, ist geradezu ansteckend. Dieses kolossale Landmaschinen-Spektakel "
+        },
+        "en": {
+          "title": "TechByp Is Heading to Agritechnica 2025 — And Yes, We've Packed the Tea",
+          "summary": "Now, I'm not usually one to leap about like a child in a sweetshop, but I have to admit, the excitement bubbling inside me over Agritechnica 2025 is positively infectious. This colossal agricultural machinery bonanza lands in Hanover this November, sprawling like a mechanical city across acres, and yes, TechByp will be there—quietly confident, yet ready to show off some serious soil-sampling wizardry in Hall 21, Stand E06."
         }
       },
       "available_locales": [
-        "en",
-        "de"
+        "de",
+        "en"
       ]
     },
     {
@@ -73,6 +73,40 @@
       ]
     },
     {
+      "id": "1783335203372",
+      "url": "https://www.techbyp.com/blog/1783335203372",
+      "category": "events",
+      "published_at": "2026-07-06T10:47:39.694Z",
+      "read_time": "3 min",
+      "image": "https://i.ibb.co/5xt7qBWd/77018afaeb21.jpg",
+      "author": {
+        "name": "David ALex",
+        "role": "Tech Storyteller"
+      },
+      "title": {
+        "en": "Awarded, Apparently",
+        "de": "Ausgezeichnet, anscheinend"
+      },
+      "summary": {
+        "en": "We took home some awards, smiled politely, and only celebrated a little too hard afterward.",
+        "de": "Wir haben ein paar Preise mit nach Hause genommen, höflich gelächelt und danach nur ein kleines bisschen zu hart gefeiert."
+      },
+      "localizations": {
+        "de": {
+          "title": "Ausgezeichnet, anscheinend",
+          "summary": "Wir haben ein paar Preise mit nach Hause genommen, höflich gelächelt und danach nur ein kleines bisschen zu hart gefeiert."
+        },
+        "en": {
+          "title": "Awarded, Apparently",
+          "summary": "We took home some awards, smiled politely, and only celebrated a little too hard afterward."
+        }
+      },
+      "available_locales": [
+        "de",
+        "en"
+      ]
+    },
+    {
       "id": "1756118985991",
       "url": "https://www.techbyp.com/blog/1756118985991",
       "category": "technology",
@@ -92,18 +126,18 @@
         "de": "Bodenprobentechnik Peters ist jetzt offizieller FarmBlick-Systempartner!\nUnd das heißt für euch: Noch präzisere Bodenproben. Noch smartere Prozesse. Noch mehr Ertrag aus jedem Hektar.\n"
       },
       "localizations": {
-        "en": {
-          "title": "🚀 New partnership, new power in the ground!",
-          "summary": "Soil Sampling Technology Peters is now an official FarmBlick system partner! And that means for you: Even more precise soil samples. Even smarter processes. Even higher yields from every hectare.\n"
-        },
         "de": {
           "title": "🚀 Neue Partnerschaft, neue Power im Boden!",
           "summary": "Bodenprobentechnik Peters ist jetzt offizieller FarmBlick-Systempartner!\nUnd das heißt für euch: Noch präzisere Bodenproben. Noch smartere Prozesse. Noch mehr Ertrag aus jedem Hektar.\n"
+        },
+        "en": {
+          "title": "🚀 New partnership, new power in the ground!",
+          "summary": "Soil Sampling Technology Peters is now an official FarmBlick system partner! And that means for you: Even more precise soil samples. Even smarter processes. Even higher yields from every hectare.\n"
         }
       },
       "available_locales": [
-        "en",
-        "de"
+        "de",
+        "en"
       ]
     },
     {
@@ -126,18 +160,18 @@
         "de": "Die Ernte ist durch – doch der Boden spricht noch! Gerade nach Raps ist die Gefahr groß, dass hohe Stickstoffmengen im Boden verbleiben. Ohne gezielte Nmin-Proben riskieren wir:"
       },
       "localizations": {
-        "de": {
-          "title": "Warum Nmin-Proben nach Raps unverzichtbar sind!",
-          "summary": "Die Ernte ist durch – doch der Boden spricht noch! Gerade nach Raps ist die Gefahr groß, dass hohe Stickstoffmengen im Boden verbleiben. Ohne gezielte Nmin-Proben riskieren wir:"
-        },
         "en": {
           "title": "Why Nmin Soil Sampling After Rapeseed Is Essential!",
           "summary": "Harvest’s done – but the soil still has a story to tell! Especially after rapeseed, there's a high risk of leftover nitrogen in the soil. Without targeted Nmin sampling, you’re facing:"
+        },
+        "de": {
+          "title": "Warum Nmin-Proben nach Raps unverzichtbar sind!",
+          "summary": "Die Ernte ist durch – doch der Boden spricht noch! Gerade nach Raps ist die Gefahr groß, dass hohe Stickstoffmengen im Boden verbleiben. Ohne gezielte Nmin-Proben riskieren wir:"
         }
       },
       "available_locales": [
-        "de",
-        "en"
+        "en",
+        "de"
       ]
     }
   ]

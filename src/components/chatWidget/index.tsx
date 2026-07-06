@@ -6,7 +6,7 @@ import { ChatHeader } from './ChatHeader';
 import { ChatMessages } from './ChatMessages';
 import { ChatInput } from './ChatInput';
 import { Props, ChatMessage } from './types';
-import { introMessages, getSystemMessage } from './utils';
+import { getIntroMessages, getSystemMessage } from './utils';
 import { useTranslation } from 'react-i18next';
 import { useProducts } from '../../data/context/ProductsContext';
 
@@ -44,13 +44,14 @@ export const ChatWidget = React.memo(({ open, setOpen }: Props) => {
   const [chat, setChat] = useState<ChatMessage[]>([]);
   const [loading, setLoading] = useState(false);
   const [keyIndex, setKeyIndex] = useState(0);
+  const [hasInteracted, setHasInteracted] = useState(false);
   const [isFullscreen, setIsFullscreen] = useState(false);
   const [keyboardHeight, setKeyboardHeight] = useState(0);
   const [viewportHeight, setViewportHeight] = useState(window.innerHeight);
   const [isScrolling, setIsScrolling] = useState(false);
   // const [isHidden, setIsHidden] = useState(false);
   const [showFlap, setShowFlap] = useState(false);
-const { t } = useTranslation();
+  const { t } = useTranslation();
   const { products } = useProducts();
   // Refs
   const messagesEndRef = useRef<HTMLDivElement>(null);
@@ -141,13 +142,14 @@ const systemMessage = useMemo(
     };
   }, [isMobile]);
 
-  // Initialize chat with random intro message
+  // Initialize or refresh intro in the active language until user starts interacting
   useEffect(() => {
-    if (open && chat.length === 0) {
-      const randomIntro = introMessages[Math.floor(Math.random() * introMessages.length)];
+    if (open && !hasInteracted) {
+      const localizedIntroMessages = getIntroMessages(t);
+      const randomIntro = localizedIntroMessages[Math.floor(Math.random() * localizedIntroMessages.length)];
       setChat([{ role: 'assistant', content: randomIntro }]);
     }
-  }, [open, chat.length]);
+  }, [open, hasInteracted, t]);
 
   // Focus input when chat opens
   useEffect(() => {
@@ -192,6 +194,7 @@ const systemMessage = useMemo(
   const sendMessage = useCallback(async () => {
     if (!input.trim()) return;
 
+    setHasInteracted(true);
     setLoading(true);
     const userMessage: ChatMessage = { role: 'user', content: input };
     const updatedChat = [...chat, userMessage];
@@ -202,7 +205,7 @@ const systemMessage = useMemo(
     if (API_CONFIGS.length === 0) {
       setChat(prev => [...prev, {
         role: 'assistant',
-        content: 'Sorry, the chat is not configured right now. Please try again later.'
+        content: t('chatWidget.errors.notConfigured')
       }]);
       setLoading(false);
       inputRef.current?.focus();
@@ -244,7 +247,7 @@ const systemMessage = useMemo(
 
         botMessage = data.choices?.[0]?.message ?? {
           role: 'assistant',
-          content: 'No response'
+          content: t('chatWidget.errors.noResponse')
         };
         setKeyIndex((currentIndex + 1) % API_CONFIGS.length);
       } catch (error) {
@@ -258,13 +261,13 @@ const systemMessage = useMemo(
     } else {
       setChat(prev => [...prev, {
         role: 'assistant',
-        content: 'Sorry, I could not get a response right now. Please try again later.'
+        content: t('chatWidget.errors.requestFailed')
       }]);
     }
 
     setLoading(false);
     inputRef.current?.focus();
-  }, [input, chat, keyIndex, systemMessage]);
+  }, [input, chat, keyIndex, systemMessage, t]);
 
   const toggleChat = () => {
     setOpen(!open);
@@ -328,7 +331,7 @@ const systemMessage = useMemo(
               <motion.img
                 sizes="(max-width: 768px) 50vw, 25vw"
 srcSet={logo}
-                alt="Chat"
+                alt={t('chatWidget.aria.chatLogo')}
                 className="w-8 h-8"
                 animate={{
                   rotate: isMobile && isScrolling ? 0 : 360,
@@ -343,7 +346,7 @@ srcSet={logo}
                   animate="visible"
                   exit="exit"
                 >
-                  TechbyP Assistant
+                  {t('chatWidget.title')}
                 </motion.span>
               )}
             </motion.button>
@@ -369,7 +372,7 @@ srcSet={logo}
               transition={{ delay: 0.2 }}
             >
               <img sizes="(max-width: 768px) 50vw, 25vw"
-srcSet={logo} alt="Chat" className="w-6 h-6" />
+srcSet={logo} alt={t('chatWidget.aria.chatLogo')} className="w-6 h-6" />
             </motion.span>
           </motion.div>
         )}

@@ -1,6 +1,7 @@
 import { motion } from "framer-motion";
 import { Star, Quote } from "lucide-react";
 import { useTranslation } from "react-i18next";
+import Awards from "./Awards";
 
 type Testimonial = {
   rating: number;
@@ -9,18 +10,11 @@ type Testimonial = {
   position: string;
 };
 
-type Certification = {
-  bgClass: string;
-  abbr: string;
-  text: string;
-};
-
 const Trust = () => {
   const { t } = useTranslation();
 
   const partners = t('partners', { returnObjects: true }) as string[];
   const testimonials = t('testimonials', { returnObjects: true }) as Testimonial[];
-  const certifications = t('certifications', { returnObjects: true }) as Certification[];
 
   return (
     <section className="py-16 sm:py-20 bg-gray-50 dark:bg-gray-900 overflow-hidden transition-colors duration-300">
@@ -62,6 +56,10 @@ const Trust = () => {
             </motion.div>
           ))}
         </motion.div>
+
+        <div className="mb-16">
+          <Awards compact />
+        </div>
 
         {/* Testimonials Header */}
         <motion.div
@@ -110,34 +108,6 @@ const Trust = () => {
           ))}
         </div>
 
-        {/* Certifications */}
-        <motion.div
-          initial={{ opacity: 0, y: 20 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true }}
-          transition={{ duration: 0.6, delay: 0.3 }}
-          className="mt-20 text-center"
-        >
-          <div className="bg-white dark:bg-gray-800 p-8 rounded-xl shadow-md dark:shadow-gray-700/20 inline-block text-left max-w-4xl w-full transition-all duration-300 hover:shadow-lg hover:dark:shadow-gray-700/30">
-            <h3 className="text-xl font-black text-gray-900 dark:text-white mb-6 uppercase text-center transition-colors duration-300">
-              {t('certificationsTitle')}
-            </h3>
-            <div className="flex flex-col gap-6">
-              {certifications.map((cert, i) => (
-                <div key={i} className="flex items-center gap-4">
-                  <div
-                    className={`${cert.bgClass} w-14 h-14 rounded-full flex items-center justify-center shrink-0 transition-colors duration-300`}
-                  >
-                    <span className="text-white font-bold text-sm">{cert.abbr}</span>
-                  </div>
-                  <span className="text-gray-700 dark:text-gray-300 font-medium text-base transition-colors duration-300">
-                    {cert.text}
-                  </span>
-                </div>
-              ))}
-            </div>
-          </div>
-        </motion.div>
       </div>
     </section>
   );

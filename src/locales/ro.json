@@ -568,6 +568,39 @@
     "customSolutionPrompt": "Ai nevoie de o soluție personalizată?",
     "contactButton": "Contactează inginerii noștri"
   },
+  "awards": {
+    "heading": "Premiați, se pare",
+    "subheading": "Am luat acasă câteva premii, am zâmbit politicos și apoi am sărbătorit doar puțin cam tare.",
+    "body1": "Am câștigat o mulțime de premii pentru utilajele noastre și suntem foarte mândri de ele. Am luat chiar și Business Innovator Award (orice ar însemna asta) la o gală foarte serioasă, plină de oameni isteți, întreruptă de o echipă ușor prea entuziasmată din nordul Germaniei care construiește lucruri ce înțeapă pământul cu o precizie alarmantă.",
+    "body2": "Ne-am simțit excelent, am cunoscut oameni extraordinari și ne-am întors cu un trofeu, idei noi și exact acel tip de încredere care face ședințele de inginerie de luni puțin mai zgomotoase, în cel mai bun sens. Per ansamblu, însă, cel mai mândri suntem de ceea ce spun clienții noștri despre noi...",
+    "imageAlt": "Echipa TechByP la DUP Unternehmer Award 2026"
+  },
+  "chatWidget": {
+    "title": "Asistent TechByP",
+    "placeholderMobile": "Scrie mesajul tău...",
+    "placeholderDesktop": "Întreabă despre utilaje...",
+    "send": "Trimite",
+    "typing": "Asistentul scrie...",
+    "aria": {
+      "minimize": "Minimizează chatul",
+      "maximize": "Maximizează chatul",
+      "close": "Închide chatul",
+      "input": "Scrie mesajul tău",
+      "send": "Trimite mesajul",
+      "chatLogo": "Chat"
+    },
+    "errors": {
+      "notConfigured": "Ne pare rău, chatul nu este configurat acum. Te rugăm să încerci din nou mai târziu.",
+      "noResponse": "Fără răspuns",
+      "requestFailed": "Ne pare rău, nu am putut obține un răspuns acum. Te rugăm să încerci din nou mai târziu."
+    },
+    "introMessages": [
+      "**Salut!** Sunt *TechByp Assistant*, gata sa vorbim despre utilaje de prelevare a solului.",
+      "*TechByp Assistant* aici! Vrei sa **intram in detalii despre prelevatoare de sol**?",
+      "**Buna!** *TechByp Assistant* la dispozitia ta. Cu ce te pot ajuta azi?",
+      "**Ma bucur sa te vad!** Sunt *TechByp Assistant*. Hai sa vorbim **despre utilaje**."
+    ]
+  },
   "partnersHeader": {
     "title": "De încredere pentru institute de cercetare și industrie de top",
     "description": "Universități și institute agricole se bazează pe Bodenprobetechnik Peters pentru tehnologie de prelevare a solului de precizie."

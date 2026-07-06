@@ -14,6 +14,15 @@ interface Article {
   language?: string;
 }
 
+interface FirestoreArticleDoc {
+  id?: string;
+  title?: string;
+  title_de?: string;
+  language?: string;
+  slug?: string;
+  content?: Record<string, { title?: string } | undefined>;
+}
+
 interface HeroFormProps {
   item: Partial<NewsItem>;
   onSave: (item: Partial<NewsItem>) => void;
@@ -23,7 +32,7 @@ interface HeroFormProps {
 }
 
 const HeroForm = ({ item, onSave, onCancel, isLoading, onImageUpload }: HeroFormProps) => {
-  const { t } = useTranslation();
+  const { t, i18n } = useTranslation();
   const { theme } = useTheme();
 
   const [formData, setFormData] = useState<Partial<NewsItem>>(item);
@@ -31,7 +40,8 @@ const HeroForm = ({ item, onSave, onCancel, isLoading, onImageUpload }: HeroForm
   const [isUploading, setIsUploading] = useState(false);
   const [articles, setArticles] = useState<Article[]>([]);
   const [selectedArticle, setSelectedArticle] = useState<Article | null>(null);
-  const [selectedLanguage] = useState<'en' | 'de'>('en');
+
+  const prefersGerman = i18n.language?.toLowerCase().startsWith('de');
 
   useEffect(() => {
     setFormData(item);
@@ -42,12 +52,34 @@ const HeroForm = ({ item, onSave, onCancel, isLoading, onImageUpload }: HeroForm
   const fetchArticles = async () => {
     try {
       const querySnapshot = await getDocs(collection(db, 'articles'));
-      const articleList = querySnapshot.docs.map(doc => ({
-        id: doc.data().id || doc.id,
-        title: doc.data().title || 'Untitled',
-        title_de: doc.data().title_de || doc.data().title || 'Untitled',
-        language: doc.data().language || 'en',
-      }));
+      const articleList = querySnapshot.docs.map(docSnap => {
+        const data = docSnap.data() as FirestoreArticleDoc;
+        const content = data.content || {};
+        const localizedTitles = Object.values(content)
+          .map((entry) => entry?.title?.trim())
+          .filter((title): title is string => Boolean(title));
+        const fallbackTitle = localizedTitles[0] || data.slug?.trim() || 'Untitled';
+
+        const title =
+          content.en?.title?.trim() ||
+          data.title?.trim() ||
+          content.de?.title?.trim() ||
+          fallbackTitle;
+
+        const titleDe =
+          content.de?.title?.trim() ||
+          data.title_de?.trim() ||
+          data.title?.trim() ||
+          content.en?.title?.trim() ||
+          fallbackTitle;
+
+        return {
+          id: data.id || docSnap.id,
+          title,
+          title_de: titleDe,
+          language: data.language || 'en',
+        };
+      });
       setArticles(articleList);
     } catch (error) {
       console.error('Error fetching articles:', error);
@@ -96,6 +128,10 @@ const HeroForm = ({ item, onSave, onCancel, isLoading, onImageUpload }: HeroForm
     formData.type === 'announcement' &&
     !formData.title_en?.trim() &&
     !formData.title_de?.trim();
+
+  const previewImage = imagePreview || formData.image || '';
+  const previewType = (formData.type || 'event').toUpperCase();
+  const previewDate = formData.date?.trim() || t('heroEditor.noDate');
 
   // Theme-based classes
   const bgClass = theme === 'dark' ? 'bg-gray-800' : 'bg-white';
@@ -222,10 +258,68 @@ const HeroForm = ({ item, onSave, onCancel, isLoading, onImageUpload }: HeroForm
               <option value="">-- {t('heroEditor.selectBlogPost')} --</option>
               {articles.map(article => (
                 <option key={article.id} value={article.id}>
-                  {selectedLanguage === 'de' ? article.title_de : article.title}
+                  {prefersGerman ? article.title_de : article.title}
                 </option>
               ))}
             </select>
+          </div>
+
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+            <div>
+              <label className={`block text-lg font-black uppercase mb-2 ${textClass}`}>
+                {t('heroEditor.callToAction')} (English)
+              </label>
+              <input
+                type="text"
+                name="cta_en"
+                value={formData.cta_en || ''}
+                onChange={handleChange}
+                placeholder={t('heroEditor.ctaPlaceholder', { lng: 'en' })}
+                className={`w-full p-4 border-2 rounded-lg focus:ring-2 focus:ring-brandblue focus:border-transparent ${borderClass} ${inputBgClass}`}
+              />
+            </div>
+            <div>
+              <label className={`block text-lg font-black uppercase mb-2 ${textClass}`}>
+                {t('heroEditor.callToAction')} (Deutsch)
+              </label>
+              <input
+                type="text"
+                name="cta_de"
+                value={formData.cta_de || ''}
+                onChange={handleChange}
+                placeholder={t('heroEditor.ctaPlaceholder', { lng: 'de' })}
+                className={`w-full p-4 border-2 rounded-lg focus:ring-2 focus:ring-brandblue focus:border-transparent ${borderClass} ${inputBgClass}`}
+              />
+            </div>
+          </div>
+
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+            <div>
+              <label className={`block text-lg font-black uppercase mb-2 ${textClass}`}>
+                {t('heroEditor.link')} (English)
+              </label>
+              <input
+                type="text"
+                name="link_en"
+                value={formData.link_en || ''}
+                onChange={handleChange}
+                placeholder="/blog/article-id or https://..."
+                className={`w-full p-4 border-2 rounded-lg focus:ring-2 focus:ring-brandblue focus:border-transparent ${borderClass} ${inputBgClass}`}
+              />
+            </div>
+            <div>
+              <label className={`block text-lg font-black uppercase mb-2 ${textClass}`}>
+                {t('heroEditor.link')} (Deutsch)
+              </label>
+              <input
+                type="text"
+                name="link_de"
+                value={formData.link_de || ''}
+                onChange={handleChange}
+                placeholder="/de/... or https://..."
+                className={`w-full p-4 border-2 rounded-lg focus:ring-2 focus:ring-brandblue focus:border-transparent ${borderClass} ${inputBgClass}`}
+              />
+            </div>
           </div>
         </>
       )}
@@ -274,6 +368,76 @@ const HeroForm = ({ item, onSave, onCancel, isLoading, onImageUpload }: HeroForm
           className={`w-full p-4 border-2 rounded-lg focus:ring-2 focus:ring-brandblue focus:border-transparent ${borderClass} ${inputBgClass}`}
           min="0"
         />
+      </div>
+
+      <div className={`rounded-xl border-2 p-4 ${borderClass} ${theme === 'dark' ? 'bg-gray-900' : 'bg-gray-50'}`}>
+        <p className={`mb-3 text-sm font-semibold ${textClass}`}>Live Slide Preview</p>
+
+        <div className={`overflow-hidden rounded-xl border ${borderClass}`}>
+          <div className={`relative h-48 ${theme === 'dark' ? 'bg-gray-700' : 'bg-gray-200'}`}>
+            {previewImage ? (
+              <img
+                sizes="(max-width: 768px) 100vw, 50vw"
+                srcSet={previewImage}
+                alt="Hero preview"
+                className="h-full w-full object-cover"
+              />
+            ) : (
+              <div className={`flex h-full items-center justify-center text-sm ${theme === 'dark' ? 'text-gray-300' : 'text-gray-600'}`}>
+                {t('heroEditor.backgroundImage')} {t('heroEditor.required')}
+              </div>
+            )}
+            <div className="absolute left-3 top-3 rounded-full bg-black/60 px-2 py-1 text-[10px] font-black tracking-wide text-white">
+              {previewType} • {previewDate}
+            </div>
+          </div>
+
+          <div className={`p-4 ${theme === 'dark' ? 'bg-gray-800' : 'bg-white'}`}>
+            {isHomeScreen ? (
+              <p className={`text-sm ${theme === 'dark' ? 'text-gray-300' : 'text-gray-600'}`}>
+                Home screen text and buttons are controlled by homepage translations/components.
+              </p>
+            ) : (
+              <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+                <div className={`rounded-lg border p-3 ${borderClass}`}>
+                  <p className={`text-xs font-black uppercase mb-2 ${theme === 'dark' ? 'text-gray-400' : 'text-gray-500'}`}>English</p>
+                  <h4 className={`text-base font-black uppercase leading-tight ${textClass}`}>{formData.title_en || 'Untitled'}</h4>
+                  <p className={`mt-2 text-sm ${theme === 'dark' ? 'text-gray-300' : 'text-gray-700'}`}>{formData.excerpt_en || '-'}</p>
+                  <div className="mt-3 flex flex-col gap-2">
+                    <button
+                      type="button"
+                      className="w-fit rounded-lg bg-brandgreen px-3 py-2 text-sm font-semibold text-white"
+                      disabled={!formData.cta_en}
+                    >
+                      {formData.cta_en || t('heroEditor.callToAction')}
+                    </button>
+                    <p className={`text-xs break-all ${theme === 'dark' ? 'text-gray-400' : 'text-gray-500'}`}>
+                      {formData.link_en || '-'}
+                    </p>
+                  </div>
+                </div>
+
+                <div className={`rounded-lg border p-3 ${borderClass}`}>
+                  <p className={`text-xs font-black uppercase mb-2 ${theme === 'dark' ? 'text-gray-400' : 'text-gray-500'}`}>Deutsch</p>
+                  <h4 className={`text-base font-black uppercase leading-tight ${textClass}`}>{formData.title_de || 'Ohne Titel'}</h4>
+                  <p className={`mt-2 text-sm ${theme === 'dark' ? 'text-gray-300' : 'text-gray-700'}`}>{formData.excerpt_de || '-'}</p>
+                  <div className="mt-3 flex flex-col gap-2">
+                    <button
+                      type="button"
+                      className="w-fit rounded-lg bg-brandgreen px-3 py-2 text-sm font-semibold text-white"
+                      disabled={!formData.cta_de}
+                    >
+                      {formData.cta_de || t('heroEditor.callToAction', { lng: 'de' })}
+                    </button>
+                    <p className={`text-xs break-all ${theme === 'dark' ? 'text-gray-400' : 'text-gray-500'}`}>
+                      {formData.link_de || '-'}
+                    </p>
+                  </div>
+                </div>
+              </div>
+            )}
+          </div>
+        </div>
       </div>
 
       <div className="flex justify-end space-x-4 pt-6">

@@ -4,7 +4,10 @@ import {
   collection,
   doc,
   getDoc,
+  getDocs,
   increment,
+  orderBy,
+  query,
   serverTimestamp,
   setDoc,
   updateDoc,
@@ -309,6 +312,64 @@ const withFallback = async <T>(primary: () => Promise<T>, fallback: () => Promis
   }
 };
 
+const toSerializable = (value: unknown): unknown => {
+  if (Array.isArray(value)) {
+    return value.map((entry) => toSerializable(entry));
+  }
+
+  if (value && typeof value === 'object') {
+    const maybeTimestamp = value as { toDate?: () => Date };
+
+    if (typeof maybeTimestamp.toDate === 'function') {
+      return maybeTimestamp.toDate().toISOString();
+    }
+
+    return Object.fromEntries(
+      Object.entries(value as Record<string, unknown>).map(([key, entry]) => [key, toSerializable(entry)])
+    );
+  }
+
+  return value;
+};
+
+const normalizeArticle = (article: PublicBlogArticle): PublicBlogArticle => ({
+  ...article,
+  commentsCount: Number(article.commentsCount ?? 0),
+  views: Number(article.views ?? 0),
+  relatedArticles: article.relatedArticles ?? [],
+});
+
+const sortArticlesByDateDesc = (left: PublicBlogArticle, right: PublicBlogArticle) =>
+  String(right.date || '').localeCompare(String(left.date || ''));
+
+const sortHeroItemsByOrderAsc = (left: PublicHeroItem, right: PublicHeroItem) =>
+  Number(left.order || 0) - Number(right.order || 0);
+
+const fetchFirestoreArticles = async (): Promise<PublicBlogArticle[]> => {
+  const articleCollection = collection(db, 'articles');
+  const snapshot = await getDocs(query(articleCollection, orderBy('date', 'desc'))).catch(() => getDocs(articleCollection));
+
+  return snapshot.docs
+    .map((entry) => ({
+      id: entry.id,
+      ...(toSerializable(entry.data()) as Omit<PublicBlogArticle, 'id'>),
+    }))
+    .map(normalizeArticle)
+    .sort(sortArticlesByDateDesc);
+};
+
+const fetchFirestoreHeroItems = async (): Promise<PublicHeroItem[]> => {
+  const heroCollection = collection(db, 'heroItems');
+  const snapshot = await getDocs(query(heroCollection, orderBy('order', 'asc'))).catch(() => getDocs(heroCollection));
+
+  return snapshot.docs
+    .map((entry) => ({
+      id: entry.id,
+      ...(toSerializable(entry.data()) as Omit<PublicHeroItem, 'id'>),
+    }))
+    .sort(sortHeroItemsByOrderAsc);
+};
+
 const fetchStaticBlogCache = () => fetchJson<StaticBlogCache>('/content/blog-cache.json');
 
 const fetchStaticArticles = async () => {
@@ -324,27 +385,35 @@ export const fetchAnnouncements = () =>
 
 export const fetchHeroItems = () =>
   withFallback(
-    () => fetchJson<PublicHeroItem[]>('/content/hero-items.json'),
-    () => fetchJson<PublicHeroItem[]>(resolveApiUrl('/data/hero-items'))
+    fetchFirestoreHeroItems,
+    () =>
+      withFallback(
+        () => fetchJson<PublicHeroItem[]>('/content/hero-items.json'),
+        () => fetchJson<PublicHeroItem[]>(resolveApiUrl('/data/hero-items'))
+      )
   );
 
 export const fetchArticles = () => withFallback(
-  fetchStaticArticles,
-  () => fetchJson<PublicBlogArticle[]>(resolveApiUrl('/data/articles'))
+  fetchFirestoreArticles,
+  () => withFallback(fetchStaticArticles, () => fetchJson<PublicBlogArticle[]>(resolveApiUrl('/data/articles')))
 );
 
 export const fetchArticleById = async (articleId: string) => {
   try {
+    const firestoreArticleSnapshot = await getDoc(doc(db, 'articles', articleId));
+
+    if (firestoreArticleSnapshot.exists()) {
+      return normalizeArticle({
+        id: firestoreArticleSnapshot.id,
+        ...(toSerializable(firestoreArticleSnapshot.data()) as Omit<PublicBlogArticle, 'id'>),
+      });
+    }
+
     const articles = await fetchStaticArticles();
     const article = articles.find((entry) => entry.id === articleId);
 
     if (article) {
-      return {
-        ...article,
-        commentsCount: Number(article.commentsCount ?? 0),
-        views: Number(article.views ?? 0),
-        relatedArticles: article.relatedArticles ?? [],
-      };
+      return normalizeArticle(article);
     }
 
     return await fetchJson<PublicBlogArticle>(resolveApiUrl(`/data/articles/${articleId}`));

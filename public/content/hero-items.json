@@ -1,1 +1,18 @@
-[]
+[
+  {
+    "id": "1783335845091",
+    "type": "event",
+    "order": 0,
+    "link_de": "/blog/1783335203372",
+    "excerpt_en": "We took home some awards, smiled politely, and only celebrated a little too hard afterward.",
+    "excerpt_de": "Wir haben ein paar Preise mit nach Hause genommen, höflich gelächelt und danach nur ein kleines bisschen zu hart gefeiert.",
+    "date": "",
+    "image": "https://i.ibb.co/1fKXNbdg/c366a3f75936.png",
+    "cta_de": "Mehr erfahren",
+    "isHomeScreen": false,
+    "link_en": "/blog/1783335203372",
+    "title_de": "Ausgezeichnet, anscheinend",
+    "cta_en": "Read More",
+    "title_en": "Awarded, Apparently"
+  }
+]

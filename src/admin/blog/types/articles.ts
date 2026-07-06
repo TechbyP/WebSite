@@ -29,6 +29,8 @@ export interface Article {
   readTime: string;
   category: string;
   image: string;
+  featured?: boolean;
+  trending?: boolean;
   relatedArticles: RelatedArticle[];
 }
 
