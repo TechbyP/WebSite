@@ -1,6 +1,6 @@
 {
   "version": "1.0",
-  "updatedAt": "2026-07-06T11:43:30.112Z",
+  "updatedAt": "2026-07-10T06:44:45.937Z",
   "source": "prebuild-script",
   "canonical": "https://www.techbyp.com/content/blog-index.json",
   "items": [
@@ -24,18 +24,18 @@
         "de": "Normalerweise bin ich nicht der Typ, der wie ein Kind im Süßwarenladen herumhüpft, aber ich muss zugeben, die Aufregung, die in mir wegen der Agritechnica 2025 brodelt, ist geradezu ansteckend. Dieses kolossale Landmaschinen-Spektakel "
       },
       "localizations": {
-        "de": {
-          "title": "TechByp fährt zur Agritechnica 2025 – und ja, wir haben den Tee eingepackt",
-          "summary": "Normalerweise bin ich nicht der Typ, der wie ein Kind im Süßwarenladen herumhüpft, aber ich muss zugeben, die Aufregung, die in mir wegen der Agritechnica 2025 brodelt, ist geradezu ansteckend. Dieses kolossale Landmaschinen-Spektakel "
-        },
         "en": {
           "title": "TechByp Is Heading to Agritechnica 2025 — And Yes, We've Packed the Tea",
           "summary": "Now, I'm not usually one to leap about like a child in a sweetshop, but I have to admit, the excitement bubbling inside me over Agritechnica 2025 is positively infectious. This colossal agricultural machinery bonanza lands in Hanover this November, sprawling like a mechanical city across acres, and yes, TechByp will be there—quietly confident, yet ready to show off some serious soil-sampling wizardry in Hall 21, Stand E06."
+        },
+        "de": {
+          "title": "TechByp fährt zur Agritechnica 2025 – und ja, wir haben den Tee eingepackt",
+          "summary": "Normalerweise bin ich nicht der Typ, der wie ein Kind im Süßwarenladen herumhüpft, aber ich muss zugeben, die Aufregung, die in mir wegen der Agritechnica 2025 brodelt, ist geradezu ansteckend. Dieses kolossale Landmaschinen-Spektakel "
         }
       },
       "available_locales": [
-        "de",
-        "en"
+        "en",
+        "de"
       ]
     },
     {
@@ -92,18 +92,18 @@
         "de": "Wir haben ein paar Preise mit nach Hause genommen, höflich gelächelt und danach nur ein kleines bisschen zu hart gefeiert."
       },
       "localizations": {
-        "de": {
-          "title": "Ausgezeichnet, anscheinend",
-          "summary": "Wir haben ein paar Preise mit nach Hause genommen, höflich gelächelt und danach nur ein kleines bisschen zu hart gefeiert."
-        },
         "en": {
           "title": "Awarded, Apparently",
           "summary": "We took home some awards, smiled politely, and only celebrated a little too hard afterward."
+        },
+        "de": {
+          "title": "Ausgezeichnet, anscheinend",
+          "summary": "Wir haben ein paar Preise mit nach Hause genommen, höflich gelächelt und danach nur ein kleines bisschen zu hart gefeiert."
         }
       },
       "available_locales": [
-        "de",
-        "en"
+        "en",
+        "de"
       ]
     },
     {

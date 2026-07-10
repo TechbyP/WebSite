@@ -48,7 +48,13 @@ function ConfiguratorPageContent() {
 export default function ConfiguratorPage() {
   const { t } = useTranslation();
 
-  const title = `${t('navbar.menu.configurator')} | TECHBYP`;
+  const legacyConfiguratorLabel = t('navbar.menu.configurator');
+  const configuratorLabel =
+    legacyConfiguratorLabel === 'navbar.menu.configurator'
+      ? t('productCard.configure')
+      : legacyConfiguratorLabel;
+
+  const title = `${configuratorLabel} | TECHBYP`;
   const description = t('configurator.productToast.desc1');
 
   return (

@@ -120,12 +120,6 @@ const CompanyInfo = () => {
                                 {t('contact_page.phone.number')}
                             </a>
                         </p>
-                        <p className="text-sm text-blue-400">
-                            {t('contact_page.phone.supportExt')}
-                        </p>
-                        <p className="text-sm text-blue-400">
-                            {t('contact_page.phone.salesExt')}
-                        </p>
                     </div>
                 </InfoCard>
 
@@ -145,12 +139,6 @@ const CompanyInfo = () => {
                             <a href="mailto:info@bodenprobetechnik.de" className="hover:text-green-400 transition-colors">
                                 {t('contact_page.email.main')}
                             </a>
-                        </p>
-                        <p className="text-sm text-blue-400">
-                            {t('contact_page.email.technical')}: support@bodenprobetechnik.de
-                        </p>
-                        <p className="text-sm text-blue-400">
-                            {t('contact_page.email.sales')}: sales@bodenprobetechnik.de
                         </p>
                     </div>
                 </InfoCard>

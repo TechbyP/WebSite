@@ -1,18 +1,18 @@
 [
   {
     "id": "1783335845091",
-    "type": "event",
-    "order": 0,
-    "link_de": "/blog/1783335203372",
-    "excerpt_en": "We took home some awards, smiled politely, and only celebrated a little too hard afterward.",
-    "excerpt_de": "Wir haben ein paar Preise mit nach Hause genommen, höflich gelächelt und danach nur ein kleines bisschen zu hart gefeiert.",
-    "date": "",
-    "image": "https://i.ibb.co/1fKXNbdg/c366a3f75936.png",
-    "cta_de": "Mehr erfahren",
-    "isHomeScreen": false,
+    "title_en": "Awarded, Apparently",
+    "image": "https://i.ibb.co/MD764q0v/04fe4401f209.png",
     "link_en": "/blog/1783335203372",
+    "excerpt_en": "TechByP at the DUP Unternehmer / diind event, where an award was collected, polite smiles were exchanged in abundance, and the celebration afterwards may have drifted slightly beyond the bounds of strict moderation.",
+    "link_de": "/blog/1783335203372",
+    "excerpt_de": "TechByP beim DUP Unternehmer / diind Event, bei dem eine Auszeichnung entgegengenommen wurde, höflich gelächelt wurde und die anschließende Feier möglicherweise ein kleines Stück über die Grenzen gepflegter Zurückhaltung hinausgeriet.",
     "title_de": "Ausgezeichnet, anscheinend",
+    "order": 0,
     "cta_en": "Read More",
-    "title_en": "Awarded, Apparently"
+    "date": "Frankfurt, 11.06.2026",
+    "isHomeScreen": false,
+    "cta_de": "Mehr erfahren",
+    "type": "event"
   }
 ]
