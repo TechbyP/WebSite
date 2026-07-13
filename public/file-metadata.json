@@ -1,6 +1,26 @@
 [
   {
     "id": "1",
+    "name": "BoprobIII - Ersatzteilzeichnung - DE.pdf",
+    "type": "pdf",
+    "category": "Document",
+    "size": "1.74 MB",
+    "date": "2026-07-13T06:32:03.794Z",
+    "url": "/files/BoprobIII - Ersatzteilzeichnung - DE.pdf",
+    "previewUrl": "/files/BoprobIII - Ersatzteilzeichnung - DE.pdf"
+  },
+  {
+    "id": "2",
+    "name": "DH_DE - Ersatzteilliste - DE.pdf",
+    "type": "pdf",
+    "category": "Document",
+    "size": "785.11 KB",
+    "date": "2026-07-03T07:30:48.000Z",
+    "url": "/files/DH_DE - Ersatzteilliste - DE.pdf",
+    "previewUrl": "/files/DH_DE - Ersatzteilliste - DE.pdf"
+  },
+  {
+    "id": "3",
     "name": "Flyer BOPROB III_ DE.pdf",
     "type": "pdf",
     "category": "Brochure",
@@ -10,7 +30,7 @@
     "previewUrl": "/files/Flyer BOPROB III_ DE.pdf"
   },
   {
-    "id": "2",
+    "id": "4",
     "name": "Flyer BOPROB III_ ENG.pdf",
     "type": "pdf",
     "category": "Brochure",
@@ -20,7 +40,7 @@
     "previewUrl": "/files/Flyer BOPROB III_ ENG.pdf"
   },
   {
-    "id": "3",
+    "id": "5",
     "name": "Flyer DE-1.30 DE.pdf",
     "type": "pdf",
     "category": "Brochure",
@@ -30,7 +50,7 @@
     "previewUrl": "/files/Flyer DE-1.30 DE.pdf"
   },
   {
-    "id": "4",
+    "id": "6",
     "name": "Flyer DE-1.30 ENG.pdf",
     "type": "pdf",
     "category": "Brochure",
@@ -40,7 +60,7 @@
     "previewUrl": "/files/Flyer DE-1.30 ENG.pdf"
   },
   {
-    "id": "5",
+    "id": "7",
     "name": "Flyer DH-1.30 DE.pdf",
     "type": "pdf",
     "category": "Brochure",
@@ -50,7 +70,7 @@
     "previewUrl": "/files/Flyer DH-1.30 DE.pdf"
   },
   {
-    "id": "6",
+    "id": "8",
     "name": "Flyer DH-1.30 ENG.pdf",
     "type": "pdf",
     "category": "Brochure",
@@ -60,7 +80,7 @@
     "previewUrl": "/files/Flyer DH-1.30 ENG.pdf"
   },
   {
-    "id": "7",
+    "id": "9",
     "name": "Flyer MP-1.90 DE.pdf",
     "type": "pdf",
     "category": "Brochure",
@@ -70,7 +90,7 @@
     "previewUrl": "/files/Flyer MP-1.90 DE.pdf"
   },
   {
-    "id": "8",
+    "id": "10",
     "name": "Flyer MP-1.90 ENG.pdf",
     "type": "pdf",
     "category": "Brochure",
@@ -80,7 +100,7 @@
     "previewUrl": "/files/Flyer MP-1.90 ENG.pdf"
   },
   {
-    "id": "9",
+    "id": "11",
     "name": "Flyer MP-2.60 DE.pdf",
     "type": "pdf",
     "category": "Brochure",
@@ -90,7 +110,7 @@
     "previewUrl": "/files/Flyer MP-2.60 DE.pdf"
   },
   {
-    "id": "10",
+    "id": "12",
     "name": "Flyer MP-2.60 ENG.pdf",
     "type": "pdf",
     "category": "Brochure",
@@ -100,7 +120,7 @@
     "previewUrl": "/files/Flyer MP-2.60 ENG.pdf"
   },
   {
-    "id": "11",
+    "id": "13",
     "name": "Flyer MP-2.60 RO.pdf",
     "type": "pdf",
     "category": "Brochure",
@@ -110,7 +130,7 @@
     "previewUrl": "/files/Flyer MP-2.60 RO.pdf"
   },
   {
-    "id": "12",
+    "id": "14",
     "name": "Flyer MP-3.90 DE.pdf",
     "type": "pdf",
     "category": "Brochure",
@@ -120,7 +140,7 @@
     "previewUrl": "/files/Flyer MP-3.90 DE.pdf"
   },
   {
-    "id": "13",
+    "id": "15",
     "name": "Flyer MP-3.90 ENG.pdf",
     "type": "pdf",
     "category": "Brochure",
@@ -130,7 +150,7 @@
     "previewUrl": "/files/Flyer MP-3.90 ENG.pdf"
   },
   {
-    "id": "14",
+    "id": "16",
     "name": "Flyer MP-4.100 DE.pdf",
     "type": "pdf",
     "category": "Brochure",
@@ -140,7 +160,7 @@
     "previewUrl": "/files/Flyer MP-4.100 DE.pdf"
   },
   {
-    "id": "15",
+    "id": "17",
     "name": "Flyer MP-4.100 ENG.pdf",
     "type": "pdf",
     "category": "Brochure",
@@ -148,5 +168,15 @@
     "date": "2025-10-07T09:12:58.740Z",
     "url": "/files/Flyer MP-4.100 ENG.pdf",
     "previewUrl": "/files/Flyer MP-4.100 ENG.pdf"
+  },
+  {
+    "id": "18",
+    "name": "MP - Ersatzteilliste - DE.pdf",
+    "type": "pdf",
+    "category": "Document",
+    "size": "2.50 MB",
+    "date": "2024-09-23T11:24:46.000Z",
+    "url": "/files/MP - Ersatzteilliste - DE.pdf",
+    "previewUrl": "/files/MP - Ersatzteilliste - DE.pdf"
   }
 ]

@@ -255,3 +255,15 @@ body {
 .dark strong {
   color: #f9fafb; /* Tailwind gray-100 */
 }
+
+/* Hide native number input spinners so custom quantity controls stay clean. */
+.no-spinner::-webkit-outer-spin-button,
+.no-spinner::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+.no-spinner[type='number'] {
+  appearance: textfield;
+  -moz-appearance: textfield;
+}

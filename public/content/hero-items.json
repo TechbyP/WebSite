@@ -2,17 +2,17 @@
   {
     "id": "1783335845091",
     "title_en": "Awarded, Apparently",
-    "image": "https://i.ibb.co/MD764q0v/04fe4401f209.png",
-    "link_en": "/blog/1783335203372",
-    "excerpt_en": "TechByP at the DUP Unternehmer / diind event, where an award was collected, polite smiles were exchanged in abundance, and the celebration afterwards may have drifted slightly beyond the bounds of strict moderation.",
-    "link_de": "/blog/1783335203372",
-    "excerpt_de": "TechByP beim DUP Unternehmer / diind Event, bei dem eine Auszeichnung entgegengenommen wurde, höflich gelächelt wurde und die anschließende Feier möglicherweise ein kleines Stück über die Grenzen gepflegter Zurückhaltung hinausgeriet.",
     "title_de": "Ausgezeichnet, anscheinend",
     "order": 0,
-    "cta_en": "Read More",
-    "date": "Frankfurt, 11.06.2026",
-    "isHomeScreen": false,
+    "image": "https://i.ibb.co/MD764q0v/04fe4401f209.png",
     "cta_de": "Mehr erfahren",
-    "type": "event"
+    "date": "Frankfurt, 11.06.2026",
+    "cta_en": "Read More",
+    "excerpt_de": "TechByP beim DUP Unternehmer / diind Event, bei dem eine Auszeichnung entgegengenommen wurde, höflich gelächelt wurde und die anschließende Feier möglicherweise ein kleines Stück über die Grenzen gepflegter Zurückhaltung hinausgeriet.",
+    "type": "event",
+    "link_de": "/blog/1783335203372",
+    "isHomeScreen": false,
+    "link_en": "/blog/1783335203372",
+    "excerpt_en": "TechByP at the DUP Unternehmer / diind event, where an award was collected, polite smiles were exchanged in abundance, and the celebration afterwards may have drifted slightly beyond the bounds of strict moderation."
   }
 ]
