@@ -301,6 +301,33 @@ def parse_mp_catalog() -> dict[str, Any]:
         else:
             items = parse_spare_rows(text)
 
+        if page_number == 3:
+            page_three_fallback = [
+                {
+                    "pos": 6,
+                    "articleNumber": "UP.106.00",
+                    "name": "Verbindungsbolzen Hydraulikzylinder",
+                    "defaultQty": 2,
+                },
+                {
+                    "pos": 7,
+                    "articleNumber": "Z-00059",
+                    "name": "Zylinderschraube mit Innensechskant und Schaft",
+                    "defaultQty": 12,
+                },
+            ]
+
+            for fallback_item in page_three_fallback:
+                exists = any(
+                    item["pos"] == fallback_item["pos"]
+                    and item["articleNumber"] == fallback_item["articleNumber"]
+                    for item in items
+                )
+                if not exists:
+                    items.append(fallback_item)
+
+            items.sort(key=lambda item: (item["pos"], item["articleNumber"]))
+
         for merge_page in merge_pages:
             merge_index = merge_page - 1
             if merge_index < 0 or merge_index >= len(reader.pages):

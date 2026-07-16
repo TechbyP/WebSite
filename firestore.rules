@@ -52,6 +52,11 @@ service cloud.firestore {
       allow create, update, delete: if isSignedIn();
     }
 
+    match /sparePartsCatalogs/{catalogId} {
+      allow read: if true;
+      allow create, update, delete: if isSignedIn();
+    }
+
     match /comments/{commentId} {
       allow read: if true;
       allow create: if validPublicComment();

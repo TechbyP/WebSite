@@ -949,6 +949,18 @@ const RAW_GENERATED_SPARE_PARTS =
             "defaultQty": 1
           },
           {
+            "pos": 6,
+            "articleNumber": "UP.106.00",
+            "name": "Verbindungsbolzen Hydraulikzylinder",
+            "defaultQty": 2
+          },
+          {
+            "pos": 7,
+            "articleNumber": "Z-00059",
+            "name": "Zylinderschraube mit Innensechskant und Schaft",
+            "defaultQty": 12
+          },
+          {
             "pos": 8,
             "articleNumber": "Z-00080",
             "name": "Sechskantmutter mit Klemmteile",

@@ -1,5 +1,6 @@
 import { DH_DE_SPARE_PARTS_ASSEMBLIES, DH_DE_SPARE_PARTS_PRODUCT_IDS } from './sparePartsDhDe';
 import { GENERATED_SPARE_PARTS_CATALOGS } from './sparePartsGenerated';
+import { SPARE_PARTS_HOTSPOTS, type SparePartHotspot } from './sparePartsHotspots';
 import towerImage from '../assets/Technical/generated/spare-parts/dh-de/spare-parts-page-2.png?url';
 import earthContainerImage from '../assets/Technical/generated/spare-parts/dh-de/spare-parts-page-3.png?url';
 import carriageImage from '../assets/Technical/generated/spare-parts/dh-de/spare-parts-page-4.png?url';
@@ -20,6 +21,7 @@ export interface SparePartsAssembly {
   imageUrl: string;
   items: SparePartItem[];
   models?: SparePartsModelKey[];
+  hotspots?: SparePartHotspot[];
 }
 
 export interface SparePartsCatalog {
@@ -55,13 +57,34 @@ const dhDeCatalog: SparePartsCatalog = {
   })),
 };
 
+const withAssemblyHotspots = (catalog: SparePartsCatalog): SparePartsCatalog => {
+  const catalogHotspots = SPARE_PARTS_HOTSPOTS[catalog.id];
+
+  if (!catalogHotspots) {
+    return catalog;
+  }
+
+  return {
+    ...catalog,
+    assemblies: catalog.assemblies.map((assembly) => ({
+      ...assembly,
+      hotspots: catalogHotspots[assembly.id],
+    })),
+  };
+};
+
 export const SPARE_PARTS_CATALOGS: SparePartsCatalog[] = [
-  dhDeCatalog,
-  ...GENERATED_SPARE_PARTS_CATALOGS,
+  withAssemblyHotspots(dhDeCatalog),
+  ...GENERATED_SPARE_PARTS_CATALOGS.map(withAssemblyHotspots),
 ];
 
+export const findSparePartsCatalogForProduct = (
+  productId: number,
+  catalogs: SparePartsCatalog[]
+): SparePartsCatalog | undefined => catalogs.find((catalog) => catalog.productIds.includes(productId));
+
 export const getSparePartsCatalogForProduct = (productId: number): SparePartsCatalog | undefined =>
-  SPARE_PARTS_CATALOGS.find((catalog) => catalog.productIds.includes(productId));
+  findSparePartsCatalogForProduct(productId, SPARE_PARTS_CATALOGS);
 
 export const getSparePartsModelForProduct = (
   catalog: SparePartsCatalog,

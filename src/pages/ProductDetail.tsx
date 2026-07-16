@@ -1,4 +1,4 @@
-import { useState, useEffect } from 'react';
+import { useState, useEffect, useMemo } from 'react';
 import { useParams, useNavigate } from 'react-router-dom';
 import { ChevronLeft, ChevronRight, ShoppingCart, FileText, Users, Award, Wrench } from 'lucide-react';
 import OrderNow from '../components/OrderNow';
@@ -21,9 +21,12 @@ import { loadProductGallery } from '../data/productGalleryLoaders';
 import { buildCanonicalUrl, normalizeResourceId, toAbsoluteUrl } from '../utils/seo';
 import SparePartsSection from '../components/spareParts/SparePartsSection';
 import {
-  getSparePartsCatalogForProduct,
+  findSparePartsCatalogForProduct,
   getSparePartsModelForProduct,
+  SPARE_PARTS_CATALOGS,
+  type SparePartsCatalog,
 } from '../data/sparePartsCatalog';
+import { loadManagedSparePartsCatalogs } from '../data/sparePartsCms';
 
 const ProductDetail = () => {
   const { t } = useTranslation();
@@ -141,6 +144,7 @@ const ProductDetail = () => {
   const [isSparePartsModalOpen, setIsSparePartsModalOpen] = useState(false);
   const [selectedProductId, setSelectedProductId] = useState<string | null>(null);
   const [gallery, setGallery] = useState<string[]>([]);
+  const [managedSparePartsCatalogs, setManagedSparePartsCatalogs] = useState<SparePartsCatalog[] | null>(null);
   const currentLanguage = i18n.language; // Get current language
 
   useEffect(() => {
@@ -179,12 +183,52 @@ const ProductDetail = () => {
     };
   }, [product]);
 
+  useEffect(() => {
+    let cancelled = false;
+
+    void loadManagedSparePartsCatalogs()
+      .then((catalogs) => {
+        if (cancelled) {
+          return;
+        }
+
+        setManagedSparePartsCatalogs(catalogs);
+      })
+      .catch(() => {
+        if (!cancelled) {
+          setManagedSparePartsCatalogs([]);
+        }
+      });
+
+    return () => {
+      cancelled = true;
+    };
+  }, []);
+
   if (!product) {
     return <div className="dark:text-white">{t('product.notFound')}</div>;
   }
 
   const relatedProducts = getProductsByCategory(product.category || '').filter((entry) => entry.id !== product.id);
-  const sparePartsCatalog = getSparePartsCatalogForProduct(product.id);
+  const effectiveSparePartsCatalogs = useMemo(() => {
+    if (!managedSparePartsCatalogs || managedSparePartsCatalogs.length === 0) {
+      return SPARE_PARTS_CATALOGS;
+    }
+
+    const merged = new Map<string, SparePartsCatalog>();
+
+    for (const catalog of SPARE_PARTS_CATALOGS) {
+      merged.set(catalog.id, catalog);
+    }
+
+    for (const catalog of managedSparePartsCatalogs) {
+      merged.set(catalog.id, catalog);
+    }
+
+    return [...merged.values()];
+  }, [managedSparePartsCatalogs]);
+
+  const sparePartsCatalog = findSparePartsCatalogForProduct(product.id, effectiveSparePartsCatalogs);
   const hasSpareParts = Boolean(sparePartsCatalog);
   const sparePartsModel = sparePartsCatalog
     ? getSparePartsModelForProduct(sparePartsCatalog, product.id)
@@ -715,27 +759,33 @@ const ProductDetail = () => {
       </div>
 
       <div
-  className="mobile-order-sticky lg:hidden fixed bottom-0 left-0 right-0 flex justify-around gap-2 p-2 bg-white dark:bg-gray-900 border-t border-gray-200 dark:border-gray-700 z-50"
+  className={`mobile-order-sticky lg:hidden fixed bottom-0 left-0 right-0 grid gap-2 p-2 pb-[calc(0.5rem+env(safe-area-inset-bottom,0px))] bg-white dark:bg-gray-900 border-t border-gray-200 dark:border-gray-700 z-50 ${
+    isConfigurableProduct && hasSpareParts
+      ? 'grid-cols-3'
+      : (isConfigurableProduct || hasSpareParts)
+        ? 'grid-cols-2'
+        : 'grid-cols-1'
+  }`}
 >
   <button
     onClick={() => {
       setSelectedProductId(product.id.toString());
       setShowOrderModal(true);
     }}
-    className={`mobile-order-button flex-1 flex items-center justify-center gap-2 px-4 py-3 font-medium text-white rounded-lg transition-colors ${
+    className={`mobile-order-button min-w-0 flex h-full min-h-[56px] flex-col items-center justify-center gap-1 px-2 py-2 text-center text-[11px] font-medium leading-tight text-white rounded-lg transition-colors ${
       isConfigurableProduct
         ? "bg-brandgreen hover:bg-green-900"
         : "bg-brandgreen hover:bg-green-900 w-full"
     }`}
   >
     <ShoppingCart className="h-5 w-5" />
-    {t('product.order')}
+    <span className="block w-full break-words">{t('product.order')}</span>
   </button>
 
   {isConfigurableProduct && (
     <button
       onClick={() => showProductToast(product)}
-      className="mobile-order-button flex-1 flex items-center justify-center gap-2 px-4 py-3 font-medium rounded-lg border border-brandgreen text-brandgreen bg-white dark:bg-gray-800 hover:bg-brandgreen hover:text-white transition-colors"
+      className="mobile-order-button min-w-0 flex h-full min-h-[56px] flex-col items-center justify-center gap-1 px-2 py-2 text-center text-[11px] font-medium leading-tight rounded-lg border border-brandgreen text-brandgreen bg-white dark:bg-gray-800 hover:bg-brandgreen hover:text-white transition-colors"
     >
       <svg
         xmlns="http://www.w3.org/2000/svg"
@@ -751,18 +801,18 @@ const ProductDetail = () => {
           d="M9 5H7a2 2 0 00-2 2v12a2 2 0 002 2h10a2 2 0 002-2V7a2 2 0 00-2-2h-2M9 5a2 2 0 002 2h2a2 2 0 002-2M9 5a2 2 0 012-2h2a2 2 0 012 2"
         />
       </svg>
-      {t('product.configure')}
+      <span className="block w-full break-words">{t('product.configure')}</span>
     </button>
   )}
 
   {hasSpareParts && (
     <button
       onClick={() => setIsSparePartsModalOpen(true)}
-      className="mobile-order-button flex-1 flex items-center justify-center gap-2 px-3 py-3 font-medium rounded-lg border border-brandgreen text-brandgreen bg-white dark:bg-gray-800 hover:bg-brandgreen hover:text-white transition-colors"
+      className="mobile-order-button min-w-0 flex h-full min-h-[56px] flex-col items-center justify-center gap-1 px-2 py-2 text-center text-[11px] font-medium leading-tight rounded-lg border border-brandgreen text-brandgreen bg-white dark:bg-gray-800 hover:bg-brandgreen hover:text-white transition-colors"
       aria-label={t('spareParts.jumpButton', { defaultValue: 'Open Spare Parts' })}
     >
       <Wrench className="h-5 w-5" />
-      <span className="truncate">{t('spareParts.jumpButton', { defaultValue: 'Open Spare Parts' })}</span>
+      <span className="block w-full break-words">{t('spareParts.jumpButton', { defaultValue: 'Open Spare Parts' })}</span>
     </button>
   )}
 </div>
