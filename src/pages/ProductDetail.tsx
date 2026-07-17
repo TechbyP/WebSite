@@ -26,7 +26,10 @@ import {
   SPARE_PARTS_CATALOGS,
   type SparePartsCatalog,
 } from '../data/sparePartsCatalog';
-import { loadManagedSparePartsCatalogs } from '../data/sparePartsCms';
+import {
+  loadManagedSparePartsCatalogs,
+  mergeManagedSparePartsCatalogWithBase,
+} from '../data/sparePartsCms';
 
 const ProductDetail = () => {
   const { t } = useTranslation();
@@ -222,6 +225,12 @@ const ProductDetail = () => {
     }
 
     for (const catalog of managedSparePartsCatalogs) {
+      const baseCatalog = merged.get(catalog.id);
+      if (baseCatalog) {
+        merged.set(catalog.id, mergeManagedSparePartsCatalogWithBase(baseCatalog, catalog));
+        continue;
+      }
+
       merged.set(catalog.id, catalog);
     }
 

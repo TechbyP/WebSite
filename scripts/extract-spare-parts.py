@@ -71,11 +71,66 @@ def parse_spare_rows(raw_text: str) -> list[dict[str, Any]]:
     rows: list[dict[str, Any]] = []
     seen: set[tuple[int, str, str]] = set()
 
-    for raw_line in raw_text.splitlines():
-        line = clean_text(raw_line)
+    normalized_lines: list[str] = []
+    source_lines = [clean_text(raw_line) for raw_line in raw_text.splitlines()]
+    line_index = 0
+
+    while line_index < len(source_lines):
+        line = source_lines[line_index]
 
         if not line:
+            line_index += 1
             continue
+
+        # Repair wrapped rows like:
+        # "3 MP-UP.203.00-" + "02 Kettenradwelle oben 1"
+        split_article_match = re.match(r"^(\d+)\s+([A-Za-z0-9._/\-]+-)$", line)
+        if split_article_match and line_index + 1 < len(source_lines):
+            continuation = source_lines[line_index + 1]
+            continuation_match = re.match(r"^(\d{2})\s+(.+)$", continuation)
+            if continuation_match:
+                line = (
+                    f"{split_article_match.group(1)} "
+                    f"{split_article_match.group(2)}{continuation_match.group(1)} "
+                    f"{continuation_match.group(2)}"
+                )
+                line_index += 1
+            else:
+                # Repair wrapped rows like:
+                # "20 MP-" + "UP.3001.00-01 Erdbehaelter links 1"
+                continuation_article_match = re.match(r"^([A-Za-z0-9._/\-]+)\s+(.+)$", continuation)
+                if continuation_article_match:
+                    line = (
+                        f"{split_article_match.group(1)} "
+                        f"{split_article_match.group(2)}{continuation_article_match.group(1)} "
+                        f"{continuation_article_match.group(2)}"
+                    )
+                    line_index += 1
+
+        # Repair wrapped descriptions where quantity appears on the following line, e.g.:
+        # "17 Z-00075 Zylinderschraube mit" + "Innensechskant 4"
+        row_start_match = re.match(r"^\d+\s+[A-Za-z0-9._/\-]+\s+.+$", line)
+        has_trailing_qty = re.search(r"(?<![A-Za-z0-9])(\d+)\s*$", line) is not None
+
+        while row_start_match and not has_trailing_qty and line_index + 1 < len(source_lines):
+            continuation = source_lines[line_index + 1]
+
+            if not continuation:
+                line_index += 1
+                continue
+
+            # Stop when the next row starts.
+            if re.match(r"^\d+\s+[A-Za-z0-9._/\-]+\s+.+$", continuation):
+                break
+
+            line = f"{line} {continuation}".strip()
+            line_index += 1
+            has_trailing_qty = re.search(r"(?<![A-Za-z0-9])(\d+)\s*$", line) is not None
+
+        normalized_lines.append(line)
+        line_index += 1
+
+    for line in normalized_lines:
 
         # Repair split article numbers like "MP-UP.203.00- 02".
         line = re.sub(r"([A-Za-z0-9.]+-)\s+(\d{2})(?=\s)", r"\1\2", line)

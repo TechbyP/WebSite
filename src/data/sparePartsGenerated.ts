@@ -1083,9 +1083,9 @@ const RAW_GENERATED_SPARE_PARTS =
             "defaultQty": 1
           },
           {
-            "pos": 2,
-            "articleNumber": "Kettenradwelle",
-            "name": "oben",
+            "pos": 3,
+            "articleNumber": "MP-UP.203.00-02",
+            "name": "Kettenradwelle oben",
             "defaultQty": 1
           },
           {
@@ -1135,6 +1135,12 @@ const RAW_GENERATED_SPARE_PARTS =
             "articleNumber": "UP.209.00-01",
             "name": "Schaltschrankhalterung",
             "defaultQty": 2
+          },
+          {
+            "pos": 11,
+            "articleNumber": "MP-UP.210.00-02",
+            "name": "Alu-Sensorhalterung",
+            "defaultQty": 1
           },
           {
             "pos": 12,
@@ -1616,9 +1622,9 @@ const RAW_GENERATED_SPARE_PARTS =
           },
           {
             "pos": 2,
-            "articleNumber": "Abdeckblech",
-            "name": "Nabe",
-            "defaultQty": 1
+            "articleNumber": "DP-UP.302.00-01",
+            "name": "Eckpfosten",
+            "defaultQty": 2
           },
           {
             "pos": 3,
@@ -1630,6 +1636,12 @@ const RAW_GENERATED_SPARE_PARTS =
             "pos": 4,
             "articleNumber": "Z-DP-UP.304.00",
             "name": "Rastbolzen",
+            "defaultQty": 2
+          },
+          {
+            "pos": 5,
+            "articleNumber": "Z-MP-UP.304.01",
+            "name": "Rastbolzen mit Rastsperre",
             "defaultQty": 2
           },
           {
@@ -1675,6 +1687,18 @@ const RAW_GENERATED_SPARE_PARTS =
             "defaultQty": 1
           },
           {
+            "pos": 13,
+            "articleNumber": "MP-UP.314.00-01",
+            "name": "Ausr\u00e4umer 15mm",
+            "defaultQty": 1
+          },
+          {
+            "pos": 14,
+            "articleNumber": "DP-UP.317.00-02",
+            "name": "Abdeckblech Nabe",
+            "defaultQty": 1
+          },
+          {
             "pos": 15,
             "articleNumber": "MP4.321.00",
             "name": "Magazinverst\u00e4rkungswinkel links",
@@ -1705,6 +1729,18 @@ const RAW_GENERATED_SPARE_PARTS =
             "defaultQty": 2
           },
           {
+            "pos": 20,
+            "articleNumber": "MP-UP.3001.00-01",
+            "name": "Erdbeh\u00e4lter links",
+            "defaultQty": 1
+          },
+          {
+            "pos": 21,
+            "articleNumber": "MP-UP.3002.00-01",
+            "name": "Erdbeh\u00e4lter rechts",
+            "defaultQty": 1
+          },
+          {
             "pos": 22,
             "articleNumber": "MP-UP.3005.00",
             "name": "Verschlei\u00dfplatte",
@@ -1733,6 +1769,12 @@ const RAW_GENERATED_SPARE_PARTS =
             "articleNumber": "Z-00114",
             "name": "Sechskantschraube",
             "defaultQty": 2
+          },
+          {
+            "pos": 28,
+            "articleNumber": "MP-UP.315.00-01",
+            "name": "Ausr\u00e4umer 12mm",
+            "defaultQty": 1
           },
           {
             "pos": 29,
@@ -1848,6 +1890,12 @@ const RAW_GENERATED_SPARE_PARTS =
             "defaultQty": 1
           },
           {
+            "pos": 17,
+            "articleNumber": "Z-00075",
+            "name": "Zylinderschraube mit Innensechskant",
+            "defaultQty": 4
+          },
+          {
             "pos": 18,
             "articleNumber": "Z-00078",
             "name": "Sicherungsring innen",
@@ -1896,6 +1944,12 @@ const RAW_GENERATED_SPARE_PARTS =
             "defaultQty": 4
           },
           {
+            "pos": 26,
+            "articleNumber": "Z-00",
+            "name": "Zylinderkopfschraube mit Innensechskant",
+            "defaultQty": 2
+          },
+          {
             "pos": 28,
             "articleNumber": "Z-MP-UP.401.00",
             "name": "Hydraulikmotor",
@@ -1912,6 +1966,12 @@ const RAW_GENERATED_SPARE_PARTS =
             "articleNumber": "UP.403.00-02",
             "name": "Klemmbacke f\u00fcr Hammerwerk",
             "defaultQty": 2
+          },
+          {
+            "pos": 31,
+            "articleNumber": "UP.403.01",
+            "name": "Schraubensatz f\u00fcr Hammerwerk M10",
+            "defaultQty": 1
           },
           {
             "pos": 32,
@@ -2131,13 +2191,17 @@ const normalizeAssemblies = (
     .filter((assembly) => assembly.id !== 'mp_page_05')
     .map((assembly) => {
       if (assembly.id === 'mp_page_04' && towerPartOne) {
+        const mergedTowerItems = towerPartTwo
+          ? [...towerPartOne.items, ...towerPartTwo.items]
+          : [...towerPartOne.items];
+
         return {
           ...towerPartOne,
           title: 'Turm',
           imageAsset: 'mp/mp-page-04.png',
-          items: towerPartTwo
-            ? [...towerPartOne.items, ...towerPartTwo.items]
-            : towerPartOne.items,
+          items: mergedTowerItems.sort(
+            (left, right) => left.pos - right.pos || left.articleNumber.localeCompare(right.articleNumber)
+          ),
         };
       }
 

@@ -15,6 +15,7 @@ import {
   cloneSparePartsCatalog,
   deleteManagedSparePartsCatalog,
   loadManagedSparePartsCatalogs,
+  mergeManagedSparePartsCatalogWithBase,
   saveManagedSparePartsCatalog,
   uploadSparePartsAssemblyImage,
 } from '../../data/sparePartsCms';
@@ -134,7 +135,23 @@ export default function SparePartsHotspotAdmin({ isDarkMode }: Props) {
 
     try {
       const managedCatalogs = await loadManagedSparePartsCatalogs();
-      const sourceCatalogs = managedCatalogs.length > 0 ? managedCatalogs : SPARE_PARTS_CATALOGS;
+      const mergedCatalogs = new Map<string, SparePartsCatalog>();
+
+      for (const catalog of SPARE_PARTS_CATALOGS) {
+        mergedCatalogs.set(catalog.id, catalog);
+      }
+
+      for (const catalog of managedCatalogs) {
+        const baseCatalog = mergedCatalogs.get(catalog.id);
+        if (baseCatalog) {
+          mergedCatalogs.set(catalog.id, mergeManagedSparePartsCatalogWithBase(baseCatalog, catalog));
+          continue;
+        }
+
+        mergedCatalogs.set(catalog.id, catalog);
+      }
+
+      const sourceCatalogs = [...mergedCatalogs.values()];
       const editableCatalogs = sourceCatalogs.map((catalog) => cloneSparePartsCatalog(catalog));
 
       setCatalogs(editableCatalogs);
@@ -316,8 +333,11 @@ export default function SparePartsHotspotAdmin({ isDarkMode }: Props) {
     try {
       await saveManagedSparePartsCatalog(selectedCatalog);
       toast.success(t('sparePartsAdmin.saveCatalogSuccess', { defaultValue: 'Catalog saved.' }));
-    } catch {
-      toast.error(t('sparePartsAdmin.saveCatalogError', { defaultValue: 'Failed to save catalog.' }));
+    } catch (error) {
+      const details = error instanceof Error && error.message ? ` (${error.message})` : '';
+      toast.error(
+        `${t('sparePartsAdmin.saveCatalogError', { defaultValue: 'Failed to save catalog.' })}${details}`
+      );
     } finally {
       setIsBusy(false);
     }
@@ -501,6 +521,43 @@ export default function SparePartsHotspotAdmin({ isDarkMode }: Props) {
       );
     } catch {
       toast.error(t('sparePartsAdmin.importTunedError', { defaultValue: 'Failed to import tuned hotspots.' }));
+    }
+  };
+
+  const handleLiveEditorHotspotsSaved = async (assemblyId: string, hotspots: SparePartHotspot[]) => {
+    if (!selectedCatalog) {
+      return;
+    }
+
+    const normalizedHotspots = hotspots.map((hotspot) => ({
+      ...hotspot,
+      articleNumbers: hotspot.articleNumbers ? [...hotspot.articleNumbers] : undefined,
+    }));
+
+    const nextCatalog: SparePartsCatalog = {
+      ...selectedCatalog,
+      assemblies: selectedCatalog.assemblies.map((assembly) =>
+        assembly.id === assemblyId
+          ? {
+              ...assembly,
+              hotspots: normalizedHotspots,
+            }
+          : assembly
+      ),
+    };
+
+    setCatalogs((previous) =>
+      previous.map((catalog) => (catalog.id === nextCatalog.id ? nextCatalog : catalog))
+    );
+
+    try {
+      await saveManagedSparePartsCatalog(nextCatalog);
+      toast.success(t('sparePartsAdmin.saveCatalogSuccess', { defaultValue: 'Catalog saved.' }));
+    } catch (error) {
+      const details = error instanceof Error && error.message ? ` (${error.message})` : '';
+      toast.error(
+        `${t('sparePartsAdmin.saveCatalogError', { defaultValue: 'Failed to save catalog.' })}${details}`
+      );
     }
   };
 
@@ -1252,6 +1309,9 @@ export default function SparePartsHotspotAdmin({ isDarkMode }: Props) {
         catalog={selectedCatalog}
         activeModel={liveEditorModel}
         editingEnabled
+        onHotspotsSaved={(assemblyId, hotspots) => {
+          void handleLiveEditorHotspotsSaved(assemblyId, hotspots);
+        }}
         isOpen={isLiveEditorOpen}
         onClose={() => setIsLiveEditorOpen(false)}
       />

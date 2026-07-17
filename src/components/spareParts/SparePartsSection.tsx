@@ -1,5 +1,5 @@
 import { useEffect, useMemo, useState, type CSSProperties } from 'react';
-import { ChevronLeft, ChevronRight, ShoppingBasket, Trash2, X } from 'lucide-react';
+import { ChevronLeft, ChevronRight, Search, ShoppingBasket, Trash2, X } from 'lucide-react';
 import { useTranslation } from 'react-i18next';
 import { useHeader } from '../../pages/Header';
 import type { SparePartHotspot } from '../../data/sparePartsHotspots';
@@ -20,11 +20,11 @@ type Props = {
   catalog: SparePartsCatalog;
   activeModel?: SparePartsModelKey;
   editingEnabled?: boolean;
+  onHotspotsSaved?: (assemblyId: string, hotspots: SparePartHotspot[]) => void;
   isOpen: boolean;
   onClose: () => void;
 };
 
-type SparePartsViewMode = 'legacy' | 'interactive';
 
 const getItemKey = (assemblyId: string, articleNumber: string) =>
   `${assemblyId}:${articleNumber}`;
@@ -39,12 +39,6 @@ const clampQuantity = (value: number) => {
 
   return Math.min(999, Math.max(1, Math.floor(value)));
 };
-
-const quantityButtonClass =
-  'inline-flex h-10 w-10 sm:h-8 sm:w-8 items-center justify-center rounded border border-gray-300 dark:border-gray-600 text-gray-700 dark:text-gray-200 hover:bg-gray-100 dark:hover:bg-gray-700';
-
-const compactQuantityButtonClass =
-  'inline-flex h-9 w-9 sm:h-7 sm:w-7 items-center justify-center rounded border border-gray-300 dark:border-gray-600 text-gray-700 dark:text-gray-200 hover:bg-gray-100 dark:hover:bg-gray-700';
 
 const basketQuantityButtonClass =
   'inline-flex h-9 w-9 sm:h-7 sm:w-7 items-center justify-center rounded border border-gray-300 dark:border-gray-600 text-gray-700 dark:text-gray-200 hover:bg-gray-100 dark:hover:bg-gray-700';
@@ -158,18 +152,17 @@ export default function SparePartsSection({
   catalog,
   activeModel,
   editingEnabled = false,
+  onHotspotsSaved,
   isOpen,
   onClose,
 }: Props) {
-  const { t, i18n } = useTranslation();
+  const { t } = useTranslation();
   const { isVisible: isHeaderVisible, height: headerHeight } = useHeader();
   const storageKey = `${catalog.storageKey}:${activeModel || 'all'}`;
   const [activeAssemblyId, setActiveAssemblyId] = useState<string>(catalog.assemblies[0]?.id || '');
-  const [searchTerm, setSearchTerm] = useState('');
   const [requestedQuantities, setRequestedQuantities] = useState<Record<string, number>>({});
-  const [isImageViewerOpen, setIsImageViewerOpen] = useState(false);
-  const [activeViewMode, setActiveViewMode] = useState<SparePartsViewMode>('interactive');
   const [showHotspotMarkers, setShowHotspotMarkers] = useState(false);
+  const [isImageZoomed, setIsImageZoomed] = useState(false);
   const [isMobileViewport, setIsMobileViewport] = useState(false);
   const [isCoarsePointer, setIsCoarsePointer] = useState(false);
   const [isHotspotTuningMode, setIsHotspotTuningMode] = useState(false);
@@ -208,7 +201,8 @@ export default function SparePartsSection({
   );
 
   const canEditHotspots = editingEnabled;
-  const shouldShowAssemblyImage = activeAssembly?.id !== 'mp_page_11';
+  const shouldShowAssemblyImage =
+    Boolean(activeAssembly?.imageUrl) && activeAssembly?.id !== 'mp_page_11';
 
   const getAssemblyTitle = (assemblyId: string) =>
     catalog.id === 'dh-de'
@@ -475,6 +469,7 @@ export default function SparePartsSection({
     setHoveredHotspotId(null);
     setActiveHotspotArticleNumber(null);
     setIsHotspotTuningMode(false);
+    setIsImageZoomed(false);
     setTuningCopyFeedback(null);
   }, [activeAssemblyId]);
 
@@ -488,11 +483,9 @@ export default function SparePartsSection({
 
   useEffect(() => {
     setActiveAssemblyId(catalog.assemblies[0]?.id || '');
-    setSearchTerm('');
     setRequestedQuantities({});
-    setIsImageViewerOpen(false);
-    setActiveViewMode('interactive');
     setShowHotspotMarkers(false);
+    setIsImageZoomed(false);
     setIsHotspotTuningMode(false);
     setTuningSelectedArticleNumber(null);
     setTuningDraftHotspots([]);
@@ -503,15 +496,10 @@ export default function SparePartsSection({
   }, [catalog.id]);
 
   useEffect(() => {
-    setActiveHotspotId(null);
-    setHoveredHotspotId(null);
-    setActiveHotspotArticleNumber(null);
-    setIsHotspotTuningMode(false);
-    setTuningCopyFeedback(null);
-    if (isImageViewerOpen) {
-      setIsImageViewerOpen(false);
+    if (!isOpen) {
+      setIsImageZoomed(false);
     }
-  }, [activeViewMode]);
+  }, [isOpen]);
 
   useEffect(() => {
     setTuningDraftHotspots(
@@ -590,10 +578,17 @@ export default function SparePartsSection({
       return;
     }
 
+    const normalizedHotspots = tuningDraftHotspots.map((hotspot) => ({
+      ...hotspot,
+      articleNumbers: hotspot.articleNumbers ? [...hotspot.articleNumbers] : undefined,
+    }));
+
     setRuntimeHotspotOverrides((previous) => ({
       ...previous,
-      [hotspotOverrideKey]: tuningDraftHotspots,
+      [hotspotOverrideKey]: normalizedHotspots,
     }));
+
+    onHotspotsSaved?.(activeAssembly.id, normalizedHotspots);
 
     setTuningCopyFeedback(t('spareParts.saveHotspotsSuccess', { defaultValue: 'Hotspots saved for this assembly' }));
   };
@@ -651,13 +646,13 @@ export default function SparePartsSection({
     const previousOverflow = document.body.style.overflow;
     const handleKeyDown = (event: KeyboardEvent) => {
       if (event.key === 'Escape') {
-        if (activeHotspotId) {
-          setActiveHotspotId(null);
+        if (isImageZoomed) {
+          setIsImageZoomed(false);
           return;
         }
 
-        if (isImageViewerOpen) {
-          setIsImageViewerOpen(false);
+        if (activeHotspotId) {
+          setActiveHotspotId(null);
           return;
         }
 
@@ -672,13 +667,7 @@ export default function SparePartsSection({
       document.body.style.overflow = previousOverflow;
       window.removeEventListener('keydown', handleKeyDown);
     };
-  }, [activeHotspotId, isImageViewerOpen, isOpen, onClose]);
-
-  useEffect(() => {
-    if (!shouldShowAssemblyImage && isImageViewerOpen) {
-      setIsImageViewerOpen(false);
-    }
-  }, [isImageViewerOpen, shouldShowAssemblyImage]);
+  }, [activeHotspotId, isImageZoomed, isOpen, onClose]);
 
   useEffect(() => {
     if (!activeHotspot) {
@@ -695,21 +684,6 @@ export default function SparePartsSection({
       setActiveHotspotArticleNumber(activeHotspotParts[0].articleNumber);
     }
   }, [activeHotspot, activeHotspotArticleNumber, activeHotspotParts]);
-
-  const filteredItems = useMemo(() => {
-    const normalizedSearch = searchTerm.trim().toLowerCase();
-
-    if (!normalizedSearch) {
-      return activeAssemblyItems;
-    }
-
-    return activeAssemblyItems.filter((item) =>
-      item.articleNumber.toLowerCase().includes(normalizedSearch) ||
-      item.name.toLowerCase().includes(normalizedSearch) ||
-      getPartName(item).toLowerCase().includes(normalizedSearch) ||
-      String(item.pos).includes(normalizedSearch)
-    );
-  }, [activeAssemblyItems, i18n.language, searchTerm]);
 
   const totalLineItems = basketItems.length;
   const totalUnits = basketItems.reduce((sum, item) => sum + item.quantity, 0);
@@ -986,6 +960,110 @@ export default function SparePartsSection({
     return null;
   }
 
+  const sortedAssemblyItems = [...activeAssemblyItems].sort(
+    (left, right) => left.pos - right.pos || left.articleNumber.localeCompare(right.articleNumber)
+  );
+
+  const partsListPanel = (
+    <div className="rounded-lg border border-gray-200 dark:border-gray-700 bg-white dark:bg-gray-900 p-3">
+      <div className="mb-3 flex items-center justify-between gap-2">
+        <h3 className="text-sm font-black uppercase text-gray-900 dark:text-white">
+          {t('spareParts.partsListTitle', { defaultValue: 'Parts list' })}
+        </h3>
+        <p className="text-[11px] text-gray-600 dark:text-gray-300">
+          {t('spareParts.partsCount', {
+            defaultValue: '{{count}} parts',
+            count: sortedAssemblyItems.length,
+          })}
+        </p>
+      </div>
+
+      {sortedAssemblyItems.length === 0 ? (
+        <p className="text-sm text-gray-600 dark:text-gray-300">
+          {t('spareParts.noPartsForAssembly', { defaultValue: 'No parts found for this assembly.' })}
+        </p>
+      ) : (
+        <ul className="space-y-1 max-h-[34rem] overflow-auto pr-1">
+          {sortedAssemblyItems.map((part, partIndex) => {
+            const quantityKey = getItemKey(activeAssembly.id, part.articleNumber);
+            const partRowKey = `${quantityKey}:${part.pos}:${partIndex}`;
+            const quantity = requestedQuantities[quantityKey] ?? part.defaultQty;
+
+            return (
+              <li
+                key={partRowKey}
+                className="rounded border border-gray-200 dark:border-gray-700 bg-gray-50 dark:bg-gray-800 px-2 py-1.5"
+              >
+                <div className="flex items-start gap-2">
+                  <div className="min-w-0 flex-1">
+                    <p className="text-[11px] font-semibold text-gray-500 dark:text-gray-400">
+                      {t('spareParts.pos', { defaultValue: 'POS' })} {part.pos}
+                    </p>
+                    <p className="truncate text-sm font-semibold text-gray-900 dark:text-gray-100" title={part.articleNumber}>
+                      {part.articleNumber}
+                    </p>
+                    <p className="text-xs text-gray-700 dark:text-gray-300" title={getPartName(part)}>
+                      {getPartName(part)}
+                    </p>
+                  </div>
+
+                  <div className="shrink-0 flex items-center gap-1">
+                    <button
+                      type="button"
+                      onClick={() => nudgeRequestedQuantity(activeAssembly.id, part.articleNumber, -1)}
+                      className={basketQuantityButtonClass}
+                      aria-label={t('spareParts.decreaseQty', { defaultValue: 'Decrease quantity' })}
+                    >
+                      <ChevronLeft className="h-4 w-4" />
+                    </button>
+
+                    <input
+                      type="number"
+                      min={1}
+                      max={999}
+                      value={quantity}
+                      onChange={(event) =>
+                        updateRequestedQuantity(
+                          activeAssembly.id,
+                          part.articleNumber,
+                          Number(event.target.value)
+                        )
+                      }
+                      className="no-spinner w-14 rounded border border-gray-300 dark:border-gray-600 px-2 py-0.5 text-center text-sm bg-white dark:bg-gray-900 text-gray-900 dark:text-gray-100"
+                    />
+
+                    <button
+                      type="button"
+                      onClick={() => nudgeRequestedQuantity(activeAssembly.id, part.articleNumber, 1)}
+                      className={basketQuantityButtonClass}
+                      aria-label={t('spareParts.increaseQty', { defaultValue: 'Increase quantity' })}
+                    >
+                      <ChevronRight className="h-4 w-4" />
+                    </button>
+
+                    <button
+                      type="button"
+                      onClick={() => addToBasket(part)}
+                      className="inline-flex h-9 w-9 items-center justify-center rounded bg-brandgreen text-white hover:bg-green-900"
+                      aria-label={t('spareParts.addToBasket', { defaultValue: 'Add to basket' })}
+                      title={t('spareParts.addToBasket', { defaultValue: 'Add to basket' })}
+                    >
+                      <ShoppingBasket className="h-4 w-4" />
+                    </button>
+                  </div>
+                </div>
+              </li>
+            );
+          })}
+        </ul>
+      )}
+    </div>
+  );
+
+  const interactiveViewportClassName = isImageZoomed
+    ? 'fixed left-1/2 top-1/2 z-[85] w-[min(95vw,1500px)] max-h-[92vh] -translate-x-1/2 -translate-y-1/2 overflow-auto rounded-xl border border-gray-300 dark:border-gray-600 bg-white dark:bg-gray-900 shadow-2xl'
+    : 'relative w-full overflow-visible rounded bg-white';
+
   return (
     <div
       className="fixed inset-x-0 bottom-0 top-[var(--spare-parts-modal-top)] sm:inset-0 z-[70] flex items-end sm:items-center justify-center bg-black/70 p-0 sm:p-4"
@@ -996,7 +1074,7 @@ export default function SparePartsSection({
         role="dialog"
         aria-modal="true"
         aria-label={sectionTitle}
-        className="w-full h-full sm:h-[92vh] sm:max-w-7xl overflow-y-auto overscroll-contain border border-gray-200 dark:border-gray-700 rounded-none sm:rounded-xl bg-white dark:bg-gray-800 p-4 sm:p-6"
+        className="w-full h-full sm:h-[92vh] sm:max-w-[98vw] 2xl:max-w-[1920px] overflow-y-auto overscroll-contain border border-gray-200 dark:border-gray-700 rounded-none sm:rounded-xl bg-white dark:bg-gray-800 p-4 sm:p-6"
         onClick={(event) => event.stopPropagation()}
       >
         <div className="sm:sticky sm:top-0 z-10 -mx-4 sm:mx-0 mb-4 sm:mb-6 px-4 sm:px-0 py-3 sm:py-0 bg-white/95 dark:bg-gray-800/95 backdrop-blur supports-[backdrop-filter]:bg-white/80 dark:supports-[backdrop-filter]:bg-gray-800/80 flex items-start justify-between gap-3 sm:gap-4">
@@ -1036,183 +1114,8 @@ export default function SparePartsSection({
           ))}
         </div>
 
-        {activeViewMode === 'legacy' ? (
-          <div className="grid grid-cols-1 lg:grid-cols-3 gap-4 lg:gap-6">
-          <div className="order-2 lg:order-1 lg:col-span-2">
-            <div className="mb-4">
-              <input
-                type="text"
-                value={searchTerm}
-                onChange={(event) => setSearchTerm(event.target.value)}
-                placeholder={t('spareParts.searchPlaceholder', {
-                  defaultValue: 'Search by POS, article number, or name...',
-                })}
-                className="w-full rounded-lg border border-gray-300 dark:border-gray-600 px-3 py-2 bg-white dark:bg-gray-900 text-gray-900 dark:text-gray-100"
-              />
-            </div>
-
-            <div className="space-y-2 lg:hidden">
-              {filteredItems.map((part) => {
-                const key = getItemKey(activeAssembly.id, part.articleNumber);
-                const value = requestedQuantities[key] ?? part.defaultQty;
-
-                return (
-                  <article
-                    key={key}
-                    className="rounded-lg border border-gray-200 dark:border-gray-700 bg-white dark:bg-gray-800 px-2 py-1.5"
-                  >
-                    <div className="flex items-center gap-2">
-                      <p className="shrink-0 text-xs font-semibold text-gray-500 dark:text-gray-400">
-                        {t('spareParts.pos', { defaultValue: 'POS' })} {part.pos}
-                      </p>
-                      <p className="shrink-0 text-xs font-semibold text-gray-900 dark:text-gray-100">{part.articleNumber}</p>
-                      <p className="min-w-0 flex-1 truncate text-xs text-gray-700 dark:text-gray-300" title={getPartName(part)}>
-                        {getPartName(part)}
-                      </p>
-
-                      <div className="flex shrink-0 items-center gap-1">
-                        <button
-                          type="button"
-                          onClick={() => nudgeRequestedQuantity(activeAssembly.id, part.articleNumber, -1)}
-                          className={compactQuantityButtonClass}
-                          aria-label={t('spareParts.decreaseQty', { defaultValue: 'Decrease quantity' })}
-                        >
-                          <ChevronLeft className="h-4 w-4" />
-                        </button>
-
-                        <span className="inline-flex min-w-7 items-center justify-center rounded border border-gray-300 dark:border-gray-600 px-1 py-0.5 text-xs text-gray-900 dark:text-gray-100">
-                          {value}
-                        </span>
-
-                        <button
-                          type="button"
-                          onClick={() => nudgeRequestedQuantity(activeAssembly.id, part.articleNumber, 1)}
-                          className={compactQuantityButtonClass}
-                          aria-label={t('spareParts.increaseQty', { defaultValue: 'Increase quantity' })}
-                        >
-                          <ChevronRight className="h-4 w-4" />
-                        </button>
-
-                        <button
-                          type="button"
-                          onClick={() => addToBasket(part)}
-                          className="inline-flex h-7 w-7 items-center justify-center rounded bg-brandgreen text-white hover:bg-green-900"
-                          aria-label={t('spareParts.addToBasket', { defaultValue: 'Add to basket' })}
-                        >
-                          <ShoppingBasket className="h-4 w-4" />
-                        </button>
-                      </div>
-                    </div>
-                  </article>
-                );
-              })}
-            </div>
-
-            <div className="hidden lg:block overflow-x-auto rounded-lg border border-gray-200 dark:border-gray-700">
-              <table className="min-w-full text-sm">
-                <thead className="bg-gray-50 dark:bg-gray-900 text-gray-700 dark:text-gray-200">
-                  <tr>
-                    <th className="px-3 py-2 text-left">{t('spareParts.pos', { defaultValue: 'POS' })}</th>
-                    <th className="px-3 py-2 text-left">{t('spareParts.articleNumber', { defaultValue: 'Article Number' })}</th>
-                    <th className="px-3 py-2 text-left">{t('spareParts.partName', { defaultValue: 'Part Name' })}</th>
-                    <th className="px-3 py-2 text-left">{t('spareParts.qty', { defaultValue: 'Qty' })}</th>
-                    <th className="px-3 py-2 text-left">{t('spareParts.add', { defaultValue: 'Add' })}</th>
-                  </tr>
-                </thead>
-                <tbody className="bg-white dark:bg-gray-800">
-                  {filteredItems.map((part) => {
-                    const key = getItemKey(activeAssembly.id, part.articleNumber);
-                    const value = requestedQuantities[key] ?? part.defaultQty;
-
-                    return (
-                      <tr key={key} className="border-t border-gray-200 dark:border-gray-700">
-                        <td className="px-3 py-2 font-semibold text-gray-900 dark:text-gray-100">{part.pos}</td>
-                        <td className="px-3 py-2 text-gray-700 dark:text-gray-300">{part.articleNumber}</td>
-                        <td className="px-3 py-2 text-gray-700 dark:text-gray-300">{getPartName(part)}</td>
-                        <td className="px-3 py-2 w-40">
-                          <div className="flex items-center gap-1">
-                            <button
-                              type="button"
-                              onClick={() => nudgeRequestedQuantity(activeAssembly.id, part.articleNumber, -1)}
-                              className={quantityButtonClass}
-                              aria-label={t('spareParts.decreaseQty', { defaultValue: 'Decrease quantity' })}
-                            >
-                              <ChevronLeft className="h-4 w-4" />
-                            </button>
-                            <input
-                              type="number"
-                              min={1}
-                              max={999}
-                              value={value}
-                              onChange={(event) => {
-                                updateRequestedQuantity(
-                                  activeAssembly.id,
-                                  part.articleNumber,
-                                  Number(event.target.value)
-                                );
-                              }}
-                              className="no-spinner w-16 rounded border border-gray-300 dark:border-gray-600 px-2 py-1 text-center bg-white dark:bg-gray-900 text-gray-900 dark:text-gray-100"
-                            />
-                            <button
-                              type="button"
-                              onClick={() => nudgeRequestedQuantity(activeAssembly.id, part.articleNumber, 1)}
-                              className={quantityButtonClass}
-                              aria-label={t('spareParts.increaseQty', { defaultValue: 'Increase quantity' })}
-                            >
-                              <ChevronRight className="h-4 w-4" />
-                            </button>
-                          </div>
-                        </td>
-                        <td className="px-3 py-2">
-                          <button
-                            type="button"
-                            onClick={() => addToBasket(part)}
-                            className="px-3 py-1 rounded bg-brandgreen text-white hover:bg-green-900"
-                          >
-                            {t('spareParts.addToBasket', { defaultValue: 'Add to basket' })}
-                          </button>
-                        </td>
-                      </tr>
-                    );
-                  })}
-                </tbody>
-              </table>
-            </div>
-          </div>
-
-          <aside className="order-1 lg:order-2 lg:col-span-1">
-            <div className="lg:sticky lg:top-2 space-y-4">
-              {shouldShowAssemblyImage && (
-                <button
-                  type="button"
-                  onClick={() => setIsImageViewerOpen(true)}
-                  className="w-full rounded-lg border border-gray-200 dark:border-gray-700 bg-white dark:bg-gray-900 p-2"
-                  aria-label={t('spareParts.openImage', { defaultValue: 'Open full-size image' })}
-                >
-                  <div className="h-44 sm:h-56 lg:h-64 w-full overflow-hidden rounded bg-white">
-                    <img
-                      src={activeAssembly.imageUrl}
-                      alt={t('spareParts.assemblyImageAlt', {
-                        assembly: getAssemblyTitle(activeAssembly.id),
-                        defaultValue: '{{assembly}} exploded view',
-                      })}
-                      className="h-full w-full object-contain"
-                      loading="lazy"
-                    />
-                  </div>
-                  <p className="mt-2 text-xs text-gray-600 dark:text-gray-300 text-center">
-                    {t('spareParts.clickToEnlarge', { defaultValue: 'Click image to enlarge' })}
-                  </p>
-                </button>
-              )}
-
-              {basketPanel}
-            </div>
-          </aside>
-          </div>
-        ) : (
-          <div className="space-y-4">
-            <div>
+        <div className="space-y-4">
+            <div className="grid gap-4 lg:grid-cols-[minmax(0,1.35fr)_minmax(22rem,1fr)] items-start">
               <div className="rounded-lg border border-gray-200 dark:border-gray-700 bg-white dark:bg-gray-900 p-2">
                 {shouldShowAssemblyImage ? (
                   <>
@@ -1221,7 +1124,13 @@ export default function SparePartsSection({
                         <button
                           type="button"
                           onClick={() => {
-                            setIsHotspotTuningMode((current) => !current);
+                            setIsHotspotTuningMode((current) => {
+                              const next = !current;
+                              if (next) {
+                                setShowHotspotMarkers(true);
+                              }
+                              return next;
+                            });
                             setActiveHotspotId(null);
                             setHoveredHotspotId(null);
                           }}
@@ -1237,7 +1146,7 @@ export default function SparePartsSection({
                         </button>
                       )}
 
-                      {(hasInteractiveHotspots || isHotspotTuningMode) && (
+                      {canEditHotspots && (hasInteractiveHotspots || isHotspotTuningMode) && (
                         <button
                           type="button"
                           onClick={() => setShowHotspotMarkers((current) => !current)}
@@ -1246,6 +1155,22 @@ export default function SparePartsSection({
                           {showHotspotMarkers
                             ? t('spareParts.hideInteractiveMarkers', { defaultValue: 'Hide markers' })
                             : t('spareParts.showInteractiveMarkers', { defaultValue: 'Show markers' })}
+                        </button>
+                      )}
+
+                      {shouldShowAssemblyImage && (
+                        <button
+                          type="button"
+                          onClick={() => {
+                            setIsImageZoomed(true);
+                            setActiveHotspotId(null);
+                            setHoveredHotspotId(null);
+                          }}
+                          className="inline-flex h-8 w-8 items-center justify-center rounded border border-gray-300 dark:border-gray-600 text-gray-700 dark:text-gray-200 hover:bg-gray-100 dark:hover:bg-gray-800"
+                          aria-label={t('spareParts.enlargeView', { defaultValue: 'Enlarge view' })}
+                          title={t('spareParts.enlargeView', { defaultValue: 'Enlarge view' })}
+                        >
+                          <Search className="h-4 w-4" />
                         </button>
                       )}
                     </div>
@@ -1330,8 +1255,22 @@ export default function SparePartsSection({
                       </div>
                     )}
 
+                    {isImageZoomed && (
+                      <button
+                        type="button"
+                        className="fixed inset-0 z-[84] cursor-zoom-out bg-black/30"
+                        onClick={(event) => {
+                          event.stopPropagation();
+                          setIsImageZoomed(false);
+                          setActiveHotspotId(null);
+                          setHoveredHotspotId(null);
+                        }}
+                        aria-label={t('spareParts.closeZoom', { defaultValue: 'Close zoom' })}
+                      />
+                    )}
+
                     <div
-                      className="relative w-full overflow-visible rounded bg-white"
+                      className={interactiveViewportClassName}
                       onPointerMove={(event) => {
                         if (!hasInteractiveHotspots || activeHotspotId || isHotspotTuningMode || useMobileHotspotSheet) {
                           return;
@@ -1361,6 +1300,21 @@ export default function SparePartsSection({
                         setActiveHotspotId(null);
                       }}
                     >
+                      {isImageZoomed && (
+                        <button
+                          type="button"
+                          onClick={(event) => {
+                            event.stopPropagation();
+                            setIsImageZoomed(false);
+                            setActiveHotspotId(null);
+                            setHoveredHotspotId(null);
+                          }}
+                          className="absolute right-2 top-2 z-[90] rounded border border-gray-300 dark:border-gray-600 bg-white/95 dark:bg-gray-800/95 px-2 py-1 text-xs text-gray-700 dark:text-gray-200 hover:bg-gray-100 dark:hover:bg-gray-700"
+                        >
+                          {t('spareParts.closeZoom', { defaultValue: 'Close zoom' })}
+                        </button>
+                      )}
+
                       <img
                         src={activeAssembly.imageUrl}
                         alt={t('spareParts.assemblyImageAlt', {
@@ -1374,7 +1328,7 @@ export default function SparePartsSection({
                       {displayedHotspots.map((hotspot) => {
                         const isActive = hotspot.id === activeHotspotId;
                         const isHovered = hotspot.id === hoveredHotspotId;
-                        const showMarker = showHotspotMarkers || isActive || isHovered || isHotspotTuningMode;
+                        const showMarker = showHotspotMarkers || isActive || isHovered;
 
                         return (
                           <button
@@ -1595,147 +1549,11 @@ export default function SparePartsSection({
                     </div>
                   </>
                 ) : (
-                  <div className="space-y-3">
-                    <div>
-                      <input
-                        type="text"
-                        value={searchTerm}
-                        onChange={(event) => setSearchTerm(event.target.value)}
-                        placeholder={t('spareParts.searchPlaceholder', {
-                          defaultValue: 'Search by POS, article number, or name...',
-                        })}
-                        className="w-full rounded-lg border border-gray-300 dark:border-gray-600 px-3 py-2 bg-white dark:bg-gray-900 text-gray-900 dark:text-gray-100"
-                      />
-                    </div>
-
-                    <div className="space-y-2 lg:hidden">
-                      {filteredItems.map((part) => {
-                        const key = getItemKey(activeAssembly.id, part.articleNumber);
-                        const value = requestedQuantities[key] ?? part.defaultQty;
-
-                        return (
-                          <article
-                            key={key}
-                            className="rounded-lg border border-gray-200 dark:border-gray-700 bg-white dark:bg-gray-800 px-2 py-1.5"
-                          >
-                            <div className="flex items-center gap-2">
-                              <p className="shrink-0 text-xs font-semibold text-gray-500 dark:text-gray-400">
-                                {t('spareParts.pos', { defaultValue: 'POS' })} {part.pos}
-                              </p>
-                              <p className="shrink-0 text-xs font-semibold text-gray-900 dark:text-gray-100">{part.articleNumber}</p>
-                              <p className="min-w-0 flex-1 truncate text-xs text-gray-700 dark:text-gray-300" title={getPartName(part)}>
-                                {getPartName(part)}
-                              </p>
-
-                              <div className="flex shrink-0 items-center gap-1">
-                                <button
-                                  type="button"
-                                  onClick={() => nudgeRequestedQuantity(activeAssembly.id, part.articleNumber, -1)}
-                                  className={compactQuantityButtonClass}
-                                  aria-label={t('spareParts.decreaseQty', { defaultValue: 'Decrease quantity' })}
-                                >
-                                  <ChevronLeft className="h-4 w-4" />
-                                </button>
-
-                                <span className="inline-flex min-w-7 items-center justify-center rounded border border-gray-300 dark:border-gray-600 px-1 py-0.5 text-xs text-gray-900 dark:text-gray-100">
-                                  {value}
-                                </span>
-
-                                <button
-                                  type="button"
-                                  onClick={() => nudgeRequestedQuantity(activeAssembly.id, part.articleNumber, 1)}
-                                  className={compactQuantityButtonClass}
-                                  aria-label={t('spareParts.increaseQty', { defaultValue: 'Increase quantity' })}
-                                >
-                                  <ChevronRight className="h-4 w-4" />
-                                </button>
-
-                                <button
-                                  type="button"
-                                  onClick={() => addToBasket(part)}
-                                  className="inline-flex h-7 w-7 items-center justify-center rounded bg-brandgreen text-white hover:bg-green-900"
-                                  aria-label={t('spareParts.addToBasket', { defaultValue: 'Add to basket' })}
-                                >
-                                  <ShoppingBasket className="h-4 w-4" />
-                                </button>
-                              </div>
-                            </div>
-                          </article>
-                        );
-                      })}
-                    </div>
-
-                    <div className="hidden lg:block overflow-x-auto rounded-lg border border-gray-200 dark:border-gray-700">
-                      <table className="min-w-full text-sm">
-                        <thead className="bg-gray-50 dark:bg-gray-900 text-gray-700 dark:text-gray-200">
-                          <tr>
-                            <th className="px-3 py-2 text-left">{t('spareParts.pos', { defaultValue: 'POS' })}</th>
-                            <th className="px-3 py-2 text-left">{t('spareParts.articleNumber', { defaultValue: 'Article Number' })}</th>
-                            <th className="px-3 py-2 text-left">{t('spareParts.partName', { defaultValue: 'Part Name' })}</th>
-                            <th className="px-3 py-2 text-left">{t('spareParts.qty', { defaultValue: 'Qty' })}</th>
-                            <th className="px-3 py-2 text-left">{t('spareParts.add', { defaultValue: 'Add' })}</th>
-                          </tr>
-                        </thead>
-                        <tbody className="bg-white dark:bg-gray-800">
-                          {filteredItems.map((part) => {
-                            const key = getItemKey(activeAssembly.id, part.articleNumber);
-                            const value = requestedQuantities[key] ?? part.defaultQty;
-
-                            return (
-                              <tr key={key} className="border-t border-gray-200 dark:border-gray-700">
-                                <td className="px-3 py-2 font-semibold text-gray-900 dark:text-gray-100">{part.pos}</td>
-                                <td className="px-3 py-2 text-gray-700 dark:text-gray-300">{part.articleNumber}</td>
-                                <td className="px-3 py-2 text-gray-700 dark:text-gray-300">{getPartName(part)}</td>
-                                <td className="px-3 py-2 w-40">
-                                  <div className="flex items-center gap-1">
-                                    <button
-                                      type="button"
-                                      onClick={() => nudgeRequestedQuantity(activeAssembly.id, part.articleNumber, -1)}
-                                      className={quantityButtonClass}
-                                      aria-label={t('spareParts.decreaseQty', { defaultValue: 'Decrease quantity' })}
-                                    >
-                                      <ChevronLeft className="h-4 w-4" />
-                                    </button>
-                                    <input
-                                      type="number"
-                                      min={1}
-                                      max={999}
-                                      value={value}
-                                      onChange={(event) => {
-                                        updateRequestedQuantity(
-                                          activeAssembly.id,
-                                          part.articleNumber,
-                                          Number(event.target.value)
-                                        );
-                                      }}
-                                      className="no-spinner w-16 rounded border border-gray-300 dark:border-gray-600 px-2 py-1 text-center bg-white dark:bg-gray-900 text-gray-900 dark:text-gray-100"
-                                    />
-                                    <button
-                                      type="button"
-                                      onClick={() => nudgeRequestedQuantity(activeAssembly.id, part.articleNumber, 1)}
-                                      className={quantityButtonClass}
-                                      aria-label={t('spareParts.increaseQty', { defaultValue: 'Increase quantity' })}
-                                    >
-                                      <ChevronRight className="h-4 w-4" />
-                                    </button>
-                                  </div>
-                                </td>
-                                <td className="px-3 py-2">
-                                  <button
-                                    type="button"
-                                    onClick={() => addToBasket(part)}
-                                    className="px-3 py-1 rounded bg-brandgreen text-white hover:bg-green-900"
-                                  >
-                                    {t('spareParts.addToBasket', { defaultValue: 'Add to basket' })}
-                                  </button>
-                                </td>
-                              </tr>
-                            );
-                          })}
-                        </tbody>
-                      </table>
-                    </div>
-                  </div>
+                  <p className="px-2 py-3 text-sm text-gray-600 dark:text-gray-300">
+                    {t('spareParts.noInteractiveImage', {
+                      defaultValue: 'Interactive diagram is unavailable for this assembly.',
+                    })}
+                  </p>
                 )}
 
                 {shouldShowAssemblyImage && (
@@ -1754,44 +1572,17 @@ export default function SparePartsSection({
                   </p>
                 )}
               </div>
+
+              <div>{partsListPanel}</div>
             </div>
 
             <div>
               {basketPanel}
             </div>
           </div>
-        )}
-
-        {isImageViewerOpen && activeViewMode === 'legacy' && shouldShowAssemblyImage && (
-          <div
-            className="fixed inset-x-0 bottom-0 top-[var(--spare-parts-modal-top)] sm:inset-0 z-[80] flex items-center justify-center bg-black/80 p-4"
-            style={mobileModalOffsetStyle}
-            onClick={() => setIsImageViewerOpen(false)}
-          >
-            <div
-              className="relative max-w-[95vw] max-h-[92vh]"
-              onClick={(event) => event.stopPropagation()}
-            >
-              <button
-                type="button"
-                onClick={() => setIsImageViewerOpen(false)}
-                className="absolute -top-3 -right-3 rounded-full bg-white text-gray-700 p-2 shadow"
-                aria-label={t('commons.close')}
-              >
-                <X className="h-5 w-5" />
-              </button>
-              <img
-                src={activeAssembly.imageUrl}
-                alt={t('spareParts.assemblyImageFullAlt', {
-                  assembly: getAssemblyTitle(activeAssembly.id),
-                  defaultValue: '{{assembly}} full-size exploded view',
-                })}
-                className="max-w-[95vw] max-h-[88vh] object-contain rounded-lg bg-white"
-              />
-            </div>
-          </div>
-        )}
       </section>
     </div>
   );
 }
+
+

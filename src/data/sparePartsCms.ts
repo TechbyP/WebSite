@@ -196,6 +196,146 @@ export const cloneSparePartsCatalog = (catalog: SparePartsCatalog): SparePartsCa
   })),
 });
 
+const cloneHotspot = (hotspot: SparePartHotspot): SparePartHotspot => ({
+  ...hotspot,
+  articleNumbers: hotspot.articleNumbers ? [...hotspot.articleNumbers] : undefined,
+});
+
+const cloneItem = (item: SparePartItem): SparePartItem => ({
+  ...item,
+  models: item.models ? [...item.models] : undefined,
+});
+
+const cloneAssembly = (assembly: SparePartsAssembly): SparePartsAssembly => ({
+  ...assembly,
+  models: assembly.models ? [...assembly.models] : undefined,
+  hotspots: assembly.hotspots?.map(cloneHotspot),
+  items: assembly.items.map(cloneItem),
+});
+
+const getAssemblyItemKey = (item: SparePartItem) => `${item.pos}:${item.articleNumber}`;
+
+const hasArticleNumberDigits = (item: SparePartItem) => /\d/.test(item.articleNumber);
+
+const mergeAssemblyItems = (
+  baseItems: SparePartItem[],
+  managedItems: SparePartItem[]
+): SparePartItem[] => {
+  const itemsByPos = new Map<number, SparePartItem[]>();
+
+  for (const managedItem of managedItems) {
+    const entry = cloneItem(managedItem);
+    const bucket = itemsByPos.get(entry.pos) || [];
+    bucket.push(entry);
+    itemsByPos.set(entry.pos, bucket);
+  }
+
+  // If a POS already has at least one valid article number, discard malformed fallback rows.
+  for (const [pos, items] of itemsByPos.entries()) {
+    const hasValidItem = items.some(hasArticleNumberDigits);
+    if (!hasValidItem) {
+      continue;
+    }
+
+    itemsByPos.set(pos, items.filter(hasArticleNumberDigits));
+  }
+
+  for (const baseItem of baseItems) {
+    const bucket = itemsByPos.get(baseItem.pos) || [];
+    const baseKey = getAssemblyItemKey(baseItem);
+
+    if (bucket.some((entry) => getAssemblyItemKey(entry) === baseKey)) {
+      continue;
+    }
+
+    if (bucket.length === 0) {
+      itemsByPos.set(baseItem.pos, [cloneItem(baseItem)]);
+      continue;
+    }
+
+    const allMalformed = bucket.every((entry) => !hasArticleNumberDigits(entry));
+    if (allMalformed && hasArticleNumberDigits(baseItem)) {
+      itemsByPos.set(baseItem.pos, [cloneItem(baseItem)]);
+    }
+  }
+
+  return [...itemsByPos.entries()]
+    .sort((left, right) => left[0] - right[0])
+    .flatMap(([, items]) =>
+      [...items].sort((left, right) => left.articleNumber.localeCompare(right.articleNumber))
+    );
+};
+
+export const mergeManagedSparePartsCatalogWithBase = (
+  baseCatalog: SparePartsCatalog,
+  managedCatalog: SparePartsCatalog
+): SparePartsCatalog => {
+  const baseAssembliesById = new Map(baseCatalog.assemblies.map((assembly) => [assembly.id, assembly]));
+  const managedAssembliesById = new Map(managedCatalog.assemblies.map((assembly) => [assembly.id, assembly]));
+
+  const assemblies: SparePartsAssembly[] = [];
+
+  for (const baseAssembly of baseCatalog.assemblies) {
+    const managedAssembly = managedAssembliesById.get(baseAssembly.id);
+
+    if (!managedAssembly) {
+      assemblies.push(cloneAssembly(baseAssembly));
+      continue;
+    }
+
+    assemblies.push({
+      ...cloneAssembly(baseAssembly),
+      ...cloneAssembly(managedAssembly),
+      title: managedAssembly.title || baseAssembly.title,
+      imageUrl: managedAssembly.imageUrl || baseAssembly.imageUrl,
+      models: managedAssembly.models ?? baseAssembly.models,
+      hotspots:
+        managedAssembly.hotspots !== undefined
+          ? managedAssembly.hotspots.map(cloneHotspot)
+          : baseAssembly.hotspots?.map(cloneHotspot),
+      items: mergeAssemblyItems(baseAssembly.items, managedAssembly.items),
+    });
+  }
+
+  for (const managedAssembly of managedCatalog.assemblies) {
+    if (baseAssembliesById.has(managedAssembly.id)) {
+      continue;
+    }
+
+    assemblies.push(cloneAssembly(managedAssembly));
+  }
+
+  return {
+    ...cloneSparePartsCatalog(baseCatalog),
+    ...cloneSparePartsCatalog(managedCatalog),
+    assemblies,
+  };
+};
+
+const stripUndefinedDeep = (value: unknown): unknown => {
+  if (Array.isArray(value)) {
+    return value
+      .map((entry) => stripUndefinedDeep(entry))
+      .filter((entry) => entry !== undefined);
+  }
+
+  if (value && typeof value === 'object') {
+    const entries = Object.entries(value as Record<string, unknown>)
+      .flatMap(([key, entry]) => {
+        const normalized = stripUndefinedDeep(entry);
+        if (normalized === undefined) {
+          return [];
+        }
+
+        return [[key, normalized] as [string, unknown]];
+      });
+
+    return Object.fromEntries(entries);
+  }
+
+  return value;
+};
+
 export const loadManagedSparePartsCatalogs = async (): Promise<SparePartsCatalog[]> => {
   const snapshot = await getDocs(collection(db, SPARE_PARTS_COLLECTION));
   const catalogs: SparePartsCatalog[] = [];
@@ -211,10 +351,12 @@ export const loadManagedSparePartsCatalogs = async (): Promise<SparePartsCatalog
 };
 
 export const saveManagedSparePartsCatalog = async (catalog: SparePartsCatalog): Promise<void> => {
-  await setDoc(doc(db, SPARE_PARTS_COLLECTION, catalog.id), {
+  const payload = stripUndefinedDeep({
     ...catalog,
     updatedAt: Date.now(),
-  });
+  }) as DocumentData;
+
+  await setDoc(doc(db, SPARE_PARTS_COLLECTION, catalog.id), payload);
 };
 
 export const deleteManagedSparePartsCatalog = async (catalogId: string): Promise<void> => {
