@@ -213,6 +213,50 @@ const cloneAssembly = (assembly: SparePartsAssembly): SparePartsAssembly => ({
   items: assembly.items.map(cloneItem),
 });
 
+const isDevOnlyImageUrl = (imageUrl: string): boolean => {
+  const normalized = imageUrl.trim();
+  if (!normalized) {
+    return false;
+  }
+
+  const lowered = normalized.toLowerCase();
+  if (
+    lowered.includes('/@imagetools/')
+    || lowered.startsWith('/@imagetools/')
+    || lowered.includes('/@fs/')
+    || lowered.startsWith('/src/')
+  ) {
+    return true;
+  }
+
+  try {
+    const parsed = new URL(normalized);
+    if (parsed.hostname === 'localhost' || parsed.hostname === '127.0.0.1' || parsed.hostname === '::1') {
+      return true;
+    }
+  } catch {
+    // Ignore invalid/relative URL parsing failures.
+  }
+
+  return false;
+};
+
+const resolveMergedAssemblyImageUrl = (baseImageUrl: string, managedImageUrl: string) => {
+  if (!managedImageUrl || isDevOnlyImageUrl(managedImageUrl)) {
+    return baseImageUrl;
+  }
+
+  return managedImageUrl;
+};
+
+const sanitizeImageUrlForStorage = (imageUrl: string) => {
+  if (isDevOnlyImageUrl(imageUrl)) {
+    return '';
+  }
+
+  return imageUrl;
+};
+
 const getAssemblyItemKey = (item: SparePartItem) => `${item.pos}:${item.articleNumber}`;
 
 const hasArticleNumberDigits = (item: SparePartItem) => /\d/.test(item.articleNumber);
@@ -287,7 +331,7 @@ export const mergeManagedSparePartsCatalogWithBase = (
       ...cloneAssembly(baseAssembly),
       ...cloneAssembly(managedAssembly),
       title: managedAssembly.title || baseAssembly.title,
-      imageUrl: managedAssembly.imageUrl || baseAssembly.imageUrl,
+      imageUrl: resolveMergedAssemblyImageUrl(baseAssembly.imageUrl, managedAssembly.imageUrl),
       models: managedAssembly.models ?? baseAssembly.models,
       hotspots:
         managedAssembly.hotspots !== undefined
@@ -302,7 +346,10 @@ export const mergeManagedSparePartsCatalogWithBase = (
       continue;
     }
 
-    assemblies.push(cloneAssembly(managedAssembly));
+    assemblies.push({
+      ...cloneAssembly(managedAssembly),
+      imageUrl: sanitizeImageUrlForStorage(managedAssembly.imageUrl),
+    });
   }
 
   return {
@@ -351,8 +398,16 @@ export const loadManagedSparePartsCatalogs = async (): Promise<SparePartsCatalog
 };
 
 export const saveManagedSparePartsCatalog = async (catalog: SparePartsCatalog): Promise<void> => {
-  const payload = stripUndefinedDeep({
+  const sanitizedCatalog: SparePartsCatalog = {
     ...catalog,
+    assemblies: catalog.assemblies.map((assembly) => ({
+      ...cloneAssembly(assembly),
+      imageUrl: sanitizeImageUrlForStorage(assembly.imageUrl),
+    })),
+  };
+
+  const payload = stripUndefinedDeep({
+    ...sanitizedCatalog,
     updatedAt: Date.now(),
   }) as DocumentData;
 
